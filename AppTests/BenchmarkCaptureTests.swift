@@ -202,6 +202,74 @@ final class BenchmarkCaptureTests: XCTestCase {
             XCTAssertNil(scene.childNode(withName: "//housing-\(snap.cameras[0].id.raw)"))
             try capture("BP004-candidate-integrity-\(integrity)")
         }
+        // BP-007 review experiment only: transform ground geometry and roots,
+        // preserving upright sprite form. This is not a production projection API.
+        for zoom in [CGFloat(1), CGFloat(2).squareRoot()] {
+            snap.cameras[0].integrity = 3
+            snap.cameras[0].fieldVisible = true
+            scene.renderBenchmark(snapshot: snap, art: art, center: center)
+            let billboardNames = ["sprite-player", "sprite-camera-\(snap.cameras[0].id.raw)",
+                                  "benchmark-building", "benchmark-prop-0", "benchmark-prop-1"]
+            let billboards = try billboardNames.map { try XCTUnwrap(scene.childNode(withName: "//" + $0)) }
+            let originals = try billboards.map { node in
+                (node, try XCTUnwrap(node.parent), node.position, node.xScale, node.yScale, node.zPosition)
+            }
+            func projected(_ p: CGPoint) -> CGPoint {
+                let x = p.x - center.x, y = p.y - center.y
+                let r = CGFloat(0.5).squareRoot()
+                return CGPoint(x: center.x + zoom * r * (x - y),
+                               y: center.y + zoom * r * (x + y) / 2)
+            }
+            for (node, parent, position, _, _, _) in originals {
+                let world = scene.convert(position, from: parent)
+                var z = node.zPosition
+                var ancestor: SKNode? = parent
+                while let a = ancestor, a !== scene { z += a.zPosition; ancestor = a.parent }
+                node.removeFromParent()
+                node.position = projected(world)
+                node.xScale *= zoom; node.yScale *= zoom
+                node.zPosition = z
+                scene.addChild(node)
+            }
+            let uprightSet = Set(billboards.map(ObjectIdentifier.init))
+            let world = scene.children.filter { $0 !== camera && !uprightSet.contains(ObjectIdentifier($0)) }
+            let squash = SKNode(), rotation = SKNode(), translation = SKNode()
+            squash.position = center; squash.xScale = zoom; squash.yScale = zoom / 2
+            rotation.zRotation = .pi / 4
+            translation.position = CGPoint(x: -center.x, y: -center.y)
+            scene.addChild(squash); squash.addChild(rotation); rotation.addChild(translation)
+            for node in world { node.removeFromParent(); translation.addChild(node) }
+            let probe = CGPoint(x: x + 64, y: y - 64)
+            let converted = translation.convert(probe, to: scene)
+            XCTAssertEqual(converted.x, projected(probe).x, accuracy: 0.0001)
+            XCTAssertEqual(converted.y, projected(probe).y, accuracy: 0.0001)
+            let player = try XCTUnwrap(billboards.first as? SKSpriteNode)
+            let expectedSize = CGFloat(Float(64 * zoom))
+            XCTAssertEqual(player.size, CGSize(width: expectedSize, height: expectedSize))
+            XCTAssertEqual(player.xScale, player.yScale)
+            XCTAssertEqual(camera.xScale, 1)
+            let tag = zoom == 1 ? "unchanged-zoom" : "equal-area-zoom"
+            try capture("BP007-projected-\(tag)")
+            let footprintRoot = SKNode(), footprintRotation = SKNode(), footprintTranslation = SKNode()
+            footprintRoot.position = center; footprintRoot.xScale = zoom; footprintRoot.yScale = zoom / 2
+            footprintRoot.zPosition = 999
+            footprintRotation.zRotation = .pi / 4
+            footprintTranslation.position = CGPoint(x: -center.x, y: -center.y)
+            scene.addChild(footprintRoot); footprintRoot.addChild(footprintRotation)
+            footprintRotation.addChild(footprintTranslation)
+            let footprint = SKShapeNode(rectOf: CGSize(width: box.halfSize.x * 2, height: box.halfSize.y * 2))
+            footprint.position = CGPoint(x: x, y: y)
+            footprint.strokeColor = .magenta; footprint.fillColor = .clear; footprint.lineWidth = 1
+            footprintTranslation.addChild(footprint)
+            try capture("BP007-projected-\(tag)-geometry")
+            footprintRoot.removeFromParent()
+            for node in world { node.removeFromParent(); scene.addChild(node) }
+            for (node, parent, position, sx, sy, z) in originals {
+                node.removeFromParent(); parent.addChild(node)
+                node.position = position; node.xScale = sx; node.yScale = sy; node.zPosition = z
+            }
+            squash.removeFromParent()
+        }
         let record = XCTAttachment(string: """
         Composition fixture, not a legal encounter or animation acceptance.
         Runtime renderer and HUD; test-only candidate textures. 704x326 logical viewport.
