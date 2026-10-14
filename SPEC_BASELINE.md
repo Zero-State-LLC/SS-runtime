@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `9a87f95ae52f3f174392418e333573a56c04100a` |
+| Specification commit | `56a5a5da1d87491d23df86731cc01a5acd868d26` |
 | Ruleset | `ss-rules-008` |
 | Content | `civic-seam-content-006` |
 | Arena | `civic-seam-arena-004` |
@@ -42,3 +42,5 @@ BP-005/BP-007 ground-plan clarification adoption: distinguish wall contacts from
 BP-009 adoption: occlusion must preserve Player ground position and solid-boundary readability without false elevation. Lifecycle and continuous/encounter acceptance remain open; current treatments are comparison fixtures only. See docs/review/ground-cue/review.md.
 
 BP-003 target-schema adoption: clip-metadata-002.schema.json and mechanical conversion checks define the next decoder target. Active metadata, animation version, frame IDs and gameplay identities remain v1/current. No v2 delivery or new art is admitted.
+
+BP-003 event-facing adoption: one-shot occurrences carry event-facing/start tick, select exact lifetime and tick-sampled frames, preserve live-state fallback and expire without extension. Core and simulator evidence: docs/review/reaction-occurrence/review.md. Visual turning acceptance and active v2 delivery migration remain open.

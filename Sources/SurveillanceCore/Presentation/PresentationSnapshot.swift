@@ -15,6 +15,9 @@ public struct PresentationSnapshot: Equatable, Sendable {
         /// `ReactionClipTracker`. The renderer tries it before `clipId` and falls
         /// back, so an unbacked reaction never hides the state clip.
         public var reactionClipId: String? = nil
+        public var reactionOccurrence: ClipOccurrence? = nil
+        public var heldClipOccurrence: ClipOccurrence? = nil
+        public var fallbackClipId: String? = nil
         /// D-089: a standard enemy that has not been alerted. The renderer
         /// draws the `?` marker above it (animation.md § 8a); its shape, not
         /// its colour, carries the state. Presentation only.
@@ -164,6 +167,7 @@ public struct PresentationSnapshot: Equatable, Sendable {
     public var playerClipId: String
     /// Player hurt clip an event calls for, preferred over `playerClipId`.
     public var playerReactionClipId: String? = nil
+    public var playerReactionOccurrence: ClipOccurrence? = nil
     /// Defeated enemies still playing their defeat clip after leaving
     /// authoritative state. Presentation only; drawn only where the clip is backed.
     public var defeated: [CircleSprite] = []

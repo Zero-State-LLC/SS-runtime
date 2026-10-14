@@ -134,8 +134,12 @@ final class WorldRenderer {
         at position: CGPoint,
         boxWidth: CGFloat,
         boxHeight: CGFloat,
-        layer: Layer
+        layer: Layer,
+        occurrence: ClipOccurrence? = nil,
+        tick: UInt64 = 0,
+        reducedMotion: Bool = false
     ) -> Bool {
+        let selectedDirection = occurrence?.direction ?? direction
         if key == "player", let art = reviewArt {
             let sprite = node(layer, "sprite-\(key)") { SKSpriteNode() } as! SKSpriteNode
             sprite.texture = art.player
@@ -145,7 +149,7 @@ final class WorldRenderer {
             sprite.removeAllActions()
             return true
         }
-        guard sprites.isBacked(clipId: clipId, direction: direction) else { return false }
+        guard sprites.isBacked(clipId: clipId, direction: selectedDirection) else { return false }
         let node = node(layer, "sprite-\(key)") { () -> SKSpriteNode in
             SKSpriteNode()
         }
@@ -158,14 +162,21 @@ final class WorldRenderer {
         )
         sprite.position = position
 
-        let token = "\(clipId)|\(direction ?? "-")"
+        let token = "\(clipId)|\(selectedDirection ?? "-")"
+        if let occurrence {
+            activeClips[key] = token + "|event|\(occurrence.startTick)"
+            sprite.removeAllActions()
+            sprite.texture = sprites.texture(clipId: clipId, direction: selectedDirection,
+                elapsedTicks: occurrence.elapsedTicks(at: tick), reducedMotion: reducedMotion)
+            return true
+        }
         if activeClips[key] != token {
             activeClips[key] = token
             sprite.removeAllActions()
-            sprite.texture = sprites.firstTexture(clipId: clipId, direction: direction)
-            if let animation = sprites.animation(clipId: clipId, direction: direction) {
+            sprite.texture = sprites.firstTexture(clipId: clipId, direction: selectedDirection)
+            if let animation = sprites.animation(clipId: clipId, direction: selectedDirection) {
                 sprite.run(animation)
-            } else if let texture = sprites.firstTexture(clipId: clipId, direction: direction) {
+            } else if let texture = sprites.firstTexture(clipId: clipId, direction: selectedDirection) {
                 sprite.texture = texture
             }
         }
@@ -235,7 +246,7 @@ final class WorldRenderer {
         renderTelegraphs(snap)
         renderMines(snap)
         renderSpawnSockets(snap)
-        renderActors(snap)
+        renderActors(snap, reducedMotion: reducedMotion)
         renderProjectiles(snap)
         renderMarkers(snap)
     }
@@ -939,20 +950,24 @@ final class WorldRenderer {
         endLayer(.spawnSockets)
     }
 
-    private func renderActors(_ snap: PresentationSnapshot) {
+    private func renderActors(_ snap: PresentationSnapshot, reducedMotion: Bool) {
         let playerPosition = CGPoint(x: snap.player.x, y: snap.player.y)
         // clip-metadata-001 sprite box for the Player.
         // A reaction (hurt) is preferred and the state clip is the fallback,
         // so an unbacked reaction never costs the Player its sprite.
-        let playerDrawn = [snap.playerReactionClipId, snap.playerClipId].compactMap { $0 }.contains {
-            playClip(
-                $0,
+        let playerCandidates: [(String?, ClipOccurrence?)] = [
+            (snap.playerReactionClipId, snap.playerReactionOccurrence), (snap.playerClipId, nil)
+        ]
+        let playerDrawn = playerCandidates.contains { candidate in
+            guard let clip = candidate.0 else { return false }
+            return playClip(
+                clip,
                 direction: snap.playerDirection,
                 key: "player",
                 at: playerPosition,
                 boxWidth: 64,
                 boxHeight: 64,
-                layer: .actors
+                layer: .actors, occurrence: candidate.1, tick: snap.tick, reducedMotion: reducedMotion
             )
         }
         if let ghost {
@@ -995,15 +1010,20 @@ final class WorldRenderer {
             let position = CGPoint(x: enemy.x, y: enemy.y)
             let box = Self.spriteBox(for: enemy.role)
             // Reaction first, then the state clip, then the blockout below.
-            let drawn = [enemy.reactionClipId, enemy.clipId].compactMap { $0 }.contains {
-                playClip(
-                    $0,
+            let candidates: [(String?, ClipOccurrence?)] = [
+                (enemy.reactionClipId, enemy.reactionOccurrence),
+                (enemy.clipId, enemy.heldClipOccurrence), (enemy.fallbackClipId, nil)
+            ]
+            let drawn = candidates.contains { candidate in
+                guard let clip = candidate.0 else { return false }
+                return playClip(
+                    clip,
                     direction: enemy.direction,
                     key: key,
                     at: position,
                     boxWidth: box.width,
                     boxHeight: box.height,
-                    layer: .actors
+                    layer: .actors, occurrence: candidate.1, tick: snap.tick, reducedMotion: reducedMotion
                 )
             }
             if !drawn {
@@ -1039,7 +1059,7 @@ final class WorldRenderer {
                 at: CGPoint(x: fallen.x, y: fallen.y),
                 boxWidth: box.width,
                 boxHeight: box.height,
-                layer: .actors
+                layer: .actors, occurrence: fallen.heldClipOccurrence, tick: snap.tick, reducedMotion: reducedMotion
             )
         }
         endLayer(.actors)

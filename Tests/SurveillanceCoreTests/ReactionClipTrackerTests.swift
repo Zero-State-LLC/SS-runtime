@@ -41,6 +41,40 @@ struct ReactionClipTrackerTests {
         )
     }
 
+    @Test func eventFacingOwnsLifetimeAndNewEventRestartsOccurrence() throws {
+        var clips = try ClipCatalog.bundled().clips
+        let index = try #require(clips.firstIndex { $0.clipId == "player_hurt" })
+        clips[index].framesPerSecond = nil
+        clips[index].authoredTiming = try ClipTiming(unitsPerSecond: 60,
+            frameUnits: clips[index].frameIds.map { id in
+                id.contains("_n_") ? 1 : id.contains("_e_") ? 2 : id.contains("_s_") ? 3 : 4
+            })
+        for (direction, duration) in [("n",3),("e",6),("s",9),("w",12)] {
+            var tracker = ReactionClipTracker(clips: clips)
+            tracker.ingest(Self.result(100, [Self.event(.playerDamaged, 1, tick: 100)]),
+                previousEnemies: [], currentEnemies: [], playerDirection: direction)
+            #expect(tracker.playerReaction?.endTick == UInt64(100 + duration))
+            var suppressed = try Self.snapshot(tick: 101, playerClip: "player_dodge")
+            tracker.apply(to: &suppressed)
+            #expect(suppressed.playerReactionClipId == nil)
+            var late = try Self.snapshot(tick: UInt64(99 + duration))
+            late.playerDirection = "e"
+            tracker.apply(to: &late)
+            #expect(late.playerDirection == "e")
+            #expect(late.playerReactionOccurrence == ClipOccurrence(direction: direction, startTick: 100))
+            var expired = late
+            expired.tick = UInt64(100 + duration)
+            tracker.apply(to: &expired)
+            #expect(expired.playerReactionClipId == nil)
+            tracker.ingest(Self.result(102, [Self.event(.playerDamaged, 1, tick: 102)]),
+                previousEnemies: [], currentEnemies: [], playerDirection: direction)
+            #expect(tracker.playerReaction?.occurrence.startTick == 102)
+            #expect(tracker.playerReaction?.endTick == UInt64(102 + duration))
+            tracker.reset()
+            #expect(tracker.playerReaction == nil)
+        }
+    }
+
     @Test func durationIsFramesOverFpsInTicks() throws {
         let clips = try ClipCatalog.bundled().clipsById
         // 3 frames at 20 fps = 0.15 s = 9 ticks.

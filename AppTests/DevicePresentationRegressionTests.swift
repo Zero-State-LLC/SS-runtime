@@ -1,4 +1,5 @@
 import SpriteKit
+import UIKit
 import Testing
 @testable import SSRuntime
 @testable import SurveillanceCore
@@ -6,6 +7,40 @@ import Testing
 @Suite(.serialized)
 @MainActor
 struct DevicePresentationRegressionTests {
+    @Test func reactionPlaybackKeepsEventFacingAndElapsedPhase() throws {
+        var snap = PresentationSnapshot(try Simulation.make(seed: 1).state)
+        snap.playerReactionClipId = "player_hurt"
+        snap.playerReactionOccurrence = ClipOccurrence(direction: "w", startTick: 100)
+        snap.playerDirection = "e"
+        snap.tick = 106 // late first render: third of three 20-fps frames
+        let renderer = WorldRenderer()
+        let library = SpriteLibrary()
+        renderer.render(snap)
+        let node = try #require(renderer.root.childNode(withName: "//sprite-player") as? SKSpriteNode)
+        func pixels(_ texture: SKTexture?) throws -> Data {
+            let image = try #require(texture)
+            return try #require(UIImage(cgImage: image.cgImage()).pngData())
+        }
+        let last = try pixels(library.lastTexture(clipId: "player_hurt", direction: "w"))
+        #expect(try pixels(node.texture) == last)
+        #expect(!node.hasActions())
+        snap.playerDirection = "n"
+        renderer.render(snap) // same tick models a paused/repeated render
+        #expect(try pixels(node.texture) == last)
+        snap.playerReactionOccurrence = ClipOccurrence(direction: "w", startTick: 106)
+        renderer.render(snap)
+        #expect(try pixels(node.texture) == pixels(library.firstTexture(clipId: "player_hurt", direction: "w")))
+        renderer.render(snap, reducedMotion: true)
+        #expect(try pixels(node.texture) == last)
+        snap.playerReactionClipId = "missing_reaction"
+        renderer.render(snap)
+        #expect(try pixels(node.texture) == pixels(library.firstTexture(clipId: snap.playerClipId, direction: "n")))
+        snap.playerReactionClipId = nil
+        snap.playerReactionOccurrence = nil
+        renderer.render(snap)
+        #expect(node.hasActions())
+    }
+
     @Test func cameraDamageNotchesPersistAndClearWithIntegrity() throws {
         var snapshot = PresentationSnapshot(try Simulation.make(seed: 1).state)
         let camera = try #require(snapshot.cameras.first)

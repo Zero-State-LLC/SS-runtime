@@ -47,6 +47,15 @@ final class SpriteLibrary {
         return texture(named: last)
     }
 
+    /// Event-driven one-shots sample the same tick phase as their lifetime tracker.
+    func texture(clipId: String, direction: String?, elapsedTicks: UInt64, reducedMotion: Bool) -> SKTexture? {
+        guard let paths = frames.deliveredFrames(clipId: clipId, direction: direction),
+              let timing = frames.timing(clipId: clipId, direction: direction),
+              timing.frameUnits.count == paths.count else { return nil }
+        let index = reducedMotion ? paths.count - 1 : timing.frameIndex(atTickOffset: elapsedTicks)
+        return texture(named: paths[index])
+    }
+
     /// A repeating or one-shot animation for a clip, at its authored frame rate.
     func animation(clipId: String, direction: String? = nil) -> SKAction? {
         let key = "\(clipId)|\(direction ?? "-")"

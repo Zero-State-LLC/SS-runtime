@@ -15,6 +15,21 @@ struct CommitClipTests {
         return body
     }
 
+    @Test func reusedSnapshotRestoresMissingBaseWhenCommitExpires() throws {
+        var tracker = try ReactionClipTracker.bundled()
+        let role = ArchetypeID.fogAnalyticsCloud
+        tracker.ingest(R.result(200, []),
+            previousEnemies: [Self.enemy(3, role, .telegraph)],
+            currentEnemies: [Self.enemy(3, role, .cooldown)])
+        var snap = try R.snapshot(tick: 200, enemies: [R.sprite(3, role, clip: nil)])
+        tracker.apply(to: &snap)
+        #expect(snap.enemies[0].clipId == "fogAnalyticsCloud_commit")
+        snap.tick = 210
+        tracker.apply(to: &snap)
+        #expect(snap.enemies[0].clipId == nil)
+        #expect(snap.enemies[0].heldClipOccurrence == nil)
+    }
+
     static func presented(_ tracker: ReactionClipTracker, tick: UInt64, id: UInt64, _ archetype: ArchetypeID, base: String) throws -> String? {
         var snap = try R.snapshot(tick: tick, enemies: [R.sprite(id, archetype, clip: base)])
         tracker.apply(to: &snap)

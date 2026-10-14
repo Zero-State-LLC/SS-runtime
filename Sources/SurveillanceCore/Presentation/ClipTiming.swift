@@ -45,3 +45,33 @@ public struct ClipTiming: Equatable, Sendable {
         return UInt64(whole) + (product.partialValue % unitsPerSecond == 0 ? 0 : 1)
     }
 }
+
+/// Identity and facing of one event-driven presentation occurrence.
+public struct ClipOccurrence: Equatable, Sendable {
+    public let direction: String
+    public let startTick: UInt64
+    public init(direction: String, startTick: UInt64) {
+        self.direction = direction
+        self.startTick = startTick
+    }
+    public func elapsedTicks(at tick: UInt64) -> UInt64 {
+        tick >= startTick ? tick - startTick : 0
+    }
+}
+
+extension ClipTiming {
+    /// Exact frame selection at 60 Hz; completed one-shots retain their last pose.
+    /// Full-width products avoid overflow even for a very late render.
+    public func frameIndex(atTickOffset offset: UInt64) -> Int {
+        let elapsed = offset.multipliedFullWidth(by: UInt64(unitsPerSecond))
+        var boundary: UInt64 = 0
+        for (index, units) in frameUnits.enumerated() {
+            boundary += UInt64(units) // construction already checked the total
+            let end = boundary.multipliedFullWidth(by: 60)
+            if elapsed.high < end.high || (elapsed.high == end.high && elapsed.low < end.low) {
+                return index
+            }
+        }
+        return frameUnits.count - 1
+    }
+}

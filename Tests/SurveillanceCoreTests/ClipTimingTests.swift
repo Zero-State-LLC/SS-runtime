@@ -2,6 +2,16 @@ import Testing
 @testable import SurveillanceCore
 
 struct ClipTimingTests {
+    @Test func elapsedTicksSelectExactFrameBoundariesWithoutOverflow() throws {
+        let timing = try ClipTiming(unitsPerSecond: 24, frameUnits: [1, 2, 1, 2])
+        for (tick, expected) in [(UInt64(0),0),(2,0),(3,1),(7,1),(8,2),(9,2),(10,3),(15,3),(.max,3)] {
+            #expect(timing.frameIndex(atTickOffset: tick) == expected)
+        }
+        let huge = try ClipTiming(unitsPerSecond: Int.max, frameUnits: [1, Int.max - 1])
+        #expect(huge.frameIndex(atTickOffset: 0) == 0)
+        #expect(huge.frameIndex(atTickOffset: .max) == 1)
+    }
+
     @Test func exactMigrationVectors() throws {
         let ordinary = try ClipTiming(unitsPerSecond: 32, frameUnits: Array(repeating: 1, count: 16))
         #expect(try ordinary.durationTicks(at: 60) == 30)

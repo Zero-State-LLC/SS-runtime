@@ -113,7 +113,8 @@ final class GameSession {
         if let command, simulation.state.tick == tick {
             commandLog.append(command)
         }
-        reactions.ingest(result, previousEnemies: enemiesBefore, currentEnemies: simulation.state.enemies)
+        reactions.ingest(result, previousEnemies: enemiesBefore, currentEnemies: simulation.state.enemies,
+                         playerDirection: ClipFrameLibrary.direction(forFacing: simulation.state.player.facing))
         applyCameraHUD(result)
         lastHeatReinforcements = HeatCaptionProjector.reinforcements(
             events: result.events,
