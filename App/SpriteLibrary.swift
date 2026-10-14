@@ -39,6 +39,14 @@ final class SpriteLibrary {
         return texture(named: first)
     }
 
+    /// Settled appearance from the authored terminal frame, without replaying motion.
+    func lastTexture(clipId: String, direction: String? = nil) -> SKTexture? {
+        guard let paths = frames.deliveredFrames(clipId: clipId, direction: direction),
+              let last = paths.last
+        else { return nil }
+        return texture(named: last)
+    }
+
     /// A repeating or one-shot animation for a clip, at its authored frame rate.
     func animation(clipId: String, direction: String? = nil) -> SKAction? {
         let key = "\(clipId)|\(direction ?? "-")"

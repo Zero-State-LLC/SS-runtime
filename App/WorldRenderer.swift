@@ -214,7 +214,7 @@ final class WorldRenderer {
         renderFog(snap, reducedMotion: reducedMotion)
         renderSolids(snap)
         renderExtraction(snap)
-        renderCameras(snap)
+        renderCameras(snap, reducedMotion: reducedMotion)
         renderTelegraphs(snap)
         renderMines(snap)
         renderSpawnSockets(snap)
@@ -639,7 +639,45 @@ final class WorldRenderer {
         return path
     }
 
-    private func renderCameras(_ snap: PresentationSnapshot) {
+    /// BP-004: lifetime belongs to the integrity transition, not its one-tick event.
+    /// Repeated snapshots cannot cancel destruction or restart a hit response.
+    private func playCamera(_ camera: PresentationSnapshot.CameraSprite, reducedMotion: Bool) -> Bool {
+        let persistent = CameraPresentation.persistentState(integrity: camera.integrity)
+        let settledClip = CameraPresentation.clipId(for: persistent)
+        let transitionClip = camera.integrity <= 0 ? "camera_destroy" : settledClip
+        guard sprites.isBacked(clipId: transitionClip),
+              let settledTexture = sprites.lastTexture(clipId: settledClip)
+        else { return false }
+        let key = "camera-\(camera.id.raw)"
+        guard let sprite = node(.actors, "sprite-\(key)", make: { SKSpriteNode() }) as? SKSpriteNode
+        else { return false }
+        sprite.size = CGSize(width: 64, height: 96)
+        sprite.anchorPoint = sprites.anchorPoint(clipId: settledClip, boxHeight: 96, boxWidth: 64)
+        sprite.position = CGPoint(x: camera.x, y: camera.y)
+        let token = "camera|\(camera.integrity)|\(reducedMotion)"
+        guard activeClips[key] != token else { return true }
+        activeClips[key] = token
+        sprite.removeAllActions()
+        if reducedMotion {
+            sprite.texture = settledTexture
+        } else {
+            sprite.texture = sprites.firstTexture(clipId: transitionClip)
+            if let animation = sprites.animation(clipId: transitionClip) {
+                // Operational loops indefinitely. All damage responses finish on
+                // the latest integrity's settled picture; cancellation removes
+                // the entire old sequence when a newer integrity arrives.
+                let action = camera.integrity == 3 ? animation : SKAction.sequence([
+                    animation, SKAction.setTexture(settledTexture, resize: false)
+                ])
+                sprite.run(action, withKey: "camera-state")
+            } else {
+                sprite.texture = settledTexture
+            }
+        }
+        return true
+    }
+
+    private func renderCameras(_ snap: PresentationSnapshot, reducedMotion: Bool) {
         beginLayer(.cameraFields)
         beginLayer(.cameraHousings)
         beginLayer(.actors)
@@ -669,16 +707,7 @@ final class WorldRenderer {
                 housing.position = position
             }
 
-            // clip-metadata-001 names the clip; CameraPresentation picked it.
-            let drawn = playClip(
-                camera.clipId,
-                direction: nil,
-                key: key,
-                at: position,
-                boxWidth: 64,
-                boxHeight: 96,
-                layer: .actors
-            )
+            let drawn = playCamera(camera, reducedMotion: reducedMotion)
             if !drawn {
                 let body = node(.actors, key) {
                     let shape = SKShapeNode(circleOfRadius: 12)
