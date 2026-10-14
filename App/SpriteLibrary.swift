@@ -57,11 +57,27 @@ final class SpriteLibrary {
         let textures = paths.compactMap { texture(named: $0) }
         guard textures.count == paths.count, !textures.isEmpty else { return nil }
 
-        let perFrame = 1.0 / Double(max(1, clip.framesPerSecond))
-        let sequence = SKAction.animate(with: textures, timePerFrame: perFrame, resize: false, restore: false)
+        guard let timing = frames.timing(clipId: clipId, direction: direction),
+              timing.frameUnits.count == textures.count else { return nil }
+        guard let sequence = Self.sequence(textures: textures, timing: timing) else { return nil }
         let action = clip.loop ? SKAction.repeatForever(sequence) : sequence
         animations[key] = action
         return action
+    }
+
+    /// Shared renderer boundary for uniform and authored variable holds.
+    static func sequence(textures: [SKTexture], timing: ClipTiming) -> SKAction? {
+        guard textures.count == timing.frameUnits.count, !textures.isEmpty else { return nil }
+        let holds = timing.frameSeconds
+        let sequence: SKAction
+        if Set(timing.frameUnits).count == 1 {
+            sequence = SKAction.animate(with: textures, timePerFrame: holds[0], resize: false, restore: false)
+        } else {
+            sequence = SKAction.sequence(zip(textures, holds).map { texture, hold in
+                SKAction.animate(with: [texture], timePerFrame: hold, resize: false, restore: false)
+            })
+        }
+        return sequence
     }
 
     /// Authored anchor for a clip, as a SpriteKit unit anchor point.

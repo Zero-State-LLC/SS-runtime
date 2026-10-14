@@ -21,6 +21,10 @@ public struct ClipRecord: Equatable, Sendable {
     public var audioCue: String
     public var vfxCue: String
 
+    public func timing(forDirection direction: String) throws -> ClipTiming {
+        try .uniform(frameCount: frameIds(forDirection: direction).count, framesPerSecond: framesPerSecond)
+    }
+
     public var eventType: EventType? {
         ClipCatalog.eventType(forMarker: authoritativeEventMarker)
     }

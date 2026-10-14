@@ -8,6 +8,23 @@ import XCTest
 /// Uses the shipping GameScene/renderer/HUD. Images remain in the test result.
 final class BenchmarkCaptureTests: XCTestCase {
     @MainActor
+    func testExactAndVariableTimingReachSpriteKit() throws {
+        let image = UIGraphicsImageRenderer(size: CGSize(width: 2, height: 2)).image { context in
+            UIColor.white.setFill()
+            context.fill(CGRect(x: 0, y: 0, width: 2, height: 2))
+        }
+        let texture = SKTexture(image: image)
+        let elite = try ClipTiming(unitsPerSecond: 112, frameUnits: Array(repeating: 3, count: 16))
+        let eliteAction = try XCTUnwrap(SpriteLibrary.sequence(textures: Array(repeating: texture, count: 16), timing: elite))
+        // #120: SpriteKit stores this action duration at Float precision.
+        XCTAssertEqual(eliteAction.duration, Double(Float(3.0 / 7.0)))
+        let variable = try ClipTiming(unitsPerSecond: 24, frameUnits: [1, 2, 1, 2])
+        let variableAction = try XCTUnwrap(SpriteLibrary.sequence(textures: Array(repeating: texture, count: 4), timing: variable))
+        XCTAssertEqual(variableAction.duration, 0.25)
+        XCTAssertNil(SpriteLibrary.sequence(textures: [texture], timing: variable))
+    }
+
+    @MainActor
     func testCaptureCurrentRuntimeBaseline() throws {
         let view = SKView(frame: CGRect(x: 0, y: 0, width: 704, height: 326))
         view.isPaused = true

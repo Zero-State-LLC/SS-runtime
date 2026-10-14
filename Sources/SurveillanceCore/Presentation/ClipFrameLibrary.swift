@@ -114,6 +114,12 @@ public struct ClipFrameLibrary: Sendable {
         return paths
     }
 
+    public func timing(clipId: String, direction: String?) -> ClipTiming? {
+        guard let clip = clips[clipId] else { return nil }
+        return try? .uniform(frameCount: frameIds(clipId: clipId, direction: direction).count,
+                             framesPerSecond: clip.framesPerSecond)
+    }
+
     public func isBacked(clipId: String, direction: String? = nil) -> Bool {
         deliveredFrames(clipId: clipId, direction: direction) != nil
     }

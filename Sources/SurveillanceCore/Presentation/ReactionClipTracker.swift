@@ -108,9 +108,10 @@ public struct ReactionClipTracker: Sendable {
 
     /// Ticks one direction of `clip` plays for: frames ÷ fps at 60 Hz, rounded up.
     public static func durationTicks(_ clip: ClipRecord) -> UInt64 {
-        guard clip.framesPerSecond > 0 else { return 0 }
-        let perDirection = clip.directions.isEmpty ? clip.frameIds.count : clip.frameIds.count / clip.directions.count
-        return UInt64((perDirection * 60 + clip.framesPerSecond - 1) / clip.framesPerSecond)
+        // V1 requires equal counts and uniform fps for all facings.
+        guard let timing = try? clip.timing(forDirection: clip.directions.first ?? "none"),
+              let ticks = try? timing.durationTicks(at: 60) else { return 0 }
+        return ticks
     }
 
     /// Records the reactions `result`'s events call for.
