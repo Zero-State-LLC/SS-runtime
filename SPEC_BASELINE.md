@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `56a5a5da1d87491d23df86731cc01a5acd868d26` |
+| Specification commit | `679328f459b58f5027c32eb78bbc4a08f1c2a15d` |
 | Ruleset | `ss-rules-008` |
 | Content | `civic-seam-content-006` |
 | Arena | `civic-seam-arena-004` |
@@ -44,3 +44,5 @@ BP-009 adoption: occlusion must preserve Player ground position and solid-bounda
 BP-003 target-schema adoption: clip-metadata-002.schema.json and mechanical conversion checks define the next decoder target. Active metadata, animation version, frame IDs and gameplay identities remain v1/current. No v2 delivery or new art is admitted.
 
 BP-003 event-facing adoption: one-shot occurrences carry event-facing/start tick, select exact lifetime and tick-sampled frames, preserve live-state fallback and expire without extension. Core and simulator evidence: docs/review/reaction-occurrence/review.md. Visual turning acceptance and active v2 delivery migration remain open.
+
+BP-002 controlled-source pilot adoption: editable character rig and measured contact/limb continuity experiment, followed by benchmark costume/facing and renderer gates. A rig scaffold is not admitted art; production resources and gameplay identities stay unchanged.
