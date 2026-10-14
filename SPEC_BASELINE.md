@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `790676242b0761e6d4c9a3f78af6768fc0a41693` |
+| Specification commit | `6cd3fdc03b1234b3780e8cdc0061b2aa8eb8de83` |
 | Ruleset | `ss-rules-008` |
 | Content | `civic-seam-content-006` |
 | Arena | `civic-seam-arena-004` |
@@ -28,3 +28,5 @@ D-103 candidate adoption: combat-causality.md, T1030–T1034, CC-001–CC-007. R
 T1035 / CC-008 phase-3 adoption: weapon/upgrade presentation and protected SwiftUI choice overlay. Presentation evidence stays outside authoritative state; no ruleset, content, arena, event or fixture identity change. Art/device acceptance remains open.
 
 D-104 / BP-001–BP-006 candidate adoption: shared benchmark production contract, T1042–T1046. The exact spec pin now includes source/frame delivery, named 16-frame locomotion scope, persistent Camera states, geometry evidence and staged asset migration. This pin adoption does not declare existing art compliant. Ruleset/content/arena/clip/fixture identities remain unchanged until accepted production assets require a presentation migration. Open runtime gaps and evidence are recorded in `docs/review/D104.md`; spec PR #62 must land before the dependent runtime PR.
+
+BP-007 candidate adoption adds resolution/framing comparisons and explicit ground registration evidence. Gameplay identities and contract/fixture payloads remain unchanged. The reviewed composition remains a test fixture, not admitted production art.
