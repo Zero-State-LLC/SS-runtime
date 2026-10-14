@@ -234,6 +234,17 @@ final class GameScene: SKScene {
     private let deviceRunTracker = DeviceRunTracker()
     private var terminalEvidenceStored = false
     private let renderer = WorldRenderer()
+#if DEBUG
+    /// Composition fixture only: no mutation of the simulation or collision map.
+    func renderBenchmark(snapshot: PresentationSnapshot, art: BenchmarkReviewArt, center: CGPoint) {
+        renderer.installBenchmarkArt(art)
+        renderer.render(snapshot, reducedMotion: true)
+        cameraNode.position = center
+        introOverlay.node.isHidden = true
+        hud.render(snapshot, cameraHUD: session.cameraHUDProjection, paused: false)
+    }
+#endif
+
     /// D-088: effects, hit-stop, and shake. Presentation only.
     private let vfx = VFXRenderer()
     private let cameraNode = SKCameraNode()

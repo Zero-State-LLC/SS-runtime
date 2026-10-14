@@ -58,6 +58,14 @@ final class WorldRenderer {
     }
 
     let root = SKNode()
+    private var reviewArt: BenchmarkReviewArt?
+#if DEBUG
+    func installBenchmarkArt(_ art: BenchmarkReviewArt) {
+        reset()
+        reviewArt = art
+    }
+#endif
+
     /// Admitted clip frames. Empty until assets are admitted, in which case
     /// every actor keeps its authored blockout.
     private let sprites = SpriteLibrary()
@@ -128,6 +136,15 @@ final class WorldRenderer {
         boxHeight: CGFloat,
         layer: Layer
     ) -> Bool {
+        if key == "player", let art = reviewArt {
+            let sprite = node(layer, "sprite-\(key)") { SKSpriteNode() } as! SKSpriteNode
+            sprite.texture = art.player
+            sprite.size = CGSize(width: 64, height: 64)
+            sprite.anchorPoint = CGPoint(x: 0.5, y: 0.125)
+            sprite.position = position
+            sprite.removeAllActions()
+            return true
+        }
         guard sprites.isBacked(clipId: clipId, direction: direction) else { return false }
         let node = node(layer, "sprite-\(key)") { () -> SKSpriteNode in
             SKSpriteNode()
@@ -211,7 +228,7 @@ final class WorldRenderer {
         self.ghost = ghost
         renderGround(snap)
         renderDecorations(snap)
-        renderFog(snap, reducedMotion: reducedMotion)
+        if reviewArt == nil { renderFog(snap, reducedMotion: reducedMotion) }
         renderSolids(snap)
         renderExtraction(snap)
         renderCameras(snap, reducedMotion: reducedMotion)
@@ -248,7 +265,7 @@ final class WorldRenderer {
             while x < minX + width {
                 let centre = CGPoint(x: x + tile / 2, y: y + tile / 2)
                 let assetId = groundAssetId(at: centre, zones: snap.zones)
-                if let texture = environment.texture(assetId: assetId) {
+                if let texture = reviewArt?.paving ?? environment.texture(assetId: assetId) {
                     let node = SKSpriteNode(texture: texture, size: CGSize(width: tile, height: tile))
                     node.position = centre
                     // civic-seam-001 §5b: identical tiles read as an identical
@@ -263,9 +280,11 @@ final class WorldRenderer {
                     // Real paving changes at a kerb, so the zone boundary reads
                     // as a civic detail rather than as an artifact of
                     // rectangular zones.
-                    addSurfaceTransition(
-                        around: centre, assetId: assetId, tile: tile, snap: snap, layer: layer
-                    )
+                    if reviewArt == nil {
+                        addSurfaceTransition(
+                            around: centre, assetId: assetId, tile: tile, snap: snap, layer: layer
+                        )
+                    }
                 }
                 x += tile
             }
@@ -441,6 +460,17 @@ final class WorldRenderer {
     /// this only has to draw what it is told.
     private func renderDecorations(_ snap: PresentationSnapshot) {
         guard !decorationsBuilt, let layer = layers[.decorations] else { return }
+        if let reviewArt {
+            for (index, prop) in reviewArt.props.enumerated() {
+                let sprite = SKSpriteNode(texture: prop.texture, size: prop.size)
+                sprite.name = "benchmark-prop-\(index)"
+                sprite.anchorPoint = prop.anchor
+                sprite.position = prop.position
+                layer.addChild(sprite)
+            }
+            decorationsBuilt = true
+            return
+        }
         var drew = false
         for decoration in snap.decorations {
             guard let texture = environment.texture(assetId: decoration.assetId) else { continue }
@@ -509,6 +539,15 @@ final class WorldRenderer {
                 continue
             }
 
+            if let reviewArt, id == reviewArt.buildingID {
+                let placement = reviewArt.building
+                let sprite = SKSpriteNode(texture: placement.texture, size: placement.size)
+                sprite.name = "benchmark-building"
+                sprite.anchorPoint = placement.anchor
+                sprite.position = placement.position
+                layer?.addChild(sprite)
+                continue
+            }
             let size = CGSize(
                 width: CGFloat(solid.halfSize.x * 2),
                 height: CGFloat(solid.halfSize.y * 2)
@@ -642,6 +681,22 @@ final class WorldRenderer {
     /// BP-004: lifetime belongs to the integrity transition, not its one-tick event.
     /// Repeated snapshots cannot cancel destruction or restart a hit response.
     private func playCamera(_ camera: PresentationSnapshot.CameraSprite, reducedMotion: Bool) -> Bool {
+        if let reviewArt {
+            let contact = node(.cameraHousings, "benchmark-camera-contact-\(camera.id.raw)") {
+                let shape = SKShapeNode(ellipseOf: CGSize(width: 22, height: 7))
+                shape.fillColor = SKColor(white: 0, alpha: 0.24)
+                shape.strokeColor = .clear
+                return shape
+            }
+            contact.position = CGPoint(x: camera.x, y: camera.y - 2)
+            let sprite = node(.actors, "sprite-camera-\(camera.id.raw)") { SKSpriteNode() } as! SKSpriteNode
+            sprite.texture = reviewArt.camera
+            sprite.size = CGSize(width: 64, height: 96)
+            sprite.anchorPoint = CGPoint(x: 0.5, y: 1 - 88.0 / 96.0)
+            sprite.position = CGPoint(x: camera.x, y: camera.y)
+            sprite.removeAllActions()
+            return true
+        }
         let persistent = CameraPresentation.persistentState(integrity: camera.integrity)
         let settledClip = CameraPresentation.clipId(for: persistent)
         let transitionClip = camera.integrity <= 0 ? "camera_destroy" : settledClip
@@ -696,7 +751,7 @@ final class WorldRenderer {
             //
             // A destroyed Camera keeps its housing, matching T411 keeping the
             // mount footprint: the pole is still standing, the head is wrecked.
-            if let family = camera.housingFamily,
+            if reviewArt == nil, let family = camera.housingFamily,
                let texture = environment.cameraTexture(for: family)
             {
                 let housing = node(.cameraHousings, "housing-\(camera.id.raw)") {
