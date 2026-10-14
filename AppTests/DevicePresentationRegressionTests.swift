@@ -153,4 +153,22 @@ struct DevicePresentationRegressionTests {
         #expect(observed.droppedDamageDiagnostics == 0)
     }
 
+    @Test func pausingFreezesWorldActionsWithoutAdvancingTicks() throws {
+        let view = SKView(frame: CGRect(x: 0, y: 0, width: 844, height: 390))
+        view.isPaused = true
+        let scene = GameScene(size: view.bounds.size)
+        view.presentScene(scene)
+        defer { view.presentScene(nil) }
+        let sprite = try #require(scene.childNode(withName: "//sprite-player"))
+        var world = sprite
+        while let parent = world.parent, parent !== scene { world = parent }
+        scene.setPaused(true)
+        let tick = scene.currentTick
+        scene.update(1)
+        #expect(world.isPaused)
+        #expect(scene.currentTick == tick)
+        scene.setPaused(false)
+        #expect(!world.isPaused)
+    }
+
 }

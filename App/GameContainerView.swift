@@ -26,7 +26,7 @@ struct GameContainerView: View {
         return false
 #endif
     }
-    private let scene: GameScene = {
+    @State private var scene: GameScene = {
         let scene = GameScene()
         scene.scaleMode = .resizeFill
         return scene

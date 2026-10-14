@@ -515,10 +515,9 @@ final class WorldRenderer {
             )
             let position = CGPoint(x: solid.center.x, y: solid.center.y)
 
-            // visual-assets-001 §3a: art is optional, and an unbacked solid
-            // keeps its authored blockout. The art is sized to the collision
-            // box exactly, so a player is never blocked by something that looks
-            // passable or walks through something that looks solid.
+            // visual-assets-001 §3a and §6: optional art sits on a readable
+            // solid foundation. Canvas dimensions alone do not prove that a
+            // texture's transparent margins represent a visible obstacle.
             // Transparent padding in delivered art is not walkable space.
             // A visible foundation expresses the entire authoritative footprint.
             let foundation = SKShapeNode(rectOf: size)
@@ -532,13 +531,6 @@ final class WorldRenderer {
             if let id, let texture = environment.solidTexture(solidId: id) {
                 let node = SKSpriteNode(texture: texture, size: size)
                 node.position = position
-                layer?.addChild(node)
-            } else {
-                let node = SKShapeNode(rectOf: size)
-                node.position = position
-                node.fillColor = Palette.solidFill
-                node.strokeColor = Palette.solidStroke
-                node.lineWidth = 2
                 layer?.addChild(node)
             }
         }
@@ -701,8 +693,10 @@ final class WorldRenderer {
             let fieldKey = "field-\(camera.id.raw)"
             let field = node(.cameraFields, fieldKey) { SKShapeNode() }
             if let shape = field as? SKShapeNode {
-                let path = cameraFieldPath(camera, solids: snap.solids, key: fieldKey)
-                if shape.path !== path { shape.path = path }
+                let geometry = CameraFieldGeometry.Key(camera: camera, solids: snap.solids)
+                if cameraPaths[fieldKey]?.0 != geometry || shape.path == nil {
+                    shape.path = cameraFieldPath(camera, solids: snap.solids, key: fieldKey)
+                }
                 shape.position = .zero
                 shape.fillColor = camera.detecting ? Palette.cameraFieldDetecting : Palette.cameraField
                 shape.strokeColor = .clear
@@ -723,8 +717,10 @@ final class WorldRenderer {
         if let field = snap.captainField {
             let node = node(.cameraFields, "captain-field") { SKShapeNode() }
             if let shape = node as? SKShapeNode {
-                let path = cameraFieldPath(field, solids: snap.solids, key: "captain-field")
-                if shape.path !== path { shape.path = path }
+                let geometry = CameraFieldGeometry.Key(camera: field, solids: snap.solids)
+                if cameraPaths["captain-field"]?.0 != geometry || shape.path == nil {
+                    shape.path = cameraFieldPath(field, solids: snap.solids, key: "captain-field")
+                }
                 shape.position = .zero
                 shape.fillColor = Palette.captainField
                 shape.strokeColor = .clear

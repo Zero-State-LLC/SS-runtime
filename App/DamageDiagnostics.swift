@@ -23,6 +23,7 @@ struct DamageDiagnostic: Codable, Equatable {
     let playerRadius: Int
     let candidates: [Source]
     let classification: String
+    let warningsBefore: [String]
 
     static func capture(before: WorldState, after: WorldState, events: [AuthoritativeEvent]) -> [Self] {
         events.filter { $0.type == .playerDamaged }.map { event in
@@ -38,7 +39,7 @@ struct DamageDiagnostic: Codable, Equatable {
                 ?? before.enemies.first(where: { $0.id == id }) {
                 sources.append(Source(id: enemy.id.raw, kind: "enemy:\(enemy.archetype.rawValue)",
                                       position: Point(enemy.position), radius: enemy.radius,
-                                      state: String(describing: enemy.state)))
+                                      state: "before=\(String(describing: before.enemies.first { $0.id == id }?.state)); after=\(enemy.state)"))
             }
             // The authoritative event attributes mine damage to its owner.
             // Keep removed mines as candidates; do not falsely label the owner as contact.
@@ -51,7 +52,10 @@ struct DamageDiagnostic: Codable, Equatable {
             return Self(tick: event.tick, sourceID: id?.raw, amount: amount,
                         playerBefore: Point(before.player.position), playerAfter: Point(after.player.position),
                         playerRadius: PlayerBody.radiusUnits, candidates: sources,
-                        classification: sources.isEmpty ? "unresolved-source" : "source-candidates-not-cause-proof")
+                        classification: sources.isEmpty ? "unresolved-source" : "source-candidates-not-cause-proof",
+                        warningsBefore: PresentationSnapshot(before).telegraphs.map {
+                            "owner=\($0.ownerId.raw); kind=\($0.kind); origin=\($0.x),\($0.y); heading=\($0.headingMilli); range=\($0.rangeUnits); halfAngle=\($0.halfAngleMilli); width=\($0.widthUnits); remaining=\($0.remainingTicks)"
+                        })
         }
     }
 }
