@@ -30,7 +30,8 @@ struct WeaponUpgradePresentationTests {
         }
         #expect(renderer.discharge.isHidden)
         renderer.reset()
-        #expect(renderer.root.children.allSatisfy(\.isHidden))
+        let allHidden = renderer.root.children.allSatisfy { $0.isHidden }
+        #expect(allHidden)
     }
 
     @Test func upgradeContoursAreDistinctStaticUnderReductionAndClearOnRestart() throws {
@@ -52,7 +53,8 @@ struct WeaponUpgradePresentationTests {
         renderer.update(snap, events: [], settings: reduced)
         #expect(renderer.jammer.isHidden && renderer.concealment.isHidden)
         renderer.reset()
-        #expect(renderer.root.children.allSatisfy(\.isHidden))
+        let allHidden = renderer.root.children.allSatisfy { $0.isHidden }
+        #expect(allHidden)
     }
 
     @Test(arguments: [UInt8(0), 1, 2])
