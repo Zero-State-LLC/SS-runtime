@@ -193,7 +193,7 @@ final class GameSession {
 }
 
 final class GameScene: SKScene {
-    private let session = GameSession()
+    let session = GameSession()
     private let instrumentation = RunInstrumentation()
     private let deviceRunTracker = DeviceRunTracker()
     private var terminalEvidenceStored = false
@@ -209,6 +209,7 @@ final class GameScene: SKScene {
     private let soundEngine = AudioEngine()
     private var controller = TouchController()
     private var projector: HUDProjector?
+    var controlLayout: ControlLayout? { hud.controlLayout }
     /// player-controller-001 PC-008: pause creates no simulation ticks.
     private var runPaused = false
     /// Raised when the player presses Pause; SwiftUI owns the surface itself.
@@ -467,6 +468,8 @@ final class GameScene: SKScene {
         } else {
             applyController()
         }
+#else
+        applyController()
 #endif
         session.step()
         // D-097: the takedown's hit-stop and ring, after the step that made it.
@@ -712,69 +715,64 @@ final class GameScene: SKScene {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let projector else { return }
-        // D-098: any touch skips the intro, and does nothing else.
-        if skipIntroIfRunning() { return }
-        let snap = session.snapshot
-
         for touch in touches {
             guard let point = points(touch) else { continue }
-
-            // Only a finished run restarts, and only from the restart control.
-            //
-            // This was `snap.outcome != .playing`, which is also true while the
-            // upgrade selection is open — so the first tap at the upgrade gate
-            // restarted the entire run and the selection branch below could
-            // never be reached. `isTerminal` excludes that state.
-            //
-            // Requiring the control also ends restart-on-any-touch, which had
-            // no surface telling the player the run was over.
-            if snap.outcome.isTerminal {
-                if hud.terminalRestartHit(atPoints: point, projector: projector) {
-                    restartRun()
-                } else if hud.terminalShareHit(atPoints: point, projector: projector) {
-                    presentShare()
-                }
-                return
-            }
-            // The protected selection takes every touch while it is open.
-            if snap.upgradePending {
-                if let choice = hud.upgradeCardIndex(atPoints: point, projector: projector) {
-                    session.pendingUpgradeChoice = choice
-                }
-                continue
-            }
-            switch controller.began(token: token(touch), atPoints: point, layout: hud.controlLayout ?? .empty) {
-            case .pause:
-                onPauseRequested?()
-            case .stick, .dodge, .none:
-                break
-            }
+            if beginTouch(token: token(touch), atPoints: point) { return }
         }
+    }
+
+    /// The production point-space boundary also exercised by PC-009 tests.
+    /// True consumes the remainder of a touch batch (intro or terminal action).
+    @discardableResult
+    func beginTouch(token: TouchController.TouchToken, atPoints point: CGPoint) -> Bool {
+        guard let projector else { return false }
+        if skipIntroIfRunning() { return true }
+        let snap = session.snapshot
+        if snap.outcome.isTerminal {
+            if hud.terminalRestartHit(atPoints: point, projector: projector) {
+                restartRun()
+            } else if hud.terminalShareHit(atPoints: point, projector: projector) {
+                presentShare()
+            }
+            return true
+        }
+        if snap.upgradePending {
+            if let choice = hud.upgradeCardIndex(atPoints: point, projector: projector) {
+                session.pendingUpgradeChoice = choice
+            }
+            return false
+        }
+        if controller.began(token: token, atPoints: point, layout: hud.controlLayout ?? .empty) == .pause {
+            onPauseRequested?()
+        }
+        return false
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let layout = hud.controlLayout else { return }
         for touch in touches {
             guard let point = points(touch) else { continue }
-            controller.moved(token: token(touch), toPoints: point, layout: layout)
+            moveTouch(token: token(touch), toPoints: point)
         }
+    }
+
+    func moveTouch(token: TouchController.TouchToken, toPoints point: CGPoint) {
+        guard let layout = hud.controlLayout else { return }
+        controller.moved(token: token, toPoints: point, layout: layout)
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            controller.ended(token: token(touch))
-        }
+        for touch in touches { endTouch(token: token(touch)) }
     }
 
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            controller.ended(token: token(touch))
-        }
+        for touch in touches { endTouch(token: token(touch)) }
     }
 
-    /// § 11 Share: the system share sheet with the run card's plain text and
-    /// nothing else — no seed, no receipt, no identifier.
+    func endTouch(token: TouchController.TouchToken) {
+        controller.ended(token: token)
+    }
+
+    /// § 11 Share: the system share sheet contains only the run card copy.
     private func presentShare() {
         guard let text = runCard?.shareText,
               let view,

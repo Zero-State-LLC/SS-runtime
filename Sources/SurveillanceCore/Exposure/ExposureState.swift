@@ -64,7 +64,14 @@ public struct ExposureState: Equatable, Sendable {
         return delta
     }
 
+    public struct Change: Equatable, Sendable {
+        public var before: Int
+        public var after: Int
+        public var reason: ExposureReason
+    }
+
     public struct Resolution: Equatable, Sendable {
+        public var changes: [Change]
         public var contactDelta: Int
         public var tamperApplied: Int
         public var before: Int
@@ -75,13 +82,15 @@ public struct ExposureState: Equatable, Sendable {
         public var reason: ExposureReason
     }
 
-    /// Phase 13–14: surviving contacts, then ordered Tamper, then state/Lockdown.
+    /// D-102 phases 13–14: all eligible deltas, then one final state/Lockdown.
     public mutating func resolveTick(
         survivingContactCount: Int,
         tamperAmounts: [Int],
         signalJammer: Bool,
         forceLockdown: Bool = false,
-        destroyedCameras: Int = 0
+        destroyedCameras: Int = 0,
+        fogPulseAmounts: [Int] = [],
+        observationPulseAmounts: [Int] = []
     ) -> Resolution {
         let before = exposure
         let stateBefore = detectionState
@@ -126,6 +135,23 @@ public struct ExposureState: Equatable, Sendable {
         }
 
         exposure = min(1000, max(0, exposure))
+        var changes: [Change] = []
+        if exposure != before {
+            changes.append(Change(before: before, after: exposure, reason: reason))
+        }
+        // Observation amounts already carry the boss phase and Signal Jammer
+        // modifiers. Fog's existing modifier applies here exactly once.
+        let namedPulses = fogPulseAmounts.map {
+            (signalJammer ? Int(IntMath.divHalfAway(Int64($0) * 75, 100)) : $0, ExposureReason.fogPulse)
+        } + observationPulseAmounts.map { ($0, ExposureReason.observationPulse) }
+        for (amount, pulseReason) in namedPulses where exposure < 1000 {
+            let pulseBefore = exposure
+            exposure = min(1000, max(0, exposure + amount))
+            if exposure != pulseBefore {
+                reason = pulseReason
+                changes.append(Change(before: pulseBefore, after: exposure, reason: reason))
+            }
+        }
         if exposure > peak { peak = exposure }
 
         var lockdownThisTick = false
@@ -141,6 +167,7 @@ public struct ExposureState: Equatable, Sendable {
         if lockdownEntered { exposure = 1000 }
 
         return Resolution(
+            changes: changes,
             contactDelta: contact,
             tamperApplied: tamper,
             before: before,

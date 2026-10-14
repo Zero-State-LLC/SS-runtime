@@ -17,7 +17,7 @@ struct ReplayTests {
 
     @Test func duplicateCommandTickIsRejected() throws {
         let json = """
-        {"schemaVersion":"runtime-kernel-001","rulesetVersion":"ss-rules-006","contentVersion":"civic-seam-content-006","arenaVersion":"civic-seam-arena-004","seed":1,"commands":[{"tick":1,"moveX":0,"moveY":0,"dodgePressed":false},{"tick":1,"moveX":0,"moveY":0,"dodgePressed":false}]}
+        {"schemaVersion":"runtime-kernel-001","rulesetVersion":"ss-rules-007","contentVersion":"civic-seam-content-006","arenaVersion":"civic-seam-arena-004","seed":1,"commands":[{"tick":1,"moveX":0,"moveY":0,"dodgePressed":false},{"tick":1,"moveX":0,"moveY":0,"dodgePressed":false}]}
         """.data(using: .utf8)!
         let result = ReplayEnvelope.load(json: json)
         guard case .failure(.duplicateCommandTick(1)) = result else {
@@ -49,4 +49,13 @@ struct ReplayTests {
         #expect(sim.state.digest() == initial)
         #expect(sim.state.cameras.allSatisfy { $0.integrity == 3 })
     }
+    @Test func previousRulesetFailsClosedBeforeExecution() throws {
+        let json = String(decoding: SpecBundle.fixture("replay-smoke-001"), as: UTF8.self)
+            .replacingOccurrences(of: ContractVersions.ruleset, with: "ss-rules-006")
+        guard case .failure(.incompatibleIdentity) = ReplayEnvelope.load(json: Data(json.utf8)) else {
+            Issue.record("D-102 must reject a ruleset-006 replay before execution")
+            return
+        }
+    }
+
 }
