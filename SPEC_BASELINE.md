@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `d640197ffc13b051882df5178d18035a4e0898e4` |
+| Specification commit | `c773f960ee8f53ac429828767fcd09f4da0d7cb3` |
 | Ruleset | `ss-rules-008` |
 | Content | `civic-seam-content-006` |
 | Arena | `civic-seam-arena-004` |
@@ -36,3 +36,5 @@ BP-003 timing foundation adoption: exact duration design in animation-timing-mig
 BP-008 adoption: gait/displacement evidence and exact post-collision position sampling for sub-unit locomotion. No controller or digest changes. See docs/review/subunit-locomotion.md.
 
 BP-004 damage marker adoption: persistent world-space damage-stage notches, distinct from HUD remaining integrity. Static Reduced Motion behavior and destruction/removal reconciliation verified. See docs/review/camera-damage-markers/review.md. Camera animation and art acceptance remain open.
+
+BP-005/BP-007 ground-plan clarification adoption: distinguish wall contacts from baked walkable apron; unknown hidden corners cannot be inferred from roof or alpha bounds. No arena, collision or production art change. Study evidence: docs/review/building-wall-study/review.md.
