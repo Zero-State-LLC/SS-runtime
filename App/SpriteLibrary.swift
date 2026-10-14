@@ -18,8 +18,8 @@ final class SpriteLibrary {
 
     let coverage: (backed: Int, total: Int)
 
-    init() {
-        let library = (try? ClipFrameLibrary.bundled())
+    init(frames suppliedFrames: ClipFrameLibrary? = nil) {
+        let library = suppliedFrames ?? (try? ClipFrameLibrary.bundled())
             ?? ClipFrameLibrary(clips: [:], deliveredPaths: [:])
         frames = library
         coverage = library.coverage

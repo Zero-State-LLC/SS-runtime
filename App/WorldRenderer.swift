@@ -68,7 +68,7 @@ final class WorldRenderer {
 
     /// Admitted clip frames. Empty until assets are admitted, in which case
     /// every actor keeps its authored blockout.
-    private let sprites = SpriteLibrary()
+    private let sprites: SpriteLibrary
     private let environment = EnvironmentTextures()
     /// The arena does not move, so the ground is tiled once.
     private var groundBuilt = false
@@ -95,7 +95,8 @@ final class WorldRenderer {
     /// D-094 soft ground shadow, generated once and shared by every actor.
     private lazy var shadowTexture = Self.makeShadowTexture()
 
-    init() {
+    init(sprites: SpriteLibrary? = nil) {
+        self.sprites = sprites ?? SpriteLibrary()
         for layer in Layer.allCases {
             let node = SKNode()
             node.zPosition = CGFloat(layer.rawValue)

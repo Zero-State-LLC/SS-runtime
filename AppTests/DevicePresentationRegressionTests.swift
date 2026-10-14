@@ -7,6 +7,73 @@ import Testing
 @Suite(.serialized)
 @MainActor
 struct DevicePresentationRegressionTests {
+    @Test func v2TimingReachesTrackerAndActualRendererTogether() throws {
+        var root = try JSONSerialization.jsonObject(with: SpecBundle.contract("clip-metadata-001")) as! [String: Any]
+        root["schemaVersion"] = "clip-metadata-002"
+        var clips = root["clips"] as! [[String: Any]]
+        for index in clips.indices {
+            let fps = clips[index].removeValue(forKey: "framesPerSecond") as! Int
+            let ids = clips[index]["frameIds"] as! [String]
+            clips[index]["timing"] = ["unitsPerSecond": fps, "frameUnits": Array(repeating: 1, count: ids.count)]
+            if clips[index]["clipId"] as? String == "player_hurt" {
+                clips[index]["timing"] = ["unitsPerSecond": 60,
+                    "frameUnits": [1,2,3, 2,4,6, 3,6,9, 4,8,12]]
+            }
+        }
+        root["clips"] = clips
+        let data = try JSONSerialization.data(withJSONObject: root)
+        let catalog = try ClipCatalogLoader.decode(data)
+        let frames = try ClipFrameLibrary.make(clipJSON: data, catalog: AssetCatalog.bundled())
+        let renderer = WorldRenderer(sprites: SpriteLibrary(frames: frames))
+        var tracker = ReactionClipTracker(catalog: catalog)
+        let state = try Simulation.make(seed: 1).state
+        func event(_ tick: UInt64) -> TickResult {
+            TickResult(tick: tick, events: [AuthoritativeEvent(tick: tick, phase: 10,
+                type: .playerDamaged, primary: EntityID(1), insertion: 0)], digest: "", outcome: .playing)
+        }
+        func pixels(_ texture: SKTexture?) throws -> Data {
+            let texture = try #require(texture)
+            return try #require(UIImage(cgImage: texture.cgImage()).pngData())
+        }
+        func expected(_ id: String) throws -> Data {
+            let file = try #require(frames.deliveredPaths[id])
+            let url = try #require(RuntimeAssetBundle.url(forFile: file))
+            let image = try #require(UIImage(contentsOfFile: url.path))
+            return try pixels(SKTexture(image: image))
+        }
+        tracker.ingest(event(100), previousEnemies: [], currentEnemies: [], playerDirection: "w")
+        #expect(tracker.playerReaction?.endTick == 124)
+        // First render is late. Independent authored boundaries: w=[4,8,12].
+        for (tick, id) in [(UInt64(104), "actor_player_hurt_w_02"), (111, "actor_player_hurt_w_02"), (112, "actor_player_hurt_w_03")] {
+            var snap = PresentationSnapshot(state)
+            snap.tick = tick; snap.playerDirection = "e"
+            tracker.apply(to: &snap)
+            renderer.render(snap)
+            let node = try #require(renderer.root.childNode(withName: "//sprite-player") as? SKSpriteNode)
+            #expect(try pixels(node.texture) == expected(id))
+            #expect(!node.hasActions())
+            renderer.render(snap) // repeated tick / paused presentation
+            #expect(try pixels(node.texture) == expected(id))
+        }
+        tracker.ingest(event(112), previousEnemies: [], currentEnemies: [], playerDirection: "w")
+        #expect(tracker.playerReaction?.endTick == 136)
+        var snap = PresentationSnapshot(state)
+        snap.tick = 112; snap.playerDirection = "e"
+        tracker.apply(to: &snap)
+        renderer.render(snap)
+        let node = try #require(renderer.root.childNode(withName: "//sprite-player") as? SKSpriteNode)
+        #expect(try pixels(node.texture) == expected("actor_player_hurt_w_01"))
+        renderer.render(snap, reducedMotion: true)
+        #expect(try pixels(node.texture) == expected("actor_player_hurt_w_03"))
+        snap.tick = 136
+        tracker.apply(to: &snap)
+        renderer.render(snap)
+        #expect(snap.playerReactionClipId == nil)
+        #expect(try pixels(node.texture) == pixels(SpriteLibrary().firstTexture(clipId: snap.playerClipId, direction: "e")))
+        renderer.reset()
+        #expect(renderer.root.childNode(withName: "//sprite-player") == nil)
+    }
+
     @Test func reactionPlaybackKeepsEventFacingAndElapsedPhase() throws {
         var snap = PresentationSnapshot(try Simulation.make(seed: 1).state)
         snap.playerReactionClipId = "player_hurt"
