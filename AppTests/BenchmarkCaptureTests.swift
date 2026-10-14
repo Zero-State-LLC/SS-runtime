@@ -283,6 +283,14 @@ final class BenchmarkCaptureTests: XCTestCase {
                     ("near-corner", -130, -130, 32767, 32767),
                     ("far-corner", 130, 130, -32767, -32767)
                 ]
+                // View direction for this candidate is toward decreasing world X/Y.
+                // Intersect that ground ray with the box, then require visual overlap.
+                // This bounded review classifier is not used by the shipping renderer.
+                func isOccluded(_ point: CGPoint) -> Bool {
+                    let enter = max(0, point.x - CGFloat(box.maxX), point.y - CGFloat(box.maxY))
+                    let leave = min(point.x - CGFloat(box.minX), point.y - CGFloat(box.minY))
+                    return leave > enter && player.frame.intersects(building.frame)
+                }
                 let playerStart = player.position
                 let shadow = scene.childNode(withName: "//shadow-player")
                 let shadowStart = shadow?.position
@@ -316,9 +324,9 @@ final class BenchmarkCaptureTests: XCTestCase {
                     footprintRoot.isHidden = false
                     try capture("BP005-contact-\(label)-geometry")
                     radius.removeFromParent()
-                    if ["east", "north", "far-corner"].contains(label) {
-                        // Deliberately selected rear contacts compare treatments;
-                        // this is not a general-purpose occlusion classifier.
+                    let occluded = isOccluded(point)
+                    XCTAssertEqual(occluded, ["east", "north", "far-corner"].contains(label))
+                    if occluded {
                         let priorZ = player.zPosition
                         let shadowWasHidden = shadow?.isHidden
                         player.zPosition = building.zPosition - 0.1
@@ -347,6 +355,10 @@ final class BenchmarkCaptureTests: XCTestCase {
                         XCTAssertFalse(contactBacking.hasActions())
                         XCTAssertFalse(contactRing.hasActions())
                         try capture("BP009-ground-cue-\(label)")
+                        footprint.strokeColor = SKColor(white: 0.18, alpha: 0.8)
+                        footprint.lineWidth = 1
+                        footprint.fillColor = SKColor(white: 0.08, alpha: 0.22)
+                        try capture("BP009-muted-ground-cue-\(label)")
                         contactBacking.removeFromParent()
                         footprintRoot.isHidden = true
                         footprint.strokeColor = .magenta
@@ -356,6 +368,48 @@ final class BenchmarkCaptureTests: XCTestCase {
                         if let shadowWasHidden { shadow?.isHidden = shadowWasHidden }
                     }
                 }
+                // Continuous solver movement around all four sides, with automatic
+                // treatment entry/exit. Sample every ten ticks for review playback.
+                let normalZ = player.zPosition
+                var position = VecI(x: x - 100, y: y - 100).asQ8
+                let start = position
+                var previousOccluded = false, changes = 0, tick = 0
+                let contact = SKShapeNode(circleOfRadius: CGFloat(PlayerBody.radiusUnits))
+                contact.fillColor = .clear; contact.strokeColor = SKColor(white: 0.9, alpha: 1)
+                contact.lineWidth = 1.25
+                footprintTranslation.addChild(contact)
+                footprint.strokeColor = SKColor(white: 0.18, alpha: 0.8)
+                footprint.lineWidth = 1; footprint.fillColor = SKColor(white: 0.08, alpha: 0.22)
+                for (mx, my) in [(Int16(32767), Int16(0)), (0, 32767), (-32767, 0), (0, -32767)] {
+                    for _ in 0..<50 {
+                        tick += 1
+                        let command = PlayerCommand(tick: UInt64(tick), moveX: mx, moveY: my, dodgePressed: false)
+                        position = Collision.slideCircle(from: position,
+                            delta: Movement.displacement(from: command, dodgeActive: false, ghostStep: false),
+                            radius: PlayerBody.radiusUnits,
+                            bounds: AABB(center: box.center, halfSize: VecI(x: 512, y: 512)), solids: [(id: id, box: box)])
+                        XCTAssertFalse(Circle(center: position, radiusUnits: PlayerBody.radiusUnits).penetrates(box))
+                        let point = CGPoint(x: CGFloat(position.x.raw) / CGFloat(Q8.scale), y: CGFloat(position.y.raw) / CGFloat(Q8.scale))
+                        player.position = projected(point)
+                        let occluded = isOccluded(point)
+                        if previousOccluded != occluded { changes += 1 }
+                        previousOccluded = occluded
+                        building.alpha = occluded ? 0.35 : 1
+                        player.zPosition = occluded ? building.zPosition - 0.1 : normalZ
+                        footprintRoot.isHidden = !occluded; contact.position = point
+                        shadow?.isHidden = occluded
+                        if let shadowStart { shadow?.position = CGPoint(x: point.x + shadowStart.x - CGFloat(snap.player.x), y: point.y + shadowStart.y - CGFloat(snap.player.y)) }
+                        evidence.append("perimeter,\(tick),\(position.x.raw),\(position.y.raw),occluded=\(occluded)")
+                        if tick % 10 == 0 { try capture("BP009-perimeter-\(tick)") }
+                    }
+                }
+                XCTAssertEqual(position, start)
+                XCTAssertEqual(changes, 2)
+                XCTAssertFalse(previousOccluded)
+                XCTAssertEqual(building.alpha, 1)
+                contact.removeFromParent(); footprintRoot.isHidden = true
+                footprint.strokeColor = .magenta; footprint.lineWidth = 1; footprint.fillColor = .clear
+                shadow?.isHidden = false
                 player.position = playerStart
                 if let shadowStart { shadow?.position = shadowStart }
                 let probeRecord = XCTAttachment(string: evidence.joined(separator: "\n"))
