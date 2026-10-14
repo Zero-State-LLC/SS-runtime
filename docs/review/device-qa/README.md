@@ -19,8 +19,8 @@ Spec: `2377b99c6b6d1654e2cb976ee1b7e07b75c77e1a`. No gameplay, content, arena, o
 
 - Baseline user playtest: FAIL (immediate stutter/jumps and rendering defects).
 - [Baseline profile](baseline.md): renderer and name lookup dominate; outline generation is not the primary observed cost.
-- Candidate automated checks: in progress.
-- Candidate physical playtest: pending.
+- Candidate core checks: 740 tests across 104 suites passed (528.067 seconds). Debug/Release app CI still running.
+- Candidate physical playtest: FAIL. User reports broken camera and character animation, jumbled/unrecognizable assets, collision problems, and suspected hit-detection problems. See candidate-findings.md.
 - C-003 p95 <=16.67 ms remains unproven. The connected iPhone 17 Pro is not the baseline iPhone 12; report actual hardware rather than relabel it.
 
 No release or full-QA pass is claimed. Further animation/clipping symptoms require reproduction on the candidate; issues remain open until verified.
