@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `679328f459b58f5027c32eb78bbc4a08f1c2a15d` |
+| Specification commit | `439739ea146af57ecc10762d1d55b1fe66331efd` |
 | Ruleset | `ss-rules-008` |
 | Content | `civic-seam-content-006` |
 | Arena | `civic-seam-arena-004` |
@@ -46,3 +46,5 @@ BP-003 target-schema adoption: clip-metadata-002.schema.json and mechanical conv
 BP-003 event-facing adoption: one-shot occurrences carry event-facing/start tick, select exact lifetime and tick-sampled frames, preserve live-state fallback and expire without extension. Core and simulator evidence: docs/review/reaction-occurrence/review.md. Visual turning acceptance and active v2 delivery migration remain open.
 
 BP-002 controlled-source pilot adoption: editable character rig and measured contact/limb continuity experiment, followed by benchmark costume/facing and renderer gates. A rig scaffold is not admitted art; production resources and gameplay identities stay unchanged.
+
+BP-007 high-resolution outline clarification adoption: explicit source-pixel/logical-mask separation, constant equal-framing faction treatment, post-action frame correctness and bounded allocation/cache evidence. Runtime #124 remains open; pin adoption alone does not fix or accept 384px production assets.
