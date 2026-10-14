@@ -83,9 +83,6 @@ final class HUDRenderer {
         if !snap.outcome.isTerminal { drawAwarenessHint(projector) }
         drawCaptions(projector)
         drawControls(snap, projector, paused: paused)
-        if snap.upgradePending {
-            drawUpgradeSelection(projector)
-        }
         drawTerminal(snap, projector)
 
         sweep()
@@ -692,39 +689,6 @@ final class HUDRenderer {
     /// `run-shell.md` § 11: the run card, set once the run is terminal.
     var runCard: RunCard?
 
-    /// Card geometry in safe-rectangle point space — the single source the
-    /// drawing, the hit test, and any synthetic tap all read. Computing it
-    /// twice is how a card ends up drawn somewhere it cannot be pressed.
-    static let upgradeCardSize = CGSize(width: 200, height: 130)
-    static let upgradeCardGap: CGFloat = 24
-
-    func upgradeCardRects(projector: HUDProjector) -> [(upgrade: UpgradeID, rect: CGRect)] {
-        let cards = UpgradePresentation.selectionCards()
-        let width = Self.upgradeCardSize.width
-        let height = Self.upgradeCardSize.height
-        let gap = Self.upgradeCardGap
-        let total = width * CGFloat(cards.count) + gap * CGFloat(cards.count - 1)
-        let originX = CGFloat(projector.safeWidth) / 2 - total / 2
-        let centreY = CGFloat(projector.safeHeight) / 2
-        return cards.enumerated().map { index, card in
-            (
-                card.upgrade,
-                CGRect(
-                    x: originX + CGFloat(index) * (width + gap),
-                    y: centreY - height / 2,
-                    width: width,
-                    height: height
-                )
-            )
-        }
-    }
-
-    func upgradeCardCentre(for upgrade: UpgradeID, projector: HUDProjector) -> CGPoint? {
-        upgradeCardRects(projector: projector)
-            .first { $0.upgrade == upgrade }
-            .map { CGPoint(x: $0.rect.midX, y: $0.rect.midY) }
-    }
-
     /// Terminal surface geometry comes from `HUDLayout`, which owns HUD layout
     /// maths and can be tested without the App target.
     private func rect(_ hud: HUDRect) -> CGRect {
@@ -869,90 +833,6 @@ final class HUDRenderer {
         }
         plate.position = buttonCentre
         label(key: "\(key)-label", text: text, at: buttonCentre, size: 13, colour: HUDPalette.text)
-    }
-
-    /// Three equal cards in canonical order, no default and no timeout.
-    private func drawUpgradeSelection(_ projector: HUDProjector) {
-        let cards = UpgradePresentation.selectionCards()
-        let rects = upgradeCardRects(projector: projector)
-        let cardWidth = projector.sceneLength(points: Int(Self.upgradeCardSize.width))
-        let cardHeight = projector.sceneLength(points: Int(Self.upgradeCardSize.height))
-
-        let scrim = node("upgrade-scrim") { () -> SKShapeNode in
-            let shape = SKShapeNode(
-                rectOf: CGSize(
-                    width: projector.sceneLength(points: projector.safeWidth),
-                    height: projector.sceneLength(points: projector.safeHeight)
-                )
-            )
-            shape.fillColor = HUDPalette.scrim
-            shape.strokeColor = .clear
-            return shape
-        }
-        scrim.position = projector.scenePoint(
-            fromPoints: CGPoint(
-                x: CGFloat(projector.safeWidth) / 2,
-                y: CGFloat(projector.safeHeight) / 2
-            )
-        )
-
-        for (index, card) in cards.enumerated() {
-            // Drawn at exactly the rect the hit test will read back.
-            let centre = projector.scenePoint(
-                fromPoints: CGPoint(x: rects[index].rect.midX, y: rects[index].rect.midY)
-            )
-
-            let backdrop = node("upgrade-card-\(card.upgrade.rawValue)") { () -> SKShapeNode in
-                let shape = SKShapeNode(
-                    rectOf: CGSize(width: cardWidth, height: cardHeight),
-                    cornerRadius: 8
-                )
-                shape.fillColor = HUDPalette.panel
-                shape.strokeColor = HUDPalette.frame
-                shape.lineWidth = 2 * Self.framingScale
-                shape.isAccessibilityElement = true
-                shape.accessibilityLabel = card.voiceOverLabel
-                return shape
-            }
-            backdrop.position = centre
-
-            label(
-                key: "upgrade-glyph-\(index)",
-                text: upgradeGlyph(card.upgrade),
-                at: CGPoint(x: centre.x, y: centre.y + cardHeight * 0.30),
-                size: 16,
-                colour: HUDPalette.text
-            )
-            label(
-                key: "upgrade-name-\(index)",
-                text: card.name.uppercased(),
-                at: CGPoint(x: centre.x, y: centre.y + cardHeight * 0.08),
-                size: 11,
-                colour: HUDPalette.text
-            )
-            label(
-                key: "upgrade-role-\(index)",
-                text: card.role.uppercased(),
-                at: CGPoint(x: centre.x, y: centre.y - cardHeight * 0.08),
-                size: 8,
-                colour: HUDPalette.dim
-            )
-            label(
-                key: "upgrade-numbers-\(index)",
-                text: card.numericSummary,
-                at: CGPoint(x: centre.x, y: centre.y - cardHeight * 0.28),
-                size: 7,
-                colour: HUDPalette.dim
-            )
-        }
-    }
-
-    /// Which card a touch landed on, read from the same rects that were drawn.
-    func upgradeCardIndex(atPoints point: CGPoint, projector: HUDProjector) -> UInt8? {
-        for (upgrade, rect) in upgradeCardRects(projector: projector) where rect.contains(point) {
-            return upgrade.selectionIndex
-        }
-        return nil
     }
 
     // MARK: - Text

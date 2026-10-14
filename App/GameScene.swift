@@ -56,6 +56,8 @@ final class GameSession {
     /// the simulation.
     private(set) var feel = FeelPassPresenter()
 
+    init(simulation: Simulation) { self.simulation = simulation }
+
     init(seed: UInt64 = 1) {
         simulation = try! Simulation.make(seed: seed)
     }
@@ -206,13 +208,28 @@ final class GameSession {
 
     var snapshot: PresentationSnapshot {
         var snapshot = PresentationSnapshot(simulation.state)
+        snapshot.combatFeedback = simulation.combatFeedback
         reactions.apply(to: &snapshot)
         return snapshot
     }
 }
 
 final class GameScene: SKScene {
-    let session = GameSession()
+    let session: GameSession
+    override init(size: CGSize) {
+        session = GameSession()
+        super.init(size: size)
+    }
+    init(size: CGSize, session: GameSession) {
+        self.session = session
+        super.init(size: size)
+    }
+    required init?(coder: NSCoder) {
+        session = GameSession()
+        super.init(coder: coder)
+    }
+    let upgradeSelection = UpgradeSelectionModel()
+    private let combatFeedbackRenderer = CombatFeedbackRenderer()
     private let instrumentation = RunInstrumentation()
     private let deviceRunTracker = DeviceRunTracker()
     private var terminalEvidenceStored = false
@@ -291,6 +308,7 @@ final class GameScene: SKScene {
         size = CGSize(width: CGFloat(PresentationCamera.visibleWidth), height: CGFloat(PresentationCamera.visibleHeight))
         scaleMode = .aspectFit
         addChild(renderer.root)
+        renderer.root.addChild(combatFeedbackRenderer.root)
         addChild(cameraNode)
         camera = cameraNode
         cameraNode.addChild(lockdownTint.node)
@@ -464,19 +482,10 @@ final class GameScene: SKScene {
 #if DEBUG
         if autopilot != nil {
             let snapshot = session.snapshot
-            // The upgrade gate is a hard blocker: the simulation refuses to
-            // advance until a valid choice arrives. Reach it the way a finger
-            // does, through the real hit test, so the gate is actually proven.
-            if snapshot.upgradePending, session.pendingUpgradeChoice == nil {
-                if let projector,
-                   let tap = autopilot!.upgradeTapPoint(projector: projector, hud: hud),
-                   let choice = hud.upgradeCardIndex(atPoints: tap, projector: projector)
-                {
-                    session.pendingUpgradeChoice = choice
-                    Self.autopilotLog.notice("upgrade tap at \(tap.debugDescription, privacy: .public) -> index \(choice, privacy: .public)")
-                } else {
-                    Self.autopilotLog.error("upgrade overlay open but no card was hit — gate is stuck")
-                }
+            // Harness uses the same validated action as the SwiftUI buttons.
+            // This is action coverage, not evidence of UI hit testing.
+            if snapshot.upgradePending {
+                chooseUpgrade(autopilot!.upgradeChoice.selectionIndex)
             }
             let steer = autopilot!.command(snapshot)
             session.moveX = steer.moveX
@@ -748,6 +757,7 @@ final class GameScene: SKScene {
         loadGhost()
         soundEngine.reset()
         renderer.reset()
+        combatFeedbackRenderer.reset()
         cameraFollow.reset()
         lastDisplayTime = nil
         lockdownTint.reset()
@@ -765,6 +775,24 @@ final class GameScene: SKScene {
         controller.reset()
         terminalEvidenceStored = false
         redraw()
+    }
+
+    /// Sole UI selection boundary: accepts once, with neutral movement.
+    @discardableResult
+    func chooseUpgrade(_ index: UInt8) -> Bool {
+        guard session.simulation.state.upgrade.pending,
+              session.pendingUpgradeChoice == nil,
+              upgradeSelection.submit(index) else { return false }
+        clearGameplayInput()
+        session.pendingUpgradeChoice = index
+        return true
+    }
+
+    private func clearGameplayInput() {
+        controller.reset()
+        session.moveX = 0
+        session.moveY = 0
+        session.dodgePressed = false
     }
 
     // MARK: - Input
@@ -801,12 +829,8 @@ final class GameScene: SKScene {
             }
             return true
         }
-        if snap.upgradePending {
-            if let choice = hud.upgradeCardIndex(atPoints: point, projector: projector) {
-                session.pendingUpgradeChoice = choice
-            }
-            return false
-        }
+        // SwiftUI owns the protected selection surface. World taps are inert.
+        if snap.upgradePending || runPaused { return true }
         if controller.began(token: token, atPoints: point, layout: hud.controlLayout ?? .empty) == .pause {
             onPauseRequested?()
         }
@@ -821,6 +845,7 @@ final class GameScene: SKScene {
     }
 
     func moveTouch(token: TouchController.TouchToken, toPoints point: CGPoint) {
+        guard !session.simulation.state.upgrade.pending, !runPaused else { return }
         guard let layout = hud.controlLayout else { return }
         controller.moved(token: token, toPoints: point, layout: layout)
     }
@@ -938,6 +963,8 @@ final class GameScene: SKScene {
     private func redraw() {
         presentationFrame &+= 1
         var snap = session.snapshot
+        if snap.upgradePending && !upgradeSelection.isPresented { clearGameplayInput() }
+        upgradeSelection.synchronize(pending: snap.upgradePending)
         // D-098: during the intro a Camera's field is drawn only once it has
         // powered on. Presentation copy of the snapshot; state is untouched.
         if let intro, !intro.isFinished {
@@ -967,6 +994,7 @@ final class GameScene: SKScene {
             reducedMotion: settings.vfx.reducedMotion,
             ghost: ghostPresentation(liveTick: snap.tick)
         )
+        combatFeedbackRenderer.update(snap, events: session.lastEvents, settings: settings.vfx)
         vfx.render(snap)
         lockdownTint.update(snap, settings: settings.vfx)
         court.update(snap, settings: settings.vfx)

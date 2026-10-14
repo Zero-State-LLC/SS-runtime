@@ -80,6 +80,9 @@ public struct PresentationSnapshot: Equatable, Sendable {
         public var inTransition: Bool
     }
 
+    public var combatFeedback = CombatFeedbackFrame()
+    /// Inclusive authority window, independent of the shorter Dodge animation.
+    public var ghostConcealmentActive = false
     public var tick: UInt64
     public var outcome: RunOutcome
     public var player: CircleSprite
@@ -271,6 +274,8 @@ public struct PresentationSnapshot: Equatable, Sendable {
             destroyed: camerasDestroyed,
             complete: state.networkBlackout
         )
+        ghostConcealmentActive = state.upgrade.ghostStep && state.tick > 0
+            && state.tick <= state.player.cameraInvisibleUntilTick && !state.outcome.isTerminal
         upgrade = state.upgrade.selected
         upgradePending = state.upgrade.pending
         tutorialCopy = state.tutorial.copy.isEmpty ? nil : state.tutorial.copy

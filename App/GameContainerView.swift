@@ -27,7 +27,7 @@ struct GameContainerView: View {
 #endif
     }
     @State private var scene: GameScene = {
-        let scene = GameScene()
+        let scene = GameScene(size: .zero)
         scene.scaleMode = .resizeFill
         return scene
     }()
@@ -35,6 +35,7 @@ struct GameContainerView: View {
     var body: some View {
         ZStack {
             game
+            UpgradeOverlayHost(scene: scene)
             if !started {
                 TitleView(
                     onStart: startDailyRun,
@@ -65,7 +66,7 @@ struct GameContainerView: View {
     }
 
     private var game: some View {
-        SpriteView(scene: scene, preferredFramesPerSecond: 60)
+        GameplaySurface(scene: scene)
             .ignoresSafeArea()
             .accessibilityLabel("Surveillance Survivor gameplay")
             .onAppear {
@@ -81,5 +82,28 @@ struct GameContainerView: View {
             .onChange(of: store.settings) { _, settings in
                 scene.apply(settings: settings)
             }
+    }
+}
+
+private struct UpgradeOverlayHost: View {
+    let scene: GameScene
+    @ObservedObject var model: UpgradeSelectionModel
+    init(scene: GameScene) {
+        self.scene = scene
+        self.model = scene.upgradeSelection
+    }
+    var body: some View {
+        UpgradeSelectionView(model: model, onChoose: { scene.chooseUpgrade($0) })
+    }
+}
+
+private struct GameplaySurface: View {
+    let scene: GameScene
+    @ObservedObject var selection: UpgradeSelectionModel
+    init(scene: GameScene) { self.scene = scene; self.selection = scene.upgradeSelection }
+    var body: some View {
+        SpriteView(scene: scene, preferredFramesPerSecond: 60)
+            .accessibilityHidden(selection.isPresented)
+            .allowsHitTesting(!selection.isPresented)
     }
 }

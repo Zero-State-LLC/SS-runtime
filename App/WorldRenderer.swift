@@ -1233,8 +1233,8 @@ enum Palette {
     static let queryMarker = SKColor(white: 0.8, alpha: 0.7)
     /// D-089 `?` marker. Neutral: the glyph, not the colour, carries the state.
     static let unawareMarker = SKColor(white: 0.92, alpha: 0.95)
-    static let playerProjectile = SKColor(white: 0.98, alpha: 1)
-    static let playerProjectileTrail = SKColor(white: 0.85, alpha: 0.35)
+    static let playerProjectile = SKColor(red: 1, green: 0.94, blue: 0.78, alpha: 1)
+    static let playerProjectileTrail = SKColor(red: 1, green: 0.94, blue: 0.78, alpha: 0.35)
     static let hostileProjectile = SKColor(red: 0.95, green: 0.45, blue: 0.30, alpha: 1)
     static let hostileProjectileTrail = SKColor(red: 0.95, green: 0.45, blue: 0.30, alpha: 0.30)
     static let mineArmed = SKColor(red: 0.85, green: 0.35, blue: 0.25, alpha: 0.35)

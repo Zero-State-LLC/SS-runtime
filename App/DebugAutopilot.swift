@@ -4,12 +4,9 @@ import SurveillanceCore
 
 /// DEBUG-only scripted pilot that plays a whole run.
 ///
-/// It drives nothing but the interfaces a person drives: a normalized
-/// `PlayerCommand` for movement and Dodge, and a synthetic tap in HUD point
-/// space for the upgrade card. That matters — the upgrade gate is a hard
-/// blocker (`Simulation.step` returns `.upgradeSelectionPending` and refuses to
-/// advance until a valid choice arrives), so reaching it through the real
-/// hit-test path is the only way to know the gate actually opens.
+/// It drives normalized movement/Dodge commands and the same validated upgrade
+/// selection action used by the SwiftUI buttons. It verifies the protected
+/// gate's action path, not touch layout or VoiceOver usability.
 ///
 /// It never reads or writes authoritative state, and it is never compiled into
 /// a release build.
@@ -279,12 +276,7 @@ struct DebugAutopilot {
         return Command(moveX: Int16(32_767 * detourSign), moveY: 0, dodge: command.dodge)
     }
 
-    /// Where to tap when the protected upgrade overlay is open, in the same
-    /// safe-rectangle point space a finger works in.
-    @MainActor
-    func upgradeTapPoint(projector: HUDProjector, hud: HUDRenderer) -> CGPoint? {
-        hud.upgradeCardCentre(for: upgradeChoice, projector: projector)
-    }
+
 
     // MARK: - Geometry
 
