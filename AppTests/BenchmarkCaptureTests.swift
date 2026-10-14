@@ -144,6 +144,34 @@ final class BenchmarkCaptureTests: XCTestCase {
         overlay.zPosition = 999
         scene.addChild(overlay)
         try capture("BP001-revised-building-footprint")
+        overlay.isHidden = true
+
+        // texture(from:crop:) renders node coordinates rather than a camera viewport.
+        // Apply the equivalent world-to-view affine zoom before rasterization, leaving
+        // the camera-attached HUD fixed. This is not enlargement of a captured bitmap.
+        let camera = try XCTUnwrap(scene.camera)
+        let worldChildren = scene.children.filter { $0 !== camera }
+        let zoomRoot = SKNode()
+        let zoom: CGFloat = 1.25
+        zoomRoot.setScale(zoom)
+        zoomRoot.position = CGPoint(x: center.x * (1 - zoom), y: center.y * (1 - zoom))
+        scene.addChild(zoomRoot)
+        for node in worldChildren {
+            node.removeFromParent()
+            zoomRoot.addChild(node)
+        }
+        let centerAfterZoom = zoomRoot.convert(center, to: scene)
+        XCTAssertEqual(centerAfterZoom.x, center.x, accuracy: 0.001)
+        XCTAssertEqual(centerAfterZoom.y, center.y, accuracy: 0.001)
+        XCTAssertEqual(camera.xScale, 1)
+        try capture("BP007-framing-125-percent")
+        overlay.isHidden = false
+        try capture("BP007-framing-125-percent-footprint")
+        for node in worldChildren {
+            node.removeFromParent()
+            scene.addChild(node)
+        }
+        zoomRoot.removeFromParent()
         let record = XCTAttachment(string: """
         Composition fixture, not a legal encounter or animation acceptance.
         Runtime renderer and HUD; test-only candidate textures. 704x326 logical viewport.
@@ -154,6 +182,10 @@ final class BenchmarkCaptureTests: XCTestCase {
         Building mapping: 190x217, bottom-center at (\(x),\(y-64)); not fitted to collision AABB.
         Player mapping: 64x64, anchor (32,56). Camera mapping: 64x96, anchor (32,88).
         Candidate source records are in BenchmarkAssets/sources.json. Linear filtering for high-resolution candidate textures.
+        BP007 comparison: identical snapshot, art sizes, center, HUD and 704x326 output viewport.
+        Close candidate: 1.25 world-to-view magnification (equivalent camera scale 0.8).
+        World nodes transformed before rasterization; camera/HUD unchanged. No bitmap upscaling.
+        This comparison reduces visible world area; it does not validate legal encounter readability.
         """)
         record.name = "BP001-revised-composition-record"
         record.lifetime = .keepAlways
