@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `00ce027209e6c233bcdd35295f35f0b9bfb9bbe5` |
+| Specification commit | `9a87f95ae52f3f174392418e333573a56c04100a` |
 | Ruleset | `ss-rules-008` |
 | Content | `civic-seam-content-006` |
 | Arena | `civic-seam-arena-004` |
@@ -40,3 +40,5 @@ BP-004 damage marker adoption: persistent world-space damage-stage notches, dist
 BP-005/BP-007 ground-plan clarification adoption: distinguish wall contacts from baked walkable apron; unknown hidden corners cannot be inferred from roof or alpha bounds. No arena, collision or production art change. Study evidence: docs/review/building-wall-study/review.md.
 
 BP-009 adoption: occlusion must preserve Player ground position and solid-boundary readability without false elevation. Lifecycle and continuous/encounter acceptance remain open; current treatments are comparison fixtures only. See docs/review/ground-cue/review.md.
+
+BP-003 target-schema adoption: clip-metadata-002.schema.json and mechanical conversion checks define the next decoder target. Active metadata, animation version, frame IDs and gameplay identities remain v1/current. No v2 delivery or new art is admitted.
