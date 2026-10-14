@@ -690,7 +690,7 @@ final class WorldRenderer {
             }
             contact.position = CGPoint(x: camera.x, y: camera.y - 2)
             let sprite = node(.actors, "sprite-camera-\(camera.id.raw)") { SKSpriteNode() } as! SKSpriteNode
-            sprite.texture = reviewArt.camera
+            sprite.texture = reviewArt.cameraStates[camera.integrity] ?? reviewArt.camera
             sprite.size = CGSize(width: 64, height: 96)
             sprite.anchorPoint = CGPoint(x: 0.5, y: 1 - 88.0 / 96.0)
             sprite.position = CGPoint(x: camera.x, y: camera.y)

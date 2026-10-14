@@ -129,7 +129,7 @@ final class BenchmarkCaptureTests: XCTestCase {
         snap.cameras[0].fieldVisible = true
         let env = EnvironmentTextures()
         let center = CGPoint(x: x + 130, y: y + 20)
-        let art = BenchmarkReviewArt(
+        var art = BenchmarkReviewArt(
             player: try texture("player-south"), camera: try texture("camera"),
             building: .init(texture: try texture("building"), size: CGSize(width: 190, height: 217),
                             anchor: CGPoint(x: 0.5, y: 0), position: CGPoint(x: x, y: y - 64)),
@@ -140,6 +140,8 @@ final class BenchmarkCaptureTests: XCTestCase {
                 .init(texture: try texture("tree"), size: CGSize(width: 50, height: 85),
                       anchor: CGPoint(x: 0.5, y: 0), position: CGPoint(x: x + 355, y: y - 20))
             ], paving: try XCTUnwrap(env.texture(assetId: "env_ground_plaza")))
+        art.cameraStates = [3: try texture("camera-state-intact"), 2: try texture("camera-state-damaged"),
+                            1: try texture("camera-state-critical"), 0: try texture("camera-state-destroyed")]
         scene.renderBenchmark(snapshot: snap, art: art, center: center)
         XCTAssertNil(scene.childNode(withName: "//housing-\(snap.cameras[0].id.raw)"))
         XCTAssertNotNil(scene.childNode(withName: "//sprite-camera-\(snap.cameras[0].id.raw)"))
@@ -189,12 +191,25 @@ final class BenchmarkCaptureTests: XCTestCase {
             scene.addChild(node)
         }
         zoomRoot.removeFromParent()
+        overlay.removeFromParent()
+        for integrity in stride(from: 3, through: 0, by: -1) {
+            snap.cameras[0].integrity = integrity
+            snap.cameras[0].fieldVisible = integrity > 0
+            scene.renderBenchmark(snapshot: snap, art: art, center: center)
+            let sprite = try XCTUnwrap(scene.childNode(withName: "//sprite-camera-\(snap.cameras[0].id.raw)") as? SKSpriteNode)
+            XCTAssertTrue(sprite.texture === art.cameraStates[integrity])
+            XCTAssertEqual(sprite.position, CGPoint(x: snap.cameras[0].x, y: snap.cameras[0].y))
+            XCTAssertNil(scene.childNode(withName: "//housing-\(snap.cameras[0].id.raw)"))
+            try capture("BP004-candidate-integrity-\(integrity)")
+        }
         let record = XCTAttachment(string: """
         Composition fixture, not a legal encounter or animation acceptance.
         Runtime renderer and HUD; test-only candidate textures. 704x326 logical viewport.
         Existing solid \(id) AABB is unchanged: \(box). Other solids omitted for isolated review.
         Player, camera and props are explicitly placed presentation samples; simulation is unchanged.
-        One complete camera node. Candidate stills only; no locomotion animation claimed.
+        One complete camera node. Candidate settled state captures at integrity3/2/1/0.
+        These are four still states, not the six required animated clip deliveries.
+        No locomotion animation claimed.
         Fog omitted while source strips await replacement. Paving uses existing plaza texture.
         Building mapping: 190x217, bottom-center at (\(x),\(y-64)); not fitted to collision AABB.
         Player mapping: 64x64, anchor (32,56). Camera mapping: 64x96, anchor (32,88).

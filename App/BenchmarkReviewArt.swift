@@ -16,4 +16,5 @@ struct BenchmarkReviewArt {
     let buildingID: String
     let props: [Placement]
     let paving: SKTexture
+    var cameraStates: [Int: SKTexture] = [:]
 }
