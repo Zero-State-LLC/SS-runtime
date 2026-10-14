@@ -262,6 +262,18 @@ final class BenchmarkCaptureTests: XCTestCase {
             footprint.strokeColor = .magenta; footprint.fillColor = .clear; footprint.lineWidth = 1
             footprintTranslation.addChild(footprint)
             try capture("BP007-projected-\(tag)-geometry")
+            // New constrained wall source: register the visible near corner to
+            // the projected minimum-x/minimum-y world corner, never to the apron.
+            let building = try XCTUnwrap(billboards[2] as? SKSpriteNode)
+            building.texture = try texture("building-constrained")
+            building.xScale = 1; building.yScale = 1
+            let canvas = CGFloat(1254) * (CGFloat(128) * CGFloat(2).squareRoot() / 934) * zoom
+            building.size = CGSize(width: canvas, height: canvas)
+            building.anchorPoint = CGPoint(x: CGFloat(653) / 1254, y: 1 - CGFloat(1152) / 1254)
+            building.position = projected(CGPoint(x: x - 64, y: y - 64))
+            try capture("BP007-constrained-wall-\(tag)-geometry")
+            footprintRoot.isHidden = true
+            try capture("BP007-constrained-wall-\(tag)")
             footprintRoot.removeFromParent()
             for node in world { node.removeFromParent(); scene.addChild(node) }
             for (node, parent, position, sx, sy, z) in originals {
