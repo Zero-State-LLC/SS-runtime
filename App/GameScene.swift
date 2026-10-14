@@ -5,6 +5,8 @@ import os
 
 final class GameSession {
     private(set) var simulation: Simulation
+    /// Exact post-collision travel, presentation-only; whole-unit counters lose slow analog motion.
+    private var playerMovedLastStep: Bool?
     private var cameraHUD = CameraHUDProjector()
     private var heatCaption = HeatCaptionProjector()
     /// D-083 heat caption, derived from the tick's events; nil when none shows.
@@ -66,6 +68,7 @@ final class GameSession {
         let tick = simulation.state.tick + 1
         let diagnosticBefore = damageDiagnosticsEnabled ? simulation.state : nil
         let enemiesBefore = simulation.state.enemies
+        let playerPositionBefore = simulation.state.player.position
         feel.willStep(simulation.state)
         let result: TickResult
         var command: PlayerCommand?
@@ -89,6 +92,9 @@ final class GameSession {
             )
         }
         result = simulation.step(command: command)
+        if simulation.state.tick == tick {
+            playerMovedLastStep = simulation.state.player.position != playerPositionBefore
+        }
         lastEvents = result.events
         latestDamageDiagnostics = diagnosticBefore.map {
             DamageDiagnostic.capture(before: $0, after: simulation.state, events: result.events)
@@ -138,6 +144,7 @@ final class GameSession {
 
     func restartRun(seed: UInt64 = 1) {
         simulation = try! Simulation.make(seed: seed)
+        playerMovedLastStep = nil
         commandLog = []
         damageDiagnostics = []
         latestDamageDiagnostics = []
@@ -200,6 +207,7 @@ final class GameSession {
         let seeded = simulation.debug_seedScenario(scenario)
         if seeded {
             scenarioSeeded = true
+            playerMovedLastStep = nil
             feel.observe(simulation.state)
         }
         return seeded
@@ -208,6 +216,10 @@ final class GameSession {
 
     var snapshot: PresentationSnapshot {
         var snapshot = PresentationSnapshot(simulation.state)
+        if let moved = playerMovedLastStep,
+           snapshot.playerClipId == "player_idle" || snapshot.playerClipId == "player_move" {
+            snapshot.playerClipId = moved ? "player_move" : "player_idle"
+        }
         snapshot.combatFeedback = simulation.combatFeedback
         reactions.apply(to: &snapshot)
         return snapshot

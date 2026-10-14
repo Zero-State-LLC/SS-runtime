@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `c07ea6d3a9e2f3916fc69b73bf38bc8176911c3f` |
+| Specification commit | `262f4d66ddb271f5d4199be4ccfa130325f62221` |
 | Ruleset | `ss-rules-008` |
 | Content | `civic-seam-content-006` |
 | Arena | `civic-seam-arena-004` |
@@ -32,3 +32,5 @@ D-104 / BP-001–BP-006 candidate adoption: shared benchmark production contract
 BP-007 candidate adoption adds resolution/framing comparisons and explicit ground registration evidence. Gameplay identities and contract/fixture payloads remain unchanged. The reviewed composition remains a test fixture, not admitted production art.
 
 BP-003 timing foundation adoption: exact duration design in animation-timing-migration.md. Existing v1 clips adapt into a shared duration model; no v2 production metadata or new art is admitted. Evidence and remaining migration work: docs/review/animation-timing-foundation.md.
+
+BP-008 adoption: gait/displacement evidence and exact post-collision position sampling for sub-unit locomotion. No controller or digest changes. See docs/review/subunit-locomotion.md.

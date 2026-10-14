@@ -6,6 +6,30 @@ import Testing
 @Suite(.serialized)
 @MainActor
 struct DevicePresentationRegressionTests {
+    @Test func subUnitTravelAnimatesWithoutChangingAuthority() throws {
+        let session = GameSession(seed: 1)
+        var bare = try Simulation.make(seed: 1)
+        for (index, axis) in [Int16(2000), -2000, 2000, 0].enumerated() {
+            let before = session.simulation.state.player.position
+            session.moveX = axis
+            session.step()
+            _ = bare.step(command: PlayerCommand(tick: UInt64(index + 1), moveX: axis, moveY: 0, dodgePressed: false))
+            #expect(session.simulation.state.digest() == bare.state.digest())
+            #expect(session.simulation.state.player.movedUnitsLastTick == 0)
+            if axis == 0 {
+                #expect(session.simulation.state.player.position == before)
+                #expect(session.snapshot.playerClipId == "player_idle")
+            } else {
+                #expect(session.simulation.state.player.position != before)
+                #expect(session.snapshot.playerClipId == "player_move")
+            }
+        }
+        session.moveX = 2000
+        session.step()
+        session.restartRun()
+        #expect(session.snapshot.playerClipId == "player_idle")
+    }
+
     @Test func cameraFieldStartsAtEmitterAndStopsAtCover() throws {
         let simulation = try Simulation.make(seed: 1)
         var camera = try #require(PresentationSnapshot(simulation.state).cameras.first)
