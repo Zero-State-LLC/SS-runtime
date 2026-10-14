@@ -33,7 +33,9 @@ struct CameraPlaybackTests {
         renderer.render(snap)
         #expect(node.action(forKey: "camera-state") === action)
         #expect(node.position == CGPoint(x: snap.cameras[0].x, y: snap.cameras[0].y))
-        #expect(node.anchorPoint == CGPoint(x: 0.5, y: 1 - 88.0 / 96.0))
+        // SpriteKit round-trips anchors at Float precision. Keep an exact
+        // comparison to that representation of the contract's (32,88).
+        #expect(node.anchorPoint == CGPoint(x: 0.5, y: CGFloat(Float(1 - 88.0 / 96.0))))
     }
 
     @Test func destructionSurvivesNextSnapshotAndDropsFieldImmediately() throws {
