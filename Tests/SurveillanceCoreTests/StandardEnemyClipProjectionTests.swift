@@ -33,7 +33,7 @@ import Testing
     @Test func correlatorRecoverPresentsItsRecoverClip() throws {
         #expect(ActorClipProjection.standardClipId(role: .cableCarCorrelator, state: .recover, velocity: .zero) == "cableCarCorrelator_recover")
         let clip = try #require(ClipCatalog.bundled().clipsById["cableCarCorrelator_recover"])
-        #expect(ReactionClipTrackerDuration.ticks(clip) == 45)
+        #expect(try ReactionClipTrackerDuration.ticks(clip) == 45)
     }
 
     /// Attack states still win over locomotion.
@@ -63,8 +63,9 @@ import Testing
 
 /// Frames ÷ fps in 60 Hz ticks, the same rule `ReactionClipTracker` uses.
 enum ReactionClipTrackerDuration {
-    static func ticks(_ clip: ClipRecord) -> Int {
+    static func ticks(_ clip: ClipRecord) throws -> Int {
+        let fps = try #require(clip.framesPerSecond)
         let perDirection = clip.directions.isEmpty ? clip.frameIds.count : clip.frameIds.count / clip.directions.count
-        return (perDirection * 60 + clip.framesPerSecond - 1) / clip.framesPerSecond
+        return (perDirection * 60 + fps - 1) / fps
     }
 }

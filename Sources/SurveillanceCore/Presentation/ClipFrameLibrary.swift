@@ -12,7 +12,8 @@ public struct ClipFrameLibrary: Sendable {
         public var clipId: String
         public var actorRole: String
         public var directions: [String]
-        public var framesPerSecond: Int
+        public var framesPerSecond: Int?
+        public var authoredTiming: ClipTiming? = nil
         public var loop: Bool
         public var anchor: VecI
         /// Frame IDs in authored contract order; facing is encoded in each ID.
@@ -50,6 +51,7 @@ public struct ClipFrameLibrary: Sendable {
                 actorRole: clip.actorRole,
                 directions: clip.directions,
                 framesPerSecond: clip.framesPerSecond,
+                authoredTiming: clip.authoredTiming,
                 loop: clip.loop,
                 anchor: VecI(x: clip.anchor.x, y: clip.anchor.y),
                 frameIds: clip.frameIds
@@ -102,8 +104,17 @@ public struct ClipFrameLibrary: Sendable {
 
     public func timing(clipId: String, direction: String?) -> ClipTiming? {
         guard let clip = clips[clipId] else { return nil }
+        if let timing = clip.authoredTiming {
+            if let direction, !clip.directions.isEmpty {
+                guard clip.directions.contains(direction) else { return nil }
+                let indices = clip.frameIds.indices.filter { clip.frameIds[$0].contains("_\(direction)_") }
+                return try? timing.selecting(indices)
+            }
+            return timing
+        }
+        guard let fps = clip.framesPerSecond else { return nil }
         return try? .uniform(frameCount: frameIds(clipId: clipId, direction: direction).count,
-                             framesPerSecond: clip.framesPerSecond)
+                             framesPerSecond: fps)
     }
 
     public func isBacked(clipId: String, direction: String? = nil) -> Bool {

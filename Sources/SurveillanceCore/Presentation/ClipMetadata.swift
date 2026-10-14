@@ -12,7 +12,8 @@ public struct ClipRecord: Equatable, Sendable {
     public var state: String
     public var directions: [String]
     public var frameIds: [String]
-    public var framesPerSecond: Int
+    public var framesPerSecond: Int?
+    public var authoredTiming: ClipTiming? = nil
     public var loop: Bool
     public var anchor: ClipAnchor
     public var authoritativeEventMarker: String
@@ -23,7 +24,13 @@ public struct ClipRecord: Equatable, Sendable {
     public var vfxCue: String
 
     public func timing(forDirection direction: String) throws -> ClipTiming {
-        try .uniform(frameCount: frameIds(forDirection: direction).count, framesPerSecond: framesPerSecond)
+        guard directions.isEmpty || directions.contains(direction) else { throw ClipTiming.Failure.index }
+        if let authoredTiming {
+            let indices = frameIds.indices.filter { directions.isEmpty || frameIds[$0].contains("_\(direction)_") }
+            return try authoredTiming.selecting(indices)
+        }
+        guard let framesPerSecond else { throw ClipTiming.Failure.invalid }
+        return try .uniform(frameCount: frameIds(forDirection: direction).count, framesPerSecond: framesPerSecond)
     }
 
     public var eventType: EventType? {
@@ -153,7 +160,8 @@ enum ClipCatalogLoader {
         if let unexpected = Set(root.keys).subtracting(catalogKeys).sorted().first {
             throw ClipMetadataError.unexpectedKey(unexpected)
         }
-        guard root["schemaVersion"] as? String == "clip-metadata-001" else {
+        guard let schema = root["schemaVersion"] as? String,
+              ["clip-metadata-001", "clip-metadata-002"].contains(schema) else {
             throw ClipMetadataError.schemaVersion
         }
         guard root["animationVersion"] as? String == "animation-civic-seam-001" else {
@@ -166,7 +174,7 @@ enum ClipCatalogLoader {
         var clips: [ClipRecord] = []
         var seen = Set<String>()
         for raw in rawClips {
-            let clip = try decodeClip(raw)
+            let clip = try decodeClip(raw, schema: schema)
             if !seen.insert(clip.clipId).inserted {
                 throw ClipMetadataError.duplicateClipId(clip.clipId)
             }
@@ -191,27 +199,35 @@ enum ClipCatalogLoader {
         try validateStableAnchors(clips)
         try validateDirectionFrames(clips)
         try validateCancelWindows(clips)
+        for clip in clips {
+            for direction in clip.directions.isEmpty ? ["none"] : clip.directions {
+                _ = try clip.timing(forDirection: direction).durationTicks(at: 60)
+            }
+        }
         return ClipCatalog(
-            schemaVersion: "clip-metadata-001",
+            schemaVersion: schema,
             animationVersion: "animation-civic-seam-001",
             clips: clips
         )
     }
 
-    private static func decodeClip(_ raw: [String: Any]) throws -> ClipRecord {
-        let extra = Set(raw.keys).subtracting(clipKeys)
+    private static func decodeClip(_ raw: [String: Any], schema: String) throws -> ClipRecord {
+        let keys = schema == "clip-metadata-002"
+            ? clipKeys.subtracting(["framesPerSecond"]).union(["timing"]) : clipKeys
+        let extra = Set(raw.keys).subtracting(keys)
         if let unexpected = extra.sorted().first {
             throw ClipMetadataError.unexpectedKey(unexpected)
         }
-        for key in clipKeys {
+        for key in keys {
             guard raw[key] != nil else { throw ClipMetadataError.missingKey(key) }
         }
         guard let clipId = raw["clipId"] as? String, !clipId.isEmpty,
               let actorRole = raw["actorRole"] as? String, !actorRole.isEmpty,
               let state = raw["state"] as? String, !state.isEmpty,
               let directions = raw["directions"] as? [String],
+              Set(directions).count == directions.count,
+              directions.allSatisfy({ ClipCatalog.fourDirections.contains($0) }),
               let frameIds = raw["frameIds"] as? [String], !frameIds.isEmpty,
-              let fps = intValue(raw["framesPerSecond"]), fps > 0,
               let loop = boolValue(raw["loop"]),
               let anchorObject = raw["anchor"] as? [String: Any],
               Set(anchorObject.keys) == ["x", "y"],
@@ -225,6 +241,23 @@ enum ClipCatalogLoader {
               let vfx = raw["vfxCue"] as? String, !vfx.isEmpty
         else {
             throw ClipMetadataError.invalidJSON
+        }
+        let fps: Int?
+        let authoredTiming: ClipTiming?
+        if schema == "clip-metadata-002" {
+            guard let timing = raw["timing"] as? [String: Any],
+                  Set(timing.keys) == ["unitsPerSecond", "frameUnits"],
+                  let timebase = intValue(timing["unitsPerSecond"]),
+                  let rawUnits = timing["frameUnits"] as? [Any],
+                  rawUnits.count == frameIds.count else { throw ClipMetadataError.invalidJSON }
+            let units = rawUnits.compactMap { intValue($0) }
+            guard units.count == rawUnits.count else { throw ClipMetadataError.invalidJSON }
+            authoredTiming = try ClipTiming(unitsPerSecond: timebase, frameUnits: units)
+            fps = nil
+        } else {
+            guard let value = intValue(raw["framesPerSecond"]), value > 0 else { throw ClipMetadataError.invalidJSON }
+            fps = value
+            authoredTiming = nil
         }
         if frameIds.contains(where: { $0.isEmpty }) {
             throw ClipMetadataError.invalidJSON
@@ -242,6 +275,7 @@ enum ClipCatalogLoader {
             directions: directions,
             frameIds: frameIds,
             framesPerSecond: fps,
+            authoredTiming: authoredTiming,
             loop: loop,
             anchor: ClipAnchor(x: anchorX, y: anchorY),
             authoritativeEventMarker: marker,

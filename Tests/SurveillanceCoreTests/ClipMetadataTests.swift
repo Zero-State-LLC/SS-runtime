@@ -16,7 +16,7 @@ struct ClipMetadataTests {
         let cameraDirections = catalog.clips.filter { $0.actorRole == "camera" }.map(\.directions)
         let dodgeFramesLookLikeEvent = dodge.frameIds.contains("dodgeStarted")
         let camerasHaveNoDirections = cameraDirections.allSatisfy { $0.isEmpty }
-        let destroyDurationMs = destroy.frameIds.count * 1000 / destroy.framesPerSecond
+        let destroyDurationMs = destroy.frameIds.count * 1000 / (try #require(destroy.framesPerSecond))
         #expect(catalog.schemaVersion == ContractVersions.clipMetadata)
         #expect(catalog.animationVersion == ContractVersions.animation)
         #expect(ids == ClipCatalog.requiredClipIds)

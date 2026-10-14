@@ -39,15 +39,16 @@ struct ClipTimingTests {
         let catalog = try ClipCatalog.bundled()
         let library = try ClipFrameLibrary.bundled()
         for clip in catalog.clips {
+            let fps = try #require(clip.framesPerSecond)
             for direction in clip.directions.isEmpty ? ["none"] : clip.directions {
                 let timing = try clip.timing(forDirection: direction)
                 let count = clip.frameIds(forDirection: direction).count
                 // Independent legacy formula is safe for the bounded bundled records.
-                let expectedTicks = UInt64((count * 60 + clip.framesPerSecond - 1) / clip.framesPerSecond)
+                let expectedTicks = UInt64((count * 60 + fps - 1) / fps)
                 #expect(try timing.durationTicks(at: 60) == expectedTicks)
                 #expect(ReactionClipTracker.durationTicks(clip) == expectedTicks)
                 #expect(library.timing(clipId: clip.clipId, direction: clip.directions.isEmpty ? nil : direction) == timing)
-                #expect(timing.frameSeconds == Array(repeating: 1.0 / Double(clip.framesPerSecond), count: count))
+                #expect(timing.frameSeconds == Array(repeating: 1.0 / Double(fps), count: count))
             }
         }
     }

@@ -33,7 +33,7 @@ struct DaemonClipTests {
             let clip = try #require(library.clip(clipId), "\(clipId)")
             let expectedMilliseconds = ticks * 1000 / 60
             let actualMilliseconds =
-                clip.framesPerDirection * 1000 / clip.framesPerSecond
+                clip.framesPerDirection * 1000 / (try #require(clip.framesPerSecond))
             #expect(
                 actualMilliseconds == expectedMilliseconds,
                 "\(clipId): \(actualMilliseconds)ms for a \(ticks)-tick state (\(expectedMilliseconds)ms)"
@@ -133,7 +133,7 @@ struct CaptainClipTests {
         let library = try ClipFrameLibrary.bundled()
         for (clipId, ticks) in Self.telegraphTicks {
             let clip = try #require(library.clip(clipId), "\(clipId)")
-            let actual = clip.framesPerDirection * 1000 / clip.framesPerSecond
+            let actual = clip.framesPerDirection * 1000 / (try #require(clip.framesPerSecond))
             #expect(
                 actual == ticks * 1000 / 60,
                 "\(clipId): \(actual)ms for a \(ticks)-tick window"
