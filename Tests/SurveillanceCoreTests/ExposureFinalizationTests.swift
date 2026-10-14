@@ -114,4 +114,29 @@ struct ExposureFinalizationTests {
         #expect(next.changes.isEmpty)
     }
 
+    @Test func multipleFogPulsesEmitOnlyTheFinalTransition() throws {
+        var sim = try fogCrossing()
+        sim.testing_insertEnemy(EnemyBody(
+            id: EntityID(999_998), archetype: .fogAnalyticsCloud,
+            position: sim.state.player.position, velocity: .zero,
+            integrity: 10_000, radius: 16, speedUnitsPerSecond: 0, contactDps: 0,
+            state: .telegraph, stateTicks: 1, spawnTick: 0,
+            nextSpecialTick: 0, encounterId: "audit-fog"
+        ))
+        let result = sim.step(command: nil)
+        #expect(sim.state.exposure.exposure == 470)
+        #expect(result.events.filter { $0.type == .detectionStateChanged }.count == 1)
+        #expect(result.events.filter { $0.payload["reason"] == .string("fogPulse") }.count == 2)
+    }
+
+    @Test func recoveryAndPulseDoNotPublishAnIntermediateState() throws {
+        var sim = try fogCrossing()
+        sim.testing_setExposure(450)
+        let result = sim.step(command: nil)
+        #expect(sim.state.exposure.exposure == 468)
+        #expect(sim.state.exposure.detectionState == .tracked)
+        #expect(!sim.state.exposure.quietApproach)
+        #expect(!result.events.contains { $0.type == .detectionStateChanged })
+    }
+
 }
