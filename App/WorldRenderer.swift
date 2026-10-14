@@ -773,6 +773,31 @@ final class WorldRenderer {
                 (body as? SKShapeNode)?.fillColor = Palette.cameraFill(camera.presentationState)
             }
 
+            // BP-004: persistent damage-stage notches are independent of clip playback.
+            // Only standard Cameras enter this loop; Captain emitters cannot inherit them.
+            if camera.integrity == 2 || camera.integrity == 1 {
+                let marker = node(.actors, "camera-damage-\(camera.id.raw)") {
+                    let badge = SKShapeNode(rectOf: CGSize(width: 13, height: 10), cornerRadius: 2)
+                    badge.fillColor = SKColor(white: 0.08, alpha: 1)
+                    badge.strokeColor = SKColor(white: 0.8, alpha: 1)
+                    badge.lineWidth = 0.75
+                    badge.zPosition = 2
+                    for index in 0..<2 {
+                        let notch = SKShapeNode(rectOf: CGSize(width: 2, height: 6))
+                        notch.name = "notch-\(index)"
+                        notch.fillColor = SKColor(white: 0.95, alpha: 1)
+                        notch.strokeColor = .clear
+                        notch.position.x = CGFloat(index * 5 - 2)
+                        badge.addChild(notch)
+                    }
+                    return badge
+                }
+                marker.position = CGPoint(x: camera.x - 13, y: camera.y + 18)
+                marker.childNode(withName: "notch-0")?.position.x = camera.integrity == 2 ? 0 : -2.5
+                marker.childNode(withName: "notch-1")?.position.x = 2.5
+                marker.childNode(withName: "notch-1")?.isHidden = camera.integrity == 2
+            }
+
             guard camera.fieldVisible else { continue }
             let fieldKey = "field-\(camera.id.raw)"
             let field = node(.cameraFields, fieldKey) { SKShapeNode() }

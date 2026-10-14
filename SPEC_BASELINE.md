@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `262f4d66ddb271f5d4199be4ccfa130325f62221` |
+| Specification commit | `d640197ffc13b051882df5178d18035a4e0898e4` |
 | Ruleset | `ss-rules-008` |
 | Content | `civic-seam-content-006` |
 | Arena | `civic-seam-arena-004` |
@@ -34,3 +34,5 @@ BP-007 candidate adoption adds resolution/framing comparisons and explicit groun
 BP-003 timing foundation adoption: exact duration design in animation-timing-migration.md. Existing v1 clips adapt into a shared duration model; no v2 production metadata or new art is admitted. Evidence and remaining migration work: docs/review/animation-timing-foundation.md.
 
 BP-008 adoption: gait/displacement evidence and exact post-collision position sampling for sub-unit locomotion. No controller or digest changes. See docs/review/subunit-locomotion.md.
+
+BP-004 damage marker adoption: persistent world-space damage-stage notches, distinct from HUD remaining integrity. Static Reduced Motion behavior and destruction/removal reconciliation verified. See docs/review/camera-damage-markers/review.md. Camera animation and art acceptance remain open.

@@ -6,6 +6,39 @@ import Testing
 @Suite(.serialized)
 @MainActor
 struct DevicePresentationRegressionTests {
+    @Test func cameraDamageNotchesPersistAndClearWithIntegrity() throws {
+        var snapshot = PresentationSnapshot(try Simulation.make(seed: 1).state)
+        let camera = try #require(snapshot.cameras.first)
+        snapshot.cameras = [camera]
+        let renderer = WorldRenderer()
+        let markerName = "//camera-damage-\(camera.id.raw)"
+        renderer.render(snapshot)
+        #expect(renderer.root.childNode(withName: markerName) == nil)
+        snapshot.cameras[0].integrity = 2
+        renderer.render(snapshot)
+        let damaged = try #require(renderer.root.childNode(withName: markerName))
+        #expect(damaged.children.filter { !$0.isHidden }.count == 1)
+        #expect(!damaged.hasActions())
+        let position = damaged.position
+        snapshot.cameras[0].integrity = 1
+        renderer.render(snapshot, reducedMotion: true)
+        let critical = try #require(renderer.root.childNode(withName: markerName))
+        #expect(critical === damaged)
+        #expect(critical.position == position)
+        #expect(critical.children.filter { !$0.isHidden }.count == 2)
+        #expect(!critical.hasActions())
+        snapshot.cameras[0].integrity = 0
+        snapshot.cameras[0].fieldVisible = false
+        renderer.render(snapshot)
+        #expect(renderer.root.childNode(withName: markerName) == nil)
+        snapshot.cameras[0].integrity = 2
+        renderer.render(snapshot)
+        #expect(renderer.root.childNode(withName: markerName) != nil)
+        snapshot.cameras = []
+        renderer.render(snapshot)
+        #expect(renderer.root.childNode(withName: markerName) == nil)
+    }
+
     @Test func subUnitTravelAnimatesWithoutChangingAuthority() throws {
         let session = GameSession(seed: 1)
         var bare = try Simulation.make(seed: 1)
