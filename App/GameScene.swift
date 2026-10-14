@@ -44,6 +44,7 @@ final class GameSession {
     /// Written after each step; never read back into the simulation.
     private(set) var commandLog: [PlayerCommand] = []
     var damageDiagnosticsEnabled = false
+    var damageViewCenter: VecQ8?
     private(set) var damageDiagnostics: [DamageDiagnostic] = []
     private(set) var droppedDamageDiagnostics = 0
     private(set) var latestDamageDiagnostics: [DamageDiagnostic] = []
@@ -90,6 +91,9 @@ final class GameSession {
         latestDamageDiagnostics = diagnosticBefore.map {
             DamageDiagnostic.capture(before: $0, after: simulation.state, events: result.events)
         } ?? []
+        for index in latestDamageDiagnostics.indices {
+            latestDamageDiagnostics[index].viewCenterBefore = damageViewCenter.map(DamageDiagnostic.Point.init)
+        }
         damageDiagnostics.append(contentsOf: latestDamageDiagnostics)
         if damageDiagnostics.count > 512 {
             let excess = damageDiagnostics.count - 512
@@ -504,6 +508,11 @@ final class GameScene: SKScene {
 #else
         applyController()
 #endif
+        if qaEnabled {
+            session.damageViewCenter = VecQ8(
+                x: Q8(raw: Int64((cameraNode.position.x * CGFloat(Q8.scale)).rounded())),
+                y: Q8(raw: Int64((cameraNode.position.y * CGFloat(Q8.scale)).rounded())))
+        }
         session.step()
         if qaEnabled {
             for hit in session.latestDamageDiagnostics {

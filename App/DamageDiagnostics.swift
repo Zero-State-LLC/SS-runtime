@@ -21,6 +21,7 @@ struct DamageDiagnostic: Codable, Equatable {
     let playerBefore: Point
     let playerAfter: Point
     let playerRadius: Int
+    var viewCenterBefore: Point? = nil
     let candidates: [Source]
     let classification: String
     let warningsBefore: [String]
