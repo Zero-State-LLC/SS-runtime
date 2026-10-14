@@ -48,8 +48,8 @@ struct VFXRendererTests {
             event(.entityDamaged, EntityID(500)),
             event(.entityDied, EntityID(501)),
             event(.dodgeStarted, player),
-            event(.projectileHit, EntityID(600), ["targetEntityId": .string("\(camera.raw)")]),
-            event(.projectileHit, EntityID(601), ["targetEntityId": .string("\(player.raw)")]),
+            event(.projectileHit, EntityID(600), ["projectileId": .string("600"), "projectileKind": .string("civicPulse"), "targetEntityId": .string("\(camera.raw)"), "impactXQ8": .integer(0), "impactYQ8": .integer(0)]),
+            event(.projectileHit, EntityID(600), ["projectileId": .string("600"), "projectileKind": .string("ricochet"), "targetEntityId": .string("\(player.raw)"), "impactXQ8": .integer(2560), "impactYQ8": .integer(0)]),
             event(.lockdownEntered, nil, ["reason": .string("exposure")]),
             event(.bossAttackStarted, EntityID(700)),
             event(.extractionArmed),
@@ -59,6 +59,53 @@ struct VFXRendererTests {
             event(.waveStarted, nil, ["encounterId": .string("M-A"), "waveId": .string("w1")]),
             event(.enemyAlerted, EntityID(502), ["entityId": .string("502"), "cause": .string("sight")])
         ]
+    }
+
+    @Test func retiredHazardUsesEventGeometryAndUnknownDirectionUsesRing() throws {
+        for hasDirection in [false, true] {
+            let stage = Stage()
+            let snap = try Self.snapshot()
+            var evidence: [String: CanonicalJSON] = ["impactXQ8": .integer(25600), "impactYQ8": .integer(25600)]
+            if hasDirection {
+                evidence["sourceXQ8"] = .integer(23040)
+                evidence["sourceYQ8"] = .integer(25600)
+                evidence["contributors"] = .array([.string("999")])
+            }
+            let hit = AuthoritativeEvent(tick: 1, phase: 12, type: .playerDamaged,
+                primary: snap.player.id, secondary: EntityID(999), payload: evidence, insertion: 0)
+            stage.vfx.ingest(tick: 1, events: [hit], snapshot: snap)
+            let name = hasDirection ? "damage-impact-direction" : "damage-impact-ring"
+            let node = try #require(stage.vfx.worldLayer.childNode(withName: name))
+            #expect(node.position == CGPoint(x: 100, y: 100))
+            let shape = try #require(node.children.first as? SKShapeNode)
+            let bounds = try #require(shape.path).boundingBox
+            if hasDirection { #expect(bounds.maxX < 0) } else { #expect(bounds.width == 48) }
+        }
+    }
+
+    @Test func contactAggregationNeverInventsOneDirection() throws {
+        let stage = Stage()
+        let snap = try Self.snapshot()
+        let hit = AuthoritativeEvent(tick: 1, phase: 12, type: .playerDamaged, primary: snap.player.id,
+            payload: ["impactXQ8": .integer(0), "impactYQ8": .integer(0),
+                      "sourceXQ8": .integer(2560), "sourceYQ8": .integer(0),
+                      "contributors": .array([.string("10"), .string("11")])], insertion: 0)
+        stage.vfx.ingest(tick: 1, events: [hit], snapshot: snap)
+        #expect(stage.vfx.worldLayer.childNode(withName: "damage-impact-ring") != nil)
+        #expect(stage.vfx.worldLayer.childNode(withName: "damage-impact-direction") == nil)
+    }
+
+    @Test func projectilePositionHistoryIsBoundedAcrossTurnover() throws {
+        let stage = Stage()
+        var snap = try Self.snapshot()
+        for id in 100..<1100 {
+            snap.projectiles = [.init(id: EntityID(UInt64(id)), x: 10, y: 10,
+                previousX: 0, previousY: 0, radius: 4, hostile: true, role: "sutroBolt")]
+            stage.vfx.render(snap)
+            #expect(stage.vfx.rememberedPositionCount <= 1 + snap.enemies.count + snap.cameras.count + 1)
+        }
+        stage.vfx.reset()
+        #expect(stage.vfx.rememberedPositionCount == 0)
     }
 
     @Test func everyRecipeDraws() throws {

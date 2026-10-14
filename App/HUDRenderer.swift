@@ -518,7 +518,7 @@ final class HUDRenderer {
     static let quietTagKey = "quiet-tag"
     static let quietCaptionKey = "quiet-caption"
 
-    /// `UNSEEN ENEMIES HOLD • STRIKE FIRST FOR DOUBLE DAMAGE` (hud-tutorial.md,
+    /// `UNSEEN ENEMIES HOLD • STRIKE FIRST FOR TRIPLE DAMAGE` (hud-tutorial.md,
     /// D-089) in the row `AwarenessHintProjector.referenceRect` names. A
     /// tutorial hint, so the tutorial setting hides it.
     ///

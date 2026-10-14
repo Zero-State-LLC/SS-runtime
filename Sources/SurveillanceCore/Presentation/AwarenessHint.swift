@@ -7,7 +7,7 @@
 /// duration. It is a tutorial hint, not a safety message, so the tutorial
 /// setting hides it.
 public struct AwarenessHintProjector: Equatable, Sendable {
-    public static let copy = "UNSEEN ENEMIES HOLD • STRIKE FIRST FOR DOUBLE DAMAGE"
+    public static let copy = "UNSEEN ENEMIES HOLD • STRIKE FIRST FOR TRIPLE DAMAGE"
 
     /// `hud-tutorial.md`: each card's maximum visual duration.
     public static let visibleTicks: UInt64 = 300

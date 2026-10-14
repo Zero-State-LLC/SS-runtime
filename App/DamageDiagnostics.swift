@@ -25,6 +25,7 @@ struct DamageDiagnostic: Codable, Equatable {
     let candidates: [Source]
     let classification: String
     let warningsBefore: [String]
+    var authoritativeEventJSON: String? = nil
 
     static func capture(before: WorldState, after: WorldState, events: [AuthoritativeEvent]) -> [Self] {
         events.filter { $0.type == .playerDamaged }.map { event in
@@ -42,9 +43,8 @@ struct DamageDiagnostic: Codable, Equatable {
                                       position: Point(enemy.position), radius: enemy.radius,
                                       state: "before=\(String(describing: before.enemies.first { $0.id == id }?.state)); after=\(enemy.state)"))
             }
-            // The authoritative event attributes mine damage to its owner.
-            // Keep removed mines as candidates; do not falsely label the owner as contact.
-            for mine in before.mines where mine.ownerId == id && !after.mines.contains(where: { $0.id == mine.id }) {
+            // Older evidence named only the owner. D-103 names the mine itself.
+            for mine in before.mines where (mine.id == id || mine.ownerId == id) && !after.mines.contains(where: { $0.id == mine.id }) {
                 sources.append(Source(id: mine.id.raw, kind: "removed-mine", position: Point(mine.position),
                                       radius: mine.radius, state: "armRemaining=\(mine.armRemaining); lifeRemaining=\(mine.lifeRemaining)"))
             }
@@ -53,10 +53,10 @@ struct DamageDiagnostic: Codable, Equatable {
             return Self(tick: event.tick, sourceID: id?.raw, amount: amount,
                         playerBefore: Point(before.player.position), playerAfter: Point(after.player.position),
                         playerRadius: PlayerBody.radiusUnits, candidates: sources,
-                        classification: sources.isEmpty ? "unresolved-source" : "source-candidates-not-cause-proof",
+                        classification: event.payload["damageKind"] != nil ? "authoritative-event-evidence" : (sources.isEmpty ? "unresolved-source" : "source-candidates-not-cause-proof"),
                         warningsBefore: PresentationSnapshot(before).telegraphs.map {
                             "owner=\($0.ownerId.raw); kind=\($0.kind); origin=\($0.x),\($0.y); heading=\($0.headingMilli); range=\($0.rangeUnits); halfAngle=\($0.halfAngleMilli); width=\($0.widthUnits); remaining=\($0.remainingTicks)"
-                        })
+                        }, authoritativeEventJSON: event.payload["damageKind"] != nil ? event.canonical().serialize() : nil)
         }
     }
 }

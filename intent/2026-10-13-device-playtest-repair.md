@@ -34,3 +34,7 @@ Runtime AGENTS.md requires human acceptance of a new non-trivial runtime-only in
 ## Expanded repair authorization
 
 On 2026-10-13 the user requested: “go ahead and fix these issues, add the damage diagnostics and do a full qa pass before we test again”. This includes confirmed asset registration/fragment defects, visible collision footprint repair, and opt-in local damage-event/replay diagnostics. No further device retest is requested until automated and visual QA has been completed; remaining failures must be reported explicitly.
+
+## Phases 1–2 authorization
+
+User accepted spec deepening and combat fixes on 2026-10-13. D-103 versions collision/event changes as ruleset-008, with fixture review; this supersedes the original presentation-only constraint only for the specified combat repairs. Art and phase-3 effects remain deferred.

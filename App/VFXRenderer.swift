@@ -48,6 +48,7 @@ final class VFXRenderer {
     /// entity that has just left the snapshot (a defeated enemy) still lands
     /// where it was.
     private var knownPositions: [EntityID: CGPoint] = [:]
+    var rememberedPositionCount: Int { knownPositions.count }
     private weak var worldRoot: SKNode?
     private var cameraBase: CGPoint = .zero
     private var frozen = false
@@ -202,6 +203,8 @@ final class VFXRenderer {
     }
 
     private func remember(_ snap: PresentationSnapshot) {
+        // Ingest has consumed the previous snapshot; retain only this frame.
+        knownPositions.removeAll(keepingCapacity: true)
         knownPositions[snap.player.id] = CGPoint(x: snap.player.x, y: snap.player.y)
         for enemy in snap.enemies { knownPositions[enemy.id] = CGPoint(x: enemy.x, y: enemy.y) }
         for camera in snap.cameras { knownPositions[camera.id] = CGPoint(x: camera.x, y: camera.y) }
@@ -218,6 +221,10 @@ final class VFXRenderer {
 
     // MARK: - Recipes
 
+    private static func cgPoint(_ point: VecQ8) -> CGPoint {
+        CGPoint(x: CGFloat(point.x.raw) / CGFloat(Q8.scale), y: CGFloat(point.y.raw) / CGFloat(Q8.scale))
+    }
+
     private func draw(_ p: VFXPresentation, events: [AuthoritativeEvent], snap: PresentationSnapshot) {
         let seconds = TimeInterval(p.lifetimeMs) / 1000
         let player = CGPoint(x: snap.player.x, y: snap.player.y)
@@ -229,8 +236,11 @@ final class VFXRenderer {
         case "exposureThreshold":
             node = edgeBrackets(seconds: seconds, reduced: p.reduced)
         case "playerHit":
-            let from = payloadEntity(p.sourceEntityId, events: events, key: "sourceEntityId").flatMap { position(of: $0, in: snap) }
-            node = impactArc(at: player, from: from, particles: p.particleCount, seconds: seconds, reduced: p.reduced)
+            let impact = VFXProjector.point(p.evidence, prefix: "impact").map(Self.cgPoint) ?? player
+            var origin = VFXProjector.point(p.evidence, prefix: "source").map(Self.cgPoint)
+            if case .array(let contributors) = p.evidence["contributors"], contributors.count != 1 { origin = nil }
+            if origin == impact { origin = nil }
+            node = impactArc(at: impact, from: origin, particles: p.particleCount, seconds: seconds, reduced: p.reduced)
         case "enemyHit":
             node = spark(at: source ?? player, particles: p.particleCount, seconds: seconds, reduced: p.reduced)
         case "enemyDefeat":
@@ -244,10 +254,7 @@ final class VFXRenderer {
                 reducedEchoPlaced: false
             )
         case "ricochet":
-            let hits = events.filter { $0.type == .projectileHit }.compactMap { event -> CGPoint? in
-                position(of: payloadEntity(event.primaryEntityId, events: [event], key: "targetEntityId"), in: snap)
-            }
-            node = ricochetTrace(hits.isEmpty ? [source ?? player] : hits, particles: p.particleCount, seconds: seconds, reduced: p.reduced)
+            node = ricochetTrace(p.impactPoints.map(Self.cgPoint), particles: p.particleCount, seconds: seconds, reduced: p.reduced)
         case "lockdown":
             node = lockdownPulse(at: player, seconds: seconds, reduced: p.reduced)
         case "captainTelegraph":
@@ -371,9 +378,14 @@ final class VFXRenderer {
     private func impactArc(at point: CGPoint, from: CGPoint?, particles: Int, seconds: TimeInterval, reduced: Bool) -> SKNode {
         let root = SKNode()
         root.position = point
-        let facing: CGFloat = from.map { atan2($0.y - point.y, $0.x - point.x) } ?? .pi / 2
+        let facing: CGFloat = from.map { atan2($0.y - point.y, $0.x - point.x) } ?? 0
         let path = CGMutablePath()
-        path.addArc(center: .zero, radius: 24, startAngle: facing - 0.7, endAngle: facing + 0.7, clockwise: false)
+        if from == nil {
+            path.addEllipse(in: CGRect(x: -24, y: -24, width: 48, height: 48))
+        } else {
+            path.addArc(center: .zero, radius: 24, startAngle: facing - 0.7, endAngle: facing + 0.7, clockwise: false)
+        }
+        root.name = from == nil ? "damage-impact-ring" : "damage-impact-direction"
         let arc = SKShapeNode(path: path)
         arc.strokeColor = VFXPalette.damage
         arc.lineWidth = 4
@@ -390,7 +402,7 @@ final class VFXRenderer {
             root.addChild(ring)
             for index in 0..<particles {
                 let spread = CGFloat(index) - CGFloat(particles - 1) / 2
-                let angle = facing + spread * 0.5
+                let angle = from == nil ? CGFloat(index) * 2 * .pi / CGFloat(max(1, particles)) : facing + spread * 0.5
                 let bit = dot(3, VFXPalette.damage)
                 bit.position = CGPoint(x: 24 * cos(angle), y: 24 * sin(angle))
                 bit.run(.group([

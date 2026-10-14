@@ -142,9 +142,11 @@ struct ProceduralVFXTests {
                 tick: 4,
                 phase: 9,
                 type: .projectileHit,
-                primary: EntityID(UInt64(index + 2)),
+                primary: EntityID(1),
                 payload: [
                     "projectileId": .string("1"),
+                    "projectileKind": .string(index == 0 ? "civicPulse" : "ricochet"),
+                    "impactXQ8": .integer(Int64(index * 256)), "impactYQ8": .integer(0),
                     "targetEntityId": .string("\(index + 2)"),
                     "appliedDamage": .integer(1)
                 ],

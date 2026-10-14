@@ -47,9 +47,9 @@ public enum UpgradePresentation {
                 selectionIndex: 2,
                 name: "Ghost Step",
                 role: "Mobility and surveillance evasion",
-                numericSummary: "Dodge 540 u/s; 90 tick cooldown; 29 tick camera immunity",
+                numericSummary: "540 u/s; 1.5 s cooldown; 0.5 s camera concealment; no damage immunity",
                 voiceOverLabel:
-                    "Ghost Step. Mobility and surveillance evasion. Dodge speed five hundred forty units per second, ninety tick cooldown, camera immunity for twenty-nine ticks after dodge start. No damage immunity."
+                    "Ghost Step. Mobility and surveillance evasion. Dodge speed five hundred forty units per second, ninety tick cooldown, camera concealment for thirty ticks including dodge start. No damage immunity."
             )
         }
     }

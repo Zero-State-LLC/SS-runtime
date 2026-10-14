@@ -94,6 +94,8 @@ public struct VFXPresentation: Equatable, Sendable {
     public var shape: String
     public var sourceEntityId: EntityID?
     public var sequence: Int
+    public var evidence: [String: CanonicalJSON] = [:]
+    public var impactPoints: [VecQ8] = []
     /// Text the moment shows: the boss phase name for `bossPhaseBreak`, and
     /// `NETWORK BLACKOUT` for `networkBlackout`. Nil for every other recipe.
     public var label: String? = nil
@@ -136,6 +138,7 @@ public struct VFXProjection: Equatable, Sendable {
 public struct VFXProjector: Equatable, Sendable {
     public var lastPlayerDamageTick: UInt64?
     public var nextSequence: Int
+    private var damageTicksBySource: [String: UInt64] = [:]
 
     public init() {
         lastPlayerDamageTick = nil
@@ -154,13 +157,15 @@ public struct VFXProjector: Equatable, Sendable {
         context: VFXProjectionContext = .none
     ) -> VFXProjection {
         var presentations: [VFXPresentation] = []
+        damageTicksBySource = damageTicksBySource.filter { tick >= $0.value && tick - $0.value < catalog.playerDamageCoalesceTicks }
         let reduced = settings.reducedMotion || settings.reducedFlash
         for event in events {
             for recipe in catalog.recipes where recipe.eventTypes.contains(event.type) {
                 if recipe.id == "playerHit" {
-                    if let last = lastPlayerDamageTick, tick >= last, tick - last < catalog.playerDamageCoalesceTicks {
-                        continue
-                    }
+                    let key = event.payload["contributors"]?.serialize()
+                        ?? payloadString(event, "sourceEntityId") ?? "unknown"
+                    if damageTicksBySource[key] != nil { continue }
+                    damageTicksBySource[key] = tick
                     lastPlayerDamageTick = tick
                 }
                 if recipe.id == "cameraAcquire" {
@@ -198,14 +203,31 @@ public struct VFXProjector: Equatable, Sendable {
             }
         }
         let projectileHits = events.filter { $0.type == .projectileHit }
-        if projectileHits.count >= 2, let recipe = catalog.recipesById["ricochet"] {
-            presentations.append(
-                present(recipe, event: projectileHits[0], reduced: reduced, sequence: nextSequence)
-            )
+        let groups = Dictionary(grouping: projectileHits, by: \.primaryEntityId)
+        for id in groups.keys.compactMap({ $0 }).sorted() {
+            guard let hits = groups[id], hits.count == 2,
+                  let first = hits.first(where: { payloadString($0, "projectileKind") == "civicPulse" }),
+                  let second = hits.first(where: { payloadString($0, "projectileKind") == "ricochet" }),
+                  payloadString(first, "projectileId") == id.decimalString,
+                  payloadString(second, "projectileId") == id.decimalString,
+                  let firstTarget = payloadString(first, "targetEntityId"),
+                  let secondTarget = payloadString(second, "targetEntityId"), firstTarget != secondTarget,
+                  let a = Self.point(first.payload, prefix: "impact"),
+                  let b = Self.point(second.payload, prefix: "impact"),
+                  let recipe = catalog.recipesById["ricochet"] else { continue }
+            var presentation = present(recipe, event: first, reduced: reduced, sequence: nextSequence)
+            presentation.impactPoints = [a, b]
+            presentations.append(presentation)
             nextSequence += 1
         }
         presentations = steal(presentations, limit: catalog.maxConcurrentEmitters)
         return VFXProjection(presentations: presentations)
+    }
+
+    public static func point(_ payload: [String: CanonicalJSON], prefix: String) -> VecQ8? {
+        guard case .integer(let x) = payload["\(prefix)XQ8"],
+              case .integer(let y) = payload["\(prefix)YQ8"] else { return nil }
+        return VecQ8(x: Q8(raw: x), y: Q8(raw: y))
     }
 
     private func present(
@@ -225,6 +247,7 @@ public struct VFXProjector: Equatable, Sendable {
             shape: recipe.shape,
             sourceEntityId: event.primaryEntityId,
             sequence: sequence,
+            evidence: event.payload,
             reduced: reduced
         )
     }

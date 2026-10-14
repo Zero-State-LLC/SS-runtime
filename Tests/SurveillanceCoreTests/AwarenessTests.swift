@@ -489,7 +489,7 @@ struct AwarenessTests {
         sim.testing_spawnStandard(.fogAnalyticsCloud, at: VecI(x: 500, y: 192), awareness: .unaware)
         sim.testing_fillCivicPool(count: Targeting.activeCeiling)
         _ = sim.step(command: .neutral(tick: 1))
-        #expect(hint.project(PresentationSnapshot(sim.state)) == "UNSEEN ENEMIES HOLD • STRIKE FIRST FOR DOUBLE DAMAGE")
+        #expect(hint.project(PresentationSnapshot(sim.state)) == "UNSEEN ENEMIES HOLD • STRIKE FIRST FOR TRIPLE DAMAGE")
         for tick in 2...300 { _ = sim.step(command: .neutral(tick: UInt64(tick))) }
         #expect(hint.project(PresentationSnapshot(sim.state)) != nil, "tick 300 is the 300th tick shown")
         _ = sim.step(command: .neutral(tick: 301))

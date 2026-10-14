@@ -13,7 +13,7 @@
 /// never falls back on the order hits were discovered in, which depends on pool
 /// iteration and is not authoritative.
 struct DamageHit: Equatable, Sendable {
-    /// Sweep intersection time along this tick's motion. Walls resolve at 0.
+    /// Sweep intersection time along this tick's motion. Walls use their actual entry time (D-103).
     var t: Int64
     /// Entity struck. `EntityID(0)` for a wall, which has no entity.
     var target: EntityID
