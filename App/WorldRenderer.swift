@@ -69,6 +69,7 @@ final class WorldRenderer {
     /// Clip currently playing per actor key, so an animation is not restarted
     /// on every frame.
     private var activeClips: [String: String] = [:]
+    private var cameraPaths: [String: (CameraFieldGeometry.Key, CGPath)] = [:]
     private var layers: [Layer: SKNode] = [:]
     /// Live nodes by layer and stable key, so a key that disappears from the
     /// snapshot has its node removed rather than left on screen.
@@ -104,6 +105,7 @@ final class WorldRenderer {
         solidSignature = nil
         fogThinning.reset()
         activeClips = [:]
+        cameraPaths = [:]
         decorationsBuilt = false
         fogBuilt = false
         // reset() empties every layer, ground included, so the build flag has to
@@ -159,6 +161,7 @@ final class WorldRenderer {
         seen[layer, default: []].insert(key)
         if let existing = nodes[layer]?[key] { return existing }
         let created = make()
+        if created.name == nil { created.name = key }
         nodes[layer]?[key] = created
         layers[layer]?.addChild(created)
         return created
@@ -175,6 +178,9 @@ final class WorldRenderer {
         for (key, node) in existing where !live.contains(key) {
             node.removeFromParent()
             existing.removeValue(forKey: key)
+            if layer == .actors, key.hasPrefix("sprite-") {
+                activeClips.removeValue(forKey: String(key.dropFirst(7)))
+            }
         }
         nodes[layer] = existing
     }
@@ -622,6 +628,14 @@ final class WorldRenderer {
         endLayer(.extraction)
     }
 
+    private func cameraFieldPath(_ camera: PresentationSnapshot.CameraSprite, solids: [AABB], key: String) -> CGPath {
+        let geometry = CameraFieldGeometry.Key(camera: camera, solids: solids)
+        if let cached = cameraPaths[key], cached.0 == geometry { return cached.1 }
+        let path = CameraFieldGeometry.path(geometry)
+        cameraPaths[key] = (geometry, path)
+        return path
+    }
+
     private func renderCameras(_ snap: PresentationSnapshot) {
         beginLayer(.cameraFields)
         beginLayer(.cameraHousings)
@@ -674,12 +688,8 @@ final class WorldRenderer {
             let fieldKey = "field-\(camera.id.raw)"
             let field = node(.cameraFields, fieldKey) { SKShapeNode() }
             if let shape = field as? SKShapeNode {
-                shape.path = Geometry.conePath(
-                    range: camera.range,
-                    headingMilli: camera.headingMilli,
-                    fieldAngleMilli: camera.fieldAngleMilli
-                )
-                shape.position = CGPoint(x: camera.x, y: camera.y)
+                shape.path = cameraFieldPath(camera, solids: snap.solids, key: fieldKey)
+                shape.position = .zero
                 shape.fillColor = camera.detecting ? Palette.cameraFieldDetecting : Palette.cameraField
                 shape.strokeColor = .clear
             }
@@ -699,12 +709,8 @@ final class WorldRenderer {
         if let field = snap.captainField {
             let node = node(.cameraFields, "captain-field") { SKShapeNode() }
             if let shape = node as? SKShapeNode {
-                shape.path = Geometry.conePath(
-                    range: field.range,
-                    headingMilli: field.headingMilli,
-                    fieldAngleMilli: field.fieldAngleMilli
-                )
-                shape.position = CGPoint(x: field.x, y: field.y)
+                shape.path = cameraFieldPath(field, solids: snap.solids, key: "captain-field")
+                shape.position = .zero
                 shape.fillColor = Palette.captainField
                 shape.strokeColor = .clear
             }
@@ -957,7 +963,7 @@ final class WorldRenderer {
             // Blockout: the outline is a stroke on the silhouette, dashed for
             // enemies, so the fallback carries faction by shape too.
             shape.strokeColor = .clear
-            let outline = (shape.childNode(withName: Self.outlineName) as? SKShapeNode) ?? {
+            let outline = (shape.children.first { $0.name == Self.outlineName } as? SKShapeNode) ?? {
                 let path = Geometry.silhouettePath(silhouette)
                 let made = SKShapeNode(
                     path: ActorContrast.dashed(faction)
@@ -979,7 +985,7 @@ final class WorldRenderer {
     /// never trails the animation, and at the end of every render.
     func syncOutlines() {
         for (sprite, faction) in outlineTargets {
-            let outline = (sprite.childNode(withName: Self.outlineName) as? SKSpriteNode) ?? {
+            let outline = (sprite.children.first { $0.name == Self.outlineName } as? SKSpriteNode) ?? {
                 let made = SKSpriteNode()
                 made.name = Self.outlineName
                 sprite.addChild(made)
@@ -1121,7 +1127,7 @@ extension WorldRenderer {
         for layer in [Layer.fogLow, Layer.fogHigh] {
             layers[layer]?.alpha = split.base
             for tile in layers[layer]?.children ?? [] {
-                tile.childNode(withName: FogDensity.boostName)?.alpha = split.boost
+                tile.children.first { $0.name == FogDensity.boostName }?.alpha = split.boost
             }
         }
 

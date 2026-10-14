@@ -971,8 +971,8 @@ final class HUDRenderer {
             node.verticalAlignmentMode = .center
             return node
         }
-        node.text = text
-        node.fontSize = size * Self.framingScale
+        if node.text != text { node.text = text }
+        if node.fontSize != size * Self.framingScale { node.fontSize = size * Self.framingScale }
         node.fontColor = colour
         node.horizontalAlignmentMode = alignment
         node.position = alignment == .left && leftEdge != nil

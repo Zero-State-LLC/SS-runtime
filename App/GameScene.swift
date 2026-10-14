@@ -1,9 +1,7 @@
 import SpriteKit
 import SurveillanceCore
 import UIKit
-#if DEBUG
 import os
-#endif
 
 final class GameSession {
     private(set) var simulation: Simulation
@@ -201,6 +199,12 @@ final class GameScene: SKScene {
     /// D-088: effects, hit-stop, and shake. Presentation only.
     private let vfx = VFXRenderer()
     private let cameraNode = SKCameraNode()
+    private var cameraFollow = CameraFollow()
+    private var lastDisplayTime: TimeInterval?
+    private var displayDelta: TimeInterval = 1.0 / 60
+    private let qaEnabled = ProcessInfo.processInfo.arguments.contains("-SSQA")
+    private var qaFrames = 0
+    private static let qaLog = Logger(subsystem: "com.zer0state.surveillancesurvivor", category: "device-qa")
     private let hud = HUDRenderer()
     /// D-094 Lockdown tint: world layer only, under the HUD.
     private let lockdownTint = LockdownTintLayer()
@@ -400,6 +404,7 @@ final class GameScene: SKScene {
 
     func setPaused(_ paused: Bool) {
         runPaused = paused
+        lastDisplayTime = nil
         // Input must not survive a pause boundary.
         //
         // Pause is reached by tapping the Pause control while the other hand may
@@ -413,7 +418,16 @@ final class GameScene: SKScene {
     }
 
     override func update(_ currentTime: TimeInterval) {
+        displayDelta = lastDisplayTime.map { max(0, currentTime - $0) } ?? 1.0 / 60
+        lastDisplayTime = currentTime
         instrumentation.frameTimes.recordFrame(timestamp: currentTime)
+        if qaEnabled {
+            qaFrames += 1
+            if qaFrames % 300 == 0 {
+                let summary = instrumentation.frameTimes.summarize()
+                Self.qaLog.notice("QA device=\(DeviceTelemetrySample.hardwareModel, privacy: .public) tick=\(self.currentTick, privacy: .public) n=\(summary.sampleCount, privacy: .public) p50=\(summary.p50Ms, privacy: .public) p95=\(summary.p95Ms, privacy: .public) p99=\(summary.p99Ms, privacy: .public) worst=\(summary.worstMs, privacy: .public)")
+            }
+        }
         guard !runPaused else { return }
         // D-088 hit-stop: a frozen frame neither steps the simulation nor
         // redraws the world. No tick, no command, so no digest change.
@@ -524,7 +538,7 @@ final class GameScene: SKScene {
         deviceRunTracker.noteTerminalOutcome(session.simulation.state.outcome)
         let snapshot = instrumentation.evidence()
         let deviceEvidence = snapshot.makeDeviceRunEvidence(
-            deviceClass: "iPhone 12",
+            deviceClass: DeviceTelemetrySample.hardwareModel,
             consecutiveCompleteRuns: deviceRunTracker.consecutiveCompleteRuns,
             atlasMemoryBytes: nil
         )
@@ -685,6 +699,8 @@ final class GameScene: SKScene {
         loadGhost()
         soundEngine.reset()
         renderer.reset()
+        cameraFollow.reset()
+        lastDisplayTime = nil
         lockdownTint.reset()
         court.reset()
         vfx.reset()
@@ -880,7 +896,13 @@ final class GameScene: SKScene {
                 snap.cameras[index].fieldVisible = false
             }
         }
-        cameraNode.position = vfx.cameraPosition(base: CGPoint(x: snap.camera.center.x, y: snap.camera.center.y))
+        cameraFollow.update(
+            player: VecI(x: snap.player.x, y: snap.player.y),
+            heading: session.simulation.state.player.facing,
+            bounds: snap.arenaBounds,
+            deltaTime: displayDelta
+        )
+        cameraNode.position = vfx.cameraPosition(base: CGPoint(x: cameraFollow.x ?? 0, y: cameraFollow.y ?? 0))
         nearMissEdges.update(
             snap,
             nearMiss: session.feel.nearMiss,

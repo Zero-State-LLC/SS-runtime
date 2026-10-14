@@ -22,6 +22,8 @@ public struct PresentationSnapshot: Equatable, Sendable {
     }
 
     public struct CameraSprite: Equatable, Sendable {
+        /// Exact authoritative emitter position, distinct from the mount artwork.
+        public var fieldOrigin: VecQ8? = nil
         public var id: EntityID
         public var x: Int
         public var y: Int
@@ -215,6 +217,7 @@ public struct PresentationSnapshot: Equatable, Sendable {
         cameras = state.cameras.map {
             let presentationState = CameraPresentation.persistentState(integrity: $0.integrity)
             return CameraSprite(
+                fieldOrigin: $0.fieldOrigin,
                 id: $0.entityId,
                 x: $0.position.x,
                 y: $0.position.y,
