@@ -8,6 +8,66 @@ import XCTest
 /// Uses the shipping GameScene/renderer/HUD. Images remain in the test result.
 final class BenchmarkCaptureTests: XCTestCase {
     @MainActor
+    func testCaptureReactionTurningReadability() throws {
+        let view = SKView(frame: CGRect(x: 0, y: 0, width: 704, height: 326))
+        view.isPaused = true
+        let scene = SKScene(size: view.bounds.size)
+        scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        scene.backgroundColor = UIColor(white: 0.22, alpha: 1)
+        view.presentScene(scene)
+        defer { view.presentScene(nil) }
+        let state = try Simulation.make(seed: 1).state
+        let crop = CGRect(x: -352, y: -163, width: 704, height: 326)
+        for reduced in [false, true] {
+            let renderer = WorldRenderer()
+            scene.addChild(renderer.root)
+            var tracker = ReactionClipTracker(catalog: try ClipCatalog.bundled())
+            tracker.ingest(TickResult(tick: 100, events: [AuthoritativeEvent(
+                tick: 100, phase: 10, type: .playerDamaged, primary: EntityID(1), insertion: 0)],
+                digest: "", outcome: .playing), previousEnemies: [], currentEnemies: [], playerDirection: "w")
+            XCTAssertEqual(tracker.playerReaction?.endTick, 109)
+            for tick in UInt64(100)...110 {
+                var snap = PresentationSnapshot(state)
+                snap.tick = tick
+                snap.player.x = 0
+                snap.player.y = Int(tick - 100) * 4 - 20
+                snap.playerDirection = tick == 100 ? "w" : "n"
+                snap.playerClipId = "player_move"
+                snap.enemies = []; snap.projectiles = []; snap.telegraphs = []; snap.mines = []
+                snap.cameras = []; snap.captainHousings = []; snap.captainField = nil
+                snap.patrolCones = []; snap.spawnSockets = []; snap.solids = []; snap.solidIds = []
+                tracker.apply(to: &snap)
+                renderer.render(snap, reducedMotion: reduced)
+                XCTAssertEqual(snap.playerReactionClipId != nil, tick < 109)
+                if tick < 109 {
+                    XCTAssertEqual(snap.playerReactionOccurrence?.direction, "w")
+                }
+                let texture = try XCTUnwrap(view.texture(from: scene, crop: crop))
+                let attachment = XCTAttachment(image: UIImage(cgImage: texture.cgImage()))
+                attachment.name = "BP003-reaction-turn-\(reduced ? "reduced" : "normal")-\(tick)"
+                attachment.lifetime = .keepAlways
+                add(attachment)
+            }
+            renderer.root.removeFromParent()
+        }
+        let evidence = XCTAttachment(string: """
+        BP-003 native-size event-facing comparison; not benchmark art acceptance.
+        Actual WorldRenderer, bundled v1 player textures, ReactionClipTracker.
+        704x326-point SKView, backing scale \(view.contentScaleFactor).
+        Synthetic presentation path: player moves north 4 units/tick; live facing
+        turns west→north at tick 101. Hurt occurrence begins west at tick 100,
+        selects three frames at 20 fps, expires exclusively at tick 109.
+        Normal and Reduced Motion captured for every tick 100...110.
+        SKView is paused: event frames are tick-sampled; fallback locomotion
+        shows its initial/settled pose, not action-time animation evidence.
+        No authoritative collision, attack or damage scenario is asserted.
+        """)
+        evidence.name = "BP003-reaction-turn-record"
+        evidence.lifetime = .keepAlways
+        add(evidence)
+    }
+
+    @MainActor
     func testExactAndVariableTimingReachSpriteKit() throws {
         let image = UIGraphicsImageRenderer(size: CGSize(width: 2, height: 2)).image { context in
             UIColor.white.setFill()
