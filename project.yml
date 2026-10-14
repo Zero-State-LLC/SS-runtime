@@ -62,6 +62,9 @@ targets:
   SSRuntimeTests:
     type: bundle.unit-test
     platform: iOS
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
     sources:
       - path: AppTests
     dependencies:

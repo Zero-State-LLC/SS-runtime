@@ -43,6 +43,10 @@ final class GameSession {
     /// order, so a successful run can be stored and replayed as the ghost.
     /// Written after each step; never read back into the simulation.
     private(set) var commandLog: [PlayerCommand] = []
+    var damageDiagnosticsEnabled = false
+    private(set) var damageDiagnostics: [DamageDiagnostic] = []
+    private(set) var droppedDamageDiagnostics = 0
+    private(set) var latestDamageDiagnostics: [DamageDiagnostic] = []
     /// True once a debug scenario has written authoritative state directly.
     /// Such a run cannot be replayed from its commands, so it is never stored
     /// as a best.
@@ -57,6 +61,7 @@ final class GameSession {
 
     func step() {
         let tick = simulation.state.tick + 1
+        let diagnosticBefore = damageDiagnosticsEnabled ? simulation.state : nil
         let enemiesBefore = simulation.state.enemies
         feel.willStep(simulation.state)
         let result: TickResult
@@ -82,6 +87,15 @@ final class GameSession {
         }
         result = simulation.step(command: command)
         lastEvents = result.events
+        latestDamageDiagnostics = diagnosticBefore.map {
+            DamageDiagnostic.capture(before: $0, after: simulation.state, events: result.events)
+        } ?? []
+        damageDiagnostics.append(contentsOf: latestDamageDiagnostics)
+        if damageDiagnostics.count > 512 {
+            let excess = damageDiagnostics.count - 512
+            droppedDamageDiagnostics += excess
+            damageDiagnostics.removeFirst(excess)
+        }
         // Log only a command the simulation consumed: one that advanced the
         // tick. A held upgrade gate and a finished run do not advance.
         if let command, simulation.state.tick == tick {
@@ -119,6 +133,9 @@ final class GameSession {
     func restartRun(seed: UInt64 = 1) {
         simulation = try! Simulation.make(seed: seed)
         commandLog = []
+        damageDiagnostics = []
+        latestDamageDiagnostics = []
+        droppedDamageDiagnostics = 0
         lastEvents = []
         scenarioSeeded = false
         terminalReceiptStored = false
@@ -263,6 +280,7 @@ final class GameScene: SKScene {
 #endif
 
     override func didMove(to view: SKView) {
+        session.damageDiagnosticsEnabled = qaEnabled
         backgroundColor = .init(red: 0.055, green: 0.075, blue: 0.10, alpha: 1)
         view.preferredFramesPerSecond = 60
         view.ignoresSiblingOrder = true
@@ -486,6 +504,13 @@ final class GameScene: SKScene {
         applyController()
 #endif
         session.step()
+        if qaEnabled {
+            for hit in session.latestDamageDiagnostics {
+                if let data = try? JSONEncoder().encode(hit), let line = String(data: data, encoding: .utf8) {
+                    Self.qaLog.notice("QA_DAMAGE \(line, privacy: .public)")
+                }
+            }
+        }
         // D-097: the takedown's hit-stop and ring, after the step that made it.
         vfx.takedown(targets: session.feel.lastTakedowns)
 #if DEBUG
@@ -535,6 +560,20 @@ final class GameScene: SKScene {
     private func persistDeviceEvidenceIfNeeded() {
         guard !terminalEvidenceStored, session.simulation.state.outcome != .playing else { return }
         terminalEvidenceStored = true
+        if qaEnabled {
+            let report = DamageDiagnosticRun(seed: session.simulation.state.seed,
+                device: DeviceTelemetrySample.hardwareModel, droppedRecords: session.droppedDamageDiagnostics,
+                damage: session.damageDiagnostics, commands: session.commandLog.map(DamageDiagnosticRun.Command.init))
+            do {
+                let directory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask,
+                                                           appropriateFor: nil, create: true)
+                let url = directory.appendingPathComponent("SS-damage-QA-latest.json")
+                try JSONEncoder().encode(report).write(to: url, options: .atomic)
+                Self.qaLog.notice("QA_DAMAGE_EXPORT \(url.lastPathComponent, privacy: .public)")
+            } catch {
+                Self.qaLog.error("QA_DAMAGE_EXPORT failed: \(String(describing: error), privacy: .public)")
+            }
+        }
         deviceRunTracker.noteTerminalOutcome(session.simulation.state.outcome)
         let snapshot = instrumentation.evidence()
         let deviceEvidence = snapshot.makeDeviceRunEvidence(

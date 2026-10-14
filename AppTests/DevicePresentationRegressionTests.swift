@@ -93,4 +93,64 @@ struct DevicePresentationRegressionTests {
         for _ in 0..<3 { time += 0.05; collector.recordFrame(timestamp: time) }
         #expect(collector.summarize().sustainedBelowFloorFps)
     }
+    @Test func solidFootprintsRemainVisibleAcrossTransparentArt() throws {
+        let snapshot = PresentationSnapshot(try Simulation.make(seed: 1).state)
+        let renderer = WorldRenderer()
+        renderer.render(snapshot)
+        for (index, box) in snapshot.solids.enumerated() {
+            let id = snapshot.solidIds[index]
+            guard !id.hasPrefix(SelectedCamera.mountSolidPrefix), !snapshot.gateIds.contains(id) else { continue }
+            let foundation = try #require(renderer.root.childNode(withName: "//solid-footprint-\(id)") as? SKShapeNode)
+            #expect(foundation.fillColor.cgColor.alpha == 1)
+            #expect(foundation.path?.boundingBox.width == CGFloat(box.halfSize.x * 2))
+            #expect(foundation.path?.boundingBox.height == CGFloat(box.halfSize.y * 2))
+        }
+    }
+
+    @Test func cameraHousingAndHeadUseTheSameGroundAnchor() throws {
+        let snapshot = PresentationSnapshot(try Simulation.make(seed: 1).state)
+        let renderer = WorldRenderer()
+        renderer.render(snapshot)
+        for camera in snapshot.cameras where camera.housingFamily != nil {
+            let housing = try #require(renderer.root.childNode(withName: "//housing-\(camera.id.raw)") as? SKSpriteNode)
+            let head = try #require(renderer.root.childNode(withName: "//sprite-camera-\(camera.id.raw)") as? SKSpriteNode)
+            #expect(housing.anchorPoint == head.anchorPoint)
+            #expect(head.texture != nil) // Visible even before SKActions evaluate.
+        }
+    }
+
+    @Test func damageDiagnosticsPreserveRemovedMineAndUnknownSources() throws {
+        var before = try Simulation.make(seed: 1).state
+        let owner = EntityID(900)
+        before.mines = [MineBody(id: EntityID(901), ownerId: owner,
+            position: before.player.position, armRemaining: 0, lifeRemaining: 50, radius: 24, damage: 5)]
+        var after = before
+        after.mines = []
+        let event = AuthoritativeEvent(tick: 1, phase: 12, type: .playerDamaged,
+            primary: before.player.id, secondary: owner,
+            payload: ["amount": .integer(5)], insertion: 0)
+        let hit = try #require(DamageDiagnostic.capture(before: before, after: after, events: [event]).first)
+        #expect(hit.sourceID == owner.raw)
+        #expect(hit.amount == 5)
+        #expect(hit.candidates.first?.kind == "removed-mine")
+        #expect(hit.candidates.first?.id == 901)
+        let unknown = AuthoritativeEvent(tick: 1, phase: 12, type: .playerDamaged,
+            secondary: EntityID(999), insertion: 1)
+        #expect(DamageDiagnostic.capture(before: before, after: after, events: [unknown]).first?.classification == "unresolved-source")
+        #expect(try JSONDecoder().decode(DamageDiagnostic.self, from: JSONEncoder().encode(hit)) == hit)
+    }
+
+    @Test func diagnosticsNeverChangeAuthorityAndResetWithRun() {
+        let observed = GameSession(seed: 1)
+        let control = GameSession(seed: 1)
+        observed.damageDiagnosticsEnabled = true
+        for _ in 0..<120 { observed.step(); control.step() }
+        #expect(observed.simulation.state.digest() == control.simulation.state.digest())
+        #expect(observed.commandLog == control.commandLog)
+        observed.restartRun()
+        #expect(observed.damageDiagnostics.isEmpty)
+        #expect(observed.latestDamageDiagnostics.isEmpty)
+        #expect(observed.droppedDamageDiagnostics == 0)
+    }
+
 }
