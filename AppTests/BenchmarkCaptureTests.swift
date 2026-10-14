@@ -334,6 +334,23 @@ final class BenchmarkCaptureTests: XCTestCase {
             try capture("BP007-constrained-wall-\(tag)-geometry")
             footprintRoot.isHidden = true
             try capture("BP007-constrained-wall-\(tag)")
+            // BP-002 painted neutral source: one logical size and anchor across
+            // four real facings. Test-only textures; no clip or art admission.
+            let previousPlayerTexture = player.texture
+            let previousPlayerAnchor = player.anchorPoint
+            for facing in ["south", "east", "north", "west"] {
+                let candidate = try texture("painted-player-\(facing)")
+                XCTAssertEqual(candidate.size(), CGSize(width: 384, height: 384))
+                player.texture = candidate
+                player.anchorPoint = CGPoint(x: 0.5, y: 0.125)
+                // A paused SKView does not run the post-action outline refresh.
+                // Use the normal scene callback so no previous-frame outline leaks.
+                scene.didEvaluateActions()
+                try capture("BP002-painted-neutral-\(facing)-\(tag)")
+            }
+            player.texture = previousPlayerTexture
+            player.anchorPoint = previousPlayerAnchor
+            scene.didEvaluateActions()
             if zoom == 1 {
                 // Actual fixed-point slide solver, isolated to this authored solid.
                 // These are contact probes, not a full encounter or animation proof.
@@ -492,6 +509,12 @@ final class BenchmarkCaptureTests: XCTestCase {
         One complete camera node. Candidate settled state captures at integrity3/2/1/0.
         These are four still states, not the six required animated clip deliveries.
         No locomotion animation claimed.
+        BP002-painted-neutral captures use four registered 384x384 test-only source
+        images at the same 64x64 logical canvas and (32,56) anchor. Both ground
+        projection zooms are captured with the constrained building, municipal
+        camera and props. Names identify view intent, not calibrated world facings.
+        Source registration/hashes: BenchmarkAssets/painted-player-sources.json.
+        These are still comparisons, not layered-source or animation acceptance.
         Fog omitted while source strips await replacement. Paving uses existing plaza texture.
         Building mapping: 190x217, bottom-center at (\(x),\(y-64)); not fitted to collision AABB.
         Player mapping: 64x64, anchor (32,56). Camera mapping: 64x96, anchor (32,88).
