@@ -274,6 +274,70 @@ final class BenchmarkCaptureTests: XCTestCase {
             try capture("BP007-constrained-wall-\(tag)-geometry")
             footprintRoot.isHidden = true
             try capture("BP007-constrained-wall-\(tag)")
+            if zoom == 1 {
+                // Actual fixed-point slide solver, isolated to this authored solid.
+                // These are contact probes, not a full encounter or animation proof.
+                let probes: [(String, Int, Int, Int16, Int16)] = [
+                    ("west", -130, 0, 32767, 0), ("east", 130, 0, -32767, 0),
+                    ("south", 0, -130, 0, 32767), ("north", 0, 130, 0, -32767),
+                    ("near-corner", -130, -130, 32767, 32767),
+                    ("far-corner", 130, 130, -32767, -32767)
+                ]
+                let playerStart = player.position
+                let shadow = scene.childNode(withName: "//shadow-player")
+                let shadowStart = shadow?.position
+                var evidence = ["Isolated movement/collision probes. Radius18; existing obstacle unchanged. Neutral south art; no animation."]
+                for (label, dx, dy, mx, my) in probes {
+                    var position = VecI(x: x + dx, y: y + dy).asQ8
+                    for tick in 1...40 {
+                        let command = PlayerCommand(tick: UInt64(tick), moveX: mx, moveY: my, dodgePressed: false)
+                        let delta = Movement.displacement(from: command, dodgeActive: false, ghostStep: false)
+                        position = Collision.slideCircle(from: position, delta: delta, radius: PlayerBody.radiusUnits,
+                            bounds: AABB(center: box.center, halfSize: VecI(x: 512, y: 512)), solids: [(id: id, box: box)])
+                        XCTAssertFalse(Circle(center: position, radiusUnits: PlayerBody.radiusUnits).penetrates(box))
+                        evidence.append("\(label),\(tick),\(position.x.raw),\(position.y.raw)")
+                    }
+                    // Four straight approaches end at exact radius contact.
+                    if dy == 0 { XCTAssertEqual(abs(position.x.raw - Int64(x) * Q8.scale), Int64(82) * Q8.scale) }
+                    if dx == 0 { XCTAssertEqual(abs(position.y.raw - Int64(y) * Q8.scale), Int64(82) * Q8.scale) }
+                    let point = CGPoint(x: CGFloat(position.x.raw) / CGFloat(Q8.scale),
+                                        y: CGFloat(position.y.raw) / CGFloat(Q8.scale))
+                    player.position = projected(point)
+                    if let shadowStart {
+                        shadow?.position = CGPoint(x: point.x + shadowStart.x - CGFloat(snap.player.x),
+                                                   y: point.y + shadowStart.y - CGFloat(snap.player.y))
+                    }
+                    footprintRoot.isHidden = true
+                    try capture("BP005-contact-\(label)")
+                    let radius = SKShapeNode(circleOfRadius: CGFloat(PlayerBody.radiusUnits))
+                    radius.position = point; radius.strokeColor = .cyan; radius.fillColor = .clear
+                    radius.lineWidth = 1
+                    footprintTranslation.addChild(radius)
+                    footprintRoot.isHidden = false
+                    try capture("BP005-contact-\(label)-geometry")
+                    radius.removeFromParent()
+                    if ["east", "north", "far-corner"].contains(label) {
+                        // Deliberately selected rear contacts compare treatments;
+                        // this is not a general-purpose occlusion classifier.
+                        let priorZ = player.zPosition
+                        let shadowWasHidden = shadow?.isHidden
+                        player.zPosition = building.zPosition - 0.1
+                        shadow?.isHidden = true
+                        footprintRoot.isHidden = true
+                        try capture("BP005-opaque-depth-\(label)")
+                        building.alpha = 0.35
+                        try capture("BP005-faded-depth-\(label)")
+                        building.alpha = 1
+                        player.zPosition = priorZ
+                        if let shadowWasHidden { shadow?.isHidden = shadowWasHidden }
+                    }
+                }
+                player.position = playerStart
+                if let shadowStart { shadow?.position = shadowStart }
+                let probeRecord = XCTAttachment(string: evidence.joined(separator: "\n"))
+                probeRecord.name = "BP005-contact-probes-q8"
+                probeRecord.lifetime = .keepAlways; add(probeRecord)
+            }
             footprintRoot.removeFromParent()
             for node in world { node.removeFromParent(); scene.addChild(node) }
             for (node, parent, position, sx, sy, z) in originals {
