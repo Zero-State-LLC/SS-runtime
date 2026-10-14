@@ -1,0 +1,131 @@
+{
+  "sourceSha256": "1177d7a6f75d7913016f94f6c3b99662a551ae2660b31584e70b9eea52815854",
+  "alphaRemap": "<=32 zero; >=240 opaque; linear between",
+  "status": "REVIEW_ONLY",
+  "states": [
+    {
+      "state": "intact",
+      "sourceCell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "sourceAnchor": [
+        235.5,
+        692
+      ],
+      "sourceScale": 0.7112462006079028,
+      "canvas": [
+        384,
+        576
+      ],
+      "logicalCanvas": [
+        64,
+        96
+      ],
+      "anchor": [
+        192,
+        528
+      ],
+      "logicalAnchor": [
+        32,
+        88
+      ],
+      "sha256": "62bf8f36b74af8272b2ca446300f8d4d598a83618e4fd90724e736001ac46dd0"
+    },
+    {
+      "state": "damaged",
+      "sourceCell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "sourceAnchor": [
+        214.5,
+        692
+      ],
+      "sourceScale": 0.7112462006079028,
+      "canvas": [
+        384,
+        576
+      ],
+      "logicalCanvas": [
+        64,
+        96
+      ],
+      "anchor": [
+        192,
+        528
+      ],
+      "logicalAnchor": [
+        32,
+        88
+      ],
+      "sha256": "db82af993e76852f251cbca173a723d0a4c28cdfb2c95655074bf5f3d344d256"
+    },
+    {
+      "state": "critical",
+      "sourceCell": [
+        1024,
+        0,
+        1536,
+        768
+      ],
+      "sourceAnchor": [
+        193.0,
+        692
+      ],
+      "sourceScale": 0.7112462006079028,
+      "canvas": [
+        384,
+        576
+      ],
+      "logicalCanvas": [
+        64,
+        96
+      ],
+      "anchor": [
+        192,
+        528
+      ],
+      "logicalAnchor": [
+        32,
+        88
+      ],
+      "sha256": "cc907513c233dce87c2c5074fc5b5ecfa8b4672c92fe0308ab21708c8e853f22"
+    },
+    {
+      "state": "destroyed",
+      "sourceCell": [
+        1536,
+        0,
+        2048,
+        768
+      ],
+      "sourceAnchor": [
+        172.0,
+        692
+      ],
+      "sourceScale": 0.7112462006079028,
+      "canvas": [
+        384,
+        576
+      ],
+      "logicalCanvas": [
+        64,
+        96
+      ],
+      "anchor": [
+        192,
+        528
+      ],
+      "logicalAnchor": [
+        32,
+        88
+      ],
+      "sha256": "05d22ca2e09d52142ccc3c392f689b690c23cd49615b6878bcbcdf075cd052f9"
+    }
+  ]
+}
