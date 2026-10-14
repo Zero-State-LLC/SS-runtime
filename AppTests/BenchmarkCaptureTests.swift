@@ -327,6 +327,30 @@ final class BenchmarkCaptureTests: XCTestCase {
                         try capture("BP005-opaque-depth-\(label)")
                         building.alpha = 0.35
                         try capture("BP005-faded-depth-\(label)")
+                        // BP-009: compare static projected ground cues with fading.
+                        // Review parameters only; not the chosen shipping style.
+                        footprint.strokeColor = SKColor(white: 0.85, alpha: 1)
+                        footprint.lineWidth = 1.5
+                        footprint.fillColor = SKColor(white: 0.1, alpha: 0.16)
+                        let contactBacking = SKShapeNode(circleOfRadius: CGFloat(PlayerBody.radiusUnits))
+                        contactBacking.position = point
+                        contactBacking.fillColor = .clear
+                        contactBacking.strokeColor = SKColor(white: 0.08, alpha: 1)
+                        contactBacking.lineWidth = 3
+                        let contactRing = SKShapeNode(circleOfRadius: CGFloat(PlayerBody.radiusUnits))
+                        contactRing.fillColor = .clear
+                        contactRing.strokeColor = SKColor(white: 0.95, alpha: 1)
+                        contactRing.lineWidth = 1.25
+                        contactBacking.addChild(contactRing)
+                        footprintTranslation.addChild(contactBacking)
+                        footprintRoot.isHidden = false
+                        XCTAssertFalse(contactBacking.hasActions())
+                        XCTAssertFalse(contactRing.hasActions())
+                        try capture("BP009-ground-cue-\(label)")
+                        contactBacking.removeFromParent()
+                        footprintRoot.isHidden = true
+                        footprint.strokeColor = .magenta
+                        footprint.lineWidth = 1; footprint.fillColor = .clear
                         building.alpha = 1
                         player.zPosition = priorZ
                         if let shadowWasHidden { shadow?.isHidden = shadowWasHidden }
