@@ -1,0 +1,296 @@
+{
+  "status": "FAILED_NOT_ADMITTED",
+  "sourceSha256": "ef4411fac121e8268317947abeca5f21df982c161e91fd8c60ffa7266fae8c7e",
+  "mapping": "4x4 equal cells, common224x224 resampling pasted at16,0 in256x256; diagnostic only, no validated anatomical registration",
+  "normalCycleSeconds": 0.5,
+  "frames": [
+    {
+      "frame": 1,
+      "sourceRect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "export": "frame-01.png",
+      "sha256": "08088fd5d9f253c7c75c46bf6c7fe468cf9a5f7145e4f24c339849883b4641b0",
+      "alphaBounds": [
+        64,
+        10,
+        227,
+        224
+      ],
+      "status": "FAILED_PHASE_ORDER"
+    },
+    {
+      "frame": 2,
+      "sourceRect": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "export": "frame-02.png",
+      "sha256": "793649575e9ab63668f0ae301a36d9f1be39a676e88207850ad8129b7d2eb31b",
+      "alphaBounds": [
+        22,
+        11,
+        237,
+        224
+      ],
+      "status": "FAILED_PHASE_ORDER"
+    },
+    {
+      "frame": 3,
+      "sourceRect": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "export": "frame-03.png",
+      "sha256": "e8e39846ede07342390da61647bba8bbac57b2069420ac55cbe39255ee873fb1",
+      "alphaBounds": [
+        21,
+        10,
+        217,
+        224
+      ],
+      "status": "FAILED_PHASE_ORDER"
+    },
+    {
+      "frame": 4,
+      "sourceRect": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "export": "frame-04.png",
+      "sha256": "d28cac45c8fbc4194c38014f1f510daf8e18af20adbb38fb3f76cc9a1ab091a5",
+      "alphaBounds": [
+        59,
+        11,
+        196,
+        223
+      ],
+      "status": "FAILED_PHASE_ORDER"
+    },
+    {
+      "frame": 5,
+      "sourceRect": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "export": "frame-05.png",
+      "sha256": "82d90f621496a5bd61767707ce71bfe7f15fdc23346be24d9024c9e07e6df458",
+      "alphaBounds": [
+        61,
+        0,
+        234,
+        224
+      ],
+      "status": "FAILED_PHASE_ORDER"
+    },
+    {
+      "frame": 6,
+      "sourceRect": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "export": "frame-06.png",
+      "sha256": "7fcc9ed46452549a16c1d17f20832ab0fad0c7acd929ba22d8921d8312f6f14d",
+      "alphaBounds": [
+        62,
+        0,
+        230,
+        224
+      ],
+      "status": "FAILED_PHASE_ORDER"
+    },
+    {
+      "frame": 7,
+      "sourceRect": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "export": "frame-07.png",
+      "sha256": "e2667756dedbbaeefe45682e15256d84f884334c05c51bc139417da6c881fa9f",
+      "alphaBounds": [
+        61,
+        0,
+        209,
+        224
+      ],
+      "status": "FAILED_PHASE_ORDER"
+    },
+    {
+      "frame": 8,
+      "sourceRect": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "export": "frame-08.png",
+      "sha256": "77ba3af316f23a7132824ee66cc42374bc8a4cb9f31a6fe15d02f5a77882baa1",
+      "alphaBounds": [
+        56,
+        8,
+        226,
+        224
+      ],
+      "status": "FAILED_PHASE_ORDER"
+    },
+    {
+      "frame": 9,
+      "sourceRect": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "export": "frame-09.png",
+      "sha256": "3700859e2f0311a1cb38325f0600f0b9740eff13423fc19190d9bd551986b994",
+      "alphaBounds": [
+        60,
+        0,
+        233,
+        224
+      ],
+      "status": "FAILED_PHASE_ORDER"
+    },
+    {
+      "frame": 10,
+      "sourceRect": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "export": "frame-10.png",
+      "sha256": "f7c20f1c0b69d31861e23d770b1adeb6a7c0b59278cb48d9a38878dba0872e6c",
+      "alphaBounds": [
+        22,
+        0,
+        240,
+        224
+      ],
+      "status": "FAILED_PHASE_ORDER"
+    },
+    {
+      "frame": 11,
+      "sourceRect": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "export": "frame-11.png",
+      "sha256": "22a47f15af6d5eb14738d7b47dc1fb6f1da7dd3b4670c455c87c2faa0b855e24",
+      "alphaBounds": [
+        18,
+        4,
+        204,
+        224
+      ],
+      "status": "FAILED_PHASE_ORDER"
+    },
+    {
+      "frame": 12,
+      "sourceRect": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "export": "frame-12.png",
+      "sha256": "d594b7730e7b9af098d092bb759c1c13edbcc7d40e46aca7e7b7c745bbaf8139",
+      "alphaBounds": [
+        56,
+        6,
+        220,
+        221
+      ],
+      "status": "FAILED_PHASE_ORDER"
+    },
+    {
+      "frame": 13,
+      "sourceRect": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "export": "frame-13.png",
+      "sha256": "ecc9eeccec6f8e66be674aa94131670de650678656ab183836e1818f8d311bf9",
+      "alphaBounds": [
+        62,
+        0,
+        230,
+        213
+      ],
+      "status": "FAILED_PHASE_ORDER"
+    },
+    {
+      "frame": 14,
+      "sourceRect": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "export": "frame-14.png",
+      "sha256": "babfa01be1300d99645fa5bb22462c161ec638baefb13dc3e192b871107e8112",
+      "alphaBounds": [
+        20,
+        0,
+        219,
+        215
+      ],
+      "status": "FAILED_PHASE_ORDER"
+    },
+    {
+      "frame": 15,
+      "sourceRect": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "export": "frame-15.png",
+      "sha256": "1790ccdb6a20405a830d4fced84908fd673452d45615c5506e2967a0aa785914",
+      "alphaBounds": [
+        60,
+        0,
+        235,
+        216
+      ],
+      "status": "FAILED_PHASE_ORDER"
+    },
+    {
+      "frame": 16,
+      "sourceRect": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "export": "frame-16.png",
+      "sha256": "1d42ee0bd14615695366ee64bfaf5a592ccc468623ccb53bf1c4d8cad8b645ac",
+      "alphaBounds": [
+        53,
+        7,
+        195,
+        216
+      ],
+      "status": "FAILED_PHASE_ORDER"
+    }
+  ]
+}
