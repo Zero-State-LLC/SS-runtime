@@ -260,7 +260,11 @@ public struct Simulation: Equatable, Sendable {
             signalJammer: state.upgrade.signalJammer,
             forceLockdown: forceLockdown,
             // D-084: every Camera destroyed this run, this tick's included.
-            destroyedCameras: state.destructions.count
+            destroyedCameras: state.destructions.count,
+            // D-102: named pulses participate before final state/latch emission.
+            // Preserve their existing suppression on the Player's lethal tick.
+            fogPulseAmounts: state.outcome == .failure ? [] : fogPulses,
+            observationPulseAmounts: state.outcome == .failure ? [] : observationPulses
         )
         emitExposure(resolution, tick: tick)
         resolveQuietApproach()
@@ -269,8 +273,6 @@ public struct Simulation: Equatable, Sendable {
             return finishTick()
         }
 
-        applyNamedPulses(fogPulses, reason: .fogPulse, tick: tick)
-        applyNamedPulses(observationPulses, reason: .observationPulse, tick: tick)
         openEliteGateIfDue(tick: tick)
 
         resolveObjectives(tick: tick)
@@ -764,42 +766,6 @@ public struct Simulation: Equatable, Sendable {
             state.gates[gate].closed = false
         }
         state.eliteGateOpenTick = nil
-    }
-
-    private mutating func applyNamedPulses(_ pulses: [Int], reason: ExposureReason, tick: UInt64) {
-        for pulse in pulses {
-            let amount = reason == .fogPulse && state.upgrade.signalJammer
-                ? Int(IntMath.divHalfAway(Int64(pulse) * 75, 100))
-                : pulse
-            let before = state.exposure.exposure
-            if !state.exposure.lockdownEntered {
-                state.exposure.exposure = min(1000, state.exposure.exposure + amount)
-                if state.exposure.exposure > state.exposure.peak {
-                    state.exposure.peak = state.exposure.exposure
-                }
-                state.exposure.detectionState = DetectionState.projected(state.exposure.exposure)
-                if state.exposure.exposure >= 1000 && !state.exposure.lockdownEntered {
-                    state.exposure.lockdownEntered = true
-                    state.exposure.detectionState = .lockdown
-                    events.emit(
-                        tick: tick,
-                        phase: 13,
-                        type: .lockdownEntered,
-                        payload: ["reason": .string(reason.rawValue)]
-                    )
-                }
-                events.emit(
-                    tick: tick,
-                    phase: 13,
-                    type: .exposureChanged,
-                    payload: [
-                        "before": .integer(Int64(before)),
-                        "after": .integer(Int64(state.exposure.exposure)),
-                        "reason": .string(reason.rawValue)
-                    ]
-                )
-            }
-        }
     }
 
     /// Every Player Integrity loss, from any source, lands here: contact,
@@ -1338,15 +1304,15 @@ public struct Simulation: Equatable, Sendable {
     }
 
     private mutating func emitExposure(_ resolution: ExposureState.Resolution, tick: UInt64) {
-        if resolution.after != resolution.before {
+        for change in resolution.changes {
             events.emit(
                 tick: tick,
                 phase: 13,
                 type: .exposureChanged,
                 payload: [
-                    "before": .integer(Int64(resolution.before)),
-                    "after": .integer(Int64(resolution.after)),
-                    "reason": .string(resolution.reason.rawValue)
+                    "before": .integer(Int64(change.before)),
+                    "after": .integer(Int64(change.after)),
+                    "reason": .string(change.reason.rawValue)
                 ]
             )
         }

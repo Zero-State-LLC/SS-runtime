@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Verify pinned specification
-        run: grep -q "01f9c898423ce37dbaeace19b722fb257928e985" SPEC_BASELINE.md
+        run: grep -q "92355fbaa7575425f8ab4e2d2eec7b7071fe2ec1" SPEC_BASELINE.md
       - name: Test deterministic core
         run: swift test --skip CameraPlacementTests --skip CameraFairnessTests --parallel --num-workers 1
       - name: Test camera placement
@@ -38,11 +38,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Verify pinned specification
-        run: grep -q "01f9c898423ce37dbaeace19b722fb257928e985" SPEC_BASELINE.md
+        run: grep -q "92355fbaa7575425f8ab4e2d2eec7b7071fe2ec1" SPEC_BASELINE.md
       - name: Byte-compare bundled contracts and fixtures against the pinned SS-specs
         run: bash scripts/spec_parity.sh
 
   app:
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration: [Debug, Release]
     # The iOS app target had never been compiled by CI: Bundle.module was
     # unavailable to a framework target and App/ had access-level errors.
     # Build it on every change so the README bootstrap path stays honest.
@@ -68,7 +72,8 @@ jobs:
           # read 0 and the job could never fail. Keep xcodebuild's own status.
           set +e
           xcodebuild -project SSRuntime.xcodeproj -scheme SSRuntime -sdk iphonesimulator \
-            -destination "platform=iOS Simulator,id=$sim" CODE_SIGNING_ALLOWED=NO test \
+            -destination "platform=iOS Simulator,id=$sim" -configuration "${{ matrix.configuration }}" \
+            CODE_SIGNING_ALLOWED=NO ENABLE_TESTABILITY=YES test \
             > /tmp/xcodebuild.log 2>&1
           status=$?
           set -e
