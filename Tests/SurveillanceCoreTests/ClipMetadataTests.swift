@@ -104,6 +104,67 @@ struct ClipMetadataTests {
         }
     }
 
+    @Test func bothLoadersRejectUnsupportedTimingAndMalformedScalars() throws {
+        let catalog = try AssetCatalog.bundled()
+        let mutations: [(inout [[String: Any]]) -> Void] = [
+            { $0[0]["timing"] = ["unitsPerSecond": 24, "frameUnits": [1, 2]] },
+            { $0[0]["framesPerSecond"] = 12.5 },
+            { $0[0]["framesPerSecond"] = true },
+            { $0[0]["framesPerSecond"] = 1e30 },
+            { $0[0]["loop"] = 1 },
+            { $0[0]["anchor"] = ["x": 32.5, "y": 56] },
+            { $0[0]["anchor"] = ["x": true, "y": false] },
+            { $0[0]["anchor"] = ["x": 32, "y": 56, "extra": 1] }
+        ]
+        for mutate in mutations {
+            let data = try mutatedBundled(mutate)
+            #expect(throws: ClipMetadataError.self) { try ClipCatalogLoader.decode(data) }
+            #expect(throws: ClipMetadataError.self) {
+                try ClipFrameLibrary.make(clipJSON: data, catalog: catalog)
+            }
+        }
+    }
+
+    @Test func deliveryPreservesEveryValidatedClip() throws {
+        let catalog = try ClipCatalog.bundled()
+        let library = try ClipFrameLibrary.bundled()
+        #expect(library.clips.count == catalog.clips.count)
+        for source in catalog.clips {
+            let delivered = try #require(library.clip(source.clipId))
+            #expect(delivered.frameIds == source.frameIds)
+            #expect(delivered.directions == source.directions)
+            #expect(delivered.framesPerSecond == source.framesPerSecond)
+            #expect(delivered.loop == source.loop)
+            #expect(delivered.anchor == VecI(x: source.anchor.x, y: source.anchor.y))
+            #expect(delivered.actorRole == source.actorRole)
+            for direction in source.directions {
+                #expect(library.frameIds(clipId: source.clipId, direction: direction) == source.frameIds(forDirection: direction))
+            }
+        }
+    }
+
+    @Test func deliveryAndReactionSelectAuthoredFacingWhenFramesInterleave() throws {
+        let data = try mutatedBundled { clips in
+            let ids = clips[0]["frameIds"] as! [String]
+            let groups = ClipCatalog.fourDirections.map { direction in
+                ids.filter { $0.contains("_\(direction)_") }
+            }
+            clips[0]["frameIds"] = (0..<groups[0].count).flatMap { index in
+                groups.map { $0[index] }
+            }
+        }
+        let catalog = try ClipCatalogLoader.decode(data)
+        let library = try ClipFrameLibrary.make(clipJSON: data, catalog: AssetCatalog.bundled())
+        let clip = try #require(catalog.clips.first)
+        for direction in ClipCatalog.fourDirections {
+            let ids = library.frameIds(clipId: clip.clipId, direction: direction)
+            #expect(!ids.isEmpty)
+            #expect(ids.allSatisfy { $0.contains("_\(direction)_") })
+            #expect(ids == clip.frameIds(forDirection: direction))
+            #expect(library.timing(clipId: clip.clipId, direction: direction) == (try clip.timing(forDirection: direction)))
+        }
+    }
+
     private func mutatedBundled(_ mutate: (inout [[String: Any]]) -> Void) throws -> Data {
         var root = try JSONSerialization.jsonObject(with: SpecBundle.contract("clip-metadata-001")) as! [String: Any]
         var clips = root["clips"] as! [[String: Any]]

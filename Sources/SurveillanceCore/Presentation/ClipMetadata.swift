@@ -1,4 +1,5 @@
 import Foundation
+import CoreFoundation
 
 public struct ClipAnchor: Equatable, Hashable, Sendable {
     public var x: Int
@@ -211,8 +212,9 @@ enum ClipCatalogLoader {
               let directions = raw["directions"] as? [String],
               let frameIds = raw["frameIds"] as? [String], !frameIds.isEmpty,
               let fps = intValue(raw["framesPerSecond"]), fps > 0,
-              let loop = raw["loop"] as? Bool,
+              let loop = boolValue(raw["loop"]),
               let anchorObject = raw["anchor"] as? [String: Any],
+              Set(anchorObject.keys) == ["x", "y"],
               let anchorX = intValue(anchorObject["x"]),
               let anchorY = intValue(anchorObject["y"]),
               let marker = raw["authoritativeEventMarker"] as? String, !marker.isEmpty,
@@ -349,9 +351,16 @@ enum ClipCatalogLoader {
         }
     }
 
+    private static func boolValue(_ value: Any?) -> Bool? {
+        guard let number = value as? NSNumber,
+              CFGetTypeID(number) == CFBooleanGetTypeID() else { return nil }
+        return number.boolValue
+    }
+
     private static func intValue(_ value: Any?) -> Int? {
-        if let value = value as? Int { return value }
-        if let value = value as? NSNumber { return value.intValue }
-        return nil
+        guard let number = value as? NSNumber,
+              CFGetTypeID(number) != CFBooleanGetTypeID() else { return nil }
+        // Parse the exact decimal representation: no truncation or overflow wrap.
+        return Int(number.stringValue)
     }
 }
