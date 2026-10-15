@@ -13,3 +13,7 @@ orientation.py exports named OBJ groups, a surface-ownership record and four dep
 Reproduction: Python 3 with NumPy and Pillow, run orientation.py in this folder. In this session the bundled desktop Python was used. Checks passed for the inherited closed volume and explicit forward-facing shaft placement. Lace/tongue overlays are intentionally open polygons; the exported assembly is not a manifold production mesh. Four views were inspected; no runtime, simulator or device claim follows. No active game code/resources/spec pins changed.
 
 Next: refine the connected ankle/boot transition and apply the retained costume materials only to their owned surfaces; review assembled beneath the knee and coat before expanding the cycle.
+
+## Full-character placement follow-up
+
+fullpose-comparison.png uses the prior guide projection (origin 192,336, scale 6, elevation 30 degrees) without fitting the new mesh to the painting. Left: retained contact. Middle: source behind all retained pixels. Right: source over paint to expose overlap. The raised knee and projected boot do not form a convincing connected silhouette yet; this is diagnostic evidence, not an assembled art pass. The original image is included for reproduction. The next correction must address this joint/occlusion relationship before texture work.
