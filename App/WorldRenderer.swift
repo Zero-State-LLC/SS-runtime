@@ -60,6 +60,24 @@ final class WorldRenderer {
     let root = SKNode()
     private var reviewArt: BenchmarkReviewArt?
 #if DEBUG
+    struct PlayerPlaybackObservation {
+        let deliveredPath: String?
+        let clipToken: String?
+        let position: CGPoint
+        let size: CGSize
+        let anchor: CGPoint
+    }
+
+    /// Call after SpriteKit evaluates actions. Nil paths explicitly identify
+    /// textures outside the admitted library, including static review art.
+    func observePlayerPlayback() -> PlayerPlaybackObservation? {
+        guard let sprite = root.childNode(withName: "//sprite-player") as? SKSpriteNode,
+              let texture = sprite.texture else { return nil }
+        return PlayerPlaybackObservation(deliveredPath: sprites.deliveredPath(for: texture),
+            clipToken: activeClips["player"], position: sprite.position,
+            size: sprite.size, anchor: sprite.anchorPoint)
+    }
+
     func installBenchmarkArt(_ art: BenchmarkReviewArt) {
         reset()
         reviewArt = art

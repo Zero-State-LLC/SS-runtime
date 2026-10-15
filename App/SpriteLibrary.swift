@@ -27,6 +27,14 @@ final class SpriteLibrary {
 
     var isEmpty: Bool { coverage.backed == 0 }
 
+#if DEBUG
+    /// Observe the texture selected by SpriteKit; never infer it from tick phase.
+    func deliveredPath(for texture: SKTexture) -> String? {
+        textures.keys.sorted().first { textures[$0] === texture }
+    }
+#endif
+
+
     func isBacked(clipId: String, direction: String? = nil) -> Bool {
         frames.isBacked(clipId: clipId, direction: direction)
     }
