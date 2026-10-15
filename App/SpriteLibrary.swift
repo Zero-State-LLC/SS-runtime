@@ -28,6 +28,24 @@ final class SpriteLibrary {
     var isEmpty: Bool { coverage.backed == 0 }
 
 #if DEBUG
+    /// All-or-nothing camera candidate injection; timing and frame order still
+    /// come from the admitted metadata. The test bundle owns candidate images.
+    func installBenchmarkCameraFrames(_ candidates: [String: [SKTexture]]) -> Bool {
+        let required: Set<String> = ["camera_operational_idle", "camera_hit",
+            "camera_critical_enter", "camera_destroy", "camera_field_off", "camera_destroyed_idle"]
+        guard Set(candidates.keys) == required else { return false }
+        var replacements: [String: SKTexture] = [:]
+        for clip in required.sorted() {
+            guard let paths = frames.deliveredFrames(clipId: clip, direction: nil),
+                  let supplied = candidates[clip], paths.count == supplied.count,
+                  !paths.isEmpty else { return false }
+            for (path, texture) in zip(paths, supplied) { replacements[path] = texture }
+        }
+        textures.merge(replacements) { _, candidate in candidate }
+        animations.removeAll()
+        return true
+    }
+
     /// Observe the texture selected by SpriteKit; never infer it from tick phase.
     func deliveredPath(for texture: SKTexture) -> String? {
         textures.keys.sorted().first { textures[$0] === texture }

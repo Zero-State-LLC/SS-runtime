@@ -59,6 +59,7 @@ final class WorldRenderer {
 
     let root = SKNode()
     private var reviewArt: BenchmarkReviewArt?
+    private var benchmarkCompleteCamera = false
 #if DEBUG
     struct PlayerPlaybackObservation {
         let deliveredPath: String?
@@ -76,6 +77,15 @@ final class WorldRenderer {
         return PlayerPlaybackObservation(deliveredPath: sprites.deliveredPath(for: texture),
             clipToken: activeClips["player"], position: sprite.position,
             size: sprite.size, anchor: sprite.anchorPoint)
+    }
+
+    /// Shares the shipping integrity/action policy, unlike the static art fixture.
+    @discardableResult
+    func installBenchmarkCameraFrames(_ frames: [String: [SKTexture]]) -> Bool {
+        guard sprites.installBenchmarkCameraFrames(frames) else { return false }
+        reset()
+        benchmarkCompleteCamera = true
+        return true
     }
 
     func installBenchmarkArt(_ art: BenchmarkReviewArt) {
@@ -711,7 +721,7 @@ final class WorldRenderer {
     /// BP-004: lifetime belongs to the integrity transition, not its one-tick event.
     /// Repeated snapshots cannot cancel destruction or restart a hit response.
     private func playCamera(_ camera: PresentationSnapshot.CameraSprite, reducedMotion: Bool) -> Bool {
-        if let reviewArt {
+        if let reviewArt, !benchmarkCompleteCamera {
             let contact = node(.cameraHousings, "benchmark-camera-contact-\(camera.id.raw)") {
                 let shape = SKShapeNode(ellipseOf: CGSize(width: 22, height: 7))
                 shape.fillColor = SKColor(white: 0, alpha: 0.24)
@@ -781,7 +791,7 @@ final class WorldRenderer {
             //
             // A destroyed Camera keeps its housing, matching T411 keeping the
             // mount footprint: the pole is still standing, the head is wrecked.
-            if reviewArt == nil, let family = camera.housingFamily,
+            if reviewArt == nil, !benchmarkCompleteCamera, let family = camera.housingFamily,
                let texture = environment.cameraTexture(for: family)
             {
                 let housing = node(.cameraHousings, "housing-\(camera.id.raw)") {

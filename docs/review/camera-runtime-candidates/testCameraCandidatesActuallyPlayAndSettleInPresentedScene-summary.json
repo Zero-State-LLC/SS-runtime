@@ -1,0 +1,664 @@
+{
+  "_type": {
+    "_name": "ActionTestSummary",
+    "_supertype": {
+      "_name": "ActionTestSummaryIdentifiableObject",
+      "_supertype": {
+        "_name": "ActionAbstractTestSummary"
+      }
+    }
+  },
+  "activitySummaries": {
+    "_type": {
+      "_name": "Array"
+    },
+    "_values": [
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-candidate-integrity-3_0_CE2587A3-D03B-4AE1-AD1E-6BDDA19019B2.png"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-candidate-integrity-3"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~QlG2ytoBubuaH8nrulBrvY0K94cJgeNH_GWSuo5RHkMTorXdzrlafz1_O-JWtbl6H0pkj_Z9e3zZL6VzZq48AA=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "38127"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T21:44:56.146-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.png"
+              },
+              "userInfo": {
+                "_type": {
+                  "_name": "SortedKeyValueArray"
+                },
+                "storage": {
+                  "_type": {
+                    "_name": "Array"
+                  },
+                  "_values": [
+                    {
+                      "_type": {
+                        "_name": "SortedKeyValueArrayPair"
+                      },
+                      "key": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "Scale"
+                      },
+                      "value": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "0E649237-B42B-49BC-947D-D3ED2EDF0F92"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T21:44:56.147-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T21:44:56.146-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP004-candidate-integrity-3'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "CE2587A3-D03B-4AE1-AD1E-6BDDA19019B2"
+        }
+      },
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-candidate-integrity-2_0_9E438B98-70C8-4576-B68F-BB9EABA61BB5.png"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-candidate-integrity-2"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~pvGRTNDixVd4G0syvxjJ1leZhT5jb1VLlwBzvp2GAww4yD2iiUwgtsTWJLFH04jTyUGD73gD5iJVoe8dss-xYw=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "38688"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T21:44:56.151-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.png"
+              },
+              "userInfo": {
+                "_type": {
+                  "_name": "SortedKeyValueArray"
+                },
+                "storage": {
+                  "_type": {
+                    "_name": "Array"
+                  },
+                  "_values": [
+                    {
+                      "_type": {
+                        "_name": "SortedKeyValueArrayPair"
+                      },
+                      "key": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "Scale"
+                      },
+                      "value": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "49742E81-8096-423D-A166-C0D619F8ECC8"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T21:44:56.152-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T21:44:56.151-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP004-candidate-integrity-2'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "9E438B98-70C8-4576-B68F-BB9EABA61BB5"
+        }
+      },
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-candidate-integrity-1_0_8AB5D706-14AB-401D-9090-1DA27717F57C.png"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-candidate-integrity-1"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~EfygaFbTxjXKS4ovAUqiSLSSXEmxTAjCC393basqmOM9xJKw96wcCY85u55zYloX3AJUWDybGCWaGUQ6hN1vkQ=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "40165"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T21:44:56.156-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.png"
+              },
+              "userInfo": {
+                "_type": {
+                  "_name": "SortedKeyValueArray"
+                },
+                "storage": {
+                  "_type": {
+                    "_name": "Array"
+                  },
+                  "_values": [
+                    {
+                      "_type": {
+                        "_name": "SortedKeyValueArrayPair"
+                      },
+                      "key": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "Scale"
+                      },
+                      "value": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "3BF02EF9-A136-45F5-BB4A-410D647BE4F8"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T21:44:56.158-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T21:44:56.157-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP004-candidate-integrity-1'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "8AB5D706-14AB-401D-9090-1DA27717F57C"
+        }
+      },
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-candidate-integrity-0_0_B14ABF85-3375-4E72-881C-885AAF5438CB.png"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-candidate-integrity-0"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~mxIgaoPR0Ak_MMKAm-pnHtequhOuBEqRE86C3oDmurf5U3IeMquex4egG3EmmeKYlypg4VTsR_Cf4gPEF3QIkg=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "40501"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T21:44:56.162-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.png"
+              },
+              "userInfo": {
+                "_type": {
+                  "_name": "SortedKeyValueArray"
+                },
+                "storage": {
+                  "_type": {
+                    "_name": "Array"
+                  },
+                  "_values": [
+                    {
+                      "_type": {
+                        "_name": "SortedKeyValueArrayPair"
+                      },
+                      "key": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "Scale"
+                      },
+                      "value": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "3B001205-C952-49D1-8125-018062689F67"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T21:44:56.163-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T21:44:56.162-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP004-candidate-integrity-0'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "B14ABF85-3375-4E72-881C-885AAF5438CB"
+        }
+      },
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-candidate-post-action-records_0_086EFAA7-51C1-4F4E-A238-058697281885.json"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-candidate-post-action-records"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~wp8hfRCsEfz_alGfaofQ2fX4v0VCWmLE9YdXIDsI8mEeRR56xAdMAdoXWq2fV4ktk8WXcdqKAtrnNPFD7wVvqg=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "6769"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T21:44:56.173-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.json"
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "9F68BA40-D053-425F-B867-70A6FED19579"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T21:44:56.174-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T21:44:56.173-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP004-candidate-post-action-records'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "086EFAA7-51C1-4F4E-A238-058697281885"
+        }
+      }
+    ]
+  },
+  "duration": {
+    "_type": {
+      "_name": "Double"
+    },
+    "_value": "2.39116108417511"
+  },
+  "identifier": {
+    "_type": {
+      "_name": "String"
+    },
+    "_value": "DisplayedPlaybackTests/testCameraCandidatesActuallyPlayAndSettleInPresentedScene()"
+  },
+  "identifierURL": {
+    "_type": {
+      "_name": "String"
+    },
+    "_value": "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testCameraCandidatesActuallyPlayAndSettleInPresentedScene"
+  },
+  "name": {
+    "_type": {
+      "_name": "String"
+    },
+    "_value": "testCameraCandidatesActuallyPlayAndSettleInPresentedScene()"
+  },
+  "testStatus": {
+    "_type": {
+      "_name": "String"
+    },
+    "_value": "Success"
+  }
+}

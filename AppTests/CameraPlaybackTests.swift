@@ -93,4 +93,65 @@ struct CameraPlaybackTests {
             #expect(node.action(forKey: "camera-state") === action)
         }
     }
+    private final class BundleAnchor {}
+
+    static func candidateFrames() throws -> [String: [SKTexture]] {
+        let bundle = Bundle(for: BundleAnchor.self)
+        let records = [("camera_operational_idle", "operationalIdle", 4),
+            ("camera_hit", "hit", 2), ("camera_critical_enter", "criticalEnter", 3),
+            ("camera_destroy", "destroy", 4), ("camera_field_off", "fieldOff", 1),
+            ("camera_destroyed_idle", "destroyedIdle", 2)]
+        var result: [String: [SKTexture]] = [:]
+        for (clip, stem, count) in records {
+            result[clip] = try (1...count).map { index in
+                let name = String(format: "actor_camera_%@_none_%02d@4x", stem, index)
+                let url = try #require(bundle.url(forResource: name, withExtension: "png"))
+                let image = try #require(UIImage(contentsOfFile: url.path))
+                let texture = SKTexture(image: image)
+                texture.filteringMode = .nearest
+                return texture
+            }
+        }
+        return result
+    }
+
+    @Test func completeCameraCandidatesUseShippingIntegrityPolicy() throws {
+        let candidates = try Self.candidateFrames()
+        let renderer = WorldRenderer()
+        #expect(renderer.installBenchmarkCameraFrames(candidates))
+        var snap = try snapshot()
+        var original: SKSpriteNode?
+        var oldAction: SKAction?
+        for (integrity, settled) in [(3, "camera_operational_idle"), (2, "camera_hit"),
+                                     (1, "camera_critical_enter"), (0, "camera_destroyed_idle")] {
+            snap.cameras[0].integrity = integrity
+            snap.cameras[0].fieldVisible = integrity > 0
+            renderer.render(snap)
+            let node = try sprite(renderer, snap)
+            if let original { #expect(node === original) } else { original = node }
+            #expect(renderer.root.childNode(withName: "//housing-\(snap.cameras[0].id.raw)") == nil)
+            let action = try #require(node.action(forKey: "camera-state"))
+            if let oldAction { #expect(action !== oldAction) }
+            renderer.render(snap)
+            #expect(node.action(forKey: "camera-state") === action)
+            oldAction = action
+            if integrity == 0 {
+                #expect(renderer.root.childNode(withName: "//field-\(snap.cameras[0].id.raw)") == nil)
+            }
+            renderer.render(snap, reducedMotion: true)
+            #expect(!node.hasActions())
+            #expect(node.texture === candidates[settled]?.last)
+            #expect(node.position == CGPoint(x: snap.cameras[0].x, y: snap.cameras[0].y))
+        }
+    }
+
+    @Test func incompleteCameraCandidateFamilyCannotReplaceTextures() throws {
+        let library = SpriteLibrary()
+        let before = try #require(library.firstTexture(clipId: "camera_hit"))
+        var candidates = try Self.candidateFrames()
+        candidates["camera_destroy"]?.removeLast()
+        #expect(!library.installBenchmarkCameraFrames(candidates))
+        #expect(library.firstTexture(clipId: "camera_hit") === before)
+    }
+
 }

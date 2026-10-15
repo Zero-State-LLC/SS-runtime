@@ -179,5 +179,87 @@ final class DisplayedPlaybackTests: XCTestCase {
         add(attachment)
     }
 
+    final class CameraCandidateScene: SKScene {
+        let renderer = WorldRenderer()
+        var snapshot: PresentationSnapshot
+        let candidates: [String: [SKTexture]]
+        var stage = 0
+        var began: TimeInterval?
+        var now: TimeInterval = 0
+        var done: (() -> Void)?
+        var records: [[String: Any]] = []
+        var settled: [Bool] = []
+        var images: [UIImage] = []
+        let clips = ["camera_operational_idle", "camera_hit", "camera_critical_enter", "camera_destroyed_idle"]
+        init(size: CGSize, snapshot: PresentationSnapshot, candidates: [String: [SKTexture]]) {
+            self.snapshot = snapshot
+            self.candidates = candidates
+            super.init(size: size)
+            self.snapshot.cameras = Array(snapshot.cameras.prefix(1))
+            addChild(renderer.root)
+        }
+        required init?(coder: NSCoder) { fatalError("init(coder:) is unsupported") }
+        override func update(_ time: TimeInterval) {
+            guard stage < 4 else { return }
+            now = time
+            if began == nil { began = time }
+            snapshot.cameras[0].integrity = 3 - stage
+            snapshot.cameras[0].fieldVisible = stage < 3
+            renderer.render(snapshot)
+        }
+        override func didEvaluateActions() {
+            guard stage < 4, let began,
+                let node = renderer.root.childNode(withName: "//sprite-camera-\(snapshot.cameras[0].id.raw)") as? SKSpriteNode else { return }
+            let actual = candidates.keys.sorted().flatMap { clip in
+                candidates[clip]!.enumerated().compactMap { index, texture in
+                    node.texture === texture ? "\(clip)#\(index + 1)" : nil
+                }
+            }.first ?? "unidentified"
+            records.append(["integrity": 3-stage, "displayTime": now, "actualFrame": actual,
+                "x": node.position.x, "y": node.position.y,
+                "fieldPresent": renderer.root.childNode(withName: "//field-\(snapshot.cameras[0].id.raw)") != nil])
+            // Allow the real action system to finish; no manual action evaluation.
+            let complete = stage == 0 ? now-began >= 0.8 : !node.hasActions() && now-began > 0.05
+            if complete {
+                settled.append(stage == 0 || node.texture === candidates[clips[stage]]?.last)
+                if let texture = view?.texture(from: node) { images.append(UIImage(cgImage: texture.cgImage())) }
+                stage += 1
+                self.began = nil
+                if stage == 4 { done?() }
+            }
+        }
+    }
+
+    func testCameraCandidatesActuallyPlayAndSettleInPresentedScene() async throws {
+        let candidates = try CameraPlaybackTests.candidateFrames()
+        let snapshot = PresentationSnapshot(try Simulation.make(seed: 1).state)
+        let window = UIWindow(frame: CGRect(x: 0, y: 0, width: 704, height: 326))
+        let controller = UIViewController()
+        let view = SKView(frame: window.bounds)
+        controller.view = view; window.rootViewController = controller; window.makeKeyAndVisible()
+        let scene = CameraCandidateScene(size: view.bounds.size, snapshot: snapshot, candidates: candidates)
+        XCTAssertTrue(scene.renderer.installBenchmarkCameraFrames(candidates))
+        let complete = expectation(description: "candidate camera clips finish under SpriteKit")
+        scene.done = { complete.fulfill() }
+        view.presentScene(scene)
+        defer { view.presentScene(nil); window.isHidden = true }
+        await fulfillment(of: [complete], timeout: 30)
+        XCTAssertEqual(scene.settled, [true, true, true, true])
+        XCTAssertEqual(scene.images.count, 4)
+        XCTAssertFalse(scene.records.contains { $0["actualFrame"] as? String == "unidentified" })
+        let idleFrames = scene.records.filter { $0["integrity"] as? Int == 3 }.compactMap { $0["actualFrame"] as? String }
+        XCTAssertGreaterThan(Set(idleFrames).count, 1)
+        XCTAssertTrue(scene.records.filter { $0["integrity"] as? Int == 0 }.allSatisfy { $0["fieldPresent"] as? Bool == false })
+        for (index, image) in scene.images.enumerated() {
+            let attachment = XCTAttachment(image: image)
+            attachment.name = "BP004-candidate-integrity-\(3-index)"
+            attachment.lifetime = .keepAlways; add(attachment)
+        }
+        let data = try JSONSerialization.data(withJSONObject: scene.records, options: [.prettyPrinted, .sortedKeys])
+        let attachment = XCTAttachment(data: data, uniformTypeIdentifier: "public.json")
+        attachment.name = "BP004-candidate-post-action-records"
+        attachment.lifetime = .keepAlways; add(attachment)
+    }
+
 }
 #endif
