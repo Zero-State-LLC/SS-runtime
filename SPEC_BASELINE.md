@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `c075b21e9e70828b032f7f319a712c179450b4f9` |
+| Specification commit | `6c86388d5fca90b1677f78c585178d00e6fdbe8d` |
 | Ruleset | `ss-rules-008` |
 | Content | `civic-seam-content-006` |
 | Arena | `civic-seam-arena-004` |
@@ -50,3 +50,5 @@ BP-002 controlled-source pilot adoption: editable character rig and measured con
 BP-007 high-resolution outline clarification adoption: explicit source-pixel/logical-mask separation, constant equal-framing faction treatment, post-action frame correctness and bounded allocation/cache evidence. Runtime #124 remains open; pin adoption alone does not fix or accept 384px production assets.
 
 BP-010 comparison adoption: compare existing, reduced-opacity and absent Player border in the benchmark fixture before selecting painted-art contrast. Normal play retains D-094; gameplay identities and contract payloads apart from the specification pin remain unchanged.
+
+BP-002 layered-source clarification adoption: setup-pose part ownership, preserved costume proportions, authored hidden overlaps and joint-range review precede the south cycle. Pin adoption does not admit the partial layered study. See docs/review/layered-source/review.md. Gameplay identities, active clips, fixtures and production textures remain unchanged.
