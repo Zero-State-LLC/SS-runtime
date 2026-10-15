@@ -1132,19 +1132,23 @@ final class WorldRenderer {
                 sprite.addChild(made)
                 return made
             }()
+            // SpriteKit's size includes this node's scale. The child inherits
+            // that scale, so its mask and placement must use the unscaled canvas.
+            let logicalSize = CGSize(width: abs(sprite.size.width / sprite.xScale),
+                                     height: abs(sprite.size.height / sprite.yScale))
             guard let texture = sprite.texture,
-                  let entry = outlines.outline(for: texture, faction: faction)
+                  let entry = outlines.outline(for: texture, faction: faction, logicalSize: logicalSize)
             else {
                 outline.isHidden = true
                 continue
             }
             outline.isHidden = false
             if outline.texture !== entry.texture { outline.texture = entry.texture }
-            let source = texture.size()
+            let source = entry.maskSize
             let pad = CGFloat(entry.pad)
             let grownW = (source.width + 2 * pad) / max(source.width, 1)
             let grownH = (source.height + 2 * pad) / max(source.height, 1)
-            outline.size = CGSize(width: sprite.size.width * grownW, height: sprite.size.height * grownH)
+            outline.size = CGSize(width: logicalSize.width * grownW, height: logicalSize.height * grownH)
             outline.anchorPoint = CGPoint(
                 x: (sprite.anchorPoint.x * source.width + pad) / (source.width + 2 * pad),
                 y: (sprite.anchorPoint.y * source.height + pad) / (source.height + 2 * pad)
