@@ -1,0 +1,177 @@
+{
+  "status": "APPROXIMATE_DIAGNOSTIC_JOINTS_NOT_GAIT",
+  "coordinateConvention": "384x384 source pixels, x right, y down; Pillow positive angle counter-clockwise",
+  "joints": [
+    {
+      "name": "right_elbow",
+      "child": "right_forearm_hand",
+      "parent": "right_upper_arm",
+      "crop": [
+        80,
+        100,
+        208,
+        228
+      ],
+      "mask": [
+        [
+          117,
+          130
+        ],
+        [
+          143,
+          130
+        ],
+        [
+          145,
+          150
+        ],
+        [
+          115,
+          150
+        ]
+      ],
+      "pivot": [
+        131,
+        145
+      ],
+      "extent": 12,
+      "detail": [
+        102,
+        126,
+        156,
+        166
+      ],
+      "generatedSha256": "0c78f45a6df1d47451496b04ddc0f16802598387c41831d9c1405ebf79659338",
+      "hiddenSha256": "5cb6ff740907774a1ff3977a3c0ffa246589d6f69a38412f8fc69c912477f9a4"
+    },
+    {
+      "name": "left_elbow",
+      "child": "left_forearm_hand",
+      "parent": "left_upper_arm",
+      "crop": [
+        192,
+        100,
+        320,
+        228
+      ],
+      "mask": [
+        [
+          238,
+          130
+        ],
+        [
+          263,
+          130
+        ],
+        [
+          267,
+          150
+        ],
+        [
+          240,
+          150
+        ]
+      ],
+      "pivot": [
+        252,
+        145
+      ],
+      "extent": 12,
+      "detail": [
+        230,
+        126,
+        284,
+        166
+      ],
+      "generatedSha256": "1224e476d745415701a108b5a9e69aacc762cb3e248934d85201713bc7a3e3fe",
+      "hiddenSha256": "c9485b2817b2c307daf55bbb9773d72ffa67abb6316716caf420d0d9852d93ac"
+    },
+    {
+      "name": "left_knee",
+      "child": "left_shin_boot",
+      "parent": "left_thigh",
+      "crop": [
+        160,
+        224,
+        288,
+        352
+      ],
+      "mask": [
+        [
+          202,
+          254
+        ],
+        [
+          230,
+          254
+        ],
+        [
+          237,
+          276
+        ],
+        [
+          199,
+          276
+        ]
+      ],
+      "pivot": [
+        217,
+        265
+      ],
+      "extent": 8,
+      "detail": [
+        194,
+        244,
+        248,
+        286
+      ],
+      "generatedSha256": "0d25508f5e28d698c9fead63fb644b2fdc4eb26db1afb90973318e86928df1d1",
+      "hiddenSha256": "38b44ec172aa5ad5b5c401948d1a1140d9dd90b67577eeae7bd40ebcde382a29"
+    },
+    {
+      "name": "right_knee",
+      "child": "right_shin_boot",
+      "parent": "right_thigh",
+      "pivot": [
+        166,
+        265
+      ],
+      "extent": 8,
+      "detail": [
+        140,
+        244,
+        194,
+        286
+      ],
+      "hiddenSha256": "a9306ef1ad00e03a297d201a46bf9838f06ce45320b08920f3277e11a2505288"
+    }
+  ],
+  "poses": [
+    {},
+    {
+      "right_elbow": 12
+    },
+    {
+      "right_elbow": -12
+    },
+    {
+      "left_elbow": 12
+    },
+    {
+      "left_elbow": -12
+    },
+    {
+      "left_knee": 8
+    },
+    {
+      "left_knee": -8
+    },
+    {
+      "right_knee": 8
+    },
+    {
+      "right_knee": -8
+    }
+  ],
+  "sourceSha256": "51cb032d4ae340a5dfe48b701aa41c619edc9e888480992adf80ddce2fd10765"
+}
