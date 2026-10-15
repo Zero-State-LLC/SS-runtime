@@ -34,6 +34,7 @@ final class OutlineTextures {
         let faction: ActorContrast.Faction
         let width: Int
         let height: Int
+        let samplingScale: Int
     }
 
     private struct Cached {
@@ -55,14 +56,14 @@ final class OutlineTextures {
         self.maxBytes = max(0, maxBytes)
     }
 
-    func outline(for texture: SKTexture, faction: ActorContrast.Faction, logicalSize: CGSize) -> Entry? {
-        guard let size = Self.maskDimensions(logicalSize) else { return nil }
-        let key = Key(texture: ObjectIdentifier(texture), faction: faction, width: size.width, height: size.height)
+    func outline(for texture: SKTexture, faction: ActorContrast.Faction, logicalSize: CGSize, samplingScale: Int = 1) -> Entry? {
+        guard let size = Self.maskDimensions(logicalSize, samplingScale: samplingScale) else { return nil }
+        let key = Key(texture: ObjectIdentifier(texture), faction: faction, width: size.width, height: size.height, samplingScale: samplingScale)
         if let hit = cache[key] {
             recency.removeAll { $0 == key }; recency.append(key)
             return hit.entry
         }
-        let made = Self.make(from: texture.cgImage(), faction: faction, logicalSize: logicalSize)
+        let made = Self.make(from: texture.cgImage(), faction: faction, logicalSize: logicalSize, samplingScale: samplingScale)
         let cost = made?.byteCost ?? 0
         guard maxEntries > 0, cost <= maxBytes else { return made }
         while !recency.isEmpty && (cache.count >= maxEntries || retainedMaskBytes + cost > maxBytes) {
@@ -74,23 +75,26 @@ final class OutlineTextures {
         return made
     }
 
-    nonisolated private static func maskDimensions(_ size: CGSize) -> (width: Int, height: Int)? {
-        guard size.width.isFinite, size.height.isFinite,
+    nonisolated private static func maskDimensions(_ size: CGSize, samplingScale: Int = 1) -> (width: Int, height: Int)? {
+        guard (1...3).contains(samplingScale), size.width.isFinite, size.height.isFinite,
               size.width > 0, size.height > 0, size.width <= 256, size.height <= 256 else { return nil }
         // SpriteKit stores geometry at Float precision. Nearest logical pixels
         // prevent a recovered 64.000002 canvas from becoming a different mask.
-        return (max(1, Int(size.width.rounded())), max(1, Int(size.height.rounded())))
+        let width = max(1, Int(size.width.rounded())) * samplingScale
+        let height = max(1, Int(size.height.rounded())) * samplingScale
+        guard width <= 256, height <= 256 else { return nil }
+        return (width, height)
     }
 
     /// The outline ring for `image`, or nil when it cannot be read.
-    nonisolated static func make(from image: CGImage, faction: ActorContrast.Faction, logicalSize: CGSize? = nil) -> Entry? {
+    nonisolated static func make(from image: CGImage, faction: ActorContrast.Faction, logicalSize: CGSize? = nil, samplingScale: Int = 1) -> Entry? {
         guard image.width > 0, image.height > 0,
               image.width <= maxSourceDimension, image.height <= maxSourceDimension,
-              let size = maskDimensions(logicalSize ?? CGSize(width: image.width, height: image.height)) else { return nil }
+              let size = maskDimensions(logicalSize ?? CGSize(width: image.width, height: image.height), samplingScale: samplingScale) else { return nil }
         let width = size.width, height = size.height
         guard width * height <= maxPixels,
               let source = rgba(image, width: width, height: height) else { return nil }
-        let pad = thicknessPixels
+        let pad = thicknessPixels * samplingScale
         let outWidth = width + 2 * pad
         let outHeight = height + 2 * pad
         let colour = ActorContrast.outlineColour(faction)
@@ -116,7 +120,7 @@ final class OutlineTextures {
                         break search
                     }
                 }
-                guard near, ActorContrast.outlinePixelOn(x: ox, y: oy, faction: faction) else { continue }
+                guard near, ActorContrast.outlinePixelOn(x: ox / samplingScale, y: oy / samplingScale, faction: faction) else { continue }
                 let index = (oy * outWidth + ox) * 4
                 out[index] = r
                 out[index + 1] = g

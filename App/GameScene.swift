@@ -248,6 +248,10 @@ final class GameScene: SKScene {
     private var terminalEvidenceStored = false
     private let renderer = WorldRenderer()
 #if DEBUG
+    /// BP-007 review parameter; ordinary frame callbacks retain the baseline.
+    func refreshBenchmarkOutlines(samplingScale: Int) {
+        renderer.syncOutlines(samplingScale: samplingScale)
+    }
     /// Composition fixture only: no mutation of the simulation or collision map.
     func renderBenchmark(snapshot: PresentationSnapshot, art: BenchmarkReviewArt, center: CGPoint) {
         renderer.installBenchmarkArt(art)

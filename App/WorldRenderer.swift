@@ -1124,7 +1124,7 @@ final class WorldRenderer {
     /// Points each live sprite's outline at its current frame. Called after
     /// actions are evaluated (`GameScene.didEvaluateActions`) so the outline
     /// never trails the animation, and at the end of every render.
-    func syncOutlines() {
+    func syncOutlines(samplingScale: Int = 1) {
         for (sprite, faction) in outlineTargets {
             let outline = (sprite.children.first { $0.name == Self.outlineName } as? SKSpriteNode) ?? {
                 let made = SKSpriteNode()
@@ -1137,7 +1137,7 @@ final class WorldRenderer {
             let logicalSize = CGSize(width: abs(sprite.size.width / sprite.xScale),
                                      height: abs(sprite.size.height / sprite.yScale))
             guard let texture = sprite.texture,
-                  let entry = outlines.outline(for: texture, faction: faction, logicalSize: logicalSize)
+                  let entry = outlines.outline(for: texture, faction: faction, logicalSize: logicalSize, samplingScale: samplingScale)
             else {
                 outline.isHidden = true
                 continue

@@ -347,6 +347,9 @@ final class BenchmarkCaptureTests: XCTestCase {
                 // Use the normal scene callback so no previous-frame outline leaks.
                 scene.didEvaluateActions()
                 try capture("BP002-painted-neutral-\(facing)-\(tag)")
+                scene.refreshBenchmarkOutlines(samplingScale: 3)
+                try capture("BP007-outline-3x-\(facing)-\(tag)")
+                scene.didEvaluateActions()
             }
             player.texture = previousPlayerTexture
             player.anchorPoint = previousPlayerAnchor

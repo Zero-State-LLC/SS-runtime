@@ -40,6 +40,41 @@ struct OutlineResolutionTests {
         }
     }
 
+    @Test func finerSamplingPreservesLogicalStrokeDashAndCacheIdentity() throws {
+        let texture = try source(density: 6)
+        let cache = OutlineTextures(maxEntries: 128, maxBytes: 198 * 198 * 4)
+        for faction in [ActorContrast.Faction.player, .enemy] {
+            let baseline = try #require(OutlineTextures.make(from: texture.cgImage(), faction: faction,
+                logicalSize: CGSize(width: 64, height: 64)))
+            let fine = try #require(cache.outline(for: texture, faction: faction,
+                logicalSize: CGSize(width: 64, height: 64), samplingScale: 3))
+            #expect(fine.maskSize == CGSize(width: 192, height: 192))
+            #expect(fine.pad == 3 && fine.byteCost == 156816)
+            #expect(cache.count == 1 && cache.retainedMaskBytes == 156816)
+            let low = try #require(OutlineTextures.rgba(baseline.texture.cgImage()))
+            let high = try #require(OutlineTextures.rgba(fine.texture.cgImage()))
+            // An axis-aligned silhouette must retain exactly the same logical
+            // ring and dash pattern, with every mask pixel split into nine.
+            for y in 0..<198 {
+                for x in 0..<198 {
+                    #expect(high[(y * 198 + x) * 4 + 3] == low[((y / 3) * 66 + x / 3) * 4 + 3])
+                }
+            }
+        }
+        let sharedDimensions = OutlineTextures()
+        let a = try #require(sharedDimensions.outline(for: texture, faction: .player,
+            logicalSize: CGSize(width: 64, height: 64)))
+        let b = try #require(sharedDimensions.outline(for: texture, faction: .player,
+            logicalSize: CGSize(width: 32, height: 32), samplingScale: 2))
+        #expect(a.maskSize == b.maskSize && a.pad != b.pad && a.texture !== b.texture)
+        for scale in [0, 4, Int.max] {
+            #expect(sharedDimensions.outline(for: texture, faction: .player,
+                logicalSize: CGSize(width: 64, height: 64), samplingScale: scale) == nil)
+        }
+        #expect(sharedDimensions.outline(for: texture, faction: .player,
+            logicalSize: CGSize(width: 96, height: 96), samplingScale: 3) == nil)
+    }
+
     @Test func cacheSeparatesLogicalGeometryFactionAndBoundsChurn() throws {
         let cache = OutlineTextures(maxEntries: 2, maxBytes: 2 * 66 * 66 * 4)
         let a = try source(density: 6)
