@@ -278,6 +278,8 @@ final class BenchmarkCaptureTests: XCTestCase {
         let crop = CGRect(x: center.x - 352, y: center.y - 163, width: 704, height: 326)
         let clips = [3: "camera_operational_idle", 2: "camera_hit",
                      1: "camera_critical_enter", 0: "camera_destroyed_idle"]
+        for style in WorldRenderer.BenchmarkFieldContrast.allCases {
+        scene.setBenchmarkFieldContrast(style)
         for integrity in stride(from: 3, through: 0, by: -1) {
             snap.cameras[0].integrity = integrity
             snap.cameras[0].fieldVisible = integrity > 0
@@ -291,8 +293,9 @@ final class BenchmarkCaptureTests: XCTestCase {
             if integrity == 0 { XCTAssertNil(scene.childNode(withName: "//field-\(snap.cameras[0].id.raw)")) }
             let result = try XCTUnwrap(view.texture(from: scene, crop: crop))
             let attachment = XCTAttachment(image: UIImage(cgImage: result.cgImage()))
-            attachment.name = "BP004-shared-scene-integrity-\(integrity)"
+            attachment.name = "BP004-shared-scene-\(style.rawValue)-integrity-\(integrity)"
             attachment.lifetime = .keepAlways; add(attachment)
+        }
         }
         let record = XCTAttachment(string: """
         Actual GameScene/WorldRenderer/HUD; 704x326 logical viewport. Complete camera

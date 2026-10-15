@@ -189,6 +189,7 @@ final class DisplayedPlaybackTests: XCTestCase {
         var done: (() -> Void)?
         var records: [[String: Any]] = []
         var settled: [Bool] = []
+        var observedIdleFrames: Set<String> = []
         var images: [UIImage] = []
         let clips = ["camera_operational_idle", "camera_hit", "camera_critical_enter", "camera_destroyed_idle"]
         init(size: CGSize, snapshot: PresentationSnapshot, candidates: [String: [SKTexture]]) {
@@ -218,8 +219,11 @@ final class DisplayedPlaybackTests: XCTestCase {
             records.append(["integrity": 3-stage, "displayTime": now, "actualFrame": actual,
                 "x": node.position.x, "y": node.position.y,
                 "fieldPresent": renderer.root.childNode(withName: "//field-\(snapshot.cameras[0].id.raw)") != nil])
-            // Allow the real action system to finish; no manual action evaluation.
-            let complete = stage == 0 ? now-began >= 0.8 : !node.hasActions() && now-began > 0.05
+            if stage == 0, actual != "unidentified" { observedIdleFrames.insert(actual) }
+            // #127: elapsed time alone cannot establish displayed frame progress.
+            // Keep real actions running until both forms of evidence exist.
+            let complete = stage == 0 ? now-began >= 0.8 && observedIdleFrames.count > 1
+                : !node.hasActions() && now-began > 0.05
             if complete {
                 settled.append(stage == 0 || node.texture === candidates[clips[stage]]?.last)
                 if let texture = view?.texture(from: node) { images.append(UIImage(cgImage: texture.cgImage())) }

@@ -61,6 +61,36 @@ final class WorldRenderer {
     private var reviewArt: BenchmarkReviewArt?
     private var benchmarkCompleteCamera = false
 #if DEBUG
+    enum BenchmarkFieldContrast: String, CaseIterable {
+        case control, dark, paired
+    }
+    var benchmarkFieldContrast: BenchmarkFieldContrast = .control
+
+    private func applyBenchmarkFieldContrast(_ shape: SKShapeNode) {
+        let childName = "benchmark-field-inner"
+        guard benchmarkFieldContrast != .control else {
+            shape.strokeColor = .clear
+            shape.childNode(withName: childName)?.removeFromParent()
+            return
+        }
+        // Authored comparison widths in logical world units, not field expansion.
+        shape.strokeColor = SKColor(white: 0.08, alpha: 1)
+        shape.lineWidth = benchmarkFieldContrast == .paired ? 3 : 1.5
+        guard benchmarkFieldContrast == .paired else {
+            shape.childNode(withName: childName)?.removeFromParent()
+            return
+        }
+        let inner: SKShapeNode
+        if let existing = shape.childNode(withName: childName) as? SKShapeNode { inner = existing }
+        else {
+            inner = SKShapeNode(); inner.name = childName
+            inner.fillColor = .clear; inner.strokeColor = SKColor(white: 0.95, alpha: 1)
+            inner.lineWidth = 1; inner.zPosition = 0.1
+            shape.addChild(inner)
+        }
+        inner.path = shape.path
+    }
+
     struct PlayerPlaybackObservation {
         let deliveredPath: String?
         let clipToken: String?
@@ -851,6 +881,9 @@ final class WorldRenderer {
                 shape.position = .zero
                 shape.fillColor = camera.detecting ? Palette.cameraFieldDetecting : Palette.cameraField
                 shape.strokeColor = .clear
+#if DEBUG
+                applyBenchmarkFieldContrast(shape)
+#endif
             }
         }
 
@@ -875,6 +908,9 @@ final class WorldRenderer {
                 shape.position = .zero
                 shape.fillColor = Palette.captainField
                 shape.strokeColor = .clear
+#if DEBUG
+                applyBenchmarkFieldContrast(shape)
+#endif
             }
         }
         renderPatrolCones(snap)

@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `521aec30cbb926938591d1ffb22233b24102732c` |
+| Specification commit | `d859658dc4029a3453c247c9b0d792229c1130fc` |
 | Ruleset | `ss-rules-008` |
 | Content | `civic-seam-content-006` |
 | Arena | `civic-seam-arena-004` |
@@ -56,3 +56,5 @@ BP-002 layered-source clarification adoption: setup-pose part ownership, preserv
 BP-002/BP-008 elevated-motion clarification adoption: source/anatomical measurements are distinct from projected lengths; layered motion requires reviewed depth treatment and authored foot contacts. The eight-joint source scaffold is not a gait. Gameplay identities, fixtures and active artwork remain unchanged. See docs/review/projected-motion/review.md.
 
 BP-008 displayed-playback clarification adoption: source, exported-frame and actual displayed contact are distinct evidence. Moving benchmark observations must retain playback and record post-action frame identity with authoritative and rendered positions. Static composition remains a separate fixture; no phase policy or art admission follows from this pin change.
+
+BP-001/BP-010 field contrast adoption: compare existing fill, dark contour and paired contour on the unchanged solid-clipped field path. D-104/T1045–T1046; presentation comparison only, no ruleset/content/arena/replay or active art migration. Recorded selection and coordinated visual-contract update remain required before changing shipping treatment.

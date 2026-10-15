@@ -154,4 +154,38 @@ struct CameraPlaybackTests {
         #expect(library.firstTexture(clipId: "camera_hit") === before)
     }
 
+    @Test func fieldContrastCandidatesRetainClippedPathsAndClearWithFields() throws {
+        var snap = try snapshot()
+        snap.cameras[0].fieldVisible = true
+        snap.captainField = snap.cameras[0]
+        let renderer = WorldRenderer()
+        renderer.render(snap)
+        let name = "//field-\(snap.cameras[0].id.raw)"
+        let field = try #require(renderer.root.childNode(withName: name) as? SKShapeNode)
+        let baseline = try #require(field.path)
+        renderer.benchmarkFieldContrast = .paired
+        renderer.render(snap)
+        let inner = try #require(field.childNode(withName: "benchmark-field-inner") as? SKShapeNode)
+        #expect(field.path == baseline)
+        #expect(inner.path == baseline)
+        let captain = try #require(renderer.root.childNode(withName: "//captain-field") as? SKShapeNode)
+        #expect((captain.childNode(withName: "benchmark-field-inner") as? SKShapeNode)?.path == captain.path)
+        for _ in 0..<12 { renderer.render(snap) }
+        #expect(field.childNode(withName: "benchmark-field-inner") === inner)
+        #expect(field.children.filter { $0.name == "benchmark-field-inner" }.count == 1)
+        renderer.benchmarkFieldContrast = .control
+        renderer.render(snap)
+        #expect(field.childNode(withName: "benchmark-field-inner") == nil)
+        renderer.benchmarkFieldContrast = .paired
+        renderer.render(snap)
+        snap.cameras[0].integrity = 0
+        snap.cameras[0].fieldVisible = false
+        snap.captainField = nil
+        renderer.render(snap)
+        #expect(renderer.root.childNode(withName: name) == nil)
+        #expect(renderer.root.childNode(withName: "//captain-field") == nil)
+        renderer.reset()
+        #expect(renderer.root.childNode(withName: "//benchmark-field-inner") == nil)
+    }
+
 }

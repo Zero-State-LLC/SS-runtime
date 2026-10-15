@@ -256,6 +256,10 @@ final class GameScene: SKScene {
     func refreshBenchmarkOutlines(samplingScale: Int) {
         renderer.syncOutlines(samplingScale: samplingScale)
     }
+    func setBenchmarkFieldContrast(_ style: WorldRenderer.BenchmarkFieldContrast) {
+        renderer.benchmarkFieldContrast = style
+    }
+
     /// Install a complete review family once; use the same camera playback policy.
     func installBenchmarkCameraFrames(_ frames: [String: [SKTexture]]) -> Bool {
         renderer.installBenchmarkCameraFrames(frames)
