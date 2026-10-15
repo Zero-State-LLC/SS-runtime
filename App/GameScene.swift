@@ -256,6 +256,11 @@ final class GameScene: SKScene {
     func refreshBenchmarkOutlines(samplingScale: Int) {
         renderer.syncOutlines(samplingScale: samplingScale)
     }
+    /// Install a complete review family once; use the same camera playback policy.
+    func installBenchmarkCameraFrames(_ frames: [String: [SKTexture]]) -> Bool {
+        renderer.installBenchmarkCameraFrames(frames)
+    }
+
     /// Composition fixture only: no mutation of the simulation or collision map.
     func renderBenchmark(snapshot: PresentationSnapshot, art: BenchmarkReviewArt, center: CGPoint) {
         renderer.installBenchmarkArt(art)

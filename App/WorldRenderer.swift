@@ -721,7 +721,7 @@ final class WorldRenderer {
     /// BP-004: lifetime belongs to the integrity transition, not its one-tick event.
     /// Repeated snapshots cannot cancel destruction or restart a hit response.
     private func playCamera(_ camera: PresentationSnapshot.CameraSprite, reducedMotion: Bool) -> Bool {
-        if let reviewArt, !benchmarkCompleteCamera {
+        if reviewArt != nil {
             let contact = node(.cameraHousings, "benchmark-camera-contact-\(camera.id.raw)") {
                 let shape = SKShapeNode(ellipseOf: CGSize(width: 22, height: 7))
                 shape.fillColor = SKColor(white: 0, alpha: 0.24)
@@ -729,6 +729,8 @@ final class WorldRenderer {
                 return shape
             }
             contact.position = CGPoint(x: camera.x, y: camera.y - 2)
+        }
+        if let reviewArt, !benchmarkCompleteCamera {
             let sprite = node(.actors, "sprite-camera-\(camera.id.raw)") { SKSpriteNode() } as! SKSpriteNode
             sprite.texture = reviewArt.cameraStates[camera.integrity] ?? reviewArt.camera
             sprite.size = CGSize(width: 64, height: 96)

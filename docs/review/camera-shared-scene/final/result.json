@@ -1,0 +1,608 @@
+{
+  "_type": {
+    "_name": "ActionsInvocationRecord"
+  },
+  "actions": {
+    "_type": {
+      "_name": "Array"
+    },
+    "_values": [
+      {
+        "_type": {
+          "_name": "ActionRecord"
+        },
+        "actionResult": {
+          "_type": {
+            "_name": "ActionResult"
+          },
+          "coverage": {
+            "_type": {
+              "_name": "CodeCoverageInfo"
+            }
+          },
+          "diagnosticsRef": {
+            "_type": {
+              "_name": "Reference"
+            },
+            "id": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "0~DIBIDFtHP5eZJpGnwX75noGC_S9dxzoQVD-U1VJflTzm11TsWJjbD3xD9pQSZT01z7AEPAIo0ww96xPZqIHV7g=="
+            }
+          },
+          "issues": {
+            "_type": {
+              "_name": "ResultIssueSummaries"
+            }
+          },
+          "logRef": {
+            "_type": {
+              "_name": "Reference"
+            },
+            "id": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "0~vT8_S-KCrpoiRyKaeWUaGq9TkYay5yE0GfvfYvLWF8lpAAx3Rb2174H2c9xO29T-Onvcq1XLQ0XiXGa5MUj72A=="
+            },
+            "targetType": {
+              "_type": {
+                "_name": "TypeDefinition"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "ActivityLogSection"
+              }
+            }
+          },
+          "metrics": {
+            "_type": {
+              "_name": "ResultMetrics"
+            },
+            "testsCount": {
+              "_type": {
+                "_name": "Int"
+              },
+              "_value": "104"
+            }
+          },
+          "resultName": {
+            "_type": {
+              "_name": "String"
+            },
+            "_value": "action"
+          },
+          "status": {
+            "_type": {
+              "_name": "String"
+            },
+            "_value": "succeeded"
+          },
+          "testsRef": {
+            "_type": {
+              "_name": "Reference"
+            },
+            "id": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "0~aGCqhzQotu1DrIGnS9taTlmZqyH2qGTgq6ApQyJo9KPXHO5UPWqVD9CCmY-7liRc-EUEOSe_b3axKgaRBIyyng=="
+            },
+            "targetType": {
+              "_type": {
+                "_name": "TypeDefinition"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "ActionTestPlanRunSummaries"
+              }
+            }
+          }
+        },
+        "buildResult": {
+          "_type": {
+            "_name": "ActionResult"
+          },
+          "coverage": {
+            "_type": {
+              "_name": "CodeCoverageInfo"
+            }
+          },
+          "issues": {
+            "_type": {
+              "_name": "ResultIssueSummaries"
+            },
+            "warningSummaries": {
+              "_type": {
+                "_name": "Array"
+              },
+              "_values": [
+                {
+                  "_type": {
+                    "_name": "IssueSummary"
+                  },
+                  "documentLocationInCreatingWorkspace": {
+                    "_type": {
+                      "_name": "DocumentLocation"
+                    },
+                    "concreteTypeName": {
+                      "_type": {
+                        "_name": "String"
+                      },
+                      "_value": "DVTTextDocumentLocation"
+                    },
+                    "url": {
+                      "_type": {
+                        "_name": "String"
+                      },
+                      "_value": "file:///Users/appliedalchemylabs/Documents/Codex/2026-10-13/can/work/SS-runtime/Sources/SurveillanceCore/Presentation/EnvironmentLibrary.swift#EndingColumnNumber=27&EndingLineNumber=108&StartingColumnNumber=27&StartingLineNumber=108&Timestamp=813643555.504869"
+                    }
+                  },
+                  "issueType": {
+                    "_type": {
+                      "_name": "String"
+                    },
+                    "_value": "Swift Compiler Warning"
+                  },
+                  "message": {
+                    "_type": {
+                      "_name": "String"
+                    },
+                    "_value": "No calls to throwing functions occur within 'try' expression"
+                  },
+                  "producingTarget": {
+                    "_type": {
+                      "_name": "String"
+                    },
+                    "_value": "SurveillanceCore"
+                  }
+                }
+              ]
+            }
+          },
+          "logRef": {
+            "_type": {
+              "_name": "Reference"
+            },
+            "id": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "0~KLcLvg6ieVCPCpjO0Hc-gTFHeHrvsAVILovT-u7eqxtD9JIe-wy4AGakVst1bRccJWV42RRBEki0G2vNE-qB-w=="
+            },
+            "targetType": {
+              "_type": {
+                "_name": "TypeDefinition"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "ActivityLogSection"
+              }
+            }
+          },
+          "metrics": {
+            "_type": {
+              "_name": "ResultMetrics"
+            },
+            "warningCount": {
+              "_type": {
+                "_name": "Int"
+              },
+              "_value": "1"
+            }
+          },
+          "resultName": {
+            "_type": {
+              "_name": "String"
+            },
+            "_value": "build"
+          },
+          "status": {
+            "_type": {
+              "_name": "String"
+            },
+            "_value": "succeeded"
+          }
+        },
+        "endedTime": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:04:38.835-0700"
+        },
+        "runDestination": {
+          "_type": {
+            "_name": "ActionRunDestinationRecord"
+          },
+          "displayName": {
+            "_type": {
+              "_name": "String"
+            },
+            "_value": "iPhone 17 Pro"
+          },
+          "localComputerRecord": {
+            "_type": {
+              "_name": "ActionDeviceRecord"
+            },
+            "busSpeedInMHz": {
+              "_type": {
+                "_name": "Int"
+              },
+              "_value": "0"
+            },
+            "cpuCount": {
+              "_type": {
+                "_name": "Int"
+              },
+              "_value": "1"
+            },
+            "cpuKind": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "Apple M4"
+            },
+            "cpuSpeedInMHz": {
+              "_type": {
+                "_name": "Int"
+              },
+              "_value": "0"
+            },
+            "identifier": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "00008132-001168DE3C2B801C"
+            },
+            "isConcreteDevice": {
+              "_type": {
+                "_name": "Bool"
+              },
+              "_value": "true"
+            },
+            "logicalCPUCoresPerPackage": {
+              "_type": {
+                "_name": "Int"
+              },
+              "_value": "10"
+            },
+            "modelCode": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "Mac16,13"
+            },
+            "modelName": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "MacBook Air"
+            },
+            "modelUTI": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "com.apple.macbookair-15-2025"
+            },
+            "name": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "My Mac"
+            },
+            "nativeArchitecture": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "arm64e"
+            },
+            "operatingSystemVersion": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "26.3.1"
+            },
+            "operatingSystemVersionWithBuildNumber": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "26.3.1 (25D2128)"
+            },
+            "physicalCPUCoresPerPackage": {
+              "_type": {
+                "_name": "Int"
+              },
+              "_value": "10"
+            },
+            "platformRecord": {
+              "_type": {
+                "_name": "ActionPlatformRecord"
+              },
+              "identifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "com.apple.platform.macosx"
+              },
+              "userDescription": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "macOS"
+              }
+            },
+            "ramSizeInMegabytes": {
+              "_type": {
+                "_name": "Int"
+              },
+              "_value": "24576"
+            }
+          },
+          "targetArchitecture": {
+            "_type": {
+              "_name": "String"
+            },
+            "_value": "arm64"
+          },
+          "targetDeviceRecord": {
+            "_type": {
+              "_name": "ActionDeviceRecord"
+            },
+            "busSpeedInMHz": {
+              "_type": {
+                "_name": "Int"
+              },
+              "_value": "0"
+            },
+            "cpuCount": {
+              "_type": {
+                "_name": "Int"
+              },
+              "_value": "0"
+            },
+            "cpuSpeedInMHz": {
+              "_type": {
+                "_name": "Int"
+              },
+              "_value": "0"
+            },
+            "identifier": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+            },
+            "isConcreteDevice": {
+              "_type": {
+                "_name": "Bool"
+              },
+              "_value": "true"
+            },
+            "logicalCPUCoresPerPackage": {
+              "_type": {
+                "_name": "Int"
+              },
+              "_value": "0"
+            },
+            "modelCode": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "iPhone18,1"
+            },
+            "modelName": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "iPhone 17 Pro"
+            },
+            "modelUTI": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "com.apple.com.apple.iphone-17-pro-2"
+            },
+            "name": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "iPhone 17 Pro"
+            },
+            "nativeArchitecture": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "arm64"
+            },
+            "operatingSystemVersion": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "26.5"
+            },
+            "operatingSystemVersionWithBuildNumber": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "26.5 (23F77)"
+            },
+            "physicalCPUCoresPerPackage": {
+              "_type": {
+                "_name": "Int"
+              },
+              "_value": "0"
+            },
+            "platformRecord": {
+              "_type": {
+                "_name": "ActionPlatformRecord"
+              },
+              "identifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "com.apple.platform.iphonesimulator"
+              },
+              "userDescription": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "iOS Simulator"
+              }
+            },
+            "ramSizeInMegabytes": {
+              "_type": {
+                "_name": "Int"
+              },
+              "_value": "0"
+            }
+          },
+          "targetSDKRecord": {
+            "_type": {
+              "_name": "ActionSDKRecord"
+            },
+            "identifier": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "iphonesimulator26.5"
+            },
+            "name": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "Simulator - iOS 26.5"
+            },
+            "operatingSystemVersion": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "26.5"
+            }
+          }
+        },
+        "schemeCommandName": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Test"
+        },
+        "schemeTaskName": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "BuildAndAction"
+        },
+        "startedTime": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:01:28.834-0700"
+        },
+        "testPlanName": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "SSRuntime"
+        }
+      }
+    ]
+  },
+  "issues": {
+    "_type": {
+      "_name": "ResultIssueSummaries"
+    },
+    "warningSummaries": {
+      "_type": {
+        "_name": "Array"
+      },
+      "_values": [
+        {
+          "_type": {
+            "_name": "IssueSummary"
+          },
+          "documentLocationInCreatingWorkspace": {
+            "_type": {
+              "_name": "DocumentLocation"
+            },
+            "concreteTypeName": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "DVTTextDocumentLocation"
+            },
+            "url": {
+              "_type": {
+                "_name": "String"
+              },
+              "_value": "file:///Users/appliedalchemylabs/Documents/Codex/2026-10-13/can/work/SS-runtime/Sources/SurveillanceCore/Presentation/EnvironmentLibrary.swift#EndingColumnNumber=27&EndingLineNumber=108&StartingColumnNumber=27&StartingLineNumber=108&Timestamp=813643555.504869"
+            }
+          },
+          "issueType": {
+            "_type": {
+              "_name": "String"
+            },
+            "_value": "Swift Compiler Warning"
+          },
+          "message": {
+            "_type": {
+              "_name": "String"
+            },
+            "_value": "No calls to throwing functions occur within 'try' expression"
+          },
+          "producingTarget": {
+            "_type": {
+              "_name": "String"
+            },
+            "_value": "SurveillanceCore"
+          }
+        }
+      ]
+    }
+  },
+  "metadataRef": {
+    "_type": {
+      "_name": "Reference"
+    },
+    "id": {
+      "_type": {
+        "_name": "String"
+      },
+      "_value": "0~fZvrUM2kwVdfXmtci_WJE31jGoMRUxfWOXtjT_isOCLx5aBY5yZHWp-j7n2rc1tYA69fGgVp1FmYVIU0WToJyw=="
+    },
+    "targetType": {
+      "_type": {
+        "_name": "TypeDefinition"
+      },
+      "name": {
+        "_type": {
+          "_name": "String"
+        },
+        "_value": "ActionsInvocationMetadata"
+      }
+    }
+  },
+  "metrics": {
+    "_type": {
+      "_name": "ResultMetrics"
+    },
+    "testsCount": {
+      "_type": {
+        "_name": "Int"
+      },
+      "_value": "104"
+    },
+    "warningCount": {
+      "_type": {
+        "_name": "Int"
+      },
+      "_value": "1"
+    }
+  }
+}

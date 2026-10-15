@@ -17,3 +17,7 @@ The first `swift test` reported all 773 tests across 109 suites passing after 63
 A new `swift test --disable-sandbox` run is in progress at this checkpoint (exec session 56814; /private/tmp/ss-camera-core-retry.log). Compilation completed without the manifest sandbox error; final status must be checked before claiming a clean core result. Do not restart while this handle is live.
 
 The earlier app attempt stopped at compilation due to a missing direction:nil argument in the new loader. It was corrected before the passing app run; no test assertions were weakened.
+
+## Core retry completed
+
+The same retry session completed with exit code 0: 773 tests in 109 suites passed after 688.996 seconds. core-retry.log preserves the result. Cache availability warnings remain, but the nested manifest-sandbox error is absent.

@@ -218,6 +218,95 @@ final class BenchmarkCaptureTests: XCTestCase {
     }
 
     @MainActor
+    func testCaptureCompleteCameraCandidatesInSharedScene() throws {
+        let bundle = Bundle(for: Self.self)
+        func texture(_ name: String) throws -> SKTexture {
+            let url = try XCTUnwrap(bundle.url(forResource: name, withExtension: "png"))
+            let image = try XCTUnwrap(UIImage(contentsOfFile: url.path))
+            let texture = SKTexture(image: image)
+            texture.filteringMode = .linear
+            return texture
+        }
+        let view = SKView(frame: CGRect(x: 0, y: 0, width: 704, height: 326))
+        view.isPaused = true
+        let scene = GameScene(size: view.bounds.size)
+        view.presentScene(scene)
+        defer { view.presentScene(nil) }
+        scene.session.audioSettings = .init(effectsEnabled: false, hapticsEnabled: false, musicEnabled: false)
+        var snap = scene.session.snapshot
+        let id = "solid-03-transit-kiosk"
+        let index = try XCTUnwrap(snap.solidIds.firstIndex(of: id))
+        let box = snap.solids[index]
+        let x = box.center.x
+        let y = box.center.y
+        snap.solids = [box]
+        snap.solidIds = [id]
+        snap.player.x = x + 160
+        snap.player.y = y - 50
+        snap.playerDirection = "south"
+        snap.enemies = []
+        snap.projectiles = []
+        snap.telegraphs = []
+        snap.mines = []
+        snap.spawnSockets = []
+        snap.captainHousings = []
+        snap.captainField = nil
+        snap.patrolCones = []
+        snap.cameras = Array(snap.cameras.prefix(1))
+        XCTAssertEqual(snap.cameras.count, 1)
+        snap.cameras[0].x = x + 270
+        snap.cameras[0].y = y + 20
+        snap.cameras[0].fieldOrigin = VecI(x: x + 270, y: y + 20).asQ8
+        snap.cameras[0].headingMilli = 100_000
+        snap.cameras[0].integrity = 3
+        snap.cameras[0].fieldVisible = true
+        let env = EnvironmentTextures()
+        let center = CGPoint(x: x + 130, y: y + 20)
+        let art = BenchmarkReviewArt(
+            player: try texture("painted-player-south"), camera: try texture("camera"),
+            building: .init(texture: try texture("building-constrained"), size: CGSize(width: 190, height: 217),
+                            anchor: CGPoint(x: 0.5, y: 0), position: CGPoint(x: x, y: y - 64)),
+            buildingID: id,
+            props: [
+                .init(texture: try texture("newsbox"), size: CGSize(width: 20, height: 40),
+                      anchor: CGPoint(x: 0.5, y: 0), position: CGPoint(x: x + 115, y: y - 65)),
+                .init(texture: try texture("tree"), size: CGSize(width: 50, height: 85),
+                      anchor: CGPoint(x: 0.5, y: 0), position: CGPoint(x: x + 355, y: y - 20))
+            ], paving: try XCTUnwrap(env.texture(assetId: "env_ground_plaza")))
+        let candidates = try CameraPlaybackTests.candidateFrames()
+        XCTAssertTrue(scene.installBenchmarkCameraFrames(candidates))
+        let crop = CGRect(x: center.x - 352, y: center.y - 163, width: 704, height: 326)
+        let clips = [3: "camera_operational_idle", 2: "camera_hit",
+                     1: "camera_critical_enter", 0: "camera_destroyed_idle"]
+        for integrity in stride(from: 3, through: 0, by: -1) {
+            snap.cameras[0].integrity = integrity
+            snap.cameras[0].fieldVisible = integrity > 0
+            scene.renderBenchmark(snapshot: snap, art: art, center: center)
+            let sprite = try XCTUnwrap(scene.childNode(withName: "//sprite-camera-\(snap.cameras[0].id.raw)") as? SKSpriteNode)
+            XCTAssertTrue(sprite.texture === candidates[clips[integrity]!]!.last)
+            XCTAssertFalse(sprite.hasActions())
+            let contact = try XCTUnwrap(scene.childNode(withName: "//benchmark-camera-contact-\(snap.cameras[0].id.raw)"))
+            XCTAssertEqual(contact.position, CGPoint(x: snap.cameras[0].x, y: snap.cameras[0].y - 2))
+            XCTAssertNil(scene.childNode(withName: "//housing-\(snap.cameras[0].id.raw)"))
+            if integrity == 0 { XCTAssertNil(scene.childNode(withName: "//field-\(snap.cameras[0].id.raw)")) }
+            let result = try XCTUnwrap(view.texture(from: scene, crop: crop))
+            let attachment = XCTAttachment(image: UIImage(cgImage: result.cgImage()))
+            attachment.name = "BP004-shared-scene-integrity-\(integrity)"
+            attachment.lifetime = .keepAlways; add(attachment)
+        }
+        let record = XCTAttachment(string: """
+        Actual GameScene/WorldRenderer/HUD; 704x326 logical viewport. Complete camera
+        candidates use the production integrity policy, with Reduced Motion settled
+        frames. Painted neutral player and constrained building are review assets.
+        Explicit composition placements; not a legal encounter or animation capture.
+        Geometry mapping and player locomotion remain unaccepted. Native frame scale
+        must be read from the exported pixel dimensions. Camera texture filtering is
+        nearest; other high-resolution composition sources use linear filtering.
+        """)
+        record.name = "BP004-shared-scene-record"; record.lifetime = .keepAlways; add(record)
+    }
+
+    @MainActor
     func testCaptureRevisedBenchmarkComposition() throws {
         let bundle = Bundle(for: Self.self)
         func texture(_ name: String) throws -> SKTexture {
