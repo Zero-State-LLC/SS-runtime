@@ -46,7 +46,7 @@ final class DisplayedPlaybackTests: XCTestCase {
             displayTime = currentTime
             if let previousTime { accumulator += min(currentTime - previousTime, 0.25) }
             previousTime = currentTime
-            while accumulator >= 1.0 / 60.0 && session.simulation.state.tick < 90 {
+            while accumulator >= 1.0 / 60.0 {
                 session.step()
                 accumulator -= 1.0 / 60.0
             }
@@ -66,7 +66,8 @@ final class DisplayedPlaybackTests: XCTestCase {
                 anchorX: Double(observed.anchor.x), anchorY: Double(observed.anchor.y),
                 facing: snap.playerDirection, clip: observed.clipToken ?? "unidentified",
                 framePath: observed.deliveredPath))
-            if state.tick >= 90 {
+            // #126: tick coverage and observed display coverage are independent.
+            if state.tick >= 90 && samples.count > 10 {
                 finished = true
                 done?()
             }
@@ -81,7 +82,7 @@ final class DisplayedPlaybackTests: XCTestCase {
         window.rootViewController = controller
         window.makeKeyAndVisible()
         let scene = CaptureScene(size: view.bounds.size)
-        let completed = expectation(description: "90 simulation ticks with post-action observations")
+        let completed = expectation(description: "at least 90 simulation ticks and 11 post-action observations")
         scene.done = { completed.fulfill() }
         view.presentScene(scene)
         defer { view.presentScene(nil); window.isHidden = true }
@@ -103,5 +104,80 @@ final class DisplayedPlaybackTests: XCTestCase {
         attachment.lifetime = .keepAlways
         add(attachment)
     }
+
+    func testFullGameSceneCapturesPostActionImagesWithFrameRecords() async throws {
+        let window = UIWindow(frame: CGRect(x: 0, y: 0, width: 704, height: 326))
+        let controller = UIViewController()
+        let view = SKView(frame: window.bounds)
+        controller.view = view
+        window.rootViewController = controller
+        window.makeKeyAndVisible()
+        let scene = GameScene(size: view.bounds.size, session: GameSession(seed: 1))
+        scene.session.audioSettings = .init(effectsEnabled: false, hapticsEnabled: false, musicEnabled: false)
+        let completed = expectation(description: "full GameScene post-action captures")
+        var records: [[String: Any]] = []
+        var images: [(String, UIImage)] = []
+        var capturedPaths: Set<String> = []
+        var finished = false
+        scene.benchmarkPlaybackObserver = { time, snapshot, position, observed, camera in
+            guard !finished else { return }
+            let imageName = "BP008-full-scene-tick-\(snapshot.tick)"
+            var record: [String: Any] = [
+                "displayTime": time, "tick": snapshot.tick,
+                "authoritativeRawX": position.x.raw, "authoritativeRawY": position.y.raw,
+                "renderedX": observed.position.x, "renderedY": observed.position.y,
+                "cameraX": camera.x, "cameraY": camera.y,
+                "width": observed.size.width, "height": observed.size.height,
+                "anchorX": observed.anchor.x, "anchorY": observed.anchor.y,
+                "facing": snapshot.playerDirection, "clip": observed.clipToken ?? "unidentified",
+                "framePath": observed.deliveredPath ?? "unidentified",
+                "viewportWidth": view.bounds.width, "viewportHeight": view.bounds.height,
+                "displayScale": view.contentScaleFactor
+            ]
+            if let path = observed.deliveredPath, snapshot.playerClipId == "player_move",
+               images.count < 4, !capturedPaths.contains(path) {
+                let crop = CGRect(x: camera.x - 352, y: camera.y - 163, width: 704, height: 326)
+                if let texture = view.texture(from: scene, crop: crop) {
+                    images.append((imageName, UIImage(cgImage: texture.cgImage())))
+                    capturedPaths.insert(path)
+                    record["imageAttachment"] = imageName
+                }
+            }
+            records.append(record)
+            if snapshot.tick >= 90 { finished = true; completed.fulfill() }
+        }
+        view.presentScene(scene)
+        defer {
+            scene.benchmarkPlaybackObserver = nil
+            view.presentScene(nil)
+            window.isHidden = true
+        }
+        let layout = try XCTUnwrap(scene.controlLayout)
+        final class Finger {}
+        let finger = Finger()
+        let token = TouchController.TouchToken(id: ObjectIdentifier(finger))
+        // First input dismisses an active intro; a second begins normal steering.
+        _ = scene.beginTouch(token: token, atPoints: layout.stickCentre)
+        _ = scene.beginTouch(token: token, atPoints: layout.stickCentre)
+        scene.moveTouch(token: token, toPoints: CGPoint(x: layout.stickCentre.x,
+            y: layout.stickCentre.y - layout.stickRadius))
+        await fulfillment(of: [completed], timeout: 30)
+        scene.endTouch(token: token)
+        XCTAssertGreaterThan(images.count, 1)
+        XCTAssertTrue(records.allSatisfy { ($0["framePath"] as? String) != "unidentified" })
+        XCTAssertGreaterThan(Set(records.compactMap { $0["authoritativeRawY"] as? Int64 }).count, 1)
+        for (name, image) in images {
+            let attachment = XCTAttachment(image: image)
+            attachment.name = name
+            attachment.lifetime = .keepAlways
+            add(attachment)
+        }
+        let data = try JSONSerialization.data(withJSONObject: records, options: [.prettyPrinted, .sortedKeys])
+        let attachment = XCTAttachment(data: data, uniformTypeIdentifier: "public.json")
+        attachment.name = "BP008-full-scene-post-action-records"
+        attachment.lifetime = .keepAlways
+        add(attachment)
+    }
+
 }
 #endif

@@ -248,6 +248,10 @@ final class GameScene: SKScene {
     private var terminalEvidenceStored = false
     private let renderer = WorldRenderer()
 #if DEBUG
+    /// Optional evidence sink; no recording or allocation in ordinary play.
+    var benchmarkPlaybackObserver: ((TimeInterval, PresentationSnapshot, VecQ8,
+        WorldRenderer.PlayerPlaybackObservation, CGPoint) -> Void)?
+
     /// BP-007 review parameter; ordinary frame callbacks retain the baseline.
     func refreshBenchmarkOutlines(samplingScale: Int) {
         renderer.syncOutlines(samplingScale: samplingScale)
@@ -595,6 +599,13 @@ final class GameScene: SKScene {
     override func didEvaluateActions() {
         super.didEvaluateActions()
         renderer.syncOutlines()
+#if DEBUG
+        if let observer = benchmarkPlaybackObserver,
+           let observed = renderer.observePlayerPlayback() {
+            observer(lastDisplayTime ?? 0, session.snapshot,
+                session.simulation.state.player.position, observed, cameraNode.position)
+        }
+#endif
     }
 
     private func applyController() {
