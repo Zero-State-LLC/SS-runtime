@@ -179,6 +179,166 @@ final class DisplayedPlaybackTests: XCTestCase {
         add(attachment)
     }
 
+    /// Isolated ground/contact comparison, not a full benchmark encounter.
+    final class PlayerCandidateScene: SKScene {
+        let renderer: WorldRenderer
+        let session = GameSession(seed: 1)
+        let paths: [String]
+        let upright = SKNode()
+        var records: [[String: Any]] = []
+        var images: [(String, UIImage)] = []
+        var seenPaths: Set<String> = []
+        var done: (() -> Void)?
+        private var previousTime: Double?
+        private var accumulator = 0.0
+        private var now = 0.0
+        private var finished = false
+
+        init(size: CGSize, library: SpriteLibrary, paths: [String]) {
+            renderer = WorldRenderer(sprites: library)
+            self.paths = paths
+            super.init(size: size)
+        }
+        required init?(coder: NSCoder) { fatalError("init(coder:) unsupported") }
+        override func didMove(to view: SKView) {
+            addChild(renderer.root)
+            renderer.root.yScale = 0.5
+            upright.name = "player-source-wrapper"; upright.yScale = 2
+            renderer.root.children[WorldRenderer.Layer.actors.rawValue].addChild(upright)
+            let camera = SKCameraNode(); addChild(camera); self.camera = camera
+            session.moveY = -PlayerCommand.axisMaximum
+        }
+        override func update(_ time: TimeInterval) {
+            guard !finished else { return }
+            now = time
+            if let previousTime { accumulator += min(time - previousTime, 0.25) }
+            previousTime = time
+            while accumulator >= 1.0 / 60.0 {
+                session.step(); accumulator -= 1.0 / 60.0
+            }
+            let snap = session.snapshot
+            renderer.render(snap, reducedMotion: false)
+            // Only ground and this actor are in the registration diagnostic.
+            // Other upright art must not be flattened into this comparison.
+            for (index, layer) in renderer.root.children.enumerated() {
+                layer.isHidden = index != WorldRenderer.Layer.ground.rawValue
+                    && index != WorldRenderer.Layer.actors.rawValue
+                if index == WorldRenderer.Layer.actors.rawValue {
+                    for child in layer.children { child.isHidden = child.name != "sprite-player" && child !== upright }
+                }
+            }
+            if let player = renderer.root.childNode(withName: "//sprite-player") as? SKSpriteNode {
+                player.size = CGSize(width: 64, height: 416.0 / 6.0)
+                player.anchorPoint = CGPoint(x: 0.5, y: 1 - 336.0 / 416.0)
+                // Project ground roots, preserving the already elevated artwork.
+                if player.parent !== upright {
+                    player.removeFromParent(); upright.addChild(player)
+                }
+                player.yScale = 1
+                player.position.y /= 2
+            }
+            camera?.position = CGPoint(x: snap.player.x, y: snap.player.y / 2)
+        }
+        override func didEvaluateActions() {
+            guard !finished else { return }
+            // #130: completion and missing-frame evidence cannot depend on move art.
+            defer {
+                if session.simulation.state.tick >= 90 && seenPaths.count > 1 {
+                    finished = true; done?()
+                }
+            }
+            guard let observed = renderer.observePlayerPlayback(),
+                  let path = observed.deliveredPath, let frame = paths.firstIndex(of: path),
+                  let player = renderer.root.childNode(withName: "//sprite-player"),
+                  let parent = player.parent else {
+                records.append(["displayTime": now, "tick": session.simulation.state.tick,
+                    "facing": session.snapshot.playerDirection, "clip": session.snapshot.playerClipId,
+                    "candidateAvailable": false])
+                return
+            }
+            let position = session.simulation.state.player.position
+            let projected = convert(player.position, from: parent)
+            var record: [String: Any] = [
+                "displayTime": now, "tick": session.simulation.state.tick,
+                "authoritativeRawX": position.x.raw, "authoritativeRawY": position.y.raw,
+                "renderedX": projected.x, "renderedY": projected.y,
+                "framePath": path, "sourceFrameIndex": frame,
+                "facing": session.snapshot.playerDirection,
+                "clip": observed.clipToken ?? "unidentified",
+                "width": observed.size.width, "height": observed.size.height,
+                "anchorX": observed.anchor.x, "anchorY": observed.anchor.y,
+                "groundYScale": 0.5, "artYScaleAfterParent": 1.0
+            ]
+            if !seenPaths.contains(path), let view, let camera,
+               let texture = view.texture(from: self, crop: CGRect(
+                   x: camera.position.x - 352, y: camera.position.y - 163, width: 704, height: 326)) {
+                let name = "BP008-player-source-frame-\(frame)-tick-\(session.simulation.state.tick)"
+                images.append((name, UIImage(cgImage: texture.cgImage())))
+                record["imageAttachment"] = name
+                seenPaths.insert(path)
+            }
+            records.append(record)
+        }
+    }
+
+    func testRevisedPlayerSourcePlaysWithProjectedSimulationTravel() async throws {
+        let bundle = Bundle(for: Self.self)
+        let paths = (0..<16).map { String(format: "player-source-s-%02d", $0) }
+        var textures: [String: SKTexture] = [:]
+        for path in paths {
+            let url = try XCTUnwrap(bundle.url(forResource: path, withExtension: "png"))
+            let image = try XCTUnwrap(UIImage(contentsOfFile: url.path))
+            let texture = SKTexture(image: image)
+            XCTAssertEqual(texture.size(), CGSize(width: 384, height: 416))
+            texture.filteringMode = .linear; textures[path] = texture
+        }
+        let ids = (0..<16).map { String(format: "player_move_s_%02d", $0) }
+        let clip = ClipFrameLibrary.Clip(clipId: "player_move", actorRole: "player",
+            directions: ["s"], framesPerSecond: nil,
+            authoredTiming: try ClipTiming(unitsPerSecond: 32, frameUnits: Array(repeating: 1, count: 16)),
+            loop: true, anchor: VecI(x: 32, y: 56), frameIds: ids)
+        let frames = ClipFrameLibrary(clips: ["player_move": clip],
+            deliveredPaths: Dictionary(uniqueKeysWithValues: zip(ids, paths)))
+        XCTAssertNil(SpriteLibrary(benchmarkFrames: frames, benchmarkTextures: [:]))
+        let library = try XCTUnwrap(SpriteLibrary(benchmarkFrames: frames, benchmarkTextures: textures))
+        let window = UIWindow(frame: CGRect(x: 0, y: 0, width: 704, height: 326))
+        let controller = UIViewController(), view = SKView(frame: window.bounds)
+        controller.view = view; window.rootViewController = controller; window.makeKeyAndVisible()
+        let scene = PlayerCandidateScene(size: view.bounds.size, library: library, paths: paths)
+        let complete = expectation(description: "revised player live action and travel capture")
+        scene.done = { complete.fulfill() }
+        view.presentScene(scene)
+        defer { view.presentScene(nil); window.isHidden = true }
+        await fulfillment(of: [complete], timeout: 45)
+        XCTAssertGreaterThan(scene.seenPaths.count, 1)
+        XCTAssertGreaterThan(Set(scene.records.compactMap { $0["authoritativeRawY"] as? Int64 }).count, 1)
+        XCTAssertEqual(scene.records.first?["tick"] as? UInt64, 0)
+        XCTAssertEqual(scene.records.first?["clip"] as? String, "player_idle")
+        XCTAssertEqual(scene.records.first?["facing"] as? String, "e")
+        let lastMovingTick = try XCTUnwrap(scene.records.filter { $0["sourceFrameIndex"] != nil }
+            .compactMap { $0["tick"] as? UInt64 }.max())
+        XCTAssertTrue(scene.records.contains { ($0["tick"] as? UInt64 ?? 0) > lastMovingTick
+            && $0["candidateAvailable"] as? Bool == false && $0["clip"] as? String == "player_idle" })
+        for record in scene.records where record["sourceFrameIndex"] != nil {
+            XCTAssertEqual(record["facing"] as? String, "s")
+            XCTAssertEqual(record["clip"] as? String, "player_move|s")
+            XCTAssertEqual(try XCTUnwrap(record["width"] as? CGFloat), CGFloat(64))
+            XCTAssertEqual(try XCTUnwrap(record["height"] as? CGFloat), CGFloat(Float(416.0 / 6.0)))
+            let rawY = try XCTUnwrap(record["authoritativeRawY"] as? Int64)
+            let renderedY = try XCTUnwrap(record["renderedY"] as? CGFloat)
+            XCTAssertEqual(Double(renderedY), Double(rawY) / 512, accuracy: 0.51,
+                           "Whole-unit presentation rounding must remain bounded")
+        }
+        for (name, image) in scene.images {
+            let attachment = XCTAttachment(image: image); attachment.name = name
+            attachment.lifetime = .keepAlways; add(attachment)
+        }
+        let data = try JSONSerialization.data(withJSONObject: scene.records, options: [.prettyPrinted, .sortedKeys])
+        let attachment = XCTAttachment(data: data, uniformTypeIdentifier: "public.json")
+        attachment.name = "BP008-revised-player-post-action-records"
+        attachment.lifetime = .keepAlways; add(attachment)
+    }
+
     final class CameraCandidateScene: SKScene {
         let renderer = WorldRenderer()
         var snapshot: PresentationSnapshot

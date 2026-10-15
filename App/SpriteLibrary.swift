@@ -28,6 +28,14 @@ final class SpriteLibrary {
     var isEmpty: Bool { coverage.backed == 0 }
 
 #if DEBUG
+    /// Isolated source-review library; never merges candidate paths into bundled delivery.
+    convenience init?(benchmarkFrames: ClipFrameLibrary, benchmarkTextures: [String: SKTexture]) {
+        let paths = Set(benchmarkFrames.deliveredPaths.values)
+        guard !paths.isEmpty, paths == Set(benchmarkTextures.keys) else { return nil }
+        self.init(frames: benchmarkFrames)
+        textures = benchmarkTextures
+    }
+
     /// All-or-nothing camera candidate injection; timing and frame order still
     /// come from the admitted metadata. The test bundle owns candidate images.
     func installBenchmarkCameraFrames(_ candidates: [String: [SKTexture]]) -> Bool {
