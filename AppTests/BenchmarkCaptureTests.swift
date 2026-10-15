@@ -351,6 +351,67 @@ final class BenchmarkCaptureTests: XCTestCase {
         record.name = "BP010-legal-encounter-record"; record.lifetime = .keepAlways; add(record)
     }
 
+    /// BP-007 comparison: project ground geometry while preserving upright art.
+    /// Restores the tree after capture so repeated state samples cannot accumulate transforms.
+    @MainActor
+    private func projectedSharedCameraScene(scene: GameScene, view: SKView, center: CGPoint,
+                                             crop: CGRect, cameraID: UInt64, box: AABB) throws -> UIImage {
+        let camera = try XCTUnwrap(scene.camera)
+        let names = ["sprite-player", "sprite-camera-\(cameraID)", "benchmark-building",
+                     "benchmark-prop-0", "benchmark-prop-1"]
+        let billboards = try names.map { try XCTUnwrap(scene.childNode(withName: "//" + $0)) }
+        let building = try XCTUnwrap(billboards[2] as? SKSpriteNode)
+        XCTAssertEqual(box.halfSize, VecI(x: 64, y: 64))
+        let canvas = CGFloat(1254) * (CGFloat(128) * CGFloat(2).squareRoot() / 934)
+        building.size = CGSize(width: canvas, height: canvas)
+        building.anchorPoint = CGPoint(x: CGFloat(653) / 1254, y: 1 - CGFloat(1152) / 1254)
+        building.position = CGPoint(x: box.minX, y: box.minY)
+        let originals = try billboards.map { node in
+            (node, try XCTUnwrap(node.parent), node.position, node.zPosition)
+        }
+        func projected(_ point: CGPoint) -> CGPoint {
+            let x = point.x - center.x, y = point.y - center.y
+            let r = CGFloat(0.5).squareRoot()
+            return CGPoint(x: center.x + r * (x - y), y: center.y + r * (x + y) / 2)
+        }
+        for (node, parent, position, _) in originals {
+            let point = scene.convert(position, from: parent)
+            var z = node.zPosition
+            var ancestor: SKNode? = parent
+            while let a = ancestor, a !== scene { z += a.zPosition; ancestor = a.parent }
+            node.removeFromParent(); node.position = projected(point); node.zPosition = z
+            scene.addChild(node)
+        }
+        let upright = Set(billboards.map(ObjectIdentifier.init))
+        let groundNodes = scene.children.filter { $0 !== camera && !upright.contains(ObjectIdentifier($0)) }
+        let squash = SKNode(), rotation = SKNode(), translation = SKNode()
+        squash.position = center; squash.yScale = 0.5
+        rotation.zRotation = .pi / 4; translation.position = CGPoint(x: -center.x, y: -center.y)
+        scene.addChild(squash); squash.addChild(rotation); rotation.addChild(translation)
+        for node in groundNodes { node.removeFromParent(); translation.addChild(node) }
+        defer {
+            for node in groundNodes { node.removeFromParent(); scene.addChild(node) }
+            for (node, parent, position, z) in originals {
+                node.removeFromParent(); node.position = position; node.zPosition = z; parent.addChild(node)
+            }
+            squash.removeFromParent()
+        }
+        for point in [CGPoint(x: box.minX, y: box.minY), CGPoint(x: box.maxX, y: box.maxY)] {
+            let actual = translation.convert(point, to: scene), expected = projected(point)
+            XCTAssertEqual(actual.x, expected.x, accuracy: 0.0001)
+            XCTAssertEqual(actual.y, expected.y, accuracy: 0.0001)
+        }
+        let expectedCorner = projected(CGPoint(x: box.minX, y: box.minY))
+        // #129: SKNode's observed stored components use Float precision.
+        // Keep exact equality at that representation, separate from the ground transform check.
+        XCTAssertEqual(building.position, CGPoint(x: CGFloat(Float(expectedCorner.x)),
+                                                 y: CGFloat(Float(expectedCorner.y))))
+        XCTAssertEqual(building.size.width, building.size.height)
+        XCTAssertEqual(camera.xScale, 1)
+        let rendered = try XCTUnwrap(view.texture(from: scene, crop: crop))
+        return UIImage(cgImage: rendered.cgImage())
+    }
+
     @MainActor
     func testCaptureCompleteCameraCandidatesInSharedScene() throws {
         let bundle = Bundle(for: Self.self)
@@ -429,6 +490,13 @@ final class BenchmarkCaptureTests: XCTestCase {
             let attachment = XCTAttachment(image: UIImage(cgImage: result.cgImage()))
             attachment.name = "BP004-shared-scene-\(style.rawValue)-integrity-\(integrity)"
             attachment.lifetime = .keepAlways; add(attachment)
+            let digest = scene.session.simulation.state.digest()
+            let projected = try projectedSharedCameraScene(scene: scene, view: view, center: center,
+                crop: crop, cameraID: snap.cameras[0].id.raw, box: box)
+            XCTAssertEqual(scene.session.simulation.state.digest(), digest)
+            let registered = XCTAttachment(image: projected)
+            registered.name = "BP004-registered-shared-scene-\(style.rawValue)-integrity-\(integrity)"
+            registered.lifetime = .keepAlways; add(registered)
         }
         }
         let record = XCTAttachment(string: """
@@ -436,6 +504,9 @@ final class BenchmarkCaptureTests: XCTestCase {
         candidates use the production integrity policy, with Reduced Motion settled
         frames. Painted neutral player and constrained building are review assets.
         Explicit composition placements; not a legal encounter or animation capture.
+        Registered variants use the BP007 45-degree rotation/half-height ground comparison,
+        unchanged zoom, upright artwork and documented constrained-building corner anchor.
+        Control variants retain the old stretched building for direct comparison (issue 128).
         Geometry mapping and player locomotion remain unaccepted. Native frame scale
         must be read from the exported pixel dimensions. Camera texture filtering is
         nearest; other high-resolution composition sources use linear filtering.
