@@ -349,6 +349,23 @@ final class BenchmarkCaptureTests: XCTestCase {
                 try capture("BP002-painted-neutral-\(facing)-\(tag)")
                 scene.refreshBenchmarkOutlines(samplingScale: 3)
                 try capture("BP007-outline-3x-\(facing)-\(tag)")
+                // BP-010: change only the added Player border in this paused
+                // review fixture. Never modify enemy outlines or source art.
+                let border = try XCTUnwrap(player.childNode(withName: WorldRenderer.outlineName))
+                let originalAlpha = border.alpha
+                let rootPosition = player.position
+                let otherChildren = player.children.filter { $0 !== border }.map { ($0, $0.alpha) }
+                do {
+                    defer { border.alpha = originalAlpha }
+                    for (label, opacity) in [("half", CGFloat(0.5)), ("quarter", CGFloat(0.25)), ("none", CGFloat(0))] {
+                        border.alpha = opacity
+                        try capture("BP010-border-\(label)-\(facing)-\(tag)")
+                        XCTAssertEqual(player.position, rootPosition)
+                        XCTAssertTrue(player.texture === candidate)
+                        for (node, alpha) in otherChildren { XCTAssertEqual(node.alpha, alpha) }
+                    }
+                }
+                XCTAssertEqual(border.alpha, originalAlpha)
                 scene.didEvaluateActions()
             }
             player.texture = previousPlayerTexture

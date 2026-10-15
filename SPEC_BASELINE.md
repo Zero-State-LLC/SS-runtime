@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `439739ea146af57ecc10762d1d55b1fe66331efd` |
+| Specification commit | `c075b21e9e70828b032f7f319a712c179450b4f9` |
 | Ruleset | `ss-rules-008` |
 | Content | `civic-seam-content-006` |
 | Arena | `civic-seam-arena-004` |
@@ -48,3 +48,5 @@ BP-003 event-facing adoption: one-shot occurrences carry event-facing/start tick
 BP-002 controlled-source pilot adoption: editable character rig and measured contact/limb continuity experiment, followed by benchmark costume/facing and renderer gates. A rig scaffold is not admitted art; production resources and gameplay identities stay unchanged.
 
 BP-007 high-resolution outline clarification adoption: explicit source-pixel/logical-mask separation, constant equal-framing faction treatment, post-action frame correctness and bounded allocation/cache evidence. Runtime #124 remains open; pin adoption alone does not fix or accept 384px production assets.
+
+BP-010 comparison adoption: compare existing, reduced-opacity and absent Player border in the benchmark fixture before selecting painted-art contrast. Normal play retains D-094; gameplay identities and contract payloads apart from the specification pin remain unchanged.

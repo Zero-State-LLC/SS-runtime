@@ -1,5 +1,5 @@
 public enum ContractVersions {
-    public static let specificationCommit = "439739ea146af57ecc10762d1d55b1fe66331efd"
+    public static let specificationCommit = "c075b21e9e70828b032f7f319a712c179450b4f9"
     public static let ruleset = "ss-rules-008"
     public static let content = "civic-seam-content-006"
     public static let arena = "civic-seam-arena-004"
