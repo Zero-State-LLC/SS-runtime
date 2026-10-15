@@ -1,0 +1,80 @@
+{
+  "specificationCommit": "d6027758fa8e46ed2073cbb3b6face8ee19847ef",
+  "runtimeParent": "e4b668d",
+  "scope": "explicit composition fixture; not a legal arena road plan",
+  "roadBounds": [
+    960,
+    0,
+    1344,
+    1536
+  ],
+  "sources": [
+    {
+      "asset": "env_ground_plaza",
+      "path": "Sources/SurveillanceCore/Resources/RuntimeAssets/env_ground_plaza@1x.png",
+      "sha256": "098bc9dadddd45259cdf76bec9ba0c43835a1cbad14e689440c02780d2711484",
+      "pixelSize": [
+        128,
+        128
+      ],
+      "tileWorldUnits": 128
+    },
+    {
+      "asset": "env_ground_asphalt",
+      "path": "Sources/SurveillanceCore/Resources/RuntimeAssets/env_ground_asphalt@1x.png",
+      "sha256": "96774980c0b90535f0edfa263b1f5c4841be0be9778be48feaec27e2fd7c1676",
+      "pixelSize": [
+        128,
+        128
+      ],
+      "tileWorldUnits": 128
+    }
+  ],
+  "strips": [
+    {
+      "x": 960,
+      "width": 4,
+      "gray": 0.23,
+      "y0": 0,
+      "y1": 1536
+    },
+    {
+      "x": 957,
+      "width": 3,
+      "gray": 0.66,
+      "y0": 0,
+      "y1": 1536
+    },
+    {
+      "x": 1020,
+      "width": 5,
+      "gray": 0.12,
+      "y0": 0,
+      "y1": 1536
+    },
+    {
+      "x": 1020,
+      "width": 1.5,
+      "gray": 0.59,
+      "y0": 0,
+      "y1": 1536
+    },
+    {
+      "x": 1060,
+      "width": 5,
+      "gray": 0.12,
+      "y0": 0,
+      "y1": 1536
+    },
+    {
+      "x": 1060,
+      "width": 1.5,
+      "gray": 0.59,
+      "y0": 0,
+      "y1": 1536
+    }
+  ],
+  "projection": "existing 45-degree ground rotation, half vertical scale, unchanged zoom; upright art separate",
+  "crosswalk": "not added: opposite pedestrian landing absent in this fixture",
+  "authority": "no simulation changes"
+}

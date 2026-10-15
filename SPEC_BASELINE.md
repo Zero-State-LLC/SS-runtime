@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `d859658dc4029a3453c247c9b0d792229c1130fc` |
+| Specification commit | `d6027758fa8e46ed2073cbb3b6face8ee19847ef` |
 | Ruleset | `ss-rules-008` |
 | Content | `civic-seam-content-006` |
 | Arena | `civic-seam-arena-004` |
@@ -58,3 +58,5 @@ BP-002/BP-008 elevated-motion clarification adoption: source/anatomical measurem
 BP-008 displayed-playback clarification adoption: source, exported-frame and actual displayed contact are distinct evidence. Moving benchmark observations must retain playback and record post-action frame identity with authoritative and rendered positions. Static composition remains a separate fixture; no phase policy or art admission follows from this pin change.
 
 BP-001/BP-010 field contrast adoption: compare existing fill, dark contour and paired contour on the unchanged solid-clipped field path. D-104/T1045–T1046; presentation comparison only, no ruleset/content/arena/replay or active art migration. Recorded selection and coordinated visual-contract update remain required before changing shipping treatment.
+
+BP-001 street-surface comparison adoption: separate repeating surfaces from placed continuous curb/embedded rails in the benchmark fixture. T1042/T1046; authored presentation parameters only, no arena, ruleset, content or active art migration. Legal arena integration and visual acceptance remain open.

@@ -468,6 +468,20 @@ final class BenchmarkCaptureTests: XCTestCase {
                 .init(texture: try texture("tree"), size: CGSize(width: 50, height: 85),
                       anchor: CGPoint(x: 0.5, y: 0), position: CGPoint(x: x + 355, y: y - 20))
             ], paving: try XCTUnwrap(env.texture(assetId: "env_ground_plaza")))
+        var streetArt = art
+        let road = CGRect(x: 960, y: 0, width: 1344, height: 1536)
+        streetArt.groundPatches = [.init(texture: try XCTUnwrap(env.texture(assetId: "env_ground_asphalt")),
+                                        bounds: road, tileUnits: 128)]
+        // Authored fixture dimensions, not a replacement for the arena's rail spine.
+        func strip(_ x: CGFloat, _ width: CGFloat, _ value: CGFloat) -> BenchmarkReviewArt.GroundLine {
+            .init(start: CGPoint(x: x, y: 0), end: CGPoint(x: x, y: 1536),
+                  width: width, color: SKColor(white: value, alpha: 1))
+        }
+        streetArt.groundLines = [strip(960, 4, 0.23), strip(957, 3, 0.66),
+                                 strip(1020, 5, 0.12), strip(1020, 1.5, 0.59),
+                                 strip(1060, 5, 0.12), strip(1060, 1.5, 0.59)]
+        XCTAssertFalse(road.intersects(CGRect(x: box.minX, y: box.minY,
+                                             width: box.halfSize.x * 2, height: box.halfSize.y * 2)))
         let candidates = try CameraPlaybackTests.candidateFrames()
         XCTAssertTrue(scene.installBenchmarkCameraFrames(candidates))
         let crop = CGRect(x: center.x - 352, y: center.y - 163, width: 704, height: 326)
@@ -479,6 +493,7 @@ final class BenchmarkCaptureTests: XCTestCase {
             snap.cameras[0].integrity = integrity
             snap.cameras[0].fieldVisible = integrity > 0
             scene.renderBenchmark(snapshot: snap, art: art, center: center)
+            XCTAssertNil(scene.childNode(withName: "//benchmark-ground-line-0"))
             let sprite = try XCTUnwrap(scene.childNode(withName: "//sprite-camera-\(snap.cameras[0].id.raw)") as? SKSpriteNode)
             XCTAssertTrue(sprite.texture === candidates[clips[integrity]!]!.last)
             XCTAssertFalse(sprite.hasActions())
@@ -497,6 +512,21 @@ final class BenchmarkCaptureTests: XCTestCase {
             let registered = XCTAttachment(image: projected)
             registered.name = "BP004-registered-shared-scene-\(style.rawValue)-integrity-\(integrity)"
             registered.lifetime = .keepAlways; add(registered)
+            scene.renderBenchmark(snapshot: snap, art: streetArt, center: center)
+            var patchCount = 0
+            scene.enumerateChildNodes(withName: "//benchmark-ground-patch-0") { node, _ in
+                guard let tile = node as? SKSpriteNode else { XCTFail("Patch must be a surface tile"); return }
+                patchCount += 1
+                XCTAssertTrue(road.contains(tile.frame))
+                XCTAssertEqual(tile.texture?.size(), tile.size, "128px/128-unit source density must survive edge cropping")
+            }
+            XCTAssertEqual(patchCount, 11 * 12)
+            let street = try projectedSharedCameraScene(scene: scene, view: view, center: center,
+                crop: crop, cameraID: snap.cameras[0].id.raw, box: box)
+            XCTAssertEqual(scene.session.simulation.state.digest(), digest)
+            let furnished = XCTAttachment(image: street)
+            furnished.name = "BP004-street-shared-scene-\(style.rawValue)-integrity-\(integrity)"
+            furnished.lifetime = .keepAlways; add(furnished)
         }
         }
         let record = XCTAttachment(string: """
@@ -507,6 +537,9 @@ final class BenchmarkCaptureTests: XCTestCase {
         Registered variants use the BP007 45-degree rotation/half-height ground comparison,
         unchanged zoom, upright artwork and documented constrained-building corner anchor.
         Control variants retain the old stretched building for direct comparison (issue 128).
+        Street variants add asphalt bounds (960,0,1344,1536), 128-unit tiles; curb at
+        x=960/957 (width 4/3), rail grooves at x=1020/1060 (width 5, metal 1.5).
+        All strips span y=0...1536; these are editable fixture values, not arena placement.
         Geometry mapping and player locomotion remain unaccepted. Native frame scale
         must be read from the exported pixel dimensions. Camera texture filtering is
         nearest; other high-resolution composition sources use linear filtering.

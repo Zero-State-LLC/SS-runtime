@@ -360,6 +360,37 @@ final class WorldRenderer {
             }
             y += tile
         }
+        if let reviewArt {
+            for (index, patch) in reviewArt.groundPatches.enumerated() where patch.tileUnits > 0 {
+                let bounds = patch.bounds
+                var y = bounds.minY
+                while y < bounds.maxY {
+                    var x = bounds.minX
+                    while x < bounds.maxX {
+                        let width = min(patch.tileUnits, bounds.maxX - x)
+                        let height = min(patch.tileUnits, bounds.maxY - y)
+                        let region = CGRect(x: 0, y: 0, width: width / patch.tileUnits, height: height / patch.tileUnits)
+                        let texture = SKTexture(rect: region, in: patch.texture)
+                        texture.filteringMode = patch.texture.filteringMode
+                        let node = SKSpriteNode(texture: texture, size: CGSize(width: width, height: height))
+                        node.name = "benchmark-ground-patch-\(index)"
+                        node.position = CGPoint(x: x + width / 2, y: y + height / 2)
+                        node.zPosition = 0.1
+                        layer.addChild(node)
+                        x += patch.tileUnits
+                    }
+                    y += patch.tileUnits
+                }
+            }
+            for (index, line) in reviewArt.groundLines.enumerated() {
+                let path = CGMutablePath(); path.move(to: line.start); path.addLine(to: line.end)
+                let node = SKShapeNode(path: path)
+                node.name = "benchmark-ground-line-\(index)"
+                node.strokeColor = line.color; node.lineWidth = line.width
+                node.zPosition = 0.2
+                layer.addChild(node)
+            }
+        }
         groundBuilt = true
     }
 
