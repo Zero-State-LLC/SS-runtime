@@ -145,6 +145,87 @@ final class BenchmarkCaptureTests: XCTestCase {
     }
 #if DEBUG
     @MainActor
+    func testCaptureCameraFieldsInReplayableEncounter() throws {
+        let session = GameSession(seed: 1)
+        session.audioSettings = .init(effectsEnabled: false, hapticsEnabled: false, musicEnabled: false)
+        var pilot = try XCTUnwrap(DebugAutopilot(scenario: "run", arena: session.simulation.state.arena))
+        var found = false
+        for _ in 0..<6000 {
+            let before = session.snapshot
+            let command = pilot.command(before)
+            session.moveX = command.moveX; session.moveY = command.moveY
+            session.dodgePressed = command.dodge
+            if before.upgradePending { session.pendingUpgradeChoice = pilot.upgradeChoice.selectionIndex }
+            session.step()
+            let snap = session.snapshot
+            let nearby = snap.enemies.filter { abs($0.x - snap.player.x) < 300 && abs($0.y - snap.player.y) < 130 }
+            let visibleAttack = snap.projectiles.contains { abs($0.x - snap.player.x) < 300 && abs($0.y - snap.player.y) < 130 }
+            let nearbyField = snap.cameras.contains { $0.fieldVisible && abs($0.x - snap.player.x) < 280 && abs($0.y - snap.player.y) < 120 }
+            if nearby.count >= 2 && visibleAttack && nearbyField { found = true; break }
+            if session.simulation.isTerminal { break }
+        }
+        XCTAssertTrue(found, "Pilot must reach an unedited encounter with nearby enemies, projectile and Camera field")
+        guard found else { return }
+        XCTAssertFalse(session.scenarioSeeded)
+        let view = SKView(frame: CGRect(x: 0, y: 0, width: 704, height: 326))
+        view.isPaused = true
+        let scene = GameScene(size: view.bounds.size, session: session)
+        view.presentScene(scene)
+        defer { view.presentScene(nil) }
+        XCTAssertTrue(scene.installBenchmarkCameraFrames(try CameraPlaybackTests.candidateFrames()))
+        scene.skipIntroIfRunning()
+        scene.update(0)
+        let snap = session.snapshot
+        let player = try XCTUnwrap(scene.childNode(withName: "//sprite-player") as? SKSpriteNode)
+        let directions = ["n": "north", "s": "south", "e": "east", "w": "west"]
+        let facing = directions[snap.playerDirection] ?? snap.playerDirection
+        let url = try XCTUnwrap(Bundle(for: Self.self).url(forResource: "painted-player-\(facing)", withExtension: "png"))
+        let image = try XCTUnwrap(UIImage(contentsOfFile: url.path))
+        let candidate = SKTexture(image: image)
+        candidate.filteringMode = .linear
+        let camera = try XCTUnwrap(scene.camera)
+        let lower = scene.convert(CGPoint(x: -352, y: -163), from: camera)
+        let upper = scene.convert(CGPoint(x: 352, y: 163), from: camera)
+        let crop = CGRect(x: lower.x, y: lower.y, width: upper.x-lower.x, height: upper.y-lower.y)
+        let digest = session.simulation.state.digest()
+        for reduced in [false, true] {
+            for style in WorldRenderer.BenchmarkFieldContrast.allCases {
+                scene.setBenchmarkFieldContrast(style)
+                scene.refreshBenchmarkPresentation(reducedMotion: reduced)
+                player.removeAllActions(); player.texture = candidate
+                player.size = CGSize(width: 64, height: 64)
+                player.anchorPoint = CGPoint(x: 0.5, y: 0.125)
+                scene.refreshBenchmarkOutlines(samplingScale: 3)
+                XCTAssertEqual(session.simulation.state.digest(), digest)
+                let texture = try XCTUnwrap(view.texture(from: scene, crop: crop))
+                let attachment = XCTAttachment(image: UIImage(cgImage: texture.cgImage()))
+                attachment.name = "BP010-field-encounter-\(style.rawValue)-reduced-\(reduced)"
+                attachment.lifetime = .keepAlways; add(attachment)
+            }
+        }
+        let state = session.simulation.state
+        let replay = GhostRecord(identity: state.identity, seed: state.seed, ticks: state.tick,
+                                 digest: state.digest(), commands: session.commandLog)
+        let replayData = try JSONEncoder().encode(replay)
+        let decoded = try JSONDecoder().decode(GhostRecord.self, from: replayData)
+        let replayed = try XCTUnwrap(GhostRun.replay(seed: decoded.seed, commands: decoded.playerCommands, until: decoded.ticks))
+        XCTAssertEqual(replayed.state.digest(), state.digest())
+        let commands = XCTAttachment(data: replayData, uniformTypeIdentifier: "public.json")
+        commands.name = "BP010-field-encounter-commands-seed-1"
+        commands.lifetime = .keepAlways; add(commands)
+        let record = XCTAttachment(string: """
+        Seed 1; normal GameSession commands from DebugAutopilot run; no scenario seeding.
+        tick=\(snap.tick), player=\(snap.player.x),\(snap.player.y), facing=\(snap.playerDirection)
+        enemies=\(snap.enemies.count), projectiles=\(snap.projectiles.count), telegraphs=\(snap.telegraphs.count)
+        Production GameScene/HUD/fog/ground/projection; painted neutral Player and complete Camera candidate family.
+        Same unedited snapshot across control/dark/paired and normal/Reduced Motion.
+        digest=\(state.digest()); candidate source: docs/review/camera-clips.
+        Static paused comparison; not movement-animation, final projection, dense-scene or damage-effect acceptance.
+        """)
+        record.name = "BP010-field-encounter-record"; record.lifetime = .keepAlways; add(record)
+    }
+
+    @MainActor
     func testCapturePaintedPlayerLegalEncounterContrast() throws {
         let session = GameSession(seed: 1)
         session.audioSettings = .init(effectsEnabled: false, hapticsEnabled: false, musicEnabled: false)

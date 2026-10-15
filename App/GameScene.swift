@@ -260,6 +260,11 @@ final class GameScene: SKScene {
         renderer.benchmarkFieldContrast = style
     }
 
+    /// Re-present the same authoritative snapshot for a paused visual comparison.
+    func refreshBenchmarkPresentation(reducedMotion: Bool) {
+        renderer.render(session.snapshot, reducedMotion: reducedMotion)
+    }
+
     /// Install a complete review family once; use the same camera playback policy.
     func installBenchmarkCameraFrames(_ frames: [String: [SKTexture]]) -> Bool {
         renderer.installBenchmarkCameraFrames(frames)
