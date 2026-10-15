@@ -204,6 +204,59 @@ final class BenchmarkCaptureTests: XCTestCase {
             }
         }
         let state = session.simulation.state
+        // BP-004/BP-007: distinguish ground mount, targeting and field emission.
+        // Diagnostic overlays only; never relocate authority to fit elevated art.
+        var registration: [[String: Any]] = []
+        let landmarks = SKNode()
+        landmarks.zPosition = 10_000
+        scene.addChild(landmarks)
+        for device in state.cameras where abs(device.position.x - snap.player.x) < 280
+            && abs(device.position.y - snap.player.y) < 120 {
+            let mount = CGPoint(x: device.position.x, y: device.position.y)
+            let field = CGPoint(x: Double(device.fieldOrigin.x.raw) / Double(Q8.scale),
+                                y: Double(device.fieldOrigin.y.raw) / Double(Q8.scale))
+            let target = CGPoint(x: Double(device.targetAnchor.x.raw) / Double(Q8.scale),
+                                 y: Double(device.targetAnchor.y.raw) / Double(Q8.scale))
+            let sprite = try XCTUnwrap(snap.cameras.first { $0.id == device.entityId })
+            let key = CameraFieldGeometry.Key(camera: sprite, solids: snap.solids)
+            XCTAssertEqual(key.originX, Double(field.x))
+            XCTAssertEqual(key.originY, Double(field.y))
+            for (label, point, color, offset) in [
+                ("M", mount, SKColor.cyan, CGPoint(x: -18, y: -18)),
+                ("T", target, SKColor.magenta, CGPoint(x: -20, y: 20)),
+                ("F", field, SKColor.yellow, CGPoint(x: 20, y: 20))
+            ] {
+                let dot = SKShapeNode(circleOfRadius: 2)
+                dot.position = point; dot.fillColor = color; dot.strokeColor = .black
+                landmarks.addChild(dot)
+                let text = SKLabelNode(fontNamed: "Menlo-Bold")
+                text.text = label; text.fontSize = 10; text.fontColor = color
+                text.position = CGPoint(x: point.x + offset.x, y: point.y + offset.y)
+                landmarks.addChild(text)
+                let path = CGMutablePath(); path.move(to: point); path.addLine(to: text.position)
+                let leader = SKShapeNode(path: path)
+                leader.strokeColor = color; leader.lineWidth = 0.5
+                landmarks.addChild(leader)
+            }
+            registration.append([
+                "socket": device.socketId, "headingMilliDegrees": device.headingMilliDegrees,
+                "mount": [device.position.x, device.position.y],
+                "fieldQ8": [device.fieldOrigin.x.raw, device.fieldOrigin.y.raw],
+                "targetQ8": [device.targetAnchor.x.raw, device.targetAnchor.y.raw],
+                "q8Scale": Q8.scale
+            ])
+        }
+        XCTAssertFalse(registration.isEmpty)
+        let alignmentTexture = try XCTUnwrap(view.texture(from: scene, crop: crop))
+        let alignment = XCTAttachment(image: UIImage(cgImage: alignmentTexture.cgImage()))
+        alignment.name = "BP010-field-encounter-registration"
+        alignment.lifetime = .keepAlways; add(alignment)
+        landmarks.removeFromParent()
+        XCTAssertEqual(session.simulation.state.digest(), digest)
+        let coordinates = XCTAttachment(data: try JSONSerialization.data(withJSONObject: registration, options: [.prettyPrinted, .sortedKeys]),
+                                        uniformTypeIdentifier: "public.json")
+        coordinates.name = "BP010-field-encounter-registration-coordinates"
+        coordinates.lifetime = .keepAlways; add(coordinates)
         let replay = GhostRecord(identity: state.identity, seed: state.seed, ticks: state.tick,
                                  digest: state.digest(), commands: session.commandLog)
         let replayData = try JSONEncoder().encode(replay)
