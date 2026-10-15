@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `6c86388d5fca90b1677f78c585178d00e6fdbe8d` |
+| Specification commit | `492d921027c11d809ff18e3a35f520118e13de84` |
 | Ruleset | `ss-rules-008` |
 | Content | `civic-seam-content-006` |
 | Arena | `civic-seam-arena-004` |
@@ -52,3 +52,5 @@ BP-007 high-resolution outline clarification adoption: explicit source-pixel/log
 BP-010 comparison adoption: compare existing, reduced-opacity and absent Player border in the benchmark fixture before selecting painted-art contrast. Normal play retains D-094; gameplay identities and contract payloads apart from the specification pin remain unchanged.
 
 BP-002 layered-source clarification adoption: setup-pose part ownership, preserved costume proportions, authored hidden overlaps and joint-range review precede the south cycle. Pin adoption does not admit the partial layered study. See docs/review/layered-source/review.md. Gameplay identities, active clips, fixtures and production textures remain unchanged.
+
+BP-002/BP-008 elevated-motion clarification adoption: source/anatomical measurements are distinct from projected lengths; layered motion requires reviewed depth treatment and authored foot contacts. The eight-joint source scaffold is not a gait. Gameplay identities, fixtures and active artwork remain unchanged. See docs/review/projected-motion/review.md.
