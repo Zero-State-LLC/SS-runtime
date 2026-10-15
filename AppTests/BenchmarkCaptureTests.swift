@@ -366,6 +366,35 @@ final class BenchmarkCaptureTests: XCTestCase {
                     }
                 }
                 XCTAssertEqual(border.alpha, originalAlpha)
+                if zoom != 1 {
+                    // BP-010 backdrop diagnostic. Reuse bundled level surfaces;
+                    // only replace the review paving, not world geometry or art.
+                    func pavingNodes(_ node: SKNode) -> [SKSpriteNode] {
+                        let own = (node as? SKSpriteNode).flatMap { $0.texture === art.paving ? $0 : nil }
+                        return (own.map { [$0] } ?? []) + node.children.flatMap(pavingNodes)
+                    }
+                    let ground = pavingNodes(scene)
+                    XCTAssertFalse(ground.isEmpty)
+                    let originals = ground.map { ($0, $0.texture) }
+                    do {
+                        defer {
+                            for (node, original) in originals { node.texture = original }
+                            border.alpha = originalAlpha
+                        }
+                        for surface in ["asphalt", "service"] {
+                            let paving = try XCTUnwrap(env.texture(assetId: "env_ground_\(surface)"))
+                            for node in ground { node.texture = paving }
+                            for (label, opacity) in [("full", CGFloat(1)), ("quarter", CGFloat(0.25)), ("none", CGFloat(0))] {
+                                border.alpha = opacity
+                                try capture("BP010-ground-\(surface)-\(label)-\(facing)")
+                                XCTAssertEqual(player.position, rootPosition)
+                                XCTAssertTrue(player.texture === candidate)
+                            }
+                        }
+                    }
+                    for (node, original) in originals { XCTAssertTrue(node.texture === original) }
+                    XCTAssertEqual(border.alpha, originalAlpha)
+                }
                 scene.didEvaluateActions()
             }
             player.texture = previousPlayerTexture
