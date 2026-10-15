@@ -1,0 +1,214 @@
+{
+  "status": "WHOLE_CHARACTER_SOURCE_CANDIDATE_NOT_ADMITTED",
+  "cycleSeconds": 0.5,
+  "previewFrameMilliseconds": 125,
+  "controls": {
+    "shoulderDegrees": 6,
+    "elbowDegrees": 4,
+    "coatHemPixels": 4,
+    "bodyBob": "derived from authored pelvis height"
+  },
+  "controlAuthority": "Authored candidate values, not research-derived acceptance criteria",
+  "depthPolicy": "shared per-pixel source depth for both boots/calves/thighs; coat and torso retain front-layer policy",
+  "limits": [
+    "Thigh plus authored anterior knee-cover surface; rear cloth is provisional",
+    "Torso/coat are still layered rather than part of the lower-body depth buffer",
+    "Boot proxy materials remain below benchmark",
+    "One facing only",
+    "No real-renderer world-travel test"
+  ],
+  "frames": [
+    {
+      "frame": 0,
+      "time": 0.0,
+      "bodyBobPixels": -0.0,
+      "pixelsDifferentFromAverageLayerSort": 61,
+      "finiteDepthPixels": 7192,
+      "limbBackToFront": [
+        "right",
+        "left"
+      ],
+      "rgbaSHA256": "b16234b0a9b4b9dffb31daeabf4fbb22c832a6107caf10332a48a9f964377f91"
+    },
+    {
+      "frame": 1,
+      "time": 0.03125,
+      "bodyBobPixels": 7.184633866920191,
+      "pixelsDifferentFromAverageLayerSort": 176,
+      "finiteDepthPixels": 6462,
+      "limbBackToFront": [
+        "right",
+        "left"
+      ],
+      "rgbaSHA256": "55e03071c078457df5c91d67f9d7cae9169b058a5f0e8ef7311a9032d26a660a"
+    },
+    {
+      "frame": 2,
+      "time": 0.0625,
+      "bodyBobPixels": 8.870387036881391,
+      "pixelsDifferentFromAverageLayerSort": 333,
+      "finiteDepthPixels": 6336,
+      "limbBackToFront": [
+        "right",
+        "left"
+      ],
+      "rgbaSHA256": "4421407578ad98088dab1fc6d0fc72c70aabb586904dd6de1483cb28d999b21a"
+    },
+    {
+      "frame": 3,
+      "time": 0.09375,
+      "bodyBobPixels": 0.39553355155904224,
+      "pixelsDifferentFromAverageLayerSort": 35,
+      "finiteDepthPixels": 6368,
+      "limbBackToFront": [
+        "right",
+        "left"
+      ],
+      "rgbaSHA256": "21917962ad1c2e1a342dbbae013a8053d2157bafea7ae90a20a27eaa3f85164e"
+    },
+    {
+      "frame": 4,
+      "time": 0.125,
+      "bodyBobPixels": -1.9485571585149868,
+      "pixelsDifferentFromAverageLayerSort": 37,
+      "finiteDepthPixels": 6618,
+      "limbBackToFront": [
+        "right",
+        "left"
+      ],
+      "rgbaSHA256": "09c368aef9eaccd0a0b8ea50b4e8a83ebb1905980d9bb1b862ebb2b75760cca4"
+    },
+    {
+      "frame": 5,
+      "time": 0.15625,
+      "bodyBobPixels": -6.652790277661053,
+      "pixelsDifferentFromAverageLayerSort": 52,
+      "finiteDepthPixels": 7288,
+      "limbBackToFront": [
+        "right",
+        "left"
+      ],
+      "rgbaSHA256": "a42c43dc559c3a94aa1d3e7efa5f293337d43a9d5ec313681bb2d15355eeeeb1"
+    },
+    {
+      "frame": 6,
+      "time": 0.1875,
+      "bodyBobPixels": -7.272114317029974,
+      "pixelsDifferentFromAverageLayerSort": 98,
+      "finiteDepthPixels": 7742,
+      "limbBackToFront": [
+        "right",
+        "left"
+      ],
+      "rgbaSHA256": "f1f3866e0e0a9e18f57b8b58816d1a942ef3ff6b4d32f1d8876b4783ad077ff9"
+    },
+    {
+      "frame": 7,
+      "time": 0.21875,
+      "bodyBobPixels": -2.888466910840908,
+      "pixelsDifferentFromAverageLayerSort": 173,
+      "finiteDepthPixels": 7780,
+      "limbBackToFront": [
+        "right",
+        "left"
+      ],
+      "rgbaSHA256": "2ea894fb48666ef8e4e90bcf3c94444cfcdf18f5abc155cdff23dbf1fbea7e74"
+    },
+    {
+      "frame": 8,
+      "time": 0.25,
+      "bodyBobPixels": -0.0,
+      "pixelsDifferentFromAverageLayerSort": 64,
+      "finiteDepthPixels": 7192,
+      "limbBackToFront": [
+        "left",
+        "right"
+      ],
+      "rgbaSHA256": "1f9d7b24d821ec2da1cb5a26a1c6b0772fc478d1001f80536507b8282942607e"
+    },
+    {
+      "frame": 9,
+      "time": 0.28125,
+      "bodyBobPixels": 7.184633866920191,
+      "pixelsDifferentFromAverageLayerSort": 178,
+      "finiteDepthPixels": 6462,
+      "limbBackToFront": [
+        "left",
+        "right"
+      ],
+      "rgbaSHA256": "e46d71c67e1d8bc7fa26623e3df5d952f83bdae5e3f74b643ea1dc1f01f22a2c"
+    },
+    {
+      "frame": 10,
+      "time": 0.3125,
+      "bodyBobPixels": 8.870387036881391,
+      "pixelsDifferentFromAverageLayerSort": 338,
+      "finiteDepthPixels": 6336,
+      "limbBackToFront": [
+        "left",
+        "right"
+      ],
+      "rgbaSHA256": "176f33250478f290afe6309981bca5da5c8d3422f96375a223a798351f948939"
+    },
+    {
+      "frame": 11,
+      "time": 0.34375,
+      "bodyBobPixels": 0.39553355155904224,
+      "pixelsDifferentFromAverageLayerSort": 36,
+      "finiteDepthPixels": 6368,
+      "limbBackToFront": [
+        "left",
+        "right"
+      ],
+      "rgbaSHA256": "4c14775267a890c6c299c62ff98f92d4b170bcc328d37a59d5d35054e4f6d1a4"
+    },
+    {
+      "frame": 12,
+      "time": 0.375,
+      "bodyBobPixels": -1.9485571585149868,
+      "pixelsDifferentFromAverageLayerSort": 37,
+      "finiteDepthPixels": 6618,
+      "limbBackToFront": [
+        "left",
+        "right"
+      ],
+      "rgbaSHA256": "232d9d2a4637d63b31e0be6ce11771870d8fb58be60cc92b9f7022c6aed79a4e"
+    },
+    {
+      "frame": 13,
+      "time": 0.40625,
+      "bodyBobPixels": -6.652790277661053,
+      "pixelsDifferentFromAverageLayerSort": 53,
+      "finiteDepthPixels": 7288,
+      "limbBackToFront": [
+        "left",
+        "right"
+      ],
+      "rgbaSHA256": "22622877b602e96ac94a6e6d6eff3dfe6d5608af7e657a514db9005804dadb79"
+    },
+    {
+      "frame": 14,
+      "time": 0.4375,
+      "bodyBobPixels": -7.272114317029974,
+      "pixelsDifferentFromAverageLayerSort": 103,
+      "finiteDepthPixels": 7742,
+      "limbBackToFront": [
+        "left",
+        "right"
+      ],
+      "rgbaSHA256": "7e902a3660362d9f774ee15a0734ce0f9a532dd05d2067a3cd45f69e03c251af"
+    },
+    {
+      "frame": 15,
+      "time": 0.46875,
+      "bodyBobPixels": -2.888466910840908,
+      "pixelsDifferentFromAverageLayerSort": 182,
+      "finiteDepthPixels": 7780,
+      "limbBackToFront": [
+        "left",
+        "right"
+      ],
+      "rgbaSHA256": "c357feff59d9c72595abbff114327b0b101fb82e3bc57cb07ce05cedd4512166"
+    }
+  ]
+}
