@@ -710,7 +710,9 @@ final class DisplayedPlaybackTests: XCTestCase {
                 if let texture = (node as? SKSpriteNode)?.texture { preload.append(texture) }
             }
             await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
-                SKTexture.preload(preload) { continuation.resume() }
+                // SpriteKit may complete on its loading queue. Capture only the
+                // Sendable continuation, not this test's MainActor isolation.
+                SKTexture.preload(preload) { @Sendable in continuation.resume() }
             }
             renderer.resetBenchmarkOutlineMetrics()
             let complete = expectation(description: "shared projected traversal")
@@ -950,7 +952,8 @@ final class DisplayedPlaybackTests: XCTestCase {
         }
         if stage >= 2 {
             await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
-                SKTexture.preload(preloadTextures) { continuation.resume() }
+                // Explicit on older SDKs that do not import this block as Sendable.
+                SKTexture.preload(preloadTextures) { @Sendable in continuation.resume() }
             }
         }
         let preparationSeconds = CFAbsoluteTimeGetCurrent() - preparationBegan
