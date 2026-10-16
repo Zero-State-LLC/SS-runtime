@@ -9,6 +9,10 @@ settings:
     TARGETED_DEVICE_FAMILY: "1"
     SUPPORTS_MACCATALYST: NO
     IPHONEOS_DEPLOYMENT_TARGET: "18.0"
+    # Test-only renderer injection is available in optimized test builds, too.
+    # Archive/build defaults keep this empty; CI enables it explicitly for tests.
+    SS_RENDERER_TEST_CONDITIONS: ""
+    SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) $(SS_RENDERER_TEST_CONDITIONS)"
 # SurveillanceCore is consumed as the local Swift package, not rebuilt as an
 # Xcode framework target. `BundledResource` loads the spec contracts and
 # fixtures through `Bundle.module`, which only exists for SwiftPM resource

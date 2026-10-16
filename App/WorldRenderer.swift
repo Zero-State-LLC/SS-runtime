@@ -60,7 +60,7 @@ final class WorldRenderer {
     let root = SKNode()
     private var reviewArt: BenchmarkReviewArt?
     private var benchmarkCompleteCamera = false
-#if DEBUG
+#if DEBUG || SS_RENDERER_TEST_SUPPORT
     // BP-007/008 candidate registration is installed before contrast resources.
     var benchmarkPlayerRegistration: (size: CGSize, anchor: CGPoint)?
     var benchmarkOutlineMetrics: OutlineTextures.Metrics { outlines.metrics }
@@ -227,7 +227,7 @@ final class WorldRenderer {
             boxHeight: boxHeight,
             boxWidth: boxWidth
         )
-#if DEBUG
+#if DEBUG || SS_RENDERER_TEST_SUPPORT
         if key == "player", let registration = benchmarkPlayerRegistration {
             sprite.yScale = 1
             sprite.size = registration.size
@@ -930,7 +930,7 @@ final class WorldRenderer {
                 shape.position = .zero
                 shape.fillColor = camera.detecting ? Palette.cameraFieldDetecting : Palette.cameraField
                 shape.strokeColor = .clear
-#if DEBUG
+#if DEBUG || SS_RENDERER_TEST_SUPPORT
                 applyBenchmarkFieldContrast(shape)
 #endif
             }
@@ -957,7 +957,7 @@ final class WorldRenderer {
                 shape.position = .zero
                 shape.fillColor = Palette.captainField
                 shape.strokeColor = .clear
-#if DEBUG
+#if DEBUG || SS_RENDERER_TEST_SUPPORT
                 applyBenchmarkFieldContrast(shape)
 #endif
             }

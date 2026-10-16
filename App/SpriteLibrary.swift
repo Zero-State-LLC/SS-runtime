@@ -27,7 +27,7 @@ final class SpriteLibrary {
 
     var isEmpty: Bool { coverage.backed == 0 }
 
-#if DEBUG
+#if DEBUG || SS_RENDERER_TEST_SUPPORT
     /// Isolated source-review library; never merges candidate paths into bundled delivery.
     convenience init?(benchmarkFrames: ClipFrameLibrary, benchmarkTextures: [String: SKTexture]) {
         let paths = Set(benchmarkFrames.deliveredPaths.values)

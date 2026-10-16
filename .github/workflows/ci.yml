@@ -73,7 +73,8 @@ jobs:
           set +e
           xcodebuild -project SSRuntime.xcodeproj -scheme SSRuntime -sdk iphonesimulator \
             -destination "platform=iOS Simulator,id=$sim" -configuration "${{ matrix.configuration }}" \
-            CODE_SIGNING_ALLOWED=NO ENABLE_TESTABILITY=YES test \
+            CODE_SIGNING_ALLOWED=NO ENABLE_TESTABILITY=YES \
+            SS_RENDERER_TEST_CONDITIONS=SS_RENDERER_TEST_SUPPORT test \
             > /tmp/xcodebuild.log 2>&1
           status=$?
           set -e
