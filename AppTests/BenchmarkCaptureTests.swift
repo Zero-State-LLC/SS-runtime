@@ -145,6 +145,286 @@ final class BenchmarkCaptureTests: XCTestCase {
     }
 #if DEBUG
     @MainActor
+    private func captureProjectedLegalEncounter(scene: SKScene, view: SKView,
+        snap: PresentationSnapshot, zoom: CGFloat, label: String, prefix: String = "BP010-legal", treatment: String = "control",
+        framing: String = "legacy", arena: CGRect? = nil) throws {
+        let camera = try XCTUnwrap(scene.camera)
+        let originalCamera = camera.position
+        var hudExclusions: [CGRect] = []
+        var safeRegion: CGRect?
+        defer { camera.position = originalCamera }
+        if framing != "legacy" {
+            let bounds = try XCTUnwrap(arena)
+            let player = try XCTUnwrap(scene.childNode(withName: "//sprite-player") as? SKSpriteNode)
+            let root = scene.convert(player.position, from: try XCTUnwrap(player.parent))
+            let viewport = CGSize(width: 704, height: 326)
+            if framing == "contained" {
+                camera.position = try XCTUnwrap(BenchmarkProjectionGeometry.containedCenter(
+                    desired: originalCamera, bounds: bounds, viewport: viewport, magnification: zoom))
+            } else {
+                let canvas = CGRect(x: -player.anchorPoint.x * player.size.width,
+                    y: -player.anchorPoint.y * player.size.height,
+                    width: player.size.width, height: player.size.height)
+                if framing == "hud-safe" {
+                    // GameScene mounts its HUD at z=1000 on the camera. Measure
+                    // rendered nodes, including labels, rather than copying HUD constants.
+                    let hudRoots = camera.children.filter { $0.zPosition == 1000 }
+                    XCTAssertEqual(hudRoots.count, 1)
+                    let hudRoot = try XCTUnwrap(hudRoots.first)
+                    hudExclusions = hudRoot.children.filter { !$0.isHidden && $0.alpha > 0 }.compactMap {
+                        let frame = $0.calculateAccumulatedFrame()
+                        guard !frame.isNull, !frame.isInfinite, frame.width > 0, frame.height > 0 else { return nil }
+                        let a = hudRoot.convert(CGPoint(x: frame.minX, y: frame.minY), to: camera)
+                        let b = hudRoot.convert(CGPoint(x: frame.maxX, y: frame.maxY), to: camera)
+                        return CGRect(x: a.x, y: a.y, width: b.x-a.x, height: b.y-a.y)
+                    }
+                    XCTAssertFalse(hudExclusions.isEmpty)
+                    safeRegion = try XCTUnwrap(BenchmarkProjectionGeometry.unobstructedRegion(
+                        viewport: CGRect(x: -352, y: -163, width: 704, height: 326),
+                        exclusions: hudExclusions,
+                        minimumSize: CGSize(width: canvas.width * zoom, height: canvas.height * zoom)))
+                }
+                camera.position = try XCTUnwrap(BenchmarkProjectionGeometry.playerVisibleCenter(
+                    desired: originalCamera, bounds: bounds, viewport: viewport,
+                    magnification: zoom, player: root, canvas: canvas, safeRegion: safeRegion))
+            }
+        }
+        let center = camera.position
+        let crop = CGRect(x: center.x - 352, y: center.y - 163, width: 704, height: 326)
+        var actors: [SKSpriteNode] = []
+        scene.enumerateChildNodes(withName: "//sprite-*") { node, _ in
+            if let sprite = node as? SKSpriteNode { actors.append(sprite) }
+        }
+        XCTAssertFalse(actors.isEmpty)
+        scene.enumerateChildNodes(withName: "//environment-upright-*") { node, _ in
+            if let sprite = node as? SKSpriteNode { actors.append(sprite) }
+        }
+        XCTAssertEqual(EnvironmentTextures.projectionPlane(for: "env_prop_rail_strip"), .ground)
+        XCTAssertEqual(EnvironmentTextures.projectionPlane(for: "env_prop_utility_covers"), .ground)
+        XCTAssertEqual(EnvironmentTextures.projectionPlane(for: "env_prop_street_tree"), .upright)
+        XCTAssertEqual(EnvironmentTextures.projectionPlane(for: "env_motif_repair"), .unresolved)
+        XCTAssertEqual(EnvironmentTextures.projectionPlane(for: "unknown"), .unresolved)
+        // BP-005 source revision: registered slab base, never a collision edit.
+        let building = try XCTUnwrap(actors.first {
+            $0.name == "environment-upright-env_solid_07_service_yard_b"
+        })
+        let buildingIndex = try XCTUnwrap(snap.solidIds.firstIndex(of: "solid-07-service-yard-b"))
+        let box = snap.solids[buildingIndex]
+        let originalBuilding = (building.texture, building.size, building.anchorPoint, building.position)
+        let originalBuildingAlpha = building.alpha
+        defer {
+            building.texture = originalBuilding.0; building.size = originalBuilding.1
+            building.anchorPoint = originalBuilding.2; building.position = originalBuilding.3
+            building.alpha = originalBuildingAlpha
+        }
+        let sourceURL = try XCTUnwrap(Bundle(for: Self.self).url(
+            forResource: "service-building-v3-registered", withExtension: "png"))
+        let sourceImage = try XCTUnwrap(UIImage(contentsOfFile: sourceURL.path))
+        XCTAssertEqual(sourceImage.cgImage?.width, 1024)
+        XCTAssertEqual(sourceImage.cgImage?.height, 1024)
+        building.texture = SKTexture(image: sourceImage)
+        building.texture?.filteringMode = .linear
+        building.size = CGSize(width: 512, height: 512)
+        building.anchorPoint = CGPoint(x: 419.745 / 1024, y: 1 - 858.392 / 1024)
+        let front = CGPoint(x: box.center.x - box.halfSize.x, y: box.center.y - box.halfSize.y)
+        building.position = try XCTUnwrap(building.parent).convert(front, from: scene)
+        let saved = try actors.map { ($0, try XCTUnwrap($0.parent), $0.position, $0.zPosition) }
+        func project(_ point: CGPoint) -> CGPoint {
+            let x = point.x - center.x, y = point.y - center.y, r = CGFloat(0.5).squareRoot()
+            return CGPoint(x: center.x + r * (x-y), y: center.y + r * (x+y)/2)
+        }
+        for (node, parent, position, _) in saved {
+            let point = scene.convert(position, from: parent)
+            var depth = node.zPosition, ancestor: SKNode? = parent
+            while let a = ancestor, a !== scene { depth += a.zPosition; ancestor = a.parent }
+            node.removeFromParent(); node.position = project(point); node.zPosition = depth; scene.addChild(node)
+        }
+        // Check the actual SpriteKit source-to-scene mapping against independent
+        // authoritative corners. This proves placement, not visual contact quality.
+        for (pixel, corner) in [
+            (CGPoint(x: 148.216, y: 722.627), CGPoint(x: box.center.x - box.halfSize.x, y: box.center.y + box.halfSize.y)),
+            (CGPoint(x: 419.745, y: 858.392), front),
+            (CGPoint(x: 781.784, y: 677.373), CGPoint(x: box.center.x + box.halfSize.x, y: box.center.y - box.halfSize.y))
+        ] {
+            let local = CGPoint(x: (pixel.x / 1024 - building.anchorPoint.x) * building.size.width,
+                                y: (1 - pixel.y / 1024 - building.anchorPoint.y) * building.size.height)
+            let actual = building.convert(local, to: scene), expected = project(corner)
+            XCTAssertEqual(actual.x, expected.x, accuracy: 0.002)
+            XCTAssertEqual(actual.y, expected.y, accuracy: 0.002)
+        }
+        // BP-009 bounded comparison, not a production occlusion classifier.
+        let player = try XCTUnwrap(actors.first { $0.name == "sprite-player" })
+        let playerSaved = try XCTUnwrap(saved.first { $0.0 === player })
+        let playerGround = scene.convert(playerSaved.2, from: playerSaved.1)
+        let enter = max(0, playerGround.x - CGFloat(box.maxX), playerGround.y - CGFloat(box.maxY))
+        let leave = min(playerGround.x - CGFloat(box.minX), playerGround.y - CGFloat(box.minY))
+        let occluded = leave > enter && player.frame.intersects(building.frame)
+        let cue = SKNode(); cue.zPosition = 10_000
+        scene.addChild(cue)
+        defer { cue.removeFromParent() }
+        if treatment != "control" && occluded {
+            player.zPosition = building.zPosition - 0.1
+            if treatment == "faded" || treatment == "ground-cue" { building.alpha = 0.35 }
+            if treatment == "ground-cue" {
+                let outline = SKShapeNode(rectOf: CGSize(width: box.halfSize.x * 2, height: box.halfSize.y * 2))
+                outline.position = CGPoint(x: box.center.x, y: box.center.y)
+                outline.fillColor = SKColor(white: 0.08, alpha: 0.22)
+                outline.strokeColor = SKColor(white: 0.18, alpha: 0.8); outline.lineWidth = 1
+                cue.addChild(outline)
+                let ring = SKShapeNode(circleOfRadius: CGFloat(PlayerBody.radiusUnits))
+                ring.position = playerGround; ring.fillColor = .clear
+                ring.strokeColor = SKColor(white: 0.9, alpha: 1); ring.lineWidth = 1.25
+                cue.addChild(ring)
+            }
+        }
+        let actorIDs = Set(actors.map(ObjectIdentifier.init))
+        let ground = scene.children.filter { $0 !== camera && !actorIDs.contains(ObjectIdentifier($0)) }
+        let scale = SKNode(), rotate = SKNode(), translate = SKNode(), world = SKNode()
+        scale.position = center; scale.yScale = 0.5; rotate.zRotation = .pi/4
+        translate.position = CGPoint(x: -center.x, y: -center.y)
+        scene.addChild(world); world.addChild(scale); scale.addChild(rotate); rotate.addChild(translate)
+        for node in ground { node.removeFromParent(); translate.addChild(node) }
+        for node in actors { node.removeFromParent(); world.addChild(node) }
+        world.setScale(zoom)
+        let offset: CGFloat = zoom == 1 || framing != "legacy" ? 0 : 1
+        world.position = CGPoint(x: center.x - (center.x + 35 * offset) * zoom,
+                                 y: center.y - (center.y + 25 * offset) * zoom)
+        defer {
+            for node in ground { node.removeFromParent(); scene.addChild(node) }
+            for (node, parent, position, z) in saved {
+                node.removeFromParent(); node.position = position; node.zPosition = z; parent.addChild(node)
+            }
+            world.removeFromParent()
+        }
+        var visibility: [[String: Any]] = []
+        for actor in actors {
+            let frame = actor.frame
+            let a = world.convert(CGPoint(x: frame.minX, y: frame.minY), to: scene)
+            let b = world.convert(CGPoint(x: frame.maxX, y: frame.maxY), to: scene)
+            let rect = CGRect(x: a.x, y: a.y, width: b.x-a.x, height: b.y-a.y)
+            if ["player-visible", "hud-safe"].contains(framing) && actor.name == "sprite-player" {
+                XCTAssertTrue(crop.insetBy(dx: -0.002, dy: -0.002).contains(rect), "Float transform precision only")
+            }
+            if framing == "hud-safe" && actor.name == "sprite-player" {
+                let local = rect.offsetBy(dx: -center.x, dy: -center.y)
+                XCTAssertTrue(try XCTUnwrap(safeRegion).insetBy(dx: -0.002, dy: -0.002).contains(local))
+                for exclusion in hudExclusions {
+                    let overlap = local.intersection(exclusion)
+                    XCTAssertTrue(overlap.isNull || overlap.width <= 0.002 || overlap.height <= 0.002)
+                }
+            }
+            visibility.append(["name": actor.name ?? "unnamed", "intersects": crop.intersects(rect),
+                "contained": crop.contains(rect), "bounds": [rect.minX, rect.minY, rect.width, rect.height]])
+        }
+        let projectiles: [[String: Any]] = snap.projectiles.map {
+            let point = translate.convert(CGPoint(x: $0.x, y: $0.y), to: scene)
+            return ["id": $0.id.raw, "hostile": $0.hostile, "visibleOrigin": crop.contains(point)]
+        }
+        XCTAssertEqual(camera.xScale, 1)
+        XCTAssertEqual(actors.count, saved.count)
+        let texture = try XCTUnwrap(view.texture(from: scene, crop: crop))
+        let image = XCTAttachment(image: UIImage(cgImage: texture.cgImage()))
+        image.name = "\(prefix)-projected-\(Int(zoom*100))-\(label)"; image.lifetime = .keepAlways; add(image)
+        let data = try JSONSerialization.data(withJSONObject: ["zoom": zoom, "actors": visibility,
+            "projectiles": projectiles, "enemies": snap.enemies.count, "cameras": snap.cameras.count,
+            "tick": snap.tick, "occlusionTreatment": treatment, "occlusionCandidate": occluded,
+            "framing": framing, "worldFocus": [center.x,center.y],
+            "hudExclusions": hudExclusions.map { [$0.minX,$0.minY,$0.width,$0.height] },
+            "safeRegion": safeRegion.map { [$0.minX,$0.minY,$0.width,$0.height] } ?? []], options: [.sortedKeys, .prettyPrinted])
+        let record = XCTAttachment(data: data, uniformTypeIdentifier: "public.json")
+        record.name = "\(prefix)-visibility-\(Int(zoom*100))-\(label)"; record.lifetime = .keepAlways; add(record)
+    }
+
+    @MainActor
+    func testRegisteredServiceBuildingContacts() throws {
+        let state = try Simulation.make(seed: 1).state
+        var snap = PresentationSnapshot(state)
+        let id = "solid-07-service-yard-b"
+        let index = try XCTUnwrap(snap.solidIds.firstIndex(of: id))
+        let box = snap.solids[index]
+        snap.solids = [box]; snap.solidIds = [id]
+        snap.enemies = []; snap.projectiles = []; snap.telegraphs = []; snap.mines = []
+        snap.cameras = []; snap.captainHousings = []; snap.captainField = nil
+        snap.patrolCones = []; snap.spawnSockets = []
+        let view = SKView(frame: CGRect(x: 0, y: 0, width: 704, height: 326))
+        view.isPaused = true
+        let scene = SKScene(size: view.bounds.size)
+        scene.backgroundColor = .darkGray
+        let camera = SKCameraNode()
+        camera.position = CGPoint(x: box.center.x, y: box.center.y)
+        scene.addChild(camera); scene.camera = camera
+        view.presentScene(scene)
+        defer { view.presentScene(nil) }
+        let renderer = WorldRenderer(); scene.addChild(renderer.root)
+        let url = try XCTUnwrap(Bundle(for: Self.self).url(forResource: "painted-player-south", withExtension: "png"))
+        let neutral = SKTexture(image: try XCTUnwrap(UIImage(contentsOfFile: url.path)))
+        neutral.filteringMode = .linear
+        let probes: [(String, Int, Int, Int16, Int16)] = [
+            ("west", -194, 0, 32767, 0), ("east", 194, 0, -32767, 0),
+            ("south", 0, -162, 0, 32767), ("north", 0, 162, 0, -32767),
+            ("near-corner", -194, -162, 32767, 32767),
+            ("far-corner", 194, 162, -32767, -32767)
+        ]
+        var rows = ["probe,tick,xQ8,yQ8"]
+        for (label, dx, dy, mx, my) in probes {
+            var point = VecI(x: box.center.x + dx, y: box.center.y + dy).asQ8
+            for tick in 1...40 {
+                let command = PlayerCommand(tick: UInt64(tick), moveX: mx, moveY: my, dodgePressed: false)
+                point = Collision.slideCircle(from: point,
+                    delta: Movement.displacement(from: command, dodgeActive: false, ghostStep: false),
+                    radius: PlayerBody.radiusUnits,
+                    bounds: AABB(center: box.center, halfSize: VecI(x: 512, y: 512)),
+                    solids: [(id: id, box: box)])
+                XCTAssertFalse(Circle(center: point, radiusUnits: PlayerBody.radiusUnits).penetrates(box))
+                rows.append("\(label),\(tick),\(point.x.raw),\(point.y.raw)")
+            }
+            if dy == 0 {
+                XCTAssertEqual(abs(point.x.raw - Int64(box.center.x) * Q8.scale),
+                               Int64(box.halfSize.x + PlayerBody.radiusUnits) * Q8.scale)
+            }
+            if dx == 0 {
+                XCTAssertEqual(abs(point.y.raw - Int64(box.center.y) * Q8.scale),
+                               Int64(box.halfSize.y + PlayerBody.radiusUnits) * Q8.scale)
+            }
+            snap.player.x = Int(point.x.raw / Q8.scale); snap.player.y = Int(point.y.raw / Q8.scale)
+            for reduced in [false, true] {
+                renderer.render(snap, reducedMotion: reduced)
+                let player = try XCTUnwrap(scene.childNode(withName: "//sprite-player") as? SKSpriteNode)
+                player.removeAllActions(); player.texture = neutral
+                player.size = CGSize(width: 64, height: 64); player.anchorPoint = CGPoint(x: 0.5, y: 0.125)
+                // Preserve Q8 solver position for this placement diagnostic.
+                player.position = CGPoint(x: CGFloat(point.x.raw) / CGFloat(Q8.scale),
+                                          y: CGFloat(point.y.raw) / CGFloat(Q8.scale))
+                let overlay = SKNode(); overlay.zPosition = 10_000
+                let boundary = SKShapeNode(rectOf: CGSize(width: box.halfSize.x * 2, height: box.halfSize.y * 2))
+                boundary.position = CGPoint(x: box.center.x, y: box.center.y)
+                boundary.fillColor = .clear; boundary.strokeColor = .magenta; boundary.lineWidth = 1
+                overlay.addChild(boundary)
+                let body = SKShapeNode(circleOfRadius: CGFloat(PlayerBody.radiusUnits))
+                body.position = player.position; body.fillColor = .clear; body.strokeColor = .cyan; body.lineWidth = 1
+                overlay.addChild(body); scene.addChild(overlay)
+                defer { overlay.removeFromParent() }
+                for geometry in [false, true] {
+                    overlay.isHidden = !geometry
+                    try captureProjectedLegalEncounter(scene: scene, view: view, snap: snap, zoom: 1,
+                        label: "\(label)-reduced-\(reduced)-geometry-\(geometry)", prefix: "BP005-service-contact")
+                }
+                if ["north", "east", "far-corner"].contains(label) {
+                    overlay.isHidden = true
+                    for treatment in ["opaque", "faded", "ground-cue"] {
+                        try captureProjectedLegalEncounter(scene: scene, view: view, snap: snap, zoom: 1,
+                            label: "\(label)-reduced-\(reduced)-\(treatment)",
+                            prefix: "BP005-service-contact", treatment: treatment)
+                    }
+                }
+            }
+        }
+        XCTAssertEqual(state.digest(), try Simulation.make(seed: 1).state.digest())
+        let record = XCTAttachment(string: "Isolated solver/renderer contact study; neutral pose, no full simulation or depth acceptance.\n" + rows.joined(separator: "\n"))
+        record.name = "BP005-service-contact-q8"; record.lifetime = .keepAlways; add(record)
+    }
+
+    @MainActor
     func testCaptureCameraFieldsInReplayableEncounter() throws {
         let session = GameSession(seed: 1)
         session.audioSettings = .init(effectsEnabled: false, hapticsEnabled: false, musicEnabled: false)
@@ -159,12 +439,12 @@ final class BenchmarkCaptureTests: XCTestCase {
             session.step()
             let snap = session.snapshot
             let nearby = snap.enemies.filter { abs($0.x - snap.player.x) < 300 && abs($0.y - snap.player.y) < 130 }
-            let visibleAttack = snap.projectiles.contains { abs($0.x - snap.player.x) < 300 && abs($0.y - snap.player.y) < 130 }
+            let visibleAttack = snap.projectiles.contains { $0.hostile && abs($0.x - snap.player.x) < 300 && abs($0.y - snap.player.y) < 130 }
             let nearbyField = snap.cameras.contains { $0.fieldVisible && abs($0.x - snap.player.x) < 280 && abs($0.y - snap.player.y) < 120 }
             if nearby.count >= 2 && visibleAttack && nearbyField { found = true; break }
             if session.simulation.isTerminal { break }
         }
-        XCTAssertTrue(found, "Pilot must reach an unedited encounter with nearby enemies, projectile and Camera field")
+        XCTAssertTrue(found, "Pilot must reach an unedited encounter with nearby enemies, hostile projectile and Camera field")
         guard found else { return }
         XCTAssertFalse(session.scenarioSeeded)
         let view = SKView(frame: CGRect(x: 0, y: 0, width: 704, height: 326))
@@ -201,6 +481,23 @@ final class BenchmarkCaptureTests: XCTestCase {
                 let attachment = XCTAttachment(image: UIImage(cgImage: texture.cgImage()))
                 attachment.name = "BP010-field-encounter-\(style.rawValue)-reduced-\(reduced)"
                 attachment.lifetime = .keepAlways; add(attachment)
+                if style == .paired {
+                    for zoom: CGFloat in [1, 1.25] {
+                        try captureProjectedLegalEncounter(scene: scene, view: view, snap: snap,
+                            zoom: zoom, label: "reduced-\(reduced)")
+                        XCTAssertEqual(session.simulation.state.digest(), digest)
+                        let bounds = session.simulation.state.arena.boundsUnits
+                        let rect = CGRect(x: bounds.minX, y: bounds.minY,
+                            width: bounds.maxX - bounds.minX, height: bounds.maxY - bounds.minY)
+                        for framing in ["contained", "player-visible", "hud-safe"] {
+                            try captureProjectedLegalEncounter(scene: scene, view: view, snap: snap,
+                                zoom: zoom, label: "reduced-\(reduced)", prefix: "BP007-camera-\(framing)",
+                                framing: framing, arena: rect)
+                            XCTAssertEqual(session.simulation.state.digest(), digest)
+                        }
+                    }
+                }
+
             }
         }
         let state = session.simulation.state
@@ -355,7 +652,7 @@ final class BenchmarkCaptureTests: XCTestCase {
     /// Restores the tree after capture so repeated state samples cannot accumulate transforms.
     @MainActor
     private func projectedSharedCameraScene(scene: GameScene, view: SKView, center: CGPoint,
-                                             crop: CGRect, cameraID: UInt64, box: AABB) throws -> UIImage {
+                                             crop: CGRect, cameraID: UInt64, box: AABB, magnification: CGFloat = 1) throws -> UIImage {
         let camera = try XCTUnwrap(scene.camera)
         let names = ["sprite-player", "sprite-camera-\(cameraID)", "benchmark-building",
                      "benchmark-prop-0", "benchmark-prop-1"]
@@ -401,12 +698,56 @@ final class BenchmarkCaptureTests: XCTestCase {
             XCTAssertEqual(actual.x, expected.x, accuracy: 0.0001)
             XCTAssertEqual(actual.y, expected.y, accuracy: 0.0001)
         }
+        // BP-007: exercise the actual comparison tree in all travel directions,
+        // including partial input and a full authored-cycle distance.
+        let directions: [(CGFloat, CGFloat)] = [
+            (1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0), (-1, -1), (0, -1), (1, -1)
+        ]
+        for (x, y) in directions {
+            for magnitude: CGFloat in [0.25, 0.5, 1, 120] {
+                let length = hypot(x, y)
+                let point = CGPoint(x: center.x + x / length * magnitude,
+                                    y: center.y + y / length * magnitude)
+                let actual = translation.convert(point, to: scene)
+                let expected = projected(point)
+                // Numeric transform bound at SpriteKit's Float storage precision;
+                // this is not an art/contact acceptance threshold.
+                let tolerance = CGFloat(Float(max(abs(point.x), abs(point.y), 1)).ulp) * 8
+                XCTAssertEqual(actual.x, expected.x, accuracy: tolerance)
+                XCTAssertEqual(actual.y, expected.y, accuracy: tolerance)
+                let recovered = scene.convert(actual, to: translation)
+                XCTAssertEqual(recovered.x, point.x, accuracy: tolerance)
+                XCTAssertEqual(recovered.y, point.y, accuracy: tolerance)
+            }
+        }
+        let screenDownWorld = scene.convert(CGPoint(x: center.x, y: center.y - 1), to: translation)
+        XCTAssertLessThan(screenDownWorld.x, center.x)
+        XCTAssertLessThan(screenDownWorld.y, center.y)
         let expectedCorner = projected(CGPoint(x: box.minX, y: box.minY))
         // #129: SKNode's observed stored components use Float precision.
         // Keep exact equality at that representation, separate from the ground transform check.
         XCTAssertEqual(building.position, CGPoint(x: CGFloat(Float(expectedCorner.x)),
                                                  y: CGFloat(Float(expectedCorner.y))))
         XCTAssertEqual(building.size.width, building.size.height)
+        XCTAssertEqual(camera.xScale, 1)
+        // Camera-owned HUD stays fixed while the complete projected world is
+        // reframed. Sprite size/anchor and authoritative geometry remain intact.
+        let world = scene.children.filter { $0 !== camera }
+        let zoomRoot = SKNode()
+        if magnification != 1 {
+            let focus = CGPoint(x: center.x + 35, y: center.y + 25)
+            zoomRoot.setScale(magnification)
+            zoomRoot.position = CGPoint(x: center.x - focus.x * magnification,
+                                        y: center.y - focus.y * magnification)
+            scene.addChild(zoomRoot)
+            for node in world { node.removeFromParent(); zoomRoot.addChild(node) }
+        }
+        defer {
+            if magnification != 1 {
+                for node in world { node.removeFromParent(); scene.addChild(node) }
+                zoomRoot.removeFromParent()
+            }
+        }
         XCTAssertEqual(camera.xScale, 1)
         let rendered = try XCTUnwrap(view.texture(from: scene, crop: crop))
         return UIImage(cgImage: rendered.cgImage())
@@ -466,20 +807,11 @@ final class BenchmarkCaptureTests: XCTestCase {
                 .init(texture: try texture("newsbox"), size: CGSize(width: 20, height: 40),
                       anchor: CGPoint(x: 0.5, y: 0), position: CGPoint(x: x + 115, y: y - 65)),
                 .init(texture: try texture("tree"), size: CGSize(width: 50, height: 85),
-                      anchor: CGPoint(x: 0.5, y: 0), position: CGPoint(x: x + 355, y: y - 20))
+                      anchor: CGPoint(x: 0.5, y: 0), position: CGPoint(x: 858, y: 780))
             ], paving: try XCTUnwrap(env.texture(assetId: "env_ground_plaza")))
         var streetArt = art
-        let road = CGRect(x: 960, y: 0, width: 1344, height: 1536)
-        streetArt.groundPatches = [.init(texture: try XCTUnwrap(env.texture(assetId: "env_ground_asphalt")),
-                                        bounds: road, tileUnits: 128)]
-        // Authored fixture dimensions, not a replacement for the arena's rail spine.
-        func strip(_ x: CGFloat, _ width: CGFloat, _ value: CGFloat) -> BenchmarkReviewArt.GroundLine {
-            .init(start: CGPoint(x: x, y: 0), end: CGPoint(x: x, y: 1536),
-                  width: width, color: SKColor(white: value, alpha: 1))
-        }
-        streetArt.groundLines = [strip(960, 4, 0.23), strip(957, 3, 0.66),
-                                 strip(1020, 5, 0.12), strip(1020, 1.5, 0.59),
-                                 strip(1060, 5, 0.12), strip(1060, 1.5, 0.59)]
+        let road = CGRect(x: 900, y: 0, width: 1404, height: 1536)
+        streetArt.configureStreetCorner(asphalt: try XCTUnwrap(env.texture(assetId: "env_ground_asphalt")))
         XCTAssertFalse(road.intersects(CGRect(x: box.minX, y: box.minY,
                                              width: box.halfSize.x * 2, height: box.halfSize.y * 2)))
         let candidates = try CameraPlaybackTests.candidateFrames()
@@ -527,6 +859,44 @@ final class BenchmarkCaptureTests: XCTestCase {
             let furnished = XCTAttachment(image: street)
             furnished.name = "BP004-street-shared-scene-\(style.rawValue)-integrity-\(integrity)"
             furnished.lifetime = .keepAlways; add(furnished)
+            // Revised source composition only. Keep the old neutral control above.
+            if style == .paired && integrity == 3 {
+                for frame in [0, 4, 8, 12] {
+                    var revised = BenchmarkReviewArt(
+                        player: try texture(String(format: "player-source-s-%02d", frame)),
+                        camera: streetArt.camera, building: streetArt.building,
+                        buildingID: streetArt.buildingID, props: streetArt.props, paving: streetArt.paving)
+                    revised.groundPatches = streetArt.groundPatches
+                    revised.groundLines = streetArt.groundLines
+                    scene.renderBenchmark(snapshot: snap, art: revised, center: center)
+                    let player = try XCTUnwrap(scene.childNode(withName: "//sprite-player") as? SKSpriteNode)
+                    player.size = CGSize(width: 64, height: 416.0 / 6.0)
+                    player.anchorPoint = CGPoint(x: 0.5, y: 1 - 336.0 / 416.0)
+                    // Approved clean-review treatment only; restore controls afterward.
+                    var outlineVisibility: [(SKNode, Bool)] = []
+                    scene.enumerateChildNodes(withName: "//" + WorldRenderer.outlineName) { node, _ in
+                        outlineVisibility.append((node, node.isHidden)); node.isHidden = true
+                    }
+                    defer { for (node, hidden) in outlineVisibility { node.isHidden = hidden } }
+                    let composed = try projectedSharedCameraScene(scene: scene, view: view, center: center,
+                        crop: crop, cameraID: snap.cameras[0].id.raw, box: box)
+                    XCTAssertEqual(scene.session.simulation.state.digest(), digest)
+                    XCTAssertEqual(player.size.height, CGFloat(Float(416.0 / 6.0)))
+                    let image = XCTAttachment(image: composed)
+                    image.name = "BP008-revised-shared-composition-pose-\(frame)"
+                    image.lifetime = .keepAlways; add(image)
+                    if frame == 0 {
+                        for zoom: CGFloat in [1.25, 1.4] {
+                            let closer = try projectedSharedCameraScene(scene: scene, view: view, center: center,
+                                crop: crop, cameraID: snap.cameras[0].id.raw, box: box, magnification: zoom)
+                            XCTAssertEqual(scene.session.simulation.state.digest(), digest)
+                            let comparison = XCTAttachment(image: closer)
+                            comparison.name = "BP007-street-framing-\(Int(zoom * 100))-percent"
+                            comparison.lifetime = .keepAlways; add(comparison)
+                        }
+                    }
+                }
+            }
         }
         }
         let record = XCTAttachment(string: """
@@ -601,7 +971,7 @@ final class BenchmarkCaptureTests: XCTestCase {
                 .init(texture: try texture("newsbox"), size: CGSize(width: 20, height: 40),
                       anchor: CGPoint(x: 0.5, y: 0), position: CGPoint(x: x + 115, y: y - 65)),
                 .init(texture: try texture("tree"), size: CGSize(width: 50, height: 85),
-                      anchor: CGPoint(x: 0.5, y: 0), position: CGPoint(x: x + 355, y: y - 20))
+                      anchor: CGPoint(x: 0.5, y: 0), position: CGPoint(x: 858, y: 780))
             ], paving: try XCTUnwrap(env.texture(assetId: "env_ground_plaza")))
         art.cameraStates = [3: try texture("camera-state-intact"), 2: try texture("camera-state-damaged"),
                             1: try texture("camera-state-critical"), 0: try texture("camera-state-destroyed")]

@@ -40,12 +40,31 @@ public struct AwarenessHintProjector: Equatable, Sendable {
         }
     }
 
+    /// Equivalent visibility query without constructing unrelated render data.
+    public static func unawareEnemyOnScreen(_ state: WorldState) -> Bool {
+        let camera = PresentationCamera.follow(
+            player: VecI(x: state.player.position.x.unitsTruncated, y: state.player.position.y.unitsTruncated),
+            heading: state.player.facing, bounds: state.arena.boundsUnits)
+        return state.enemies.contains { enemy in
+            enemy.alive && enemy.isUnaware && PresentationCamera.contains(
+                VecI(x: enemy.position.x.unitsTruncated, y: enemy.position.y.unitsTruncated),
+                center: camera.center)
+        }
+    }
+
     /// The copy to draw for `snap`, or nil.
     public mutating func project(_ snap: PresentationSnapshot) -> String? {
-        if shownAt == nil, Self.unawareEnemyOnScreen(snap) {
-            shownAt = snap.tick
-        }
-        guard let shownAt, snap.tick >= shownAt, snap.tick - shownAt < Self.visibleTicks else { return nil }
+        project(tick: snap.tick, visible: Self.unawareEnemyOnScreen(snap))
+    }
+
+    /// Session path: same hint semantics without full rendering projection.
+    public mutating func project(_ state: WorldState) -> String? {
+        project(tick: state.tick, visible: Self.unawareEnemyOnScreen(state))
+    }
+
+    private mutating func project(tick: UInt64, visible: @autoclosure () -> Bool) -> String? {
+        if shownAt == nil, visible() { shownAt = tick }
+        guard let shownAt, tick >= shownAt, tick - shownAt < Self.visibleTicks else { return nil }
         return Self.copy
     }
 }

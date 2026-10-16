@@ -1,0 +1,7 @@
+# Registered building contact and occlusion
+
+Focused test `BenchmarkCaptureTests/testRegisteredServiceBuildingContacts` passed, Xcode 2026-10-15 22-38-30, 1 test/0 failures (19.181 seconds execution). 6 isolated approaches ×40 actual Collision.slideCircle steps; per-step nonpenetration; exact cardinal radius contact; 24 normal/overlay captures across both motion settings, plus 18 rear-contact treatment captures. Q8 trace attached. 32 ContractVectorTests/CombatCausalityTests passed separately; initial CollisionTests selector matched zero tests and is not counted.
+
+Source registration remains v3. Natural control exposes north-contact false elevation: Player draws over awning despite being outside the solid. Opaque depth hides Player; 0.35-alpha restores visibility; projected ground cue adds ground/obstacle reference. Fading remains visually ambiguous in fog. No production treatment selected. The comparison uses a ground ray plus sprite-canvas overlap, not opaque-pixel coverage. Front/rear movement, multiple occluders, restart/removal, actual attack effects, other facings and device performance remain open.
+
+This is a real WorldRenderer/SpriteKit capture with one isolated solid and neutral player pose; other environment decorations remain visible. No full-gameplay or animation acceptance. Geometry overlays are diagnostic. Original encounter baseline and registered source remain preserved in adjacent review directories.

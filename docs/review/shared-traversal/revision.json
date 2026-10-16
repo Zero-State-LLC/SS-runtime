@@ -1,0 +1,23 @@
+{
+  "status": "RETRY_APP_SUITE_PASSED",
+  "firstResult": "Test-SSRuntime-2026.10.15_19-15-35--0700.xcresult",
+  "retryResult": "Test-SSRuntime-2026.10.15_19-23-54--0700.xcresult",
+  "testSourceSHA256": "701d366eeb392f55f0d72c508c5609e3a266c5f300edac507c10bdc0d646083b",
+  "firstRunFailures": [
+    "camera metadata missing in isolated library",
+    "5 normal / 7 Reduced Motion source frames observed",
+    "raw-position rounding assumed a single coordinate contribution"
+  ],
+  "changes": [
+    "include six camera timing contracts in isolated review library",
+    "prepare all player outlines and preload initial scene textures",
+    "no synchronous image readback in strict coverage run",
+    "compare projected displayed root to presentation coordinates"
+  ],
+  "remaining": [
+    "actual full coverage result",
+    "visual normal/quarter review",
+    "performance acceptance",
+    "full-facing and legal encounter integration"
+  ]
+}

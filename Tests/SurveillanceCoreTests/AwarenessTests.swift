@@ -496,6 +496,58 @@ struct AwarenessTests {
         #expect(hint.project(PresentationSnapshot(sim.state)) == nil)
     }
 
+    @Test func directHintVisibilityMatchesSnapshotAtViewportAndStateBoundaries() throws {
+        var sim = try Simulation.withoutPatrol(seed: 1)
+        sim.testing_spawnStandard(.fogAnalyticsCloud, at: VecI(x: 500, y: 192), awareness: .unaware)
+        let original = sim.state
+        var state = original
+        let prototype = try #require(state.enemies.first)
+        for player in [VecI(x: 0, y: 0), VecI(x: 1100, y: 700), VecI(x: 2304, y: 1536)] {
+            for heading in [VecQ8.zero, VecQ8(unitsX: -1, unitsY: 0), VecQ8(unitsX: 1, unitsY: 0)] {
+                state.player.position = player.asQ8
+                state.player.facing = heading
+                let center = PresentationSnapshot(state).camera.center
+                for offset in [VecI(x: 352, y: 163), VecI(x: -352, y: -163),
+                               VecI(x: 353, y: 0), VecI(x: -353, y: 0),
+                               VecI(x: 0, y: 164), VecI(x: 0, y: -164), VecI(x: 0, y: 0)] {
+                    for fraction: Int64 in [-128, 0, 128] {
+                        var enemy = prototype
+                        enemy.position = VecQ8(x: Q8(raw: Int64(center.x + offset.x) * 256 + fraction),
+                                               y: Q8(raw: Int64(center.y + offset.y) * 256 + fraction))
+                        for condition in 0..<3 {
+                            enemy.integrity = condition == 2 ? 0 : prototype.integrity
+                            enemy.awareness = condition == 1 ? .aware : .unaware
+                            state.enemies = [enemy]
+                            let before = state
+                            #expect(AwarenessHintProjector.unawareEnemyOnScreen(state)
+                                == AwarenessHintProjector.unawareEnemyOnScreen(PresentationSnapshot(state)))
+                            #expect(state == before)
+                        }
+                    }
+                }
+            }
+        }
+        #expect(sim.state == original)
+    }
+
+    @Test func directHintRetainsLatchExpiryRewindAndReset() throws {
+        var sim = try Simulation.withoutPatrol(seed: 1)
+        sim.testing_spawnStandard(.fogAnalyticsCloud, at: VecI(x: 500, y: 192), awareness: .unaware)
+        var state = sim.state
+        var direct = AwarenessHintProjector(), reference = AwarenessHintProjector()
+        for tick: UInt64 in [8, 9, 11, 12, 310, 311, 312, 10, 11] {
+            state.clock = SimulationClock(tick: tick)
+            state.enemies[0].awareness = tick < 11 ? .aware : .unaware
+            #expect(direct.project(state) == reference.project(PresentationSnapshot(state)))
+            #expect(direct == reference)
+        }
+        direct.reset(); reference.reset()
+        state.clock = SimulationClock(tick: 400)
+        #expect(direct.project(state) == AwarenessHintProjector.copy)
+        #expect(direct.project(state) == reference.project(PresentationSnapshot(state)))
+        #expect(direct == reference)
+    }
+
     // MARK: - Helpers
 
     /// Steps once with the Player inside the encounter's trigger.

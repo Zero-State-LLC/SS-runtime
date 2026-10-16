@@ -1,0 +1,97 @@
+{
+  "status": "SOURCE_REAUTHORING_CANDIDATE_NOT_ADMITTED",
+  "sourceHash": "249877813ab5ee49a158668cfea492a933063b2e377fc9f5dbb69ec22e727941",
+  "deliveryHash": "7f5ba29334750c93196ce31ba3fe2dfd01d6fcc566c20f45c3610059ffec2146",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "sourceFront": [
+    580.0,
+    1066.0
+  ],
+  "sourceEndpoints": {
+    "left": [
+      214.0,
+      831.0
+    ],
+    "right": [
+      1016.0,
+      835.0
+    ]
+  },
+  "outputBase": {
+    "SW": [
+      419.745,
+      858.392
+    ],
+    "NW": [
+      148.216,
+      722.627
+    ],
+    "NE": [
+      510.255,
+      541.608
+    ],
+    "SE": [
+      781.784,
+      677.373
+    ]
+  },
+  "alphaNoiseThreshold": 16,
+  "sourcePixelsPerWorldUnit": 2,
+  "drawSizeLogical": [
+    512,
+    512
+  ],
+  "frontAnchorNormalizedSpriteKit": [
+    0.4099072265625,
+    0.16172656249999995
+  ],
+  "worldAnchor": "solid-07-service-yard-b SW corner (1408,1248), projected by shared transform",
+  "regions": {
+    "left": {
+      "scaleX": 0.7418825136612022,
+      "scaleY": 0.8,
+      "shearYFromX": -0.14271857923497241,
+      "inverseAffine": [
+        1.347922321372671,
+        0,
+        14.216345215428191,
+        0.2404669482817669,
+        1.25,
+        -107.92479920653025
+      ],
+      "landmarkErrorsPixels": [
+        0.0,
+        0.0
+      ]
+    },
+    "right": {
+      "scaleX": 0.8303646788990825,
+      "scaleY": 0.8,
+      "shearYFromX": 0.008672018348623866,
+      "inverseAffine": [
+        1.204290145536807,
+        0,
+        74.50523286165298,
+        -0.013054532798952618,
+        1.25,
+        -1.5104251303036422
+      ],
+      "landmarkErrorsPixels": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "limitations": [
+    "Hand-marked base points remain review observations",
+    "Piecewise correction may alter roof/equipment; inspect before adoption",
+    "No source rear-base pixels reconstructed",
+    "No runtime integration or traversal evidence yet"
+  ],
+  "runtimeReviewIntegration": "AppTests/BenchmarkCaptureTests.captureProjectedLegalEncounter substitutes only service-yard-B source; full encounter and authoritative footprint preserved",
+  "runtimeReviewStatus": "FOCUSED_TEST_PASSED_1_OF_1",
+  "visualInspection": "Service-yard-B base now covers the projected footprint instead of floating over one side. Tall source extends beyond upper viewport in edge encounter; roof not fully reviewable here. Other building registration, legacy enemy art, depth, boundary framing and traversal remain open."
+}

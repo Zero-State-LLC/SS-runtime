@@ -1,0 +1,35 @@
+{
+  "status": "TEST_ONLY_STATIC_COMPOSITION",
+  "files": {
+    "work/SS-runtime/AppTests/BenchmarkCaptureTests.swift": "23afac22019d05c0e64250e20844fde771b1ac85e22150fe53db9e92f8da3d4b",
+    "work/SS-runtime/AppTests/BenchmarkAssets/player-source-s-record.json": "746341461253fcc5e0b15b69cd506271afbab69beb85e9a9f827e51817181cc0",
+    "work/SS-specs/specs/001-single-level-vertical-slice/benchmark-production.md": "ebde7ee5e233f20e4cbb6a9beb4675364b9b554de51668e21fb88fa44a5c9030"
+  },
+  "poses": [
+    0,
+    4,
+    8,
+    12
+  ],
+  "playerSize": [
+    64,
+    69.33333333333333
+  ],
+  "playerRoot": [
+    192,
+    336
+  ],
+  "sourceCanvas": [
+    384,
+    416
+  ],
+  "groundProjection": "existing 45-degree rotation and half-height comparison",
+  "limitations": [
+    "Static pose composition, not animated traversal",
+    "Explicit fixture placement, not a legal encounter",
+    "Direction mapping under rotated ground not validated",
+    "No production admission or device acceptance"
+  ],
+  "testResult": "Test-SSRuntime-2026.10.15_18-41-30--0700.xcresult",
+  "outline": "Hidden only for revised review captures; production policy unchanged"
+}

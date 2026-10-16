@@ -1,0 +1,43 @@
+{
+  "source": "outputs/SS-player-startup-review/cadence-live-comparison.mov",
+  "clips": [
+    [
+      "full-input",
+      180.35,
+      1.4
+    ],
+    [
+      "half-input",
+      190.35,
+      3.3
+    ],
+    [
+      "quarter-input",
+      207.4,
+      7.3
+    ]
+  ],
+  "rotation": "transpose=2",
+  "nativeCrop": [
+    2112,
+    978,
+    0,
+    0
+  ],
+  "nativeDisplay": [
+    704,
+    326
+  ],
+  "detailCrop": [
+    480,
+    480,
+    816,
+    168
+  ],
+  "quarterSpeed": "timestamps multiplied by 4; no frame interpolation",
+  "limits": [
+    "MOV creation timestamp is second-resolution; on-screen labels checked against exported sample",
+    "Excerpt boundaries are not authored 16-to-1 seams",
+    "Not physical-device footage"
+  ]
+}

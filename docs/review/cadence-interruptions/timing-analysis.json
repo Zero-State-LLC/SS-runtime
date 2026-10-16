@@ -1,0 +1,140 @@
+[
+  {
+    "source": "outputs/SS-cadence-live-comparison/BP008-stage-4-rep-20-axis-32767-reduced-false-metrics.json",
+    "mode": "distance",
+    "recorded": false,
+    "reduced": false,
+    "callbacks": 147,
+    "ticksPerCallback": {
+      "0": 21,
+      "1": 103,
+      "2": 22,
+      "3": 1
+    },
+    "medianSimulationMSPerTick": 6.446540355682373,
+    "maxSimulationMSPerTick": 8.628010749816895,
+    "renderMSPerCallback": 3.4195971326763126,
+    "diagnosticMSPerCallback": 1.448328803185703
+  },
+  {
+    "source": "outputs/SS-cadence-live-comparison/BP008-stage-4-rep-20-axis-32767-reduced-true-metrics.json",
+    "mode": "distance",
+    "recorded": false,
+    "reduced": true,
+    "callbacks": 121,
+    "ticksPerCallback": {
+      "0": 11,
+      "1": 73,
+      "2": 34,
+      "3": 3
+    },
+    "medianSimulationMSPerTick": 6.41101598739624,
+    "maxSimulationMSPerTick": 16.4870023727417,
+    "renderMSPerCallback": 3.4365062871255163,
+    "diagnosticMSPerCallback": 1.5051847647044285
+  },
+  {
+    "source": "outputs/SS-cadence-live-comparison/BP008-stage-4-rep-21-axis-32767-reduced-false-metrics.json",
+    "mode": "cadence",
+    "recorded": false,
+    "reduced": false,
+    "callbacks": 145,
+    "ticksPerCallback": {
+      "0": 20,
+      "1": 100,
+      "2": 25
+    },
+    "medianSimulationMSPerTick": 6.543993949890137,
+    "maxSimulationMSPerTick": 9.350061416625977,
+    "renderMSPerCallback": 2.6711291280286065,
+    "diagnosticMSPerCallback": 1.4503865406431
+  },
+  {
+    "source": "outputs/SS-cadence-live-comparison/BP008-stage-4-rep-21-axis-32767-reduced-true-metrics.json",
+    "mode": "cadence",
+    "recorded": false,
+    "reduced": true,
+    "callbacks": 147,
+    "ticksPerCallback": {
+      "0": 3,
+      "1": 138,
+      "2": 6
+    },
+    "medianSimulationMSPerTick": 6.414473056793213,
+    "maxSimulationMSPerTick": 11.355042457580566,
+    "renderMSPerCallback": 2.8738975524902344,
+    "diagnosticMSPerCallback": 1.554391011088884
+  },
+  {
+    "source": "outputs/SS-cadence-recorded-review/BP008-stage-4-rep-20-axis-32767-reduced-false-metrics.json",
+    "mode": "distance",
+    "recorded": true,
+    "reduced": false,
+    "callbacks": 128,
+    "ticksPerCallback": {
+      "0": 14,
+      "1": 86,
+      "3": 6,
+      "4": 1,
+      "2": 21
+    },
+    "medianSimulationMSPerTick": 6.577551364898682,
+    "maxSimulationMSPerTick": 13.453364372253418,
+    "renderMSPerCallback": 3.6516766995191574,
+    "diagnosticMSPerCallback": 1.5916135162115097
+  },
+  {
+    "source": "outputs/SS-cadence-recorded-review/BP008-stage-4-rep-20-axis-32767-reduced-true-metrics.json",
+    "mode": "distance",
+    "recorded": true,
+    "reduced": true,
+    "callbacks": 102,
+    "ticksPerCallback": {
+      "0": 7,
+      "1": 62,
+      "2": 27,
+      "9": 2,
+      "4": 2,
+      "6": 1,
+      "3": 1
+    },
+    "medianSimulationMSPerTick": 6.854534149169922,
+    "maxSimulationMSPerTick": 10.093927383422852,
+    "renderMSPerCallback": 3.6693939975663725,
+    "diagnosticMSPerCallback": 1.5821024483325434
+  },
+  {
+    "source": "outputs/SS-cadence-recorded-review/BP008-stage-4-rep-21-axis-32767-reduced-false-metrics.json",
+    "mode": "cadence",
+    "recorded": true,
+    "reduced": false,
+    "callbacks": 138,
+    "ticksPerCallback": {
+      "0": 18,
+      "1": 92,
+      "2": 26,
+      "3": 2
+    },
+    "medianSimulationMSPerTick": 6.646513938903809,
+    "maxSimulationMSPerTick": 9.84501838684082,
+    "renderMSPerCallback": 2.891978491907534,
+    "diagnosticMSPerCallback": 1.6186133674953296
+  },
+  {
+    "source": "outputs/SS-cadence-recorded-review/BP008-stage-4-rep-21-axis-32767-reduced-true-metrics.json",
+    "mode": "cadence",
+    "recorded": true,
+    "reduced": true,
+    "callbacks": 130,
+    "ticksPerCallback": {
+      "0": 8,
+      "1": 100,
+      "3": 6,
+      "2": 16
+    },
+    "medianSimulationMSPerTick": 7.075488567352295,
+    "maxSimulationMSPerTick": 10.156989097595215,
+    "renderMSPerCallback": 3.040585151085487,
+    "diagnosticMSPerCallback": 1.699492564568153
+  }
+]

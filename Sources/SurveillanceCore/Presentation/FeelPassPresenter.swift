@@ -43,16 +43,33 @@ public struct FeelPassPresenter: Equatable, Sendable {
     /// Refreshes everything derived from the current state alone (also used
     /// once a debug scenario has rewritten the state).
     public mutating func observe(_ state: WorldState) {
-        let snap = PresentationSnapshot(state)
+        let player = VecI(x: state.player.position.x.unitsTruncated, y: state.player.position.y.unitsTruncated)
+        let camera = PresentationCamera.follow(player: player, heading: state.player.facing, bounds: state.arena.boundsUnits)
+        let node = CombatAuthoritySnapshot.project(state).currentNode
+        let copy = HUDLayout.combatObjectiveCopy(
+            node: node, extractionArmed: state.extraction.armed,
+            insideLockedExtraction: state.arena.extraction.aabb.contains(player) && !state.extraction.armed)
         nearMiss = PatrolNearMiss.members(state)
-        objectiveCopy = encounterLabels.project(snap, state: state)
+        objectiveCopy = encounterLabels.project(copy: copy, node: node, tick: state.tick, state: state)
+        // Match PatrolConeProjection's membership exactly, including zero-facing
+        // exclusion, without computing the clipped outlines just to test origins.
+        let patrol = Set(state.enemies.filter {
+            $0.alive && $0.isUnaware && $0.patrol.map { $0.facing != .zero } == true
+        }.map(\.id))
+        var patrolVisible = false
+        var unawareVisible = false
+        for enemy in state.enemies where enemy.alive && enemy.isUnaware {
+            guard PresentationCamera.contains(
+                VecI(x: enemy.position.x.unitsTruncated, y: enemy.position.y.unitsTruncated),
+                center: camera.center) else { continue }
+            if patrol.contains(enemy.id) { patrolVisible = true } else { unawareVisible = true }
+        }
         var hints: [String] = []
-        if PatrolTutorial.coneOnScreen(snap) { hints.append(PatrolTutorial.copy) }
-        if Self.unawareNonPatrolOnScreen(snap) { hints.append(AwarenessHintProjector.copy) }
-        let card = snap.tutorialCopyIsSafetyMessage ? nil : snap.tutorialCopy
-        let blocked = snap.upgradePending
-            || snap.tutorialCopyIsSafetyMessage
-            || encounterLabels.isFresh(snap.objectiveNode, tick: snap.tick)
+        if patrolVisible { hints.append(PatrolTutorial.copy) }
+        if unawareVisible { hints.append(AwarenessHintProjector.copy) }
+        let safety = state.tutorial.copyIsSafetyMessage
+        let card = safety || state.tutorial.copy.isEmpty ? nil : state.tutorial.copy
+        let blocked = state.upgrade.pending || safety || encounterLabels.isFresh(node, tick: state.tick)
         tutorialLine = tutorial.update(card: card, hints: hints, blocked: blocked)
     }
 

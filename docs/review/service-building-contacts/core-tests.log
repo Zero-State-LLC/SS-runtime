@@ -1,0 +1,87 @@
+warning: /Users/appliedalchemylabs/Library/org.swift.swiftpm/configuration is not accessible or not writable, disabling user-level cache features.
+warning: /Users/appliedalchemylabs/Library/org.swift.swiftpm/security is not accessible or not writable, disabling user-level cache features.
+warning: /Users/appliedalchemylabs/Library/Caches/org.swift.swiftpm is not accessible or not writable, disabling user-level cache features.
+warning: 'ss-runtime': failed storing manifest for 'ss-runtime' in cache: attempt to write a readonly database
+Building for debugging...
+[0/2] Write swift-version--58304C5D6DBC2206.txt
+Build complete! (0.50s)
+Test Suite 'Selected tests' started at 2026-10-15 22:36:11.893.
+Test Suite 'SSRuntimePackageTests.xctest' started at 2026-10-15 22:36:11.896.
+Test Suite 'SSRuntimePackageTests.xctest' passed at 2026-10-15 22:36:11.896.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-15 22:36:11.896.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite CombatCausalityTests started.
+◇ Suite ContractVectorTests started.
+◇ Test actualSweepOrdersTargetAndWall(wallFirst:) started.
+◇ Test case passing 1 argument wallFirst → false to actualSweepOrdersTargetAndWall(wallFirst:) started.
+◇ Test exposureEX006ContactOnSixtiethTickResetsClock() started.
+✔ Test exposureEX006ContactOnSixtiethTickResetsClock() passed after 0.001 seconds.
+◇ Test playerPC004DiagonalIntoVerticalWallSlidesY() started.
+✔ Test playerPC004DiagonalIntoVerticalWallSlidesY() passed after 0.017 seconds.
+◇ Test combatCB001TenPulsesOverThreeHundredTicks() started.
+◇ Test case passing 1 argument wallFirst → true to actualSweepOrdersTargetAndWall(wallFirst:) started.
+✔ Test actualSweepOrdersTargetAndWall(wallFirst:) with 2 test cases passed after 0.033 seconds.
+◇ Test realWallEntityTieIsBlocked() started.
+✔ Test realWallEntityTieIsBlocked() passed after 0.006 seconds.
+◇ Test stationaryAndMissedWallSweepsAreDefined() started.
+✔ Test stationaryAndMissedWallSweepsAreDefined() passed after 0.001 seconds.
+◇ Test startInsideCircleHitsAtEntryNotExit() started.
+✔ Test startInsideCircleHitsAtEntryNotExit() passed after 0.001 seconds.
+◇ Test mineEvidenceNamesHazardRatherThanOwner() started.
+✔ Test mineEvidenceNamesHazardRatherThanOwner() passed after 0.007 seconds.
+◇ Test contactEvidenceListsAllCurrentContributors() started.
+✔ Test contactEvidenceListsAllCurrentContributors() passed after 0.027 seconds.
+◇ Test retiredProjectileRetainsIncomingPoint() started.
+✔ Test retiredProjectileRetainsIncomingPoint() passed after 0.007 seconds.
+✔ Suite CombatCausalityTests passed after 0.082 seconds.
+✔ Test combatCB001TenPulsesOverThreeHundredTicks() passed after 1.054 seconds.
+◇ Test combatCB003PredictiveAimDiffersFromDirect() started.
+✔ Test combatCB003PredictiveAimDiffersFromDirect() passed after 0.001 seconds.
+◇ Test combatCB004OverSpeedUsesDirectAim() started.
+✔ Test combatCB004OverSpeedUsesDirectAim() passed after 0.001 seconds.
+◇ Test combatCB009CeilingRejectsThirtyThirdShot() started.
+✔ Test combatCB009CeilingRejectsThirtyThirdShot() passed after 0.114 seconds.
+◇ Test upgradeUP001PendingFreezesClock() started.
+✔ Test upgradeUP001PendingFreezesClock() passed after 0.839 seconds.
+◇ Test upgradeUP002SelectsSignalJammer() started.
+✔ Test upgradeUP002SelectsSignalJammer() passed after 0.005 seconds.
+◇ Test upgradeUP003InvalidIndexStaysProtected() started.
+✔ Test upgradeUP003InvalidIndexStaysProtected() passed after 0.004 seconds.
+◇ Test upgradeUP005JammerDoesNotReduceTamper() started.
+✔ Test upgradeUP005JammerDoesNotReduceTamper() passed after 0.001 seconds.
+◇ Test upgradeUP006RicochetEqualDistancePrefersLowerID() started.
+✔ Test upgradeUP006RicochetEqualDistancePrefersLowerID() passed after 0.001 seconds.
+◇ Test upgradeUP007DestroyedCameraExcludedFromContinuation() started.
+✔ Test upgradeUP007DestroyedCameraExcludedFromContinuation() passed after 0.001 seconds.
+◇ Test upgradeUP008GhostStepImmunityThroughStartPlus29() started.
+✔ Test upgradeUP008GhostStepImmunityThroughStartPlus29() passed after 0.001 seconds.
+◇ Test upgradeUP009GhostStepHostileProjectileStillDamages() started.
+✔ Test upgradeUP009GhostStepHostileProjectileStillDamages() passed after 0.007 seconds.
+◇ Test upgradeUP010RestartClearsSelectedUpgrade() started.
+✔ Test upgradeUP010RestartClearsSelectedUpgrade() passed after 0.003 seconds.
+◇ Test bossBO004PhaseTransitionDuringTelegraphCancelsAttack() started.
+✔ Test bossBO004PhaseTransitionDuringTelegraphCancelsAttack() passed after 0.002 seconds.
+◇ Test bossBO008DefeatRetiresFieldAndProjectiles() started.
+✔ Test bossBO008DefeatRetiresFieldAndProjectiles() passed after 0.003 seconds.
+◇ Test bossBO009SameTickPlayerDeathIsTerminalFailure() started.
+✔ Test bossBO009SameTickPlayerDeathIsTerminalFailure() passed after 0.006 seconds.
+◇ Test bossBO010ZeroCamerasDestroyedBossDefeatArmsExtraction() started.
+✔ Test bossBO010ZeroCamerasDestroyedBossDefeatArmsExtraction() passed after 0.005 seconds.
+◇ Test encounterEN001WaveTotals() started.
+✔ Test encounterEN001WaveTotals() passed after 0.001 seconds.
+◇ Test cameraCD013ExtractionArmsAtZeroDestroyed() started.
+✔ Test cameraCD013ExtractionArmsAtZeroDestroyed() passed after 0.011 seconds.
+◇ Test bossBO001DaemonCycleTimingAndQueryDamage() started.
+✔ Test bossBO001DaemonCycleTimingAndQueryDamage() passed after 0.002 seconds.
+◇ Test bossBO005AndBO006ObservationRounding() started.
+✔ Test bossBO005AndBO006ObservationRounding() passed after 0.001 seconds.
+◇ Test bossBO007IndependentReviewOmitsLowerTiedLane() started.
+✔ Test bossBO007IndependentReviewOmitsLowerTiedLane() passed after 0.001 seconds.
+◇ Test arenaAR004PlayerSpawnIsInsideZ01() started.
+✔ Test arenaAR004PlayerSpawnIsInsideZ01() passed after 0.002 seconds.
+✔ Suite ContractVectorTests passed after 2.086 seconds.
+✔ Test run with 32 tests in 2 suites passed after 2.087 seconds.

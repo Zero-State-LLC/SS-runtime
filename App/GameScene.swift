@@ -64,7 +64,24 @@ final class GameSession {
         simulation = try! Simulation.make(seed: seed)
     }
 
+#if DEBUG
+    // Opt-in coarse diagnostics only. No clocks or sample accumulation when disabled.
+    var benchmarkStepTimingEnabled = false
+    private(set) var benchmarkStepTimings: [String: Double] = [:]
+#endif
+
     func step() {
+#if DEBUG
+        var stageStart = benchmarkStepTimingEnabled ? CFAbsoluteTimeGetCurrent() : 0
+        var stageTimes: [String: Double] = [:]
+        func markStage(_ name: String) {
+            guard benchmarkStepTimingEnabled else { return }
+            let now = CFAbsoluteTimeGetCurrent()
+            stageTimes[name] = now - stageStart
+            stageStart = now
+        }
+        defer { if benchmarkStepTimingEnabled { benchmarkStepTimings = stageTimes } }
+#endif
         let tick = simulation.state.tick + 1
         let diagnosticBefore = damageDiagnosticsEnabled ? simulation.state : nil
         let enemiesBefore = simulation.state.enemies
@@ -91,7 +108,13 @@ final class GameSession {
                 dodgePressed: dodgePressed
             )
         }
+#if DEBUG
+        markStage("commandAndFeelBefore")
+#endif
         result = simulation.step(command: command)
+#if DEBUG
+        markStage("simulation")
+#endif
         if simulation.state.tick == tick {
             playerMovedLastStep = simulation.state.player.position != playerPositionBefore
         }
@@ -113,8 +136,14 @@ final class GameSession {
         if let command, simulation.state.tick == tick {
             commandLog.append(command)
         }
+#if DEBUG
+        markStage("diagnosticsAndCommandLog")
+#endif
         reactions.ingest(result, previousEnemies: enemiesBefore, currentEnemies: simulation.state.enemies,
                          playerDirection: ClipFrameLibrary.direction(forFacing: simulation.state.player.facing))
+#if DEBUG
+        markStage("reactions")
+#endif
         applyCameraHUD(result)
         lastHeatReinforcements = HeatCaptionProjector.reinforcements(
             events: result.events,
@@ -129,11 +158,23 @@ final class GameSession {
         )
         quietFrame = quietApproach.project(tick: result.tick, events: result.events, state: simulation.state)
         feel.didStep(events: result.events, enemiesBefore: enemiesBefore, state: simulation.state)
+#if DEBUG
+        markStage("hudCaptionsQuietFeel")
+#endif
         applyAudio(result)
         audio = feel.decorate(audio)
         captionBoard.ingest(tick: result.tick, cues: audio.captionCues)
-        awarenessHintCopy = awarenessHint.project(PresentationSnapshot(simulation.state))
+#if DEBUG
+        markStage("audioAndCaptionBoard")
+#endif
+        awarenessHintCopy = awarenessHint.project(simulation.state)
+#if DEBUG
+        markStage("awarenessSnapshotAndHint")
+#endif
         persistTerminalReceiptIfNeeded()
+#if DEBUG
+        markStage("terminalReceipt")
+#endif
     }
 
     private func persistTerminalReceiptIfNeeded() {

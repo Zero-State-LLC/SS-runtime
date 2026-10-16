@@ -1,0 +1,26 @@
+{
+  "pairs": [
+    {
+      "input": "full-input",
+      "capturedFrames": 153,
+      "maxTimestampScalingErrorSeconds": 1.000000000139778e-06,
+      "normalLastFrameTime": 1.335,
+      "quarterLastFrameTime": 5.34
+    },
+    {
+      "input": "half-input",
+      "capturedFrames": 335,
+      "maxTimestampScalingErrorSeconds": 1.0000000010279564e-06,
+      "normalLastFrameTime": 3.27,
+      "quarterLastFrameTime": 13.08
+    },
+    {
+      "input": "quarter-input",
+      "capturedFrames": 761,
+      "maxTimestampScalingErrorSeconds": 1.0000000010279564e-06,
+      "normalLastFrameTime": 7.288333,
+      "quarterLastFrameTime": 29.153333
+    }
+  ],
+  "note": "Same captured-frame count; timestamps scaled by four. MP4 final-packet hold differs slightly; use interior cycles for seam review."
+}

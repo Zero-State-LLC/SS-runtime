@@ -99,6 +99,25 @@ struct OutlineResolutionTests {
         #expect(bytesLimited.retainedMaskBytes == 66 * 66 * 4)
     }
 
+    @Test func preparedSourceMatchesFallbackAndAvoidsPlaybackReadback() throws {
+        let texture = try source(density: 6)
+        let image = texture.cgImage()
+        let size = CGSize(width: 64, height: 416.0 / 6.0)
+        let prepared = OutlineTextures()
+        let a = try #require(prepared.outline(for: texture, faction: .player,
+            logicalSize: size, sourceImage: image))
+        #expect(prepared.metrics.misses == 1 && prepared.metrics.readbacks == 0)
+        prepared.resetMetrics()
+        let reused = try #require(prepared.outline(for: texture, faction: .player, logicalSize: size))
+        #expect(a.texture === reused.texture)
+        #expect(prepared.metrics.hits == 1 && prepared.metrics.readbacks == 0)
+        let fallback = OutlineTextures()
+        let b = try #require(fallback.outline(for: texture, faction: .player, logicalSize: size))
+        #expect(fallback.metrics.readbacks == 1)
+        #expect(OutlineTextures.rgba(a.texture.cgImage()) == OutlineTextures.rgba(b.texture.cgImage()))
+        #expect(a.pad == b.pad && a.maskSize == b.maskSize)
+    }
+
     @Test func invalidSizesAndOversizeSourceFailWithoutAllocationGrowth() throws {
         let texture = try source(density: 6)
         let cache = OutlineTextures()

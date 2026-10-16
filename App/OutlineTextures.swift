@@ -48,6 +48,14 @@ final class OutlineTextures {
     private let maxBytes: Int
     private(set) var retainedMaskBytes = 0
 
+    struct Metrics {
+        var hits = 0
+        var misses = 0
+        var readbacks = 0
+        var buildSeconds = 0.0
+    }
+    private(set) var metrics = Metrics()
+    func resetMetrics() { metrics = Metrics() }
     var count: Int { cache.count }
 
     // Engineering bounds, not a device residency/performance claim.
@@ -56,14 +64,21 @@ final class OutlineTextures {
         self.maxBytes = max(0, maxBytes)
     }
 
-    func outline(for texture: SKTexture, faction: ActorContrast.Faction, logicalSize: CGSize, samplingScale: Int = 1) -> Entry? {
+    func outline(for texture: SKTexture, faction: ActorContrast.Faction, logicalSize: CGSize, samplingScale: Int = 1, sourceImage: CGImage? = nil) -> Entry? {
         guard let size = Self.maskDimensions(logicalSize, samplingScale: samplingScale) else { return nil }
         let key = Key(texture: ObjectIdentifier(texture), faction: faction, width: size.width, height: size.height, samplingScale: samplingScale)
         if let hit = cache[key] {
+            metrics.hits += 1
             recency.removeAll { $0 == key }; recency.append(key)
             return hit.entry
         }
-        let made = Self.make(from: texture.cgImage(), faction: faction, logicalSize: logicalSize, samplingScale: samplingScale)
+        metrics.misses += 1
+        let began = CFAbsoluteTimeGetCurrent()
+        let image: CGImage
+        if let sourceImage { image = sourceImage }
+        else { metrics.readbacks += 1; image = texture.cgImage() }
+        let made = Self.make(from: image, faction: faction, logicalSize: logicalSize, samplingScale: samplingScale)
+        metrics.buildSeconds += CFAbsoluteTimeGetCurrent() - began
         let cost = made?.byteCost ?? 0
         guard maxEntries > 0, cost <= maxBytes else { return made }
         while !recency.isEmpty && (cache.count >= maxEntries || retainedMaskBytes + cost > maxBytes) {

@@ -1,0 +1,42 @@
+{
+  "status": "GENERATED_CANDIDATE_NOT_ADMITTED",
+  "tool": "built-in image_gen",
+  "sourceFile": "service-building-v2.png",
+  "sha256": "249877813ab5ee49a158668cfea492a933063b2e377fc9f5dbb69ec22e727941",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alphaBounds": [
+    0,
+    21,
+    1240,
+    1254
+  ],
+  "provisionalBaseLandmarksPixels": {
+    "front": [
+      580,
+      1063
+    ],
+    "left": [
+      213,
+      834
+    ],
+    "right": [
+      1015,
+      838
+    ]
+  },
+  "logicalUnitsPerSourcePixel": 0.3852140478669738,
+  "frontAnchoredEndpointErrorsLogical": [
+    21.09128230854089,
+    13.98764619268234
+  ],
+  "inspection": "Brick/material continuity and source detail improved. Geometry guide not matched exactly; base slopes and proportions still need correction. No runtime replacement or collision change.",
+  "measurementLimitations": [
+    "Landmarks are provisional manual observations; pixel coordinates need full-resolution refinement before placement",
+    "Alpha bounds reach canvas edges, indicating possible low-alpha stray pixels; cleanup and alpha-threshold inspection pending",
+    "No renderer capture exists for this candidate"
+  ]
+}

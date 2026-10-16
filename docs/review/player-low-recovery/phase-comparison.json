@@ -1,0 +1,69 @@
+{
+  "status": "OFFLINE_COUNTERFACTUAL_NOT_RUNTIME_VALIDATION",
+  "cycleDistance": 120,
+  "derivation": "source support toe moves 7.5 units per 1/32-second frame = 240 units/sec; 0.5-second cycle = 120 units",
+  "method": "Replay the same recorded root positions and substitute a distance-indexed texture identity only. Fixed-point scale 256, ground Y projection 0.5. No pixel tracking or interpolation. Initial phase zero at first moving observation.",
+  "limits": [
+    "Straight south route only",
+    "Does not prove attractive slow motion",
+    "No restart/reversal/collision or frame scheduling validation",
+    "No inferred slip tolerance",
+    "16 held frames cannot continuously pin a moving support point"
+  ],
+  "comparisons": [
+    {
+      "inputAxis": 16383,
+      "control": {
+        "supportSegments": 8,
+        "minRange": 7.25,
+        "maxRange": 7.25,
+        "medianRange": 7.25,
+        "distinctFrames": 16
+      },
+      "distancePhaseCounterfactual": {
+        "supportSegments": 4,
+        "minRange": 3.5,
+        "maxRange": 3.5,
+        "medianRange": 3.5,
+        "distinctFrames": 16
+      },
+      "recordSHA256": "e986d89da115868f77868da1205e9f2dbf7a7eb0e387ef054a0f38fe2670a62d"
+    },
+    {
+      "inputAxis": 32767,
+      "control": {
+        "supportSegments": 8,
+        "minRange": 4.5,
+        "maxRange": 4.75,
+        "medianRange": 4.5,
+        "distinctFrames": 16
+      },
+      "distancePhaseCounterfactual": {
+        "supportSegments": 8,
+        "minRange": 2.25,
+        "maxRange": 2.75,
+        "medianRange": 2.75,
+        "distinctFrames": 16
+      },
+      "recordSHA256": "ee6ae507f7824fc7f67c773e3be5aea2b3b750f3026031b0e211fa4b8f0dd776"
+    },
+    {
+      "inputAxis": 8191,
+      "control": {
+        "supportSegments": 8,
+        "minRange": 7.75,
+        "maxRange": 8.75,
+        "medianRange": 8.5,
+        "distinctFrames": 16
+      },
+      "distancePhaseCounterfactual": {
+        "supportSegments": 2,
+        "minRange": 3.5,
+        "maxRange": 3.5,
+        "medianRange": 3.5,
+        "distinctFrames": 16
+      },
+      "recordSHA256": "f615dd481fd381ec9221663b326a9c8997dae6dc0a87b5dafe09b0e550d88476"
+    }
+  ]
+}

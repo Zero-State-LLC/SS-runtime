@@ -61,6 +61,14 @@ final class WorldRenderer {
     private var reviewArt: BenchmarkReviewArt?
     private var benchmarkCompleteCamera = false
 #if DEBUG
+    // BP-007/008 candidate registration is installed before contrast resources.
+    var benchmarkPlayerRegistration: (size: CGSize, anchor: CGPoint)?
+    var benchmarkOutlineMetrics: OutlineTextures.Metrics { outlines.metrics }
+    var benchmarkOutlineBytes: Int { outlines.retainedMaskBytes }
+    func resetBenchmarkOutlineMetrics() { outlines.resetMetrics() }
+    func prepareBenchmarkPlayerOutline(texture: SKTexture, image: CGImage, size: CGSize) -> SKTexture? {
+        outlines.outline(for: texture, faction: .player, logicalSize: size, sourceImage: image)?.texture
+    }
     enum BenchmarkFieldContrast: String, CaseIterable {
         case control, dark, paired
     }
@@ -199,7 +207,7 @@ final class WorldRenderer {
         reducedMotion: Bool = false
     ) -> Bool {
         let selectedDirection = occurrence?.direction ?? direction
-        if key == "player", let art = reviewArt {
+        if key == "player", let art = reviewArt, art.playerPresentation == .staticComposition {
             let sprite = node(layer, "sprite-\(key)") { SKSpriteNode() } as! SKSpriteNode
             sprite.texture = art.player
             sprite.size = CGSize(width: 64, height: 64)
@@ -219,6 +227,13 @@ final class WorldRenderer {
             boxHeight: boxHeight,
             boxWidth: boxWidth
         )
+#if DEBUG
+        if key == "player", let registration = benchmarkPlayerRegistration {
+            sprite.yScale = 1
+            sprite.size = registration.size
+            sprite.anchorPoint = registration.anchor
+        }
+#endif
         sprite.position = position
 
         let token = "\(clipId)|\(selectedDirection ?? "-")"
@@ -573,7 +588,7 @@ final class WorldRenderer {
             return
         }
         var drew = false
-        for decoration in snap.decorations {
+        for (index, decoration) in snap.decorations.enumerated() {
             guard let texture = environment.texture(assetId: decoration.assetId) else { continue }
             let scale = CGFloat(decoration.scale) / 1000
             let node = SKSpriteNode(
@@ -583,6 +598,8 @@ final class WorldRenderer {
                     height: texture.size().height * scale
                 )
             )
+            let plane = EnvironmentTextures.projectionPlane(for: decoration.assetId)
+            node.name = "environment-\(plane)-\(index)-\(decoration.assetId)"
             node.position = CGPoint(x: decoration.center.x, y: decoration.center.y)
             // Counter-clockwise positive, applied directly — a decoration is not
             // a heading, so it does not go through radians(milliDegrees:), which
@@ -670,6 +687,7 @@ final class WorldRenderer {
             layer?.addChild(foundation)
             if let id, let texture = environment.solidTexture(solidId: id) {
                 let node = SKSpriteNode(texture: texture, size: size)
+                node.name = "environment-upright-\(EnvironmentLibrary.solidAssetId(forSolidId: id))"
                 node.position = position
                 layer?.addChild(node)
             }
