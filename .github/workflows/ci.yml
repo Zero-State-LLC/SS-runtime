@@ -74,9 +74,23 @@ jobs:
           xcodebuild -project SSRuntime.xcodeproj -scheme SSRuntime -sdk iphonesimulator \
             -destination "platform=iOS Simulator,id=$sim" -configuration "${{ matrix.configuration }}" \
             CODE_SIGNING_ALLOWED=NO ENABLE_TESTABILITY=YES \
-            SS_RENDERER_TEST_CONDITIONS=SS_RENDERER_TEST_SUPPORT test \
+            SS_RENDERER_TEST_CONDITIONS=SS_RENDERER_TEST_SUPPORT \
+            -resultBundlePath /tmp/SSRuntime.xcresult test \
             > /tmp/xcodebuild.log 2>&1
           status=$?
           set -e
           grep -E "error:|warning:|✘|Test run with|BUILD (SUCCEEDED|FAILED)|TEST (SUCCEEDED|FAILED)" /tmp/xcodebuild.log || true
+          if [ "$status" -ne 0 ]; then
+            tail -n 250 /tmp/xcodebuild.log
+            xcrun xcresulttool get test-results summary --path /tmp/SSRuntime.xcresult || true
+          fi
           exit "$status"
+      - name: Preserve app test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-tests-${{ matrix.configuration }}
+          path: |
+            /tmp/xcodebuild.log
+            /tmp/SSRuntime.xcresult
+          retention-days: 7
