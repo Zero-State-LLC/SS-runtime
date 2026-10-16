@@ -4,6 +4,9 @@ options:
   deploymentTarget:
     iOS: "18.0"
 settings:
+  configs:
+    Debug:
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) DEBUG $(SS_RENDERER_TEST_CONDITIONS)"
   base:
     SWIFT_VERSION: "6.0"
     TARGETED_DEVICE_FAMILY: "1"
