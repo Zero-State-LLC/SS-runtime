@@ -1,0 +1,58 @@
+[0/1] Planning build
+Building for debugging...
+[0/4] Write sources
+[1/4] Copying contracts
+[2/5] Copying SPEC_PIN.txt
+[3/5] Write swift-version--58304C5D6DBC2206.txt
+[5/7] Compiling SurveillanceCore ContractVersions.swift
+[6/7] Emitting module SurveillanceCore
+[7/14] Compiling SurveillanceCore RunReceipt.swift
+[8/14] Compiling SurveillanceCore AssetCatalog.swift
+[9/14] Compiling SurveillanceCore ProceduralVFX.swift
+[10/14] Compiling SurveillanceCore ArenaManifest.swift
+[11/14] Compiling SurveillanceCore ReleaseCandidateEvidence.swift
+[12/14] Compiling SurveillanceCore ReplayEnvelope.swift
+[13/14] Compiling SurveillanceCore Simulation.swift
+[14/26] Compiling SurveillanceCoreTests CameraPlacementTests.swift
+[15/26] Compiling SurveillanceCoreTests ClipMetadataTests.swift
+[16/26] Compiling SurveillanceCoreTests DailyRunGhostTests.swift
+[17/26] Compiling SurveillanceCoreTests ProceduralVFXTests.swift
+[18/26] Compiling SurveillanceCoreTests ReadabilityFinishTests.swift
+[19/26] Compiling SurveillanceCoreTests ContractVersionsTests.swift
+[20/26] Compiling SurveillanceCoreTests AssetCatalogTests.swift
+[21/26] Compiling SurveillanceCoreTests AmbientMotionTests.swift
+[22/26] Compiling SurveillanceCoreTests ArenaAndSimulationTests.swift
+[23/26] Compiling SurveillanceCoreTests ReleaseCandidateEvidenceTests.swift
+[24/27] Compiling SurveillanceCoreTests ReplayTests.swift
+[25/27] Emitting module SurveillanceCoreTests
+[25/27] Write Objects.LinkFileList
+[26/27] Linking SSRuntimePackageTests
+Build complete! (16.54s)
+Test Suite 'Selected tests' started at 2026-10-14 16:55:10.047.
+Test Suite 'SSRuntimePackageTests.xctest' started at 2026-10-14 16:55:10.050.
+Test Suite 'SSRuntimePackageTests.xctest' passed at 2026-10-14 16:55:10.050.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-14 16:55:10.050.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.003) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite ContractVersionsTests started.
+◇ Suite ClipTimingTests started.
+◇ Test malformedAndOverflowFailClosed() started.
+◇ Test exactMigrationVectors() started.
+◇ Test allDeliveredV1DirectionsKeepTheirCadence() started.
+◇ Test currentIdentityIsCompatible() started.
+◇ Test elapsedTicksSelectExactFrameBoundariesWithoutOverflow() started.
+◇ Test selectionKeepsDirectionHoldsAndOrder() started.
+✔ Test elapsedTicksSelectExactFrameBoundariesWithoutOverflow() passed after 0.001 seconds.
+✔ Test currentIdentityIsCompatible() passed after 0.001 seconds.
+◇ Test unknownIdentityFailsClosed() started.
+✔ Test unknownIdentityFailsClosed() passed after 0.001 seconds.
+✔ Suite ContractVersionsTests passed after 0.001 seconds.
+✔ Test exactMigrationVectors() passed after 0.001 seconds.
+✔ Test selectionKeepsDirectionHoldsAndOrder() passed after 0.001 seconds.
+✔ Test malformedAndOverflowFailClosed() passed after 0.001 seconds.
+✔ Test allDeliveredV1DirectionsKeepTheirCadence() passed after 0.278 seconds.
+✔ Suite ClipTimingTests passed after 0.278 seconds.
+✔ Test run with 7 tests in 2 suites passed after 0.278 seconds.

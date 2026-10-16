@@ -1,0 +1,51 @@
+{
+  "status": "SOURCE_ONLY_NOT_RENDERER_READABILITY",
+  "note": "Pillow 8-bit grayscale summaries are not linear luminance, WCAG contrast or a readability pass.",
+  "surfaces": [
+    {
+      "assetId": "env_ground_plaza",
+      "sha256": "098bc9dadddd45259cdf76bec9ba0c43835a1cbad14e689440c02780d2711484",
+      "dimensions": [
+        128,
+        128
+      ],
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "pillowLumaMean": 151.10614013671875,
+      "pillowLumaP10": 139,
+      "pillowLumaP90": 161
+    },
+    {
+      "assetId": "env_ground_asphalt",
+      "sha256": "96774980c0b90535f0edfa263b1f5c4841be0be9778be48feaec27e2fd7c1676",
+      "dimensions": [
+        128,
+        128
+      ],
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "pillowLumaMean": 94.00396728515625,
+      "pillowLumaP10": 87,
+      "pillowLumaP90": 101
+    },
+    {
+      "assetId": "env_ground_service",
+      "sha256": "eb2bd7750d064716dbf35acbdfad92e800fd52c3de66fffc4c235fa469bad5ef",
+      "dimensions": [
+        128,
+        128
+      ],
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "pillowLumaMean": 104.52667236328125,
+      "pillowLumaP10": 91,
+      "pillowLumaP90": 118
+    }
+  ]
+}

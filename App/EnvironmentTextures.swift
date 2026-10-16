@@ -7,6 +7,23 @@ import SurveillanceCore
 /// what is delivered and the all-or-nothing rule, and this owns the textures.
 @MainActor
 final class EnvironmentTextures {
+    enum ProjectionPlane { case ground, upright, unresolved }
+
+    /// BP-005 audited source roles. Unknown/mount-context assets stay explicit.
+    static func projectionPlane(for assetId: String) -> ProjectionPlane {
+        if assetId.hasPrefix("env_ground_") { return .ground }
+        if assetId.hasPrefix("env_solid_") || assetId.hasPrefix("env_camera_") { return .upright }
+        switch assetId {
+        case "env_prop_utility_covers", "env_prop_vent_grate", "env_prop_rail_strip":
+            return .ground
+        case "env_prop_newsbox", "env_prop_hydrant_meters", "env_prop_street_tree",
+             "env_prop_trolley_pole", "env_prop_signal_mast", "env_prop_bus_shelter",
+             "env_prop_parklet", "env_prop_bike_rack", "env_prop_barricade", "env_prop_seismic_brace":
+            return .upright
+        default: return .unresolved
+        }
+    }
+
     private let library: EnvironmentLibrary
     private var textures: [String: SKTexture] = [:]
 

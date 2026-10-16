@@ -1,0 +1,606 @@
+{
+  "runtime_base": "14abe4a",
+  "spec_pin": "00ce027209e6c233bcdd35295f35f0b9bfb9bbe5",
+  "output_pixels": [
+    2112,
+    978
+  ],
+  "filter": "linear",
+  "scope": "test-only upright assets; excludes paving and intermediate targets; alpha bounds are not anatomy or collision",
+  "assets": [
+    {
+      "asset": "player-south",
+      "sha256": "0f2af941bdc5eed06239a3d7e10ac823c0b6878734347bebdbfb43120a63fd4c",
+      "source_pixels": [
+        256,
+        256
+      ],
+      "alpha_bounds": [
+        72,
+        16,
+        184,
+        224
+      ],
+      "draw_points": [
+        64,
+        64
+      ],
+      "views": [
+        {
+          "zoom": 1,
+          "canvas_output_pixels": [
+            192,
+            192
+          ],
+          "occupied_output_pixels": [
+            84.0,
+            156.0
+          ],
+          "source_pixels_per_output_pixel": [
+            1.3333333333333333,
+            1.3333333333333333
+          ],
+          "occupied_height_fraction": 0.15950920245398773,
+          "magnified": false
+        },
+        {
+          "zoom": 1.4142135623730951,
+          "canvas_output_pixels": [
+            271.5290039756343,
+            271.5290039756343
+          ],
+          "occupied_output_pixels": [
+            118.79393923934,
+            220.61731573020285
+          ],
+          "source_pixels_per_output_pixel": [
+            0.9428090415820632,
+            0.9428090415820632
+          ],
+          "occupied_height_fraction": 0.22558007743374525,
+          "magnified": true
+        }
+      ]
+    },
+    {
+      "asset": "player-north",
+      "sha256": "4775a0d6a7a19f6761a3d499e568197867e80f9fb05628527d2c993fc2ab6b66",
+      "source_pixels": [
+        256,
+        256
+      ],
+      "alpha_bounds": [
+        72,
+        16,
+        184,
+        224
+      ],
+      "draw_points": [
+        64,
+        64
+      ],
+      "views": [
+        {
+          "zoom": 1,
+          "canvas_output_pixels": [
+            192,
+            192
+          ],
+          "occupied_output_pixels": [
+            84.0,
+            156.0
+          ],
+          "source_pixels_per_output_pixel": [
+            1.3333333333333333,
+            1.3333333333333333
+          ],
+          "occupied_height_fraction": 0.15950920245398773,
+          "magnified": false
+        },
+        {
+          "zoom": 1.4142135623730951,
+          "canvas_output_pixels": [
+            271.5290039756343,
+            271.5290039756343
+          ],
+          "occupied_output_pixels": [
+            118.79393923934,
+            220.61731573020285
+          ],
+          "source_pixels_per_output_pixel": [
+            0.9428090415820632,
+            0.9428090415820632
+          ],
+          "occupied_height_fraction": 0.22558007743374525,
+          "magnified": true
+        }
+      ]
+    },
+    {
+      "asset": "player-east",
+      "sha256": "adbae2a5d422cd26eec9e25ba7603a4b899bb7207ec5175135345a6d2368ad19",
+      "source_pixels": [
+        256,
+        256
+      ],
+      "alpha_bounds": [
+        94,
+        16,
+        162,
+        224
+      ],
+      "draw_points": [
+        64,
+        64
+      ],
+      "views": [
+        {
+          "zoom": 1,
+          "canvas_output_pixels": [
+            192,
+            192
+          ],
+          "occupied_output_pixels": [
+            51.0,
+            156.0
+          ],
+          "source_pixels_per_output_pixel": [
+            1.3333333333333333,
+            1.3333333333333333
+          ],
+          "occupied_height_fraction": 0.15950920245398773,
+          "magnified": false
+        },
+        {
+          "zoom": 1.4142135623730951,
+          "canvas_output_pixels": [
+            271.5290039756343,
+            271.5290039756343
+          ],
+          "occupied_output_pixels": [
+            72.12489168102786,
+            220.61731573020285
+          ],
+          "source_pixels_per_output_pixel": [
+            0.9428090415820632,
+            0.9428090415820632
+          ],
+          "occupied_height_fraction": 0.22558007743374525,
+          "magnified": true
+        }
+      ]
+    },
+    {
+      "asset": "player-west",
+      "sha256": "c67dde4392e4d019eab4f9934015a5c0f45d4bc202c4efaf8638d1a10b55083f",
+      "source_pixels": [
+        256,
+        256
+      ],
+      "alpha_bounds": [
+        96,
+        16,
+        160,
+        224
+      ],
+      "draw_points": [
+        64,
+        64
+      ],
+      "views": [
+        {
+          "zoom": 1,
+          "canvas_output_pixels": [
+            192,
+            192
+          ],
+          "occupied_output_pixels": [
+            48.0,
+            156.0
+          ],
+          "source_pixels_per_output_pixel": [
+            1.3333333333333333,
+            1.3333333333333333
+          ],
+          "occupied_height_fraction": 0.15950920245398773,
+          "magnified": false
+        },
+        {
+          "zoom": 1.4142135623730951,
+          "canvas_output_pixels": [
+            271.5290039756343,
+            271.5290039756343
+          ],
+          "occupied_output_pixels": [
+            67.88225099390857,
+            220.61731573020285
+          ],
+          "source_pixels_per_output_pixel": [
+            0.9428090415820632,
+            0.9428090415820632
+          ],
+          "occupied_height_fraction": 0.22558007743374525,
+          "magnified": true
+        }
+      ]
+    },
+    {
+      "asset": "camera-state-intact",
+      "sha256": "aa437f0eac9593fab43e0f2b7317a856fd99c1294821e06f1c95dda09dbedb1f",
+      "source_pixels": [
+        256,
+        384
+      ],
+      "alpha_bounds": [
+        86,
+        39,
+        255,
+        352
+      ],
+      "draw_points": [
+        64,
+        96
+      ],
+      "views": [
+        {
+          "zoom": 1,
+          "canvas_output_pixels": [
+            192,
+            288
+          ],
+          "occupied_output_pixels": [
+            126.75,
+            234.75
+          ],
+          "source_pixels_per_output_pixel": [
+            1.3333333333333333,
+            1.3333333333333333
+          ],
+          "occupied_height_fraction": 0.24003067484662577,
+          "magnified": false
+        },
+        {
+          "zoom": 1.4142135623730951,
+          "canvas_output_pixels": [
+            271.5290039756343,
+            407.2935059634514
+          ],
+          "occupied_output_pixels": [
+            179.25156903078982,
+            331.98663376708413
+          ],
+          "source_pixels_per_output_pixel": [
+            0.9428090415820632,
+            0.9428090415820632
+          ],
+          "occupied_height_fraction": 0.33945463575366475,
+          "magnified": true
+        }
+      ]
+    },
+    {
+      "asset": "camera-state-damaged",
+      "sha256": "dfc4f40eec4303c1836ffce056ab8aaa979bf1d385b65816a7087e63e149ad96",
+      "source_pixels": [
+        256,
+        384
+      ],
+      "alpha_bounds": [
+        86,
+        39,
+        255,
+        352
+      ],
+      "draw_points": [
+        64,
+        96
+      ],
+      "views": [
+        {
+          "zoom": 1,
+          "canvas_output_pixels": [
+            192,
+            288
+          ],
+          "occupied_output_pixels": [
+            126.75,
+            234.75
+          ],
+          "source_pixels_per_output_pixel": [
+            1.3333333333333333,
+            1.3333333333333333
+          ],
+          "occupied_height_fraction": 0.24003067484662577,
+          "magnified": false
+        },
+        {
+          "zoom": 1.4142135623730951,
+          "canvas_output_pixels": [
+            271.5290039756343,
+            407.2935059634514
+          ],
+          "occupied_output_pixels": [
+            179.25156903078982,
+            331.98663376708413
+          ],
+          "source_pixels_per_output_pixel": [
+            0.9428090415820632,
+            0.9428090415820632
+          ],
+          "occupied_height_fraction": 0.33945463575366475,
+          "magnified": true
+        }
+      ]
+    },
+    {
+      "asset": "camera-state-critical",
+      "sha256": "b24234d6a58659700539415e5b0e4b930a928ff6f491e082110d19d1ca96a962",
+      "source_pixels": [
+        256,
+        384
+      ],
+      "alpha_bounds": [
+        87,
+        39,
+        255,
+        352
+      ],
+      "draw_points": [
+        64,
+        96
+      ],
+      "views": [
+        {
+          "zoom": 1,
+          "canvas_output_pixels": [
+            192,
+            288
+          ],
+          "occupied_output_pixels": [
+            126.0,
+            234.75
+          ],
+          "source_pixels_per_output_pixel": [
+            1.3333333333333333,
+            1.3333333333333333
+          ],
+          "occupied_height_fraction": 0.24003067484662577,
+          "magnified": false
+        },
+        {
+          "zoom": 1.4142135623730951,
+          "canvas_output_pixels": [
+            271.5290039756343,
+            407.2935059634514
+          ],
+          "occupied_output_pixels": [
+            178.19090885901,
+            331.98663376708413
+          ],
+          "source_pixels_per_output_pixel": [
+            0.9428090415820632,
+            0.9428090415820632
+          ],
+          "occupied_height_fraction": 0.33945463575366475,
+          "magnified": true
+        }
+      ]
+    },
+    {
+      "asset": "camera-state-destroyed",
+      "sha256": "b9e56b70624e7714f11c417b453d51fe4f57bce073e920b5392ab879999d9af9",
+      "source_pixels": [
+        256,
+        384
+      ],
+      "alpha_bounds": [
+        86,
+        39,
+        255,
+        352
+      ],
+      "draw_points": [
+        64,
+        96
+      ],
+      "views": [
+        {
+          "zoom": 1,
+          "canvas_output_pixels": [
+            192,
+            288
+          ],
+          "occupied_output_pixels": [
+            126.75,
+            234.75
+          ],
+          "source_pixels_per_output_pixel": [
+            1.3333333333333333,
+            1.3333333333333333
+          ],
+          "occupied_height_fraction": 0.24003067484662577,
+          "magnified": false
+        },
+        {
+          "zoom": 1.4142135623730951,
+          "canvas_output_pixels": [
+            271.5290039756343,
+            407.2935059634514
+          ],
+          "occupied_output_pixels": [
+            179.25156903078982,
+            331.98663376708413
+          ],
+          "source_pixels_per_output_pixel": [
+            0.9428090415820632,
+            0.9428090415820632
+          ],
+          "occupied_height_fraction": 0.33945463575366475,
+          "magnified": true
+        }
+      ]
+    },
+    {
+      "asset": "building-constrained",
+      "sha256": "086fa7c6f30ccb47c5df92f50e83a645fc0c4169935df39f5e71cdfc1499a22c",
+      "source_pixels": [
+        1254,
+        1254
+      ],
+      "alpha_bounds": [
+        153,
+        84,
+        1109,
+        1152
+      ],
+      "draw_points": [
+        243.03880869767693,
+        243.03880869767693
+      ],
+      "views": [
+        {
+          "zoom": 1,
+          "canvas_output_pixels": [
+            729.1164260930308,
+            729.1164260930308
+          ],
+          "occupied_output_pixels": [
+            555.8495241985147,
+            620.9699705481314
+          ],
+          "source_pixels_per_output_pixel": [
+            1.7198899313235296,
+            1.7198899313235296
+          ],
+          "occupied_height_fraction": 0.6349386201923634,
+          "magnified": false
+        },
+        {
+          "zoom": 1.4142135623730951,
+          "canvas_output_pixels": [
+            1031.1263383297646,
+            1031.1263383297646
+          ],
+          "occupied_output_pixels": [
+            786.0899357601714,
+            878.184154175589
+          ],
+          "source_pixels_per_output_pixel": [
+            1.216145833333333,
+            1.216145833333333
+          ],
+          "occupied_height_fraction": 0.8979388079505,
+          "magnified": false
+        }
+      ]
+    },
+    {
+      "asset": "newsbox",
+      "sha256": "a05de0ea875e599ebbf6d2ca29a657d17b01795e6670ab1594896827d8c6f0da",
+      "source_pixels": [
+        378,
+        768
+      ],
+      "alpha_bounds": [
+        0,
+        0,
+        378,
+        768
+      ],
+      "draw_points": [
+        20,
+        40
+      ],
+      "views": [
+        {
+          "zoom": 1,
+          "canvas_output_pixels": [
+            60,
+            120
+          ],
+          "occupied_output_pixels": [
+            60.0,
+            120.0
+          ],
+          "source_pixels_per_output_pixel": [
+            6.3,
+            6.4
+          ],
+          "occupied_height_fraction": 0.12269938650306748,
+          "magnified": false
+        },
+        {
+          "zoom": 1.4142135623730951,
+          "canvas_output_pixels": [
+            84.8528137423857,
+            169.7056274847714
+          ],
+          "occupied_output_pixels": [
+            84.8528137423857,
+            169.7056274847714
+          ],
+          "source_pixels_per_output_pixel": [
+            4.4547727214752495,
+            4.525483399593904
+          ],
+          "occupied_height_fraction": 0.17352313648749634,
+          "magnified": false
+        }
+      ]
+    },
+    {
+      "asset": "tree",
+      "sha256": "f002a45f3d30f669d410f6fbcc1785284fce22368b834dc261821e31ad4426b6",
+      "source_pixels": [
+        454,
+        768
+      ],
+      "alpha_bounds": [
+        0,
+        0,
+        454,
+        768
+      ],
+      "draw_points": [
+        50,
+        85
+      ],
+      "views": [
+        {
+          "zoom": 1,
+          "canvas_output_pixels": [
+            150,
+            255
+          ],
+          "occupied_output_pixels": [
+            150.0,
+            255.0
+          ],
+          "source_pixels_per_output_pixel": [
+            3.026666666666667,
+            3.011764705882353
+          ],
+          "occupied_height_fraction": 0.2607361963190184,
+          "magnified": false
+        },
+        {
+          "zoom": 1.4142135623730951,
+          "canvas_output_pixels": [
+            212.13203435596427,
+            360.62445840513925
+          ],
+          "occupied_output_pixels": [
+            212.13203435596427,
+            360.62445840513925
+          ],
+          "source_pixels_per_output_pixel": [
+            2.1401765243912836,
+            2.1296392468677197
+          ],
+          "occupied_height_fraction": 0.3687366650359297,
+          "magnified": false
+        }
+      ]
+    }
+  ]
+}

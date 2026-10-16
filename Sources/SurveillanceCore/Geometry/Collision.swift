@@ -94,6 +94,11 @@ public enum Collision {
     }
 
     public static func segmentIntersects(_ a: VecQ8, _ b: VecQ8, box: AABB) -> Bool {
+        segmentEntryTime(a, b, box: box) != nil
+    }
+
+    /// D-103: Q8 entry time, comparable to circular sweep times.
+    public static func segmentEntryTime(_ a: VecQ8, _ b: VecQ8, box: AABB) -> Int64? {
         let x0 = a.x.raw
         let y0 = a.y.raw
         let x1 = b.x.raw
@@ -126,8 +131,8 @@ public enum Collision {
               clip(dx, maxX - x0),
               clip(-dy, y0 - minY),
               clip(dy, maxY - y0)
-        else { return false }
-        return t0 <= t1
+        else { return nil }
+        return t0 <= t1 ? t0 : nil
     }
 
     public static func lineOfFireClear(from: VecQ8, to: VecQ8, solids: [(id: String, box: AABB)]) -> Bool {
@@ -150,9 +155,8 @@ public enum Collision {
         let a = mx * mx + my * my
         let b = 2 * (dx * mx + dy * my)
         let c = dx * dx + dy * dy - r * r
-        if a == 0 {
-            return c <= 0 ? 0 : nil
-        }
+        if c <= 0 { return 0 }
+        if a == 0 { return nil }
         guard let disc = IntMath.quadraticDiscriminant(a: a, b: b, c: c) else { return nil }
         let sqrtDisc = IntMath.isqrt(disc)
         let tNum = -b - sqrtDisc

@@ -1,0 +1,43 @@
+{
+  "simulatorExecutions": 103,
+  "failures": 0,
+  "postActionObservations": 40,
+  "capturePixels": [
+    192,
+    288
+  ],
+  "logicalCanvas": [
+    64,
+    96
+  ],
+  "scale": 3,
+  "observedFramesByIntegrity": {
+    "3": [
+      "camera_operational_idle#1",
+      "camera_operational_idle#3"
+    ],
+    "2": [
+      "camera_hit#1",
+      "camera_hit#2"
+    ],
+    "1": [
+      "camera_critical_enter#1",
+      "camera_critical_enter#2",
+      "camera_critical_enter#3"
+    ],
+    "0": [
+      "camera_destroy#1",
+      "camera_destroy#2",
+      "camera_destroy#3",
+      "camera_destroy#4",
+      "camera_destroyed_idle#2"
+    ]
+  },
+  "fieldAbsentForAllDestroyedObservations": true,
+  "positions": [
+    [
+      640,
+      256
+    ]
+  ]
+}

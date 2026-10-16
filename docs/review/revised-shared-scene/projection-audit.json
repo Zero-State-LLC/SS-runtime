@@ -1,0 +1,118 @@
+{
+  "status": "OFFLINE_COMPARISON_GEOMETRY_NOT_RUNTIME_ACCEPTANCE",
+  "coordinateConvention": "SpriteKit scene: right +x, up +y",
+  "transform": "rotate +45 degrees then scale y by 0.5; translation omitted for vectors",
+  "fixtureSourceSHA256": "23afac22019d05c0e64250e20844fde771b1ac85e22150fe53db9e92f8da3d4b",
+  "directions": [
+    {
+      "worldDirection": "E",
+      "worldUnitVector": [
+        1.0,
+        0.0
+      ],
+      "projectedVector": [
+        0.7071067811865476,
+        0.3535533905932738
+      ],
+      "screenAngleDegrees": 26.56505117707799
+    },
+    {
+      "worldDirection": "NE",
+      "worldUnitVector": [
+        0.7071067811865475,
+        0.7071067811865475
+      ],
+      "projectedVector": [
+        0.0,
+        0.5
+      ],
+      "screenAngleDegrees": 90.0
+    },
+    {
+      "worldDirection": "N",
+      "worldUnitVector": [
+        0.0,
+        1.0
+      ],
+      "projectedVector": [
+        -0.7071067811865476,
+        0.3535533905932738
+      ],
+      "screenAngleDegrees": 153.434948822922
+    },
+    {
+      "worldDirection": "NW",
+      "worldUnitVector": [
+        -0.7071067811865475,
+        0.7071067811865475
+      ],
+      "projectedVector": [
+        -1.0,
+        0.0
+      ],
+      "screenAngleDegrees": 180.0
+    },
+    {
+      "worldDirection": "W",
+      "worldUnitVector": [
+        -1.0,
+        0.0
+      ],
+      "projectedVector": [
+        -0.7071067811865476,
+        -0.3535533905932738
+      ],
+      "screenAngleDegrees": -153.434948822922
+    },
+    {
+      "worldDirection": "SW",
+      "worldUnitVector": [
+        -0.7071067811865475,
+        -0.7071067811865475
+      ],
+      "projectedVector": [
+        0.0,
+        -0.5
+      ],
+      "screenAngleDegrees": -90.0
+    },
+    {
+      "worldDirection": "S",
+      "worldUnitVector": [
+        0.0,
+        -1.0
+      ],
+      "projectedVector": [
+        0.7071067811865476,
+        -0.3535533905932738
+      ],
+      "screenAngleDegrees": -26.56505117707799
+    },
+    {
+      "worldDirection": "SE",
+      "worldUnitVector": [
+        0.7071067811865475,
+        -0.7071067811865475
+      ],
+      "projectedVector": [
+        1.0,
+        0.0
+      ],
+      "screenAngleDegrees": 0.0
+    }
+  ],
+  "screenDownWorldUnitVector": [
+    -0.7071067811865476,
+    -0.7071067811865476
+  ],
+  "checks": [
+    "eight-direction inverse round trips",
+    "projected diagonal speed ratio",
+    "screen-down inverse direction"
+  ],
+  "limitations": [
+    "Independent algebra, not execution of the Swift helper",
+    "No facing sector or hysteresis policy selected",
+    "No input conversion, source yaw, occlusion or live travel acceptance"
+  ]
+}

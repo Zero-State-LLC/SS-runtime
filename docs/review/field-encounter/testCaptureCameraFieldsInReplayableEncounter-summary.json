@@ -1,0 +1,1022 @@
+{
+  "_type": {
+    "_name": "ActionTestSummary",
+    "_supertype": {
+      "_name": "ActionTestSummaryIdentifiableObject",
+      "_supertype": {
+        "_name": "ActionAbstractTestSummary"
+      }
+    }
+  },
+  "activitySummaries": {
+    "_type": {
+      "_name": "Array"
+    },
+    "_values": [
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP010-field-encounter-control-reduced-false_0_AFAB371A-7F48-43BC-8E92-D143F2E78B58.png"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP010-field-encounter-control-reduced-false"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~_iIEXDzNO9BYlW34D8NdQOf9FB_4_aQoIbAwdKVvrCo-gXry8OkxLZ1RNVkbYcUJRcve0EVyvDLtLrKyAGSSqA=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "910679"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T22:38:44.020-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.png"
+              },
+              "userInfo": {
+                "_type": {
+                  "_name": "SortedKeyValueArray"
+                },
+                "storage": {
+                  "_type": {
+                    "_name": "Array"
+                  },
+                  "_values": [
+                    {
+                      "_type": {
+                        "_name": "SortedKeyValueArrayPair"
+                      },
+                      "key": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "Scale"
+                      },
+                      "value": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "26F8D01D-1EB1-4A6B-A8C4-31D840F08906"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:38:44.021-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:38:44.020-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP010-field-encounter-control-reduced-false'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "AFAB371A-7F48-43BC-8E92-D143F2E78B58"
+        }
+      },
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP010-field-encounter-dark-reduced-false_0_BEB23023-61DD-4E23-898F-1B269943EB50.png"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP010-field-encounter-dark-reduced-false"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~qinoAP0LRksmSpOjNc4WCSZKVT7i6BU_91o-zkHB9uwoaWBfPKaQe9HHLwDkKot8JUxtY3GxFGln-erDDbiRNA=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "929277"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T22:38:44.400-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.png"
+              },
+              "userInfo": {
+                "_type": {
+                  "_name": "SortedKeyValueArray"
+                },
+                "storage": {
+                  "_type": {
+                    "_name": "Array"
+                  },
+                  "_values": [
+                    {
+                      "_type": {
+                        "_name": "SortedKeyValueArrayPair"
+                      },
+                      "key": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "Scale"
+                      },
+                      "value": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "51FFC991-6D65-4463-B6A5-0E2C66A28A67"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:38:44.401-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:38:44.400-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP010-field-encounter-dark-reduced-false'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "BEB23023-61DD-4E23-898F-1B269943EB50"
+        }
+      },
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP010-field-encounter-paired-reduced-false_0_0340F941-F96B-436B-932F-430167B79DBF.png"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP010-field-encounter-paired-reduced-false"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~glf-uMaLE5mZA0mWqDaWGTTIXGzltq6foZ4JPAlcCbq1nVp4wx54dMaMsPfYleJMFE2aYCqrEtZ-1AiCwCdUQA=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "945293"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T22:38:44.721-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.png"
+              },
+              "userInfo": {
+                "_type": {
+                  "_name": "SortedKeyValueArray"
+                },
+                "storage": {
+                  "_type": {
+                    "_name": "Array"
+                  },
+                  "_values": [
+                    {
+                      "_type": {
+                        "_name": "SortedKeyValueArrayPair"
+                      },
+                      "key": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "Scale"
+                      },
+                      "value": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "FB323ABF-A94D-489C-8A13-B8CC531F7ABB"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:38:44.722-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:38:44.721-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP010-field-encounter-paired-reduced-false'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "0340F941-F96B-436B-932F-430167B79DBF"
+        }
+      },
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP010-field-encounter-control-reduced-true_0_65455C64-7F93-4633-887B-0FB90D4FC0BC.png"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP010-field-encounter-control-reduced-true"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~faU6FYX7Iw05lhLKcQzvBeyNPJ6IbIUOeHTw0WAZWBXEdgxdTz7Je8_yBqfA2T5v9Kn_ouL4fjxKbgrLFi6jGg=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "887167"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T22:38:45.031-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.png"
+              },
+              "userInfo": {
+                "_type": {
+                  "_name": "SortedKeyValueArray"
+                },
+                "storage": {
+                  "_type": {
+                    "_name": "Array"
+                  },
+                  "_values": [
+                    {
+                      "_type": {
+                        "_name": "SortedKeyValueArrayPair"
+                      },
+                      "key": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "Scale"
+                      },
+                      "value": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "3CEDCAED-A35B-477E-9329-66884AF8849C"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:38:45.032-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:38:45.031-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP010-field-encounter-control-reduced-true'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "65455C64-7F93-4633-887B-0FB90D4FC0BC"
+        }
+      },
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP010-field-encounter-dark-reduced-true_0_ABE7C3C6-55F0-493F-AF03-3EC064655BF0.png"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP010-field-encounter-dark-reduced-true"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~2oU59Ytj3aFeyoWtas6Myf8e5GQZjemq9BcknErMzhJZgtSNyca8gFQKC_gLV1DnOEeHpn-x-3NpRU0xF2KWMA=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "905637"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T22:38:45.309-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.png"
+              },
+              "userInfo": {
+                "_type": {
+                  "_name": "SortedKeyValueArray"
+                },
+                "storage": {
+                  "_type": {
+                    "_name": "Array"
+                  },
+                  "_values": [
+                    {
+                      "_type": {
+                        "_name": "SortedKeyValueArrayPair"
+                      },
+                      "key": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "Scale"
+                      },
+                      "value": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "33233E98-B8D6-444F-B4A9-81CCB289489C"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:38:45.309-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:38:45.309-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP010-field-encounter-dark-reduced-true'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "ABE7C3C6-55F0-493F-AF03-3EC064655BF0"
+        }
+      },
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP010-field-encounter-paired-reduced-true_0_2E68FD2B-C1D5-49F9-A599-0F5143858FE1.png"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP010-field-encounter-paired-reduced-true"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~rPCBQ-6VUBSX8Dz6-VoDOv-DIGcPxNj1FQjUVUMpu-ALcpZySS5eLhJKkAJQ2IXyAotfTA0XYh9YtbAgG0CBxQ=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "921639"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T22:38:45.642-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.png"
+              },
+              "userInfo": {
+                "_type": {
+                  "_name": "SortedKeyValueArray"
+                },
+                "storage": {
+                  "_type": {
+                    "_name": "Array"
+                  },
+                  "_values": [
+                    {
+                      "_type": {
+                        "_name": "SortedKeyValueArrayPair"
+                      },
+                      "key": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "Scale"
+                      },
+                      "value": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "B2A87C7B-6BE3-4112-850E-2B5BFDBFB5BE"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:38:45.643-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:38:45.642-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP010-field-encounter-paired-reduced-true'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "2E68FD2B-C1D5-49F9-A599-0F5143858FE1"
+        }
+      },
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP010-field-encounter-commands-seed-1_0_81725C18-CD15-4CEC-9879-2AB44B383853.json"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP010-field-encounter-commands-seed-1"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~3sX48okumfdOOVsm8RD2g4nBLA7ji4RDoimo50H9V4JnI9t_E2dPz40XHBR7u5DV6kVtJ8vi6vqgwPBZM4HS3w=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "18562"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T22:38:46.721-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.json"
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "41C36F34-1B75-4316-9F8B-FE48E0CAA0C5"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:38:46.722-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:38:46.721-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP010-field-encounter-commands-seed-1'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "81725C18-CD15-4CEC-9879-2AB44B383853"
+        }
+      },
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP010-field-encounter-record_0_D2AA6761-C790-49AD-BBB7-3DB47498787D.txt"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP010-field-encounter-record"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~bfDIY1FT-igFVxngFBhnmOjkAzYfDDTZHZz35l792pbXO23FBsZQzA2AIQfiXyA7sh7kJjTX-39pv9J34qwDRg=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "567"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T22:38:46.724-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.plain-text"
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "FE4A557B-E777-410F-BA17-E8EFD15AA116"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:38:46.725-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:38:46.724-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP010-field-encounter-record'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "D2AA6761-C790-49AD-BBB7-3DB47498787D"
+        }
+      }
+    ]
+  },
+  "duration": {
+    "_type": {
+      "_name": "Double"
+    },
+    "_value": "10.152034997940063"
+  },
+  "identifier": {
+    "_type": {
+      "_name": "String"
+    },
+    "_value": "BenchmarkCaptureTests/testCaptureCameraFieldsInReplayableEncounter()"
+  },
+  "identifierURL": {
+    "_type": {
+      "_name": "String"
+    },
+    "_value": "test://com.apple.xcode/SSRuntime/SSRuntimeTests/BenchmarkCaptureTests/testCaptureCameraFieldsInReplayableEncounter"
+  },
+  "name": {
+    "_type": {
+      "_name": "String"
+    },
+    "_value": "testCaptureCameraFieldsInReplayableEncounter()"
+  },
+  "testStatus": {
+    "_type": {
+      "_name": "String"
+    },
+    "_value": "Success"
+  }
+}

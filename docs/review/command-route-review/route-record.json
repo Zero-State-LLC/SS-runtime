@@ -1,0 +1,82 @@
+{
+  "initialPosition": [
+    224,
+    704
+  ],
+  "seed": 1,
+  "solid": "solid-01-residential-west",
+  "commands": [
+    {
+      "ticks": [
+        1,
+        30
+      ],
+      "move": "west"
+    },
+    {
+      "ticks": [
+        31,
+        60
+      ],
+      "move": "southwest"
+    },
+    {
+      "ticks": [
+        61,
+        120
+      ],
+      "move": "south"
+    },
+    {
+      "ticks": [
+        121,
+        135
+      ],
+      "move": "neutral"
+    },
+    {
+      "ticks": [
+        136,
+        150
+      ],
+      "move": "north"
+    },
+    {
+      "ticks": [
+        151,
+        225
+      ],
+      "move": "south",
+      "dodgeAt": 211
+    },
+    {
+      "ticks": [
+        226,
+        240
+      ],
+      "move": "neutral"
+    },
+    {
+      "ticks": [
+        241,
+        300
+      ],
+      "move": "north"
+    },
+    {
+      "ticks": [
+        301,
+        330
+      ],
+      "move": "neutral"
+    }
+  ],
+  "testScenePause": {
+    "tick": 120,
+    "durationSeconds": 0.35,
+    "catchUp": false
+  },
+  "runtimeTestSHA256": "ee3be584b6cd3d27059594fc88725bdbc90bd03d018f547232e784b695806b88",
+  "specSHA256": "20af828d1beef19da432898cc4d5370e5dc556188ccbbde79cddff3a63d73765",
+  "status": "AUTOMATED_ROUTE_CHECKS_PASSED_VISUAL_AND_PERFORMANCE_OPEN"
+}

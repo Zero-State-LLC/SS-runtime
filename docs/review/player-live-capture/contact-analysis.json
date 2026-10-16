@@ -1,0 +1,29 @@
+{
+  "scope": "Observed frame identity plus source toe annotation at actual projected actor positions; not pixel tracking, video, complete contact phase coverage or a pass threshold",
+  "records": 32,
+  "distinctFrames": [
+    0,
+    15
+  ],
+  "ticks": [
+    0,
+    90
+  ],
+  "supportGroups": [
+    {
+      "side": "right",
+      "samples": [
+        {
+          "time": 207413.5114101667,
+          "tick": 15,
+          "frame": 0,
+          "toeViewX": 156.0,
+          "toeViewY": 58.5,
+          "displacementFromFirstObservedContact": 0.0
+        }
+      ],
+      "maxObservedDisplacement": null,
+      "coverage": "insufficient: only one support sample"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "status": "REGISTRATION_PREDICTION_NOT_DISPLAYED_PLAYBACK",
+  "sourceCanvas": [
+    384,
+    416
+  ],
+  "sourceRootPixels": [
+    192,
+    336
+  ],
+  "sourcePixelsPerModelUnit": 6,
+  "proposedDrawSize": [
+    64,
+    69.33333333333333
+  ],
+  "spriteKitAnchor": [
+    0.5,
+    0.1923076923076923
+  ],
+  "square64VerticalCompression": 0.9230769230769231,
+  "sourceProjection": "screen x=6*x; screen down=6*(0.5*y-sqrt(0.75)*z)",
+  "comparison": "Full-input nominal travel only; no collision, Q8 quantization, displayed frame holds or action phase included",
+  "samples": [
+    {
+      "side": "right",
+      "time": 0.0,
+      "nominalWorldTravel": 0.0,
+      "projectedLocalToeDelta": 0.0,
+      "unprojectedRootResidual": 0.0,
+      "consistentProjectedRootResidual": 0.0
+    },
+    {
+      "side": "right",
+      "time": 0.03125,
+      "nominalWorldTravel": 7.5,
+      "projectedLocalToeDelta": -3.75,
+      "unprojectedRootResidual": 3.75,
+      "consistentProjectedRootResidual": 0.0
+    },
+    {
+      "side": "right",
+      "time": 0.0625,
+      "nominalWorldTravel": 15.0,
+      "projectedLocalToeDelta": -7.5,
+      "unprojectedRootResidual": 7.5,
+      "consistentProjectedRootResidual": 0.0
+    },
+    {
+      "side": "right",
+      "time": 0.09375,
+      "nominalWorldTravel": 22.5,
+      "projectedLocalToeDelta": -11.25,
+      "unprojectedRootResidual": 11.25,
+      "consistentProjectedRootResidual": 0.0
+    },
+    {
+      "side": "left",
+      "time": 0.25,
+      "nominalWorldTravel": 0.0,
+      "projectedLocalToeDelta": 0.0,
+      "unprojectedRootResidual": 0.0,
+      "consistentProjectedRootResidual": 0.0
+    },
+    {
+      "side": "left",
+      "time": 0.28125,
+      "nominalWorldTravel": 7.5,
+      "projectedLocalToeDelta": -3.75,
+      "unprojectedRootResidual": 3.75,
+      "consistentProjectedRootResidual": 0.0
+    },
+    {
+      "side": "left",
+      "time": 0.3125,
+      "nominalWorldTravel": 15.0,
+      "projectedLocalToeDelta": -7.5,
+      "unprojectedRootResidual": 7.5,
+      "consistentProjectedRootResidual": 0.0
+    },
+    {
+      "side": "left",
+      "time": 0.34375,
+      "nominalWorldTravel": 22.5,
+      "projectedLocalToeDelta": -11.25,
+      "unprojectedRootResidual": 11.25,
+      "consistentProjectedRootResidual": 0.0
+    }
+  ],
+  "maxUnprojectedResidual": 11.25,
+  "maxConsistentProjectedResidual": 0.0
+}

@@ -12,10 +12,11 @@ public struct ClipFrameLibrary: Sendable {
         public var clipId: String
         public var actorRole: String
         public var directions: [String]
-        public var framesPerSecond: Int
+        public var framesPerSecond: Int?
+        public var authoredTiming: ClipTiming? = nil
         public var loop: Bool
         public var anchor: VecI
-        /// Frame IDs in contract order, `directions.count` groups of equal size.
+        /// Frame IDs in authored contract order; facing is encoded in each ID.
         public var frameIds: [String]
 
         public var framesPerDirection: Int {
@@ -41,33 +42,21 @@ public struct ClipFrameLibrary: Sendable {
     }
 
     static func make(clipJSON: Data, catalog: AssetCatalog) throws -> ClipFrameLibrary {
-        guard let root = try? JSONSerialization.jsonObject(with: clipJSON) as? [String: Any],
-              let rawClips = root["clips"] as? [[String: Any]]
-        else {
-            throw AssetCatalogError.invalidJSON
-        }
-
-        var clips: [String: Clip] = [:]
-        for raw in rawClips {
-            guard let clipId = raw["clipId"] as? String,
-                  let actorRole = raw["actorRole"] as? String,
-                  let frameIds = raw["frameIds"] as? [String],
-                  let fps = raw["framesPerSecond"] as? Int,
-                  let loop = raw["loop"] as? Bool
-            else {
-                throw AssetCatalogError.invalidJSON
-            }
-            let anchorRaw = raw["anchor"] as? [String: Int] ?? [:]
-            clips[clipId] = Clip(
-                clipId: clipId,
-                actorRole: actorRole,
-                directions: raw["directions"] as? [String] ?? [],
-                framesPerSecond: fps,
-                loop: loop,
-                anchor: VecI(x: anchorRaw["x"] ?? 0, y: anchorRaw["y"] ?? 0),
-                frameIds: frameIds
-            )
-        }
+        // Delivery must use the same schema and semantic validation as reactions.
+        // In particular, future timing keys cannot be silently dropped here.
+        let validated = try ClipCatalogLoader.decode(clipJSON)
+        let clips = Dictionary(uniqueKeysWithValues: validated.clips.map { clip in
+            (clip.clipId, Clip(
+                clipId: clip.clipId,
+                actorRole: clip.actorRole,
+                directions: clip.directions,
+                framesPerSecond: clip.framesPerSecond,
+                authoredTiming: clip.authoredTiming,
+                loop: clip.loop,
+                anchor: VecI(x: clip.anchor.x, y: clip.anchor.y),
+                frameIds: clip.frameIds
+            ))
+        })
 
         // Only an admitted, accepted sprite contributes a file.
         var delivered: [String: String] = [:]
@@ -92,11 +81,10 @@ public struct ClipFrameLibrary: Sendable {
     public func frameIds(clipId: String, direction: String?) -> [String] {
         guard let clip = clips[clipId] else { return [] }
         guard let direction, !clip.directions.isEmpty else { return clip.frameIds }
-        guard let index = clip.directions.firstIndex(of: direction) else { return [] }
-        let per = clip.framesPerDirection
-        let start = index * per
-        guard start + per <= clip.frameIds.count else { return [] }
-        return Array(clip.frameIds[start..<(start + per)])
+        guard clip.directions.contains(direction) else { return [] }
+        // Match ClipRecord's authored-facing selection, even when facings are
+        // interleaved. Array position alone cannot identify a frame's facing.
+        return clip.frameIds.filter { $0.contains("_\(direction)_") }
     }
 
     /// Delivered file names for one direction, or `nil` when the clip is not
@@ -112,6 +100,21 @@ public struct ClipFrameLibrary: Sendable {
             paths.append(path)
         }
         return paths
+    }
+
+    public func timing(clipId: String, direction: String?) -> ClipTiming? {
+        guard let clip = clips[clipId] else { return nil }
+        if let timing = clip.authoredTiming {
+            if let direction, !clip.directions.isEmpty {
+                guard clip.directions.contains(direction) else { return nil }
+                let indices = clip.frameIds.indices.filter { clip.frameIds[$0].contains("_\(direction)_") }
+                return try? timing.selecting(indices)
+            }
+            return timing
+        }
+        guard let fps = clip.framesPerSecond else { return nil }
+        return try? .uniform(frameCount: frameIds(clipId: clipId, direction: direction).count,
+                             framesPerSecond: fps)
     }
 
     public func isBacked(clipId: String, direction: String? = nil) -> Bool {

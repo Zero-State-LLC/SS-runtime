@@ -33,6 +33,7 @@ public struct ReactionClipTracker: Sendable {
         public var clipId: String
         /// Exclusive: the reaction shows while `tick < endTick`.
         public var endTick: UInt64
+        public var occurrence: ClipOccurrence
     }
 
     /// A defeated enemy held on screen for its defeat clip after it has left
@@ -106,11 +107,19 @@ public struct ReactionClipTracker: Sendable {
     /// contract cannot load, so presentation degrades to state clips.
     public static let empty = ReactionClipTracker(clips: [])
 
-    /// Ticks one direction of `clip` plays for: frames ÷ fps at 60 Hz, rounded up.
-    public static func durationTicks(_ clip: ClipRecord) -> UInt64 {
-        guard clip.framesPerSecond > 0 else { return 0 }
-        let perDirection = clip.directions.isEmpty ? clip.frameIds.count : clip.frameIds.count / clip.directions.count
-        return UInt64((perDirection * 60 + clip.framesPerSecond - 1) / clip.framesPerSecond)
+    /// Selected-facing duration at 60 Hz, rounded up from exact authored timing.
+    public static func durationTicks(_ clip: ClipRecord, direction: String? = nil) -> UInt64 {
+        guard let timing = try? clip.timing(forDirection: direction ?? clip.directions.first ?? "none"),
+              let ticks = try? timing.durationTicks(at: 60) else { return 0 }
+        return ticks
+    }
+
+    private static func reaction(_ clip: ClipRecord, direction: String, tick: UInt64) -> Reaction? {
+        let duration = durationTicks(clip, direction: direction)
+        let end = tick.addingReportingOverflow(duration)
+        guard duration > 0, !end.overflow else { return nil }
+        return Reaction(clipId: clip.clipId, endTick: end.partialValue,
+                        occurrence: ClipOccurrence(direction: direction, startTick: tick))
     }
 
     /// Records the reactions `result`'s events call for.
@@ -119,7 +128,7 @@ public struct ReactionClipTracker: Sendable {
     /// `currentEnemies` the list after it. A defeated enemy may already be gone
     /// from the second, so its last position and facing are taken from
     /// whichever list still holds it, preferring the later.
-    public mutating func ingest(_ result: TickResult, previousEnemies: [EnemyBody], currentEnemies: [EnemyBody]) {
+    public mutating func ingest(_ result: TickResult, previousEnemies: [EnemyBody], currentEnemies: [EnemyBody], playerDirection: String = "s") {
         let tick = result.tick
         prune(at: tick)
         func enemy(_ id: EntityID) -> EnemyBody? {
@@ -130,13 +139,14 @@ public struct ReactionClipTracker: Sendable {
             guard let clip = transitionCommitByRole[body.archetype],
                   previousEnemies.first(where: { $0.id == body.id })?.state == .telegraph
             else { continue }
-            commits[body.id] = Reaction(clipId: clip.clipId, endTick: tick + Self.durationTicks(clip))
+            commits[body.id] = Self.reaction(clip, direction: ActorClipProjection.direction(for: body.velocity), tick: tick)
         }
         for event in result.events {
             switch event.type {
             case .entityDied:
                 guard let id = event.primaryEntityId, let body = enemy(id),
-                      let clip = defeatClipByRole[body.archetype.rawValue] else { continue }
+                      let clip = defeatClipByRole[body.archetype.rawValue],
+                      let playback = Self.reaction(clip, direction: ActorClipProjection.direction(for: body.velocity), tick: tick) else { continue }
                 reactions[id] = nil
                 commits[id] = nil
                 remains[id] = Remains(
@@ -148,24 +158,25 @@ public struct ReactionClipTracker: Sendable {
                         role: body.archetype.rawValue,
                         silhouette: ActorSilhouette.enemy(body.archetype),
                         clipId: clip.clipId,
-                        direction: ActorClipProjection.direction(for: body.velocity)
+                        direction: playback.occurrence.direction,
+                        heldClipOccurrence: playback.occurrence
                     ),
-                    endTick: tick + Self.durationTicks(clip)
+                    endTick: playback.endTick
                 )
             case .entityDamaged:
                 // Cameras take entityDamaged too; they are not enemies and are
                 // skipped by the lookup. A killing blow shows defeat, not hurt.
                 guard let id = event.primaryEntityId, !died.contains(id), let body = enemy(id),
                       let clip = hurtClipByRole[body.archetype.rawValue] else { continue }
-                reactions[id] = Reaction(clipId: clip.clipId, endTick: tick + Self.durationTicks(clip))
+                reactions[id] = Self.reaction(clip, direction: ActorClipProjection.direction(for: body.velocity), tick: tick)
             case .playerDamaged:
                 if let source = event.secondaryEntityId, !died.contains(source), let body = enemy(source),
                    let commit = contactCommitByRole[body.archetype.rawValue]
                 {
-                    commits[source] = Reaction(clipId: commit.clipId, endTick: tick + Self.durationTicks(commit))
+                    commits[source] = Self.reaction(commit, direction: ActorClipProjection.direction(for: body.velocity), tick: tick)
                 }
                 guard let clip = playerHurtClip else { continue }
-                playerReaction = Reaction(clipId: clip.clipId, endTick: tick + Self.durationTicks(clip))
+                playerReaction = Self.reaction(clip, direction: playerDirection, tick: tick)
             default:
                 continue
             }
@@ -175,9 +186,20 @@ public struct ReactionClipTracker: Sendable {
     /// Writes the reactions active at `snapshot.tick` into it.
     public func apply(to snapshot: inout PresentationSnapshot) {
         let tick = snapshot.tick
+        snapshot.playerReactionClipId = nil
+        snapshot.playerReactionOccurrence = nil
         for index in snapshot.enemies.indices {
+            if snapshot.enemies[index].heldClipOccurrence != nil {
+                snapshot.enemies[index].clipId = snapshot.enemies[index].fallbackClipId
+            }
+            snapshot.enemies[index].reactionClipId = nil
+            snapshot.enemies[index].reactionOccurrence = nil
+            snapshot.enemies[index].heldClipOccurrence = nil
+            snapshot.enemies[index].fallbackClipId = nil
             if let commit = commits[snapshot.enemies[index].id], commit.endTick > tick {
+                snapshot.enemies[index].fallbackClipId = snapshot.enemies[index].clipId
                 snapshot.enemies[index].clipId = commit.clipId
+                snapshot.enemies[index].heldClipOccurrence = commit.occurrence
             }
             let sprite = snapshot.enemies[index]
             guard let reaction = reactions[sprite.id], reaction.endTick > tick,
@@ -185,6 +207,7 @@ public struct ReactionClipTracker: Sendable {
                   mayInterrupt(sprite.clipId, with: clip)
             else { continue }
             snapshot.enemies[index].reactionClipId = reaction.clipId
+            snapshot.enemies[index].reactionOccurrence = reaction.occurrence
         }
         snapshot.defeated = remains.values
             .filter { $0.endTick > tick }
@@ -195,6 +218,7 @@ public struct ReactionClipTracker: Sendable {
            mayInterrupt(snapshot.playerClipId, with: clip)
         {
             snapshot.playerReactionClipId = reaction.clipId
+            snapshot.playerReactionOccurrence = reaction.occurrence
         }
     }
 

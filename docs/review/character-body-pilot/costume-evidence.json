@@ -1,0 +1,221 @@
+{
+  "mutation": {
+    "ok": true,
+    "operation": {
+      "id": "ss-body-costume-03",
+      "projectId": "e428d4b6-3697-4c74-ae65-78764240abde",
+      "access": "mutation",
+      "status": "succeeded",
+      "baseRevision": 4,
+      "headRevision": 5,
+      "headSceneSequence": 0,
+      "stale": true,
+      "sceneSequenceBefore": 0,
+      "sceneSequenceAfter": 0,
+      "revisionBefore": 4,
+      "revisionAfter": 5,
+      "createdAt": "2026-10-14T23:24:26.751Z",
+      "startedAt": "2026-10-14T23:24:26.781Z",
+      "finishedAt": "2026-10-14T23:24:28.207Z",
+      "result": {
+        "bodyObjects": 26,
+        "changes": [
+          "continuous weighted trousers",
+          "flatter dark knee reinforcement",
+          "shaped coat opening and rolled edges",
+          "continuous front/shoulder/back/hip strap"
+        ],
+        "sourceStatus": "pending multi-view review; not admitted"
+      },
+      "output": {
+        "stdoutTail": "Info: Saved as \"session.blend\"\n23:24:26 | INFO: Starting glTF 2.0 export\n23:24:26 | INFO: Extracting primitive: HERO_belt\n23:24:26 | INFO: Primitives created: 1\n23:24:26 | INFO: Extracting primitive: Sphere.031\n23:24:26 | INFO: Primitives created: 1\n23:24:26 | INFO: Extracting primitive: HERO_boot_L\n23:24:26 | INFO: Primitives created: 1\n23:24:26 | INFO: Extracting primitive: HERO_boot_R\n23:24:26 | INFO: Primitives created: 1\n23:24:26 | INFO: Extracting primitive: HERO_coat.001\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: HERO_coat_edge_L\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: HERO_coat_edge_R\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: HERO_crossbody_strap\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: HERO_face_shadow_shape\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: Sphere.020\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: Sphere.027\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: HERO_hood_shape\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: HERO_hood_trim_shape\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: Sphere.022\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: Sphere.029\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: Sphere.030\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: Sphere.015\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: Sleeve_L\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: Sleeve_R\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: HERO_sole_L\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: HERO_sole_R\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: Sphere.021\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: Sphere.028\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: HERO_trousers_L\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: HERO_trousers_R\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Extracting primitive: Sphere.013\n23:24:27 | INFO: Primitives created: 1\n23:24:27 | INFO: Finished glTF 2.0 export in 0.1124119758605957 s\n\n",
+        "stderrTail": "",
+        "truncated": false
+      },
+      "error": null,
+      "artifacts": {
+        "projectId": "e428d4b6-3697-4c74-ae65-78764240abde",
+        "revision": 5,
+        "blend": {
+          "size": 1532006,
+          "etag": "5091b5ba33164679cc848c373feecdbe"
+        },
+        "glb": {
+          "size": 396108,
+          "etag": "751e63a122d80c072c62f34ddf53db36"
+        },
+        "generated": []
+      },
+      "generatedArtifacts": []
+    },
+    "terminal": true,
+    "projectUrl": "https://higgsfield.ai/3d-jutsu/e428d4b6-3697-4c74-ae65-78764240abde"
+  },
+  "surfaceFit": {
+    "ok": true,
+    "operation": {
+      "id": "ss-body-strap-fit-04",
+      "projectId": "e428d4b6-3697-4c74-ae65-78764240abde",
+      "access": "mutation",
+      "status": "succeeded",
+      "baseRevision": 5,
+      "headRevision": 6,
+      "headSceneSequence": 0,
+      "stale": true,
+      "sceneSequenceBefore": 0,
+      "sceneSequenceAfter": 0,
+      "revisionBefore": 5,
+      "revisionAfter": 6,
+      "createdAt": "2026-10-14T23:26:52.882Z",
+      "startedAt": "2026-10-14T23:26:52.912Z",
+      "finishedAt": "2026-10-14T23:26:54.285Z",
+      "result": {
+        "strapVertices": 280,
+        "surfaceProjectedVertices": 271,
+        "unprojectedVertices": 9,
+        "unprojectedReason": "open front or shoulder beyond coat surface; requires visual review",
+        "sourceStatus": "not admitted"
+      },
+      "output": {
+        "stdoutTail": "Info: Saved as \"session.blend\"\n23:26:53 | INFO: Starting glTF 2.0 export\n23:26:53 | INFO: Extracting primitive: HERO_belt\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: Sphere.031\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: HERO_boot_L\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: HERO_boot_R\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: HERO_coat.001\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: HERO_coat_edge_L\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: HERO_coat_edge_R\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: HERO_crossbody_strap_surface_fit\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: HERO_face_shadow_shape\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: Sphere.020\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: Sphere.027\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: HERO_hood_shape\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: HERO_hood_trim_shape\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: Sphere.022\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: Sphere.029\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: Sphere.030\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: Sphere.015\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: Sleeve_L\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: Sleeve_R\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: HERO_sole_L\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: HERO_sole_R\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: Sphere.021\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: Sphere.028\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: HERO_trousers_L\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: HERO_trousers_R\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Extracting primitive: Sphere.013\n23:26:53 | INFO: Primitives created: 1\n23:26:53 | INFO: Finished glTF 2.0 export in 0.11362433433532715 s\n\n",
+        "stderrTail": "",
+        "truncated": false
+      },
+      "error": null,
+      "artifacts": {
+        "projectId": "e428d4b6-3697-4c74-ae65-78764240abde",
+        "revision": 6,
+        "blend": {
+          "size": 1554686,
+          "etag": "c6bc59f1a69cb71453aa92212d9b52f1"
+        },
+        "glb": {
+          "size": 419648,
+          "etag": "04f6b8075cf564a0064938692000a12b"
+        },
+        "generated": []
+      },
+      "generatedArtifacts": []
+    },
+    "terminal": true,
+    "projectUrl": "https://higgsfield.ai/3d-jutsu/e428d4b6-3697-4c74-ae65-78764240abde"
+  },
+  "frontBack": {
+    "ok": true,
+    "operation": {
+      "id": "ss-costume-front-back-01",
+      "projectId": "e428d4b6-3697-4c74-ae65-78764240abde",
+      "access": "query",
+      "status": "succeeded",
+      "baseRevision": 5,
+      "headRevision": 5,
+      "headSceneSequence": 0,
+      "stale": false,
+      "sceneSequenceBefore": 0,
+      "sceneSequenceAfter": 0,
+      "revisionBefore": 5,
+      "revisionAfter": null,
+      "createdAt": "2026-10-14T23:24:47.343Z",
+      "startedAt": "2026-10-14T23:24:47.373Z",
+      "finishedAt": "2026-10-14T23:25:49.915Z",
+      "result": {
+        "angles": [
+          0,
+          180
+        ],
+        "frame": 1,
+        "camera": "CAM_technical",
+        "rotationConvention": "rig Z rotation; fixed camera and illumination",
+        "status": "source review only"
+      },
+      "output": {
+        "stdoutTail": "",
+        "stderrTail": "",
+        "truncated": false
+      },
+      "error": null,
+      "artifacts": null,
+      "generatedArtifacts": [
+        {
+          "size": 101456,
+          "etag": "9ac9c4a84739a27b287231ccc13493af",
+          "id": "bf239c52eaf1d5dd519028549cbe4b8d",
+          "name": "costume-angle-0.png",
+          "mediaType": "image/png",
+          "width": 384,
+          "height": 384
+        },
+        {
+          "size": 100000,
+          "etag": "ff36bd74313bcb3301f0331c4988416d",
+          "id": "4dce102c80f9f63b67e80ad0c98058e1",
+          "name": "costume-angle-180.png",
+          "mediaType": "image/png",
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    "terminal": true,
+    "projectUrl": "https://higgsfield.ai/3d-jutsu/e428d4b6-3697-4c74-ae65-78764240abde"
+  },
+  "sideBack": {
+    "ok": true,
+    "operation": {
+      "id": "ss-costume-fit-review-02",
+      "projectId": "e428d4b6-3697-4c74-ae65-78764240abde",
+      "access": "query",
+      "status": "succeeded",
+      "baseRevision": 6,
+      "headRevision": 6,
+      "headSceneSequence": 0,
+      "stale": false,
+      "sceneSequenceBefore": 0,
+      "sceneSequenceAfter": 0,
+      "revisionBefore": 6,
+      "revisionAfter": null,
+      "createdAt": "2026-10-14T23:27:03.634Z",
+      "startedAt": "2026-10-14T23:27:03.664Z",
+      "finishedAt": "2026-10-14T23:28:51.691Z",
+      "result": {
+        "angles": [
+          90,
+          180
+        ],
+        "frame": 1,
+        "camera": "CAM_technical",
+        "rotationConvention": "rig Z rotation; fixed camera and illumination",
+        "status": "source review only"
+      },
+      "output": {
+        "stdoutTail": "",
+        "stderrTail": "",
+        "truncated": false
+      },
+      "error": null,
+      "artifacts": null,
+      "generatedArtifacts": [
+        {
+          "size": 99835,
+          "etag": "43e9c322387e6c9dd92c7ffa4d5932ce",
+          "id": "565cf645b146bfd55e5b5bef33196669",
+          "name": "costume-angle-180.png",
+          "mediaType": "image/png",
+          "width": 384,
+          "height": 384
+        },
+        {
+          "size": 97964,
+          "etag": "102f8004e5219d3359e673024e0582fb",
+          "id": "717db89b5d234bccb844627ad65bdda0",
+          "name": "costume-angle-90.png",
+          "mediaType": "image/png",
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    "terminal": true,
+    "projectUrl": "https://higgsfield.ai/3d-jutsu/e428d4b6-3697-4c74-ae65-78764240abde"
+  }
+}

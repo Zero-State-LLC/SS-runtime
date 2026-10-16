@@ -18,14 +18,48 @@ final class SpriteLibrary {
 
     let coverage: (backed: Int, total: Int)
 
-    init() {
-        let library = (try? ClipFrameLibrary.bundled())
+    init(frames suppliedFrames: ClipFrameLibrary? = nil) {
+        let library = suppliedFrames ?? (try? ClipFrameLibrary.bundled())
             ?? ClipFrameLibrary(clips: [:], deliveredPaths: [:])
         frames = library
         coverage = library.coverage
     }
 
     var isEmpty: Bool { coverage.backed == 0 }
+
+#if DEBUG || SS_RENDERER_TEST_SUPPORT
+    /// Isolated source-review library; never merges candidate paths into bundled delivery.
+    convenience init?(benchmarkFrames: ClipFrameLibrary, benchmarkTextures: [String: SKTexture]) {
+        let paths = Set(benchmarkFrames.deliveredPaths.values)
+        guard !paths.isEmpty, paths == Set(benchmarkTextures.keys) else { return nil }
+        self.init(frames: benchmarkFrames)
+        textures = benchmarkTextures
+    }
+
+    /// All-or-nothing camera candidate injection; timing and frame order still
+    /// come from the admitted metadata. The test bundle owns candidate images.
+    func installBenchmarkCameraFrames(_ candidates: [String: [SKTexture]]) -> Bool {
+        let required: Set<String> = ["camera_operational_idle", "camera_hit",
+            "camera_critical_enter", "camera_destroy", "camera_field_off", "camera_destroyed_idle"]
+        guard Set(candidates.keys) == required else { return false }
+        var replacements: [String: SKTexture] = [:]
+        for clip in required.sorted() {
+            guard let paths = frames.deliveredFrames(clipId: clip, direction: nil),
+                  let supplied = candidates[clip], paths.count == supplied.count,
+                  !paths.isEmpty else { return false }
+            for (path, texture) in zip(paths, supplied) { replacements[path] = texture }
+        }
+        textures.merge(replacements) { _, candidate in candidate }
+        animations.removeAll()
+        return true
+    }
+
+    /// Observe the texture selected by SpriteKit; never infer it from tick phase.
+    func deliveredPath(for texture: SKTexture) -> String? {
+        textures.keys.sorted().first { textures[$0] === texture }
+    }
+#endif
+
 
     func isBacked(clipId: String, direction: String? = nil) -> Bool {
         frames.isBacked(clipId: clipId, direction: direction)
@@ -39,6 +73,23 @@ final class SpriteLibrary {
         return texture(named: first)
     }
 
+    /// Settled appearance from the authored terminal frame, without replaying motion.
+    func lastTexture(clipId: String, direction: String? = nil) -> SKTexture? {
+        guard let paths = frames.deliveredFrames(clipId: clipId, direction: direction),
+              let last = paths.last
+        else { return nil }
+        return texture(named: last)
+    }
+
+    /// Event-driven one-shots sample the same tick phase as their lifetime tracker.
+    func texture(clipId: String, direction: String?, elapsedTicks: UInt64, reducedMotion: Bool) -> SKTexture? {
+        guard let paths = frames.deliveredFrames(clipId: clipId, direction: direction),
+              let timing = frames.timing(clipId: clipId, direction: direction),
+              timing.frameUnits.count == paths.count else { return nil }
+        let index = reducedMotion ? paths.count - 1 : timing.frameIndex(atTickOffset: elapsedTicks)
+        return texture(named: paths[index])
+    }
+
     /// A repeating or one-shot animation for a clip, at its authored frame rate.
     func animation(clipId: String, direction: String? = nil) -> SKAction? {
         let key = "\(clipId)|\(direction ?? "-")"
@@ -49,11 +100,27 @@ final class SpriteLibrary {
         let textures = paths.compactMap { texture(named: $0) }
         guard textures.count == paths.count, !textures.isEmpty else { return nil }
 
-        let perFrame = 1.0 / Double(max(1, clip.framesPerSecond))
-        let sequence = SKAction.animate(with: textures, timePerFrame: perFrame, resize: false, restore: false)
+        guard let timing = frames.timing(clipId: clipId, direction: direction),
+              timing.frameUnits.count == textures.count else { return nil }
+        guard let sequence = Self.sequence(textures: textures, timing: timing) else { return nil }
         let action = clip.loop ? SKAction.repeatForever(sequence) : sequence
         animations[key] = action
         return action
+    }
+
+    /// Shared renderer boundary for uniform and authored variable holds.
+    static func sequence(textures: [SKTexture], timing: ClipTiming) -> SKAction? {
+        guard textures.count == timing.frameUnits.count, !textures.isEmpty else { return nil }
+        let holds = timing.frameSeconds
+        let sequence: SKAction
+        if Set(timing.frameUnits).count == 1 {
+            sequence = SKAction.animate(with: textures, timePerFrame: holds[0], resize: false, restore: false)
+        } else {
+            sequence = SKAction.sequence(zip(textures, holds).map { texture, hold in
+                SKAction.animate(with: [texture], timePerFrame: hold, resize: false, restore: false)
+            })
+        }
+        return sequence
     }
 
     /// Authored anchor for a clip, as a SpriteKit unit anchor point.

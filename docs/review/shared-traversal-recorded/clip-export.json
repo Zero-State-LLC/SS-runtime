@@ -1,0 +1,35 @@
+{
+  "source": "outputs/SS-player-startup-review/shared-traversal-live.mov",
+  "clips": [
+    [
+      "standard",
+      333.92,
+      1.18
+    ],
+    [
+      "reduced",
+      336.43,
+      1.18
+    ]
+  ],
+  "crop": [
+    2112,
+    978,
+    0,
+    0
+  ],
+  "detailCrop": [
+    400,
+    840,
+    880,
+    120
+  ],
+  "retiming": "quarter PTS multiplied by four, no interpolation",
+  "alignment": "MOV creation_time is second-resolution; cuts selected from actual visible scene transition and player presence, not direct wall-time equality",
+  "limits": [
+    "trims omit unsupported idle start/end",
+    "composition-only filtered encounter",
+    "simulator system overlay visible at left",
+    "not physical device"
+  ]
+}

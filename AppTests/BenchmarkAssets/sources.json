@@ -1,0 +1,290 @@
+[
+  {
+    "source": "outputs/SS-building-repair-study.png",
+    "sourceHash": "380a47326c758b3cc86389106a9f704b7e8a86584e0d1934b7979ffbe0dbd859",
+    "sourceCrop": null,
+    "alphaCrop": [
+      551,
+      34,
+      1258,
+      841
+    ],
+    "export": "building.png",
+    "pixels": [
+      673,
+      768
+    ],
+    "sha256": "6f0d74055f2f3b785c7b74af35f37198a3df08851bf0e156f579339d3d3e6780"
+  },
+  {
+    "source": "outputs/SS-municipal-camera-sheet-v2.png",
+    "sourceHash": "257f0fa5cb35c72245cb0066c043691df2b2ce659efa06050903e00d12039fac",
+    "sourceCrop": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "alphaCrop": [
+      132,
+      33,
+      371,
+      473
+    ],
+    "export": "camera.png",
+    "pixels": [
+      256,
+      384
+    ],
+    "sha256": "502844058e956dec1c2d8b6cf4959202e1eee963a44e8136b7661807995cd4e8",
+    "registration": {
+      "canvasPixels": [
+        256,
+        384
+      ],
+      "bodyPixels": [
+        170,
+        312
+      ],
+      "pastePixels": [
+        84,
+        40
+      ],
+      "logicalCanvas": [
+        64,
+        96
+      ],
+      "logicalAnchor": [
+        32,
+        88
+      ],
+      "note": "Pole ground center visually registered; camera body preserved as single sprite."
+    }
+  },
+  {
+    "source": "/Users/appliedalchemylabs/Documents/Codex/2026-10-13/can/outputs/SS-player-registered-candidates/south-registered-256.png",
+    "export": "player-south.png",
+    "sha256": "0f2af941bdc5eed06239a3d7e10ac823c0b6878734347bebdbfb43120a63fd4c",
+    "pixels": [
+      256,
+      256
+    ]
+  },
+  {
+    "source": "/Users/appliedalchemylabs/Documents/Codex/2026-10-13/can/outputs/SS-player-registered-candidates/north-registered-256.png",
+    "export": "player-north.png",
+    "sha256": "4775a0d6a7a19f6761a3d499e568197867e80f9fb05628527d2c993fc2ab6b66",
+    "pixels": [
+      256,
+      256
+    ]
+  },
+  {
+    "source": "/Users/appliedalchemylabs/Documents/Codex/2026-10-13/can/outputs/SS-player-registered-candidates/east-registered-256.png",
+    "export": "player-east.png",
+    "sha256": "adbae2a5d422cd26eec9e25ba7603a4b899bb7207ec5175135345a6d2368ad19",
+    "pixels": [
+      256,
+      256
+    ]
+  },
+  {
+    "source": "/Users/appliedalchemylabs/Documents/Codex/2026-10-13/can/outputs/SS-player-registered-candidates/west-registered-256.png",
+    "export": "player-west.png",
+    "sha256": "c67dde4392e4d019eab4f9934015a5c0f45d4bc202c4efaf8638d1a10b55083f",
+    "pixels": [
+      256,
+      256
+    ]
+  },
+  {
+    "source": "/Users/appliedalchemylabs/.codex/generated_images/01a137ae-17b7-7103-897c-17913923752e/exec-35cb5d32-a337-47fb-9a02-d7eae1a52fb7.png",
+    "sourceHash": "5f37e00ce1018445cc5c792db7d9aed11b325676f8d7a88450452bc615a81fd4",
+    "alphaCrop": [
+      134,
+      61,
+      862,
+      1541
+    ],
+    "alphaRemap": "0 through 32;255 from240; linear between",
+    "export": "newsbox.png",
+    "pixels": [
+      378,
+      768
+    ],
+    "sha256": "a05de0ea875e599ebbf6d2ca29a657d17b01795e6670ab1594896827d8c6f0da"
+  },
+  {
+    "source": "/Users/appliedalchemylabs/.codex/generated_images/01a137ae-17b7-7103-897c-17913923752e/exec-ab2d56a0-4aba-4f30-9c70-a22001b17692.png",
+    "sourceHash": "d35318688d047141ab494a226f6bd85393f6096565799870f203f964bd0f4fa0",
+    "alphaCrop": [
+      101,
+      59,
+      935,
+      1470
+    ],
+    "alphaRemap": "0 through 32;255 from240; linear between",
+    "export": "tree.png",
+    "pixels": [
+      454,
+      768
+    ],
+    "sha256": "f002a45f3d30f669d410f6fbcc1785284fce22368b834dc261821e31ad4426b6"
+  },
+  {
+    "source": "outputs/SS-camera-state-study/source.png",
+    "sourceHash": "1177d7a6f75d7913016f94f6c3b99662a551ae2660b31584e70b9eea52815854",
+    "export": "camera-state-intact.png",
+    "pixels": [
+      256,
+      384
+    ],
+    "sha256": "aa437f0eac9593fab43e0f2b7317a856fd99c1294821e06f1c95dda09dbedb1f",
+    "registration": {
+      "state": "intact",
+      "sourceCell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "sourceBaseAnchor": [
+        235.5,
+        692
+      ],
+      "scale": 0.47416413373860183,
+      "canvasPixels": [
+        256,
+        384
+      ],
+      "logicalCanvas": [
+        64,
+        96
+      ],
+      "logicalAnchor": [
+        32,
+        88
+      ],
+      "alphaRemap": "<=32 zero, >=240 opaque, linear between",
+      "sha256": "aa437f0eac9593fab43e0f2b7317a856fd99c1294821e06f1c95dda09dbedb1f",
+      "lowerPoleBaseDifferentMaskPixels": 0
+    }
+  },
+  {
+    "source": "outputs/SS-camera-state-study/source.png",
+    "sourceHash": "1177d7a6f75d7913016f94f6c3b99662a551ae2660b31584e70b9eea52815854",
+    "export": "camera-state-damaged.png",
+    "pixels": [
+      256,
+      384
+    ],
+    "sha256": "dfc4f40eec4303c1836ffce056ab8aaa979bf1d385b65816a7087e63e149ad96",
+    "registration": {
+      "state": "damaged",
+      "sourceCell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "sourceBaseAnchor": [
+        214.5,
+        692
+      ],
+      "scale": 0.47416413373860183,
+      "canvasPixels": [
+        256,
+        384
+      ],
+      "logicalCanvas": [
+        64,
+        96
+      ],
+      "logicalAnchor": [
+        32,
+        88
+      ],
+      "alphaRemap": "<=32 zero, >=240 opaque, linear between",
+      "sha256": "dfc4f40eec4303c1836ffce056ab8aaa979bf1d385b65816a7087e63e149ad96",
+      "lowerPoleBaseDifferentMaskPixels": 67
+    }
+  },
+  {
+    "source": "outputs/SS-camera-state-study/source.png",
+    "sourceHash": "1177d7a6f75d7913016f94f6c3b99662a551ae2660b31584e70b9eea52815854",
+    "export": "camera-state-critical.png",
+    "pixels": [
+      256,
+      384
+    ],
+    "sha256": "b24234d6a58659700539415e5b0e4b930a928ff6f491e082110d19d1ca96a962",
+    "registration": {
+      "state": "critical",
+      "sourceCell": [
+        1024,
+        0,
+        1536,
+        768
+      ],
+      "sourceBaseAnchor": [
+        193.0,
+        692
+      ],
+      "scale": 0.47416413373860183,
+      "canvasPixels": [
+        256,
+        384
+      ],
+      "logicalCanvas": [
+        64,
+        96
+      ],
+      "logicalAnchor": [
+        32,
+        88
+      ],
+      "alphaRemap": "<=32 zero, >=240 opaque, linear between",
+      "sha256": "b24234d6a58659700539415e5b0e4b930a928ff6f491e082110d19d1ca96a962",
+      "lowerPoleBaseDifferentMaskPixels": 29
+    }
+  },
+  {
+    "source": "outputs/SS-camera-state-study/source.png",
+    "sourceHash": "1177d7a6f75d7913016f94f6c3b99662a551ae2660b31584e70b9eea52815854",
+    "export": "camera-state-destroyed.png",
+    "pixels": [
+      256,
+      384
+    ],
+    "sha256": "b9e56b70624e7714f11c417b453d51fe4f57bce073e920b5392ab879999d9af9",
+    "registration": {
+      "state": "destroyed",
+      "sourceCell": [
+        1536,
+        0,
+        2048,
+        768
+      ],
+      "sourceBaseAnchor": [
+        172.0,
+        692
+      ],
+      "scale": 0.47416413373860183,
+      "canvasPixels": [
+        256,
+        384
+      ],
+      "logicalCanvas": [
+        64,
+        96
+      ],
+      "logicalAnchor": [
+        32,
+        88
+      ],
+      "alphaRemap": "<=32 zero, >=240 opaque, linear between",
+      "sha256": "b9e56b70624e7714f11c417b453d51fe4f57bce073e920b5392ab879999d9af9",
+      "lowerPoleBaseDifferentMaskPixels": 27
+    }
+  }
+]

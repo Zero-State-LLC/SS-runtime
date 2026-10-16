@@ -1,12 +1,12 @@
 import SpriteKit
 import SurveillanceCore
 import UIKit
-#if DEBUG
 import os
-#endif
 
 final class GameSession {
     private(set) var simulation: Simulation
+    /// Exact post-collision travel, presentation-only; whole-unit counters lose slow analog motion.
+    private var playerMovedLastStep: Bool?
     private var cameraHUD = CameraHUDProjector()
     private var heatCaption = HeatCaptionProjector()
     /// D-083 heat caption, derived from the tick's events; nil when none shows.
@@ -45,6 +45,11 @@ final class GameSession {
     /// order, so a successful run can be stored and replayed as the ghost.
     /// Written after each step; never read back into the simulation.
     private(set) var commandLog: [PlayerCommand] = []
+    var damageDiagnosticsEnabled = false
+    var damageViewCenter: VecQ8?
+    private(set) var damageDiagnostics: [DamageDiagnostic] = []
+    private(set) var droppedDamageDiagnostics = 0
+    private(set) var latestDamageDiagnostics: [DamageDiagnostic] = []
     /// True once a debug scenario has written authoritative state directly.
     /// Such a run cannot be replayed from its commands, so it is never stored
     /// as a best.
@@ -53,13 +58,34 @@ final class GameSession {
     /// the simulation.
     private(set) var feel = FeelPassPresenter()
 
+    init(simulation: Simulation) { self.simulation = simulation }
+
     init(seed: UInt64 = 1) {
         simulation = try! Simulation.make(seed: seed)
     }
 
+#if DEBUG
+    // Opt-in coarse diagnostics only. No clocks or sample accumulation when disabled.
+    var benchmarkStepTimingEnabled = false
+    private(set) var benchmarkStepTimings: [String: Double] = [:]
+#endif
+
     func step() {
+#if DEBUG
+        var stageStart = benchmarkStepTimingEnabled ? CFAbsoluteTimeGetCurrent() : 0
+        var stageTimes: [String: Double] = [:]
+        func markStage(_ name: String) {
+            guard benchmarkStepTimingEnabled else { return }
+            let now = CFAbsoluteTimeGetCurrent()
+            stageTimes[name] = now - stageStart
+            stageStart = now
+        }
+        defer { if benchmarkStepTimingEnabled { benchmarkStepTimings = stageTimes } }
+#endif
         let tick = simulation.state.tick + 1
+        let diagnosticBefore = damageDiagnosticsEnabled ? simulation.state : nil
         let enemiesBefore = simulation.state.enemies
+        let playerPositionBefore = simulation.state.player.position
         feel.willStep(simulation.state)
         let result: TickResult
         var command: PlayerCommand?
@@ -82,14 +108,42 @@ final class GameSession {
                 dodgePressed: dodgePressed
             )
         }
+#if DEBUG
+        markStage("commandAndFeelBefore")
+#endif
         result = simulation.step(command: command)
+#if DEBUG
+        markStage("simulation")
+#endif
+        if simulation.state.tick == tick {
+            playerMovedLastStep = simulation.state.player.position != playerPositionBefore
+        }
         lastEvents = result.events
+        latestDamageDiagnostics = diagnosticBefore.map {
+            DamageDiagnostic.capture(before: $0, after: simulation.state, events: result.events)
+        } ?? []
+        for index in latestDamageDiagnostics.indices {
+            latestDamageDiagnostics[index].viewCenterBefore = damageViewCenter.map(DamageDiagnostic.Point.init)
+        }
+        damageDiagnostics.append(contentsOf: latestDamageDiagnostics)
+        if damageDiagnostics.count > 512 {
+            let excess = damageDiagnostics.count - 512
+            droppedDamageDiagnostics += excess
+            damageDiagnostics.removeFirst(excess)
+        }
         // Log only a command the simulation consumed: one that advanced the
         // tick. A held upgrade gate and a finished run do not advance.
         if let command, simulation.state.tick == tick {
             commandLog.append(command)
         }
-        reactions.ingest(result, previousEnemies: enemiesBefore, currentEnemies: simulation.state.enemies)
+#if DEBUG
+        markStage("diagnosticsAndCommandLog")
+#endif
+        reactions.ingest(result, previousEnemies: enemiesBefore, currentEnemies: simulation.state.enemies,
+                         playerDirection: ClipFrameLibrary.direction(forFacing: simulation.state.player.facing))
+#if DEBUG
+        markStage("reactions")
+#endif
         applyCameraHUD(result)
         lastHeatReinforcements = HeatCaptionProjector.reinforcements(
             events: result.events,
@@ -104,11 +158,23 @@ final class GameSession {
         )
         quietFrame = quietApproach.project(tick: result.tick, events: result.events, state: simulation.state)
         feel.didStep(events: result.events, enemiesBefore: enemiesBefore, state: simulation.state)
+#if DEBUG
+        markStage("hudCaptionsQuietFeel")
+#endif
         applyAudio(result)
         audio = feel.decorate(audio)
         captionBoard.ingest(tick: result.tick, cues: audio.captionCues)
-        awarenessHintCopy = awarenessHint.project(PresentationSnapshot(simulation.state))
+#if DEBUG
+        markStage("audioAndCaptionBoard")
+#endif
+        awarenessHintCopy = awarenessHint.project(simulation.state)
+#if DEBUG
+        markStage("awarenessSnapshotAndHint")
+#endif
         persistTerminalReceiptIfNeeded()
+#if DEBUG
+        markStage("terminalReceipt")
+#endif
     }
 
     private func persistTerminalReceiptIfNeeded() {
@@ -120,7 +186,11 @@ final class GameSession {
 
     func restartRun(seed: UInt64 = 1) {
         simulation = try! Simulation.make(seed: seed)
+        playerMovedLastStep = nil
         commandLog = []
+        damageDiagnostics = []
+        latestDamageDiagnostics = []
+        droppedDamageDiagnostics = 0
         lastEvents = []
         scenarioSeeded = false
         terminalReceiptStored = false
@@ -179,6 +249,7 @@ final class GameSession {
         let seeded = simulation.debug_seedScenario(scenario)
         if seeded {
             scenarioSeeded = true
+            playerMovedLastStep = nil
             feel.observe(simulation.state)
         }
         return seeded
@@ -187,20 +258,78 @@ final class GameSession {
 
     var snapshot: PresentationSnapshot {
         var snapshot = PresentationSnapshot(simulation.state)
+        if let moved = playerMovedLastStep,
+           snapshot.playerClipId == "player_idle" || snapshot.playerClipId == "player_move" {
+            snapshot.playerClipId = moved ? "player_move" : "player_idle"
+        }
+        snapshot.combatFeedback = simulation.combatFeedback
         reactions.apply(to: &snapshot)
         return snapshot
     }
 }
 
 final class GameScene: SKScene {
-    let session = GameSession()
+    let session: GameSession
+    override init(size: CGSize) {
+        session = GameSession()
+        super.init(size: size)
+    }
+    init(size: CGSize, session: GameSession) {
+        self.session = session
+        super.init(size: size)
+    }
+    required init?(coder: NSCoder) {
+        session = GameSession()
+        super.init(coder: coder)
+    }
+    let upgradeSelection = UpgradeSelectionModel()
+    private let combatFeedbackRenderer = CombatFeedbackRenderer()
     private let instrumentation = RunInstrumentation()
     private let deviceRunTracker = DeviceRunTracker()
     private var terminalEvidenceStored = false
     private let renderer = WorldRenderer()
+#if DEBUG
+    /// Optional evidence sink; no recording or allocation in ordinary play.
+    var benchmarkPlaybackObserver: ((TimeInterval, PresentationSnapshot, VecQ8,
+        WorldRenderer.PlayerPlaybackObservation, CGPoint) -> Void)?
+
+    /// BP-007 review parameter; ordinary frame callbacks retain the baseline.
+    func refreshBenchmarkOutlines(samplingScale: Int) {
+        renderer.syncOutlines(samplingScale: samplingScale)
+    }
+    func setBenchmarkFieldContrast(_ style: WorldRenderer.BenchmarkFieldContrast) {
+        renderer.benchmarkFieldContrast = style
+    }
+
+    /// Re-present the same authoritative snapshot for a paused visual comparison.
+    func refreshBenchmarkPresentation(reducedMotion: Bool) {
+        renderer.render(session.snapshot, reducedMotion: reducedMotion)
+    }
+
+    /// Install a complete review family once; use the same camera playback policy.
+    func installBenchmarkCameraFrames(_ frames: [String: [SKTexture]]) -> Bool {
+        renderer.installBenchmarkCameraFrames(frames)
+    }
+
+    /// Composition fixture only: no mutation of the simulation or collision map.
+    func renderBenchmark(snapshot: PresentationSnapshot, art: BenchmarkReviewArt, center: CGPoint) {
+        renderer.installBenchmarkArt(art)
+        renderer.render(snapshot, reducedMotion: true)
+        cameraNode.position = center
+        introOverlay.node.isHidden = true
+        hud.render(snapshot, cameraHUD: session.cameraHUDProjection, paused: false)
+    }
+#endif
+
     /// D-088: effects, hit-stop, and shake. Presentation only.
     private let vfx = VFXRenderer()
     private let cameraNode = SKCameraNode()
+    private var cameraFollow = CameraFollow()
+    private var lastDisplayTime: TimeInterval?
+    private var displayDelta: TimeInterval = 1.0 / 60
+    private let qaEnabled = ProcessInfo.processInfo.arguments.contains("-SSQA")
+    private var qaFrames = 0
+    private static let qaLog = Logger(subsystem: "com.zer0state.surveillancesurvivor", category: "device-qa")
     private let hud = HUDRenderer()
     /// D-094 Lockdown tint: world layer only, under the HUD.
     private let lockdownTint = LockdownTintLayer()
@@ -259,12 +388,14 @@ final class GameScene: SKScene {
 #endif
 
     override func didMove(to view: SKView) {
+        session.damageDiagnosticsEnabled = qaEnabled
         backgroundColor = .init(red: 0.055, green: 0.075, blue: 0.10, alpha: 1)
         view.preferredFramesPerSecond = 60
         view.ignoresSiblingOrder = true
         size = CGSize(width: CGFloat(PresentationCamera.visibleWidth), height: CGFloat(PresentationCamera.visibleHeight))
         scaleMode = .aspectFit
         addChild(renderer.root)
+        renderer.root.addChild(combatFeedbackRenderer.root)
         addChild(cameraNode)
         camera = cameraNode
         cameraNode.addChild(lockdownTint.node)
@@ -400,6 +531,8 @@ final class GameScene: SKScene {
 
     func setPaused(_ paused: Bool) {
         runPaused = paused
+        renderer.root.isPaused = paused
+        lastDisplayTime = nil
         // Input must not survive a pause boundary.
         //
         // Pause is reached by tapping the Pause control while the other hand may
@@ -413,7 +546,16 @@ final class GameScene: SKScene {
     }
 
     override func update(_ currentTime: TimeInterval) {
+        displayDelta = lastDisplayTime.map { max(0, currentTime - $0) } ?? 1.0 / 60
+        lastDisplayTime = currentTime
         instrumentation.frameTimes.recordFrame(timestamp: currentTime)
+        if qaEnabled {
+            qaFrames += 1
+            if qaFrames % 300 == 0 {
+                let summary = instrumentation.frameTimes.summarize()
+                Self.qaLog.notice("QA device=\(DeviceTelemetrySample.hardwareModel, privacy: .public) tick=\(self.currentTick, privacy: .public) n=\(summary.sampleCount, privacy: .public) p50=\(summary.p50Ms, privacy: .public) p95=\(summary.p95Ms, privacy: .public) p99=\(summary.p99Ms, privacy: .public) worst=\(summary.worstMs, privacy: .public)")
+            }
+        }
         guard !runPaused else { return }
         // D-088 hit-stop: a frozen frame neither steps the simulation nor
         // redraws the world. No tick, no command, so no digest change.
@@ -427,19 +569,10 @@ final class GameScene: SKScene {
 #if DEBUG
         if autopilot != nil {
             let snapshot = session.snapshot
-            // The upgrade gate is a hard blocker: the simulation refuses to
-            // advance until a valid choice arrives. Reach it the way a finger
-            // does, through the real hit test, so the gate is actually proven.
-            if snapshot.upgradePending, session.pendingUpgradeChoice == nil {
-                if let projector,
-                   let tap = autopilot!.upgradeTapPoint(projector: projector, hud: hud),
-                   let choice = hud.upgradeCardIndex(atPoints: tap, projector: projector)
-                {
-                    session.pendingUpgradeChoice = choice
-                    Self.autopilotLog.notice("upgrade tap at \(tap.debugDescription, privacy: .public) -> index \(choice, privacy: .public)")
-                } else {
-                    Self.autopilotLog.error("upgrade overlay open but no card was hit — gate is stuck")
-                }
+            // Harness uses the same validated action as the SwiftUI buttons.
+            // This is action coverage, not evidence of UI hit testing.
+            if snapshot.upgradePending {
+                chooseUpgrade(autopilot!.upgradeChoice.selectionIndex)
             }
             let steer = autopilot!.command(snapshot)
             session.moveX = steer.moveX
@@ -471,7 +604,19 @@ final class GameScene: SKScene {
 #else
         applyController()
 #endif
+        if qaEnabled {
+            session.damageViewCenter = VecQ8(
+                x: Q8(raw: Int64((cameraNode.position.x * CGFloat(Q8.scale)).rounded())),
+                y: Q8(raw: Int64((cameraNode.position.y * CGFloat(Q8.scale)).rounded())))
+        }
         session.step()
+        if qaEnabled {
+            for hit in session.latestDamageDiagnostics {
+                if let data = try? JSONEncoder().encode(hit), let line = String(data: data, encoding: .utf8) {
+                    Self.qaLog.notice("QA_DAMAGE \(line, privacy: .public)")
+                }
+            }
+        }
         // D-097: the takedown's hit-stop and ring, after the step that made it.
         vfx.takedown(targets: session.feel.lastTakedowns)
 #if DEBUG
@@ -509,6 +654,13 @@ final class GameScene: SKScene {
     override func didEvaluateActions() {
         super.didEvaluateActions()
         renderer.syncOutlines()
+#if DEBUG
+        if let observer = benchmarkPlaybackObserver,
+           let observed = renderer.observePlayerPlayback() {
+            observer(lastDisplayTime ?? 0, session.snapshot,
+                session.simulation.state.player.position, observed, cameraNode.position)
+        }
+#endif
     }
 
     private func applyController() {
@@ -521,10 +673,24 @@ final class GameScene: SKScene {
     private func persistDeviceEvidenceIfNeeded() {
         guard !terminalEvidenceStored, session.simulation.state.outcome != .playing else { return }
         terminalEvidenceStored = true
+        if qaEnabled {
+            let report = DamageDiagnosticRun(seed: session.simulation.state.seed,
+                device: DeviceTelemetrySample.hardwareModel, droppedRecords: session.droppedDamageDiagnostics,
+                damage: session.damageDiagnostics, commands: session.commandLog.map(DamageDiagnosticRun.Command.init))
+            do {
+                let directory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask,
+                                                           appropriateFor: nil, create: true)
+                let url = directory.appendingPathComponent("SS-damage-QA-latest.json")
+                try JSONEncoder().encode(report).write(to: url, options: .atomic)
+                Self.qaLog.notice("QA_DAMAGE_EXPORT \(url.lastPathComponent, privacy: .public)")
+            } catch {
+                Self.qaLog.error("QA_DAMAGE_EXPORT failed: \(String(describing: error), privacy: .public)")
+            }
+        }
         deviceRunTracker.noteTerminalOutcome(session.simulation.state.outcome)
         let snapshot = instrumentation.evidence()
         let deviceEvidence = snapshot.makeDeviceRunEvidence(
-            deviceClass: "iPhone 12",
+            deviceClass: DeviceTelemetrySample.hardwareModel,
             consecutiveCompleteRuns: deviceRunTracker.consecutiveCompleteRuns,
             atlasMemoryBytes: nil
         )
@@ -685,6 +851,9 @@ final class GameScene: SKScene {
         loadGhost()
         soundEngine.reset()
         renderer.reset()
+        combatFeedbackRenderer.reset()
+        cameraFollow.reset()
+        lastDisplayTime = nil
         lockdownTint.reset()
         court.reset()
         vfx.reset()
@@ -700,6 +869,24 @@ final class GameScene: SKScene {
         controller.reset()
         terminalEvidenceStored = false
         redraw()
+    }
+
+    /// Sole UI selection boundary: accepts once, with neutral movement.
+    @discardableResult
+    func chooseUpgrade(_ index: UInt8) -> Bool {
+        guard session.simulation.state.upgrade.pending,
+              session.pendingUpgradeChoice == nil,
+              upgradeSelection.submit(index) else { return false }
+        clearGameplayInput()
+        session.pendingUpgradeChoice = index
+        return true
+    }
+
+    private func clearGameplayInput() {
+        controller.reset()
+        session.moveX = 0
+        session.moveY = 0
+        session.dodgePressed = false
     }
 
     // MARK: - Input
@@ -736,12 +923,8 @@ final class GameScene: SKScene {
             }
             return true
         }
-        if snap.upgradePending {
-            if let choice = hud.upgradeCardIndex(atPoints: point, projector: projector) {
-                session.pendingUpgradeChoice = choice
-            }
-            return false
-        }
+        // SwiftUI owns the protected selection surface. World taps are inert.
+        if snap.upgradePending || runPaused { return true }
         if controller.began(token: token, atPoints: point, layout: hud.controlLayout ?? .empty) == .pause {
             onPauseRequested?()
         }
@@ -756,6 +939,7 @@ final class GameScene: SKScene {
     }
 
     func moveTouch(token: TouchController.TouchToken, toPoints point: CGPoint) {
+        guard !session.simulation.state.upgrade.pending, !runPaused else { return }
         guard let layout = hud.controlLayout else { return }
         controller.moved(token: token, toPoints: point, layout: layout)
     }
@@ -873,6 +1057,8 @@ final class GameScene: SKScene {
     private func redraw() {
         presentationFrame &+= 1
         var snap = session.snapshot
+        if snap.upgradePending && !upgradeSelection.isPresented { clearGameplayInput() }
+        upgradeSelection.synchronize(pending: snap.upgradePending)
         // D-098: during the intro a Camera's field is drawn only once it has
         // powered on. Presentation copy of the snapshot; state is untouched.
         if let intro, !intro.isFinished {
@@ -880,7 +1066,13 @@ final class GameScene: SKScene {
                 snap.cameras[index].fieldVisible = false
             }
         }
-        cameraNode.position = vfx.cameraPosition(base: CGPoint(x: snap.camera.center.x, y: snap.camera.center.y))
+        cameraFollow.update(
+            player: VecI(x: snap.player.x, y: snap.player.y),
+            heading: session.simulation.state.player.facing,
+            bounds: snap.arenaBounds,
+            deltaTime: displayDelta
+        )
+        cameraNode.position = vfx.cameraPosition(base: CGPoint(x: cameraFollow.x ?? 0, y: cameraFollow.y ?? 0))
         nearMissEdges.update(
             snap,
             nearMiss: session.feel.nearMiss,
@@ -896,6 +1088,7 @@ final class GameScene: SKScene {
             reducedMotion: settings.vfx.reducedMotion,
             ghost: ghostPresentation(liveTick: snap.tick)
         )
+        combatFeedbackRenderer.update(snap, events: session.lastEvents, settings: settings.vfx)
         vfx.render(snap)
         lockdownTint.update(snap, settings: settings.vfx)
         court.update(snap, settings: settings.vfx)

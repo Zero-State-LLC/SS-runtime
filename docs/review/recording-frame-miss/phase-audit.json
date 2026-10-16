@@ -1,0 +1,41 @@
+{
+  "status": "PHASE_FORMULA_MATCHES_OBSERVATIONS_DISPLAY_CALLBACKS_MISS_ALL_FRAME_15_OPPORTUNITIES",
+  "scope": "recorded full-input standard-motion distance-phase candidate, 120-tick route",
+  "records": 103,
+  "movingRecords": 80,
+  "missingFrames": [
+    15
+  ],
+  "phaseMismatches": [],
+  "missingFrameTickOpportunities": {
+    "15": [
+      30,
+      60,
+      90,
+      120
+    ]
+  },
+  "bracketingObservedTicks": [
+    {
+      "tick": 30,
+      "before": 29,
+      "after": 31
+    },
+    {
+      "tick": 60,
+      "before": 59,
+      "after": 61
+    },
+    {
+      "tick": 90,
+      "before": 89,
+      "after": 91
+    },
+    {
+      "tick": 120,
+      "before": 119,
+      "after": 121
+    }
+  ],
+  "causeBoundary": "Establishes skipped display observations, not initiating CPU/GPU/recording bottleneck. Does not justify source art or timing changes."
+}

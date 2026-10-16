@@ -1,0 +1,664 @@
+{
+  "_type": {
+    "_name": "ActionTestSummary",
+    "_supertype": {
+      "_name": "ActionTestSummaryIdentifiableObject",
+      "_supertype": {
+        "_name": "ActionAbstractTestSummary"
+      }
+    }
+  },
+  "activitySummaries": {
+    "_type": {
+      "_name": "Array"
+    },
+    "_values": [
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-shared-scene-integrity-3_0_3671124D-5816-4E90-B5B2-6AF6D9C3CC43.png"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-shared-scene-integrity-3"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~x9Fw_Cc61p2k1XIOY2vxT0t65o2SCTMe-1Jf2iQsxiHUHCq5WhrFLH3nlB1GQI37lfn9SBs9GHsMjlEf02-LEg=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "1217883"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T22:02:22.325-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.png"
+              },
+              "userInfo": {
+                "_type": {
+                  "_name": "SortedKeyValueArray"
+                },
+                "storage": {
+                  "_type": {
+                    "_name": "Array"
+                  },
+                  "_values": [
+                    {
+                      "_type": {
+                        "_name": "SortedKeyValueArrayPair"
+                      },
+                      "key": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "Scale"
+                      },
+                      "value": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "CA7ADEB9-2E41-46FA-8759-465F5FDE38E5"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:02:22.328-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:02:22.326-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP004-shared-scene-integrity-3'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "3671124D-5816-4E90-B5B2-6AF6D9C3CC43"
+        }
+      },
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-shared-scene-integrity-2_0_30510C86-0E08-44EB-BAA0-7487F64571A6.png"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-shared-scene-integrity-2"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~NKjL5eMmVmIu8hNQ13LjjY_Cxvf_Yds380kfQw-u20tNqncr8f9mWabcFpQbMJPoTZ1ZYnxJqaFnjazbwwPmmA=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "1218468"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T22:02:22.642-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.png"
+              },
+              "userInfo": {
+                "_type": {
+                  "_name": "SortedKeyValueArray"
+                },
+                "storage": {
+                  "_type": {
+                    "_name": "Array"
+                  },
+                  "_values": [
+                    {
+                      "_type": {
+                        "_name": "SortedKeyValueArrayPair"
+                      },
+                      "key": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "Scale"
+                      },
+                      "value": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "B65BC3A3-9C38-4BD8-89CB-85D7469E3184"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:02:22.644-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:02:22.643-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP004-shared-scene-integrity-2'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "30510C86-0E08-44EB-BAA0-7487F64571A6"
+        }
+      },
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-shared-scene-integrity-1_0_F91A9F80-28E6-4394-8925-DBE5AC2FAAFF.png"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-shared-scene-integrity-1"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~Xy-ZCh2wQQ7m9F6r5Wv7WMGHbq8JKFOX8wEJ4_uk2HTnzaMROiXpC79IEAdcFnp8SrBbAqLrEkl8dBFUcXE2QQ=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "1219721"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T22:02:22.980-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.png"
+              },
+              "userInfo": {
+                "_type": {
+                  "_name": "SortedKeyValueArray"
+                },
+                "storage": {
+                  "_type": {
+                    "_name": "Array"
+                  },
+                  "_values": [
+                    {
+                      "_type": {
+                        "_name": "SortedKeyValueArrayPair"
+                      },
+                      "key": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "Scale"
+                      },
+                      "value": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "ACD441BF-677A-4227-8D5F-E4FFE6554B44"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:02:22.982-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:02:22.981-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP004-shared-scene-integrity-1'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "F91A9F80-28E6-4394-8925-DBE5AC2FAAFF"
+        }
+      },
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-shared-scene-integrity-0_0_79E4CB01-9941-4DDC-B197-0248CB3DB28E.png"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-shared-scene-integrity-0"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~E8z15k9atC1xE88F_HlMTqZ1vcL9FBnL8e2GIXXNrC9dzPkpF9nU1lEI8a2riUrp53iCms-kUhePpHPhIPnAqw=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "1201918"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T22:02:23.326-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.png"
+              },
+              "userInfo": {
+                "_type": {
+                  "_name": "SortedKeyValueArray"
+                },
+                "storage": {
+                  "_type": {
+                    "_name": "Array"
+                  },
+                  "_values": [
+                    {
+                      "_type": {
+                        "_name": "SortedKeyValueArrayPair"
+                      },
+                      "key": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "Scale"
+                      },
+                      "value": {
+                        "_type": {
+                          "_name": "String"
+                        },
+                        "_value": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "F3187ECF-D8F8-4739-867E-8ED8C4CDD563"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:02:23.327-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:02:23.326-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP004-shared-scene-integrity-0'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "79E4CB01-9941-4DDC-B197-0248CB3DB28E"
+        }
+      },
+      {
+        "_type": {
+          "_name": "ActionTestActivitySummary"
+        },
+        "activityType": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "com.apple.dt.xctest.activity-type.attachmentContainer"
+        },
+        "attachments": {
+          "_type": {
+            "_name": "Array"
+          },
+          "_values": [
+            {
+              "_type": {
+                "_name": "ActionTestAttachment"
+              },
+              "filename": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-shared-scene-record_0_0EFCEC38-8057-4B08-BBD8-38E3DE03DA44.txt"
+              },
+              "lifetime": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "keepAlways"
+              },
+              "name": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "BP004-shared-scene-record"
+              },
+              "payloadRef": {
+                "_type": {
+                  "_name": "Reference"
+                },
+                "id": {
+                  "_type": {
+                    "_name": "String"
+                  },
+                  "_value": "0~TEOz_x80XOMcp5XsgQ5UuIBaXaDfI01H9_XJcpZtrH9U42QERSIFy8X5jOpMAGKnZZ2F7bTG1gtBy9OmTN1Qew=="
+                }
+              },
+              "payloadSize": {
+                "_type": {
+                  "_name": "Int"
+                },
+                "_value": "532"
+              },
+              "timestamp": {
+                "_type": {
+                  "_name": "Date"
+                },
+                "_value": "2026-10-14T22:02:23.328-0700"
+              },
+              "uniformTypeIdentifier": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "public.plain-text"
+              },
+              "uuid": {
+                "_type": {
+                  "_name": "String"
+                },
+                "_value": "2E19EC3C-059F-4A53-8634-895A21CEF0C9"
+              }
+            }
+          ]
+        },
+        "finish": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:02:23.329-0700"
+        },
+        "start": {
+          "_type": {
+            "_name": "Date"
+          },
+          "_value": "2026-10-14T22:02:23.328-0700"
+        },
+        "title": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "Added attachment named 'BP004-shared-scene-record'"
+        },
+        "uuid": {
+          "_type": {
+            "_name": "String"
+          },
+          "_value": "0EFCEC38-8057-4B08-BBD8-38E3DE03DA44"
+        }
+      }
+    ]
+  },
+  "duration": {
+    "_type": {
+      "_name": "Double"
+    },
+    "_value": "4.639868974685669"
+  },
+  "identifier": {
+    "_type": {
+      "_name": "String"
+    },
+    "_value": "BenchmarkCaptureTests/testCaptureCompleteCameraCandidatesInSharedScene()"
+  },
+  "identifierURL": {
+    "_type": {
+      "_name": "String"
+    },
+    "_value": "test://com.apple.xcode/SSRuntime/SSRuntimeTests/BenchmarkCaptureTests/testCaptureCompleteCameraCandidatesInSharedScene"
+  },
+  "name": {
+    "_type": {
+      "_name": "String"
+    },
+    "_value": "testCaptureCompleteCameraCandidatesInSharedScene()"
+  },
+  "testStatus": {
+    "_type": {
+      "_name": "String"
+    },
+    "_value": "Success"
+  }
+}

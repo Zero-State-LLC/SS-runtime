@@ -1,0 +1,510 @@
+{
+  "scope": "Actual post-action texture identities plus source toe annotations. Not pixel tracking or video. Displacement measured in projected scene units, ground-equivalent units (inverse 0.5 Y projection; fixed toe height assumed), and camera-relative-scale output pixels with camera translation excluded. No pass threshold adopted. Partial support observations are not complete phases. Reduced Motion permits the same locomotion clip under D-069.",
+  "runs": [
+    {
+      "file": "axis-16383-reduced-false.json",
+      "records": 24,
+      "ticks": [
+        0,
+        150
+      ],
+      "inputAxis": 16383,
+      "reducedMotion": false,
+      "frames": [
+        0,
+        4,
+        6,
+        8,
+        13,
+        14,
+        15
+      ],
+      "wraps": 3,
+      "displayIntervalSeconds": {
+        "median": 0.03818633331684396,
+        "max": 0.29962949999026023
+      },
+      "candidateMissingRecords": 16,
+      "missingDuringMoveTicks": [],
+      "supportGroups": [
+        {
+          "side": "left",
+          "samples": [
+            {
+              "tick": 29,
+              "frame": 8,
+              "time": 214145.5132410417,
+              "x": 228.0,
+              "y": 315.5,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        },
+        {
+          "side": "left",
+          "samples": [
+            {
+              "tick": 56,
+              "frame": 8,
+              "time": 214145.99709458338,
+              "x": 228.0,
+              "y": 288.5,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        },
+        {
+          "side": "right",
+          "samples": [
+            {
+              "tick": 14,
+              "frame": 0,
+              "time": 214145.23231895838,
+              "x": 220.0,
+              "y": 330.5,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        }
+      ]
+    },
+    {
+      "file": "axis-32767-reduced-false.json",
+      "records": 27,
+      "ticks": [
+        0,
+        150
+      ],
+      "inputAxis": 32767,
+      "reducedMotion": false,
+      "frames": [
+        0,
+        1,
+        3,
+        8,
+        10,
+        12
+      ],
+      "wraps": 3,
+      "displayIntervalSeconds": {
+        "median": 0.040277229170897044,
+        "max": 0.32015258332830854
+      },
+      "candidateMissingRecords": 17,
+      "missingDuringMoveTicks": [],
+      "supportGroups": [
+        {
+          "side": "left",
+          "samples": [
+            {
+              "tick": 29,
+              "frame": 10,
+              "time": 214156.1243244167,
+              "x": 228.0,
+              "y": 294.0,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        },
+        {
+          "side": "left",
+          "samples": [
+            {
+              "tick": 57,
+              "frame": 10,
+              "time": 214156.62925241672,
+              "x": 228.0,
+              "y": 238.0,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        },
+        {
+          "side": "left",
+          "samples": [
+            {
+              "tick": 84,
+              "frame": 8,
+              "time": 214157.08062337505,
+              "x": 228.0,
+              "y": 176.5,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        },
+        {
+          "side": "left",
+          "samples": [
+            {
+              "tick": 113,
+              "frame": 8,
+              "time": 214157.57762112503,
+              "x": 228.0,
+              "y": 118.5,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        },
+        {
+          "side": "right",
+          "samples": [
+            {
+              "tick": 14,
+              "frame": 0,
+              "time": 214155.80417183338,
+              "x": 220.0,
+              "y": 316.5,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        },
+        {
+          "side": "right",
+          "samples": [
+            {
+              "tick": 42,
+              "frame": 1,
+              "time": 214156.33952425004,
+              "x": 220.0,
+              "y": 264.25,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        },
+        {
+          "side": "right",
+          "samples": [
+            {
+              "tick": 69,
+              "frame": 0,
+              "time": 214156.8339125417,
+              "x": 220.0,
+              "y": 206.5,
+              "scale": 3
+            },
+            {
+              "tick": 75,
+              "frame": 3,
+              "time": 214156.9232979584,
+              "x": 220.0,
+              "y": 205.75,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 2,
+          "distinctSupportFrames": 2,
+          "maxProjectedDisplacement": 0.75,
+          "maxGroundEquivalentDisplacement": 1.5,
+          "maxOutputPixelDisplacement": 2.25
+        },
+        {
+          "side": "right",
+          "samples": [
+            {
+              "tick": 99,
+              "frame": 1,
+              "time": 214157.35205450005,
+              "x": 220.0,
+              "y": 150.25,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        }
+      ]
+    },
+    {
+      "file": "axis-32767-reduced-true.json",
+      "records": 23,
+      "ticks": [
+        0,
+        150
+      ],
+      "inputAxis": 32767,
+      "reducedMotion": true,
+      "frames": [
+        0,
+        1,
+        5,
+        6,
+        9,
+        13
+      ],
+      "wraps": 3,
+      "displayIntervalSeconds": {
+        "median": 0.08047752083803061,
+        "max": 0.2998994583322201
+      },
+      "candidateMissingRecords": 13,
+      "missingDuringMoveTicks": [],
+      "supportGroups": [
+        {
+          "side": "left",
+          "samples": [
+            {
+              "tick": 28,
+              "frame": 9,
+              "time": 214152.74113245838,
+              "x": 228.0,
+              "y": 292.25,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        },
+        {
+          "side": "right",
+          "samples": [
+            {
+              "tick": 13,
+              "frame": 0,
+              "time": 214152.44123300005,
+              "x": 220.0,
+              "y": 318.5,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        },
+        {
+          "side": "right",
+          "samples": [
+            {
+              "tick": 41,
+              "frame": 0,
+              "time": 214152.95872733337,
+              "x": 220.0,
+              "y": 262.5,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        },
+        {
+          "side": "right",
+          "samples": [
+            {
+              "tick": 98,
+              "frame": 0,
+              "time": 214153.94813283338,
+              "x": 220.0,
+              "y": 148.5,
+              "scale": 3
+            },
+            {
+              "tick": 101,
+              "frame": 1,
+              "time": 214153.9931280417,
+              "x": 220.0,
+              "y": 146.25,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 2,
+          "distinctSupportFrames": 2,
+          "maxProjectedDisplacement": 2.25,
+          "maxGroundEquivalentDisplacement": 4.5,
+          "maxOutputPixelDisplacement": 6.75
+        }
+      ]
+    },
+    {
+      "file": "axis-8191-reduced-false.json",
+      "records": 16,
+      "ticks": [
+        0,
+        150
+      ],
+      "inputAxis": 8191,
+      "reducedMotion": false,
+      "frames": [
+        0,
+        1,
+        3,
+        5,
+        9,
+        10,
+        11,
+        15
+      ],
+      "wraps": 4,
+      "displayIntervalSeconds": {
+        "median": 0.3048207083484158,
+        "max": 0.9411128333304077
+      },
+      "candidateMissingRecords": 8,
+      "missingDuringMoveTicks": [],
+      "supportGroups": [
+        {
+          "side": "left",
+          "samples": [
+            {
+              "tick": 30,
+              "frame": 10,
+              "time": 214149.08524825005,
+              "x": 228.0,
+              "y": 337.0,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        },
+        {
+          "side": "left",
+          "samples": [
+            {
+              "tick": 58,
+              "frame": 11,
+              "time": 214149.60862066672,
+              "x": 228.0,
+              "y": 326.75,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        },
+        {
+          "side": "left",
+          "samples": [
+            {
+              "tick": 103,
+              "frame": 9,
+              "time": 214150.56637937506,
+              "x": 228.0,
+              "y": 296.75,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        },
+        {
+          "side": "right",
+          "samples": [
+            {
+              "tick": 15,
+              "frame": 0,
+              "time": 214148.7623691667,
+              "x": 220.0,
+              "y": 337.0,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        },
+        {
+          "side": "right",
+          "samples": [
+            {
+              "tick": 43,
+              "frame": 1,
+              "time": 214149.30379995838,
+              "x": 220.0,
+              "y": 326.75,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        },
+        {
+          "side": "right",
+          "samples": [
+            {
+              "tick": 118,
+              "frame": 3,
+              "time": 214150.88594800004,
+              "x": 220.0,
+              "y": 296.75,
+              "scale": 3
+            }
+          ],
+          "observedSupportSamples": 1,
+          "distinctSupportFrames": 1,
+          "maxProjectedDisplacement": null,
+          "maxGroundEquivalentDisplacement": null,
+          "maxOutputPixelDisplacement": null
+        }
+      ]
+    }
+  ]
+}

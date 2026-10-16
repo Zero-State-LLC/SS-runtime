@@ -1,0 +1,116 @@
+<!doctype html><meta charset="utf-8"><title>SS municipal camera — clip source review</title>
+<style>body{background:#202729;color:#eee;font:16px system-ui;max-width:1050px;margin:30px auto}button,select{font:inherit;padding:8px;margin:5px;background:#354146;color:white;border:1px solid #829194}main{display:flex;align-items:flex-end;gap:16px;padding:12px;flex-wrap:wrap;background:#30383b}img{width:256px;height:384px;object-fit:contain}#native{width:64px;height:96px}p{line-height:1.5}small{color:#bdc9cb}#status{font-variant-numeric:tabular-nums}</style>
+<h1>Municipal camera: six clip candidates</h1><p>One shared mount. Existing frame counts and timing. Source review only; runtime interruption and encounter checks remain open.</p>
+<select id="clip"></select><select id="speed"><option value="1">Normal speed</option><option value="0.25">Quarter speed</option></select><button id="play">Replay / play</button><button id="pause">Pause</button><button id="step">Next frame</button><label><input id="reduced" type="checkbox">Reduced Motion settled preview</label><label><input id="gray" type="checkbox">Grayscale</label>
+<main><div style="width:256px"><img id="large"><p>4× source</p></div><div style="width:64px"><img id="native"><p>64×96 logical size</p></div></main><p id="status"></p><small>Destroyed idle intentionally holds identical dark frames. Damage notches belong to runtime and are not baked into the art. No sweep, housing translation or added head node.</small>
+<script id="manifest" type="application/json">{
+  "status": "SOURCE_PREVIEW_NOT_RUNTIME_ADMISSION",
+  "canvasPixels": [
+    256,
+    384
+  ],
+  "logicalCanvas": [
+    64,
+    96
+  ],
+  "anchor": [
+    32,
+    88
+  ],
+  "frameCount": 16,
+  "clips": [
+    {
+      "clipId": "camera_operational_idle",
+      "fps": 6,
+      "durationNumerator": 4,
+      "durationDenominator": 6,
+      "loop": true,
+      "frames": [
+        "frames/actor_camera_operationalIdle_none_01@4x.png",
+        "frames/actor_camera_operationalIdle_none_02@4x.png",
+        "frames/actor_camera_operationalIdle_none_03@4x.png",
+        "frames/actor_camera_operationalIdle_none_04@4x.png"
+      ],
+      "reducedMotionFrame": "frames/actor_camera_operationalIdle_none_01@4x.png",
+      "uniqueDecodedFrames": 3
+    },
+    {
+      "clipId": "camera_hit",
+      "fps": 16,
+      "durationNumerator": 2,
+      "durationDenominator": 16,
+      "loop": false,
+      "frames": [
+        "frames/actor_camera_hit_none_01@4x.png",
+        "frames/actor_camera_hit_none_02@4x.png"
+      ],
+      "reducedMotionFrame": "frames/actor_camera_hit_none_02@4x.png",
+      "uniqueDecodedFrames": 2
+    },
+    {
+      "clipId": "camera_critical_enter",
+      "fps": 12,
+      "durationNumerator": 3,
+      "durationDenominator": 12,
+      "loop": false,
+      "frames": [
+        "frames/actor_camera_criticalEnter_none_01@4x.png",
+        "frames/actor_camera_criticalEnter_none_02@4x.png",
+        "frames/actor_camera_criticalEnter_none_03@4x.png"
+      ],
+      "reducedMotionFrame": "frames/actor_camera_criticalEnter_none_03@4x.png",
+      "uniqueDecodedFrames": 3
+    },
+    {
+      "clipId": "camera_destroy",
+      "fps": 12,
+      "durationNumerator": 4,
+      "durationDenominator": 12,
+      "loop": false,
+      "frames": [
+        "frames/actor_camera_destroy_none_01@4x.png",
+        "frames/actor_camera_destroy_none_02@4x.png",
+        "frames/actor_camera_destroy_none_03@4x.png",
+        "frames/actor_camera_destroy_none_04@4x.png"
+      ],
+      "reducedMotionFrame": "frames/actor_camera_destroy_none_04@4x.png",
+      "uniqueDecodedFrames": 4
+    },
+    {
+      "clipId": "camera_field_off",
+      "fps": 12,
+      "durationNumerator": 1,
+      "durationDenominator": 12,
+      "loop": false,
+      "frames": [
+        "frames/actor_camera_fieldOff_none_01@4x.png"
+      ],
+      "reducedMotionFrame": "frames/actor_camera_fieldOff_none_01@4x.png",
+      "uniqueDecodedFrames": 1
+    },
+    {
+      "clipId": "camera_destroyed_idle",
+      "fps": 4,
+      "durationNumerator": 2,
+      "durationDenominator": 4,
+      "loop": true,
+      "frames": [
+        "frames/actor_camera_destroyedIdle_none_01@4x.png",
+        "frames/actor_camera_destroyedIdle_none_02@4x.png"
+      ],
+      "reducedMotionFrame": "frames/actor_camera_destroyedIdle_none_02@4x.png",
+      "uniqueDecodedFrames": 1
+    }
+  ]
+}
+</script>
+<script>
+const data=JSON.parse(document.querySelector('#manifest').textContent),sel=document.querySelector('#clip'),speed=document.querySelector('#speed'),reduced=document.querySelector('#reduced'),large=document.querySelector('#large'),native=document.querySelector('#native');
+for(const c of data.clips){const o=document.createElement('option');o.value=c.clipId;o.textContent=c.clipId;sel.append(o)}
+let frame=0,elapsed=0,running=true,last=performance.now();
+const current=()=>data.clips.find(c=>c.clipId===sel.value);
+function show(){const c=current(),path=reduced.checked?c.reducedMotionFrame:c.frames[frame];large.src=path;native.src=path;document.querySelector('#status').textContent=`${c.clipId} · frame ${frame+1}/${c.frames.length} · ${c.durationNumerator}/${c.durationDenominator} seconds · ${c.loop?'loop':'holds terminal frame'}${reduced.checked?' · settled preview':''}`;}
+function reset(){frame=0;elapsed=0;last=performance.now();running=true;show()}
+sel.onchange=reset;speed.onchange=()=>{last=performance.now()};reduced.onchange=show;document.querySelector('#play').onclick=reset;document.querySelector('#pause').onclick=()=>running=false;document.querySelector('#step').onclick=()=>{running=false;frame=(frame+1)%current().frames.length;show()};document.querySelector('#gray').onchange=e=>document.querySelector('main').style.filter=e.target.checked?'grayscale(1)':'none';
+function tick(t){const dt=t-last;last=t;if(running&&!reduced.checked){elapsed+=dt*Number(speed.value);const c=current();let f=Math.floor(elapsed*c.fps/1000);if(c.loop)f%=c.frames.length;else if(f>=c.frames.length){f=c.frames.length-1;running=false}if(f!==frame){frame=f;show()}}requestAnimationFrame(tick)}show();requestAnimationFrame(tick);
+</script>

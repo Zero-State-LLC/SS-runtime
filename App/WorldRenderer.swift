@@ -58,9 +58,83 @@ final class WorldRenderer {
     }
 
     let root = SKNode()
+    private var reviewArt: BenchmarkReviewArt?
+    private var benchmarkCompleteCamera = false
+#if DEBUG || SS_RENDERER_TEST_SUPPORT
+    // BP-007/008 candidate registration is installed before contrast resources.
+    var benchmarkPlayerRegistration: (size: CGSize, anchor: CGPoint)?
+    var benchmarkOutlineMetrics: OutlineTextures.Metrics { outlines.metrics }
+    var benchmarkOutlineBytes: Int { outlines.retainedMaskBytes }
+    func resetBenchmarkOutlineMetrics() { outlines.resetMetrics() }
+    func prepareBenchmarkPlayerOutline(texture: SKTexture, image: CGImage, size: CGSize) -> SKTexture? {
+        outlines.outline(for: texture, faction: .player, logicalSize: size, sourceImage: image)?.texture
+    }
+    enum BenchmarkFieldContrast: String, CaseIterable {
+        case control, dark, paired
+    }
+    var benchmarkFieldContrast: BenchmarkFieldContrast = .control
+
+    private func applyBenchmarkFieldContrast(_ shape: SKShapeNode) {
+        let childName = "benchmark-field-inner"
+        guard benchmarkFieldContrast != .control else {
+            shape.strokeColor = .clear
+            shape.childNode(withName: childName)?.removeFromParent()
+            return
+        }
+        // Authored comparison widths in logical world units, not field expansion.
+        shape.strokeColor = SKColor(white: 0.08, alpha: 1)
+        shape.lineWidth = benchmarkFieldContrast == .paired ? 3 : 1.5
+        guard benchmarkFieldContrast == .paired else {
+            shape.childNode(withName: childName)?.removeFromParent()
+            return
+        }
+        let inner: SKShapeNode
+        if let existing = shape.childNode(withName: childName) as? SKShapeNode { inner = existing }
+        else {
+            inner = SKShapeNode(); inner.name = childName
+            inner.fillColor = .clear; inner.strokeColor = SKColor(white: 0.95, alpha: 1)
+            inner.lineWidth = 1; inner.zPosition = 0.1
+            shape.addChild(inner)
+        }
+        inner.path = shape.path
+    }
+
+    struct PlayerPlaybackObservation {
+        let deliveredPath: String?
+        let clipToken: String?
+        let position: CGPoint
+        let size: CGSize
+        let anchor: CGPoint
+    }
+
+    /// Call after SpriteKit evaluates actions. Nil paths explicitly identify
+    /// textures outside the admitted library, including static review art.
+    func observePlayerPlayback() -> PlayerPlaybackObservation? {
+        guard let sprite = root.childNode(withName: "//sprite-player") as? SKSpriteNode,
+              let texture = sprite.texture else { return nil }
+        return PlayerPlaybackObservation(deliveredPath: sprites.deliveredPath(for: texture),
+            clipToken: activeClips["player"], position: sprite.position,
+            size: sprite.size, anchor: sprite.anchorPoint)
+    }
+
+    /// Shares the shipping integrity/action policy, unlike the static art fixture.
+    @discardableResult
+    func installBenchmarkCameraFrames(_ frames: [String: [SKTexture]]) -> Bool {
+        guard sprites.installBenchmarkCameraFrames(frames) else { return false }
+        reset()
+        benchmarkCompleteCamera = true
+        return true
+    }
+
+    func installBenchmarkArt(_ art: BenchmarkReviewArt) {
+        reset()
+        reviewArt = art
+    }
+#endif
+
     /// Admitted clip frames. Empty until assets are admitted, in which case
     /// every actor keeps its authored blockout.
-    private let sprites = SpriteLibrary()
+    private let sprites: SpriteLibrary
     private let environment = EnvironmentTextures()
     /// The arena does not move, so the ground is tiled once.
     private var groundBuilt = false
@@ -69,6 +143,7 @@ final class WorldRenderer {
     /// Clip currently playing per actor key, so an animation is not restarted
     /// on every frame.
     private var activeClips: [String: String] = [:]
+    private var cameraPaths: [String: (CameraFieldGeometry.Key, CGPath)] = [:]
     private var layers: [Layer: SKNode] = [:]
     /// Live nodes by layer and stable key, so a key that disappears from the
     /// snapshot has its node removed rather than left on screen.
@@ -86,7 +161,8 @@ final class WorldRenderer {
     /// D-094 soft ground shadow, generated once and shared by every actor.
     private lazy var shadowTexture = Self.makeShadowTexture()
 
-    init() {
+    init(sprites: SpriteLibrary? = nil) {
+        self.sprites = sprites ?? SpriteLibrary()
         for layer in Layer.allCases {
             let node = SKNode()
             node.zPosition = CGFloat(layer.rawValue)
@@ -104,6 +180,7 @@ final class WorldRenderer {
         solidSignature = nil
         fogThinning.reset()
         activeClips = [:]
+        cameraPaths = [:]
         decorationsBuilt = false
         fogBuilt = false
         // reset() empties every layer, ground included, so the build flag has to
@@ -124,9 +201,22 @@ final class WorldRenderer {
         at position: CGPoint,
         boxWidth: CGFloat,
         boxHeight: CGFloat,
-        layer: Layer
+        layer: Layer,
+        occurrence: ClipOccurrence? = nil,
+        tick: UInt64 = 0,
+        reducedMotion: Bool = false
     ) -> Bool {
-        guard sprites.isBacked(clipId: clipId, direction: direction) else { return false }
+        let selectedDirection = occurrence?.direction ?? direction
+        if key == "player", let art = reviewArt, art.playerPresentation == .staticComposition {
+            let sprite = node(layer, "sprite-\(key)") { SKSpriteNode() } as! SKSpriteNode
+            sprite.texture = art.player
+            sprite.size = CGSize(width: 64, height: 64)
+            sprite.anchorPoint = CGPoint(x: 0.5, y: 0.125)
+            sprite.position = position
+            sprite.removeAllActions()
+            return true
+        }
+        guard sprites.isBacked(clipId: clipId, direction: selectedDirection) else { return false }
         let node = node(layer, "sprite-\(key)") { () -> SKSpriteNode in
             SKSpriteNode()
         }
@@ -137,15 +227,30 @@ final class WorldRenderer {
             boxHeight: boxHeight,
             boxWidth: boxWidth
         )
+#if DEBUG || SS_RENDERER_TEST_SUPPORT
+        if key == "player", let registration = benchmarkPlayerRegistration {
+            sprite.yScale = 1
+            sprite.size = registration.size
+            sprite.anchorPoint = registration.anchor
+        }
+#endif
         sprite.position = position
 
-        let token = "\(clipId)|\(direction ?? "-")"
+        let token = "\(clipId)|\(selectedDirection ?? "-")"
+        if let occurrence {
+            activeClips[key] = token + "|event|\(occurrence.startTick)"
+            sprite.removeAllActions()
+            sprite.texture = sprites.texture(clipId: clipId, direction: selectedDirection,
+                elapsedTicks: occurrence.elapsedTicks(at: tick), reducedMotion: reducedMotion)
+            return true
+        }
         if activeClips[key] != token {
             activeClips[key] = token
             sprite.removeAllActions()
-            if let animation = sprites.animation(clipId: clipId, direction: direction) {
+            sprite.texture = sprites.firstTexture(clipId: clipId, direction: selectedDirection)
+            if let animation = sprites.animation(clipId: clipId, direction: selectedDirection) {
                 sprite.run(animation)
-            } else if let texture = sprites.firstTexture(clipId: clipId, direction: direction) {
+            } else if let texture = sprites.firstTexture(clipId: clipId, direction: selectedDirection) {
                 sprite.texture = texture
             }
         }
@@ -159,6 +264,7 @@ final class WorldRenderer {
         seen[layer, default: []].insert(key)
         if let existing = nodes[layer]?[key] { return existing }
         let created = make()
+        if created.name == nil { created.name = key }
         nodes[layer]?[key] = created
         layers[layer]?.addChild(created)
         return created
@@ -175,6 +281,9 @@ final class WorldRenderer {
         for (key, node) in existing where !live.contains(key) {
             node.removeFromParent()
             existing.removeValue(forKey: key)
+            if layer == .actors, key.hasPrefix("sprite-") {
+                activeClips.removeValue(forKey: String(key.dropFirst(7)))
+            }
         }
         nodes[layer] = existing
     }
@@ -204,14 +313,14 @@ final class WorldRenderer {
         self.ghost = ghost
         renderGround(snap)
         renderDecorations(snap)
-        renderFog(snap, reducedMotion: reducedMotion)
+        if reviewArt == nil { renderFog(snap, reducedMotion: reducedMotion) }
         renderSolids(snap)
         renderExtraction(snap)
-        renderCameras(snap)
+        renderCameras(snap, reducedMotion: reducedMotion)
         renderTelegraphs(snap)
         renderMines(snap)
         renderSpawnSockets(snap)
-        renderActors(snap)
+        renderActors(snap, reducedMotion: reducedMotion)
         renderProjectiles(snap)
         renderMarkers(snap)
     }
@@ -241,7 +350,7 @@ final class WorldRenderer {
             while x < minX + width {
                 let centre = CGPoint(x: x + tile / 2, y: y + tile / 2)
                 let assetId = groundAssetId(at: centre, zones: snap.zones)
-                if let texture = environment.texture(assetId: assetId) {
+                if let texture = reviewArt?.paving ?? environment.texture(assetId: assetId) {
                     let node = SKSpriteNode(texture: texture, size: CGSize(width: tile, height: tile))
                     node.position = centre
                     // civic-seam-001 §5b: identical tiles read as an identical
@@ -256,13 +365,46 @@ final class WorldRenderer {
                     // Real paving changes at a kerb, so the zone boundary reads
                     // as a civic detail rather than as an artifact of
                     // rectangular zones.
-                    addSurfaceTransition(
-                        around: centre, assetId: assetId, tile: tile, snap: snap, layer: layer
-                    )
+                    if reviewArt == nil {
+                        addSurfaceTransition(
+                            around: centre, assetId: assetId, tile: tile, snap: snap, layer: layer
+                        )
+                    }
                 }
                 x += tile
             }
             y += tile
+        }
+        if let reviewArt {
+            for (index, patch) in reviewArt.groundPatches.enumerated() where patch.tileUnits > 0 {
+                let bounds = patch.bounds
+                var y = bounds.minY
+                while y < bounds.maxY {
+                    var x = bounds.minX
+                    while x < bounds.maxX {
+                        let width = min(patch.tileUnits, bounds.maxX - x)
+                        let height = min(patch.tileUnits, bounds.maxY - y)
+                        let region = CGRect(x: 0, y: 0, width: width / patch.tileUnits, height: height / patch.tileUnits)
+                        let texture = SKTexture(rect: region, in: patch.texture)
+                        texture.filteringMode = patch.texture.filteringMode
+                        let node = SKSpriteNode(texture: texture, size: CGSize(width: width, height: height))
+                        node.name = "benchmark-ground-patch-\(index)"
+                        node.position = CGPoint(x: x + width / 2, y: y + height / 2)
+                        node.zPosition = 0.1
+                        layer.addChild(node)
+                        x += patch.tileUnits
+                    }
+                    y += patch.tileUnits
+                }
+            }
+            for (index, line) in reviewArt.groundLines.enumerated() {
+                let path = CGMutablePath(); path.move(to: line.start); path.addLine(to: line.end)
+                let node = SKShapeNode(path: path)
+                node.name = "benchmark-ground-line-\(index)"
+                node.strokeColor = line.color; node.lineWidth = line.width
+                node.zPosition = 0.2
+                layer.addChild(node)
+            }
         }
         groundBuilt = true
     }
@@ -434,8 +576,19 @@ final class WorldRenderer {
     /// this only has to draw what it is told.
     private func renderDecorations(_ snap: PresentationSnapshot) {
         guard !decorationsBuilt, let layer = layers[.decorations] else { return }
+        if let reviewArt {
+            for (index, prop) in reviewArt.props.enumerated() {
+                let sprite = SKSpriteNode(texture: prop.texture, size: prop.size)
+                sprite.name = "benchmark-prop-\(index)"
+                sprite.anchorPoint = prop.anchor
+                sprite.position = prop.position
+                layer.addChild(sprite)
+            }
+            decorationsBuilt = true
+            return
+        }
         var drew = false
-        for decoration in snap.decorations {
+        for (index, decoration) in snap.decorations.enumerated() {
             guard let texture = environment.texture(assetId: decoration.assetId) else { continue }
             let scale = CGFloat(decoration.scale) / 1000
             let node = SKSpriteNode(
@@ -445,6 +598,8 @@ final class WorldRenderer {
                     height: texture.size().height * scale
                 )
             )
+            let plane = EnvironmentTextures.projectionPlane(for: decoration.assetId)
+            node.name = "environment-\(plane)-\(index)-\(decoration.assetId)"
             node.position = CGPoint(x: decoration.center.x, y: decoration.center.y)
             // Counter-clockwise positive, applied directly — a decoration is not
             // a heading, so it does not go through radians(milliDegrees:), which
@@ -502,26 +657,38 @@ final class WorldRenderer {
                 continue
             }
 
+            if let reviewArt, id == reviewArt.buildingID {
+                let placement = reviewArt.building
+                let sprite = SKSpriteNode(texture: placement.texture, size: placement.size)
+                sprite.name = "benchmark-building"
+                sprite.anchorPoint = placement.anchor
+                sprite.position = placement.position
+                layer?.addChild(sprite)
+                continue
+            }
             let size = CGSize(
                 width: CGFloat(solid.halfSize.x * 2),
                 height: CGFloat(solid.halfSize.y * 2)
             )
             let position = CGPoint(x: solid.center.x, y: solid.center.y)
 
-            // visual-assets-001 §3a: art is optional, and an unbacked solid
-            // keeps its authored blockout. The art is sized to the collision
-            // box exactly, so a player is never blocked by something that looks
-            // passable or walks through something that looks solid.
+            // visual-assets-001 §3a and §6: optional art sits on a readable
+            // solid foundation. Canvas dimensions alone do not prove that a
+            // texture's transparent margins represent a visible obstacle.
+            // Transparent padding in delivered art is not walkable space.
+            // A visible foundation expresses the entire authoritative footprint.
+            let foundation = SKShapeNode(rectOf: size)
+            foundation.name = "solid-footprint-\(id ?? String(index))"
+            foundation.position = position
+            foundation.fillColor = Palette.solidFill
+            foundation.strokeColor = Palette.solidStroke
+            foundation.lineWidth = 2
+            foundation.zPosition = -0.1
+            layer?.addChild(foundation)
             if let id, let texture = environment.solidTexture(solidId: id) {
                 let node = SKSpriteNode(texture: texture, size: size)
+                node.name = "environment-upright-\(EnvironmentLibrary.solidAssetId(forSolidId: id))"
                 node.position = position
-                layer?.addChild(node)
-            } else {
-                let node = SKShapeNode(rectOf: size)
-                node.position = position
-                node.fillColor = Palette.solidFill
-                node.strokeColor = Palette.solidStroke
-                node.lineWidth = 2
                 layer?.addChild(node)
             }
         }
@@ -622,7 +789,71 @@ final class WorldRenderer {
         endLayer(.extraction)
     }
 
-    private func renderCameras(_ snap: PresentationSnapshot) {
+    private func cameraFieldPath(_ camera: PresentationSnapshot.CameraSprite, solids: [AABB], key: String) -> CGPath {
+        let geometry = CameraFieldGeometry.Key(camera: camera, solids: solids)
+        if let cached = cameraPaths[key], cached.0 == geometry { return cached.1 }
+        let path = CameraFieldGeometry.path(geometry)
+        cameraPaths[key] = (geometry, path)
+        return path
+    }
+
+    /// BP-004: lifetime belongs to the integrity transition, not its one-tick event.
+    /// Repeated snapshots cannot cancel destruction or restart a hit response.
+    private func playCamera(_ camera: PresentationSnapshot.CameraSprite, reducedMotion: Bool) -> Bool {
+        if reviewArt != nil {
+            let contact = node(.cameraHousings, "benchmark-camera-contact-\(camera.id.raw)") {
+                let shape = SKShapeNode(ellipseOf: CGSize(width: 22, height: 7))
+                shape.fillColor = SKColor(white: 0, alpha: 0.24)
+                shape.strokeColor = .clear
+                return shape
+            }
+            contact.position = CGPoint(x: camera.x, y: camera.y - 2)
+        }
+        if let reviewArt, !benchmarkCompleteCamera {
+            let sprite = node(.actors, "sprite-camera-\(camera.id.raw)") { SKSpriteNode() } as! SKSpriteNode
+            sprite.texture = reviewArt.cameraStates[camera.integrity] ?? reviewArt.camera
+            sprite.size = CGSize(width: 64, height: 96)
+            sprite.anchorPoint = CGPoint(x: 0.5, y: 1 - 88.0 / 96.0)
+            sprite.position = CGPoint(x: camera.x, y: camera.y)
+            sprite.removeAllActions()
+            return true
+        }
+        let persistent = CameraPresentation.persistentState(integrity: camera.integrity)
+        let settledClip = CameraPresentation.clipId(for: persistent)
+        let transitionClip = camera.integrity <= 0 ? "camera_destroy" : settledClip
+        guard sprites.isBacked(clipId: transitionClip),
+              let settledTexture = sprites.lastTexture(clipId: settledClip)
+        else { return false }
+        let key = "camera-\(camera.id.raw)"
+        guard let sprite = node(.actors, "sprite-\(key)", make: { SKSpriteNode() }) as? SKSpriteNode
+        else { return false }
+        sprite.size = CGSize(width: 64, height: 96)
+        sprite.anchorPoint = sprites.anchorPoint(clipId: settledClip, boxHeight: 96, boxWidth: 64)
+        sprite.position = CGPoint(x: camera.x, y: camera.y)
+        let token = "camera|\(camera.integrity)|\(reducedMotion)"
+        guard activeClips[key] != token else { return true }
+        activeClips[key] = token
+        sprite.removeAllActions()
+        if reducedMotion {
+            sprite.texture = settledTexture
+        } else {
+            sprite.texture = sprites.firstTexture(clipId: transitionClip)
+            if let animation = sprites.animation(clipId: transitionClip) {
+                // Operational loops indefinitely. All damage responses finish on
+                // the latest integrity's settled picture; cancellation removes
+                // the entire old sequence when a newer integrity arrives.
+                let action = camera.integrity == 3 ? animation : SKAction.sequence([
+                    animation, SKAction.setTexture(settledTexture, resize: false)
+                ])
+                sprite.run(action, withKey: "camera-state")
+            } else {
+                sprite.texture = settledTexture
+            }
+        }
+        return true
+    }
+
+    private func renderCameras(_ snap: PresentationSnapshot, reducedMotion: Bool) {
         beginLayer(.cameraFields)
         beginLayer(.cameraHousings)
         beginLayer(.actors)
@@ -641,25 +872,18 @@ final class WorldRenderer {
             //
             // A destroyed Camera keeps its housing, matching T411 keeping the
             // mount footprint: the pole is still standing, the head is wrecked.
-            if let family = camera.housingFamily,
+            if reviewArt == nil, !benchmarkCompleteCamera, let family = camera.housingFamily,
                let texture = environment.cameraTexture(for: family)
             {
                 let housing = node(.cameraHousings, "housing-\(camera.id.raw)") {
                     SKSpriteNode(texture: texture, size: CGSize(width: 64, height: 96))
                 }
+                (housing as? SKSpriteNode)?.anchorPoint = sprites.anchorPoint(
+                    clipId: camera.clipId, boxHeight: 96, boxWidth: 64)
                 housing.position = position
             }
 
-            // clip-metadata-001 names the clip; CameraPresentation picked it.
-            let drawn = playClip(
-                camera.clipId,
-                direction: nil,
-                key: key,
-                at: position,
-                boxWidth: 64,
-                boxHeight: 96,
-                layer: .actors
-            )
+            let drawn = playCamera(camera, reducedMotion: reducedMotion)
             if !drawn {
                 let body = node(.actors, key) {
                     let shape = SKShapeNode(circleOfRadius: 12)
@@ -670,18 +894,45 @@ final class WorldRenderer {
                 (body as? SKShapeNode)?.fillColor = Palette.cameraFill(camera.presentationState)
             }
 
+            // BP-004: persistent damage-stage notches are independent of clip playback.
+            // Only standard Cameras enter this loop; Captain emitters cannot inherit them.
+            if camera.integrity == 2 || camera.integrity == 1 {
+                let marker = node(.actors, "camera-damage-\(camera.id.raw)") {
+                    let badge = SKShapeNode(rectOf: CGSize(width: 13, height: 10), cornerRadius: 2)
+                    badge.fillColor = SKColor(white: 0.08, alpha: 1)
+                    badge.strokeColor = SKColor(white: 0.8, alpha: 1)
+                    badge.lineWidth = 0.75
+                    badge.zPosition = 2
+                    for index in 0..<2 {
+                        let notch = SKShapeNode(rectOf: CGSize(width: 2, height: 6))
+                        notch.name = "notch-\(index)"
+                        notch.fillColor = SKColor(white: 0.95, alpha: 1)
+                        notch.strokeColor = .clear
+                        notch.position.x = CGFloat(index * 5 - 2)
+                        badge.addChild(notch)
+                    }
+                    return badge
+                }
+                marker.position = CGPoint(x: camera.x - 13, y: camera.y + 18)
+                marker.childNode(withName: "notch-0")?.position.x = camera.integrity == 2 ? 0 : -2.5
+                marker.childNode(withName: "notch-1")?.position.x = 2.5
+                marker.childNode(withName: "notch-1")?.isHidden = camera.integrity == 2
+            }
+
             guard camera.fieldVisible else { continue }
             let fieldKey = "field-\(camera.id.raw)"
             let field = node(.cameraFields, fieldKey) { SKShapeNode() }
             if let shape = field as? SKShapeNode {
-                shape.path = Geometry.conePath(
-                    range: camera.range,
-                    headingMilli: camera.headingMilli,
-                    fieldAngleMilli: camera.fieldAngleMilli
-                )
-                shape.position = CGPoint(x: camera.x, y: camera.y)
+                let geometry = CameraFieldGeometry.Key(camera: camera, solids: snap.solids)
+                if cameraPaths[fieldKey]?.0 != geometry || shape.path == nil {
+                    shape.path = cameraFieldPath(camera, solids: snap.solids, key: fieldKey)
+                }
+                shape.position = .zero
                 shape.fillColor = camera.detecting ? Palette.cameraFieldDetecting : Palette.cameraField
                 shape.strokeColor = .clear
+#if DEBUG || SS_RENDERER_TEST_SUPPORT
+                applyBenchmarkFieldContrast(shape)
+#endif
             }
         }
 
@@ -699,14 +950,16 @@ final class WorldRenderer {
         if let field = snap.captainField {
             let node = node(.cameraFields, "captain-field") { SKShapeNode() }
             if let shape = node as? SKShapeNode {
-                shape.path = Geometry.conePath(
-                    range: field.range,
-                    headingMilli: field.headingMilli,
-                    fieldAngleMilli: field.fieldAngleMilli
-                )
-                shape.position = CGPoint(x: field.x, y: field.y)
+                let geometry = CameraFieldGeometry.Key(camera: field, solids: snap.solids)
+                if cameraPaths["captain-field"]?.0 != geometry || shape.path == nil {
+                    shape.path = cameraFieldPath(field, solids: snap.solids, key: "captain-field")
+                }
+                shape.position = .zero
                 shape.fillColor = Palette.captainField
                 shape.strokeColor = .clear
+#if DEBUG || SS_RENDERER_TEST_SUPPORT
+                applyBenchmarkFieldContrast(shape)
+#endif
             }
         }
         renderPatrolCones(snap)
@@ -813,20 +1066,24 @@ final class WorldRenderer {
         endLayer(.spawnSockets)
     }
 
-    private func renderActors(_ snap: PresentationSnapshot) {
+    private func renderActors(_ snap: PresentationSnapshot, reducedMotion: Bool) {
         let playerPosition = CGPoint(x: snap.player.x, y: snap.player.y)
         // clip-metadata-001 sprite box for the Player.
         // A reaction (hurt) is preferred and the state clip is the fallback,
         // so an unbacked reaction never costs the Player its sprite.
-        let playerDrawn = [snap.playerReactionClipId, snap.playerClipId].compactMap { $0 }.contains {
-            playClip(
-                $0,
+        let playerCandidates: [(String?, ClipOccurrence?)] = [
+            (snap.playerReactionClipId, snap.playerReactionOccurrence), (snap.playerClipId, nil)
+        ]
+        let playerDrawn = playerCandidates.contains { candidate in
+            guard let clip = candidate.0 else { return false }
+            return playClip(
+                clip,
                 direction: snap.playerDirection,
                 key: "player",
                 at: playerPosition,
                 boxWidth: 64,
                 boxHeight: 64,
-                layer: .actors
+                layer: .actors, occurrence: candidate.1, tick: snap.tick, reducedMotion: reducedMotion
             )
         }
         if let ghost {
@@ -869,15 +1126,20 @@ final class WorldRenderer {
             let position = CGPoint(x: enemy.x, y: enemy.y)
             let box = Self.spriteBox(for: enemy.role)
             // Reaction first, then the state clip, then the blockout below.
-            let drawn = [enemy.reactionClipId, enemy.clipId].compactMap { $0 }.contains {
-                playClip(
-                    $0,
+            let candidates: [(String?, ClipOccurrence?)] = [
+                (enemy.reactionClipId, enemy.reactionOccurrence),
+                (enemy.clipId, enemy.heldClipOccurrence), (enemy.fallbackClipId, nil)
+            ]
+            let drawn = candidates.contains { candidate in
+                guard let clip = candidate.0 else { return false }
+                return playClip(
+                    clip,
                     direction: enemy.direction,
                     key: key,
                     at: position,
                     boxWidth: box.width,
                     boxHeight: box.height,
-                    layer: .actors
+                    layer: .actors, occurrence: candidate.1, tick: snap.tick, reducedMotion: reducedMotion
                 )
             }
             if !drawn {
@@ -913,7 +1175,7 @@ final class WorldRenderer {
                 at: CGPoint(x: fallen.x, y: fallen.y),
                 boxWidth: box.width,
                 boxHeight: box.height,
-                layer: .actors
+                layer: .actors, occurrence: fallen.heldClipOccurrence, tick: snap.tick, reducedMotion: reducedMotion
             )
         }
         endLayer(.actors)
@@ -957,7 +1219,7 @@ final class WorldRenderer {
             // Blockout: the outline is a stroke on the silhouette, dashed for
             // enemies, so the fallback carries faction by shape too.
             shape.strokeColor = .clear
-            let outline = (shape.childNode(withName: Self.outlineName) as? SKShapeNode) ?? {
+            let outline = (shape.children.first { $0.name == Self.outlineName } as? SKShapeNode) ?? {
                 let path = Geometry.silhouettePath(silhouette)
                 let made = SKShapeNode(
                     path: ActorContrast.dashed(faction)
@@ -977,27 +1239,31 @@ final class WorldRenderer {
     /// Points each live sprite's outline at its current frame. Called after
     /// actions are evaluated (`GameScene.didEvaluateActions`) so the outline
     /// never trails the animation, and at the end of every render.
-    func syncOutlines() {
+    func syncOutlines(samplingScale: Int = 1) {
         for (sprite, faction) in outlineTargets {
-            let outline = (sprite.childNode(withName: Self.outlineName) as? SKSpriteNode) ?? {
+            let outline = (sprite.children.first { $0.name == Self.outlineName } as? SKSpriteNode) ?? {
                 let made = SKSpriteNode()
                 made.name = Self.outlineName
                 sprite.addChild(made)
                 return made
             }()
+            // SpriteKit's size includes this node's scale. The child inherits
+            // that scale, so its mask and placement must use the unscaled canvas.
+            let logicalSize = CGSize(width: abs(sprite.size.width / sprite.xScale),
+                                     height: abs(sprite.size.height / sprite.yScale))
             guard let texture = sprite.texture,
-                  let entry = outlines.outline(for: texture, faction: faction)
+                  let entry = outlines.outline(for: texture, faction: faction, logicalSize: logicalSize, samplingScale: samplingScale)
             else {
                 outline.isHidden = true
                 continue
             }
             outline.isHidden = false
             if outline.texture !== entry.texture { outline.texture = entry.texture }
-            let source = texture.size()
+            let source = entry.maskSize
             let pad = CGFloat(entry.pad)
             let grownW = (source.width + 2 * pad) / max(source.width, 1)
             let grownH = (source.height + 2 * pad) / max(source.height, 1)
-            outline.size = CGSize(width: sprite.size.width * grownW, height: sprite.size.height * grownH)
+            outline.size = CGSize(width: logicalSize.width * grownW, height: logicalSize.height * grownH)
             outline.anchorPoint = CGPoint(
                 x: (sprite.anchorPoint.x * source.width + pad) / (source.width + 2 * pad),
                 y: (sprite.anchorPoint.y * source.height + pad) / (source.height + 2 * pad)
@@ -1121,7 +1387,7 @@ extension WorldRenderer {
         for layer in [Layer.fogLow, Layer.fogHigh] {
             layers[layer]?.alpha = split.base
             for tile in layers[layer]?.children ?? [] {
-                tile.childNode(withName: FogDensity.boostName)?.alpha = split.boost
+                tile.children.first { $0.name == FogDensity.boostName }?.alpha = split.boost
             }
         }
 
@@ -1216,8 +1482,8 @@ enum Palette {
     static let queryMarker = SKColor(white: 0.8, alpha: 0.7)
     /// D-089 `?` marker. Neutral: the glyph, not the colour, carries the state.
     static let unawareMarker = SKColor(white: 0.92, alpha: 0.95)
-    static let playerProjectile = SKColor(white: 0.98, alpha: 1)
-    static let playerProjectileTrail = SKColor(white: 0.85, alpha: 0.35)
+    static let playerProjectile = SKColor(red: 1, green: 0.94, blue: 0.78, alpha: 1)
+    static let playerProjectileTrail = SKColor(red: 1, green: 0.94, blue: 0.78, alpha: 0.35)
     static let hostileProjectile = SKColor(red: 0.95, green: 0.45, blue: 0.30, alpha: 1)
     static let hostileProjectileTrail = SKColor(red: 0.95, green: 0.45, blue: 0.30, alpha: 0.30)
     static let mineArmed = SKColor(red: 0.85, green: 0.35, blue: 0.25, alpha: 0.35)

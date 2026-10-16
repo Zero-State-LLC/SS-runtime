@@ -1,0 +1,9 @@
+# Hostile encounter framing — bounded diagnostic
+
+Seed 1, tick 4248, player (1327,1495), facing west; four enemies, eight cameras and one hostile projectile. Actual command-driven state, no scenario seeding, no actor/solid/camera filtering or camera relocation. Command replay digest d3802f536474ccaed97abd8a28a2fe24692cc62cf881097f9085ee099e84ddc5 matches. Focused test Test-SSRuntime-2026.10.15_21-49-14--0700 passed in 32.205 seconds.
+
+The earlier tick-461 capture had only a friendly projectile; it remains in SS-legal-framing and cannot support hostile-warning claims. The fixture now requires hostile=true. Both 1×/1.25× projected snapshots retain every entity, with camera-owned HUD unchanged and actor sprites upright. Old environment art remains visibly distorted by the ground projection; this is diagnostic, not completed benchmark delivery. The player's existing production outline appears in this legal baseline; clean art-review suppression was not applied.
+
+At 1.25×, camera-6, camera-7 and enemy-151 no longer intersect the viewport although they do at 1×. Enemy-144 intersects but is not fully contained. Hostile projectile 163 remains onscreen in both framings/motion modes. Canvas intersection is not unobscured pixel visibility or warning lead time. The scene is near the arena's northern edge; current axis-aligned camera clamping has not been reconciled with projected arena boundaries. Do not adopt closer gameplay framing from this evidence.
+
+Next runtime work: separate ground surfaces from upright environment art and register their ground anchors; reconcile projected camera framing/boundaries before choosing zoom; then capture moving hostile warning lead time and foreground occlusion. Full facing/action art, shared benchmark scene, device and admission gates remain open.

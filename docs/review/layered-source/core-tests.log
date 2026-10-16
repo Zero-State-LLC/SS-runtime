@@ -1,0 +1,1866 @@
+Building for debugging...
+[0/4] Write sources
+[1/4] Copying contracts
+[2/5] Copying SPEC_PIN.txt
+[3/5] Write swift-version--58304C5D6DBC2206.txt
+[5/7] Emitting module SurveillanceCore
+[6/7] Compiling SurveillanceCore ContractVersions.swift
+[7/14] Compiling SurveillanceCore AssetCatalog.swift
+[8/14] Compiling SurveillanceCore ReplayEnvelope.swift
+[9/14] Compiling SurveillanceCore ProceduralVFX.swift
+[10/14] Compiling SurveillanceCore ArenaManifest.swift
+[11/14] Compiling SurveillanceCore RunReceipt.swift
+[12/14] Compiling SurveillanceCore ReleaseCandidateEvidence.swift
+[13/14] Compiling SurveillanceCore Simulation.swift
+[14/26] Compiling SurveillanceCoreTests AmbientMotionTests.swift
+[15/26] Compiling SurveillanceCoreTests ArenaAndSimulationTests.swift
+[16/26] Compiling SurveillanceCoreTests ProceduralVFXTests.swift
+[17/26] Compiling SurveillanceCoreTests ReleaseCandidateEvidenceTests.swift
+[18/26] Compiling SurveillanceCoreTests ClipMetadataTests.swift
+[19/26] Compiling SurveillanceCoreTests DailyRunGhostTests.swift
+[20/26] Compiling SurveillanceCoreTests ReadabilityFinishTests.swift
+[21/26] Compiling SurveillanceCoreTests AssetCatalogTests.swift
+[22/27] Compiling SurveillanceCoreTests ReplayTests.swift
+[23/27] Compiling SurveillanceCoreTests CameraPlacementTests.swift
+[24/27] Compiling SurveillanceCoreTests ContractVersionsTests.swift
+[25/27] Emitting module SurveillanceCoreTests
+[25/27] Write Objects.LinkFileList
+[26/27] Linking SSRuntimePackageTests
+Build complete! (14.09s)
+Test Suite 'All tests' started at 2026-10-14 18:57:10.556.
+Test Suite 'All tests' passed at 2026-10-14 18:57:10.559.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.003) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite CameraHousingArtTests started.
+◇ Suite OriginalArtTests started.
+◇ Suite AssetCatalogTests started.
+◇ Suite ConeOrientationTests started.
+◇ Suite ObjectiveGraphTests started.
+◇ Suite ReleaseCandidateEvidenceTests started.
+◇ Suite TransitPatrolTests started.
+◇ Suite EventCatalogTests started.
+◇ Suite ContractVersionsTests started.
+◇ Suite CameraFairnessTests started.
+◇ Suite DefectRegistryTests started.
+◇ Suite SpawnFairnessTests started.
+◇ Suite ProceduralVFXTests started.
+◇ Suite DeviceRunEvidenceTests started.
+◇ Suite TargetingPriorityTests started.
+◇ Suite GateVerificationTests started.
+◇ Suite CombatCausalityTests started.
+◇ Suite AudioProjectorTests started.
+◇ Suite AmbientMotionTests started.
+◇ Suite ArenaReachabilityTests started.
+◇ Suite HeatReinforcementTests started.
+◇ Suite WeaponUpgradeFeedbackTests started.
+◇ Suite ReadabilityFinishTests started.
+◇ Suite CameraDestructionReceiptTests started.
+◇ Suite CameraMountSolidTests started.
+◇ Suite CameraHUDTests started.
+◇ Suite ObjectiveProjectionTests started.
+◇ Suite RunTelemetryTests started.
+◇ Suite DaemonClipTests started.
+◇ Suite GameFeelTests started.
+◇ Suite MedalTests started.
+◇ Suite ExtractionCountdownTests started.
+◇ Suite StealthTextureTests started.
+◇ Suite CombatAuthorityReceiptTests started.
+◇ Suite CourtClimaxTests started.
+◇ Suite SimulationClockTests started.
+◇ Suite EnvironmentLibraryTests started.
+◇ Suite SilhouetteTests started.
+◇ Suite ApproximateCueTests started.
+◇ Suite ArenaAndSimulationTests started.
+◇ Suite ExpansionGateReportTests started.
+◇ Suite PresentationSettingsTests started.
+◇ Suite CameraPlacementTests started.
+◇ Suite TerminalShareGeometryTests started.
+◇ Suite FeelPassPresentationOnlyTests started.
+◇ Suite PatrolSlipSearch started.
+◇ Suite AwarenessTests started.
+◇ Suite CommitClipTests started.
+◇ Suite GhostSettingTests started.
+◇ Suite LegacyAdmissionTests started.
+◇ Suite TerminalSurfaceGeometryTests started.
+◇ Suite MusicBedCoverageTests started.
+◇ Suite CameraFollowTests started.
+◇ Suite DailyRunSeedTests started.
+◇ Suite VisualLanguageTests started.
+◇ Suite ReplayMatrixTests started.
+◇ Suite DailyFlavourTests started.
+◇ Suite CombatContentFailClosedTests started.
+◇ Suite CombatVisibilityTests started.
+◇ Suite CaptainCameraTests started.
+◇ Suite OpeningTests started.
+◇ Suite TutorialCardDurationTests started.
+◇ Suite ClipMetadataV2Tests started.
+◇ Suite ExposureFinalizationTests started.
+◇ Suite GrayscaleSystemsTests started.
+◇ Suite GhostRunTests started.
+◇ Suite CaptainClipTests started.
+◇ Suite CombatFeedbackTests started.
+◇ Suite AudioProjectorSmokeTests started.
+◇ Suite ReactionClipTrackerTests started.
+◇ Suite CivicSeamIdentityTests started.
+◇ Suite EnvironmentContractTests started.
+◇ Suite PacingSegmentsTests started.
+◇ Suite PeakDensityProfilerTests started.
+◇ Suite DeterminismTests started.
+◇ Suite AudioDeliveryTests started.
+◇ Suite EnvironmentAssetsAreDrawnTests started.
+◇ Suite PacingProbeTests started.
+◇ Suite TutorialPreemptionTests started.
+◇ Suite TutorialStateMachineTests started.
+◇ Suite QuietApproachTests started.
+◇ Suite QuietApproachPresentationTests started.
+◇ Suite RunOutcomeTerminalTests started.
+◇ Suite CameraDestructionOrderTests started.
+◇ Suite CameraPresentationTests started.
+◇ Suite KernelVectorTests started.
+◇ Suite ReplayTests started.
+◇ Suite RuntimeBundleTests started.
+◇ Suite CompleteRunVectorTests started.
+◇ Suite PlaytestEvidenceLoaderTests started.
+◇ Suite DamageOrderingTests started.
+◇ Suite HUDPresentationTests started.
+◇ Suite TerminalPrecedenceTests started.
+◇ Suite ExpansionGateDecisionTests started.
+◇ Suite EnemyBehaviourTests started.
+◇ Suite HUDMappingTests started.
+◇ Suite ProtectedUpgradeSelectionTests started.
+◇ Suite RunCardTests started.
+◇ Suite D021CeilingsTests started.
+◇ Suite ContractVectorTests started.
+◇ Suite ClipTimingTests started.
+◇ Suite ClipAlignmentTests started.
+◇ Suite ClipMetadataTests started.
+◇ Suite CanonicalArenaZonesTests started.
+◇ Suite ReceiptArchiveTests started.
+◇ Suite BossPhaseMusicTests started.
+◇ Suite TamperFloorTests started.
+◇ Suite StandardEnemyClipProjectionTests started.
+◇ Suite AssetIntakeChecks started.
+◇ Test everyHousingFamilyNamesADeclaredAsset() started.
+◇ Test currentIdentityIsCompatible() started.
+◇ Test defectT906RegistryCanonicalRoundTrip() started.
+◇ Test everyEventTypeMatchesTheCatalogOrdinal() started.
+◇ Test deviceT905SettlesD021FromSimulationCeilings() started.
+◇ Test cameraCP010EveryLegalSetFairness() started.
+◇ Test encounterEN003EqualDistanceSelectsLowerSocketID() started.
+◇ Test coneOpensTowardTheHeadingNotItsMirror(headingMilli:) started.
+◇ Test deviceT905GateResultsPassWhenPerformanceFloorMet() started.
+◇ Test bundledAssetCatalogFailsClosedAndCoversPresentationIDs() started.
+◇ Test evidenceT907CollectsWithDeviceProfilingAndSettledD021() started.
+◇ Test defectT906RegistryHasNoOpenSeverityOneOrTwo() started.
+◇ Test evidenceT907CollectsReplayAndCompleteRunDigests() started.
+◇ Test arenaAR006CriticalPathAndSpawnAlley() started.
+◇ Test concealmentMatchesExactWindowAndNotOrdinaryDodge(ghost:) started.
+◇ Test audioAH001NineEffectsStealToEight() started.
+◇ Test objectiveT703FreshRunStartsAtMobA() started.
+◇ Test vfxCatalogEncodesBudgetsAndReducedVariants() started.
+◇ Test jammerTracksRealCameraContactThenClearsOutsideField() started.
+◇ Test gateT902RegistryCoversPhaseNineAutomatedGates() started.
+◇ Test jammerContourRequiresActualUnclampedFogReduction(exposure:) started.
+◇ Test originalsAreAdmitted() started.
+◇ Test jammerTracksActualBossObservationPulse() started.
+◇ Test deviceT905PerformanceFloorBuildsEvidence() started.
+◇ Test everyMountSolidCarriesTheSharedPrefix() started.
+◇ Test receiptT707SummaryReflectsPartialBlackout() started.
+◇ Test cameraUI004ThreeNotchesShowAuthoritativeIntegrity() started.
+◇ Test cardsExplainExclusionsAndExposeDistinctNonColourIcons() started.
+◇ Test combatCB002EqualDistanceEnemiesPreferLowerID() started.
+◇ Test daemonHasClips() started.
+◇ Test shotEvidenceSurvivesRetirementAndIgnoresMovementFacing() started.
+◇ Test extractionT703ALockedRegionDoesNotCountDown() started.
+◇ Test receiptT708BossPhasesCanonicalOrder() started.
+◇ Test ambientT607CatalogEncodesPersistentRareAndCameraLock() started.
+◇ Test patrolEN024MembersSpawnUnawareAtTheirFirstWaypoint() started.
+◇ Test arenaFourCarriesTheD094Viewport() started.
+◇ Test actualSweepOrdersTargetAndWall(wallFirst:) started.
+◇ Test noTargetProducesNoShotEvidence() started.
+◇ Test arenaManifestMatchesCivicSeamIdentity() started.
+◇ Test encounterEN011HuntedAppendsTwoInformantsAfterTheAuthoredMembers() started.
+◇ Test enemyT405SilhouettesAreDistinctAndIndependentOfCollision() started.
+◇ Test exactlyTheNamedCuesAreApproximate() started.
+◇ Test rs018BelowTrackedUntilMobCEarnsGhost() started.
+◇ Test anUnawareKillIsATakedown() started.
+◇ Test reusedSnapshotRestoresMissingBaseWhenCommitExpires() started.
+◇ Test bo020BossActivationRaisesPlayerFrom40To75() started.
+◇ Test oneMissingAssetLeavesTheWholeGroupUnbacked() started.
+◇ Test aKnownRouteSlipsThePatrolAndEarnsShadow() started.
+◇ Test catalogCarriesTheFourBigMoments() started.
+◇ Test wanderingRunDigestAndReceiptAreUnchanged() started.
+◇ Test clampsAndResetsAcrossRuns() started.
+◇ Test cameraCP001TenRestartsMatchSocketsHousingAndIds() started.
+◇ Test everyMusicStateHasADeliveredBed() started.
+◇ Test motionInsideDeadZoneDoesNotMoveTheAnchor() started.
+◇ Test theRestartControlSitsInsideThePanel() started.
+◇ Test somethingIsActuallyAdmitted() started.
+◇ Test settingsNeverChangeTheGameplayDigest() started.
+◇ Test candidateFollowsTheSpecFormulaExactly() started.
+◇ Test snapshotExposesTheAuthoritativeObjectiveNode() started.
+◇ Test jammerDoesNotClaimTamperOrIdleReduction() started.
+◇ Test encounterEN016HiddenSpawnIsUnawareAndNeverAttacks() started.
+◇ Test shareIsInsideThePanelAndMeetsTheTouchTarget() started.
+◇ Test verticalHeadingHasNoSpuriousHorizontalLookAhead() started.
+◇ Test visualLanguageEncodesSalienceAndRolePalette() started.
+◇ Test interleavedFacingsKeepTheirOwnVariableHolds() started.
+◇ Test turnDoesNotSnapByTheLookAheadDistance() started.
+◇ Test replayT901MatrixFixtureLoads() started.
+◇ Test titleDetailNamesGradeAndFog() started.
+◇ Test derivedFromTheDayKeyBySpecBitRanges() started.
+◇ Test clockAdvancesExactlyOneTick() started.
+◇ Test gradesStayWithinTheReadabilityFloor() started.
+◇ Test bundledContentStillDecodesWithKnownValues() started.
+◇ Test fogDensityScalesBeforeThinning() started.
+◇ Test instrumentT900SnapshotCapturesEntitiesExposureAndDamage() started.
+◇ Test lethalTickSuppressesNamedPulsesButStillResolvesRecovery() started.
+◇ Test fogTransitionReachesAudioAndVFX() started.
+◇ Test everyV1FacingHasIdenticalV2TimingAndFrames() started.
+◇ Test forcedMobCLockdownWithDueFogKeepsQuiet() started.
+◇ Test fogCrossingPublishesOneFinalDetectionEvent() started.
+◇ Test recoveryAndPulseDoNotPublishAnIntermediateState() started.
+◇ Test introPowersTheEightFieldsOnInStableIdOrderOverOnePointTwoSeconds() started.
+◇ Test gateT908DefaultReportIsNotComputable() started.
+◇ Test aYearOfDaysUsesEveryValue() started.
+◇ Test theTwelveAuthoredHeadlines() started.
+◇ Test copyStatesCorrectImmunityAndAmbush() started.
+◇ Test incompleteOrDuplicateTargetChainDoesNotDraw() started.
+◇ Test distinctDamageSourcesAreNotCoalescedTogether() started.
+◇ Test fogCrossingRevokesQuietBeforeRecoveryCanEraseIt() started.
+◇ Test exposureEX004SixtyTicksNoRecoveryYet() started.
+◇ Test unrelatedHitsNeverMakeAChain() started.
+◇ Test independentChainsRetainTheirOwnPoints() started.
+◇ Test cardRetiresAfterItsMaximumVisualDuration() started.
+◇ Test everyAttackDerivesAnExistingClip() started.
+◇ Test audioProjectorProjectsEmptyDisabledCues() started.
+◇ Test ghostIsOnByDefault() started.
+◇ Test windowsAreContiguousAndEndInsideTheRunTarget() started.
+◇ Test theContractNamesEveryArenaSolid() started.
+◇ Test replayT901PilotedRunReproducesDigestThreeTimes() started.
+◇ Test captainIdsAreTheirOwnGroup() started.
+◇ Test aFreshRunStartsQuiet() started.
+◇ Test sha256KnownVector() started.
+◇ Test ui009TheTagShowsAtRunStart() started.
+◇ Test malformedV2FailsThroughBothLoaders() started.
+◇ Test everyDeclaredEnvironmentAssetHasARouteToTheScreen() started.
+◇ Test everyMusicStateHasARegisteredAssetId() started.
+◇ Test projectilesReachThePresentationSnapshot() started.
+◇ Test allDeltasProduceOneFinalStateAndOneLockdown() started.
+◇ Test eventFacingOwnsLifetimeAndNewEventRestartsOccurrence() started.
+◇ Test cameraStatesFollowIntegrityWithoutMovingHousing() started.
+◇ Test onlyFinishedRunsAreTerminal() started.
+◇ Test t0CompletesAtNinetySixUnitsAndNotBefore() started.
+◇ Test armedExtractionPreemptsTheCard() started.
+◇ Test signalJammerModifiesTheFogPulseExactlyOnce() started.
+◇ Test unknownReplayIdentityFailsBeforeTickOne() started.
+◇ Test playtestT903EvidenceAdvancesReleaseCandidateCollection() started.
+◇ Test gateT908OpenDefectsFailExpansion() started.
+◇ Test civicSeamT307SpineGridsWedgesAndLandmarks() started.
+◇ Test profileT406CompleteRunsStayWithinPoolCapacity() started.
+◇ Test multipleFogPulsesEmitOnlyTheFinalTransition() started.
+◇ Test runtimeBundleT805ProjectsOnlyReachablePlannedOriginals() started.
+◇ Test playtestT904LoaderRequiresVoluntaryReplayField() started.
+◇ Test enemyEN004FogPulseWithoutLineOfSightMisses() started.
+◇ Test combatCB005EarliestIntersectionResolvesFirst() started.
+◇ Test aVerifiedRecordBuildsAGhost() started.
+◇ Test playtestLoaderRejectsInvalidTaskId() started.
+◇ Test terminalT704StepAfterFailureReturnsNoEventsAndFreezesTick() started.
+◇ Test cameraCD003DestroyWhileDetectingOmitsContactDelta() started.
+◇ Test hudUI003ExtraLargeScaleOnSmallestTarget() started.
+◇ Test mappedElementsScaleProportionally() started.
+◇ Test exposureEX001OneCameraHundredTicks() started.
+◇ Test exactMigrationVectors() started.
+◇ Test selectionKeepsDirectionHoldsAndOrder() started.
+◇ Test elapsedTicksSelectExactFrameBoundariesWithoutOverflow() started.
+◇ Test playtestT903LoaderParsesSessions() started.
+◇ Test completeRunT705GoldenVectorSucceedsWithZeroCamerasDestroyed(upgrade:) started.
+◇ Test allDeliveredV1DirectionsKeepTheirCadence() started.
+◇ Test selectionOpensFromGenuineMACompletion() started.
+◇ Test d021T406DeviceProfilingSettlesCeilings() started.
+◇ Test malformedAndOverflowFailClosed() started.
+◇ Test clockFormatsElapsedTicksAsMinutesAndSeconds() started.
+◇ Test case passing 1 argument headingMilli → 20000 to coneOpensTowardTheHeadingNotItsMirror(headingMilli:) started.
+◇ Test clipT605AnchorsStayStableAcrossRoleAndMirroredFacings() started.
+◇ Test case passing 1 argument ghost → false to concealmentMatchesExactWindowAndNotOrdinaryDodge(ghost:) started.
+◇ Test case passing 1 argument ghost → true to concealmentMatchesExactWindowAndNotOrdinaryDodge(ghost:) started.
+◇ Test exposureEX006ContactOnSixtiethTickResetsClock() started.
+◇ Test zonesAreTheSevenCanonicalZonesInOrder() started.
+◇ Test everyZoneLiesInsideTheArena() started.
+◇ Test gridIs36By24SixtyFourUnitCells() started.
+◇ Test clipCatalogDeclaresRequiredMarkersAndFourDirections() started.
+◇ Test receiptER006AtomicWriteAndRetention() started.
+◇ Test case passing 1 argument exposure → 0 to jammerContourRequiresActualUnclampedFogReduction(exposure:) started.
+◇ Test case passing 1 argument exposure → 999 to jammerContourRequiresActualUnclampedFogReduction(exposure:) started.
+◇ Test case passing 1 argument exposure → 1000 to jammerContourRequiresActualUnclampedFogReduction(exposure:) started.
+◇ Test phaseNeverChangesTheMusicState() started.
+◇ Test exposureEX011RecoveryStopsAtTheFloor() started.
+◇ Test case passing 1 argument wallFirst → false to actualSweepOrdersTargetAndWall(wallFirst:) started.
+◇ Test everyProjectedClipExistsInTheContract() started.
+◇ Test attackStatesAreUnchanged() started.
+◇ Test correlatorRecoverPresentsItsRecoverClip() started.
+◇ Test movingEnemiesPresentMove(role:state:expected:) started.
+◇ Test stationaryEnemiesPresentIdle(role:) started.
+◇ Test informantPursuitKeepsItsPursuitClip() started.
+◇ Test assetIntakeAcceptsPulledEvidenceAndExcludesArtSourcesFromRuntime() started.
+◇ Test case passing 1 argument upgrade → .signalJammer to completeRunT705GoldenVectorSucceedsWithZeroCamerasDestroyed(upgrade:) started.
+✔ Test currentIdentityIsCompatible() passed after 9.243 seconds.
+✔ Test defectT906RegistryCanonicalRoundTrip() passed after 9.287 seconds.
+✔ Test deviceT905GateResultsPassWhenPerformanceFloorMet() passed after 9.287 seconds.
+✔ Test defectT906RegistryHasNoOpenSeverityOneOrTwo() passed after 9.287 seconds.
+✔ Test encounterEN003EqualDistanceSelectsLowerSocketID() passed after 9.287 seconds.
+✔ Test everyHousingFamilyNamesADeclaredAsset() passed after 9.288 seconds.
+✔ Test everyEventTypeMatchesTheCatalogOrdinal() passed after 9.288 seconds.
+✔ Test objectiveT703FreshRunStartsAtMobA() passed after 9.288 seconds.
+✔ Test audioAH001NineEffectsStealToEight() passed after 9.290 seconds.
+✔ Test vfxCatalogEncodesBudgetsAndReducedVariants() passed after 9.293 seconds.
+✔ Test gateT902RegistryCoversPhaseNineAutomatedGates() passed after 9.293 seconds.
+✔ Test jammerTracksRealCameraContactThenClearsOutsideField() passed after 9.336 seconds.
+✔ Test jammerContourRequiresActualUnclampedFogReduction(exposure:) with 3 test cases passed after 9.336 seconds.
+✔ Test arenaAR006CriticalPathAndSpawnAlley() passed after 9.336 seconds.
+✔ Test deviceT905PerformanceFloorBuildsEvidence() passed after 9.336 seconds.
+✔ Test jammerTracksActualBossObservationPulse() passed after 9.336 seconds.
+✔ Test everyMountSolidCarriesTheSharedPrefix() passed after 9.336 seconds.
+✔ Test cameraUI004ThreeNotchesShowAuthoritativeIntegrity() passed after 9.336 seconds.
+✔ Test cardsExplainExclusionsAndExposeDistinctNonColourIcons() passed after 9.336 seconds.
+✔ Test combatCB002EqualDistanceEnemiesPreferLowerID() passed after 9.337 seconds.
+✔ Test receiptT707SummaryReflectsPartialBlackout() passed after 9.336 seconds.
+✔ Test shotEvidenceSurvivesRetirementAndIgnoresMovementFacing() passed after 9.336 seconds.
+✔ Test extractionT703ALockedRegionDoesNotCountDown() passed after 9.336 seconds.
+✔ Test receiptT708BossPhasesCanonicalOrder() passed after 9.336 seconds.
+✔ Test ambientT607CatalogEncodesPersistentRareAndCameraLock() passed after 9.336 seconds.
+✔ Test patrolEN024MembersSpawnUnawareAtTheirFirstWaypoint() passed after 9.337 seconds.
+✔ Test arenaFourCarriesTheD094Viewport() passed after 9.337 seconds.
+✔ Test concealmentMatchesExactWindowAndNotOrdinaryDodge(ghost:) with 2 test cases passed after 9.338 seconds.
+✔ Test arenaManifestMatchesCivicSeamIdentity() passed after 9.376 seconds.
+◇ Test case passing 3 arguments role → .fogAnalyticsCloud, state → .orbit, expected → "fogAnalyticsCloud_move" to movingEnemiesPresentMove(role:state:expected:) started.
+◇ Test case passing 3 arguments role → .fogAnalyticsCloud, state → .cooldown, expected → "fogAnalyticsCloud_move" to movingEnemiesPresentMove(role:state:expected:) started.
+◇ Test case passing 3 arguments role → .cableCarCorrelator, state → .pursue, expected → "cableCarCorrelator_move" to movingEnemiesPresentMove(role:state:expected:) started.
+◇ Test case passing 3 arguments role → .sutroSignalWitch, state → .keepRange, expected → "sutroSignalWitch_move" to movingEnemiesPresentMove(role:state:expected:) started.
+◇ Test case passing 3 arguments role → .victorianVendor, state → .cooldown, expected → "victorianVendor_move" to movingEnemiesPresentMove(role:state:expected:) started.
+◇ Test case passing 1 argument role → .fogAnalyticsCloud to stationaryEnemiesPresentIdle(role:) started.
+◇ Test case passing 1 argument role → .cableCarCorrelator to stationaryEnemiesPresentIdle(role:) started.
+◇ Test case passing 1 argument role → .sutroSignalWitch to stationaryEnemiesPresentIdle(role:) started.
+◇ Test case passing 1 argument role → .autonomousInformant to stationaryEnemiesPresentIdle(role:) started.
+◇ Test case passing 1 argument role → .victorianVendor to stationaryEnemiesPresentIdle(role:) started.
+✔ Test enemyT405SilhouettesAreDistinctAndIndependentOfCollision() passed after 9.417 seconds.
+✔ Test encounterEN011HuntedAppendsTwoInformantsAfterTheAuthoredMembers() passed after 9.417 seconds.
+✔ Test originalsAreAdmitted() passed after 9.418 seconds.
+✔ Test anUnawareKillIsATakedown() passed after 9.418 seconds.
+✔ Test bundledAssetCatalogFailsClosedAndCoversPresentationIDs() passed after 9.418 seconds.
+✔ Test bo020BossActivationRaisesPlayerFrom40To75() passed after 9.417 seconds.
+✔ Test oneMissingAssetLeavesTheWholeGroupUnbacked() passed after 9.418 seconds.
+✔ Test reusedSnapshotRestoresMissingBaseWhenCommitExpires() passed after 9.418 seconds.
+✔ Test catalogCarriesTheFourBigMoments() passed after 9.417 seconds.
+✔ Test daemonHasClips() passed after 9.418 seconds.
+✔ Test clampsAndResetsAcrossRuns() passed after 9.418 seconds.
+✔ Test cameraCP001TenRestartsMatchSocketsHousingAndIds() passed after 9.418 seconds.
+✔ Test noTargetProducesNoShotEvidence() passed after 9.418 seconds.
+✔ Test motionInsideDeadZoneDoesNotMoveTheAnchor() passed after 9.417 seconds.
+✔ Test theRestartControlSitsInsideThePanel() passed after 9.418 seconds.
+✔ Test exactlyTheNamedCuesAreApproximate() passed after 9.418 seconds.
+✔ Test everyMusicStateHasADeliveredBed() passed after 9.418 seconds.
+✔ Test candidateFollowsTheSpecFormulaExactly() passed after 9.418 seconds.
+✔ Test snapshotExposesTheAuthoritativeObjectiveNode() passed after 9.418 seconds.
+✔ Test jammerDoesNotClaimTamperOrIdleReduction() passed after 9.455 seconds.
+✔ Test somethingIsActuallyAdmitted() passed after 9.454 seconds.
+✔ Test shareIsInsideThePanelAndMeetsTheTouchTarget() passed after 9.454 seconds.
+✔ Test verticalHeadingHasNoSpuriousHorizontalLookAhead() passed after 9.454 seconds.
+✔ Test visualLanguageEncodesSalienceAndRolePalette() passed after 9.454 seconds.
+✔ Test aKnownRouteSlipsThePatrolAndEarnsShadow() passed after 9.455 seconds.
+✔ Test turnDoesNotSnapByTheLookAheadDistance() passed after 9.454 seconds.
+✔ Test replayT901MatrixFixtureLoads() passed after 9.454 seconds.
+✔ Test titleDetailNamesGradeAndFog() passed after 9.454 seconds.
+✔ Test derivedFromTheDayKeyBySpecBitRanges() passed after 9.454 seconds.
+✔ Test clockAdvancesExactlyOneTick() passed after 9.454 seconds.
+✔ Test gradesStayWithinTheReadabilityFloor() passed after 9.454 seconds.
+✔ Test bundledContentStillDecodesWithKnownValues() passed after 9.454 seconds.
+✔ Test fogDensityScalesBeforeThinning() passed after 9.454 seconds.
+✔ Test instrumentT900SnapshotCapturesEntitiesExposureAndDamage() passed after 9.455 seconds.
+✔ Test interleavedFacingsKeepTheirOwnVariableHolds() passed after 9.455 seconds.
+✔ Test settingsNeverChangeTheGameplayDigest() passed after 9.455 seconds.
+✔ Test rs018BelowTrackedUntilMobCEarnsGhost() passed after 9.455 seconds.
+✔ Test fogTransitionReachesAudioAndVFX() passed after 9.454 seconds.
+✔ Test lethalTickSuppressesNamedPulsesButStillResolvesRecovery() passed after 9.454 seconds.
+✔ Test forcedMobCLockdownWithDueFogKeepsQuiet() passed after 9.454 seconds.
+✔ Test introPowersTheEightFieldsOnInStableIdOrderOverOnePointTwoSeconds() passed after 9.455 seconds.
+✔ Test fogCrossingPublishesOneFinalDetectionEvent() passed after 9.454 seconds.
+✔ Test aYearOfDaysUsesEveryValue() passed after 9.455 seconds.
+✔ Test theTwelveAuthoredHeadlines() passed after 9.455 seconds.
+✔ Test copyStatesCorrectImmunityAndAmbush() passed after 9.454 seconds.
+✔ Test incompleteOrDuplicateTargetChainDoesNotDraw() passed after 9.454 seconds.
+✔ Test distinctDamageSourcesAreNotCoalescedTogether() passed after 9.454 seconds.
+✔ Test recoveryAndPulseDoNotPublishAnIntermediateState() passed after 9.455 seconds.
+✔ Test exposureEX004SixtyTicksNoRecoveryYet() passed after 9.454 seconds.
+✔ Test unrelatedHitsNeverMakeAChain() passed after 9.455 seconds.
+✔ Test independentChainsRetainTheirOwnPoints() passed after 9.455 seconds.
+✔ Test cardRetiresAfterItsMaximumVisualDuration() passed after 9.455 seconds.
+✔ Test everyV1FacingHasIdenticalV2TimingAndFrames() passed after 9.455 seconds.
+✔ Test audioProjectorProjectsEmptyDisabledCues() passed after 9.455 seconds.
+✔ Test ghostIsOnByDefault() passed after 9.455 seconds.
+✔ Test windowsAreContiguousAndEndInsideTheRunTarget() passed after 9.455 seconds.
+✔ Test fogCrossingRevokesQuietBeforeRecoveryCanEraseIt() passed after 9.455 seconds.
+✔ Test theContractNamesEveryArenaSolid() passed after 9.455 seconds.
+✔ Test captainIdsAreTheirOwnGroup() passed after 9.455 seconds.
+✔ Test aFreshRunStartsQuiet() passed after 9.455 seconds.
+✔ Test sha256KnownVector() passed after 9.455 seconds.
+✔ Test ui009TheTagShowsAtRunStart() passed after 9.455 seconds.
+✔ Test everyAttackDerivesAnExistingClip() passed after 9.455 seconds.
+✔ Test everyDeclaredEnvironmentAssetHasARouteToTheScreen() passed after 9.455 seconds.
+✔ Test everyMusicStateHasARegisteredAssetId() passed after 9.455 seconds.
+✔ Test projectilesReachThePresentationSnapshot() passed after 9.455 seconds.
+✔ Test allDeltasProduceOneFinalStateAndOneLockdown() passed after 9.455 seconds.
+✔ Test cameraStatesFollowIntegrityWithoutMovingHousing() passed after 9.455 seconds.
+✔ Test malformedV2FailsThroughBothLoaders() passed after 9.455 seconds.
+✔ Test onlyFinishedRunsAreTerminal() passed after 9.455 seconds.
+✔ Test t0CompletesAtNinetySixUnitsAndNotBefore() passed after 9.455 seconds.
+✔ Test armedExtractionPreemptsTheCard() passed after 9.455 seconds.
+✔ Test eventFacingOwnsLifetimeAndNewEventRestartsOccurrence() passed after 9.455 seconds.
+✔ Test unknownReplayIdentityFailsBeforeTickOne() passed after 9.455 seconds.
+✔ Test signalJammerModifiesTheFogPulseExactlyOnce() passed after 9.455 seconds.
+✔ Test gateT908OpenDefectsFailExpansion() passed after 9.455 seconds.
+✔ Test civicSeamT307SpineGridsWedgesAndLandmarks() passed after 9.455 seconds.
+✔ Test deviceT905SettlesD021FromSimulationCeilings() passed after 9.457 seconds.
+✔ Test multipleFogPulsesEmitOnlyTheFinalTransition() passed after 9.456 seconds.
+✔ Test runtimeBundleT805ProjectsOnlyReachablePlannedOriginals() passed after 9.455 seconds.
+✔ Test playtestT904LoaderRequiresVoluntaryReplayField() passed after 9.455 seconds.
+✔ Test enemyEN004FogPulseWithoutLineOfSightMisses() passed after 9.455 seconds.
+✔ Test combatCB005EarliestIntersectionResolvesFirst() passed after 9.455 seconds.
+✔ Test profileT406CompleteRunsStayWithinPoolCapacity() passed after 9.456 seconds.
+✔ Test terminalT704StepAfterFailureReturnsNoEventsAndFreezesTick() passed after 9.455 seconds.
+✔ Test playtestLoaderRejectsInvalidTaskId() passed after 9.455 seconds.
+✔ Test cameraCD003DestroyWhileDetectingOmitsContactDelta() passed after 9.455 seconds.
+✔ Test hudUI003ExtraLargeScaleOnSmallestTarget() passed after 9.455 seconds.
+✔ Test mappedElementsScaleProportionally() passed after 9.455 seconds.
+✔ Test exposureEX001OneCameraHundredTicks() passed after 9.455 seconds.
+✔ Test exactMigrationVectors() passed after 9.455 seconds.
+✔ Test selectionKeepsDirectionHoldsAndOrder() passed after 9.455 seconds.
+✔ Test elapsedTicksSelectExactFrameBoundariesWithoutOverflow() passed after 9.455 seconds.
+✔ Test playtestT903LoaderParsesSessions() passed after 9.455 seconds.
+✔ Test encounterEN016HiddenSpawnIsUnawareAndNeverAttacks() passed after 9.457 seconds.
+✔ Test allDeliveredV1DirectionsKeepTheirCadence() passed after 9.455 seconds.
+✔ Test selectionOpensFromGenuineMACompletion() passed after 9.455 seconds.
+✔ Test evidenceT907CollectsReplayAndCompleteRunDigests() passed after 9.458 seconds.
+✔ Test malformedAndOverflowFailClosed() passed after 9.455 seconds.
+✔ Test clockFormatsElapsedTicksAsMinutesAndSeconds() passed after 9.455 seconds.
+✔ Test aVerifiedRecordBuildsAGhost() passed after 9.456 seconds.
+◇ Test case passing 1 argument headingMilli → 45000 to coneOpensTowardTheHeadingNotItsMirror(headingMilli:) started.
+✔ Test exposureEX006ContactOnSixtiethTickResetsClock() passed after 9.450 seconds.
+✔ Test zonesAreTheSevenCanonicalZonesInOrder() passed after 9.443 seconds.
+✔ Test everyZoneLiesInsideTheArena() passed after 9.443 seconds.
+✔ Test gridIs36By24SixtyFourUnitCells() passed after 9.443 seconds.
+✔ Test clipT605AnchorsStayStableAcrossRoleAndMirroredFacings() passed after 9.455 seconds.
+✔ Test clipCatalogDeclaresRequiredMarkersAndFourDirections() passed after 9.442 seconds.
+✔ Test phaseNeverChangesTheMusicState() passed after 9.305 seconds.
+✔ Test exposureEX011RecoveryStopsAtTheFloor() passed after 9.303 seconds.
+◇ Test case passing 1 argument wallFirst → true to actualSweepOrdersTargetAndWall(wallFirst:) started.
+✔ Test everyProjectedClipExistsInTheContract() passed after 9.290 seconds.
+✔ Test attackStatesAreUnchanged() passed after 9.290 seconds.
+✔ Test correlatorRecoverPresentsItsRecoverClip() passed after 9.288 seconds.
+✔ Test movingEnemiesPresentMove(role:state:expected:) with 5 test cases passed after 9.288 seconds.
+✔ Test stationaryEnemiesPresentIdle(role:) with 5 test cases passed after 9.286 seconds.
+✔ Test informantPursuitKeepsItsPursuitClip() passed after 9.276 seconds.
+✔ Suite DefectRegistryTests passed after 9.472 seconds.
+✔ Suite WeaponUpgradeFeedbackTests passed after 9.472 seconds.
+✔ Test actualSweepOrdersTargetAndWall(wallFirst:) with 2 test cases passed after 9.470 seconds.
+✔ Suite CameraFollowTests passed after 9.472 seconds.
+◇ Test case passing 1 argument upgrade → .ricochetPulse to completeRunT705GoldenVectorSucceedsWithZeroCamerasDestroyed(upgrade:) started.
+✔ Suite DailyFlavourTests passed after 9.875 seconds.
+✔ Suite ClipMetadataV2Tests passed after 9.875 seconds.
+✔ Suite ExposureFinalizationTests passed after 9.875 seconds.
+✔ Suite CombatFeedbackTests passed after 9.875 seconds.
+✔ Suite ClipTimingTests passed after 9.875 seconds.
+◇ Test case passing 1 argument headingMilli → 135000 to coneOpensTowardTheHeadingNotItsMirror(headingMilli:) started.
+✔ Suite CanonicalArenaZonesTests passed after 9.875 seconds.
+✔ Suite StandardEnemyClipProjectionTests passed after 9.875 seconds.
+✔ Test assetIntakeAcceptsPulledEvidenceAndExcludesArtSourcesFromRuntime() passed after 9.076 seconds.
+◇ Test unknownIdentityFailsClosed() started.
+◇ Test encounterEN003SelectsLowerIDAmongEqualValidSockets() started.
+◇ Test familiesMapToDistinctAssets() started.
+◇ Test theEventSchemaAdmitsEveryTypeAndOrdinal() started.
+◇ Test objectiveT703GraphAdvancesThroughMobEncounters() started.
+◇ Test audioAH002ThreeCameraDestructionsOneTamper() started.
+◇ Test vfxUnknownSchemaFailsClosed() started.
+◇ Test gateT902AllGateFamiliesEnumerated() started.
+◇ Test arenaAR005ClosedMAGateLeavesEscapeAperture() started.
+◇ Test snapshotCamerasCarryTheirHousingFamily() started.
+◇ Test cameraNotchesPersistNinetyTicksAfterHit() started.
+◇ Test cameraCD011EqualDistanceChosenCamerasPreferLowerID() started.
+◇ Test receiptT707SummaryReflectsCompleteBlackout() started.
+◇ Test extractionT703AArmsWhenCombatGraphComplete() started.
+◇ Test receiptT708ObjectivesMatchEncounterObjectivesContract() started.
+◇ Test ambientUnknownSchemaFailsClosed() started.
+◇ Test patrolEN025HoldsThirtyTicksThenHeadsForTheNextAndWraps() started.
+◇ Test presentationCameraShowsTheManifestViewport() started.
+◇ Test cameraPlacementSelectsEightWithZoneQuotas() started.
+◇ Test enemyT405SnapshotProjectsSilhouetteWithoutChangingRadius() started.
+◇ Test encounterEN012TrackedAppendsOneInformant() started.
+◇ Test everyOriginalIsOwnedWorkWithADigest() started.
+◇ Test aKillAfterAnAlertIsNotATakedown() started.
+◇ Test excludedOrAcceptedWithoutHashCatalogsFailClosed() started.
+◇ Test bo021BossActivationLeaves120Unchanged() started.
+◇ Test aCompleteGroupIsBacked() started.
+◇ Test telegraphToCooldownHoldsTheCommitForItsDuration(_:) started.
+◇ Test bossPhaseBreakAboveTheCaptainCapFailsClosed() started.
+◇ Test clipDurationsEqualAuthoritativeStateDurations() started.
+◇ Test cameraCP002ZoneQuotaTwoOneTwoTwoOne() started.
+◇ Test theRestartControlMeetsTheMinimumTouchTarget() started.
+◇ Test anApproximateRecordExplainsItself() started.
+◇ Test onlyTheNamedBossPhaseBedsComeFromACityPack() started.
+◇ Test seedIsDeterministicForADate() started.
+◇ Test nodeAndCopyAgree() started.
+◇ Test everyAdmittedAssetCarriesCompleteProvenance() started.
+◇ Test shareAndRestartDoNotOverlap() started.
+◇ Test visualLanguageUnknownSchemaFailsClosed() started.
+◇ Test aStraightDashAtMobADoesNotSlipThePatrol() started.
+◇ Test replayT901SmokeTripleExecutionMatchesDigest() started.
+◇ Test neutralCommandUsesRequestedTick() started.
+◇ Test invalidJSONThrowsInvalidJSON() started.
+◇ Test instrumentT900PoolsRemainBounded() started.
+◇ Test noSettingAppearsInTheDigest() started.
+◇ Test trackedBeforeMobCLosesGhost() started.
+◇ Test fieldsAreDarkUntilTheirTurn() started.
+◇ Test exposureEX007TamperWithoutContact() started.
+◇ Test retiringTheCardLeavesTheCompletionConditionAuthoritative() started.
+◇ Test audioAHNetworkBlackoutAccoladeCaption() started.
+◇ Test settingsSavedBeforeTheToggleStillDecode() started.
+◇ Test windowsMatchTheD090Table() started.
+◇ Test environmentIdsAreRuntimeReachable() started.
+◇ Test captainArtIsAllOrNothing() started.
+◇ Test observedKeepsTheQuietApproach() started.
+◇ Test splitMixAndXoshiroGoldenSequence() started.
+◇ Test ui010LosingItRemovesTheTagWithACaption() started.
+◇ Test attackClipsMatchTheirTelegraphWindows() started.
+◇ Test stagedAssetsAreStillUnplaced() started.
+◇ Test musicAssetIdsAreReachable() started.
+◇ Test hostileProjectilesAreDistinguishedFromPlayerFire() started.
+◇ Test cameraFieldOffStartsOnDestroyTickAndDoesNotWait() started.
+◇ Test playingIsNotTerminal() started.
+◇ Test t0AccumulatesDisplacementAcrossTicks() started.
+◇ Test lockedExtractionContactShowsThePrerequisite() started.
+◇ Test durationIsFramesOverFpsInTicks() started.
+◇ Test duplicateCommandTickIsRejected() started.
+◇ Test gateT908PendingDecisionsBlockComputation() started.
+◇ Test civicSeamT308IdentityOmitsLiteralMapLabels() started.
+◇ Test runtimeBundleT805BundledCatalogHasNoBundleViolations() started.
+◇ Test enemyEN005CorrelatorChargeIntoASolidEndsAndRecovers() started.
+◇ Test combatCB006EqualTimePrefersLowerTargetID() started.
+◇ Test profileT406CivicPoolStressReachesCapacity() started.
+◇ Test terminalT704StepAfterSuccessReturnsNoEventsAndFreezesTick() started.
+◇ Test cameraCD004DestroyWhileNotDetectingStillTampers() started.
+◇ Test hudUI007VoiceOverUpgradeSelectionOrderedLabels() started.
+◇ Test everyAnchoredElementFitsWithoutClamping() started.
+◇ Test exposureEX005RecoveryOnSixtyFirstTick() started.
+◇ Test encounterEN017TrackedSpawnIsAware() started.
+◇ Test choicesMapToTheSpecifiedOrder() started.
+◇ Test evidenceT907DefaultExpansionGateIsNotComputable() started.
+◇ Test successRowsWithNoStoredBest() started.
+◇ Test identityMismatchIsRejected() started.
+◇ Test case passing 1 argument headingMilli → 200000 to coneOpensTowardTheHeadingNotItsMirror(headingMilli:) started.
+◇ Test playerPC004DiagonalIntoVerticalWallSlidesY() started.
+◇ Test facingVectorDirectionAgreesWithHeadingConvention() started.
+◇ Test clipCatalogUnknownSchemaFailsClosed() started.
+◇ Test everyPhaseSelectsItsOwnBed() started.
+◇ Test exposureEX012FloorNeverRaisesExposure() started.
+◇ Test case passing 1 argument role → .fogAnalyticsCloud to telegraphToCooldownHoldsTheCommitForItsDuration(_:) started.
+✔ Test unknownIdentityFailsClosed() passed after 2.540 seconds.
+✔ Test encounterEN003SelectsLowerIDAmongEqualValidSockets() passed after 2.572 seconds.
+✔ Test familiesMapToDistinctAssets() passed after 2.572 seconds.
+✔ Test theEventSchemaAdmitsEveryTypeAndOrdinal() passed after 2.572 seconds.
+✔ Test objectiveT703GraphAdvancesThroughMobEncounters() passed after 2.573 seconds.
+✔ Test audioAH002ThreeCameraDestructionsOneTamper() passed after 2.573 seconds.
+✔ Test vfxUnknownSchemaFailsClosed() passed after 2.573 seconds.
+✔ Test gateT902AllGateFamiliesEnumerated() passed after 2.573 seconds.
+✔ Test arenaAR005ClosedMAGateLeavesEscapeAperture() passed after 2.573 seconds.
+✔ Test snapshotCamerasCarryTheirHousingFamily() passed after 2.573 seconds.
+✔ Test cameraNotchesPersistNinetyTicksAfterHit() passed after 2.573 seconds.
+✔ Test cameraCD011EqualDistanceChosenCamerasPreferLowerID() passed after 2.573 seconds.
+✔ Test receiptT707SummaryReflectsCompleteBlackout() passed after 2.573 seconds.
+✔ Test extractionT703AArmsWhenCombatGraphComplete() passed after 2.573 seconds.
+✔ Test receiptT708ObjectivesMatchEncounterObjectivesContract() passed after 2.573 seconds.
+✔ Test ambientUnknownSchemaFailsClosed() passed after 2.573 seconds.
+✔ Test receiptER006AtomicWriteAndRetention() passed after 12.433 seconds.
+✔ Test presentationCameraShowsTheManifestViewport() passed after 2.573 seconds.
+◇ Test realWallEntityTieIsBlocked() started.
+✔ Test cameraPlacementSelectsEightWithZoneQuotas() passed after 2.573 seconds.
+✔ Test enemyT405SnapshotProjectsSilhouetteWithoutChangingRadius() passed after 2.573 seconds.
+✔ Test encounterEN012TrackedAppendsOneInformant() passed after 2.573 seconds.
+✔ Test aKillAfterAnAlertIsNotATakedown() passed after 2.573 seconds.
+✔ Test excludedOrAcceptedWithoutHashCatalogsFailClosed() passed after 2.573 seconds.
+✔ Test bo021BossActivationLeaves120Unchanged() passed after 2.573 seconds.
+✔ Test aCompleteGroupIsBacked() passed after 2.573 seconds.
+✔ Test everyOriginalIsOwnedWorkWithADigest() passed after 2.573 seconds.
+✔ Test bossPhaseBreakAboveTheCaptainCapFailsClosed() passed after 2.573 seconds.
+✔ Test cameraCP002ZoneQuotaTwoOneTwoTwoOne() passed after 2.573 seconds.
+✔ Test theRestartControlMeetsTheMinimumTouchTarget() passed after 2.573 seconds.
+✔ Test anApproximateRecordExplainsItself() passed after 2.573 seconds.
+✔ Test clipDurationsEqualAuthoritativeStateDurations() passed after 2.573 seconds.
+✔ Test seedIsDeterministicForADate() passed after 2.573 seconds.
+✔ Test nodeAndCopyAgree() passed after 2.573 seconds.
+✔ Test patrolEN025HoldsThirtyTicksThenHeadsForTheNextAndWraps() passed after 2.574 seconds.
+✔ Test shareAndRestartDoNotOverlap() passed after 2.573 seconds.
+✔ Test visualLanguageUnknownSchemaFailsClosed() passed after 2.573 seconds.
+✔ Test gateT908DefaultReportIsNotComputable() passed after 12.449 seconds.
+✔ Test replayT901SmokeTripleExecutionMatchesDigest() passed after 2.573 seconds.
+✔ Test neutralCommandUsesRequestedTick() passed after 2.573 seconds.
+✔ Test invalidJSONThrowsInvalidJSON() passed after 2.573 seconds.
+✔ Test onlyTheNamedBossPhaseBedsComeFromACityPack() passed after 2.573 seconds.
+✔ Test noSettingAppearsInTheDigest() passed after 2.573 seconds.
+✔ Test trackedBeforeMobCLosesGhost() passed after 2.573 seconds.
+✔ Test fieldsAreDarkUntilTheirTurn() passed after 2.573 seconds.
+✔ Test exposureEX007TamperWithoutContact() passed after 2.573 seconds.
+✔ Test retiringTheCardLeavesTheCompletionConditionAuthoritative() passed after 2.573 seconds.
+✔ Test audioAHNetworkBlackoutAccoladeCaption() passed after 2.573 seconds.
+✔ Test settingsSavedBeforeTheToggleStillDecode() passed after 2.573 seconds.
+✔ Test windowsMatchTheD090Table() passed after 2.573 seconds.
+✔ Test everyAdmittedAssetCarriesCompleteProvenance() passed after 2.573 seconds.
+✔ Test captainArtIsAllOrNothing() passed after 2.573 seconds.
+✔ Test observedKeepsTheQuietApproach() passed after 2.573 seconds.
+✔ Test splitMixAndXoshiroGoldenSequence() passed after 2.573 seconds.
+✔ Test ui010LosingItRemovesTheTagWithACaption() passed after 2.573 seconds.
+✔ Test environmentIdsAreRuntimeReachable() passed after 2.573 seconds.
+✔ Test stagedAssetsAreStillUnplaced() passed after 2.573 seconds.
+✔ Test musicAssetIdsAreReachable() passed after 2.573 seconds.
+✔ Test hostileProjectilesAreDistinguishedFromPlayerFire() passed after 2.573 seconds.
+✔ Test cameraFieldOffStartsOnDestroyTickAndDoesNotWait() passed after 2.573 seconds.
+✔ Test playingIsNotTerminal() passed after 2.573 seconds.
+✔ Test t0AccumulatesDisplacementAcrossTicks() passed after 2.572 seconds.
+✔ Test lockedExtractionContactShowsThePrerequisite() passed after 2.571 seconds.
+✔ Test attackClipsMatchTheirTelegraphWindows() passed after 2.573 seconds.
+✔ Test duplicateCommandTickIsRejected() passed after 2.571 seconds.
+✔ Test gateT908PendingDecisionsBlockComputation() passed after 2.571 seconds.
+✔ Test durationIsFramesOverFpsInTicks() passed after 2.571 seconds.
+✔ Test instrumentT900PoolsRemainBounded() passed after 2.574 seconds.
+✔ Test enemyEN005CorrelatorChargeIntoASolidEndsAndRecovers() passed after 2.571 seconds.
+✔ Test combatCB006EqualTimePrefersLowerTargetID() passed after 2.571 seconds.
+✔ Test aStraightDashAtMobADoesNotSlipThePatrol() passed after 2.574 seconds.
+✔ Test playtestT903EvidenceAdvancesReleaseCandidateCollection() passed after 12.449 seconds.
+✔ Test cameraCD004DestroyWhileNotDetectingStillTampers() passed after 2.571 seconds.
+✔ Test hudUI007VoiceOverUpgradeSelectionOrderedLabels() passed after 2.571 seconds.
+✔ Test everyAnchoredElementFitsWithoutClamping() passed after 2.571 seconds.
+✔ Test exposureEX005RecoveryOnSixtyFirstTick() passed after 2.571 seconds.
+✔ Test terminalT704StepAfterSuccessReturnsNoEventsAndFreezesTick() passed after 2.571 seconds.
+✔ Test choicesMapToTheSpecifiedOrder() passed after 2.571 seconds.
+✔ Test runtimeBundleT805BundledCatalogHasNoBundleViolations() passed after 2.571 seconds.
+✔ Test civicSeamT308IdentityOmitsLiteralMapLabels() passed after 2.571 seconds.
+✔ Test identityMismatchIsRejected() passed after 2.571 seconds.
+◇ Test case passing 1 argument headingMilli → 315000 to coneOpensTowardTheHeadingNotItsMirror(headingMilli:) started.
+✔ Test playerPC004DiagonalIntoVerticalWallSlidesY() passed after 2.489 seconds.
+✔ Test facingVectorDirectionAgreesWithHeadingConvention() passed after 2.480 seconds.
+✔ Test clipCatalogUnknownSchemaFailsClosed() passed after 2.480 seconds.
+✔ Test everyPhaseSelectsItsOwnBed() passed after 2.175 seconds.
+✔ Test exposureEX012FloorNeverRaisesExposure() passed after 2.169 seconds.
+◇ Test case passing 1 argument upgrade → .ghostStep to completeRunT705GoldenVectorSucceedsWithZeroCamerasDestroyed(upgrade:) started.
+◇ Test case passing 1 argument role → .sutroSignalWitch to telegraphToCooldownHoldsTheCommitForItsDuration(_:) started.
+◇ Test assetIntakeRejectsDuplicateHashes() started.
+✔ Suite ContractVersionsTests passed after 12.669 seconds.
+✔ Suite CameraMountSolidTests passed after 12.669 seconds.
+✔ Test realWallEntityTieIsBlocked() passed after 0.217 seconds.
+✔ Suite SilhouetteTests passed after 12.669 seconds.
+✔ Test profileT406CivicPoolStressReachesCapacity() passed after 2.786 seconds.
+✔ Suite AssetCatalogTests passed after 12.669 seconds.
+✔ Test encounterEN017TrackedSpawnIsAware() passed after 2.786 seconds.
+✔ Suite ObjectiveProjectionTests passed after 12.669 seconds.
+✔ Suite VisualLanguageTests passed after 12.798 seconds.
+✔ Suite SimulationClockTests passed after 12.798 seconds.
+✔ Suite EnvironmentAssetsAreDrawnTests passed after 12.798 seconds.
+✔ Suite PlaytestEvidenceLoaderTests passed after 12.798 seconds.
+✔ Suite CivicSeamIdentityTests passed after 12.798 seconds.
+◇ Test case passing 1 argument headingMilli → 330000 to coneOpensTowardTheHeadingNotItsMirror(headingMilli:) started.
+✔ Test coneOpensTowardTheHeadingNotItsMirror(headingMilli:) with 6 test cases passed after 12.805 seconds.
+◇ Test encounterEN002ObstructedSocketsReturnNil() started.
+◇ Test noDeclaredHousingIsUnreachable() started.
+◇ Test alertCausesAreThePublishedVocabulary() started.
+◇ Test objectiveT703EliteAndBossNodesFollowMobs() started.
+◇ Test audioAH003PlayerDamageCoalescesPerFifteenTicks() started.
+◇ Test vfxFullScreenFlashFailsClosed() started.
+◇ Test gateT902DeviceGatesRequirePhysicalEvidence() started.
+◇ Test arenaAR007BossCorridorRemainsOneHundredNinetyTwoWide() started.
+◇ Test cameraTamperCopySitsBesideExposureAfterDestroy() started.
+◇ Test cameraCD015StandingPlayerChoosesNoCamera() started.
+◇ Test receiptT707DestructionEntriesOrderedByTickThenCameraId() started.
+◇ Test extractionAR008LeaveResetsAndReenterResumes() started.
+◇ Test receiptT708RootBossMirrorsCombatAuthorityBoss() started.
+◇ Test ambientGameplayImplicationFailsClosed() started.
+◇ Test receiptER006FilenameUsesDigestPrefix() started.
+◇ Test rulesViewportContainsTheCameraViewEverywhere() started.
+◇ Test simulationInitializesFailClosedAndStepsDeterministically() started.
+◇ Test encounterEN013MobCNeverAppends() started.
+◇ Test aKillOfAStruckOrAwareEnemyIsNotATakedown() started.
+◇ Test bo022QuietApproachRaisesPlayerFrom40To90() started.
+◇ Test groupsAreBackedIndependently() started.
+◇ Test everyOriginalFileExistsAndMatchesItsDigest() started.
+◇ Test cameraDestroyedTakesTheStandardCap() started.
+◇ Test cameraCP003TutorialFourFamiliesFourReturnVisible() started.
+◇ Test theRestartControlIsCentredOnTheSafeRectangle() started.
+◇ Test approximateCuesDoNotCollideWithOtherEvents() started.
+◇ Test theTwoTelegraphsAreDistinguishable() started.
+◇ Test dayRollsOverAtMidnightUTC() started.
+◇ Test case passing 1 argument role → .victorianVendor to telegraphToCooldownHoldsTheCommitForItsDuration(_:) started.
+◇ Test facingIsTheLastTravelDirection() started.
+◇ Test cardRowsSitBetweenTitleAndControls() started.
+◇ Test gateT908OpenDefectsFailReport() started.
+◇ Test replayT901EachMatrixEntryProducesStableDigest() started.
+◇ Test nonObjectRootThrowsInvalidJSON() started.
+◇ Test stateBedsAreNeverCityMusic() started.
+◇ Test settingsMoveOnlyTheReceiptPresentationBlock() started.
+◇ Test shadowIsEarnedFromARealRunThatSlipsThePatrol() started.
+◇ Test reducedMotionIsOneHalfSecondFadeWithNoChirps() started.
+◇ Test exposureEX008TwoTampersLockdownOnce() started.
+◇ Test theCounterRestartsWithEachPhase() started.
+◇ Test audioT610CriticalHitEmitsHit02AndCritical() started.
+◇ Test ghostSettingRoundTripsAndStaysOffTheReceipt() started.
+◇ Test everyBoundaryNamesSomethingTheContractsDefine() started.
+◇ Test noAdmittedAssetBacksTheCanonicalCast() started.
+◇ Test captainAndStandardHousingsAreBothBacked() started.
+◇ Test ex013TrackedBeforeMobCClearsIt() started.
+◇ Test cameraPlacementStreamIsIsolatedFromCombat() started.
+◇ Test ui011ThePayoutCaptionNamesTheRestoredIntegrity() started.
+◇ Test fogIDsResolveThroughThePresentationContract() started.
+◇ Test everyAudioIdIsDeliveredOrPlanned() started.
+◇ Test projectileOrderIsStableByEntityID() started.
+◇ Test cameraHitDoesNotInterruptFieldOrRotateHousing() started.
+◇ Test upgradeSelectionPendingIsNotTerminal() started.
+◇ Test t1CompletesAfterSixtyPresentedTicks() started.
+◇ Test preemptionPreservesProgressAndRestoresTheCard() started.
+◇ Test noOrphanedAttackClipNamesRemain() started.
+◇ Test smokeReplayLoadsAndExecutes() started.
+◇ Test gateT908AllRequiredGatesPassWhenFullyEvidenceLinked() started.
+◇ Test eliteDamageShowsItsHurtClipForExactlyItsDuration() started.
+◇ Test instrumentT900CompleteRunTerminalOutcome() started.
+◇ Test enemyEN006ThirdVendorMineRetiresTheOldest() started.
+◇ Test combatCB007WallConsumesTheProjectileOnAnExactTie() started.
+◇ Test patrolSlipSearch() started.
+◇ Test cameraCD007DestroyAt950ClampsAndLockdown() started.
+◇ Test hudUI008GrayscaleReducedPresentationStatesDistinct() started.
+◇ Test controlsStayInsideAndMeetTheTouchTarget(handedness:) started.
+◇ Test exposureEX002ThreeCamerasOneTick() started.
+◇ Test terminalT704ReceiptDigestImmutableAfterTerminal() started.
+◇ Test clockIsFrozenWhileSelectionIsOpen() started.
+◇ Test runtimeBundleT805RejectsLegacyEvidenceWithRuntimePath() started.
+◇ Test aRecordFromAnotherSeedIsRejected() started.
+◇ Test combatCB001TenPulsesOverThreeHundredTicks() started.
+◇ Test clipT605HeadingProjectsToFourAuthoredDirectionsWithoutMirroring() started.
+◇ Test clipCatalogMissingFieldFailsClosed() started.
+◇ Test noPhaseFallsBackToThePlainBossBed() started.
+◇ Test exposureTamperFloorAddsNothingToASpike() started.
+✔ Test telegraphToCooldownHoldsTheCommitForItsDuration(_:) with 3 test cases passed after 3.965 seconds.
+◇ Test case passing 1 argument handedness → .right to controlsStayInsideAndMeetTheTouchTarget(handedness:) started.
+✔ Test encounterEN002ObstructedSocketsReturnNil() passed after 2.312 seconds.
+✔ Test assetIntakeRejectsDuplicateHashes() passed after 2.451 seconds.
+✔ Test alertCausesAreThePublishedVocabulary() passed after 2.312 seconds.
+✔ Test objectiveT703EliteAndBossNodesFollowMobs() passed after 2.342 seconds.
+✔ Test audioAH003PlayerDamageCoalescesPerFifteenTicks() passed after 2.342 seconds.
+✔ Test vfxFullScreenFlashFailsClosed() passed after 2.342 seconds.
+✔ Test gateT902DeviceGatesRequirePhysicalEvidence() passed after 2.342 seconds.
+✔ Test arenaAR007BossCorridorRemainsOneHundredNinetyTwoWide() passed after 2.394 seconds.
+✔ Test cameraTamperCopySitsBesideExposureAfterDestroy() passed after 2.394 seconds.
+✔ Test cameraCD015StandingPlayerChoosesNoCamera() passed after 2.394 seconds.
+✔ Test receiptT707DestructionEntriesOrderedByTickThenCameraId() passed after 2.394 seconds.
+✔ Test noDeclaredHousingIsUnreachable() passed after 2.395 seconds.
+✔ Test receiptT708RootBossMirrorsCombatAuthorityBoss() passed after 2.394 seconds.
+✔ Test ambientGameplayImplicationFailsClosed() passed after 2.394 seconds.
+✔ Test d021T406DeviceProfilingSettlesCeilings() passed after 15.198 seconds.
+✔ Test rulesViewportContainsTheCameraViewEverywhere() passed after 2.394 seconds.
+◇ Test stationaryAndMissedWallSweepsAreDefined() started.
+✔ Test simulationInitializesFailClosedAndStepsDeterministically() passed after 2.394 seconds.
+✔ Test encounterEN013MobCNeverAppends() passed after 2.394 seconds.
+◇ Test profileT406AggregateReportIsStable() started.
+✔ Test aKillOfAStruckOrAwareEnemyIsNotATakedown() passed after 2.394 seconds.
+✔ Test successRowsWithNoStoredBest() passed after 5.320 seconds.
+✔ Test groupsAreBackedIndependently() passed after 2.394 seconds.
+✔ Test bo022QuietApproachRaisesPlayerFrom40To90() passed after 2.394 seconds.
+✔ Test cameraDestroyedTakesTheStandardCap() passed after 2.394 seconds.
+◇ Test encounterEN018MobCSpawnsAware() started.
+✔ Test cameraCP003TutorialFourFamiliesFourReturnVisible() passed after 2.394 seconds.
+✔ Test theRestartControlIsCentredOnTheSafeRectangle() passed after 2.394 seconds.
+✔ Test completeRunT705GoldenVectorSucceedsWithZeroCamerasDestroyed(upgrade:) with 3 test cases passed after 15.198 seconds.
+✔ Test evidenceT907CollectsWithDeviceProfilingAndSettledD021() passed after 15.201 seconds.
+✔ Test dayRollsOverAtMidnightUTC() passed after 2.394 seconds.
+✔ Test approximateCuesDoNotCollideWithOtherEvents() passed after 2.394 seconds.
+✔ Test cardRowsSitBetweenTitleAndControls() passed after 2.275 seconds.
+✔ Test everyOriginalFileExistsAndMatchesItsDigest() passed after 2.394 seconds.
+✔ Test theTwoTelegraphsAreDistinguishable() passed after 2.394 seconds.
+✔ Test nonObjectRootThrowsInvalidJSON() passed after 2.275 seconds.
+✔ Test replayT901EachMatrixEntryProducesStableDigest() passed after 2.275 seconds.
+✔ Test settingsMoveOnlyTheReceiptPresentationBlock() passed after 2.275 seconds.
+✔ Test shadowIsEarnedFromARealRunThatSlipsThePatrol() passed after 2.275 seconds.
+✔ Test reducedMotionIsOneHalfSecondFadeWithNoChirps() passed after 2.275 seconds.
+✔ Test exposureEX008TwoTampersLockdownOnce() passed after 2.275 seconds.
+✔ Test theCounterRestartsWithEachPhase() passed after 2.275 seconds.
+✔ Test audioT610CriticalHitEmitsHit02AndCritical() passed after 2.275 seconds.
+✔ Test ghostSettingRoundTripsAndStaysOffTheReceipt() passed after 2.275 seconds.
+✔ Test everyBoundaryNamesSomethingTheContractsDefine() passed after 2.275 seconds.
+✔ Test stateBedsAreNeverCityMusic() passed after 2.275 seconds.
+✔ Test extractionAR008LeaveResetsAndReenterResumes() passed after 2.395 seconds.
+✔ Test ex013TrackedBeforeMobCClearsIt() passed after 2.275 seconds.
+✔ Test cameraPlacementStreamIsIsolatedFromCombat() passed after 2.275 seconds.
+✔ Test ui011ThePayoutCaptionNamesTheRestoredIntegrity() passed after 2.275 seconds.
+✔ Test facingIsTheLastTravelDirection() passed after 2.275 seconds.
+✔ Test receiptER006FilenameUsesDigestPrefix() passed after 2.395 seconds.
+✔ Test noAdmittedAssetBacksTheCanonicalCast() passed after 2.275 seconds.
+✔ Test cameraHitDoesNotInterruptFieldOrRotateHousing() passed after 2.274 seconds.
+✔ Test upgradeSelectionPendingIsNotTerminal() passed after 2.274 seconds.
+✔ Test t1CompletesAfterSixtyPresentedTicks() passed after 2.274 seconds.
+✔ Test preemptionPreservesProgressAndRestoresTheCard() passed after 2.274 seconds.
+✔ Test projectileOrderIsStableByEntityID() passed after 2.275 seconds.
+✔ Test smokeReplayLoadsAndExecutes() passed after 2.274 seconds.
+✔ Test gateT908AllRequiredGatesPassWhenFullyEvidenceLinked() passed after 2.274 seconds.
+✔ Test captainAndStandardHousingsAreBothBacked() passed after 2.275 seconds.
+✔ Test eliteDamageShowsItsHurtClipForExactlyItsDuration() passed after 2.274 seconds.
+✔ Test enemyEN006ThirdVendorMineRetiresTheOldest() passed after 2.274 seconds.
+✔ Test combatCB007WallConsumesTheProjectileOnAnExactTie() passed after 2.274 seconds.
+✔ Test patrolSlipSearch() passed after 2.279 seconds.
+✔ Test cameraCD007DestroyAt950ClampsAndLockdown() passed after 2.279 seconds.
+✔ Test hudUI008GrayscaleReducedPresentationStatesDistinct() passed after 2.279 seconds.
+✔ Test exposureEX002ThreeCamerasOneTick() passed after 2.279 seconds.
+✔ Test terminalT704ReceiptDigestImmutableAfterTerminal() passed after 2.279 seconds.
+✔ Test fogIDsResolveThroughThePresentationContract() passed after 2.280 seconds.
+✔ Test everyAudioIdIsDeliveredOrPlanned() passed after 2.280 seconds.
+✔ Test aRecordFromAnotherSeedIsRejected() passed after 2.279 seconds.
+✔ Test noOrphanedAttackClipNamesRemain() passed after 2.280 seconds.
+✔ Test clipT605HeadingProjectsToFourAuthoredDirectionsWithoutMirroring() passed after 2.033 seconds.
+✔ Test clipCatalogMissingFieldFailsClosed() passed after 2.032 seconds.
+✔ Test noPhaseFallsBackToThePlainBossBed() passed after 1.826 seconds.
+✔ Test exposureTamperFloorAddsNothingToASpike() passed after 1.814 seconds.
+◇ Test case passing 1 argument handedness → .left to controlsStayInsideAndMeetTheTouchTarget(handedness:) started.
+◇ Test headingsAdvanceClockwise() started.
+✔ Suite EventCatalogTests passed after 16.061 seconds.
+✔ Suite CameraHousingArtTests passed after 16.061 seconds.
+✔ Test stationaryAndMissedWallSweepsAreDefined() passed after 0.858 seconds.
+✔ Suite ArenaAndSimulationTests passed after 16.061 seconds.
+✔ Test runtimeBundleT805RejectsLegacyEvidenceWithRuntimePath() passed after 3.131 seconds.
+✔ Test encounterEN018MobCSpawnsAware() passed after 0.858 seconds.
+✔ Suite DeviceRunEvidenceTests passed after 16.061 seconds.
+✔ Suite TerminalShareGeometryTests passed after 16.061 seconds.
+✔ Suite MusicBedCoverageTests passed after 16.061 seconds.
+✔ Suite ReceiptArchiveTests passed after 16.060 seconds.
+✔ Suite CameraPresentationTests passed after 16.061 seconds.
+✔ Suite ExpansionGateDecisionTests passed after 16.061 seconds.
+✔ Suite PatrolSlipSearch passed after 16.062 seconds.
+✔ Suite HUDPresentationTests passed after 16.061 seconds.
+✔ Test controlsStayInsideAndMeetTheTouchTarget(handedness:) with 2 test cases passed after 3.132 seconds.
+✔ Suite EnvironmentContractTests passed after 16.061 seconds.
+✔ Suite CaptainClipTests passed after 16.063 seconds.
+◇ Test cooldownWithoutATelegraphIsNotACommit() started.
+✔ Test headingsAdvanceClockwise() passed after 0.003 seconds.
+◇ Test encounterEN002RetryEveryThirtyTicksThenTimeout() started.
+◇ Test pulledSanFranciscoEvidenceHashesMatchCatalog() started.
+◇ Test objectiveT703LockedExtractionContactShowsAuthorityCopy() started.
+◇ Test audioAH004DisabledSettingsLeaveCuesEmpty() started.
+◇ Test vfxProjectorMapsEventsAndCoalescesPlayerHits() started.
+◇ Test gateT902PlaytestGatesMapToT903T904() started.
+◇ Test arenaLayoutDocumentsBossGateSidestep() started.
+◇ Test cameraUI005LockdownPreemptsTutorialWithoutAdvancingPhase() started.
+◇ Test cameraCD016MovingTowardACameraTargetsIt() started.
+◇ Test receiptT707DestructionEntryIncludesSourceAndLockdownFields() started.
+◇ Test receiptT708DefeatedBossReceiptListsCanonicalPhases() started.
+◇ Test ambientCameraHousingMotionFailsClosed() started.
+◇ Test d021T406EvaluatorProfilesFromSimulation() started.
+◇ Test spawnFairnessStillUsesTheRulesBox() started.
+◇ Test encounterHeatReadsThePreviousTicksDetectionState() started.
+◇ Test streakCountsAndResetsWhenAnEnemyBecomesAware() started.
+◇ Test ghostRowShowsNewBestOrTheGap() started.
+◇ Test nothingDeliveredMeansNothingBacked() started.
+◇ Test bo023LostQuietApproachRaisesPlayerFrom40To75() started.
+◇ Test blackoutShorterThanTheSpecifiedCascadeFailsClosed() started.
+◇ Test cameraCP004IncompatiblePairShuffledFirstYieldsNextLegal() started.
+◇ Test theCentreHitsAndTheCornerDoesNot() started.
+◇ Test completeRunT706NoCameraDestructionExploit(upgrade:) started.
+◇ Test fourHundredDaysYieldDistinctLegalSeeds() started.
+◇ Test approximateCuesStayWithinTheCityBoundary() started.
+◇ Test originalSpritesUseAuthoredBoxes() started.
+◇ Test telegraphsCarryTheirAudioCues() started.
+◇ Test malformedBossSectionThrowsTypedErrorNamingTheField() started.
+◇ Test gateB016KernelAndSmokeFixturesPass() started.
+◇ Test receiptRecordsWhetherTutorialsWereEnabled() started.
+◇ Test rs019PatrolAlertedBeforeMobALosesShadow() started.
+◇ Test chirpCueAndEncounterLabelHoldMatchD100() started.
+◇ Test exposureEX009LockdownIgnoresRecovery() started.
+◇ Test safetyMessagesSurviveTheCap() started.
+◇ Test audioT610DestroyEmitsFieldOffSameTick() started.
+◇ Test ghostNeverAppearsInTheDigest() started.
+◇ Test onlyTheFirstStartCountsAndWavesAreKeyedByEncounter() started.
+◇ Test extractionUI006LeaveAtOneTickResetsDisplayedSeconds() started.
+◇ Test ex014ItStaysLostAfterRecovery() started.
+◇ Test entityIdsAreMonotonicAndNeverReused() started.
+◇ Test noTagOnceTheBossIsUpEvenWithoutTheActivationEvent() started.
+◇ Test patrolEN026PlayerInsideTheConeIsSeen() started.
+◇ Test onlyNamedSingleCuesComeFromAnotherCity() started.
+◇ Test notPlayingDisagreesWithTerminalAtTheUpgradeGate() started.
+◇ Test t1DoesNotCountBeforeItIsActive() started.
+◇ Test lockdownOutranksExtraction() started.
+◇ Test bossIntegrityProjectsForTheHUDBar() started.
+◇ Test restartRestoresInitialAuthoritativeState() started.
+◇ Test everyEmitterHasAHousingAndOnlyTheLiveOneIsActive() started.
+◇ Test moderateStaggersOnlyWhenNoAttackIsPlaying() started.
+◇ Test enemyEN007ForcedLockdownJumpsToOneThousandAndLatchesOnce() started.
+◇ Test theOrderIsTotalAndNeverDependsOnDiscoveryOrder() started.
+◇ Test cameraCD010DeathTickStillRecordsTamper() started.
+◇ Test exposureEX003EightCamerasCapsAtFive() started.
+◇ Test terminalT704ER005FailedRunRetainsCameraDestruction() started.
+◇ Test audioCoverageIsMeasurable() started.
+◇ Test tamperedCommandIsRejected() started.
+◇ Test clipT605HurtInterruptsLocomotionButNotDodge() started.
+◇ Test clipCatalogMissingRequiredClipFailsClosed() started.
+◇ Test nonBossStatesAreUnaffected() started.
+◇ Test exposureTamperFloorThroughTheSimulation(destroy:) started.
+◇ Test case passing 1 argument upgrade → .signalJammer to completeRunT706NoCameraDestructionExploit(upgrade:) started.
+✔ Test cooldownWithoutATelegraphIsNotACommit() passed after 0.802 seconds.
+✔ Test instrumentT900CompleteRunTerminalOutcome() passed after 5.209 seconds.
+✔ Test clockIsFrozenWhileSelectionIsOpen() passed after 5.209 seconds.
+✔ Test objectiveT703LockedExtractionContactShowsAuthorityCopy() passed after 2.074 seconds.
+✔ Test audioAH004DisabledSettingsLeaveCuesEmpty() passed after 2.074 seconds.
+✔ Test vfxProjectorMapsEventsAndCoalescesPlayerHits() passed after 2.074 seconds.
+✔ Test gateT902PlaytestGatesMapToT903T904() passed after 2.074 seconds.
+✔ Test combatCB001TenPulsesOverThreeHundredTicks() passed after 5.027 seconds.
+✔ Test cameraUI005LockdownPreemptsTutorialWithoutAdvancingPhase() passed after 2.124 seconds.
+✔ Test cameraCD016MovingTowardACameraTargetsIt() passed after 2.124 seconds.
+✔ Test receiptT707DestructionEntryIncludesSourceAndLockdownFields() passed after 2.124 seconds.
+✔ Test receiptT708DefeatedBossReceiptListsCanonicalPhases() passed after 2.124 seconds.
+✔ Test ambientCameraHousingMotionFailsClosed() passed after 2.124 seconds.
+◇ Test case passing 1 argument destroy → true to exposureTamperFloorThroughTheSimulation(destroy:) started.
+✔ Test pulledSanFranciscoEvidenceHashesMatchCatalog() passed after 2.363 seconds.
+✔ Test spawnFairnessStillUsesTheRulesBox() passed after 2.363 seconds.
+◇ Test startInsideCircleHitsAtEntryNotExit() started.
+✔ Test encounterHeatReadsThePreviousTicksDetectionState() passed after 2.363 seconds.
+◇ Test runtimeBundleT807CatalogContentAuditPassesForBundledCatalog() started.
+✔ Test streakCountsAndResetsWhenAnEnemyBecomesAware() passed after 2.363 seconds.
+✔ Test arenaLayoutDocumentsBossGateSidestep() passed after 2.363 seconds.
+✔ Test nothingDeliveredMeansNothingBacked() passed after 2.363 seconds.
+✔ Test bo023LostQuietApproachRaisesPlayerFrom40To75() passed after 2.363 seconds.
+✔ Test blackoutShorterThanTheSpecifiedCascadeFailsClosed() passed after 2.363 seconds.
+◇ Test encounterEN018HeatReinforcementSpawnsAwareWhileAuthoredMembersDoNot() started.
+✔ Test cameraCP004IncompatiblePairShuffledFirstYieldsNextLegal() passed after 2.363 seconds.
+✔ Test theCentreHitsAndTheCornerDoesNot() passed after 2.363 seconds.
+✔ Test wanderingRunDigestAndReceiptAreUnchanged() passed after 18.426 seconds.
+✔ Test approximateCuesStayWithinTheCityBoundary() passed after 2.319 seconds.
+✔ Test originalSpritesUseAuthoredBoxes() passed after 2.318 seconds.
+✔ Test telegraphsCarryTheirAudioCues() passed after 2.318 seconds.
+✔ Test malformedBossSectionThrowsTypedErrorNamingTheField() passed after 2.318 seconds.
+✔ Test gateB016KernelAndSmokeFixturesPass() passed after 2.318 seconds.
+✔ Test receiptRecordsWhetherTutorialsWereEnabled() passed after 2.318 seconds.
+✔ Test rs019PatrolAlertedBeforeMobALosesShadow() passed after 2.318 seconds.
+✔ Test chirpCueAndEncounterLabelHoldMatchD100() passed after 2.318 seconds.
+✔ Test exposureEX009LockdownIgnoresRecovery() passed after 2.318 seconds.
+✔ Test safetyMessagesSurviveTheCap() passed after 2.318 seconds.
+✔ Test audioT610DestroyEmitsFieldOffSameTick() passed after 2.318 seconds.
+✔ Test ghostNeverAppearsInTheDigest() passed after 2.318 seconds.
+✔ Test onlyTheFirstStartCountsAndWavesAreKeyedByEncounter() passed after 2.318 seconds.
+✔ Test extractionUI006LeaveAtOneTickResetsDisplayedSeconds() passed after 2.318 seconds.
+✔ Test ex014ItStaysLostAfterRecovery() passed after 2.318 seconds.
+✔ Test entityIdsAreMonotonicAndNeverReused() passed after 2.318 seconds.
+✔ Test noTagOnceTheBossIsUpEvenWithoutTheActivationEvent() passed after 2.318 seconds.
+✔ Test patrolEN026PlayerInsideTheConeIsSeen() passed after 2.318 seconds.
+✔ Test onlyNamedSingleCuesComeFromAnotherCity() passed after 2.318 seconds.
+✔ Test notPlayingDisagreesWithTerminalAtTheUpgradeGate() passed after 2.318 seconds.
+✔ Test t1DoesNotCountBeforeItIsActive() passed after 2.318 seconds.
+✔ Test lockdownOutranksExtraction() passed after 2.318 seconds.
+✔ Test bossIntegrityProjectsForTheHUDBar() passed after 2.318 seconds.
+✔ Test encounterEN002RetryEveryThirtyTicksThenTimeout() passed after 2.365 seconds.
+✔ Test everyEmitterHasAHousingAndOnlyTheLiveOneIsActive() passed after 2.318 seconds.
+✔ Test restartRestoresInitialAuthoritativeState() passed after 2.318 seconds.
+✔ Test enemyEN007ForcedLockdownJumpsToOneThousandAndLatchesOnce() passed after 2.318 seconds.
+✔ Test theOrderIsTotalAndNeverDependsOnDiscoveryOrder() passed after 2.318 seconds.
+✔ Test ghostRowShowsNewBestOrTheGap() passed after 2.364 seconds.
+◇ Test extraLargeScaleFitsTheSEClassCanvas() started.
+✔ Test exposureEX003EightCamerasCapsAtFive() passed after 2.318 seconds.
+✔ Test cameraCD010DeathTickStillRecordsTamper() passed after 2.319 seconds.
+✔ Test terminalT704ER005FailedRunRetainsCameraDestruction() passed after 2.319 seconds.
+✔ Test moderateStaggersOnlyWhenNoAttackIsPlaying() passed after 2.319 seconds.
+✔ Test clipT605HurtInterruptsLocomotionButNotDodge() passed after 1.808 seconds.
+✔ Test clipCatalogMissingRequiredClipFailsClosed() passed after 1.808 seconds.
+✔ Test nonBossStatesAreUnaffected() passed after 1.771 seconds.
+✔ Test audioCoverageIsMeasurable() passed after 2.319 seconds.
+DAILY-RUN-400 distinct=400 salted=0
+◇ Test case passing 1 argument upgrade → .ricochetPulse to completeRunT706NoCameraDestructionExploit(upgrade:) started.
+◇ Test atan2InvertsHeadingUnit(headingMilli:) started.
+✔ Suite CameraHUDTests passed after 19.563 seconds.
+✔ Suite CombatAuthorityReceiptTests passed after 19.564 seconds.
+✔ Test startInsideCircleHitsAtEntryNotExit() passed after 1.135 seconds.
+✔ Test runtimeBundleT807CatalogContentAuditPassesForBundledCatalog() passed after 1.135 seconds.
+✔ Test fourHundredDaysYieldDistinctLegalSeeds() passed after 3.498 seconds.
+✔ Suite ApproximateCueTests passed after 19.564 seconds.
+✔ Suite TutorialCardDurationTests passed after 19.563 seconds.
+✔ Suite AudioProjectorSmokeTests passed after 19.563 seconds.
+✔ Suite GhostSettingTests passed after 19.564 seconds.
+✔ Suite CaptainCameraTests passed after 19.564 seconds.
+✔ Test extraLargeScaleFitsTheSEClassCanvas() passed after 1.134 seconds.
+◇ Test case passing 1 argument headingMilli → 0 to atan2InvertsHeadingUnit(headingMilli:) started.
+◇ Test case passing 1 argument destroy → false to exposureTamperFloorThroughTheSimulation(destroy:) started.
+◇ Test correlatorCommitStaysAStateClip() started.
+◇ Test instrumentT900PerformanceThresholdsMatchGateC() started.
+◇ Test validIndexWithMovementIsRefused(x:y:) started.
+◇ Test objectiveT703ReceiptIncludesCombatAuthorityLane() started.
+◇ Test audioProjectsCameraHitAlternationAndUpgradeIds() started.
+◇ Test vfxReducedMotionDisablesShakeAndUsesReducedLanguage() started.
+◇ Test gateT902UnmappedGatesTrackedForT907() started.
+◇ Test combatCB003PredictiveAimDiffersFromDirect() started.
+◇ Test cameraCD017MovingFortyFiveDegreesAwayChoosesNothing() started.
+◇ Test receiptT707DamagedNotDestroyedCamerasCounted() started.
+◇ Test ambientRareWithoutTelegraphPauseFailsClosed() started.
+◇ Test deliveryPNGNameRejectsUnderscoreFreeStems() started.
+◇ Test awarenessHintUsesTheNewView() started.
+◇ Test encounterHeatAppliesToEveryMobAWave() started.
+◇ Test streakResetsWhenAnEnemySpawnsAware() started.
+◇ Test arenaAR010ManifestJSONRoundTrip() started.
+◇ Test anEmptyGroupIsNotBacked() started.
+◇ Test bo024QuietApproachLeaves100Unchanged() started.
+◇ Test the001SchemaIsNoLongerAccepted() started.
+◇ Test cameraCP005InsufficientZonePoolRejectedBeforeTickOne() started.
+◇ Test thePanelFitsTheSmallestSafeRectangle() started.
+◇ Test reducedMotionIntroChangesNothingEither() started.
+◇ Test everyActorSpriteIsSizeChecked() started.
+◇ Test everyPlayableActorRoleHasClips() started.
+◇ Test missingEliteFieldThrowsTypedErrorNamingTheField() started.
+◇ Test replayT901B005UnknownVersionFailsBeforeTickOne() started.
+◇ Test mixDefaultsMatchTheContract() started.
+◇ Test patrolAlertedAfterMobAKeepsShadow() started.
+◇ Test anyTouchSkips() started.
+◇ Test exposureEX010SingleStateJumpEvent() started.
+◇ Test aPilotedRunProducesTheBoundariesInOrder() started.
+◇ Test extractionAR009LethalDamageBeatsExtractionSuccess() started.
+◇ Test ex015TheForcedLockdownAtMobCNeverCostsIt() started.
+◇ Test quadraticDiscriminantFitsAndRejectsNegative() started.
+◇ Test aLostApproachHasNoPayoutCaption() started.
+◇ Test patrolEN027PlayerOutsideTheAngleIsNotSeen() started.
+◇ Test noVisualAssetComesFromAnotherCity() started.
+◇ Test theUpgradeGateIsPendingAndNotTerminalAtOnce() started.
+◇ Test t2ActivatesOnFirstContact() started.
+◇ Test safetyCopyIsDistinguishedFromCardCopy() started.
+◇ Test bossHUDIsAbsentBeforeAndAfterTheBoss() started.
+◇ Test encounterEN003SimulationUsesLowerSocketID() started.
+◇ Test previousRulesetFailsClosedBeforeExecution(previous:) started.
+◇ Test enemyEN008AlreadyLockedDownDoesNotEnterTwice() started.
+◇ Test combatCB008CameraLosesOneIntegrityRegardlessOfEnemyDamage() started.
+◇ Test aRunThatIsNotStoredNeverClaimsNewBest() started.
+◇ Test upgradeUP004SignalJammerContactDeltas() started.
+◇ Test cameraT410SurvivingContactThenTamperAddsBoth() started.
+◇ Test terminalT704ER008ReceiptCanonicalRoundTrip() started.
+◇ Test killingBlowHoldsTheDefeatClipAfterTheEnemyIsGone() started.
+◇ Test case passing 1 argument headingMilli → 20000 to atan2InvertsHeadingUnit(headingMilli:) started.
+◇ Test case passing 2 arguments x → 1, y → 0 to validIndexWithMovementIsRefused(x:y:) started.
+◇ Test clipT605TerminalClipsRejectCancellationAndDefeatCancelsExtraction() started.
+◇ Test clipCatalogRejectsMarkerCopiedFromFrameId() started.
+◇ Test everyPhaseBedIsDeliveredAndCityFree() started.
+◇ Test acceptedOriginalAudioIsPlayable() started.
+◇ Test case passing 1 argument upgrade → .ghostStep to completeRunT706NoCameraDestructionExploit(upgrade:) started.
+✔ Test correlatorCommitStaysAStateClip() passed after 0.253 seconds.
+◇ Test case passing 1 argument previous → "ss-rules-006" to previousRulesetFailsClosedBeforeExecution(previous:) started.
+✔ Test instrumentT900PerformanceThresholdsMatchGateC() passed after 1.518 seconds.
+✔ Test objectiveT703ReceiptIncludesCombatAuthorityLane() passed after 1.518 seconds.
+✔ Test audioProjectsCameraHitAlternationAndUpgradeIds() passed after 1.518 seconds.
+✔ Test vfxReducedMotionDisablesShakeAndUsesReducedLanguage() passed after 1.518 seconds.
+✔ Test gateT902UnmappedGatesTrackedForT907() passed after 1.518 seconds.
+✔ Test combatCB003PredictiveAimDiffersFromDirect() passed after 1.559 seconds.
+✔ Test cameraCD017MovingFortyFiveDegreesAwayChoosesNothing() passed after 1.559 seconds.
+✔ Test receiptT707DamagedNotDestroyedCamerasCounted() passed after 1.559 seconds.
+✔ Test ambientRareWithoutTelegraphPauseFailsClosed() passed after 1.648 seconds.
+✔ Test deliveryPNGNameRejectsUnderscoreFreeStems() passed after 1.755 seconds.
+✔ Test awarenessHintUsesTheNewView() passed after 1.755 seconds.
+◇ Test mineEvidenceNamesHazardRatherThanOwner() started.
+✔ Test encounterHeatAppliesToEveryMobAWave() passed after 1.755 seconds.
+◇ Test presentationAssetRegistryT801MatchesBundleProjection() started.
+✔ Test streakResetsWhenAnEnemySpawnsAware() passed after 1.755 seconds.
+✔ Test arenaAR010ManifestJSONRoundTrip() passed after 1.755 seconds.
+✔ Test anEmptyGroupIsNotBacked() passed after 1.755 seconds.
+✔ Test tamperedCommandIsRejected() passed after 5.222 seconds.
+✔ Test the001SchemaIsNoLongerAccepted() passed after 1.755 seconds.
+◇ Test saltLoopTakesTheFirstPassingCandidate() started.
+✔ Test cameraCP005InsufficientZonePoolRejectedBeforeTickOne() passed after 1.755 seconds.
+✔ Test thePanelFitsTheSmallestSafeRectangle() passed after 1.755 seconds.
+✔ Test bo024QuietApproachLeaves100Unchanged() passed after 1.755 seconds.
+✔ Test completeRunT706NoCameraDestructionExploit(upgrade:) with 3 test cases passed after 5.267 seconds.
+✔ Test everyActorSpriteIsSizeChecked() passed after 1.699 seconds.
+✔ Test encounterEN018HeatReinforcementSpawnsAwareWhileAuthoredMembersDoNot() passed after 2.905 seconds.
+✔ Test missingEliteFieldThrowsTypedErrorNamingTheField() passed after 1.699 seconds.
+✔ Test replayT901B005UnknownVersionFailsBeforeTickOne() passed after 1.699 seconds.
+✔ Test mixDefaultsMatchTheContract() passed after 1.699 seconds.
+✔ Test patrolAlertedAfterMobAKeepsShadow() passed after 1.699 seconds.
+✔ Test anyTouchSkips() passed after 1.699 seconds.
+✔ Test exposureEX010SingleStateJumpEvent() passed after 1.699 seconds.
+✔ Test everyPlayableActorRoleHasClips() passed after 1.700 seconds.
+✔ Test extractionAR009LethalDamageBeatsExtractionSuccess() passed after 1.699 seconds.
+✔ Test ex015TheForcedLockdownAtMobCNeverCostsIt() passed after 1.699 seconds.
+✔ Test quadraticDiscriminantFitsAndRejectsNegative() passed after 1.699 seconds.
+✔ Test aLostApproachHasNoPayoutCaption() passed after 1.699 seconds.
+✔ Test patrolEN027PlayerOutsideTheAngleIsNotSeen() passed after 1.699 seconds.
+✔ Test exposureTamperFloorThroughTheSimulation(destroy:) with 2 test cases passed after 4.664 seconds.
+✔ Test theUpgradeGateIsPendingAndNotTerminalAtOnce() passed after 1.699 seconds.
+✔ Test t2ActivatesOnFirstContact() passed after 1.699 seconds.
+✔ Test safetyCopyIsDistinguishedFromCardCopy() passed after 1.699 seconds.
+✔ Test bossHUDIsAbsentBeforeAndAfterTheBoss() passed after 1.699 seconds.
+✔ Test noVisualAssetComesFromAnotherCity() passed after 1.699 seconds.
+✔ Test enemyEN008AlreadyLockedDownDoesNotEnterTwice() passed after 1.699 seconds.
+✔ Test combatCB008CameraLosesOneIntegrityRegardlessOfEnemyDamage() passed after 1.699 seconds.
+✔ Test encounterEN003SimulationUsesLowerSocketID() passed after 1.699 seconds.
+◇ Test canvasIsCentredInTheSafeRectangle() started.
+✔ Test upgradeUP004SignalJammerContactDeltas() passed after 1.699 seconds.
+✔ Test cameraT410SurvivingContactThenTamperAddsBoth() passed after 1.699 seconds.
+✔ Test terminalT704ER008ReceiptCanonicalRoundTrip() passed after 1.699 seconds.
+✔ Test killingBlowHoldsTheDefeatClipAfterTheEnemyIsGone() passed after 1.699 seconds.
+◇ Test case passing 1 argument headingMilli → 45000 to atan2InvertsHeadingUnit(headingMilli:) started.
+◇ Test case passing 2 arguments x → 0, y → 1 to validIndexWithMovementIsRefused(x:y:) started.
+✔ Test clipT605TerminalClipsRejectCancellationAndDefeatCancelsExtraction() passed after 1.658 seconds.
+✔ Test clipCatalogRejectsMarkerCopiedFromFrameId() passed after 1.658 seconds.
+✔ Test evidenceT907DefaultExpansionGateIsNotComputable() passed after 11.466 seconds.
+✔ Test d021T406EvaluatorProfilesFromSimulation() passed after 5.283 seconds.
+◇ Test case passing 1 argument previous → "ss-rules-007" to previousRulesetFailsClosedBeforeExecution(previous:) started.
+✔ Suite RunTelemetryTests passed after 21.439 seconds.
+✔ Suite AssetIntakeChecks passed after 21.438 seconds.
+✔ Test mineEvidenceNamesHazardRatherThanOwner() passed after 0.106 seconds.
+✔ Test everyPhaseBedIsDeliveredAndCityFree() passed after 1.739 seconds.
+✔ Test saltLoopTakesTheFirstPassingCandidate() passed after 0.106 seconds.
+✔ Suite TerminalSurfaceGeometryTests passed after 21.440 seconds.
+✔ Suite ReplayMatrixTests passed after 21.440 seconds.
+✔ Suite TamperFloorTests passed after 21.439 seconds.
+✔ Suite TutorialPreemptionTests passed after 21.440 seconds.
+✔ Test previousRulesetFailsClosedBeforeExecution(previous:) with 2 test cases passed after 1.805 seconds.
+✔ Test canvasIsCentredInTheSafeRectangle() passed after 0.105 seconds.
+◇ Test case passing 1 argument headingMilli → 135000 to atan2InvertsHeadingUnit(headingMilli:) started.
+◇ Test case passing 2 arguments x → -32767, y → 0 to validIndexWithMovementIsRefused(x:y:) started.
+✔ Suite D021CeilingsTests passed after 21.454 seconds.
+◇ Test informantContactHitShowsItsCommit() started.
+◇ Test objectiveT703NetworkBlackoutDoesNotAdvanceCombatAuthority() started.
+◇ Test extractionTickFiresOnDisplayedSecondChange() started.
+◇ Test vfxRicochetProjectsOnceForTwoSameTickHits() started.
+◇ Test gateC009TenConsecutiveCompleteRunsPass() started.
+◇ Test combatCB004OverSpeedUsesDirectAim() started.
+◇ Test cameraCD018ChosenCameraBeatsFarEnemy() started.
+◇ Test receiptT707ER005FailureRetainsOrderedDestructionEntries() started.
+◇ Test ambientCosmeticStreamIsIsolatedFromCombatAndPlacement() started.
+◇ Test safetyClassFollowsTheD094List() started.
+◇ Test encounterEN015EarlyLockdownAppendsTwoInformants() started.
+◇ Test takedownAudioIsPitchedFourSemitonesDownWithARoutineCaption() started.
+◇ Test arenaAR009LethalDamageBeatsExtractionSuccess() started.
+◇ Test solidAssetIdsDeriveFromArenaSolidIds() started.
+◇ Test tamperedDigestIsRejected() started.
+◇ Test cameraDestroyedProjectsShatterAndReducedCrack() started.
+◇ Test cameraCP006NoCompatibleSetFailsArenaValidation() started.
+◇ Test thresholdAppliesOnlyOnTheActivationTick() started.
+◇ Test completeRunT706UpgradeIsolationPreserved(upgrade:) started.
+◇ Test environmentArtMatchesItsSolid() started.
+◇ Test spawnRuleCoversEveryCause() started.
+◇ Test unknownArchetypeThrowsTypedErrorNamingTheKey() started.
+◇ Test mixLevelsClampToTheContractRange() started.
+◇ Test aNonPatrolAlertKeepsShadow() started.
+◇ Test oneTutorialLineAtATimeAndLaterLinesQueue() started.
+◇ Test playerPC002DiagonalDoesNotExceedMaxSpeed() started.
+◇ Test daemonAnchorMatchesItsSpriteBox() started.
+◇ Test extractionT703AArmedOutsideRegionDoesNotTick() started.
+◇ Test trackedOnTheActivationTickItselfDoesNotCostIt() started.
+◇ Test canonicalJSONSortsKeysAndHashes() started.
+◇ Test theRowsDoNotOverlapTheLayoutTable() started.
+◇ Test patrolEN028PlayerBeyondTheRangeIsNotSeen() started.
+◇ Test terminalCopyExistsForEveryEndingAndNoLiveState() started.
+◇ Test t2CompletesAfterThirtyConsecutiveClearTicks() started.
+◇ Test safetyRationaleTelegraphMatchesTheContract() started.
+◇ Test admittedSpritesUseAuthoredBoxes() started.
+✔ Suite ReplayTests passed after 21.507 seconds.
+◇ Test enemyEN009PendingSpawnKeepsTheEncounterOpen() started.
+◇ Test combatCB010ALaterHitCannotDamageOrRekillADeadTarget() started.
+◇ Test spawnFairnessPrefersOffscreenOverVisibleDelivery() started.
+◇ Test upgradeUP004JammedDeltaIsWhatATickApplies() started.
+◇ Test cameraCD008HitDestroyedCameraIsIgnored() started.
+◇ Test terminalT704DeathWithBossDefeatRemainsFailure() started.
+◇ Test killingBlowShowsDefeatNotHurtInEitherEventOrder() started.
+◇ Test case passing 1 argument headingMilli → 200000 to atan2InvertsHeadingUnit(headingMilli:) started.
+◇ Test case passing 2 arguments x → 0, y → -1 to validIndexWithMovementIsRefused(x:y:) started.
+◇ Test clipT605CommitAlignsToEventMarkerNotFrameId() started.
+◇ Test clipCatalogRejectsUnknownEventMarker() started.
+◇ Test evidenceT907DeviceEvidenceCanAdvanceGateC() started.
+◇ Test case passing 1 argument upgrade → .signalJammer to completeRunT706UpgradeIsolationPreserved(upgrade:) started.
+✔ Test informantContactHitShowsItsCommit() passed after 0.541 seconds.
+✔ Test validIndexWithMovementIsRefused(x:y:) with 4 test cases passed after 3.094 seconds.
+✔ Test acceptedOriginalAudioIsPlayable() passed after 2.969 seconds.
+✔ Test extractionTickFiresOnDisplayedSecondChange() passed after 1.216 seconds.
+✔ Test vfxRicochetProjectsOnceForTwoSameTickHits() passed after 1.216 seconds.
+✔ Test objectiveT703NetworkBlackoutDoesNotAdvanceCombatAuthority() passed after 1.216 seconds.
+✔ Test combatCB004OverSpeedUsesDirectAim() passed after 1.264 seconds.
+✔ Test cameraCD018ChosenCameraBeatsFarEnemy() passed after 1.264 seconds.
+✔ Test receiptT707ER005FailureRetainsOrderedDestructionEntries() passed after 1.264 seconds.
+✔ Test ambientCosmeticStreamIsIsolatedFromCombatAndPlacement() passed after 1.276 seconds.
+✔ Test safetyClassFollowsTheD094List() passed after 1.276 seconds.
+◇ Test contactEvidenceListsAllCurrentContributors() started.
+✔ Test encounterEN015EarlyLockdownAppendsTwoInformants() passed after 1.276 seconds.
+◇ Test noTwoPhasesShareABed() started.
+✔ Test takedownAudioIsPitchedFourSemitonesDownWithARoutineCaption() passed after 1.276 seconds.
+✔ Test arenaAR009LethalDamageBeatsExtractionSuccess() passed after 1.276 seconds.
+✔ Test solidAssetIdsDeriveFromArenaSolidIds() passed after 1.276 seconds.
+✔ Test presentationAssetRegistryT801MatchesBundleProjection() passed after 1.399 seconds.
+✔ Test cameraDestroyedProjectsShatterAndReducedCrack() passed after 1.276 seconds.
+◇ Test labelFormat() started.
+✔ Test cameraCP006NoCompatibleSetFailsArenaValidation() passed after 1.276 seconds.
+✔ Test thresholdAppliesOnlyOnTheActivationTick() passed after 1.276 seconds.
+✔ Test aRunThatIsNotStoredNeverClaimsNewBest() passed after 3.097 seconds.
+✔ Test spawnRuleCoversEveryCause() passed after 1.226 seconds.
+✔ Test unknownArchetypeThrowsTypedErrorNamingTheKey() passed after 1.226 seconds.
+✔ Test mixLevelsClampToTheContractRange() passed after 1.225 seconds.
+✔ Test aNonPatrolAlertKeepsShadow() passed after 1.225 seconds.
+✔ Test oneTutorialLineAtATimeAndLaterLinesQueue() passed after 1.225 seconds.
+✔ Test playerPC002DiagonalDoesNotExceedMaxSpeed() passed after 1.225 seconds.
+✔ Test environmentArtMatchesItsSolid() passed after 1.226 seconds.
+✔ Test extractionT703AArmedOutsideRegionDoesNotTick() passed after 1.225 seconds.
+✔ Test trackedOnTheActivationTickItselfDoesNotCostIt() passed after 1.225 seconds.
+✔ Test canonicalJSONSortsKeysAndHashes() passed after 1.225 seconds.
+✔ Test theRowsDoNotOverlapTheLayoutTable() passed after 1.225 seconds.
+✔ Test patrolEN028PlayerBeyondTheRangeIsNotSeen() passed after 1.225 seconds.
+✔ Test terminalCopyExistsForEveryEndingAndNoLiveState() passed after 1.225 seconds.
+✔ Test t2CompletesAfterThirtyConsecutiveClearTicks() passed after 1.225 seconds.
+✔ Test safetyRationaleTelegraphMatchesTheContract() passed after 1.225 seconds.
+✔ Test daemonAnchorMatchesItsSpriteBox() passed after 1.226 seconds.
+✔ Test enemyEN009PendingSpawnKeepsTheEncounterOpen() passed after 1.225 seconds.
+✔ Test combatCB010ALaterHitCannotDamageOrRekillADeadTarget() passed after 1.225 seconds.
+✔ Test admittedSpritesUseAuthoredBoxes() passed after 1.225 seconds.
+◇ Test referenceSizedSafeRectIsIdentity() started.
+✔ Test upgradeUP004JammedDeltaIsWhatATickApplies() passed after 1.225 seconds.
+✔ Test cameraCD008HitDestroyedCameraIsIgnored() passed after 1.225 seconds.
+✔ Test spawnFairnessPrefersOffscreenOverVisibleDelivery() passed after 1.225 seconds.
+✔ Test terminalT704DeathWithBossDefeatRemainsFailure() passed after 1.225 seconds.
+◇ Test case passing 1 argument headingMilli → 315000 to atan2InvertsHeadingUnit(headingMilli:) started.
+✔ Test killingBlowShowsDefeatNotHurtInEitherEventOrder() passed after 1.225 seconds.
+✔ Test clipCatalogRejectsUnknownEventMarker() passed after 1.173 seconds.
+✔ Test clipT605CommitAlignsToEventMarkerNotFrameId() passed after 1.173 seconds.
+◇ Test case passing 1 argument upgrade → .ricochetPulse to completeRunT706UpgradeIsolationPreserved(upgrade:) started.
+✔ Suite AudioProjectorTests passed after 22.788 seconds.
+✔ Suite ObjectiveGraphTests passed after 22.788 seconds.
+✔ Suite CameraDestructionReceiptTests passed after 22.788 seconds.
+✔ Test gateT908OpenDefectsFailReport() passed after 9.860 seconds.
+✔ Test contactEvidenceListsAllCurrentContributors() passed after 0.056 seconds.
+✔ Suite ArenaReachabilityTests passed after 22.788 seconds.
+✔ Test labelFormat() passed after 0.055 seconds.
+✔ Suite ExtractionCountdownTests passed after 22.789 seconds.
+✔ Suite DeterminismTests passed after 22.788 seconds.
+✔ Suite QuietApproachPresentationTests passed after 22.788 seconds.
+✔ Suite DaemonClipTests passed after 22.789 seconds.
+✔ Suite DamageOrderingTests passed after 22.788 seconds.
+✔ Test referenceSizedSafeRectIsIdentity() passed after 0.055 seconds.
+◇ Test case passing 1 argument headingMilli → 330000 to atan2InvertsHeadingUnit(headingMilli:) started.
+◇ Test case passing 1 argument upgrade → .ghostStep to completeRunT706UpgradeIsolationPreserved(upgrade:) started.
+◇ Test damageFromAnotherSourceIsNotAnInformantCommit() started.
+✔ Test atan2InvertsHeadingUnit(headingMilli:) with 7 test cases passed after 3.231 seconds.
+◇ Test validIndexWithDodgeIsRefused() started.
+◇ Test everyBossCueTheProjectorBuildsIsRegistered() started.
+◇ Test vfxEmitterCeilingStealsLowestPriority() started.
+◇ Test combatCB009CeilingRejectsThirtyThirdShot() started.
+◇ Test targetingT409CloseEnemyBeatsChosenCamera() started.
+◇ Test ambientScheduleIsSeededDeterministicAndOmitsDigestInputs() started.
+◇ Test atMostThreeCaptionsShowAndSafetyComesFirst() started.
+◇ Test encounterEN014AppendedInformantAliveKeepsTheWaveOpen() started.
+◇ Test takedownHitStopIsSeventyMilliseconds() started.
+◇ Test runtimeMountSolidsHaveNoArt() started.
+◇ Test presentationAssetRegistryT801RejectsUnreachableAsset() started.
+◇ Test networkBlackoutCascadesInStableIdOrder() started.
+✔ Suite DailyRunSeedTests passed after 22.795 seconds.
+◇ Test cameraCP007DifferentSeedsObserveMoreThanOneLayout() started.
+◇ Test receiptRecordsTheRestoreApartFromDamage() started.
+✔ Test completeRunT706UpgradeIsolationPreserved(upgrade:) with 3 test cases passed after 1.339 seconds.
+◇ Test failedRunNeverShowsNewBest() started.
+◇ Test encounterEN023EliteAndBossAreNeverUnaware() started.
+◇ Test malformedWaveMemberThrowsTypedErrorNamingThePath() started.
+◇ Test gainFoldsMasterIntoEachBus() started.
+◇ Test rs020SurgicalNeedsHalfIntegrity() started.
+◇ Test aLineWaitsBehindTheEncounterLabelOrUpgradePromptWithoutLosingTime() started.
+◇ Test playerPC003HalfMagnitude() started.
+◇ Test groundTilesAreUniform() started.
+◇ Test ex016TrackedTheTickBeforeMobCClearsIt() started.
+◇ Test coneAngleIsTheExactIntegerTest() started.
+◇ Test terminalCopyMatchesTheEstablishedCaptions() started.
+◇ Test t2ContactResetsTheClearRun() started.
+◇ Test safetyRationaleLocksOnTheFinalTelegraphTick() started.
+◇ Test enemyEN010StandardDeathDropsNothing() started.
+◇ Test everyAdmittedFileExistsAndIsNamedLegally() started.
+✔ Suite HUDMappingTests passed after 22.843 seconds.
+◇ Test playerPC001FullRightSixtyTicks() started.
+◇ Test cameraCD009RestartRestoresOperationalAtFixedTransforms() started.
+◇ Test spawnFairnessMountSolidsRejectOverlappingVendor() started.
+◇ Test terminalT704SealedDigestMatchesRunSucceededPayload() started.
+◇ Test playerHurtRespectsCancelWindows(base:expected:) started.
+◇ Test clipCatalogFieldOffCannotWaitForDestroyClip() started.
+◇ Test clipT605CameraFieldOffStartsWithDestroyAndLocksHousing() started.
+✔ Test damageFromAnotherSourceIsNotAnInformantCommit() passed after 0.305 seconds.
+✔ Test validIndexWithDodgeIsRefused() passed after 1.074 seconds.
+✔ Test everyBossCueTheProjectorBuildsIsRegistered() passed after 1.074 seconds.
+✔ Test vfxEmitterCeilingStealsLowestPriority() passed after 1.074 seconds.
+◇ Test case passing 2 arguments base → "player_move", expected → "player_hurt" to playerHurtRespectsCancelWindows(base:expected:) started.
+✔ Test tamperedDigestIsRejected() passed after 2.434 seconds.
+✔ Test targetingT409CloseEnemyBeatsChosenCamera() passed after 1.096 seconds.
+✔ Test ambientScheduleIsSeededDeterministicAndOmitsDigestInputs() passed after 1.124 seconds.
+✔ Test atMostThreeCaptionsShowAndSafetyComesFirst() passed after 1.124 seconds.
+◇ Test gateT908SettledD021StillNotComputableWithoutFullGates() started.
+✔ Test combatCB009CeilingRejectsThirtyThirdShot() passed after 1.124 seconds.
+◇ Test retiredProjectileRetainsIncomingPoint() started.
+✔ Test takedownHitStopIsSeventyMilliseconds() passed after 1.124 seconds.
+✔ Test runtimeMountSolidsHaveNoArt() passed after 1.124 seconds.
+✔ Test noTwoPhasesShareABed() passed after 1.187 seconds.
+✔ Test networkBlackoutCascadesInStableIdOrder() passed after 1.125 seconds.
+✔ Test cameraCP007DifferentSeedsObserveMoreThanOneLayout() passed after 1.124 seconds.
+✔ Test receiptRecordsTheRestoreApartFromDamage() passed after 1.124 seconds.
+✔ Test failedRunNeverShowsNewBest() passed after 1.077 seconds.
+✔ Test encounterEN023EliteAndBossAreNeverUnaware() passed after 1.077 seconds.
+✔ Test malformedWaveMemberThrowsTypedErrorNamingThePath() passed after 1.077 seconds.
+✔ Test gainFoldsMasterIntoEachBus() passed after 1.077 seconds.
+✔ Test rs020SurgicalNeedsHalfIntegrity() passed after 1.077 seconds.
+✔ Test aLineWaitsBehindTheEncounterLabelOrUpgradePromptWithoutLosingTime() passed after 1.077 seconds.
+✔ Test playerPC003HalfMagnitude() passed after 1.077 seconds.
+✔ Test presentationAssetRegistryT801RejectsUnreachableAsset() passed after 1.125 seconds.
+✔ Test ex016TrackedTheTickBeforeMobCClearsIt() passed after 1.077 seconds.
+✔ Test coneAngleIsTheExactIntegerTest() passed after 1.077 seconds.
+✔ Test terminalCopyMatchesTheEstablishedCaptions() passed after 1.077 seconds.
+✔ Test t2ContactResetsTheClearRun() passed after 1.077 seconds.
+✔ Test safetyRationaleLocksOnTheFinalTelegraphTick() passed after 1.077 seconds.
+✔ Test enemyEN010StandardDeathDropsNothing() passed after 1.077 seconds.
+✔ Test everyAdmittedFileExistsAndIsNamedLegally() passed after 1.077 seconds.
+✔ Test playerPC001FullRightSixtyTicks() passed after 1.076 seconds.
+✔ Test cameraCD009RestartRestoresOperationalAtFixedTransforms() passed after 1.076 seconds.
+✔ Test groundTilesAreUniform() passed after 1.077 seconds.
+✔ Test terminalT704SealedDigestMatchesRunSucceededPayload() passed after 1.076 seconds.
+✔ Test spawnFairnessMountSolidsRejectOverlappingVendor() passed after 1.077 seconds.
+✔ Test clipCatalogFieldOffCannotWaitForDestroyClip() passed after 1.061 seconds.
+◇ Test everyAuthoredFieldIsSensitiveToMirroring() started.
+✔ Suite ProceduralVFXTests passed after 23.940 seconds.
+◇ Test case passing 2 arguments base → "player_idle", expected → "player_hurt" to playerHurtRespectsCancelWindows(base:expected:) started.
+✔ Test clipT605CameraFieldOffStartsWithDestroyAndLocksHousing() passed after 1.033 seconds.
+✔ Test retiredProjectileRetainsIncomingPoint() passed after 0.071 seconds.
+✔ Suite BossPhaseMusicTests passed after 23.990 seconds.
+◇ Test completeRunT706SignalJammerDoesNotBlockForcedLockdown() started.
+✔ Suite RuntimeBundleTests passed after 23.991 seconds.
+✔ Suite RunOutcomeTerminalTests passed after 23.991 seconds.
+✔ Suite EnemyBehaviourTests passed after 23.991 seconds.
+✔ Suite TerminalPrecedenceTests passed after 23.991 seconds.
+◇ Test hurtCutsACommitAndDeathClearsIt() started.
+✔ Test everyAuthoredFieldIsSensitiveToMirroring() passed after 0.056 seconds.
+◇ Test missingIndexIsRefusedWithoutConsumingATick() started.
+◇ Test bossCuesShareAlreadyDeliveredFiles() started.
+◇ Test tamperedTicksAreRejected() started.
+◇ Test targetingD082UnchosenCameraIsNeverATarget() started.
+◇ Test case passing 2 arguments base → "player_dodge", expected → nil to playerHurtRespectsCancelWindows(base:expected:) started.
+◇ Test ambientReducedMotionPausesRareAndSimplifiesPersistent() started.
+◇ Test importantIsTheDefaultAndShowsSafetyOnly() started.
+◇ Test upgradeUP001PendingFreezesClock() started.
+✔ Suite CombatCausalityTests passed after 24.044 seconds.
+◇ Test nearMissIsInsideTheWideConeButNotSeen() started.
+◇ Test coverageCountsOnlyDeclaredIds() started.
+◇ Test networkBlackoutReducedIsAStaticBannerWithNoHitStop() started.
+◇ Test cameraCP008DestroyedThenSameSeedRestartRestoresOperational() started.
+◇ Test receiptRestoreIsZeroWithoutTheBoss() started.
+✔ Test completeRunT706SignalJammerDoesNotBlockForcedLockdown() passed after 0.052 seconds.
+◇ Test networkBlackoutJoinsTheCameraRow() started.
+◇ Test encounterEN019SightAlertsAndActsNextTick() started.
+◇ Test quietRestoreFailsClosed() started.
+◇ Test decodingClampsOutOfRangeStoredValues() started.
+◇ Test blackoutNeedsNetworkBlackout() started.
+◇ Test encounterLabelAppearsOnActivationNotBefore() started.
+◇ Test playerPC005DodgeAtMostNinetySix() started.
+◇ Test theLatchIsInTheDigest() started.
+◇ Test coneSightNeedsAClearLine() started.
+◇ Test t3IsNotReachableFromTheOpeningPhase() started.
+◇ Test narrowTailoringProjectsThreeLanes() started.
+◇ Test admittedAssetsReachTheBundleProjection() started.
+◇ Test combatCB002EqualDistancePrefersLowerID() started.
+◇ Test cameraT411DestroyedMountAndPoseStayFixedDuringRun() started.
+◇ Test theEliteIsFullyBacked() started.
+◇ Test spawnFairnessDocumentsPinnedSocketDefects() started.
+◇ Test bothLoadersRejectUnsupportedTimingAndMalformedScalars() started.
+✔ Test hurtCutsACommitAndDeathClearsIt() passed after 0.714 seconds.
+✔ Suite ConeOrientationTests passed after 25.459 seconds.
+✔ Test missingIndexIsRefusedWithoutConsumingATick() passed after 1.463 seconds.
+✔ Test profileT406AggregateReportIsStable() passed after 10.256 seconds.
+✔ Test bossCuesShareAlreadyDeliveredFiles() passed after 1.595 seconds.
+✔ Test targetingD082UnchosenCameraIsNeverATarget() passed after 1.595 seconds.
+◇ Test case passing 2 arguments base → "player_extraction", expected → nil to playerHurtRespectsCancelWindows(base:expected:) started.
+✔ Test ambientReducedMotionPausesRareAndSimplifiesPersistent() passed after 1.608 seconds.
+✔ Test importantIsTheDefaultAndShowsSafetyOnly() passed after 1.608 seconds.
+◇ Test clipCatalogRejectsAnchorDrift() started.
+✔ Test encounterEN014AppendedInformantAliveKeepsTheWaveOpen() passed after 2.857 seconds.
+✔ Test nearMissIsInsideTheWideConeButNotSeen() passed after 1.608 seconds.
+✔ Test coverageCountsOnlyDeclaredIds() passed after 1.608 seconds.
+✔ Test networkBlackoutReducedIsAStaticBannerWithNoHitStop() passed after 1.608 seconds.
+✔ Test cameraCP008DestroyedThenSameSeedRestartRestoresOperational() passed after 1.608 seconds.
+✔ Test receiptRestoreIsZeroWithoutTheBoss() passed after 1.608 seconds.
+✔ Test networkBlackoutJoinsTheCameraRow() passed after 1.562 seconds.
+✔ Test encounterEN019SightAlertsAndActsNextTick() passed after 1.562 seconds.
+✔ Test quietRestoreFailsClosed() passed after 1.562 seconds.
+✔ Test decodingClampsOutOfRangeStoredValues() passed after 1.562 seconds.
+✔ Test blackoutNeedsNetworkBlackout() passed after 1.562 seconds.
+✔ Test encounterLabelAppearsOnActivationNotBefore() passed after 1.562 seconds.
+✔ Test playerPC005DodgeAtMostNinetySix() passed after 1.562 seconds.
+✔ Test theLatchIsInTheDigest() passed after 1.562 seconds.
+✔ Test coneSightNeedsAClearLine() passed after 1.562 seconds.
+✔ Test t3IsNotReachableFromTheOpeningPhase() passed after 1.562 seconds.
+✔ Test narrowTailoringProjectsThreeLanes() passed after 1.562 seconds.
+✔ Test admittedAssetsReachTheBundleProjection() passed after 1.562 seconds.
+✔ Test combatCB002EqualDistancePrefersLowerID() passed after 1.562 seconds.
+✔ Test cameraT411DestroyedMountAndPoseStayFixedDuringRun() passed after 1.562 seconds.
+✔ Test upgradeUP001PendingFreezesClock() passed after 1.609 seconds.
+✔ Test spawnFairnessDocumentsPinnedSocketDefects() passed after 1.447 seconds.
+✔ Test tamperedTicksAreRejected() passed after 1.657 seconds.
+◇ Test case passing 2 arguments base → "player_defeat", expected → nil to playerHurtRespectsCancelWindows(base:expected:) started.
+✔ Test clipCatalogRejectsAnchorDrift() passed after 0.083 seconds.
+✔ Suite EnvironmentLibraryTests passed after 25.736 seconds.
+◇ Test completeRunT706GhostStepDoesNotGrantDamageImmunity() started.
+✔ Test playerHurtRespectsCancelWindows(base:expected:) with 5 test cases passed after 2.876 seconds.
+◇ Test resetClearsCommits() started.
+◇ Test acceptedChoiceAppliesAndConsumesExactlyOneTick(upgrade:) started.
+◇ Test profileT406GateC011SimulationBounds() started.
+◇ Test sharedSourcesShareOneDeliveredFile() started.
+◇ Test targetingT409InclusiveCloseRangeIsNinetySix() started.
+◇ Test ambientRareDoesNotBeginDuringCaptainTelegraph() started.
+◇ Test aCaptionShowsForTwoAndAHalfSeconds() started.
+◇ Test encounterEN001HiddenRunSpawnsTheAuthoredTotals(encounter:total:) started.
+◇ Test nearMissEdgePulsesExceptUnderReducedMotion() started.
+◇ Test bossPhaseBreakSlamsThePhaseNameButNotOnActivation() started.
+◇ Test cameraCP009PlacementDoesNotPerturbCombatRng() started.
+◇ Test bossSpawnsWithTenDpsContact() started.
+✔ Test completeRunT706GhostStepDoesNotGrantDamageImmunity() passed after 0.013 seconds.
+◇ Test peakDetectionIsTheHighestReached() started.
+◇ Test sightRangeIsInclusive() started.
+◇ Test patrolBlockFailsClosed() started.
+◇ Test settingsRoundTripThroughCoding() started.
+◇ Test swiftIsUnderFiveThirty() started.
+◇ Test spawnShowsOneLineAndNoEncounterLabel() started.
+◇ Test playerPC007RejectedDodgeDuringCooldown() started.
+◇ Test rs024GhostIsExactlyTheLatch() started.
+◇ Test surveillanceAndDamageAlertPatrolMembers() started.
+◇ Test t3CompletesOnFirstImpact() started.
+◇ Test independentReviewProjectsFiveLanesLeavingTheSafeGap() started.
+◇ Test clipCoverageIsPartialAndMeasurable() started.
+◇ Test cameraCD001ThreeImpactsDestroyOnce() started.
+◇ Test cameraCD012EighthDestructionCompletesNetworkBlackoutOnce() started.
+◇ Test upgradeUP002SelectsSignalJammer() started.
+◇ Test case passing 1 argument upgrade → .signalJammer to acceptedChoiceAppliesAndConsumesExactlyOneTick(upgrade:) started.
+◇ Test spawnFairnessEscapeAperturesRemainOpenAtPeakDensity() started.
+◇ Test outOfOrderCommandsAreRejected() started.
+◇ Test case passing 2 arguments encounter → "M-A", total → 14 to encounterEN001HiddenRunSpawnsTheAuthoredTotals(encounter:total:) started.
+✔ Test resetClearsCommits() passed after 0.411 seconds.
+✔ Test theEliteIsFullyBacked() passed after 2.397 seconds.
+✔ Test bothLoadersRejectUnsupportedTimingAndMalformedScalars() passed after 2.556 seconds.
+✔ Test targetingT409InclusiveCloseRangeIsNinetySix() passed after 1.013 seconds.
+✔ Test ambientRareDoesNotBeginDuringCaptainTelegraph() passed after 1.013 seconds.
+✔ Test aCaptionShowsForTwoAndAHalfSeconds() passed after 1.013 seconds.
+◇ Test clipCatalogRejectsUnevenDirectionFrames() started.
+✔ Test sharedSourcesShareOneDeliveredFile() passed after 1.013 seconds.
+✔ Test nearMissEdgePulsesExceptUnderReducedMotion() passed after 1.013 seconds.
+✔ Test bossPhaseBreakSlamsThePhaseNameButNotOnActivation() passed after 1.013 seconds.
+✔ Test cameraCP009PlacementDoesNotPerturbCombatRng() passed after 1.013 seconds.
+✔ Test bossSpawnsWithTenDpsContact() passed after 1.013 seconds.
+✔ Test peakDetectionIsTheHighestReached() passed after 0.964 seconds.
+✔ Test sightRangeIsInclusive() passed after 0.964 seconds.
+✔ Test patrolBlockFailsClosed() passed after 0.964 seconds.
+✔ Test settingsRoundTripThroughCoding() passed after 0.964 seconds.
+✔ Test swiftIsUnderFiveThirty() passed after 0.964 seconds.
+✔ Test spawnShowsOneLineAndNoEncounterLabel() passed after 0.964 seconds.
+✔ Test playerPC007RejectedDodgeDuringCooldown() passed after 0.964 seconds.
+✔ Test rs024GhostIsExactlyTheLatch() passed after 0.964 seconds.
+✔ Test surveillanceAndDamageAlertPatrolMembers() passed after 0.964 seconds.
+✔ Test t3CompletesOnFirstImpact() passed after 0.964 seconds.
+✔ Test reducedMotionIntroChangesNothingEither() passed after 7.185 seconds.
+✔ Test independentReviewProjectsFiveLanesLeavingTheSafeGap() passed after 0.964 seconds.
+✔ Test cameraCD001ThreeImpactsDestroyOnce() passed after 0.964 seconds.
+✔ Test cameraCD012EighthDestructionCompletesNetworkBlackoutOnce() passed after 0.964 seconds.
+✔ Test upgradeUP002SelectsSignalJammer() passed after 0.964 seconds.
+◇ Test case passing 1 argument upgrade → .ricochetPulse to acceptedChoiceAppliesAndConsumesExactlyOneTick(upgrade:) started.
+✔ Test spawnFairnessEscapeAperturesRemainOpenAtPeakDensity() passed after 0.914 seconds.
+✔ Test outOfOrderCommandsAreRejected() passed after 0.914 seconds.
+◇ Test damageToANonEnemyIsIgnored() started.
+✔ Test clipCoverageIsPartialAndMeasurable() passed after 0.976 seconds.
+✔ Suite StealthTextureTests passed after 26.776 seconds.
+✔ Suite CameraPlacementTests passed after 26.776 seconds.
+◇ Test completeRunT706RicochetCannotDoubleHitSameTarget() started.
+✔ Suite SpawnFairnessTests passed after 26.777 seconds.
+✔ Test clipCatalogRejectsUnevenDirectionFrames() passed after 0.014 seconds.
+◇ Test case passing 1 argument upgrade → .ghostStep to acceptedChoiceAppliesAndConsumesExactlyOneTick(upgrade:) started.
+◇ Test projectionNamesOnlyTheCorrelatorCommit() started.
+◇ Test everyStandardEnemyAttackClipIsFullyBacked() started.
+◇ Test deliveryPreservesEveryValidatedClip() started.
+◇ Test targetingT409DestroyedAndBlockedCamerasAreSkipped() started.
+◇ Test ambientBudgetsDropP1P2AndPigeonsNeedCombat() started.
+◇ Test aRepeatedCaptionRestartsRatherThanStacks() started.
+✔ Test acceptedChoiceAppliesAndConsumesExactlyOneTick(upgrade:) with 3 test cases passed after 1.041 seconds.
+◇ Test musicIsNotAnEffectCue() started.
+◇ Test heatReinforcementsIsInertWithoutReinforcements() started.
+◇ Test everyPaletteOnlyTintsOrDarkens() started.
+✔ Test completeRunT706RicochetCannotDoubleHitSameTarget() passed after 0.014 seconds.
+◇ Test rs016ShareTextHasTheRowsAndNoSeedOrIdentifier() started.
+◇ Test encounterEN020SolidBlocksSight() started.
+◇ Test playerBlockFailsClosed() started.
+◇ Test handednessReflectsOnlyTheTwoControls() started.
+◇ Test rs021AFailedRunEarnsNothing() started.
+◇ Test patrolTutorialCopyIsTheSpecLine() started.
+◇ Test cameraCD002TwoImpactsRemainCritical() started.
+◇ Test theForcedLockdownEventsAtMobCDoNotCostGhost() started.
+◇ Test alertedMemberPursuesAndLosesItsCone() started.
+◇ Test t3CompletesAfterThreeHundredEligibleTicks() started.
+◇ Test pilotedSuccessDigestAndReceiptAreUnchanged() started.
+◇ Test temporaryOrderTelegraphsThePendingEmitter() started.
+◇ Test cameraCD001FixtureMatchesTheKernel() started.
+◇ Test cameraCD014ExtractAtSevenRemainsIncomplete() started.
+◇ Test upgradeUP003InvalidIndexStaysProtected() started.
+◇ Test recordRoundTripsThroughJSON() started.
+✔ Test projectionNamesOnlyTheCorrelatorCommit() passed after 0.336 seconds.
+◇ Test noAdmittedAssetShipsFromArtSources() started.
+✔ Test damageToANonEnemyIsIgnored() passed after 1.741 seconds.
+✔ Test everyStandardEnemyAttackClipIsFullyBacked() passed after 2.190 seconds.
+✔ Test targetingT409DestroyedAndBlockedCamerasAreSkipped() passed after 2.190 seconds.
+✔ Test ambientBudgetsDropP1P2AndPigeonsNeedCombat() passed after 2.190 seconds.
+✔ Test aRepeatedCaptionRestartsRatherThanStacks() passed after 2.190 seconds.
+✔ Suite ProtectedUpgradeSelectionTests passed after 28.979 seconds.
+✔ Test musicIsNotAnEffectCue() passed after 2.190 seconds.
+✔ Test heatReinforcementsIsInertWithoutReinforcements() passed after 2.190 seconds.
+✔ Test everyPaletteOnlyTintsOrDarkens() passed after 2.190 seconds.
+✔ Suite CompleteRunVectorTests passed after 28.980 seconds.
+✔ Test deliveryPreservesEveryValidatedClip() passed after 2.190 seconds.
+✔ Test encounterEN020SolidBlocksSight() passed after 2.189 seconds.
+✔ Test playerBlockFailsClosed() passed after 2.189 seconds.
+✔ Test handednessReflectsOnlyTheTwoControls() passed after 2.189 seconds.
+✔ Test rs021AFailedRunEarnsNothing() passed after 2.189 seconds.
+✔ Test patrolTutorialCopyIsTheSpecLine() passed after 2.189 seconds.
+✔ Test cameraCD002TwoImpactsRemainCritical() passed after 2.189 seconds.
+✔ Test theForcedLockdownEventsAtMobCDoNotCostGhost() passed after 2.189 seconds.
+✔ Test alertedMemberPursuesAndLosesItsCone() passed after 2.189 seconds.
+✔ Test t3CompletesAfterThreeHundredEligibleTicks() passed after 2.189 seconds.
+✔ Test rs016ShareTextHasTheRowsAndNoSeedOrIdentifier() passed after 2.190 seconds.
+✔ Test temporaryOrderTelegraphsThePendingEmitter() passed after 2.189 seconds.
+✔ Test cameraCD001FixtureMatchesTheKernel() passed after 2.189 seconds.
+✔ Test cameraCD014ExtractAtSevenRemainsIncomplete() passed after 2.189 seconds.
+✔ Test upgradeUP003InvalidIndexStaysProtected() passed after 2.189 seconds.
+◇ Test clipCatalogRejectsUnknownCancelWindow() started.
+✔ Suite CommitClipTests passed after 29.263 seconds.
+✔ Test noAdmittedAssetShipsFromArtSources() passed after 0.755 seconds.
+◇ Test case passing 2 arguments encounter → "M-B", total → 17 to encounterEN001HiddenRunSpawnsTheAuthoredTotals(encounter:total:) started.
+✔ Suite AmbientMotionTests passed after 29.989 seconds.
+✔ Suite AudioDeliveryTests passed after 29.988 seconds.
+✔ Suite OpeningTests passed after 29.989 seconds.
+✔ Suite QuietApproachTests passed after 29.988 seconds.
+✔ Suite RunCardTests passed after 29.988 seconds.
+✔ Test profileT406GateC011SimulationBounds() passed after 4.241 seconds.
+✔ Test clipCatalogRejectsUnknownCancelWindow() passed after 0.728 seconds.
+✔ Suite LegacyAdmissionTests passed after 29.991 seconds.
+◇ Test aTrackerWithNoMarkerClipsReactsToNothing() started.
+◇ Test everyClipFrameIsAdmittedOrPlanned() started.
+◇ Test targetingD082ThirtyDegreeBoundary() started.
+◇ Test captionsArriveWithEffectsOff() started.
+◇ Test poolRecyclesPastPoolSize() started.
+◇ Test palettesMatchTheirNamedLight() started.
+◇ Test deliveryAndReactionSelectAuthoredFacingWhenFramesInterleave() started.
+◇ Test encounterEN021TrackedAlertsEveryUnawareEnemy() started.
+◇ Test bossPhaseBandsFailClosed() started.
+◇ Test pinningShowsTheCameraCounterEarly() started.
+◇ Test aSuccessWithNoMedalsShowsNoRow() started.
+◇ Test hudUI001ReferenceAnchors() started.
+◇ Test patrolEN032UnawareMemberBeyond240IsNotATarget() started.
+◇ Test t4RunsFromMobACompletionToAcceptedChoice() started.
+◇ Test noTelegraphProjectsWhileTheBossIsRecovering() started.
+◇ Test arenaAR008ExtractionLeaveResets() started.
+◇ Test cameraT414BlackoutWithoutCombatDoesNotArm() started.
+◇ Test upgradeUP005JammerDoesNotReduceTamper() started.
+✔ Suite PeakDensityProfilerTests passed after 29.991 seconds.
+✔ Test aTrackerWithNoMarkerClipsReactsToNothing() passed after 0.659 seconds.
+✔ Test recordRoundTripsThroughJSON() passed after 3.831 seconds.
+✔ Test targetingD082ThirtyDegreeBoundary() passed after 0.659 seconds.
+✔ Test captionsArriveWithEffectsOff() passed after 0.659 seconds.
+✔ Test poolRecyclesPastPoolSize() passed after 0.659 seconds.
+✔ Test palettesMatchTheirNamedLight() passed after 0.659 seconds.
+✔ Test deliveryAndReactionSelectAuthoredFacingWhenFramesInterleave() passed after 0.659 seconds.
+✔ Test encounterEN021TrackedAlertsEveryUnawareEnemy() passed after 0.659 seconds.
+✔ Test bossPhaseBandsFailClosed() passed after 0.659 seconds.
+✔ Test pinningShowsTheCameraCounterEarly() passed after 0.659 seconds.
+✔ Test aSuccessWithNoMedalsShowsNoRow() passed after 0.659 seconds.
+✔ Test hudUI001ReferenceAnchors() passed after 0.659 seconds.
+✔ Test patrolEN032UnawareMemberBeyond240IsNotATarget() passed after 0.659 seconds.
+✔ Test t4RunsFromMobACompletionToAcceptedChoice() passed after 0.659 seconds.
+✔ Test evidenceT907DeviceEvidenceCanAdvanceGateC() passed after 9.083 seconds.
+✔ Test arenaAR008ExtractionLeaveResets() passed after 0.659 seconds.
+✔ Test noTelegraphProjectsWhileTheBossIsRecovering() passed after 0.659 seconds.
+✔ Test upgradeUP005JammerDoesNotReduceTamper() passed after 0.659 seconds.
+◇ Test clipCatalogRejectsTerminalCancelWindows() started.
+✔ Suite ClipMetadataTests passed after 30.680 seconds.
+✔ Suite CombatContentFailClosedTests passed after 30.681 seconds.
+✔ Suite PresentationSettingsTests passed after 30.682 seconds.
+✔ Suite TutorialStateMachineTests passed after 30.681 seconds.
+✔ Test everyClipFrameIsAdmittedOrPlanned() passed after 0.690 seconds.
+◇ Test resetClearsEveryReaction() started.
+◇ Test lockstepMatchesALiveReplay() started.
+◇ Test targetingD082IntegerTestIsOverflowSafe() started.
+◇ Test savedSettingsWithoutCaptionsStillDecode() started.
+◇ Test poolHoldsTheEmitterCeilingAcrossTicksAndKeepsBigMoments() started.
+◇ Test reducedFlashLowersSaturationTo60Percent() started.
+◇ Test encounterEN022DamageAlertsAnAllyOneHop() started.
+◇ Test rs022AReplayEarnsTheSameMedals() started.
+◇ Test hudUI002HandednessMirrorsOnlyStickAndDodge() started.
+◇ Test patrolEN033UnawareMemberWithin240IsTargetedAndAmbushed() started.
+◇ Test evidenceT907SettlesD021WhenDeviceProfilingProvided() started.
+◇ Test cameraT414PredicateOmitsCameraBlackoutExposureAndUpgrade() started.
+◇ Test projectileReachUsesTheAuthoritativeTickRate() started.
+◇ Test upgradeUP006RicochetEqualDistancePrefersLowerID() started.
+✔ Test clipCatalogRejectsTerminalCancelWindows() passed after 2.044 seconds.
+✔ Test cameraT414BlackoutWithoutCombatDoesNotArm() passed after 2.704 seconds.
+✔ Test targetingD082IntegerTestIsOverflowSafe() passed after 2.013 seconds.
+✔ Test savedSettingsWithoutCaptionsStillDecode() passed after 2.013 seconds.
+✔ Test poolHoldsTheEmitterCeilingAcrossTicksAndKeepsBigMoments() passed after 2.013 seconds.
+✔ Test reducedFlashLowersSaturationTo60Percent() passed after 2.013 seconds.
+✔ Test encounterEN022DamageAlertsAnAllyOneHop() passed after 2.013 seconds.
+✔ Test resetClearsEveryReaction() passed after 2.014 seconds.
+✔ Test hudUI002HandednessMirrorsOnlyStickAndDodge() passed after 2.013 seconds.
+✔ Test patrolEN033UnawareMemberWithin240IsTargetedAndAmbushed() passed after 2.013 seconds.
+✔ Test cameraT414PredicateOmitsCameraBlackoutExposureAndUpgrade() passed after 2.013 seconds.
+✔ Test projectileReachUsesTheAuthoritativeTickRate() passed after 2.013 seconds.
+✔ Test upgradeUP006RicochetEqualDistancePrefersLowerID() passed after 2.013 seconds.
+◇ Test everyFullyAdmittedDirectionIsBacked() started.
+◇ Test case passing 2 arguments encounter → "M-C", total → 25 to encounterEN001HiddenRunSpawnsTheAuthoredTotals(encounter:total:) started.
+✔ Suite ClipAlignmentTests passed after 34.567 seconds.
+✔ Suite ReactionClipTrackerTests passed after 35.193 seconds.
+✔ Test lockstepMatchesALiveReplay() passed after 4.511 seconds.
+✔ Suite KernelVectorTests passed after 35.193 seconds.
+✔ Test everyFullyAdmittedDirectionIsBacked() passed after 2.496 seconds.
+◇ Test cameraT414LockdownDoesNotBlockExtraction() started.
+◇ Test cameraCD015CD016ThroughTheSimulation(movingToward:) started.
+◇ Test fogThinsToHalfOverHalfASecondWhileAnAwareEnemyIsOnScreen() started.
+◇ Test poolExpiresEffectsAfterTheirLifetime() started.
+◇ Test crossfadeTakesOneSecond() started.
+◇ Test allyAlertsNeverChain() started.
+◇ Test hudUI006ExtractionSecondsCeil() started.
+◇ Test patrolEN035MovingPastHoldsFire() started.
+◇ Test minesProjectWithTheirArmingState() started.
+◇ Test upgradeUP007DestroyedCameraExcludedFromContinuation() started.
+◇ Test case passing 1 argument movingToward → false to cameraCD015CD016ThroughTheSimulation(movingToward:) started.
+✔ Test cameraT414LockdownDoesNotBlockExtraction() passed after 0.113 seconds.
+✔ Test gateT908SettledD021StillNotComputableWithoutFullGates() passed after 11.388 seconds.
+✔ Test poolExpiresEffectsAfterTheirLifetime() passed after 0.113 seconds.
+✔ Test crossfadeTakesOneSecond() passed after 0.113 seconds.
+✔ Test fogThinsToHalfOverHalfASecondWhileAnAwareEnemyIsOnScreen() passed after 0.113 seconds.
+✔ Test hudUI006ExtractionSecondsCeil() passed after 0.113 seconds.
+✔ Test allyAlertsNeverChain() passed after 0.113 seconds.
+◇ Test aGhostOneTickEarlyFailsTheLockstepCheck() started.
+✔ Test minesProjectWithTheirArmingState() passed after 0.113 seconds.
+✔ Test upgradeUP007DestroyedCameraExcludedFromContinuation() passed after 0.113 seconds.
+◇ Test case passing 1 argument movingToward → true to cameraCD015CD016ThroughTheSimulation(movingToward:) started.
+◇ Test oneMissingFrameLeavesADirectionUnbacked() started.
+✔ Test cameraCD015CD016ThroughTheSimulation(movingToward:) with 2 test cases passed after 0.521 seconds.
+✔ Suite ExpansionGateReportTests passed after 36.063 seconds.
+✔ Test patrolEN035MovingPastHoldsFire() passed after 0.868 seconds.
+✔ Suite CombatVisibilityTests passed after 36.063 seconds.
+✔ Test oneMissingFrameLeavesADirectionUnbacked() passed after 0.670 seconds.
+◇ Test cameraCD005SimultaneousFinalImpactsDestroyOnce() started.
+◇ Test hitStopFramesStayInsideTheCaps() started.
+◇ Test trackerFadesInOnActivationAndBetweenPhases() started.
+◇ Test unawareOrOffscreenEnemiesLeaveTheFogAlone() started.
+◇ Test cameraT413CounterHiddenUntilDamageThenAccolade() started.
+◇ Test surveillanceTakesPrecedenceOverDamageAndSight() started.
+◇ Test upgradeUP008GhostStepImmunityThroughStartPlus29() started.
+✔ Test cameraCD005SimultaneousFinalImpactsDestroyOnce() passed after 0.037 seconds.
+◇ Test cameraCD019DiagonalSocketIsTargetedAndDestroyed() started.
+✔ Test hitStopFramesStayInsideTheCaps() passed after 0.037 seconds.
+✔ Test trackerFadesInOnActivationAndBetweenPhases() passed after 0.037 seconds.
+✔ Test unawareOrOffscreenEnemiesLeaveTheFogAlone() passed after 0.037 seconds.
+✔ Test cameraT413CounterHiddenUntilDamageThenAccolade() passed after 0.037 seconds.
+✔ Test surveillanceTakesPrecedenceOverDamageAndSight() passed after 0.037 seconds.
+◇ Test patrolMembersSpawnAtDoubleIntegrity() started.
+✔ Test upgradeUP008GhostStepImmunityThroughStartPlus29() passed after 0.037 seconds.
+◇ Test aDirectionNeverBorrowsFromAnother() started.
+✔ Test cameraCD019DiagonalSocketIsTargetedAndDestroyed() passed after 0.266 seconds.
+✔ Test patrolMembersSpawnAtDoubleIntegrity() passed after 0.605 seconds.
+✔ Test aDirectionNeverBorrowsFromAnother() passed after 0.346 seconds.
+◇ Test cameraCD006RicochetDestroysTwoCamerasSameTick() started.
+◇ Test shakeIsBoundedCoalescedAndOffUnderReducedMotion() started.
+◇ Test trackerChangeMidFadeNeverJumps() started.
+◇ Test fogHoldsStillWhenTheTickDoesNot() started.
+◇ Test bossPhaseBO002HealthBands() started.
+◇ Test damageTakesPrecedenceOverSight() started.
+◇ Test upgradeUP009GhostStepHostileProjectileStillDamages() started.
+✔ Test cameraCD006RicochetDestroysTwoCamerasSameTick() passed after 0.053 seconds.
+◇ Test cameraCD020AnotherCamerasMountBlocks() started.
+✔ Test shakeIsBoundedCoalescedAndOffUnderReducedMotion() passed after 0.053 seconds.
+✔ Test trackerChangeMidFadeNeverJumps() passed after 0.053 seconds.
+✔ Test fogHoldsStillWhenTheTickDoesNot() passed after 0.053 seconds.
+✔ Test bossPhaseBO002HealthBands() passed after 0.053 seconds.
+✔ Test damageTakesPrecedenceOverSight() passed after 0.053 seconds.
+◇ Test patrolTargetingLimitIsInclusiveAndUnawareOnly() started.
+✔ Test upgradeUP009GhostStepHostileProjectileStillDamages() passed after 0.053 seconds.
+◇ Test coverageIsWhatTheRecordSays() started.
+✔ Test cameraCD020AnotherCamerasMountBlocks() passed after 0.001 seconds.
+✔ Test patrolTargetingLimitIsInclusiveAndUnawareOnly() passed after 0.349 seconds.
+✔ Test coverageIsWhatTheRecordSays() passed after 0.349 seconds.
+◇ Test cameraRicochetDoesNotRehitSurvivingSource() started.
+✔ Suite TargetingPriorityTests passed after 37.111 seconds.
+◇ Test blackoutMusicDropDucksHoldsAndRestores() started.
+◇ Test trackerUsesReducedPalettes() started.
+◇ Test lockdownTintPulsesSixToTenPercentEveryTwoSeconds() started.
+◇ Test bossPhaseBO002RuntimeUsesContentBands() started.
+◇ Test unawareEnemyDealsNoContactDamage() started.
+◇ Test upgradeUP010RestartClearsSelectedUpgrade() started.
+✔ Suite OriginalArtTests passed after 37.118 seconds.
+✔ Test cameraRicochetDoesNotRehitSurvivingSource() passed after 0.038 seconds.
+✔ Test blackoutMusicDropDucksHoldsAndRestores() passed after 0.038 seconds.
+✔ Test trackerUsesReducedPalettes() passed after 0.038 seconds.
+✔ Test lockdownTintPulsesSixToTenPercentEveryTwoSeconds() passed after 0.038 seconds.
+✔ Test bossPhaseBO002RuntimeUsesContentBands() passed after 0.038 seconds.
+✔ Test encounterEN001HiddenRunSpawnsTheAuthoredTotals(encounter:total:) with 3 test cases passed after 11.401 seconds.
+◇ Test playerIntegrityComesFromContent() started.
+✔ Test upgradeUP010RestartClearsSelectedUpgrade() passed after 0.038 seconds.
+✔ Suite CameraDestructionOrderTests passed after 37.173 seconds.
+✔ Test playerIntegrityComesFromContent() passed after 0.023 seconds.
+◇ Test playedBlackoutProjectsKillThenCascadeInIdOrder() started.
+◇ Test ringClosesOverTheTelegraphDuration() started.
+◇ Test reducedFlashAndReducedMotionHoldASteadySixPercent() started.
+◇ Test bossBO003BatchSkipsToTemporarySafeguard() started.
+◇ Test heatBlockDecodesFromTheBundledContract() started.
+◇ Test bossBO004PhaseTransitionDuringTelegraphCancelsAttack() started.
+✔ Test playedBlackoutProjectsKillThenCascadeInIdOrder() passed after 0.112 seconds.
+✔ Test ringClosesOverTheTelegraphDuration() passed after 0.112 seconds.
+✔ Test reducedFlashAndReducedMotionHoldASteadySixPercent() passed after 0.112 seconds.
+✔ Test bossBO003BatchSkipsToTemporarySafeguard() passed after 0.112 seconds.
+✔ Test heatBlockDecodesFromTheBundledContract() passed after 0.112 seconds.
+◇ Test patrolEN029DeathCountsInTheReceiptOnly() started.
+✔ Test bossBO004PhaseTransitionDuringTelegraphCancelsAttack() passed after 0.112 seconds.
+✔ Test patrolEN029DeathCountsInTheReceiptOnly() passed after 0.012 seconds.
+◇ Test hitStopNeverChangesTheDigestOrReceipt() started.
+◇ Test ringPulsesOnlyWithoutReducedMotion() started.
+◇ Test lockdownTintNeverBrightens() started.
+◇ Test observationPulsePublicSafetyRoundsHalfAway() started.
+◇ Test heatBlockFailsClosed() started.
+◇ Test bossBO008DefeatRetiresFieldAndProjectiles() started.
+✔ Test unawareEnemyDealsNoContactDamage() passed after 0.293 seconds.
+✔ Test ringPulsesOnlyWithoutReducedMotion() passed after 0.105 seconds.
+✔ Test lockdownTintNeverBrightens() passed after 0.105 seconds.
+✔ Test observationPulsePublicSafetyRoundsHalfAway() passed after 0.105 seconds.
+✔ Test heatBlockFailsClosed() passed after 0.105 seconds.
+◇ Test patrolIsOutsideHeat() started.
+✔ Test bossBO008DefeatRetiresFieldAndProjectiles() passed after 0.105 seconds.
+✔ Test patrolIsOutsideHeat() passed after 0.008 seconds.
+◇ Test combatCB011AmbushKillsAThirtyIntegrityEnemy() started.
+◇ Test ringsAreDrawnOnlyForTheBossTelegraphs() started.
+◇ Test gateArtFillsTheCollisionBoxExactly() started.
+◇ Test projectilePoolRejectsBeyondCeiling() started.
+◇ Test captionNamesTheCountAndTheStateTheDirectorRead() started.
+◇ Test bossBO009SameTickPlayerDeathIsTerminalFailure() started.
+✔ Test combatCB011AmbushKillsAThirtyIntegrityEnemy() passed after 0.031 seconds.
+✔ Test ringsAreDrawnOnlyForTheBossTelegraphs() passed after 0.031 seconds.
+✔ Test gateArtFillsTheCollisionBoxExactly() passed after 0.031 seconds.
+✔ Test projectilePoolRejectsBeyondCeiling() passed after 0.031 seconds.
+✔ Test captionNamesTheCountAndTheStateTheDirectorRead() passed after 0.031 seconds.
+◇ Test patrolEN030FairnessHoldsAtEveryTickOfTheCycle() started.
+✔ Test bossBO009SameTickPlayerDeathIsTerminalFailure() passed after 0.031 seconds.
+✔ Suite CourtClimaxTests passed after 39.211 seconds.
+✔ Test aGhostOneTickEarlyFailsTheLockstepCheck() passed after 3.903 seconds.
+◇ Test combatCB012OnlyTheFirstHitIsAnAmbush() started.
+◇ Test snapshotNamesEveryGate() started.
+◇ Test tutorialT0CompletesAfterNinetySixUnits() started.
+◇ Test vfxReinforcementCountMatchesTheCaption() started.
+◇ Test bossBO010ZeroCamerasDestroyedBossDefeatArmsExtraction() started.
+✔ Test combatCB012OnlyTheFirstHitIsAnAmbush() passed after 0.016 seconds.
+✔ Test snapshotNamesEveryGate() passed after 0.016 seconds.
+✔ Test tutorialT0CompletesAfterNinetySixUnits() passed after 0.016 seconds.
+✔ Test vfxReinforcementCountMatchesTheCaption() passed after 0.016 seconds.
+◇ Test ghostStopsAtItsTerminalTick() started.
+✔ Test bossBO010ZeroCamerasDestroyedBossDefeatArmsExtraction() passed after 0.016 seconds.
+✔ Test evidenceT907SettlesD021WhenDeviceProfilingProvided() passed after 10.852 seconds.
+◇ Test awareAndStruckEnemiesTakeNormalDamage() started.
+◇ Test actorContrastValues() started.
+◇ Test tutorialLockdownPreemptsCopy() started.
+◇ Test captionUsesTheStateBeforeThisTicksChange() started.
+◇ Test encounterEN001WaveTotals() started.
+✔ Test awareAndStruckEnemiesTakeNormalDamage() passed after 0.015 seconds.
+✔ Test actorContrastValues() passed after 0.015 seconds.
+✔ Test tutorialLockdownPreemptsCopy() passed after 0.015 seconds.
+✔ Test captionUsesTheStateBeforeThisTicksChange() passed after 0.015 seconds.
+◇ Test evidenceT907PlaytestEvidenceEvaluatesGates() started.
+✔ Test encounterEN001WaveTotals() passed after 0.015 seconds.
+✔ Suite ReadabilityFinishTests passed after 41.551 seconds.
+✔ Suite GrayscaleSystemsTests passed after 41.551 seconds.
+✔ Test evidenceT907PlaytestEvidenceEvaluatesGates() passed after 0.001 seconds.
+◇ Test awarenessIsDigested() started.
+◇ Test captionIsAbsentForHiddenObservedAndMobC() started.
+✔ Suite ReleaseCandidateEvidenceTests passed after 41.552 seconds.
+◇ Test cameraCD013ExtractionArmsAtZeroDestroyed() started.
+✔ Test awarenessIsDigested() passed after 0.025 seconds.
+✔ Test captionIsAbsentForHiddenObservedAndMobC() passed after 0.025 seconds.
+✔ Test cameraCD013ExtractionArmsAtZeroDestroyed() passed after 0.025 seconds.
+✔ Suite HeatReinforcementTests passed after 41.577 seconds.
+◇ Test awarenessBlockDecodesFromTheBundledContract() started.
+◇ Test bossBO001DaemonCycleTimingAndQueryDamage() started.
+✔ Test awarenessBlockDecodesFromTheBundledContract() passed after 0.004 seconds.
+✔ Test bossBO001DaemonCycleTimingAndQueryDamage() passed after 0.004 seconds.
+◇ Test awarenessBlockFailsClosed() started.
+◇ Test bossBO005AndBO006ObservationRounding() started.
+✔ Test awarenessBlockFailsClosed() passed after 0.023 seconds.
+✔ Test bossBO005AndBO006ObservationRounding() passed after 0.023 seconds.
+◇ Test snapshotFlagsUnawareEnemiesWithTheirIdleClip() started.
+◇ Test bossBO007IndependentReviewOmitsLowerTiedLane() started.
+✔ Test snapshotFlagsUnawareEnemiesWithTheirIdleClip() passed after 0.003 seconds.
+✔ Test bossBO007IndependentReviewOmitsLowerTiedLane() passed after 0.003 seconds.
+◇ Test enemyAlertedProjectsTheExclamationRecipe() started.
+◇ Test arenaAR004PlayerSpawnIsInsideZ01() started.
+✔ Test enemyAlertedProjectsTheExclamationRecipe() passed after 0.003 seconds.
+✔ Test arenaAR004PlayerSpawnIsInsideZ01() passed after 0.003 seconds.
+✔ Suite ContractVectorTests passed after 41.611 seconds.
+◇ Test hintShowsOnceWhenTheFirstUnawareEnemyIsOnScreen() started.
+✔ Test ghostStopsAtItsTerminalTick() passed after 2.658 seconds.
+◇ Test ghostFadesAfterItsTerminalTick() started.
+✔ Test hintShowsOnceWhenTheFirstUnawareEnemyIsOnScreen() passed after 0.742 seconds.
+✔ Suite AwarenessTests passed after 42.355 seconds.
+✔ Test ghostFadesAfterItsTerminalTick() passed after 2.681 seconds.
+◇ Test rs014GhostLeavesTheLiveRunUntouched() started.
+✔ Test rs014GhostLeavesTheLiveRunUntouched() passed after 5.726 seconds.
+◇ Test onlyAFasterSuccessReplacesTheBest() started.
+✔ Test onlyAFasterSuccessReplacesTheBest() passed after 1.181 seconds.
+✔ Suite GhostRunTests passed after 51.475 seconds.
+✔ Test gateC009TenConsecutiveCompleteRunsPass() passed after 33.845 seconds.
+◇ Test gateB003RestartRestoresInitialAuthoritativeState() started.
+✔ Test gateB003RestartRestoresInitialAuthoritativeState() passed after 0.012 seconds.
+◇ Test gateF017ReceiptCanonicalRoundTrip() started.
+✔ Test gateF017ReceiptCanonicalRoundTrip() passed after 1.116 seconds.
+✔ Suite GateVerificationTests passed after 56.430 seconds.
+✔ Test aPilotedRunProducesTheBoundariesInOrder() passed after 46.566 seconds.
+✔ Suite PacingSegmentsTests passed after 66.200 seconds.
+✔ Test cameraCP010EveryLegalSetFairness() passed after 106.729 seconds.
+✔ Suite CameraFairnessTests passed after 106.732 seconds.
+D088-HITSTOP ticks=12942 frames=14020 frozen=1078 freezes=358 stretch=1.0832946994282182
+✔ Test hitStopNeverChangesTheDigestOrReceipt() passed after 125.918 seconds.
+◇ Test hitStopNeverChangesTheDigestThroughABlackout() started.
+✔ Test hitStopNeverChangesTheDigestThroughABlackout() passed after 5.466 seconds.
+✔ Suite GameFeelTests passed after 168.684 seconds.
+T901-PILOTED-RUN seed=1 upgrade=ricochetPulse ticks=12942 outcome=failure digest=1fbe149b1a768643bee500f2c4f8acfa3cadf2088762efd57a5e4e8721c4dbfe
+✔ Test replayT901PilotedRunReproducesDigestThreeTimes() passed after 197.248 seconds.
+◇ Test replayT901PilotedRunRoundTripsThroughEnvelopeJSON() started.
+FEELPASS-PROOF seed=5 ticks=16691 digest=6869bf46dfe921aa181a9d5055bf1b9bdf49d9b5705824f4807888800fd70bec medals=["SURGICAL", "SWIFT"] takedowns=7 maxStreak=5
+✔ Test pilotedSuccessDigestAndReceiptAreUnchanged() passed after 204.256 seconds.
+✔ Suite FeelPassPresentationOnlyTests passed after 231.048 seconds.
+✔ Test replayT901PilotedRunRoundTripsThroughEnvelopeJSON() passed after 42.993 seconds.
+➜ Test pacingT305ProbeMatrix() skipped.
+➜ Test heatD083StyleSweep() skipped.
+✔ Suite PacingProbeTests passed after 240.244 seconds.
+✔ Test patrolEN030FairnessHoldsAtEveryTickOfTheCycle() passed after 224.123 seconds.
+➜ Test patrolEN030FullCap() skipped.
+◇ Test fairnessProofRejectsTheFirstCutWaypoints() started.
+✔ Test rs022AReplayEarnsTheSameMedals() passed after 242.890 seconds.
+◇ Test rs023ASecondGhostTodayIsNotNew() started.
+✔ Test rs023ASecondGhostTodayIsNotNew() passed after 0.001 seconds.
+◇ Test aNewDayOrAnotherIdentityStartsEmpty() started.
+✔ Test aNewDayOrAnotherIdentityStartsEmpty() passed after 0.001 seconds.
+◇ Test recordRoundTripsThroughJSON() started.
+✔ Test recordRoundTripsThroughJSON() passed after 0.001 seconds.
+◇ Test titleGoalsShowAllFiveByShape() started.
+✔ Test titleGoalsShowAllFiveByShape() passed after 0.001 seconds.
+◇ Test shareAppendsMedalNamesWithoutNewMarks() started.
+✔ Test shareAppendsMedalNamesWithoutNewMarks() passed after 0.001 seconds.
+✔ Suite MedalTests passed after 273.574 seconds.
+✔ Test fairnessProofRejectsTheFirstCutWaypoints() passed after 82.748 seconds.
+◇ Test patrolsBlockFailsClosed() started.
+✔ Test patrolsBlockFailsClosed() passed after 0.014 seconds.
+◇ Test encounterEN031UnawareEnemyDriftsToItsTriggerAndStops() started.
+✔ Test encounterEN031UnawareEnemyDriftsToItsTriggerAndStops() passed after 1.530 seconds.
+◇ Test driftNeedsAnEncounterTrigger() started.
+✔ Test driftNeedsAnEncounterTrigger() passed after 0.066 seconds.
+◇ Test damageRemainderIsExactOverManyHits() started.
+✔ Test damageRemainderIsExactOverManyHits() passed after 0.011 seconds.
+◇ Test damageTakenAppliesToEveryLossInTheSimulation() started.
+✔ Test damageTakenAppliesToEveryLossInTheSimulation() passed after 0.081 seconds.
+◇ Test damageRemainderIsDigested() started.
+✔ Test damageRemainderIsDigested() passed after 0.007 seconds.
+◇ Test patrolStateIsDigested() started.
+✔ Test patrolStateIsDigested() passed after 0.003 seconds.
+✔ Suite TransitPatrolTests passed after 346.034 seconds.
+✔ Test run with 773 tests in 109 suites passed after 346.035 seconds.

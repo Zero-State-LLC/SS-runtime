@@ -1,0 +1,68 @@
+{
+  "status": "PROVISIONAL_LANDMARK_DIAGNOSTIC_NOT_ADMITTED",
+  "assetId": "env_solid_07_service_yard_b",
+  "sourceSHA256": "ce95b12fc9f3b3bde1c15d50f3f224d58bc53dffba4dfdcc4f7a3e4c41056616",
+  "authoritativeSolid": {
+    "id": "solid-07-service-yard-b",
+    "center": {
+      "x": 1536,
+      "y": 1344
+    },
+    "halfSize": {
+      "x": 128,
+      "y": 96
+    }
+  },
+  "sourcePixelConvention": "top-left origin, x right, y down",
+  "provisionalVisibleSlabLandmarks": {
+    "front": [
+      145,
+      172
+    ],
+    "left": [
+      60,
+      120
+    ],
+    "right": [
+      201,
+      133
+    ]
+  },
+  "landmarkUncertaintyPixels": 2,
+  "unverified": [
+    "rear ground corner hidden",
+    "right edge may be source-clipped",
+    "source yaw not documented"
+  ],
+  "fits": [
+    {
+      "uniformScale": 1.9701645130550727,
+      "edgeEndpointErrorsLogical": [
+        46.900815403737354,
+        72.00035656343107
+      ],
+      "rmsEndpointErrorLogical": 60.76075143872341,
+      "correspondence": "front-SW_left-NW_right-SE",
+      "targetEdgeVectors": [
+        [
+          -135.7645019878171,
+          67.88225099390856
+        ],
+        [
+          181.01933598375618,
+          90.50966799187809
+        ]
+      ],
+      "cornerPerturbationRMSRange": [
+        51.051440194172,
+        70.46755066920872
+      ]
+    }
+  ],
+  "limitations": [
+    "Perturbation range samples uncertainty-box corners, not a proven bound",
+    "Slab perimeter may differ from wall footprint; no collision fit inferred",
+    "Source and renderer contact require visual review; no universal acceptance tolerance"
+  ],
+  "decision": "Do not treat center-to-base translation as a complete fix; resolve base semantics and source orientation before runtime admission."
+}

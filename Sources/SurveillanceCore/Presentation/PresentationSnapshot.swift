@@ -15,6 +15,9 @@ public struct PresentationSnapshot: Equatable, Sendable {
         /// `ReactionClipTracker`. The renderer tries it before `clipId` and falls
         /// back, so an unbacked reaction never hides the state clip.
         public var reactionClipId: String? = nil
+        public var reactionOccurrence: ClipOccurrence? = nil
+        public var heldClipOccurrence: ClipOccurrence? = nil
+        public var fallbackClipId: String? = nil
         /// D-089: a standard enemy that has not been alerted. The renderer
         /// draws the `?` marker above it (animation.md § 8a); its shape, not
         /// its colour, carries the state. Presentation only.
@@ -22,6 +25,8 @@ public struct PresentationSnapshot: Equatable, Sendable {
     }
 
     public struct CameraSprite: Equatable, Sendable {
+        /// Exact authoritative emitter position, distinct from the mount artwork.
+        public var fieldOrigin: VecQ8? = nil
         public var id: EntityID
         public var x: Int
         public var y: Int
@@ -78,6 +83,9 @@ public struct PresentationSnapshot: Equatable, Sendable {
         public var inTransition: Bool
     }
 
+    public var combatFeedback = CombatFeedbackFrame()
+    /// Inclusive authority window, independent of the shorter Dodge animation.
+    public var ghostConcealmentActive = false
     public var tick: UInt64
     public var outcome: RunOutcome
     public var player: CircleSprite
@@ -159,6 +167,7 @@ public struct PresentationSnapshot: Equatable, Sendable {
     public var playerClipId: String
     /// Player hurt clip an event calls for, preferred over `playerClipId`.
     public var playerReactionClipId: String? = nil
+    public var playerReactionOccurrence: ClipOccurrence? = nil
     /// Defeated enemies still playing their defeat clip after leaving
     /// authoritative state. Presentation only; drawn only where the clip is backed.
     public var defeated: [CircleSprite] = []
@@ -215,6 +224,7 @@ public struct PresentationSnapshot: Equatable, Sendable {
         cameras = state.cameras.map {
             let presentationState = CameraPresentation.persistentState(integrity: $0.integrity)
             return CameraSprite(
+                fieldOrigin: $0.fieldOrigin,
                 id: $0.entityId,
                 x: $0.position.x,
                 y: $0.position.y,
@@ -268,6 +278,8 @@ public struct PresentationSnapshot: Equatable, Sendable {
             destroyed: camerasDestroyed,
             complete: state.networkBlackout
         )
+        ghostConcealmentActive = state.upgrade.ghostStep && state.tick > 0
+            && state.tick <= state.player.cameraInvisibleUntilTick && !state.outcome.isTerminal
         upgrade = state.upgrade.selected
         upgradePending = state.upgrade.pending
         tutorialCopy = state.tutorial.copy.isEmpty ? nil : state.tutorial.copy

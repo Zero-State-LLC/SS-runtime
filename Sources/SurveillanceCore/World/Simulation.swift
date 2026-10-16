@@ -1,6 +1,7 @@
 public struct Simulation: Equatable, Sendable {
     public private(set) var state: WorldState
     private var events = EventBuffer()
+    public private(set) var combatFeedback = CombatFeedbackFrame()
     /// Trigger centres, patrol routes, and the unaware rules, derived once
     /// from the arena and content this run was built with (D-090, D-091).
     private let unawareMovement: UnawareMovement
@@ -102,6 +103,7 @@ public struct Simulation: Equatable, Sendable {
 
     @discardableResult
     public mutating func step(command incoming: PlayerCommand?) -> TickResult {
+        combatFeedback = CombatFeedbackFrame()
         if isTerminal {
             return TickResult(tick: state.tick, events: [], digest: state.digest(), outcome: state.outcome)
         }
@@ -176,6 +178,7 @@ public struct Simulation: Equatable, Sendable {
             applyPlayerDamage(source, amount: amount, tick: tick)
         }
         var observationPulses: [Int] = []
+        var unmodifiedObservationPulses: [Int] = []
         if var runtime = state.bossRuntime,
            let index = state.enemies.firstIndex(where: { $0.archetype == .algorithmicModerate && $0.alive })
         {
@@ -202,6 +205,8 @@ public struct Simulation: Equatable, Sendable {
                 state.phasesReached.append(runtime.phase.rawValue)
             }
             if let pulse {
+                unmodifiedObservationPulses.append(BossSystem.observationAmount(
+                    base: pulse, numerator: runtime.observationNumerator, signalJammer: false))
                 observationPulses.append(
                     BossSystem.observationAmount(
                         base: pulse,
@@ -254,6 +259,7 @@ public struct Simulation: Equatable, Sendable {
 
         // T410 / camera-destruction-001 §9: surviving contacts, then ordered Tamper, even on the death tick.
         let tamper = state.destructions.filter { $0.tick == tick }.sorted { $0.cameraId < $1.cameraId }.map { _ in ExposureState.tamperSpike }
+        var withoutJammer = state.exposure
         let resolution = state.exposure.resolveTick(
             survivingContactCount: survivingContacts.count,
             tamperAmounts: tamper,
@@ -266,6 +272,17 @@ public struct Simulation: Equatable, Sendable {
             fogPulseAmounts: state.outcome == .failure ? [] : fogPulses,
             observationPulseAmounts: state.outcome == .failure ? [] : observationPulses
         )
+        if state.upgrade.signalJammer {
+            // Compare the exact same resolved inputs, including clamps, Tamper,
+            // Lockdown and lethal-tick suppression. This copy cannot affect rules.
+            let unmodified = withoutJammer.resolveTick(
+                survivingContactCount: survivingContacts.count, tamperAmounts: tamper,
+                signalJammer: false, forceLockdown: forceLockdown,
+                destroyedCameras: state.destructions.count,
+                fogPulseAmounts: state.outcome == .failure ? [] : fogPulses,
+                observationPulseAmounts: state.outcome == .failure ? [] : unmodifiedObservationPulses)
+            combatFeedback.jammerReducedExposure = resolution.after < unmodified.after
+        }
         emitExposure(resolution, tick: tick)
         resolveQuietApproach()
 
@@ -405,6 +422,7 @@ public struct Simulation: Equatable, Sendable {
                 "targetEntityId": .string(target.0.decimalString)
             ]
         )
+        combatFeedback.shot = .init(projectile: id, origin: state.player.position, velocity: velocity)
         state.lastPulseTick = tick
     }
 
@@ -442,8 +460,8 @@ public struct Simulation: Equatable, Sendable {
                 state.cameras.first { $0.entityId == id }?.mountSolidId
             }
             for solid in state.liveSolids where solid.id != ownMount {
-                if Collision.segmentIntersects(projectile.previous, projectile.position, box: solid.box) {
-                    wallT = 0
+                if let entry = Collision.segmentEntryTime(projectile.previous, projectile.position, box: solid.box) {
+                    wallT = min(wallT ?? entry, entry)
                 }
             }
             if let wallT {
@@ -499,7 +517,9 @@ public struct Simulation: Equatable, Sendable {
                 continue
             }
             if hit.target == state.player.id {
-                applyPlayerDamage(hit.projectile, amount: state.projectiles[hit.index].damage, tick: tick)
+                let projectile = state.projectiles[hit.index]
+                applyPlayerDamage(hit.projectile, amount: projectile.damage, tick: tick,
+                                  kind: "projectile", owner: projectile.ownerId, sourcePosition: projectile.previous)
                 retireProjectile(at: hit.index)
                 consumed.insert(hit.projectile)
                 continue
@@ -526,7 +546,10 @@ public struct Simulation: Equatable, Sendable {
                     payload: [
                         "projectileId": .string(hit.projectile.decimalString),
                         "targetEntityId": .string(hit.target.decimalString),
-                        "appliedDamage": .integer(Int64(amount))
+                        "appliedDamage": .integer(Int64(amount)),
+                        "impactXQ8": .integer(state.enemies[eIndex].position.x.raw),
+                        "impactYQ8": .integer(state.enemies[eIndex].position.y.raw),
+                        "projectileKind": .string(state.projectiles[hit.index].kind == .ricochet ? "ricochet" : "civicPulse")
                     ]
                 )
                 events.emit(
@@ -582,7 +605,10 @@ public struct Simulation: Equatable, Sendable {
                     payload: [
                         "projectileId": .string(hit.projectile.decimalString),
                         "targetEntityId": .string(hit.target.decimalString),
-                        "appliedDamage": .integer(1)
+                        "appliedDamage": .integer(1),
+                        "impactXQ8": .integer(state.cameras[cIndex].targetAnchor.x.raw),
+                        "impactYQ8": .integer(state.cameras[cIndex].targetAnchor.y.raw),
+                        "projectileKind": .string(state.projectiles[hit.index].kind == .ricochet ? "ricochet" : "civicPulse")
                     ]
                 )
                 // camera-destruction.md §7 / upgrades.md: one projectile damages a Camera at most once.
@@ -775,7 +801,10 @@ public struct Simulation: Equatable, Sendable {
     /// by `player.damageTakenPercent` through an exact remainder in
     /// hundredths, so over a run exactly that percentage lands with no
     /// rounding drift. A loss that removes no whole point publishes nothing.
-    private mutating func applyPlayerDamage(_ source: EntityID, amount: Int, tick: UInt64) {
+    private mutating func applyPlayerDamage(
+        _ source: EntityID, amount: Int, tick: UInt64, kind: String = "attack",
+        owner: EntityID? = nil, sourcePosition: VecQ8? = nil, contributors: [EntityID]? = nil
+    ) {
         let removed = Self.scaleDamageTaken(
             amount,
             percent: state.content.player.damageTakenPercent,
@@ -783,6 +812,8 @@ public struct Simulation: Equatable, Sendable {
         )
         guard removed > 0 else { return }
         let applied = min(removed, state.player.integrity)
+        guard applied > 0 else { return }
+        let origin = sourcePosition ?? state.enemies.first(where: { $0.id == source })?.position
         state.player.integrity -= applied
         state.player.damageTaken += applied
         events.emit(
@@ -794,7 +825,14 @@ public struct Simulation: Equatable, Sendable {
             payload: [
                 "amount": .integer(Int64(applied)),
                 "remainingIntegrity": .integer(Int64(state.player.integrity)),
-                "sourceEntityId": .string(source.decimalString)
+                "sourceEntityId": .string(source.decimalString),
+                "damageKind": .string(kind),
+                "ownerEntityId": .string((owner ?? source).decimalString),
+                "impactXQ8": .integer(state.player.position.x.raw),
+                "impactYQ8": .integer(state.player.position.y.raw),
+                "sourceXQ8": origin.map { .integer($0.x.raw) } ?? .null,
+                "sourceYQ8": origin.map { .integer($0.y.raw) } ?? .null,
+                "contributors": .array((contributors ?? [source]).map { .string($0.decimalString) })
             ]
         )
         if state.player.integrity <= 0 {
@@ -830,7 +868,8 @@ public struct Simulation: Equatable, Sendable {
         let points = state.player.contactAccumulator / 60
         state.player.contactAccumulator %= 60
         if points > 0 {
-            applyPlayerDamage(applied.first?.id ?? state.player.id, amount: points, tick: tick)
+            applyPlayerDamage(applied.first?.id ?? state.player.id, amount: points, tick: tick,
+                              kind: "contact", contributors: applied.map(\.id))
         }
         if state.player.integrity <= 0 && state.outcome != .failure && state.outcome != .invalid {
             fail(.playerDeath, tick: tick)
@@ -845,7 +884,8 @@ public struct Simulation: Equatable, Sendable {
             if mine.armed {
                 let r = Int64(mine.radius) * Q8.scale
                 if state.player.position.distanceSquared(to: mine.position) <= r * r {
-                    applyPlayerDamage(mine.ownerId, amount: mine.damage, tick: tick)
+                    applyPlayerDamage(mine.id, amount: mine.damage, tick: tick,
+                                      kind: "mine", owner: mine.ownerId, sourcePosition: mine.position)
                     continue
                 }
             }
@@ -1516,6 +1556,23 @@ public struct Simulation: Equatable, Sendable {
                 alive: true
             )
         )
+    }
+
+    /// D-103: install only preconditions; tests execute the normal tick/damage phase.
+    mutating func testing_setCollisionSolids(_ boxes: [AABB], preserveCameras: Bool = false) {
+        state.arena.permanentSolids = boxes.enumerated().map { index, box in
+            NamedRect(id: "test-wall-\(index)", name: nil, owner: nil, encounterId: nil,
+                      center: box.center, halfSize: box.halfSize, initiallyClosed: nil)
+        }
+        state.gates = []
+        if !preserveCameras { state.cameras = [] }
+    }
+
+    mutating func testing_injectMovingPulse(from: VecQ8, velocity: VecQ8) {
+        testing_injectPulseHitting(position: from)
+        guard let index = state.projectiles.indices.last else { return }
+        state.projectiles[index].velocity = velocity
+        state.civicPool.replace(id: state.projectiles[index].id, with: state.projectiles[index])
     }
 
     mutating func testing_injectPulseHitting(position: VecQ8) {

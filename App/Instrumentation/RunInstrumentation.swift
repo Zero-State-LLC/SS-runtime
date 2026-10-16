@@ -66,7 +66,7 @@ public final class FrameTimeCollector {
         let floorMs = 1000.0 / Double(PerformanceThresholds.sustainedPresentationFloorFps)
         var sustainedBelow = false
         var streak = 0
-        for sample in sorted {
+        for sample in samples {
             if sample > floorMs {
                 streak += 1
                 if streak >= 3 { sustainedBelow = true }
@@ -95,6 +95,15 @@ public final class FrameTimeCollector {
 
 /// T900: samples memory pressure and thermal state alongside simulation telemetry.
 public struct DeviceTelemetrySample: Equatable, Sendable {
+    /// Never label an arbitrary connected phone as the baseline iPhone 12.
+    public static var hardwareModel: String {
+        var system = utsname()
+        uname(&system)
+        return withUnsafeBytes(of: &system.machine) { bytes in
+            String(decoding: bytes.prefix { $0 != 0 }, as: UTF8.self)
+        }
+    }
+
     public var residentMemoryBytes: UInt64
     public var thermalState: String
     public var memoryWarningCount: Int

@@ -1,0 +1,9 @@
+# Feel presentation snapshot removal — measured candidate
+
+FeelPassPresenter now queries only copy/visibility inputs instead of constructing a complete PresentationSnapshot. Patrol cone origin checks retain live/unaware membership and the zero-facing exclusion without ray-casting outlines. The snapshot API for encounter labels remains supported. Near-miss calculation is unchanged.
+
+Validation: 61 targeted core tests pass (including four new parity/diagnostic tests). Coverage includes 360 viewport/membership/priority combinations, mixed patrol/general hints, 760 ticks of encounter/queue transitions, expiry, rewind and reset. Fresh iOS Simulator app suite Test-SSRuntime-2026.10.15_20-30-02--0700: 117 named tests / 119 executions, zero failures. This includes lower-recovery animation coverage in both motion modes and shared traversal. Specs validation and diff checks pass.
+
+Same 240-step session-stage scenario against the preceding awareness-only build: hudCaptionsQuietFeel median fell from 1.7405 to 0.0575 ms (control-first) and 1.7630 to 0.0570 ms (measured-first), approximately 96.7% lower. The stage includes HUD/captions/quiet/feel, not just FeelPassPresenter. Per-tick digest/events and final command log still match the untimed control. Samples and both execution orders are retained. Separate host paired timings are diagnostic only and were collected during the targeted suite; they are not device or frame-rate measurements.
+
+No artwork, knee amplitude, movement speed, cadence, visibility rules, outline policy or acceptance threshold changed in this optimization. Source design remains proposed. The previous recorded 15/16 frame miss remains open until the recording-load scenario is rerun; this unrecorded passing suite does not replace it. Release/device performance and visual contact/seam review remain pending.

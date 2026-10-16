@@ -1,0 +1,631 @@
+{
+  "actors" : [
+    {
+      "bounds" : [
+        1671.828857421875,
+        543.86004638671875,
+        80.0001220703125,
+        120
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "sprite-camera-2"
+    },
+    {
+      "bounds" : [
+        1176.8538818359375,
+        664.06884765625,
+        80,
+        119.99993896484375
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "sprite-camera-3"
+    },
+    {
+      "bounds" : [
+        1417.2701416015625,
+        953.98248291015625,
+        80,
+        119.99993896484375
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "sprite-camera-4"
+    },
+    {
+      "bounds" : [
+        1162.71142578125,
+        1364.103759765625,
+        80,
+        120
+      ],
+      "contained" : true,
+      "intersects" : true,
+      "name" : "sprite-camera-5"
+    },
+    {
+      "bounds" : [
+        1728.3975830078125,
+        1420.672607421875,
+        80,
+        120
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "sprite-camera-6"
+    },
+    {
+      "bounds" : [
+        1728.3975830078125,
+        1250.96630859375,
+        80,
+        120
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "sprite-camera-7"
+    },
+    {
+      "bounds" : [
+        2180.945068359375,
+        1477.241455078125,
+        80,
+        120
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "sprite-camera-8"
+    },
+    {
+      "bounds" : [
+        2548.64111328125,
+        1208.5400390625,
+        80,
+        120
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "sprite-camera-9"
+    },
+    {
+      "bounds" : [
+        1183.9251708984375,
+        1395.0400390625,
+        80,
+        80
+      ],
+      "contained" : true,
+      "intersects" : true,
+      "name" : "sprite-player"
+    },
+    {
+      "bounds" : [
+        1030.12890625,
+        1216.4951171875,
+        80,
+        80
+      ],
+      "contained" : true,
+      "intersects" : true,
+      "name" : "sprite-enemy-144"
+    },
+    {
+      "bounds" : [
+        1274.9652099609375,
+        1351.28759765625,
+        80,
+        80
+      ],
+      "contained" : true,
+      "intersects" : true,
+      "name" : "sprite-enemy-148"
+    },
+    {
+      "bounds" : [
+        1489.7489013671875,
+        1222.682373046875,
+        80,
+        80
+      ],
+      "contained" : true,
+      "intersects" : true,
+      "name" : "sprite-enemy-150"
+    },
+    {
+      "bounds" : [
+        1757.5650634765625,
+        1238.14990234375,
+        80,
+        80
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "sprite-enemy-151"
+    },
+    {
+      "bounds" : [
+        1400.80517578125,
+        298.851318359375,
+        120,
+        160
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-2-env_prop_street_tree"
+    },
+    {
+      "bounds" : [
+        1406.0562744140625,
+        432.54254150390625,
+        60,
+        80
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-3-env_prop_newsbox"
+    },
+    {
+      "bounds" : [
+        1116.7501220703125,
+        381.27752685546875,
+        80,
+        80
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-4-env_prop_hydrant_meters"
+    },
+    {
+      "bounds" : [
+        1486.7677001953125,
+        390.22003173828125,
+        40,
+        200
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-5-env_prop_trolley_pole"
+    },
+    {
+      "bounds" : [
+        1461.567626953125,
+        559.267578125,
+        200,
+        120
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-6-env_prop_bus_shelter"
+    },
+    {
+      "bounds" : [
+        1466.1614990234375,
+        624.726318359375,
+        60,
+        180.00006103515625
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-7-env_prop_signal_mast"
+    },
+    {
+      "bounds" : [
+        1199.2801513671875,
+        601.64129638671875,
+        120,
+        60
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-8-env_prop_bike_rack"
+    },
+    {
+      "bounds" : [
+        1529.956298828125,
+        727.20501708984375,
+        240.0001220703125,
+        120
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-9-env_prop_parklet"
+    },
+    {
+      "bounds" : [
+        1628.2926025390625,
+        1091.3125,
+        160,
+        60
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-12-env_prop_barricade"
+    },
+    {
+      "bounds" : [
+        1226.3514404296875,
+        1279.961181640625,
+        80,
+        160
+      ],
+      "contained" : true,
+      "intersects" : true,
+      "name" : "environment-upright-14-env_prop_seismic_brace"
+    },
+    {
+      "bounds" : [
+        2335.39990234375,
+        1170.862548828125,
+        160,
+        60
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-15-env_prop_barricade"
+    },
+    {
+      "bounds" : [
+        2226.2998046875,
+        1287.64013671875,
+        60,
+        180
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-16-env_prop_signal_mast"
+    },
+    {
+      "bounds" : [
+        1862.7476806640625,
+        1284.606201171875,
+        80,
+        80
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-17-env_prop_hydrant_meters"
+    },
+    {
+      "bounds" : [
+        2974.117431640625,
+        1005.9574584960938,
+        120,
+        160.00006103515625
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-20-env_prop_street_tree"
+    },
+    {
+      "bounds" : [
+        783.3001708984375,
+        149.007568359375,
+        160,
+        640.00006103515625
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_01_residential_west"
+    },
+    {
+      "bounds" : [
+        651.5850830078125,
+        561.13873291015625,
+        480,
+        240
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_02_residential_north"
+    },
+    {
+      "bounds" : [
+        1179.2801513671875,
+        643.5650634765625,
+        160,
+        159.99993896484375
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_03_transit_kiosk"
+    },
+    {
+      "bounds" : [
+        1139.2801513671875,
+        709.84014892578125,
+        240,
+        479.99993896484375
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_04_civic_west"
+    },
+    {
+      "bounds" : [
+        1611.828857421875,
+        889.84014892578125,
+        200.0001220703125,
+        120
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_05_civic_dais"
+    },
+    {
+      "bounds" : [
+        1167.5638427734375,
+        1018.5401000976562,
+        240,
+        399.99993896484375
+      ],
+      "contained" : false,
+      "intersects" : true,
+      "name" : "environment-upright-env_solid_06_service_yard_a"
+    },
+    {
+      "bounds" : [
+        1251.49755859375,
+        1228.172607421875,
+        640.0001220703125,
+        640
+      ],
+      "contained" : false,
+      "intersects" : true,
+      "name" : "environment-upright-env_solid_07_service_yard_b"
+    },
+    {
+      "bounds" : [
+        1708.3975830078125,
+        1064.398681640625,
+        120,
+        280
+      ],
+      "contained" : false,
+      "intersects" : true,
+      "name" : "environment-upright-env_solid_08_service_divider"
+    },
+    {
+      "bounds" : [
+        2084.376220703125,
+        1096.11376953125,
+        160,
+        160
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_09_grid_island_a"
+    },
+    {
+      "bounds" : [
+        2027.8074951171875,
+        1294.103759765625,
+        159.9998779296875,
+        160
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_10_grid_island_b"
+    },
+    {
+      "bounds" : [
+        2407.219970703125,
+        1227.53515625,
+        80,
+        180
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_11_court_column_a"
+    },
+    {
+      "bounds" : [
+        2633.493896484375,
+        1340.672607421875,
+        80,
+        180
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_12_court_column_b"
+    },
+    {
+      "bounds" : [
+        2803.199951171875,
+        902.97747802734375,
+        80,
+        320.00006103515625
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_13_phoenix_west"
+    },
+    {
+      "bounds" : [
+        3142.610107421875,
+        1072.682373046875,
+        80,
+        320
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_14_phoenix_east"
+    }
+  ],
+  "cameras" : 8,
+  "enemies" : 4,
+  "framing" : "hud-safe",
+  "hudExclusions" : [
+    [
+      -333.24301147460938,
+      124.75700378417969,
+      185.48599243164062,
+      19.486007690429688
+    ],
+    [
+      -332,
+      127,
+      151.27999877929688,
+      15
+    ],
+    [
+      -247.5,
+      130.5,
+      15,
+      8
+    ],
+    [
+      -126.24299621582031,
+      119.75700378417969,
+      252.48599243164062,
+      22.486007690429688
+    ],
+    [
+      -125,
+      122,
+      150,
+      18
+    ],
+    [
+      -76.242996215820312,
+      121,
+      2.4860000610351562,
+      20
+    ],
+    [
+      -13.743000030517578,
+      121,
+      2.4860000610351562,
+      20
+    ],
+    [
+      48.756999969482422,
+      121,
+      2.4860000610351562,
+      20
+    ],
+    [
+      123.75700378417969,
+      121,
+      2.4860000610351562,
+      20
+    ],
+    [
+      -120.11199951171875,
+      122.44400024414062,
+      250.22300720214844,
+      17.11199951171875
+    ],
+    [
+      -26,
+      103,
+      53,
+      10
+    ],
+    [
+      -332,
+      91,
+      73,
+      9
+    ],
+    [
+      -332,
+      55.5,
+      32,
+      9
+    ],
+    [
+      226.64999389648438,
+      35.650001525878906,
+      55.70001220703125,
+      55.700004577636719
+    ],
+    [
+      247.5,
+      59.5,
+      15,
+      9
+    ],
+    [
+      -262.54998779296875,
+      28.75,
+      11.100006103515625,
+      16.700000762939453
+    ],
+    [
+      -248.55000305175781,
+      28.75,
+      11.100006103515625,
+      16.700000762939453
+    ],
+    [
+      -234.55000305175781,
+      28.75,
+      11.100006103515625,
+      16.700000762939453
+    ],
+    [
+      268,
+      66,
+      64,
+      9
+    ],
+    [
+      -338.635986328125,
+      -148.63600158691406,
+      147.27099609375,
+      147.27099609375
+    ],
+    [
+      -296.58999633789062,
+      -106.58999633789062,
+      63.17999267578125,
+      63.180000305175781
+    ],
+    [
+      236.36399841308594,
+      -121.63600158691406,
+      91.271011352539062,
+      91.271003723144531
+    ],
+    [
+      273,
+      -80,
+      19,
+      8
+    ],
+    [
+      297.64999389648438,
+      108.65000152587891,
+      46.70001220703125,
+      46.700004577636719
+    ],
+    [
+      317,
+      127,
+      9,
+      11
+    ]
+  ],
+  "occlusionCandidate" : false,
+  "occlusionTreatment" : "control",
+  "projectiles" : [
+    {
+      "hostile" : true,
+      "id" : 163,
+      "visibleOrigin" : true
+    }
+  ],
+  "safeRegion" : [
+    -191.364990234375,
+    -163,
+    418.01498413085938,
+    266
+  ],
+  "tick" : 4248,
+  "worldFocus" : [
+    1375.2896728515625,
+    1372.039794921875
+  ],
+  "zoom" : 1.25
+}

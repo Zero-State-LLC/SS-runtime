@@ -1,0 +1,85 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "CACB3927-A76E-43A5-9ACA-C389EB38C0C3",
+        "deviceName" : "iPhone 17 Pro",
+        "modelName" : "iPhone 17 Pro",
+        "osBuildNumber" : "23F77",
+        "osVersion" : "26.5",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 4,
+      "passedTests" : 106,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "SSRuntime · Built with macOS 26.3.1",
+  "expectedFailures" : 0,
+  "failedTests" : 4,
+  "finishTime" : 1792096822.454,
+  "passedTests" : 104,
+  "result" : "Failed",
+  "skippedTests" : 0,
+  "startTime" : 1792096579.204,
+  "statistics" : [
+    {
+      "subtitle" : "3 test runs",
+      "title" : "1 test ran with dynamic parameters"
+    }
+  ],
+  "testFailures" : [
+    {
+      "failureText" : "XCTAssertEqual failed: (\"7\") is not equal to (\"16\") - Normal playback must actually display every source texture",
+      "targetName" : "SSRuntimeTests",
+      "testIdentifier" : 11,
+      "testIdentifierString" : "DisplayedPlaybackTests/testRevisedPlayerHalfInputCycle()",
+      "testIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testRevisedPlayerHalfInputCycle",
+      "testName" : "testRevisedPlayerHalfInputCycle()"
+    },
+    {
+      "failureText" : "XCTAssertEqual failed: (\"8\") is not equal to (\"16\") - Normal playback must actually display every source texture",
+      "targetName" : "SSRuntimeTests",
+      "testIdentifier" : 12,
+      "testIdentifierString" : "DisplayedPlaybackTests/testRevisedPlayerQuarterInputCycle()",
+      "testIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testRevisedPlayerQuarterInputCycle",
+      "testName" : "testRevisedPlayerQuarterInputCycle()"
+    },
+    {
+      "failureText" : "XCTAssertEqual failed: (\"6\") is not equal to (\"16\") - Normal playback must actually display every source texture",
+      "targetName" : "SSRuntimeTests",
+      "testIdentifier" : 13,
+      "testIdentifierString" : "DisplayedPlaybackTests/testRevisedPlayerReducedMotionCycle()",
+      "testIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testRevisedPlayerReducedMotionCycle",
+      "testName" : "testRevisedPlayerReducedMotionCycle()"
+    },
+    {
+      "failureText" : "XCTAssertEqual failed: (\"6\") is not equal to (\"16\") - Normal playback must actually display every source texture",
+      "targetName" : "SSRuntimeTests",
+      "testIdentifier" : 14,
+      "testIdentifierString" : "DisplayedPlaybackTests/testRevisedPlayerSourcePlaysWithProjectedSimulationTravel()",
+      "testIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testRevisedPlayerSourcePlaysWithProjectedSimulationTravel",
+      "testName" : "testRevisedPlayerSourcePlaysWithProjectedSimulationTravel()"
+    }
+  ],
+  "title" : "Test - SSRuntime",
+  "topInsights" : [
+    {
+      "category" : "Common Failures",
+      "impact" : "50% of failures",
+      "text" : "2 runs of 2 tests failed with XCTAssertEqual failed: (\"6\") is not equal to (\"16\") - Normal playback must actually display every source texture"
+    },
+    {
+      "category" : "Longest Test Runs",
+      "impact" : "31% of duration",
+      "text" : "1 longest test run with outlier durations exceeding 19.35s (three standard deviations)"
+    }
+  ],
+  "totalTestCount" : 108
+}

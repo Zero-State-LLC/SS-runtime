@@ -1,0 +1,142 @@
+{
+  "status": "PROPOSED_REVIEW_GUIDE_NOT_RUNTIME_RENDER",
+  "arenaSHA256": "60dbcd598bb4184fc3ad917b8967381a1669316699947bba9ccde3d2e7c54ee3",
+  "solid": {
+    "id": "solid-03-transit-kiosk",
+    "center": {
+      "x": 576,
+      "y": 704
+    },
+    "halfSize": {
+      "x": 64,
+      "y": 64
+    }
+  },
+  "worldCorners": [
+    [
+      512,
+      640
+    ],
+    [
+      640,
+      640
+    ],
+    [
+      640,
+      768
+    ],
+    [
+      512,
+      768
+    ]
+  ],
+  "candidates": {
+    "current-ground": {
+      "matrixScreenYDown": [
+        1,
+        0,
+        0,
+        -1
+      ],
+      "determinant": -1,
+      "groundVertices": [
+        [
+          -64,
+          64
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          64,
+          -64
+        ],
+        [
+          -64,
+          -64
+        ]
+      ],
+      "groundBoundingSize": [
+        128,
+        128
+      ],
+      "viewportWorldCorners": [
+        [
+          224.0,
+          867.0
+        ],
+        [
+          928.0,
+          867.0
+        ],
+        [
+          928.0,
+          541.0
+        ],
+        [
+          224.0,
+          541.0
+        ]
+      ],
+      "worldAreaVisibleIgnoringOcclusion": 229504.0,
+      "roundTripMaxError": 0.0,
+      "uprightGuideHeight": 110,
+      "heightStatus": "illustrative art guide only, not inferred building height"
+    },
+    "elevated-candidate": {
+      "matrixScreenYDown": [
+        0.7071067811865476,
+        -0.7071067811865476,
+        -0.3535533905932738,
+        -0.3535533905932738
+      ],
+      "determinant": -0.5000000000000001,
+      "groundVertices": [
+        [
+          0.0,
+          45.254833995939045
+        ],
+        [
+          90.50966799187809,
+          0.0
+        ],
+        [
+          0.0,
+          -45.254833995939045
+        ],
+        [
+          -90.50966799187809,
+          0.0
+        ]
+      ],
+      "groundBoundingSize": [
+        181.01933598375618,
+        90.50966799187809
+      ],
+      "viewportWorldCorners": [
+        [
+          557.6152236891497,
+          1183.4183976444792
+        ],
+        [
+          1055.4183976444792,
+          685.6152236891497
+        ],
+        [
+          594.3847763108503,
+          224.5816023555209
+        ],
+        [
+          96.58160235552089,
+          722.3847763108503
+        ]
+      ],
+      "worldAreaVisibleIgnoringOcclusion": 459007.9999999999,
+      "roundTripMaxError": 1.2710574864626038e-13,
+      "uprightGuideHeight": 110,
+      "heightStatus": "illustrative art guide only, not inferred building height"
+    }
+  },
+  "source": "Analytic rotation/vertical-compression experiment; no Tiled source copied."
+}

@@ -200,12 +200,16 @@ public struct EncounterLabelGate: Equatable, Sendable {
     /// not activated. Extraction copy (locked or open) is not an encounter
     /// label and always shows.
     public mutating func project(_ snap: PresentationSnapshot, state: WorldState) -> String? {
-        let copy = snap.combatObjectiveCopy
+        project(copy: snap.combatObjectiveCopy, node: snap.objectiveNode, tick: snap.tick, state: state)
+    }
+
+    /// Copy-only session path; no render geometry is required by this gate.
+    mutating func project(copy: String, node: CombatAuthorityNode, tick: UInt64, state: WorldState) -> String? {
         let isEncounterLabel = copy != HUDLayout.lockedExtractionCopy
             && copy != HUDLayout.phoenixStepsOpenCopy
         guard isEncounterLabel else { return copy }
-        guard Self.activated(snap.objectiveNode, in: state) else { return nil }
-        if shownAt[snap.objectiveNode] == nil { shownAt[snap.objectiveNode] = snap.tick }
+        guard Self.activated(node, in: state) else { return nil }
+        if shownAt[node] == nil { shownAt[node] = tick }
         return copy
     }
 

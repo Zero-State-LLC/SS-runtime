@@ -1,0 +1,25 @@
+warning: /Users/appliedalchemylabs/Library/org.swift.swiftpm/configuration is not accessible or not writable, disabling user-level cache features.
+warning: /Users/appliedalchemylabs/Library/org.swift.swiftpm/security is not accessible or not writable, disabling user-level cache features.
+warning: /Users/appliedalchemylabs/Library/Caches/org.swift.swiftpm is not accessible or not writable, disabling user-level cache features.
+warning: 'ss-runtime': failed storing manifest for 'ss-runtime' in cache: attempt to write a readonly database
+Building for debugging...
+[0/2] Write swift-version--58304C5D6DBC2206.txt
+Build complete! (0.89s)
+Test Suite 'Selected tests' started at 2026-10-14 22:39:20.446.
+Test Suite 'SSRuntimePackageTests.xctest' started at 2026-10-14 22:39:20.463.
+Test Suite 'SSRuntimePackageTests.xctest' passed at 2026-10-14 22:39:20.463.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-14 22:39:20.463.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.017) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite CameraPresentationTests started.
+◇ Test cameraStatesFollowIntegrityWithoutMovingHousing() started.
+✔ Test cameraStatesFollowIntegrityWithoutMovingHousing() passed after 0.002 seconds.
+◇ Test cameraFieldOffStartsOnDestroyTickAndDoesNotWait() started.
+✔ Test cameraFieldOffStartsOnDestroyTickAndDoesNotWait() passed after 0.001 seconds.
+◇ Test cameraHitDoesNotInterruptFieldOrRotateHousing() started.
+✔ Test cameraHitDoesNotInterruptFieldOrRotateHousing() passed after 0.001 seconds.
+✔ Suite CameraPresentationTests passed after 0.004 seconds.
+✔ Test run with 3 tests in 1 suite passed after 0.004 seconds.

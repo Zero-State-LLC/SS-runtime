@@ -1,0 +1,100 @@
+{
+  "status": "SOURCE_PREVIEW_NOT_RUNTIME_ADMISSION",
+  "canvasPixels": [
+    256,
+    384
+  ],
+  "logicalCanvas": [
+    64,
+    96
+  ],
+  "anchor": [
+    32,
+    88
+  ],
+  "frameCount": 16,
+  "clips": [
+    {
+      "clipId": "camera_operational_idle",
+      "fps": 6,
+      "durationNumerator": 4,
+      "durationDenominator": 6,
+      "loop": true,
+      "frames": [
+        "frames/actor_camera_operationalIdle_none_01@4x.png",
+        "frames/actor_camera_operationalIdle_none_02@4x.png",
+        "frames/actor_camera_operationalIdle_none_03@4x.png",
+        "frames/actor_camera_operationalIdle_none_04@4x.png"
+      ],
+      "reducedMotionFrame": "frames/actor_camera_operationalIdle_none_01@4x.png",
+      "uniqueDecodedFrames": 3
+    },
+    {
+      "clipId": "camera_hit",
+      "fps": 16,
+      "durationNumerator": 2,
+      "durationDenominator": 16,
+      "loop": false,
+      "frames": [
+        "frames/actor_camera_hit_none_01@4x.png",
+        "frames/actor_camera_hit_none_02@4x.png"
+      ],
+      "reducedMotionFrame": "frames/actor_camera_hit_none_02@4x.png",
+      "uniqueDecodedFrames": 2
+    },
+    {
+      "clipId": "camera_critical_enter",
+      "fps": 12,
+      "durationNumerator": 3,
+      "durationDenominator": 12,
+      "loop": false,
+      "frames": [
+        "frames/actor_camera_criticalEnter_none_01@4x.png",
+        "frames/actor_camera_criticalEnter_none_02@4x.png",
+        "frames/actor_camera_criticalEnter_none_03@4x.png"
+      ],
+      "reducedMotionFrame": "frames/actor_camera_criticalEnter_none_03@4x.png",
+      "uniqueDecodedFrames": 3
+    },
+    {
+      "clipId": "camera_destroy",
+      "fps": 12,
+      "durationNumerator": 4,
+      "durationDenominator": 12,
+      "loop": false,
+      "frames": [
+        "frames/actor_camera_destroy_none_01@4x.png",
+        "frames/actor_camera_destroy_none_02@4x.png",
+        "frames/actor_camera_destroy_none_03@4x.png",
+        "frames/actor_camera_destroy_none_04@4x.png"
+      ],
+      "reducedMotionFrame": "frames/actor_camera_destroy_none_04@4x.png",
+      "uniqueDecodedFrames": 4
+    },
+    {
+      "clipId": "camera_field_off",
+      "fps": 12,
+      "durationNumerator": 1,
+      "durationDenominator": 12,
+      "loop": false,
+      "frames": [
+        "frames/actor_camera_fieldOff_none_01@4x.png"
+      ],
+      "reducedMotionFrame": "frames/actor_camera_fieldOff_none_01@4x.png",
+      "uniqueDecodedFrames": 1
+    },
+    {
+      "clipId": "camera_destroyed_idle",
+      "fps": 4,
+      "durationNumerator": 2,
+      "durationDenominator": 4,
+      "loop": true,
+      "frames": [
+        "frames/actor_camera_destroyedIdle_none_01@4x.png",
+        "frames/actor_camera_destroyedIdle_none_02@4x.png"
+      ],
+      "reducedMotionFrame": "frames/actor_camera_destroyedIdle_none_02@4x.png",
+      "uniqueDecodedFrames": 1
+    }
+  ]
+}

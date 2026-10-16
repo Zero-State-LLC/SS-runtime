@@ -1,0 +1,124 @@
+{
+  "sourceSha256": "487017f138f4a055eb36ae7d6c14837364b08091c9b4a8805e54124ca1c7c33b",
+  "alphaRule": "<=32 zero; >=240 opaque; linear between; RGB unchanged",
+  "scalePolicy": "single scale across all views; no individual body normalization",
+  "rootStatus": "manual approximate; not measured contact landmarks",
+  "exports": [
+    {
+      "direction": "south",
+      "region": [
+        0,
+        0,
+        768,
+        512
+      ],
+      "sourceRoot": [
+        464,
+        477
+      ],
+      "scale": 0.6797385620915033,
+      "canvas": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        336
+      ],
+      "alphaBounds": [
+        108,
+        39,
+        273,
+        338
+      ],
+      "sha256": "51cb032d4ae340a5dfe48b701aa41c619edc9e888480992adf80ddce2fd10765"
+    },
+    {
+      "direction": "east",
+      "region": [
+        768,
+        0,
+        1536,
+        512
+      ],
+      "sourceRoot": [
+        1078,
+        491
+      ],
+      "scale": 0.6797385620915033,
+      "canvas": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        336
+      ],
+      "alphaBounds": [
+        129,
+        29,
+        244,
+        340
+      ],
+      "sha256": "4fde2784bde49883ed700d4e28c61569a5888540038fc27a70c473a996ce2291"
+    },
+    {
+      "direction": "north",
+      "region": [
+        0,
+        512,
+        768,
+        1024
+      ],
+      "sourceRoot": [
+        462,
+        971
+      ],
+      "scale": 0.6797385620915033,
+      "canvas": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        336
+      ],
+      "alphaBounds": [
+        107,
+        37,
+        275,
+        338
+      ],
+      "sha256": "3df61b3be11248326958afb90779e4c4938eea6a4933ac3b46e5cef30e800b5f"
+    },
+    {
+      "direction": "west",
+      "region": [
+        768,
+        512,
+        1536,
+        1024
+      ],
+      "sourceRoot": [
+        1079,
+        985
+      ],
+      "scale": 0.6797385620915033,
+      "canvas": [
+        384,
+        384
+      ],
+      "anchor": [
+        192,
+        336
+      ],
+      "alphaBounds": [
+        142,
+        26,
+        248,
+        340
+      ],
+      "sha256": "d64ea685fde7bc107dc836cb7aa751e2ab6353cfc172de0c01ac5c70f87e3f9b"
+    }
+  ]
+}

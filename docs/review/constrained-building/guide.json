@@ -1,0 +1,50 @@
+{
+  "status": "PROPOSED_ART_CONSTRAINT",
+  "pixels": [
+    1024,
+    1024
+  ],
+  "groundCorners": [
+    [
+      512,
+      900
+    ],
+    [
+      900,
+      706
+    ],
+    [
+      512,
+      512
+    ],
+    [
+      124,
+      706
+    ]
+  ],
+  "roofCorners": [
+    [
+      512,
+      480
+    ],
+    [
+      900,
+      286
+    ],
+    [
+      512,
+      92
+    ],
+    [
+      124,
+      286
+    ]
+  ],
+  "worldFootprint": [
+    128,
+    128
+  ],
+  "projection": "two-to-one diamond, separate upright height",
+  "purpose": "authored rectangle constraint, not inferred footprint of previous art",
+  "notGameplayHeight": 420
+}

@@ -1,0 +1,165 @@
+{
+  "status": "CAPTURED source study; NOT ADMITTED",
+  "sourceSHA256": "60906ad3f8be81f16cbdec8092acc5296cf4d73770885606ca02ac7135e7cc75",
+  "tool": "built-in image_gen; Pillow deterministic export",
+  "canvas": [
+    384,
+    384
+  ],
+  "logicalCanvas": [
+    64,
+    64
+  ],
+  "logicalAnchor": [
+    32,
+    56
+  ],
+  "pixelAnchor": [
+    192,
+    336
+  ],
+  "alphaCleanup": "<=32 transparent; >=240 opaque; linear between; RGB unchanged",
+  "frames": [
+    {
+      "frame": "hurt-west-01.png",
+      "sourceCell": [
+        0,
+        0,
+        591,
+        887
+      ],
+      "sourceSoleCentersApproximate": [
+        [
+          265,
+          701
+        ],
+        [
+          408,
+          799
+        ]
+      ],
+      "sourceRootInCell": [
+        336.5,
+        750.0
+      ],
+      "scale": 0.44192634560906513,
+      "offset": [
+        43,
+        5
+      ],
+      "exportSoleCentersApproximate": [
+        [
+          160.11048158640227,
+          314.79036827195466
+        ],
+        [
+          223.30594900849857,
+          358.09915014164307
+        ]
+      ],
+      "alphaBounds": [
+        121,
+        55,
+        277,
+        371
+      ],
+      "sha256": "1dab15d57fd3f02def3728a226e8a62866a42e3092c2f7366a58806de9240e14"
+    },
+    {
+      "frame": "hurt-west-02.png",
+      "sourceCell": [
+        591,
+        0,
+        1182,
+        887
+      ],
+      "sourceSoleCentersApproximate": [
+        [
+          813,
+          703
+        ],
+        [
+          980,
+          801
+        ]
+      ],
+      "sourceRootInCell": [
+        305.5,
+        752.0
+      ],
+      "scale": 0.44192634560906513,
+      "offset": [
+        57,
+        4
+      ],
+      "exportSoleCentersApproximate": [
+        [
+          155.10764872521247,
+          314.6742209631728
+        ],
+        [
+          228.90934844192634,
+          357.9830028328612
+        ]
+      ],
+      "alphaBounds": [
+        113,
+        61,
+        273,
+        371
+      ],
+      "sha256": "606504fa4d489e6a4f9f4050b4c278cf7419228f3b721e6f5c24939e40c655df"
+    },
+    {
+      "frame": "hurt-west-03.png",
+      "sourceCell": [
+        1182,
+        0,
+        1774,
+        887
+      ],
+      "sourceSoleCentersApproximate": [
+        [
+          1398,
+          702
+        ],
+        [
+          1518,
+          801
+        ]
+      ],
+      "sourceRootInCell": [
+        276.0,
+        751.5
+      ],
+      "scale": 0.44192634560906513,
+      "offset": [
+        70,
+        4
+      ],
+      "exportSoleCentersApproximate": [
+        [
+          165.45609065155807,
+          314.2322946175637
+        ],
+        [
+          218.4872521246459,
+          357.9830028328612
+        ]
+      ],
+      "alphaBounds": [
+        127,
+        54,
+        275,
+        372
+      ],
+      "sha256": "6e9edf8fcd2a0a58336023d62a1839f5a959e1b2505ed0c0a70af040e07beeb6"
+    }
+  ],
+  "limitations": [
+    "manual approximate sole landmarks",
+    "flat raster source, no editable rig",
+    "not complete four-facing player family",
+    "not runtime capture"
+  ]
+}

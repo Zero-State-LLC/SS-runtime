@@ -1,0 +1,57 @@
+{
+  "ok": true,
+  "operation": {
+    "id": "ss-body-refined-review-01",
+    "projectId": "e428d4b6-3697-4c74-ae65-78764240abde",
+    "access": "query",
+    "status": "succeeded",
+    "baseRevision": 4,
+    "headRevision": 4,
+    "headSceneSequence": 0,
+    "stale": false,
+    "sceneSequenceBefore": 0,
+    "sceneSequenceAfter": 0,
+    "revisionBefore": 4,
+    "revisionAfter": null,
+    "createdAt": "2026-10-14T23:19:21.753Z",
+    "startedAt": "2026-10-14T23:19:21.784Z",
+    "finishedAt": "2026-10-14T23:20:39.863Z",
+    "result": {
+      "frames": [
+        1,
+        4
+      ],
+      "purpose": "silhouette and peak deformation review",
+      "bodyObjects": 26
+    },
+    "output": {
+      "stdoutTail": "",
+      "stderrTail": "",
+      "truncated": false
+    },
+    "error": null,
+    "artifacts": null,
+    "generatedArtifacts": [
+      {
+        "size": 102712,
+        "etag": "4597582b1829ba790edd6fcc4445a11a",
+        "id": "4679ca5cf2b713413f848d03d6185427",
+        "name": "body-refined-frame-1.png",
+        "mediaType": "image/png",
+        "width": 384,
+        "height": 384
+      },
+      {
+        "size": 102451,
+        "etag": "9cbd88728df20ad392c733903fe8f5c3",
+        "id": "a028deedd7fc1db344af2c38d5314db9",
+        "name": "body-refined-frame-4.png",
+        "mediaType": "image/png",
+        "width": 384,
+        "height": 384
+      }
+    ]
+  },
+  "terminal": true,
+  "projectUrl": "https://higgsfield.ai/3d-jutsu/e428d4b6-3697-4c74-ae65-78764240abde"
+}
