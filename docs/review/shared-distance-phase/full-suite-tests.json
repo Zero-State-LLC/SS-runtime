@@ -1,0 +1,242 @@
+{
+  "devices" : [
+    {
+      "architecture" : "arm64",
+      "deviceId" : "CACB3927-A76E-43A5-9ACA-C389EB38C0C3",
+      "deviceName" : "iPhone 17 Pro",
+      "modelName" : "iPhone 17 Pro",
+      "osBuildNumber" : "23F77",
+      "osVersion" : "26.5",
+      "platform" : "iOS Simulator"
+    }
+  ],
+  "testNodes" : [
+    {
+      "children" : [
+        {
+          "children" : [
+            {
+              "children" : [
+                {
+                  "duration" : "14s",
+                  "durationInSeconds" : 14.238548040390015,
+                  "name" : "testBenchmarkSettleCancelsWithoutChangingSelectedState()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testBenchmarkSettleCancelsWithoutChangingSelectedState()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testBenchmarkSettleCancelsWithoutChangingSelectedState",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "2s",
+                  "durationInSeconds" : 2.463887929916382,
+                  "name" : "testCameraCandidatesActuallyPlayAndSettleInPresentedScene()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testCameraCandidatesActuallyPlayAndSettleInPresentedScene()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testCameraCandidatesActuallyPlayAndSettleInPresentedScene",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "30s",
+                  "durationInSeconds" : 30.2953519821167,
+                  "name" : "testCommandDrivenInterruptionRoute()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testCommandDrivenInterruptionRoute()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testCommandDrivenInterruptionRoute",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "1s",
+                  "durationInSeconds" : 1.1294019222259521,
+                  "name" : "testDistanceCandidatePreservesSelectedInterruptions()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testDistanceCandidatePreservesSelectedInterruptions()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testDistanceCandidatePreservesSelectedInterruptions",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "1m 21s",
+                  "durationInSeconds" : 81.14173197746277,
+                  "name" : "testDistancePhaseCandidateAtAllInputLevels()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testDistancePhaseCandidateAtAllInputLevels()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testDistancePhaseCandidateAtAllInputLevels",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "4s",
+                  "durationInSeconds" : 4.706521987915039,
+                  "name" : "testFullGameSceneCapturesPostActionImagesWithFrameRecords()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testFullGameSceneCapturesPostActionImagesWithFrameRecords()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testFullGameSceneCapturesPostActionImagesWithFrameRecords",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "2s",
+                  "durationInSeconds" : 2.050992012023926,
+                  "name" : "testLiveActionsExposeChangingDeliveredFramesAndSimulationTravel()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testLiveActionsExposeChangingDeliveredFramesAndSimulationTravel()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testLiveActionsExposeChangingDeliveredFramesAndSimulationTravel",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "4s",
+                  "durationInSeconds" : 4.577113032341003,
+                  "name" : "testMidpointSettleNativePoseInspection()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testMidpointSettleNativePoseInspection()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testMidpointSettleNativePoseInspection",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "14s",
+                  "durationInSeconds" : 14.370793104171753,
+                  "name" : "testPlayerPreparationStageComparison()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testPlayerPreparationStageComparison()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testPlayerPreparationStageComparison",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "3s",
+                  "durationInSeconds" : 3.7949880361557007,
+                  "name" : "testRevisedPlayerCleanSilhouetteReview()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testRevisedPlayerCleanSilhouetteReview()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testRevisedPlayerCleanSilhouetteReview",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "3s",
+                  "durationInSeconds" : 3.738116979598999,
+                  "name" : "testRevisedPlayerHalfInputCycle()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testRevisedPlayerHalfInputCycle()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testRevisedPlayerHalfInputCycle",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "3s",
+                  "durationInSeconds" : 3.7784550189971924,
+                  "name" : "testRevisedPlayerQuarterInputCycle()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testRevisedPlayerQuarterInputCycle()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testRevisedPlayerQuarterInputCycle",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "11s",
+                  "durationInSeconds" : 11.134683966636658,
+                  "name" : "testRevisedPlayerReducedMotionCycle()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testRevisedPlayerReducedMotionCycle()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testRevisedPlayerReducedMotionCycle",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "3s",
+                  "durationInSeconds" : 3.7813639640808105,
+                  "name" : "testRevisedPlayerSourcePlaysWithProjectedSimulationTravel()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testRevisedPlayerSourcePlaysWithProjectedSimulationTravel()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testRevisedPlayerSourcePlaysWithProjectedSimulationTravel",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "2s",
+                  "durationInSeconds" : 2.2112759351730347,
+                  "name" : "testSessionStepStageTimingPreservesAuthority()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testSessionStepStageTimingPreservesAuthority()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testSessionStepStageTimingPreservesAuthority",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "1m 1s",
+                  "durationInSeconds" : 61.20761799812317,
+                  "name" : "testSharedProjectedPlayerDistancePhaseComparison()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testSharedProjectedPlayerDistancePhaseComparison()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testSharedProjectedPlayerDistancePhaseComparison",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "18s",
+                  "durationInSeconds" : 18.268515944480896,
+                  "name" : "testSharedProjectedPlayerGroundedShadowComparison()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testSharedProjectedPlayerGroundedShadowComparison()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testSharedProjectedPlayerGroundedShadowComparison",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "1m 40s",
+                  "durationInSeconds" : 100.38315105438232,
+                  "name" : "testSharedProjectedPlayerReleaseAtEveryDisplayedPhase()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testSharedProjectedPlayerReleaseAtEveryDisplayedPhase()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testSharedProjectedPlayerReleaseAtEveryDisplayedPhase",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "26s",
+                  "durationInSeconds" : 26.666269063949585,
+                  "name" : "testSharedProjectedPlayerSettleCandidate()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testSharedProjectedPlayerSettleCandidate()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testSharedProjectedPlayerSettleCandidate",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "18s",
+                  "durationInSeconds" : 18.01159906387329,
+                  "name" : "testSharedProjectedPlayerTraversal()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testSharedProjectedPlayerTraversal()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testSharedProjectedPlayerTraversal",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.78s",
+                  "durationInSeconds" : 0.7792569398880005,
+                  "name" : "testSharedProjectedPlayerTraversalClockExcludesPreparationInterval()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testSharedProjectedPlayerTraversalClockExcludesPreparationInterval()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testSharedProjectedPlayerTraversalClockExcludesPreparationInterval",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "7s",
+                  "durationInSeconds" : 7.649294018745422,
+                  "name" : "testSharedReviewArtPreservesSelectedPlayerClips()",
+                  "nodeIdentifier" : "DisplayedPlaybackTests/testSharedReviewArtPreservesSelectedPlayerClips()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests/testSharedReviewArtPreservesSelectedPlayerClips",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "DisplayedPlaybackTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/DisplayedPlaybackTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            }
+          ],
+          "name" : "SSRuntimeTests",
+          "nodeIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests",
+          "nodeType" : "Unit test bundle",
+          "result" : "Passed"
+        }
+      ],
+      "name" : "SSRuntime",
+      "nodeType" : "Test Plan",
+      "result" : "Passed"
+    }
+  ],
+  "testPlanConfigurations" : [
+    {
+      "configurationId" : "1",
+      "configurationName" : "Test Scheme Action"
+    }
+  ]
+}

@@ -48,6 +48,8 @@ final class HUDRenderer {
         seen.insert(key)
         if let existing = nodes[key] as? T { return existing }
         let created = make()
+        if created.userData == nil { created.userData = NSMutableDictionary() }
+        created.userData?["hudElementKey"] = key
         nodes[key] = created
         root.addChild(created)
         return created

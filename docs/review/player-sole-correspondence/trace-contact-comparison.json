@@ -1,0 +1,1664 @@
+{
+  "status": "SOURCE_ALPHA_PROXY_NOT_NATIVE_SOLE_TRACKING",
+  "inputsSHA256": {
+    "source-contact-observations.json": "0b3f16c9e13757985e9d4ec49814d0f687875f8da9cf2be6c34158f97e87de17",
+    "current-contact-audit.json": "7341f1be6acd50910c9cc392d293eaf9b81845627b7e6994f59a30d410103e89"
+  },
+  "method": "Existing rendered root plus source alpha bottom-row displacement; no video sampling or physical sole identification.",
+  "results": [
+    {
+      "trace": "current-HalfInput-attachments/C8EF2C87-38B7-4E23-B6E7-CED517A4F593.json",
+      "sha256": "ea45cbe5eae1e65c92a8fafe9f573def11ef2e02da3bc1c2bd3cd04aa590d74a",
+      "axis": 16383,
+      "reducedMotion": false,
+      "distancePhaseComparison": false,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 16,
+          "endTick": 23,
+          "sourceAlphaEdgeRangeLogical": 5.166666666666629,
+          "modelToeRangeLogical": 5.25
+        },
+        {
+          "side": "left",
+          "startTick": 46,
+          "endTick": 53,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666629,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "left",
+          "startTick": 76,
+          "endTick": 83,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666629,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "left",
+          "startTick": 106,
+          "endTick": 113,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666686,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "right",
+          "startTick": 1,
+          "endTick": 8,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666629,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "right",
+          "startTick": 31,
+          "endTick": 38,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666629,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "right",
+          "startTick": 61,
+          "endTick": 68,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666629,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "right",
+          "startTick": 91,
+          "endTick": 98,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666657,
+          "modelToeRangeLogical": 6.25
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 6.166666666666686,
+      "maximumModelToeRangeLogical": 6.25
+    },
+    {
+      "trace": "current-QuarterInput-attachments/C130765A-6BFA-4AF8-B68A-9ECF313E3619.json",
+      "sha256": "0633012ebc01eaa3d597d01b44491c9a4fa4725653cd1473d7108884066de75f",
+      "axis": 8191,
+      "reducedMotion": false,
+      "distancePhaseComparison": false,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 16,
+          "endTick": 23,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 46,
+          "endTick": 53,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 76,
+          "endTick": 83,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 106,
+          "endTick": 113,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 1,
+          "endTick": 8,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 31,
+          "endTick": 38,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 61,
+          "endTick": 68,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 91,
+          "endTick": 98,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 8.666666666666629,
+      "maximumModelToeRangeLogical": 8.75
+    },
+    {
+      "trace": "current-ReducedMotion-attachments/64C695FE-4BAD-4F42-89AD-8FD4A255C3E3.json",
+      "sha256": "5865bc61bd8071a091652f33a7935aefdde64d632b0329d3d02223d5ba49c436",
+      "axis": 32767,
+      "reducedMotion": true,
+      "distancePhaseComparison": false,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 17,
+          "endTick": 24,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333712,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 47,
+          "endTick": 54,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 77,
+          "endTick": 84,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 107,
+          "endTick": 114,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333286,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 2,
+          "endTick": 9,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333712,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 32,
+          "endTick": 39,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333712,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 62,
+          "endTick": 69,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 92,
+          "endTick": 99,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 2.8333333333333712,
+      "maximumModelToeRangeLogical": 2.75
+    },
+    {
+      "trace": "current-ReducedMotion-attachments/8F883D39-2DA1-413C-A9F2-AD10F1ED749C.json",
+      "sha256": "8e33f0e4fffd6d8a6f9426cca44e0e29e3a8aadf85d4b1b538fe506c15918b21",
+      "axis": 32767,
+      "reducedMotion": true,
+      "distancePhaseComparison": false,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 16,
+          "endTick": 24,
+          "sourceAlphaEdgeRangeLogical": 4.833333333333371,
+          "modelToeRangeLogical": 4.75
+        },
+        {
+          "side": "left",
+          "startTick": 46,
+          "endTick": 54,
+          "sourceAlphaEdgeRangeLogical": 4.833333333333314,
+          "modelToeRangeLogical": 4.75
+        },
+        {
+          "side": "left",
+          "startTick": 76,
+          "endTick": 84,
+          "sourceAlphaEdgeRangeLogical": 4.833333333333314,
+          "modelToeRangeLogical": 4.75
+        },
+        {
+          "side": "left",
+          "startTick": 106,
+          "endTick": 114,
+          "sourceAlphaEdgeRangeLogical": 4.833333333333329,
+          "modelToeRangeLogical": 4.75
+        },
+        {
+          "side": "right",
+          "startTick": 1,
+          "endTick": 9,
+          "sourceAlphaEdgeRangeLogical": 4.833333333333371,
+          "modelToeRangeLogical": 4.75
+        },
+        {
+          "side": "right",
+          "startTick": 31,
+          "endTick": 39,
+          "sourceAlphaEdgeRangeLogical": 4.833333333333371,
+          "modelToeRangeLogical": 4.75
+        },
+        {
+          "side": "right",
+          "startTick": 61,
+          "endTick": 69,
+          "sourceAlphaEdgeRangeLogical": 4.833333333333314,
+          "modelToeRangeLogical": 4.75
+        },
+        {
+          "side": "right",
+          "startTick": 91,
+          "endTick": 99,
+          "sourceAlphaEdgeRangeLogical": 4.833333333333314,
+          "modelToeRangeLogical": 4.75
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 4.833333333333371,
+      "maximumModelToeRangeLogical": 4.75
+    },
+    {
+      "trace": "current-ReducedMotion-attachments/ED62C350-F769-4400-AAFA-4654784AE342.json",
+      "sha256": "73122d9aa3ed56f4f4616c05d11add9163a2fb90b3155f04aeb7fcf58e1171aa",
+      "axis": 32767,
+      "reducedMotion": true,
+      "distancePhaseComparison": false,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 16,
+          "endTick": 23,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333712,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 46,
+          "endTick": 53,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 76,
+          "endTick": 83,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 106,
+          "endTick": 113,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 1,
+          "endTick": 8,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333712,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 33,
+          "endTick": 38,
+          "sourceAlphaEdgeRangeLogical": 3.8333333333333712,
+          "modelToeRangeLogical": 3.75
+        },
+        {
+          "side": "right",
+          "startTick": 62,
+          "endTick": 68,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "right",
+          "startTick": 91,
+          "endTick": 98,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 3.8333333333333712,
+      "maximumModelToeRangeLogical": 3.75
+    },
+    {
+      "trace": "current-playback-attachments/955A296F-452A-43ED-8F5A-222B259303B6.json",
+      "sha256": "143ac4ff8cf3fce6e4a3d6911894e93297cb118ba57947ec78697595b7654f30",
+      "axis": 32767,
+      "reducedMotion": false,
+      "distancePhaseComparison": false,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 16,
+          "endTick": 23,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333712,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 46,
+          "endTick": 53,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 76,
+          "endTick": 83,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 106,
+          "endTick": 113,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 1,
+          "endTick": 8,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333712,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 31,
+          "endTick": 38,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333712,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 61,
+          "endTick": 68,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 91,
+          "endTick": 98,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 2.8333333333333712,
+      "maximumModelToeRangeLogical": 2.75
+    },
+    {
+      "trace": "distance-comparison-attachments/300BEEC9-FEC7-4304-A684-393C9C92AC42.json",
+      "sha256": "ebf934cbfcd0f1ab07f2e025cbc642616ded70cd908649d871e6b006f6f97e91",
+      "axis": 16383,
+      "reducedMotion": false,
+      "distancePhaseComparison": false,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 16,
+          "endTick": 23,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666629,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "left",
+          "startTick": 46,
+          "endTick": 53,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666629,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "left",
+          "startTick": 76,
+          "endTick": 83,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666629,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "left",
+          "startTick": 106,
+          "endTick": 113,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666686,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "left",
+          "startTick": 136,
+          "endTick": 143,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666686,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "left",
+          "startTick": 166,
+          "endTick": 173,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666686,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "left",
+          "startTick": 196,
+          "endTick": 203,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666686,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "left",
+          "startTick": 226,
+          "endTick": 233,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666657,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "right",
+          "startTick": 1,
+          "endTick": 8,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666629,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "right",
+          "startTick": 31,
+          "endTick": 38,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666629,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "right",
+          "startTick": 61,
+          "endTick": 68,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666629,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "right",
+          "startTick": 91,
+          "endTick": 98,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666657,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "right",
+          "startTick": 121,
+          "endTick": 128,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666686,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "right",
+          "startTick": 151,
+          "endTick": 158,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666686,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "right",
+          "startTick": 181,
+          "endTick": 188,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666686,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "right",
+          "startTick": 211,
+          "endTick": 218,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666686,
+          "modelToeRangeLogical": 6.25
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 6.166666666666686,
+      "maximumModelToeRangeLogical": 6.25
+    },
+    {
+      "trace": "distance-comparison-attachments/3F343197-9321-4737-B649-DEF12FAFBABA.json",
+      "sha256": "260e457fcc3a8048d7b85f88f44b39186895a4b6c598630974071e88abff7b9e",
+      "axis": 8191,
+      "reducedMotion": true,
+      "distancePhaseComparison": true,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 61,
+          "endTick": 90,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "left",
+          "startTick": 181,
+          "endTick": 210,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "left",
+          "startTick": 301,
+          "endTick": 330,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "left",
+          "startTick": 421,
+          "endTick": 450,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "right",
+          "startTick": 1,
+          "endTick": 30,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "right",
+          "startTick": 121,
+          "endTick": 150,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "right",
+          "startTick": 241,
+          "endTick": 270,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "right",
+          "startTick": 361,
+          "endTick": 390,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 3.5,
+      "maximumModelToeRangeLogical": 3.5
+    },
+    {
+      "trace": "distance-comparison-attachments/779C4473-5D91-4768-AE04-C3F3FD5DEB81.json",
+      "sha256": "e42846f844a4dfef7ff62fcd9905ec82be7de4680edf851e8c3558dfd21f13fd",
+      "axis": 32767,
+      "reducedMotion": false,
+      "distancePhaseComparison": false,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 16,
+          "endTick": 23,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333712,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 46,
+          "endTick": 53,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 76,
+          "endTick": 83,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 106,
+          "endTick": 113,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 1,
+          "endTick": 8,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333712,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 31,
+          "endTick": 38,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333712,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 61,
+          "endTick": 68,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 91,
+          "endTick": 98,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 2.8333333333333712,
+      "maximumModelToeRangeLogical": 2.75
+    },
+    {
+      "trace": "distance-comparison-attachments/7BD37135-1726-4E15-8D9C-A80C2B87EDBB.json",
+      "sha256": "a86535c4d75c5bb94b726d4c55c4c92ec6492f0d872ebbfa46e73735a2ecd2e9",
+      "axis": 16383,
+      "reducedMotion": false,
+      "distancePhaseComparison": true,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 31,
+          "endTick": 45,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "left",
+          "startTick": 91,
+          "endTick": 105,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "left",
+          "startTick": 151,
+          "endTick": 165,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "left",
+          "startTick": 211,
+          "endTick": 225,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "right",
+          "startTick": 1,
+          "endTick": 15,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "right",
+          "startTick": 61,
+          "endTick": 75,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "right",
+          "startTick": 121,
+          "endTick": 135,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "right",
+          "startTick": 181,
+          "endTick": 195,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 3.5,
+      "maximumModelToeRangeLogical": 3.5
+    },
+    {
+      "trace": "distance-comparison-attachments/80BB3D2D-108C-4CB8-8298-243CF5EB0D0C.json",
+      "sha256": "cd506f521ba80c1a246b3857b522bd9dd05e104d96ff4d96365e610cf01bf8c1",
+      "axis": 32767,
+      "reducedMotion": false,
+      "distancePhaseComparison": true,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 16,
+          "endTick": 23,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333712,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 46,
+          "endTick": 53,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 76,
+          "endTick": 83,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 106,
+          "endTick": 113,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 1,
+          "endTick": 8,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333712,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 31,
+          "endTick": 38,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333712,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 61,
+          "endTick": 68,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 91,
+          "endTick": 98,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 2.8333333333333712,
+      "maximumModelToeRangeLogical": 2.75
+    },
+    {
+      "trace": "distance-comparison-attachments/9F3ED14B-426C-4A00-A0A9-0A2789694726.json",
+      "sha256": "5797ec0decfea2bca4b213255b9d334aebd0b518530e9a6c3d1ce58f0556566a",
+      "axis": 16383,
+      "reducedMotion": true,
+      "distancePhaseComparison": false,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 17,
+          "endTick": 23,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666629,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "left",
+          "startTick": 46,
+          "endTick": 53,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666629,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "left",
+          "startTick": 76,
+          "endTick": 83,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666629,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "left",
+          "startTick": 106,
+          "endTick": 113,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666686,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "left",
+          "startTick": 136,
+          "endTick": 143,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666686,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "left",
+          "startTick": 166,
+          "endTick": 173,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666686,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "left",
+          "startTick": 196,
+          "endTick": 203,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666686,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "left",
+          "startTick": 226,
+          "endTick": 233,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666657,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "right",
+          "startTick": 1,
+          "endTick": 8,
+          "sourceAlphaEdgeRangeLogical": 5.166666666666629,
+          "modelToeRangeLogical": 5.25
+        },
+        {
+          "side": "right",
+          "startTick": 32,
+          "endTick": 38,
+          "sourceAlphaEdgeRangeLogical": 5.166666666666629,
+          "modelToeRangeLogical": 5.25
+        },
+        {
+          "side": "right",
+          "startTick": 61,
+          "endTick": 67,
+          "sourceAlphaEdgeRangeLogical": 2.6666666666666288,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 91,
+          "endTick": 98,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666657,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "right",
+          "startTick": 121,
+          "endTick": 128,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666686,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "right",
+          "startTick": 151,
+          "endTick": 158,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666686,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "right",
+          "startTick": 181,
+          "endTick": 188,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666686,
+          "modelToeRangeLogical": 6.25
+        },
+        {
+          "side": "right",
+          "startTick": 211,
+          "endTick": 218,
+          "sourceAlphaEdgeRangeLogical": 6.166666666666686,
+          "modelToeRangeLogical": 6.25
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 6.166666666666686,
+      "maximumModelToeRangeLogical": 6.25
+    },
+    {
+      "trace": "distance-comparison-attachments/A8E58C5B-95FA-4966-B3D5-6E05FEE3D9B5.json",
+      "sha256": "661dbc5d212f13c756014166c60c7db115c67faee93de9411038f2acf913f3a2",
+      "axis": 32767,
+      "reducedMotion": true,
+      "distancePhaseComparison": true,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 16,
+          "endTick": 23,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333712,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 46,
+          "endTick": 53,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 76,
+          "endTick": 83,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "left",
+          "startTick": 106,
+          "endTick": 113,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 1,
+          "endTick": 8,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333712,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 31,
+          "endTick": 38,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333712,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 61,
+          "endTick": 68,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        },
+        {
+          "side": "right",
+          "startTick": 91,
+          "endTick": 98,
+          "sourceAlphaEdgeRangeLogical": 2.8333333333333144,
+          "modelToeRangeLogical": 2.75
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 2.8333333333333712,
+      "maximumModelToeRangeLogical": 2.75
+    },
+    {
+      "trace": "distance-comparison-attachments/AD693C11-EA96-4B27-87C8-9CD8F759070E.json",
+      "sha256": "61c10a13f722f9417489afcfbb7be2e72ace3b86f1b2d50364b26f3f5a2f5830",
+      "axis": 32767,
+      "reducedMotion": true,
+      "distancePhaseComparison": false,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 16,
+          "endTick": 24,
+          "sourceAlphaEdgeRangeLogical": 4.833333333333371,
+          "modelToeRangeLogical": 4.75
+        },
+        {
+          "side": "left",
+          "startTick": 46,
+          "endTick": 54,
+          "sourceAlphaEdgeRangeLogical": 4.833333333333314,
+          "modelToeRangeLogical": 4.75
+        },
+        {
+          "side": "left",
+          "startTick": 76,
+          "endTick": 84,
+          "sourceAlphaEdgeRangeLogical": 4.833333333333314,
+          "modelToeRangeLogical": 4.75
+        },
+        {
+          "side": "left",
+          "startTick": 106,
+          "endTick": 114,
+          "sourceAlphaEdgeRangeLogical": 4.833333333333329,
+          "modelToeRangeLogical": 4.75
+        },
+        {
+          "side": "right",
+          "startTick": 1,
+          "endTick": 9,
+          "sourceAlphaEdgeRangeLogical": 4.833333333333371,
+          "modelToeRangeLogical": 4.75
+        },
+        {
+          "side": "right",
+          "startTick": 31,
+          "endTick": 39,
+          "sourceAlphaEdgeRangeLogical": 4.833333333333371,
+          "modelToeRangeLogical": 4.75
+        },
+        {
+          "side": "right",
+          "startTick": 61,
+          "endTick": 69,
+          "sourceAlphaEdgeRangeLogical": 4.833333333333314,
+          "modelToeRangeLogical": 4.75
+        },
+        {
+          "side": "right",
+          "startTick": 91,
+          "endTick": 99,
+          "sourceAlphaEdgeRangeLogical": 4.833333333333314,
+          "modelToeRangeLogical": 4.75
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 4.833333333333371,
+      "maximumModelToeRangeLogical": 4.75
+    },
+    {
+      "trace": "distance-comparison-attachments/B627ADAD-A79F-4D34-9C3F-88C0D53B2318.json",
+      "sha256": "5d8eb2a795913615824b475cee0a270d853a3f188ad47b9ee766ce4cf06d3620",
+      "axis": 16383,
+      "reducedMotion": true,
+      "distancePhaseComparison": true,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 31,
+          "endTick": 45,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "left",
+          "startTick": 91,
+          "endTick": 105,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "left",
+          "startTick": 151,
+          "endTick": 165,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "left",
+          "startTick": 211,
+          "endTick": 225,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "right",
+          "startTick": 1,
+          "endTick": 15,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "right",
+          "startTick": 61,
+          "endTick": 75,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "right",
+          "startTick": 121,
+          "endTick": 135,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "right",
+          "startTick": 181,
+          "endTick": 195,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 3.5,
+      "maximumModelToeRangeLogical": 3.5
+    },
+    {
+      "trace": "distance-comparison-attachments/D0EB3EFB-96C7-4A27-ADF0-29847FDFBA37.json",
+      "sha256": "2b327bd233875038f700c53e64f516cc7280e9422c8f42869248bb126bc33bf5",
+      "axis": 8191,
+      "reducedMotion": false,
+      "distancePhaseComparison": true,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 61,
+          "endTick": 90,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "left",
+          "startTick": 181,
+          "endTick": 210,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "left",
+          "startTick": 301,
+          "endTick": 330,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "left",
+          "startTick": 421,
+          "endTick": 450,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "right",
+          "startTick": 1,
+          "endTick": 30,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "right",
+          "startTick": 121,
+          "endTick": 150,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "right",
+          "startTick": 241,
+          "endTick": 270,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        },
+        {
+          "side": "right",
+          "startTick": 361,
+          "endTick": 390,
+          "sourceAlphaEdgeRangeLogical": 3.5,
+          "modelToeRangeLogical": 3.5
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 3.5,
+      "maximumModelToeRangeLogical": 3.5
+    },
+    {
+      "trace": "distance-comparison-attachments/E73BCF5B-A1A2-4548-A761-0A6ECE83DAAA.json",
+      "sha256": "002f0f8096726db2da64d3308c7a0f38be349cf53dc2dc1aafd0dabe40ecd63a",
+      "axis": 8191,
+      "reducedMotion": false,
+      "distancePhaseComparison": false,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 16,
+          "endTick": 23,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 46,
+          "endTick": 53,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 76,
+          "endTick": 83,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 106,
+          "endTick": 113,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 136,
+          "endTick": 143,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 166,
+          "endTick": 173,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 196,
+          "endTick": 203,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 226,
+          "endTick": 233,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 256,
+          "endTick": 263,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 286,
+          "endTick": 293,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 316,
+          "endTick": 323,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 346,
+          "endTick": 353,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 376,
+          "endTick": 383,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 406,
+          "endTick": 413,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 436,
+          "endTick": 443,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666671,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 466,
+          "endTick": 473,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666657,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 1,
+          "endTick": 8,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 31,
+          "endTick": 38,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 61,
+          "endTick": 68,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 91,
+          "endTick": 98,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 121,
+          "endTick": 128,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 151,
+          "endTick": 158,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 181,
+          "endTick": 188,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666657,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 211,
+          "endTick": 218,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 241,
+          "endTick": 248,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 271,
+          "endTick": 278,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 301,
+          "endTick": 308,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 331,
+          "endTick": 338,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 361,
+          "endTick": 368,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 391,
+          "endTick": 398,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 421,
+          "endTick": 428,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 451,
+          "endTick": 458,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666657,
+          "modelToeRangeLogical": 8.75
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 8.666666666666686,
+      "maximumModelToeRangeLogical": 8.75
+    },
+    {
+      "trace": "distance-comparison-attachments/F6A8BC2A-88B8-4C2A-84E5-CC493D1271B3.json",
+      "sha256": "45658c67194aca66be8900afec17f970e66a94dd85f65707dd38455397034a7f",
+      "axis": 8191,
+      "reducedMotion": true,
+      "distancePhaseComparison": false,
+      "segments": [
+        {
+          "side": "left",
+          "startTick": 16,
+          "endTick": 23,
+          "sourceAlphaEdgeRangeLogical": 8.166666666666629,
+          "modelToeRangeLogical": 8.25
+        },
+        {
+          "side": "left",
+          "startTick": 46,
+          "endTick": 53,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 76,
+          "endTick": 83,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 106,
+          "endTick": 113,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 136,
+          "endTick": 143,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 166,
+          "endTick": 173,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 196,
+          "endTick": 203,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 226,
+          "endTick": 233,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 256,
+          "endTick": 263,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 286,
+          "endTick": 293,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 316,
+          "endTick": 323,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 346,
+          "endTick": 353,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 376,
+          "endTick": 383,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 406,
+          "endTick": 413,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 436,
+          "endTick": 443,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666671,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "left",
+          "startTick": 466,
+          "endTick": 473,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666657,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 1,
+          "endTick": 7,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 31,
+          "endTick": 38,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 61,
+          "endTick": 68,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 91,
+          "endTick": 98,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 121,
+          "endTick": 128,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 151,
+          "endTick": 158,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666629,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 181,
+          "endTick": 188,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666657,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 211,
+          "endTick": 218,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 241,
+          "endTick": 248,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 271,
+          "endTick": 278,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 301,
+          "endTick": 308,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 331,
+          "endTick": 338,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 361,
+          "endTick": 368,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 391,
+          "endTick": 398,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 421,
+          "endTick": 428,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666686,
+          "modelToeRangeLogical": 8.75
+        },
+        {
+          "side": "right",
+          "startTick": 451,
+          "endTick": 458,
+          "sourceAlphaEdgeRangeLogical": 8.666666666666657,
+          "modelToeRangeLogical": 8.75
+        }
+      ],
+      "maximumSourceAlphaEdgeRangeLogical": 8.666666666666686,
+      "maximumModelToeRangeLogical": 8.75
+    }
+  ]
+}

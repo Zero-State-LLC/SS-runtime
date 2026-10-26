@@ -147,7 +147,7 @@ final class BenchmarkCaptureTests: XCTestCase {
     @MainActor
     private func captureProjectedLegalEncounter(scene: SKScene, view: SKView,
         snap: PresentationSnapshot, zoom: CGFloat, label: String, prefix: String = "BP010-legal", treatment: String = "control",
-        framing: String = "legacy", arena: CGRect? = nil) throws {
+        framing: String = "legacy", arena: CGRect? = nil, fixedSafeRegion: CGRect? = nil, repairDepthAndEdges: Bool = false) throws {
         let camera = try XCTUnwrap(scene.camera)
         let originalCamera = camera.position
         var hudExclusions: [CGRect] = []
@@ -179,7 +179,7 @@ final class BenchmarkCaptureTests: XCTestCase {
                         return CGRect(x: a.x, y: a.y, width: b.x-a.x, height: b.y-a.y)
                     }
                     XCTAssertFalse(hudExclusions.isEmpty)
-                    safeRegion = try XCTUnwrap(BenchmarkProjectionGeometry.unobstructedRegion(
+                    safeRegion = try fixedSafeRegion ?? XCTUnwrap(BenchmarkProjectionGeometry.unobstructedRegion(
                         viewport: CGRect(x: -352, y: -163, width: 704, height: 326),
                         exclusions: hudExclusions,
                         minimumSize: CGSize(width: canvas.width * zoom, height: canvas.height * zoom)))
@@ -190,6 +190,16 @@ final class BenchmarkCaptureTests: XCTestCase {
             }
         }
         let center = camera.position
+        var exteriorBounds: CGRect?
+        var exteriorRoot: SKNode?
+        if repairDepthAndEdges {
+            let coverage = BenchmarkProjectionFinishing.coverage(center: center,
+                viewport: CGSize(width: 704, height: 326), zoom: zoom)
+            let boundary = BenchmarkProjectionFinishing.boundary(arena: try XCTUnwrap(arena),
+                coverage: coverage, asphalt: try XCTUnwrap(EnvironmentTextures().texture(assetId: "env_ground_asphalt")))
+            scene.addChild(boundary); exteriorRoot = boundary; exteriorBounds = coverage
+        }
+        defer { exteriorRoot?.removeFromParent() }
         let crop = CGRect(x: center.x - 352, y: center.y - 163, width: 704, height: 326)
         var actors: [SKSpriteNode] = []
         scene.enumerateChildNodes(withName: "//sprite-*") { node, _ in
@@ -254,6 +264,28 @@ final class BenchmarkCaptureTests: XCTestCase {
         }
         // BP-009 bounded comparison, not a production occlusion classifier.
         let player = try XCTUnwrap(actors.first { $0.name == "sprite-player" })
+        var obscuringCameras: [String] = []
+        let alphaState = actors.map { ($0, $0.alpha) }
+        defer { for (node, alpha) in alphaState { node.alpha = alpha } }
+        let contact = SKShapeNode(ellipseOf: CGSize(width: 16, height: 6))
+        if repairDepthAndEdges {
+            let uprightActors = actors.filter { $0.name?.hasPrefix("sprite-") == true }
+            let actorDepth = player.zPosition
+            obscuringCameras = BenchmarkProjectionFinishing.orderActors(uprightActors, player: player, baseDepth: actorDepth)
+            for cameraSprite in uprightActors where cameraSprite.name?.hasPrefix("sprite-camera-") == true {
+                if cameraSprite.position.y < player.position.y {
+                    XCTAssertGreaterThan(cameraSprite.zPosition, player.zPosition)
+                } else if cameraSprite.position.y > player.position.y {
+                    XCTAssertLessThan(cameraSprite.zPosition, player.zPosition)
+                }
+            }
+            if !obscuringCameras.isEmpty {
+                contact.position = player.position
+                contact.fillColor = SKColor(white: 0.08, alpha: 0.55)
+                contact.strokeColor = SKColor(white: 0.75, alpha: 0.8); contact.lineWidth = 0.75
+                contact.zPosition = actorDepth - 0.1
+            }
+        }
         let playerSaved = try XCTUnwrap(saved.first { $0.0 === player })
         let playerGround = scene.convert(playerSaved.2, from: playerSaved.1)
         let enter = max(0, playerGround.x - CGFloat(box.maxX), playerGround.y - CGFloat(box.maxY))
@@ -285,6 +317,7 @@ final class BenchmarkCaptureTests: XCTestCase {
         scene.addChild(world); world.addChild(scale); scale.addChild(rotate); rotate.addChild(translate)
         for node in ground { node.removeFromParent(); translate.addChild(node) }
         for node in actors { node.removeFromParent(); world.addChild(node) }
+        if !obscuringCameras.isEmpty { world.addChild(contact) }
         world.setScale(zoom)
         let offset: CGFloat = zoom == 1 || framing != "legacy" ? 0 : 1
         world.position = CGPoint(x: center.x - (center.x + 35 * offset) * zoom,
@@ -329,6 +362,8 @@ final class BenchmarkCaptureTests: XCTestCase {
             "projectiles": projectiles, "enemies": snap.enemies.count, "cameras": snap.cameras.count,
             "tick": snap.tick, "occlusionTreatment": treatment, "occlusionCandidate": occluded,
             "framing": framing, "worldFocus": [center.x,center.y],
+            "depthAndEdgesRepaired": repairDepthAndEdges, "obscuringCameras": obscuringCameras,
+            "exteriorCoverage": exteriorBounds.map { [$0.minX,$0.minY,$0.width,$0.height] } ?? [],
             "hudExclusions": hudExclusions.map { [$0.minX,$0.minY,$0.width,$0.height] },
             "safeRegion": safeRegion.map { [$0.minX,$0.minY,$0.width,$0.height] } ?? []], options: [.sortedKeys, .prettyPrinted])
         let record = XCTAttachment(data: data, uniformTypeIdentifier: "public.json")
@@ -422,6 +457,187 @@ final class BenchmarkCaptureTests: XCTestCase {
         XCTAssertEqual(state.digest(), try Simulation.make(seed: 1).state.digest())
         let record = XCTAttachment(string: "Isolated solver/renderer contact study; neutral pose, no full simulation or depth acceptance.\n" + rows.joined(separator: "\n"))
         record.name = "BP005-service-contact-q8"; record.lifetime = .keepAlways; add(record)
+    }
+
+    @MainActor
+    func testMovingCameraFixedReservationReview() throws {
+        // Synthetic front/behind/clear/tie probes verify opacity restoration and depth lifecycle.
+        let probePlayer = SKSpriteNode(color: .white, size: CGSize(width: 20, height: 60))
+        let probeCamera = SKSpriteNode(color: .gray, size: CGSize(width: 20, height: 96))
+        probePlayer.name = "sprite-player"; probeCamera.name = "sprite-camera-probe"
+        probePlayer.anchorPoint = .zero; probeCamera.anchorPoint = .zero
+        let probeActors = [probePlayer, probeCamera]
+        probePlayer.position = CGPoint(x: 0, y: 10)
+        XCTAssertEqual(BenchmarkProjectionFinishing.orderActors(probeActors, player: probePlayer, baseDepth: 12), ["sprite-camera-probe"])
+        XCTAssertGreaterThan(probeCamera.zPosition, probePlayer.zPosition)
+        XCTAssertEqual(probeCamera.alpha, 0.35, accuracy: 0.000001)
+        probePlayer.position.y = -10
+        XCTAssertTrue(BenchmarkProjectionFinishing.orderActors(probeActors, player: probePlayer, baseDepth: 12).isEmpty)
+        XCTAssertLessThan(probeCamera.zPosition, probePlayer.zPosition)
+        XCTAssertEqual(probeCamera.alpha, 1)
+        probePlayer.position = CGPoint(x: 100, y: 10)
+        XCTAssertTrue(BenchmarkProjectionFinishing.orderActors(probeActors, player: probePlayer, baseDepth: 12).isEmpty)
+        XCTAssertEqual(probeCamera.alpha, 1)
+        probePlayer.position = .zero
+        _ = BenchmarkProjectionFinishing.orderActors(probeActors, player: probePlayer, baseDepth: 12)
+        let tiedDepth = probePlayer.zPosition
+        _ = BenchmarkProjectionFinishing.orderActors(probeActors.reversed(), player: probePlayer, baseDepth: 12)
+        XCTAssertEqual(probePlayer.zPosition, tiedDepth)
+        let session = GameSession(seed: 1)
+        session.audioSettings = .init(effectsEnabled: false, hapticsEnabled: false, musicEnabled: false)
+        var pilot = try XCTUnwrap(DebugAutopilot(scenario: "run", arena: session.simulation.state.arena))
+        let view = SKView(frame: CGRect(x: 0, y: 0, width: 704, height: 326)); view.isPaused = true
+        let scene = GameScene(size: view.bounds.size, session: session)
+        view.presentScene(scene); defer { view.presentScene(nil) }
+        scene.skipIntroIfRunning()
+        XCTAssertTrue(scene.installBenchmarkCameraFrames(try CameraPlaybackTests.candidateFrames()))
+        scene.setBenchmarkFieldContrast(.paired)
+        scene.apply(settings: PresentationSettings(audio: session.audioSettings,
+            hudScale: .standard, handedness: .right, captions: .all))
+        // Offline reservation from the 50-state right/1000 pilot; not an authored shipping limit.
+        let reservation = CGRect(x: -191.364990234375, y: -100.65000915527344,
+            width: 418.0149841308594, height: 158.65000915527344)
+        let bounds = session.simulation.state.arena.boundsUnits
+        let arena = CGRect(x: bounds.minX, y: bounds.minY,
+            width: bounds.maxX-bounds.minX, height: bounds.maxY-bounds.minY)
+        var captured = 0
+        for step in 0..<4300 {
+            let before = session.snapshot, command = pilot.command(session.snapshot)
+            session.moveX = command.moveX; session.moveY = command.moveY; session.dodgePressed = command.dodge
+            if before.upgradePending { session.pendingUpgradeChoice = pilot.upgradeChoice.selectionIndex }
+            session.step()
+            XCTAssertFalse(session.simulation.isTerminal)
+            guard step >= 4060 else { continue }
+            let digest = session.simulation.state.digest()
+            scene.redrawBenchmarkPresentation()
+            XCTAssertEqual(session.simulation.state.digest(), digest)
+            guard step >= 4180, step % 2 == 0 else { continue }
+            let snap = session.snapshot
+            let player = try XCTUnwrap(scene.childNode(withName: "//sprite-player") as? SKSpriteNode)
+            let direction = ["n":"north", "s":"south", "e":"east", "w":"west"][snap.playerDirection] ?? snap.playerDirection
+            let url = try XCTUnwrap(Bundle(for: Self.self).url(forResource: "painted-player-\(direction)", withExtension: "png"))
+            let image = try XCTUnwrap(UIImage(contentsOfFile: url.path))
+            player.removeAllActions(); player.texture = SKTexture(image: image)
+            player.texture?.filteringMode = .linear
+            player.size = CGSize(width: 64, height: 64); player.anchorPoint = CGPoint(x: 0.5, y: 0.125)
+            scene.refreshBenchmarkOutlines(samplingScale: 3)
+            try captureProjectedLegalEncounter(scene: scene, view: view, snap: snap, zoom: 1,
+                label: String(format: "%03d", captured), prefix: "BP007-moving-fixed",
+                framing: "hud-safe", arena: arena, fixedSafeRegion: reservation, repairDepthAndEdges: true)
+            XCTAssertEqual(session.simulation.state.digest(), digest)
+            captured += 1
+        }
+        XCTAssertEqual(captured, 60)
+    }
+
+    @MainActor
+    func testHUDReservationAcrossLegalRoute() throws {
+        let session = GameSession(seed: 1)
+        session.audioSettings = .init(effectsEnabled: false, hapticsEnabled: false, musicEnabled: false)
+        var pilot = try XCTUnwrap(DebugAutopilot(scenario: "run", arena: session.simulation.state.arena))
+        let view = SKView(frame: CGRect(x: 0, y: 0, width: 704, height: 326))
+        view.isPaused = true
+        let scene = GameScene(size: view.bounds.size, session: session)
+        view.presentScene(scene)
+        defer { view.presentScene(nil) }
+        scene.skipIntroIfRunning()
+        let viewport = CGRect(x: -352, y: -163, width: 704, height: 326)
+        let bounds = session.simulation.state.arena.boundsUnits
+        let arena = CGRect(x: bounds.minX, y: bounds.minY,
+            width: bounds.maxX-bounds.minX, height: bounds.maxY-bounds.minY)
+        let canvas = CGRect(x: -32, y: -8, width: 64, height: 64)
+        var unions: [String: [String: CGRect]] = [:]
+        var positions: [CGPoint] = []
+        var dynamicFocus: [String: [CGPoint]] = [:]
+        var sampleTicks: [UInt64] = []
+        var infeasibleDynamic: [String: Int] = [:]
+        let fixedProbe = CGPoint(x: 1327, y: 1495)
+        for step in 0..<6000 {
+            let before = session.snapshot
+            let command = pilot.command(before)
+            session.moveX = command.moveX; session.moveY = command.moveY
+            session.dodgePressed = command.dodge
+            if before.upgradePending { session.pendingUpgradeChoice = pilot.upgradeChoice.selectionIndex }
+            session.step()
+            if session.simulation.isTerminal { break }
+            guard step % 120 == 0 else { continue }
+            let snap = session.snapshot, digest = session.simulation.state.digest()
+            sampleTicks.append(snap.tick)
+            positions.append(CGPoint(x: snap.player.x, y: snap.player.y))
+            for hand in Handedness.allCases { for scale in HUDScaleSetting.allCases {
+                let key = "\(hand.rawValue)-\(scale.rawValue)"
+                scene.apply(settings: PresentationSettings(
+                    audio: .init(effectsEnabled: false, hapticsEnabled: false, musicEnabled: false),
+                    hudScale: scale, handedness: hand, captions: .all))
+                scene.redrawBenchmarkPresentation()
+                let camera = try XCTUnwrap(scene.camera)
+                let roots = camera.children.filter { $0.zPosition == 1000 }
+                XCTAssertEqual(roots.count, 1)
+                let hud = try XCTUnwrap(roots.first)
+                var current: [CGRect] = []
+                for node in hud.children where !node.isHidden && node.alpha > 0 {
+                    let name = try XCTUnwrap(node.userData?["hudElementKey"] as? String)
+                    let frame = node.calculateAccumulatedFrame()
+                    guard !frame.isNull, !frame.isInfinite, frame.width > 0, frame.height > 0 else { continue }
+                    let a = hud.convert(CGPoint(x: frame.minX, y: frame.minY), to: camera)
+                    let b = hud.convert(CGPoint(x: frame.maxX, y: frame.maxY), to: camera)
+                    let rect = CGRect(x: a.x, y: a.y, width: b.x-a.x, height: b.y-a.y)
+                    current.append(rect)
+                    var elements = unions[key] ?? [:]
+                    elements[name] = elements[name].map { $0.union(rect) } ?? rect
+                    unions[key] = elements
+                }
+                if let region = BenchmarkProjectionGeometry.unobstructedRegion(viewport: viewport,
+                    exclusions: current, minimumSize: canvas.size),
+                   let focus = BenchmarkProjectionGeometry.playerVisibleCenter(desired: fixedProbe,
+                    bounds: arena, viewport: viewport.size, magnification: 1,
+                    player: fixedProbe, canvas: canvas, safeRegion: region) {
+                    dynamicFocus[key, default: []].append(focus)
+                } else { infeasibleDynamic[key, default: 0] += 1 }
+                XCTAssertEqual(session.simulation.state.digest(), digest)
+            } }
+        }
+        XCTAssertGreaterThan(sampleTicks.count, 20)
+        XCTAssertEqual(unions.count, 6)
+        var rows: [[String: Any]] = []
+        for key in unions.keys.sorted() {
+            let elements = try XCTUnwrap(unions[key])
+            let region = BenchmarkProjectionGeometry.unobstructedRegion(viewport: viewport,
+                exclusions: Array(elements.values), minimumSize: canvas.size)
+            var checked = 0
+            if let region {
+                for player in positions {
+                    let focus = try XCTUnwrap(BenchmarkProjectionGeometry.playerVisibleCenter(
+                        desired: player, bounds: arena, viewport: viewport.size,
+                        magnification: 1, player: player, canvas: canvas, safeRegion: region))
+                    let relative = BenchmarkProjectionGeometry.project(CGPoint(x: player.x-focus.x, y: player.y-focus.y))
+                    let displayed = canvas.offsetBy(dx: relative.x, dy: relative.y)
+                    XCTAssertTrue(region.insetBy(dx: -0.002, dy: -0.002).contains(displayed))
+                    for exclusion in elements.values {
+                        let overlap = displayed.intersection(exclusion)
+                        XCTAssertTrue(overlap.isNull || overlap.width <= 0.002 || overlap.height <= 0.002)
+                    }
+                    checked += 1
+                }
+            }
+            let focuses = dynamicFocus[key] ?? []
+            let changes = zip(focuses, focuses.dropFirst()).map {
+                let a = BenchmarkProjectionGeometry.project($0.0), b = BenchmarkProjectionGeometry.project($0.1)
+                return hypot(a.x-b.x, a.y-b.y)
+            }
+            rows.append(["layout": key, "sampleCount": sampleTicks.count,
+                "fixedRegion": region.map { [$0.minX,$0.minY,$0.width,$0.height] } ?? [],
+                "feasible": region != nil, "checkedPlayerPositions": checked,
+                "dynamicInfeasibleSamples": infeasibleDynamic[key] ?? 0,
+                "maxDynamicFocusChangeAtStationaryPlayer": changes.max() ?? 0,
+                "reservedElements": elements.mapValues { [$0.minX,$0.minY,$0.width,$0.height] }])
+        }
+        let data = try JSONSerialization.data(withJSONObject: ["layouts": rows,
+            "sampleTicks": sampleTicks, "seed": 1, "intervalTicks": 120,
+            "finalDigest": session.simulation.state.digest(),
+            "scope": "Sampled legal-route HUD geometry; offline reservation, not production or displayed moving-camera validation"], options: [.prettyPrinted,.sortedKeys])
+        let attachment = XCTAttachment(data: data, uniformTypeIdentifier: "public.json")
+        attachment.name = "BP007-stable-hud-reservation"; attachment.lifetime = .keepAlways; add(attachment)
     }
 
     @MainActor

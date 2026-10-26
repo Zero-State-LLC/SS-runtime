@@ -1,0 +1,190 @@
+warning: /Users/appliedalchemylabs/Library/org.swift.swiftpm/configuration is not accessible or not writable, disabling user-level cache features.
+warning: /Users/appliedalchemylabs/Library/org.swift.swiftpm/security is not accessible or not writable, disabling user-level cache features.
+warning: /Users/appliedalchemylabs/Library/Caches/org.swift.swiftpm is not accessible or not writable, disabling user-level cache features.
+warning: 'ss-runtime': failed storing manifest for 'ss-runtime' in cache: attempt to write a readonly database
+[0/1] Planning build
+Building for debugging...
+[0/2] Write swift-version--58304C5D6DBC2206.txt
+Build complete! (1.55s)
+Test Suite 'Selected tests' started at 2026-10-19 13:05:33.598.
+Test Suite 'SSRuntimePackageTests.xctest' started at 2026-10-19 13:05:33.603.
+Test Suite 'SSRuntimePackageTests.xctest' passed at 2026-10-19 13:05:33.603.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-19 13:05:33.603.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.005) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite ClipMetadataV2Tests started.
+◇ Suite CaptainClipTests started.
+◇ Suite OriginalArtTests started.
+◇ Suite ClipTimingTests started.
+◇ Suite AwarenessTests started.
+◇ Suite StandardEnemyClipProjectionTests started.
+◇ Suite DaemonClipTests started.
+◇ Suite ReactionClipTrackerTests started.
+◇ Suite CommitClipTests started.
+◇ Suite ClipMetadataTests started.
+◇ Suite ClipAlignmentTests started.
+◇ Test everyV1FacingHasIdenticalV2TimingAndFrames() started.
+◇ Test exactMigrationVectors() started.
+◇ Test malformedAndOverflowFailClosed() started.
+◇ Test elapsedTicksSelectExactFrameBoundariesWithoutOverflow() started.
+◇ Test everyAttackDerivesAnExistingClip() started.
+◇ Test reusedSnapshotRestoresMissingBaseWhenCommitExpires() started.
+◇ Test clipCatalogDeclaresRequiredMarkersAndFourDirections() started.
+◇ Test allDeliveredV1DirectionsKeepTheirCadence() started.
+◇ Test everyStandardEnemyAttackClipIsFullyBacked() started.
+◇ Test selectionKeepsDirectionHoldsAndOrder() started.
+◇ Test informantPursuitKeepsItsPursuitClip() started.
+◇ Test clipT605AnchorsStayStableAcrossRoleAndMirroredFacings() started.
+◇ Test attackStatesAreUnchanged() started.
+◇ Test movingEnemiesPresentMove(role:state:expected:) started.
+◇ Test everyProjectedClipExistsInTheContract() started.
+◇ Test correlatorRecoverPresentsItsRecoverClip() started.
+◇ Test daemonHasClips() started.
+◇ Test malformedV2FailsThroughBothLoaders() started.
+◇ Test interleavedFacingsKeepTheirOwnVariableHolds() started.
+◇ Test stationaryEnemiesPresentIdle(role:) started.
+◇ Test snapshotFlagsUnawareEnemiesWithTheirIdleClip() started.
+◇ Test eventFacingOwnsLifetimeAndNewEventRestartsOccurrence() started.
+◇ Test case passing 3 arguments role → .fogAnalyticsCloud, state → .orbit, expected → "fogAnalyticsCloud_move" to movingEnemiesPresentMove(role:state:expected:) started.
+◇ Test case passing 3 arguments role → .fogAnalyticsCloud, state → .cooldown, expected → "fogAnalyticsCloud_move" to movingEnemiesPresentMove(role:state:expected:) started.
+◇ Test case passing 3 arguments role → .cableCarCorrelator, state → .pursue, expected → "cableCarCorrelator_move" to movingEnemiesPresentMove(role:state:expected:) started.
+◇ Test case passing 3 arguments role → .sutroSignalWitch, state → .keepRange, expected → "sutroSignalWitch_move" to movingEnemiesPresentMove(role:state:expected:) started.
+◇ Test case passing 3 arguments role → .victorianVendor, state → .cooldown, expected → "victorianVendor_move" to movingEnemiesPresentMove(role:state:expected:) started.
+◇ Test case passing 1 argument role → .fogAnalyticsCloud to stationaryEnemiesPresentIdle(role:) started.
+◇ Test case passing 1 argument role → .cableCarCorrelator to stationaryEnemiesPresentIdle(role:) started.
+◇ Test case passing 1 argument role → .sutroSignalWitch to stationaryEnemiesPresentIdle(role:) started.
+◇ Test case passing 1 argument role → .autonomousInformant to stationaryEnemiesPresentIdle(role:) started.
+◇ Test case passing 1 argument role → .victorianVendor to stationaryEnemiesPresentIdle(role:) started.
+✔ Test exactMigrationVectors() passed after 0.203 seconds.
+✔ Test elapsedTicksSelectExactFrameBoundariesWithoutOverflow() passed after 0.203 seconds.
+✔ Test selectionKeepsDirectionHoldsAndOrder() passed after 0.275 seconds.
+✔ Test malformedAndOverflowFailClosed() passed after 0.275 seconds.
+✔ Test attackStatesAreUnchanged() passed after 0.274 seconds.
+✔ Test informantPursuitKeepsItsPursuitClip() passed after 0.275 seconds.
+✔ Test movingEnemiesPresentMove(role:state:expected:) with 5 test cases passed after 0.275 seconds.
+✔ Test everyProjectedClipExistsInTheContract() passed after 0.275 seconds.
+✔ Test correlatorRecoverPresentsItsRecoverClip() passed after 0.275 seconds.
+✔ Test clipT605AnchorsStayStableAcrossRoleAndMirroredFacings() passed after 0.275 seconds.
+✔ Test stationaryEnemiesPresentIdle(role:) with 5 test cases passed after 0.274 seconds.
+✔ Test clipCatalogDeclaresRequiredMarkersAndFourDirections() passed after 0.276 seconds.
+✔ Test reusedSnapshotRestoresMissingBaseWhenCommitExpires() passed after 0.276 seconds.
+✔ Suite StandardEnemyClipProjectionTests passed after 0.277 seconds.
+◇ Test facingVectorDirectionAgreesWithHeadingConvention() started.
+◇ Test clipCatalogUnknownSchemaFailsClosed() started.
+◇ Test telegraphToCooldownHoldsTheCommitForItsDuration(_:) started.
+◇ Test case passing 1 argument role → .fogAnalyticsCloud to telegraphToCooldownHoldsTheCommitForItsDuration(_:) started.
+✔ Test facingVectorDirectionAgreesWithHeadingConvention() passed after 0.010 seconds.
+✔ Test clipCatalogUnknownSchemaFailsClosed() passed after 0.010 seconds.
+✔ Test snapshotFlagsUnawareEnemiesWithTheirIdleClip() passed after 0.285 seconds.
+✔ Suite AwarenessTests passed after 0.288 seconds.
+◇ Test clipT605HeadingProjectsToFourAuthoredDirectionsWithoutMirroring() started.
+◇ Test clipCatalogMissingFieldFailsClosed() started.
+✔ Test clipT605HeadingProjectsToFourAuthoredDirectionsWithoutMirroring() passed after 0.186 seconds.
+✔ Test clipCatalogMissingFieldFailsClosed() passed after 0.186 seconds.
+◇ Test clipT605HurtInterruptsLocomotionButNotDodge() started.
+◇ Test clipCatalogMissingRequiredClipFailsClosed() started.
+✔ Test eventFacingOwnsLifetimeAndNewEventRestartsOccurrence() passed after 0.592 seconds.
+✔ Test clipCatalogMissingRequiredClipFailsClosed() passed after 0.119 seconds.
+◇ Test durationIsFramesOverFpsInTicks() started.
+◇ Test clipCatalogRejectsMarkerCopiedFromFrameId() started.
+✔ Test clipT605HurtInterruptsLocomotionButNotDodge() passed after 0.135 seconds.
+✔ Test clipCatalogRejectsMarkerCopiedFromFrameId() passed after 0.015 seconds.
+◇ Test clipT605TerminalClipsRejectCancellationAndDefeatCancelsExtraction() started.
+◇ Test clipCatalogRejectsUnknownEventMarker() started.
+✔ Test durationIsFramesOverFpsInTicks() passed after 0.121 seconds.
+✔ Test clipCatalogRejectsUnknownEventMarker() passed after 0.106 seconds.
+◇ Test eliteDamageShowsItsHurtClipForExactlyItsDuration() started.
+◇ Test clipCatalogFieldOffCannotWaitForDestroyClip() started.
+✔ Test clipT605TerminalClipsRejectCancellationAndDefeatCancelsExtraction() passed after 0.131 seconds.
+✔ Test clipCatalogFieldOffCannotWaitForDestroyClip() passed after 0.024 seconds.
+◇ Test clipT605CommitAlignsToEventMarkerNotFrameId() started.
+◇ Test bothLoadersRejectUnsupportedTimingAndMalformedScalars() started.
+✔ Test eliteDamageShowsItsHurtClipForExactlyItsDuration() passed after 0.156 seconds.
+✔ Test clipT605CommitAlignsToEventMarkerNotFrameId() passed after 0.132 seconds.
+◇ Test moderateStaggersOnlyWhenNoAttackIsPlaying() started.
+◇ Test clipT605CameraFieldOffStartsWithDestroyAndLocksHousing() started.
+✔ Test clipT605CameraFieldOffStartsWithDestroyAndLocksHousing() passed after 0.114 seconds.
+◇ Test case passing 1 argument role → .sutroSignalWitch to telegraphToCooldownHoldsTheCommitForItsDuration(_:) started.
+✔ Test moderateStaggersOnlyWhenNoAttackIsPlaying() passed after 0.136 seconds.
+◇ Test clipCatalogRejectsAnchorDrift() started.
+◇ Test killingBlowHoldsTheDefeatClipAfterTheEnemyIsGone() started.
+✔ Test clipCatalogRejectsAnchorDrift() passed after 0.076 seconds.
+✔ Test killingBlowHoldsTheDefeatClipAfterTheEnemyIsGone() passed after 0.204 seconds.
+◇ Test clipCatalogRejectsUnevenDirectionFrames() started.
+◇ Test killingBlowShowsDefeatNotHurtInEitherEventOrder() started.
+✔ Test everyStandardEnemyAttackClipIsFullyBacked() passed after 1.295 seconds.
+◇ Test case passing 1 argument role → .victorianVendor to telegraphToCooldownHoldsTheCommitForItsDuration(_:) started.
+✔ Test clipCatalogRejectsUnevenDirectionFrames() passed after 0.062 seconds.
+◇ Test everyClipFrameIsAdmittedOrPlanned() started.
+✔ Test everyAttackDerivesAnExistingClip() passed after 1.371 seconds.
+◇ Test clipCatalogRejectsUnknownCancelWindow() started.
+✔ Test killingBlowShowsDefeatNotHurtInEitherEventOrder() passed after 0.078 seconds.
+◇ Test attackClipsMatchTheirTelegraphWindows() started.
+✔ Test daemonHasClips() passed after 1.401 seconds.
+◇ Test playerHurtRespectsCancelWindows(base:expected:) started.
+◇ Test case passing 2 arguments base → "player_move", expected → "player_hurt" to playerHurtRespectsCancelWindows(base:expected:) started.
+✔ Test clipCatalogRejectsUnknownCancelWindow() passed after 0.061 seconds.
+◇ Test clipDurationsEqualAuthoritativeStateDurations() started.
+◇ Test case passing 2 arguments base → "player_idle", expected → "player_hurt" to playerHurtRespectsCancelWindows(base:expected:) started.
+◇ Test clipCatalogRejectsTerminalCancelWindows() started.
+✔ Test telegraphToCooldownHoldsTheCommitForItsDuration(_:) with 3 test cases passed after 1.351 seconds.
+◇ Test case passing 2 arguments base → "player_dodge", expected → nil to playerHurtRespectsCancelWindows(base:expected:) started.
+✔ Test clipCatalogRejectsTerminalCancelWindows() passed after 0.032 seconds.
+◇ Test cooldownWithoutATelegraphIsNotACommit() started.
+✔ Suite ClipAlignmentTests passed after 1.660 seconds.
+✔ Test allDeliveredV1DirectionsKeepTheirCadence() passed after 1.661 seconds.
+✔ Suite ClipTimingTests passed after 1.661 seconds.
+✔ Test malformedV2FailsThroughBothLoaders() passed after 1.673 seconds.
+✔ Test everyV1FacingHasIdenticalV2TimingAndFrames() passed after 1.681 seconds.
+✔ Test interleavedFacingsKeepTheirOwnVariableHolds() passed after 1.686 seconds.
+✔ Suite ClipMetadataV2Tests passed after 1.687 seconds.
+✔ Test cooldownWithoutATelegraphIsNotACommit() passed after 0.105 seconds.
+◇ Test correlatorCommitStaysAStateClip() started.
+◇ Test case passing 2 arguments base → "player_extraction", expected → nil to playerHurtRespectsCancelWindows(base:expected:) started.
+✔ Test correlatorCommitStaysAStateClip() passed after 0.126 seconds.
+◇ Test informantContactHitShowsItsCommit() started.
+◇ Test case passing 2 arguments base → "player_defeat", expected → nil to playerHurtRespectsCancelWindows(base:expected:) started.
+✔ Test informantContactHitShowsItsCommit() passed after 0.147 seconds.
+◇ Test damageFromAnotherSourceIsNotAnInformantCommit() started.
+✔ Test playerHurtRespectsCancelWindows(base:expected:) with 5 test cases passed after 0.653 seconds.
+◇ Test damageToANonEnemyIsIgnored() started.
+✔ Test bothLoadersRejectUnsupportedTimingAndMalformedScalars() passed after 1.335 seconds.
+◇ Test deliveryPreservesEveryValidatedClip() started.
+✔ Test damageFromAnotherSourceIsNotAnInformantCommit() passed after 0.172 seconds.
+◇ Test hurtCutsACommitAndDeathClearsIt() started.
+✔ Test damageToANonEnemyIsIgnored() passed after 0.165 seconds.
+◇ Test aTrackerWithNoMarkerClipsReactsToNothing() started.
+✔ Test aTrackerWithNoMarkerClipsReactsToNothing() passed after 0.001 seconds.
+◇ Test resetClearsEveryReaction() started.
+✔ Test attackClipsMatchTheirTelegraphWindows() passed after 0.856 seconds.
+◇ Test noOrphanedAttackClipNamesRemain() started.
+✔ Test hurtCutsACommitAndDeathClearsIt() passed after 0.165 seconds.
+◇ Test resetClearsCommits() started.
+✔ Test resetClearsEveryReaction() passed after 0.169 seconds.
+✔ Suite ReactionClipTrackerTests passed after 2.392 seconds.
+✔ Test clipDurationsEqualAuthoritativeStateDurations() passed after 0.985 seconds.
+◇ Test theTwoTelegraphsAreDistinguishable() started.
+✔ Test resetClearsCommits() passed after 0.054 seconds.
+◇ Test projectionNamesOnlyTheCorrelatorCommit() started.
+✔ Test projectionNamesOnlyTheCorrelatorCommit() passed after 0.001 seconds.
+✔ Suite CommitClipTests passed after 2.432 seconds.
+✔ Test noOrphanedAttackClipNamesRemain() passed after 0.526 seconds.
+✔ Suite CaptainClipTests passed after 2.757 seconds.
+✔ Test deliveryPreservesEveryValidatedClip() passed after 0.726 seconds.
+◇ Test deliveryAndReactionSelectAuthoredFacingWhenFramesInterleave() started.
+✔ Test everyClipFrameIsAdmittedOrPlanned() passed after 1.448 seconds.
+✔ Suite OriginalArtTests passed after 2.803 seconds.
+✔ Test theTwoTelegraphsAreDistinguishable() passed after 0.438 seconds.
+◇ Test telegraphsCarryTheirAudioCues() started.
+✔ Test telegraphsCarryTheirAudioCues() passed after 0.002 seconds.
+◇ Test everyPlayableActorRoleHasClips() started.
+✔ Test deliveryAndReactionSelectAuthoredFacingWhenFramesInterleave() passed after 0.579 seconds.
+✔ Suite ClipMetadataTests passed after 3.382 seconds.
+✔ Test everyPlayableActorRoleHasClips() passed after 0.542 seconds.
+◇ Test daemonAnchorMatchesItsSpriteBox() started.
+✔ Test daemonAnchorMatchesItsSpriteBox() passed after 0.414 seconds.
+✔ Suite DaemonClipTests passed after 3.820 seconds.
+✔ Test run with 66 tests in 11 suites passed after 3.821 seconds.

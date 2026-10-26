@@ -1,0 +1,35 @@
+{
+  "status": "HELD_NEUTRAL_SOURCE_CANDIDATE_NOT_ADMITTED",
+  "frameCount": 1,
+  "cycleSeconds": null,
+  "controls": {
+    "projectedElbowSwingPixels": 0,
+    "projectedHandSwingPixels": 0,
+    "armPhase": "held neutral",
+    "coatHemPixels": 0,
+    "bodyBob": "derived from authored pelvis height"
+  },
+  "controlAuthority": "Authored candidate values, not research-derived acceptance criteria",
+  "depthPolicy": "shared per-pixel source depth for both boots/calves/thighs; coat and torso retain front-layer policy",
+  "limits": [
+    "Thigh plus authored anterior knee-cover surface; rear cloth is provisional",
+    "Torso/coat are still layered rather than part of the lower-body depth buffer",
+    "Material polish remains a proposed source finish",
+    "One facing only",
+    "Current held neutral installed only in isolated renderer tests; see runtime evidence for delivery"
+  ],
+  "frames": [
+    {
+      "frame": 0,
+      "time": 0,
+      "bodyBobPixels": -0.0,
+      "pixelsDifferentFromAverageLayerSort": 88,
+      "finiteDepthPixels": 8402,
+      "limbBackToFront": [
+        "left",
+        "right"
+      ],
+      "rgbaSHA256": "57f36986f05b7a13a1a9521e5eba7b20abc683408d58b2e7187534ba9d961677"
+    }
+  ]
+}

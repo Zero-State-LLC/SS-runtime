@@ -1,4 +1,5 @@
 import SpriteKit
+import Metal
 import UIKit
 import XCTest
 @testable import SSRuntime
@@ -461,12 +462,25 @@ final class DisplayedPlaybackTests: XCTestCase {
         var originals: [(SKNode, SKNode, CGPoint, CGFloat)] = []
         var player: SKSpriteNode?
         var selectedClip: String?
+        var updateStages: [String: Double] = [:]
+        var clockSample: [String: Double] = [:]
         var presentedPlayer = CGPoint.zero
         var records: [[String: Any]] = []
         var images: [(Int, UIImage)] = []
         var seen: Set<Int> = []
         var seenImages: Set<Int> = []
         var capturesImages = false
+        var releaseAfterDisplayedFrame: Int?
+        var releaseTick: UInt64?
+        var releaseMinimumTick: UInt64 = 0
+        var fractionalSettleClock = false
+        var settleTiming: ClipTiming?
+        var inputAxis: Int16 = PlayerCommand.axisMaximum
+        var movementTicks: UInt64 = 75
+        var explicitStepSeconds: TimeInterval?
+        var terminalTick: UInt64 { movementTicks + 15 }
+        var distancePhaseComparison = false
+        var accumulatedTravel = 0.0
         var done: (() -> Void)?
         var previous: TimeInterval?
         var accumulator = 0.0
@@ -493,6 +507,7 @@ final class DisplayedPlaybackTests: XCTestCase {
                 safeInsets: EdgeInsetsPoints(top: 0, left: 0, bottom: 0, right: 0), sceneSize: size),
                 handedness: .right, hudScale: .standard)
             let label = SKLabelNode(fontNamed: "Menlo")
+            label.name = "benchmark-review-caption"
             label.text = "BP008 projected SW / front source / composition only"
             label.fontSize = 9; label.position = CGPoint(x: 0, y: -153)
             label.zPosition = 10000; camera.addChild(label)
@@ -506,17 +521,43 @@ final class DisplayedPlaybackTests: XCTestCase {
         }
         override func update(_ time: TimeInterval) {
             guard !finished else { return }
+            let updateStart = ProcessInfo.processInfo.systemUptime
+            clockSample = ["spriteKitTime": time, "updateEntryUptime": updateStart,
+                "accumulatorBefore": accumulator,
+                "tickBefore": Double(session.simulation.state.tick),
+                "active": warmup >= 2 ? 1 : 0]
+            defer { updateStages["total"] = ProcessInfo.processInfo.systemUptime - updateStart }
             restoreBillboards()
             player = nil
-            if warmup >= 2, let previous { accumulator += min(time - previous, 0.25) }
-            previous = time
-            while accumulator >= 1.0 / 60.0 && session.simulation.state.tick < 90 {
-                let moving = session.simulation.state.tick < 75
-                session.moveX = moving ? -PlayerCommand.axisMaximum : 0
-                session.moveY = moving ? -PlayerCommand.axisMaximum : 0
-                session.step(); accumulator -= 1.0 / 60.0
-                worldTrace.append(session.simulation.state.player.position)
+            let stepStart = ProcessInfo.processInfo.systemUptime
+            if warmup >= 2 {
+                if let explicitStepSeconds {
+                    accumulator += explicitStepSeconds
+                    previous = nil
+                } else {
+                    if let previous { accumulator += min(time - previous, 0.25) }
+                    previous = time
+                }
+            } else {
+                // Preparation elapsed time is not active simulation debt.
+                previous = nil
             }
+            while accumulator >= 1.0 / 60.0 && session.simulation.state.tick < terminalTick {
+                let moving = session.simulation.state.tick < movementTicks && releaseTick == nil
+                session.moveX = moving ? -inputAxis : 0
+                session.moveY = moving ? -inputAxis : 0
+                let before = session.simulation.state.player.position
+                session.step(); accumulator -= 1.0 / 60.0
+                let after = session.simulation.state.player.position
+                let dx = Double(after.x.raw - before.x.raw) / 256
+                let dy = Double(after.y.raw - before.y.raw) / 256
+                accumulatedTravel += hypot(dx, dy)
+                worldTrace.append(after)
+            }
+            updateStages["simulationSteps"] = ProcessInfo.processInfo.systemUptime - stepStart
+            clockSample["accumulatorAfter"] = accumulator
+            clockSample["tickAfter"] = Double(session.simulation.state.tick)
+            let snapshotStart = ProcessInfo.processInfo.systemUptime
             var snap = session.snapshot
             // Review composition, not a legal-encounter visibility or camera proof.
             let index = snap.solidIds.firstIndex(of: "solid-03-transit-kiosk")!
@@ -527,10 +568,23 @@ final class DisplayedPlaybackTests: XCTestCase {
             snap.cameras[0].x = 846; snap.cameras[0].y = 674
             snap.cameras[0].fieldOrigin = VecI(x: 846, y: 674).asQ8
             snap.cameras[0].headingMilli = 100_000
+            updateStages["snapshotComposition"] = ProcessInfo.processInfo.systemUptime - snapshotStart
+            let renderStart = ProcessInfo.processInfo.systemUptime
+            renderer.benchmarkPlayerPresentationTime = fractionalSettleClock ? Double(snap.tick) / 60 + accumulator : nil
             renderer.render(snap, reducedMotion: reduced)
+            updateStages["renderer"] = ProcessInfo.processInfo.systemUptime - renderStart
             selectedClip = renderer.observePlayerPlayback()?.clipToken
+            if distancePhaseComparison, selectedClip == "player_move|\(snap.playerDirection)",
+               let sprite = renderer.root.childNode(withName: "//sprite-player") as? SKSpriteNode {
+                let phase = accumulatedTravel.truncatingRemainder(dividingBy: 120) / 120
+                sprite.removeAllActions()
+                sprite.texture = textures[min(15, Int(floor(phase * 16)))]
+            }
             presentedPlayer = CGPoint(x: snap.player.x, y: snap.player.y)
+            let hudStart = ProcessInfo.processInfo.systemUptime
             hud.render(snap, cameraHUD: session.cameraHUDProjection, paused: false)
+            updateStages["hud"] = ProcessInfo.processInfo.systemUptime - hudStart
+            let projectionStart = ProcessInfo.processInfo.systemUptime
             if magnification != 1 {
                 let initial = translation.convert(CGPoint(x: 736, y: 654), to: self)
                 let current = translation.convert(presentedPlayer, to: self)
@@ -540,8 +594,26 @@ final class DisplayedPlaybackTests: XCTestCase {
 
             let names = ["sprite-player", "sprite-camera-\(snap.cameras[0].id.raw)",
                          "benchmark-building", "benchmark-prop-0", "benchmark-prop-1"]
+            // One ordered tree walk replaces five recursive name-query searches.
+            // Rebuild each update: renderer resets/replacements cannot stale this map.
+            let searchStart = ProcessInfo.processInfo.systemUptime
+            let wanted = Set(names)
+            var projectedNodes: [String: SKNode] = [:]
+            var searchStack = Array(renderer.root.children.reversed())
+            while let node = searchStack.popLast() {
+                if let name = node.name, wanted.contains(name), projectedNodes[name] == nil {
+                    projectedNodes[name] = node
+                }
+                searchStack.append(contentsOf: node.children.reversed())
+            }
+            updateStages["projectionSearch"] = ProcessInfo.processInfo.systemUptime - searchStart
+            if warmup == 0 {
+                for name in names {
+                    XCTAssertTrue(projectedNodes[name] === renderer.root.childNode(withName: "//" + name), name)
+                }
+            }
             for name in names {
-                guard let node = renderer.root.childNode(withName: "//" + name), let parent = node.parent else { continue }
+                guard let node = projectedNodes[name], let parent = node.parent else { continue }
                 let world = renderer.root.convert(node.position, from: parent)
                 let point = translation.convert(world, to: self)
                 var z = node.zPosition
@@ -551,34 +623,80 @@ final class DisplayedPlaybackTests: XCTestCase {
                 node.removeFromParent(); node.position = point; node.zPosition = z; addChild(node)
                 if name == "sprite-player" { player = node as? SKSpriteNode }
             }
-            renderer.root.enumerateChildNodes(withName: "//" + WorldRenderer.outlineName) { node, _ in node.isHidden = true }
-            player?.enumerateChildNodes(withName: "//" + WorldRenderer.outlineName) { node, _ in node.isHidden = true }
+            // Match the original two search roots exactly after reparenting.
+            // Other projected sprites keep their prior outline behavior.
+            let outlineStart = ProcessInfo.processInfo.systemUptime
+            var outlineStack = renderer.root.children + (player?.children ?? [])
+            var hiddenOutlines: Set<ObjectIdentifier> = []
+            while let node = outlineStack.popLast() {
+                if node.name == WorldRenderer.outlineName {
+                    node.isHidden = true
+                    if warmup == 0 { hiddenOutlines.insert(ObjectIdentifier(node)) }
+                }
+                outlineStack.append(contentsOf: node.children)
+            }
+            updateStages["outlineSearch"] = ProcessInfo.processInfo.systemUptime - outlineStart
+            if warmup == 0 {
+                var legacyOutlines: Set<ObjectIdentifier> = []
+                renderer.root.enumerateChildNodes(withName: "//" + WorldRenderer.outlineName) { node, _ in legacyOutlines.insert(ObjectIdentifier(node)) }
+                player?.enumerateChildNodes(withName: "//" + WorldRenderer.outlineName) { node, _ in legacyOutlines.insert(ObjectIdentifier(node)) }
+                XCTAssertEqual(hiddenOutlines, legacyOutlines)
+            }
+            updateStages["projection"] = ProcessInfo.processInfo.systemUptime - projectionStart
         }
         override func didEvaluateActions() {
             guard !finished else { return }
             warmup += 1
-            guard warmup > 2 else { return }
-            defer { if session.simulation.state.tick == 90 { finished = true; done?() } }
-            guard let player else { return }
-            let frame = textures.firstIndex { $0 === player.texture }
+            defer { if session.simulation.state.tick == terminalTick { finished = true; done?() } }
+            let frame = player.flatMap { sprite in textures.firstIndex { $0 === sprite.texture } }
+            // Release on the next authoritative step after observing the actual texture.
+            // This test driver never derives a phase from simulation tick arithmetic.
+            if let target = releaseAfterDisplayedFrame, frame == target, releaseTick == nil, session.simulation.state.tick >= releaseMinimumTick {
+                releaseTick = session.simulation.state.tick
+            }
             let world = session.simulation.state.player.position
             let cameraPosition = camera!.position
             let visible = CGRect(x: cameraPosition.x - size.width / magnification / 2,
                                  y: cameraPosition.y - size.height / magnification / 2,
                                  width: size.width / magnification, height: size.height / magnification)
             let emitter = translation.convert(CGPoint(x: 846, y: 674), to: self)
-            let record: [String: Any] = ["tick": session.simulation.state.tick,
+            var record: [String: Any] = ["tick": session.simulation.state.tick,
                 "wallTime": Date().timeIntervalSince1970,
+                "inputAxis": inputAxis, "movementTicks": movementTicks,
+                "distancePhaseComparison": distancePhaseComparison, "accumulatedTravel": accumulatedTravel,
+                "updateStageSeconds": updateStages,
+                "clockSample": clockSample,
+                "fractionalSettleClock": fractionalSettleClock,
+                "postActionUptime": ProcessInfo.processInfo.systemUptime,
                 "rawX": world.x.raw, "rawY": world.y.raw,
                 "presentationX": presentedPlayer.x, "presentationY": presentedPlayer.y,
-                "renderedX": player.position.x, "renderedY": player.position.y,
+                "warmup": warmup <= 2, "spritePresent": player != nil,
+                "texturePresent": player?.texture != nil,
+                "requestedClip": session.snapshot.playerClipId,
                 "frame": frame ?? -1, "selectedClip": selectedClip ?? "none",
                 "worldFacing": session.snapshot.playerDirection, "authoredFacing": "front",
                 "reducedMotion": reduced, "magnification": magnification, "tracksPlayer": tracksPlayer,
-                "playerCanvasVisible": visible.contains(player.frame), "cameraEmitterVisible": visible.contains(emitter),
-                "viewCenterX": cameraPosition.x, "viewCenterY": cameraPosition.y,
-                "playerScreenX": (player.position.x - cameraPosition.x) * magnification + size.width / 2,
-                "playerScreenY": (player.position.y - cameraPosition.y) * magnification + size.height / 2]
+                "playerCanvasVisible": player.map { visible.contains($0.frame) } ?? false, "cameraEmitterVisible": visible.contains(emitter),
+                "viewCenterX": cameraPosition.x, "viewCenterY": cameraPosition.y]
+            if let player {
+                record["renderedX"] = player.position.x; record["renderedY"] = player.position.y
+                record["playerScreenX"] = (player.position.x - cameraPosition.x) * magnification + size.width / 2
+                record["playerScreenY"] = (player.position.y - cameraPosition.y) * magnification + size.height / 2
+            }
+            if let target = releaseAfterDisplayedFrame { record["releaseTargetFrame"] = target }
+            if let releaseTick { record["releaseTick"] = releaseTick }
+            record["settleFrame"] = renderer.benchmarkPlayerSettleFrame ?? -1
+            if let settleTiming {
+                record["settleUnitsPerSecond"] = settleTiming.unitsPerSecond
+                record["settleFrameUnits"] = settleTiming.frameUnits
+            }
+            record["groundedShadow"] = renderer.benchmarkPlayerShadowAtGroundRoot
+            if let shadow = renderer.root.childNode(withName: "//" + WorldRenderer.shadowKeyPrefix + "player") {
+                let shadowPoint = shadow.convert(CGPoint.zero, to: self)
+                let groundPoint = translation.convert(presentedPlayer, to: self)
+                record["shadowGroundDeltaX"] = shadowPoint.x - groundPoint.x
+                record["shadowGroundDeltaY"] = shadowPoint.y - groundPoint.y
+            }
             records.append(record)
             if let frame {
                 seen.insert(frame)
@@ -620,22 +738,227 @@ final class DisplayedPlaybackTests: XCTestCase {
         attachment.lifetime = .keepAlways; add(attachment)
     }
 
+    func testSharedProjectedPlayerTraversalClockExcludesPreparationInterval() throws {
+        let scene = try SharedTraversalScene(size: CGSize(width: 704, height: 326),
+            renderer: WorldRenderer(), textures: [], reduced: false)
+        scene.update(0)
+        scene.warmup = 1; scene.update(100)
+        XCTAssertEqual(scene.session.simulation.state.tick, 0)
+        scene.warmup = 2; scene.update(200)
+        XCTAssertEqual(scene.session.simulation.state.tick, 0,
+            "First active callback must establish a fresh origin")
+        XCTAssertTrue(scene.worldTrace.isEmpty)
+        scene.update(200.051)
+        XCTAssertEqual(scene.session.simulation.state.tick, 3)
+        XCTAssertEqual(scene.worldTrace.count, 3)
+    }
+
     func testSharedProjectedPlayerTraversal() async throws {
-        let facing = ClipFrameLibrary.direction(forFacing: VecQ8(unitsX: -1, unitsY: -1))
-        var preflight = try Simulation.make(seed: 1)
-        preflight.testing_setPlayerPosition(VecI(x: 736, y: 654))
-        var expected: [VecQ8] = []
-        for tick in 1...90 {
-            let before = preflight.state.player.position
-            let axis: Int16 = tick <= 75 ? -PlayerCommand.axisMaximum : 0
-            _ = preflight.step(command: PlayerCommand(tick: UInt64(tick), moveX: axis, moveY: axis, dodgePressed: false))
-            let after = preflight.state.player.position
-            if tick <= 75 {
-                XCTAssertLessThan(after.x.raw, before.x.raw)
-                XCTAssertEqual(after.x.raw - before.x.raw, after.y.raw - before.y.raw)
-            }
-            expected.append(after)
+        try testSharedProjectedPlayerTraversalClockExcludesPreparationInterval()
+        try await captureSharedProjectedPlayerTraversal(groundedShadow: false)
+    }
+
+    func testSharedProjectedPlayerGroundedShadowComparison() async throws {
+        try await captureSharedProjectedPlayerTraversal(groundedShadow: true)
+    }
+
+    func testSharedProjectedPlayerReleaseAtEveryDisplayedPhase() async throws {
+        for phase in 0..<16 {
+            try await captureSharedProjectedPlayerTraversal(groundedShadow: false, releaseAfterFrame: phase)
         }
+    }
+
+    func testSharedProjectedPlayerSettleCandidate() async throws {
+        let midpoint = try ClipTiming(unitsPerSecond: 128, frameUnits: Array(repeating: 3, count: 17))
+        XCTAssertEqual(midpoint.frameIndex(atTickOffset: 22), 15)
+        XCTAssertEqual(midpoint.frameIndex(atTickOffset: 23), 16)
+        for timing in [try ClipTiming.uniform(frameCount: 17, framesPerSecond: 64), midpoint] {
+            for phase in [4, 12] {
+                try await captureSharedProjectedPlayerTraversal(groundedShadow: false,
+                    releaseAfterFrame: phase, settleCandidate: true, settleTiming: timing)
+            }
+        }
+    }
+
+    // Diagnostic: all backed poses at exact tick samples, not real-time cadence proof.
+    func testMidpointLivePresentationReview() async throws {
+        let timing = try ClipTiming(unitsPerSecond: 128, frameUnits: Array(repeating: 3, count: 17))
+        for phase in [4, 12] {
+            try await captureSharedProjectedPlayerTraversal(groundedShadow: false,
+                releaseAfterFrame: phase, settleCandidate: true, settleTiming: timing,
+                comparisonMovementTicks: 150, releaseMinimumTick: 60)
+        }
+    }
+
+    func testFractionalSettleClockLifecycle() throws {
+        let library = SpriteLibrary()
+        let move = try XCTUnwrap(library.firstTexture(clipId: "player_move", direction: "s"))
+        let middle = try XCTUnwrap(library.firstTexture(clipId: "player_hurt", direction: "s"))
+        let idle = try XCTUnwrap(library.firstTexture(clipId: "player_idle", direction: "s"))
+        for trigger in ["complete", "backward", "missing", "nan", "rewind", "reduced", "reset"] {
+            let renderer = WorldRenderer(sprites: library)
+            renderer.benchmarkPlayerSettleSequences[ObjectIdentifier(move)] = .init(
+                direction: "s", frames: [move, middle, idle],
+                timing: try ClipTiming(unitsPerSecond: 16, frameUnits: [3, 3, 3]))
+            var snap = PresentationSnapshot(try Simulation.make(seed: 1).state)
+            snap.playerDirection = "s"; snap.playerClipId = "player_move"; snap.tick = 0
+            renderer.benchmarkPlayerPresentationTime = 10
+            renderer.render(snap)
+            snap.playerClipId = "player_idle"; snap.tick = 1
+            renderer.render(snap)
+            let player = try XCTUnwrap(renderer.root.childNode(withName: "//sprite-player") as? SKSpriteNode)
+            XCTAssertTrue(player.texture === move)
+            renderer.benchmarkPlayerPresentationTime = 10.1875
+            renderer.render(snap)
+            XCTAssertTrue(player.texture === middle, "Fractional time advances with the same authoritative tick")
+            for _ in 0..<3 { renderer.render(snap) }
+            XCTAssertTrue(player.texture === middle, "Frozen presentation time holds phase")
+            switch trigger {
+            case "complete": renderer.benchmarkPlayerPresentationTime = 10.375
+            case "backward": renderer.benchmarkPlayerPresentationTime = 10.1
+            case "missing": renderer.benchmarkPlayerPresentationTime = nil
+            case "nan": renderer.benchmarkPlayerPresentationTime = .nan
+            case "rewind": snap.tick = 0
+            case "reset": renderer.reset()
+            default: break
+            }
+            renderer.render(snap, reducedMotion: trigger == "reduced")
+            let finalPlayer = try XCTUnwrap(renderer.root.childNode(withName: "//sprite-player") as? SKSpriteNode)
+            XCTAssertTrue(finalPlayer.texture === idle, trigger)
+            renderer.benchmarkPlayerPresentationTime = 11
+            renderer.render(snap)
+            XCTAssertTrue(finalPlayer.texture === idle, "No stale settle re-entry: \(trigger)")
+        }
+    }
+
+    func testMidpointFractionalClockLiveReview() async throws {
+        try testFractionalSettleClockLifecycle()
+        let timing = try ClipTiming(unitsPerSecond: 128, frameUnits: Array(repeating: 3, count: 17))
+        for phase in [4, 12] {
+            try await captureSharedProjectedPlayerTraversal(groundedShadow: false,
+                releaseAfterFrame: phase, settleCandidate: true, settleTiming: timing,
+                comparisonMovementTicks: 150, releaseMinimumTick: 60, fractionalSettleClock: true)
+        }
+    }
+
+    func testFractionalClockSourceCoverageAndExport() async throws {
+        try validateSourceBackedSettleInterruptions(fractionalClock: true)
+        let timing = try ClipTiming(unitsPerSecond: 128, frameUnits: Array(repeating: 3, count: 17))
+        for phase in [4, 12] {
+            try await captureSharedProjectedPlayerTraversal(groundedShadow: false,
+                releaseAfterFrame: phase, settleCandidate: true, settleTiming: timing,
+                comparisonMovementTicks: 150, deterministicExport: true, releaseMinimumTick: 60,
+                fractionalSettleClock: true)
+        }
+    }
+
+    func testMidpointDeterministicRendererExport() async throws {
+        let timing = try ClipTiming(unitsPerSecond: 128, frameUnits: Array(repeating: 3, count: 17))
+        XCTAssertEqual(timing.frameIndex(atTickOffset: 22), 15)
+        XCTAssertEqual(timing.frameIndex(atTickOffset: 23), 16)
+        for phase in [4, 12] {
+            try await captureSharedProjectedPlayerTraversal(groundedShadow: false,
+                releaseAfterFrame: phase, settleCandidate: true, settleTiming: timing,
+                comparisonMovementTicks: 150, deterministicExport: true, releaseMinimumTick: 60)
+        }
+    }
+
+    func testMidpointSettleNativePoseInspection() async throws {
+        let bundle = Bundle(for: Self.self)
+        func texture(_ name: String) throws -> SKTexture {
+            let url = try XCTUnwrap(bundle.url(forResource: name, withExtension: "png"))
+            let result = SKTexture(image: try XCTUnwrap(UIImage(contentsOfFile: url.path)))
+            result.filteringMode = .linear
+            return result
+        }
+        let timing = try ClipTiming(unitsPerSecond: 128, frameUnits: Array(repeating: 3, count: 17))
+        let registration = (CGSize(width: 64, height: 416.0 / 6.0), CGPoint(x: 0.5, y: 1 - 336.0 / 416.0))
+        for phase in [4, 12] {
+            let entryName = String(format: "player-source-s-%02d", phase)
+            let names = [entryName] + (1..<16).map { String(format: "player-settle-%02d-%02d", phase + 1, $0) } + ["player-source-s-neutral"]
+            let textures = try names.map(texture)
+            let moveID = "player_move_s_00", idleID = "player_idle_s_00"
+            let move = ClipFrameLibrary.Clip(clipId: "player_move", actorRole: "player", directions: ["s"],
+                framesPerSecond: 1, authoredTiming: nil, loop: true, anchor: VecI(x: 32, y: 56), frameIds: [moveID])
+            let idle = ClipFrameLibrary.Clip(clipId: "player_idle", actorRole: "player", directions: ["s"],
+                framesPerSecond: 1, authoredTiming: nil, loop: true, anchor: VecI(x: 32, y: 56), frameIds: [idleID])
+            let frames = ClipFrameLibrary(clips: ["player_move": move, "player_idle": idle],
+                deliveredPaths: [moveID: entryName, idleID: names[16]])
+            let library = try XCTUnwrap(SpriteLibrary(benchmarkFrames: frames,
+                benchmarkTextures: [entryName: textures[0], names[16]: textures[16]]))
+            let renderer = WorldRenderer(sprites: library)
+            renderer.benchmarkPlayerRegistration = registration
+            renderer.benchmarkPlayerSettleSequences[ObjectIdentifier(textures[0])] = .init(direction: "s", frames: textures, timing: timing)
+            var preload = textures
+            for (name, texture) in zip(names, textures) {
+                let url = try XCTUnwrap(bundle.url(forResource: name, withExtension: "png"))
+                let image = try XCTUnwrap(UIImage(contentsOfFile: url.path)?.cgImage)
+                preload.append(try XCTUnwrap(renderer.prepareBenchmarkPlayerOutline(texture: texture, image: image, size: registration.0)))
+            }
+            await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
+                SKTexture.preload(preload) { @Sendable in continuation.resume() }
+            }
+            let view = SKView(frame: CGRect(x: 0, y: 0, width: 704, height: 326))
+            let scene = SKScene(size: view.bounds.size)
+            scene.backgroundColor = UIColor(white: 0.2, alpha: 1)
+            scene.addChild(renderer.root)
+            view.presentScene(scene)
+            defer { view.presentScene(nil) }
+            var snap = PresentationSnapshot(try Simulation.make(seed: 1).state)
+            snap.playerDirection = "s"; snap.playerClipId = "player_move"; snap.tick = 0
+            renderer.render(snap)
+            let player = try XCTUnwrap(renderer.root.childNode(withName: "//sprite-player") as? SKSpriteNode)
+            let root = player.position
+            let crop = CGRect(x: root.x - 96, y: root.y - 48, width: 192, height: 144)
+            renderer.resetBenchmarkOutlineMetrics()
+            var records: [[String: Any]] = []
+            snap.playerClipId = "player_idle"
+            for pose in 0..<17 {
+                let offset = try XCTUnwrap((UInt64(0)...UInt64(23)).first { timing.frameIndex(atTickOffset: $0) == pose })
+                snap.tick = 1 + offset
+                renderer.render(snap)
+                XCTAssertTrue(player.texture === textures[pose], "Native selection for pose \(pose)")
+                XCTAssertEqual(player.position, root)
+                // SpriteKit stores these node components at Float precision.
+                // Compare the exact representable values, not a new visual tolerance.
+                XCTAssertEqual(player.size, CGSize(width: CGFloat(Float(registration.0.width)),
+                    height: CGFloat(Float(registration.0.height))))
+                XCTAssertEqual(player.anchorPoint, CGPoint(x: CGFloat(Float(registration.1.x)),
+                    y: CGFloat(Float(registration.1.y))))
+                // Match the clean shared-review treatment; this is not outline admission.
+                renderer.root.enumerateChildNodes(withName: "//" + WorldRenderer.outlineName) { node, _ in
+                    node.isHidden = true
+                }
+                // Crop in the rendered node's own coordinates, excluding SKScene view scaling.
+                // Offscreen SpriteKit readback is intentional for this static diagnostic.
+                let captured = try XCTUnwrap(view.texture(from: renderer.root, crop: crop))
+                let attachment = XCTAttachment(image: UIImage(cgImage: captured.cgImage()))
+                attachment.name = String(format: "midpoint-native-stop-%02d-pose-%02d", phase + 1, pose)
+                attachment.lifetime = .keepAlways; add(attachment)
+                records.append(["pose": pose, "tickOffset": offset, "source": names[pose],
+                    "rootX": root.x, "rootY": root.y, "capture": attachment.name ?? "",
+                    "diagnostic": "static native pose inspection, not callback or cadence evidence"])
+            }
+            XCTAssertEqual(renderer.benchmarkOutlineMetrics.readbacks, 0)
+            let attachment = XCTAttachment(data: try JSONSerialization.data(withJSONObject: records, options: [.prettyPrinted, .sortedKeys]), uniformTypeIdentifier: "public.json")
+            attachment.name = "midpoint-native-pose-records-\(phase + 1)"; attachment.lifetime = .keepAlways; add(attachment)
+        }
+    }
+
+    func testSharedProjectedPlayerDistancePhaseComparison() async throws {
+        // Fixed input-specific route, identical within each cadence/motion-mode pair.
+        // Component values target full/half/quarter normalized diagonal travel.
+        let variants: [(Int16, UInt64)] = [(32767, 75), (11585, 150), (5792, 300)]
+        for (axis, ticks) in variants {
+            for distancePhase in [false, true] {
+                try await captureSharedProjectedPlayerTraversal(groundedShadow: false,
+                    comparisonAxis: axis, comparisonMovementTicks: ticks, distancePhaseComparison: distancePhase)
+            }
+        }
+    }
+
+    private func captureSharedProjectedPlayerTraversal(groundedShadow: Bool, releaseAfterFrame: Int? = nil, settleCandidate: Bool = false, settleTiming: ClipTiming? = nil, comparisonAxis: Int16? = nil, comparisonMovementTicks: UInt64 = 75, distancePhaseComparison: Bool = false, deterministicExport: Bool = false, releaseMinimumTick: UInt64 = 0, fractionalSettleClock: Bool = false) async throws {
+        let facing = ClipFrameLibrary.direction(forFacing: VecQ8(unitsX: -1, unitsY: -1))
         let bundle = Bundle(for: Self.self)
         func texture(_ name: String) throws -> SKTexture {
             let url = try XCTUnwrap(bundle.url(forResource: name, withExtension: "png"))
@@ -655,9 +978,22 @@ final class DisplayedPlaybackTests: XCTestCase {
         // six existing camera timing contracts; no bundled delivery is modified.
         let cameraCandidates = try CameraPlaybackTests.candidateFrames()
         let bundled = try ClipFrameLibrary.bundled()
-        var reviewClips = ["player_move": clip]
+        // Held neutral is an isolated comparison, not an admitted idle animation.
+        let idlePath = "player-source-s-neutral"
+        let idleTexture = try texture(idlePath)
+        let settlePaths = settleCandidate ? (1..<16).map {
+            String(format: "player-settle-%02d-%02d", (releaseAfterFrame ?? 4) + 1, $0)
+        } : []
+        let settleTextures = try settlePaths.map(texture)
+        let idleID = "player_idle_\(facing)_00"
+        let idle = ClipFrameLibrary.Clip(clipId: "player_idle", actorRole: "player", directions: [facing],
+            framesPerSecond: nil, authoredTiming: try ClipTiming(unitsPerSecond: 32, frameUnits: [32]),
+            loop: true, anchor: VecI(x: 32, y: 56), frameIds: [idleID])
+        var reviewClips = ["player_move": clip, "player_idle": idle]
         var delivered = Dictionary(uniqueKeysWithValues: zip(ids, paths))
         var reviewTextures = Dictionary(uniqueKeysWithValues: zip(paths, textures))
+        delivered[idleID] = idlePath
+        reviewTextures[idlePath] = idleTexture
         for (name, candidates) in cameraCandidates {
             let cameraClip = try XCTUnwrap(bundled.clip(name))
             let cameraPaths = try XCTUnwrap(bundled.deliveredFrames(clipId: name, direction: nil))
@@ -668,10 +1004,18 @@ final class DisplayedPlaybackTests: XCTestCase {
             for (path, candidate) in zip(cameraPaths, candidates) { reviewTextures[path] = candidate }
         }
         let frames = ClipFrameLibrary(clips: reviewClips, deliveredPaths: delivered)
-        for (zoom, tracking): (CGFloat, Bool) in [(1, false), (1.25, false), (1.25, true)] {
+        let views: [(CGFloat, Bool)] = releaseAfterFrame == nil && comparisonAxis == nil
+            ? [(1, false), (1.25, false), (1.25, true)] : [(1.25, true)]
+        for (zoom, tracking) in views {
         for reduced in [false, true] {
             let library = try XCTUnwrap(SpriteLibrary(benchmarkFrames: frames, benchmarkTextures: reviewTextures))
             let renderer = WorldRenderer(sprites: library)
+            renderer.benchmarkPlayerShadowAtGroundRoot = groundedShadow
+            if settleCandidate, let phase = releaseAfterFrame {
+                renderer.benchmarkPlayerSettleSequences[ObjectIdentifier(textures[phase])] = .init(
+                    direction: facing, frames: [textures[phase]] + settleTextures + [idleTexture],
+                    timing: try settleTiming ?? ClipTiming.uniform(frameCount: 17, framesPerSecond: 64))
+            }
             var art = BenchmarkReviewArt(player: textures[0], camera: try texture("camera"),
                 building: .init(texture: try texture("building-constrained"),
                     size: CGSize(width: 1254 * 128 * sqrt(2.0) / 934, height: 1254 * 128 * sqrt(2.0) / 934),
@@ -690,15 +1034,32 @@ final class DisplayedPlaybackTests: XCTestCase {
                 CGPoint(x: 0.5, y: 1 - 336.0 / 416.0))
             let scene = try SharedTraversalScene(size: CGSize(width: 704, height: 326), renderer: renderer,
                 textures: textures, reduced: reduced, magnification: zoom, tracksPlayer: tracking)
+            scene.releaseMinimumTick = releaseMinimumTick
+            scene.fractionalSettleClock = fractionalSettleClock
+            scene.releaseAfterDisplayedFrame = releaseAfterFrame
+            scene.settleTiming = settleTiming
+            scene.inputAxis = comparisonAxis ?? PlayerCommand.axisMaximum
+            scene.movementTicks = comparisonMovementTicks
+            scene.distancePhaseComparison = distancePhaseComparison
+            if let axis = comparisonAxis,
+               let caption = scene.camera?.childNode(withName: "benchmark-review-caption") as? SKLabelNode {
+                let magnitude = axis == 32767 ? "full" : (axis == 11585 ? "half" : "quarter")
+                caption.text = "BP008 target \(magnitude) / \(distancePhaseComparison ? "distance phase" : "fixed time") / \(reduced ? "Reduced" : "Standard") / comparison"
+            }
             let windowScene = try XCTUnwrap(UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.first)
             let window = UIWindow(windowScene: windowScene)
-            window.frame = CGRect(x: 0, y: 0, width: 704, height: 326)
+            window.frame = windowScene.coordinateSpace.bounds
+            // Keep logical review geometry while filling the host window uniformly.
+            scene.scaleMode = .aspectFit
             window.windowLevel = UIWindow.Level(rawValue: UIWindow.Level.alert.rawValue + 1)
             let controller = UIViewController(), view = SKView(frame: window.bounds)
             controller.view = view; window.rootViewController = controller; window.makeKeyAndVisible()
+            controller.view.layoutIfNeeded()
+            XCTAssertEqual(window.frame, windowScene.coordinateSpace.bounds)
+            XCTAssertEqual(view.bounds.size, window.bounds.size)
             view.preferredFramesPerSecond = 60
-            var preload = Array(reviewTextures.values)
-            for (path, texture) in zip(paths, textures) {
+            var preload = Array(reviewTextures.values) + settleTextures
+            for (path, texture) in zip(paths + [idlePath] + settlePaths, textures + [idleTexture] + settleTextures) {
                 let url = try XCTUnwrap(bundle.url(forResource: path, withExtension: "png"))
                 let image = try XCTUnwrap(UIImage(contentsOfFile: url.path)?.cgImage)
                 preload.append(try XCTUnwrap(renderer.prepareBenchmarkPlayerOutline(texture: texture,
@@ -715,16 +1076,150 @@ final class DisplayedPlaybackTests: XCTestCase {
                 SKTexture.preload(preload) { @Sendable in continuation.resume() }
             }
             renderer.resetBenchmarkOutlineMetrics()
-            let complete = expectation(description: "shared projected traversal")
-            scene.done = { complete.fulfill() }; view.presentScene(scene)
-            await fulfillment(of: [complete], timeout: 30)
+            if deterministicExport {
+                scene.explicitStepSeconds = 1.0 / 60.0
+                // Reuse the live scene and its actual action evaluation. Explicit-time
+                // rendering is visual evidence only, never a display-cadence measurement.
+                let device = try XCTUnwrap(MTLCreateSystemDefaultDevice())
+                let queue = try XCTUnwrap(device.makeCommandQueue())
+                let native = SKRenderer(device: device)
+                native.scene = scene
+                let descriptor = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .rgba8Unorm,
+                    width: 704, height: 326, mipmapped: false)
+                descriptor.usage = [.renderTarget, .shaderRead]
+                descriptor.storageMode = .shared
+                let target = try XCTUnwrap(device.makeTexture(descriptor: descriptor))
+                let pass = MTLRenderPassDescriptor()
+                pass.colorAttachments[0].texture = target
+                pass.colorAttachments[0].loadAction = .clear
+                pass.colorAttachments[0].storeAction = .store
+                pass.colorAttachments[0].clearColor = MTLClearColorMake(0, 0, 0, 1)
+                let clockOrigin = CACurrentMediaTime()
+                for sample in 0..<180 {
+                    let time = Double(sample) / 60
+                    native.update(atTime: clockOrigin + time)
+                    let command = try XCTUnwrap(queue.makeCommandBuffer())
+                    native.render(withViewport: CGRect(x: 0, y: 0, width: 704, height: 326),
+                        commandBuffer: command, renderPassDescriptor: pass)
+                    await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
+                        command.addCompletedHandler { _ in continuation.resume() }
+                        command.commit()
+                    }
+                    XCTAssertEqual(command.status, .completed)
+                    var pixels = [UInt8](repeating: 0, count: 704 * 326 * 4)
+                    target.getBytes(&pixels, bytesPerRow: 704 * 4,
+                        from: MTLRegionMake2D(0, 0, 704, 326), mipmapLevel: 0)
+                    let provider = try XCTUnwrap(CGDataProvider(data: Data(pixels) as CFData))
+                    let image = try XCTUnwrap(CGImage(width: 704, height: 326, bitsPerComponent: 8,
+                        bitsPerPixel: 32, bytesPerRow: 704 * 4, space: CGColorSpaceCreateDeviceRGB(),
+                        bitmapInfo: CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue),
+                        provider: provider, decode: nil, shouldInterpolate: false, intent: .defaultIntent))
+                    let attachment = XCTAttachment(image: UIImage(cgImage: image))
+                    attachment.name = String(format: "deterministic-stop-%02d-reduced-%@-sample-%03d",
+                        (releaseAfterFrame ?? 0) + 1, reduced.description, sample)
+                    attachment.lifetime = .keepAlways; add(attachment)
+                    if !scene.records.isEmpty {
+                        let last = scene.records.count - 1
+                        scene.records[last]["exportSample"] = sample
+                        scene.records[last]["exportTime"] = time
+                        scene.records[last]["exportImage"] = attachment.name
+                        scene.records[last]["evidenceKind"] = "explicit-time SpriteKit render, not live presentation"
+                    }
+                    if scene.finished { break }
+                }
+                XCTAssertTrue(scene.finished, "Explicit-time export must include the complete idle tail")
+                if !reduced {
+                    XCTAssertEqual(Set(scene.records.compactMap { $0["settleFrame"] as? Int }.filter { $0 >= 0 }),
+                        Set(0..<17), "Export must contain all authored settling poses")
+                }
+                native.scene = nil
+            } else {
+                let complete = expectation(description: "shared projected traversal")
+                scene.done = { complete.fulfill() }; view.presentScene(scene)
+                await fulfillment(of: [complete], timeout: 30)
+            }
             view.presentScene(nil); window.isHidden = true
+            let movingTicks = scene.releaseTick.map(Int.init) ?? Int(scene.movementTicks)
+        var preflight = try Simulation.make(seed: 1)
+        preflight.testing_setPlayerPosition(VecI(x: 736, y: 654))
+        var expected: [VecQ8] = []
+        var expectedDistance: [UInt64: Double] = [0: 0]
+        var travel = 0.0
+        for tick in 1...Int(scene.terminalTick) {
+            let before = preflight.state.player.position
+            let axis: Int16 = tick <= movingTicks ? -scene.inputAxis : 0
+            _ = preflight.step(command: PlayerCommand(tick: UInt64(tick), moveX: axis, moveY: axis, dodgePressed: false))
+            let after = preflight.state.player.position
+            if tick <= movingTicks {
+                XCTAssertLessThan(after.x.raw, before.x.raw)
+                XCTAssertEqual(after.x.raw - before.x.raw, after.y.raw - before.y.raw)
+            }
+            expected.append(after)
+            travel += hypot(Double(after.x.raw - before.x.raw), Double(after.y.raw - before.y.raw)) / 256
+            expectedDistance[UInt64(tick)] = travel
+        }
             XCTAssertEqual(scene.worldTrace, expected, "Presentation must preserve every simulated step")
             XCTAssertEqual(scene.session.simulation.state.digest(), preflight.state.digest())
             XCTAssertEqual(renderer.benchmarkOutlineMetrics.readbacks, 0)
-            XCTAssertEqual(scene.seen.count, 16)
-            let moving = scene.records.filter { ($0["frame"] as? Int ?? -1) >= 0 }
+            if let releaseAfterFrame {
+                let release = try XCTUnwrap(scene.releaseTick, "Requested displayed phase was never observed")
+                XCTAssertGreaterThan(release, 0)
+                XCTAssertLessThan(release, scene.movementTicks)
+                let marker = try XCTUnwrap(scene.records.first { $0["releaseTick"] != nil })
+                XCTAssertEqual(marker["frame"] as? Int, releaseAfterFrame)
+                let firstIdle = try XCTUnwrap(scene.records.first {
+                    ($0["tick"] as? UInt64 ?? 0) > release && ($0["requestedClip"] as? String) == "player_idle"
+                })
+                XCTAssertEqual(firstIdle["texturePresent"] as? Bool, true)
+                XCTAssertEqual(firstIdle["selectedClip"] as? String, "player_idle|\(facing)")
+            } else {
+                XCTAssertEqual(scene.seen.count, 16)
+            }
+            for record in scene.records {
+                let dx = try XCTUnwrap(record["shadowGroundDeltaX"] as? CGFloat)
+                let dy = try XCTUnwrap(record["shadowGroundDeltaY"] as? CGFloat)
+                XCTAssertEqual(record["groundedShadow"] as? Bool, groundedShadow)
+                if groundedShadow {
+                    XCTAssertEqual(dx, 0, accuracy: 0.001)
+                    XCTAssertEqual(dy, 0, accuracy: 0.001)
+                } else {
+                    XCTAssertLessThan(dy, 0)
+                }
+            }
+            // Movement coverage must not silently discard startup or missing art.
+            XCTAssertEqual(scene.records.first?["tick"] as? UInt64, 0)
+            XCTAssertEqual(scene.records.last?["tick"] as? UInt64, scene.terminalTick)
+            XCTAssertEqual(scene.records.first?["requestedClip"] as? String, "player_idle")
+            XCTAssertEqual(scene.records.last?["requestedClip"] as? String, "player_idle")
+            XCTAssertTrue(scene.player?.texture === idleTexture)
+            XCTAssertEqual(try XCTUnwrap(scene.player).size.width, 64, accuracy: 0.001)
+            XCTAssertEqual(try XCTUnwrap(scene.player).size.height, 416.0 / 6.0, accuracy: 0.001)
+            let supportedIdle = scene.records.filter {
+                ($0["requestedClip"] as? String) == "player_idle" && ($0["worldFacing"] as? String) == facing
+            }
+            XCTAssertFalse(supportedIdle.isEmpty)
+            XCTAssertTrue(supportedIdle.allSatisfy { ($0["texturePresent"] as? Bool) == true })
+            // Initial east facing is not covered by this front-source pilot.
+            XCTAssertEqual(scene.records.first?["spritePresent"] as? Bool, false)
+            XCTAssertTrue(scene.records.allSatisfy { $0["spritePresent"] is Bool && $0["texturePresent"] is Bool })
+            if settleCandidate {
+                let settling = scene.records.compactMap { $0["settleFrame"] as? Int }.filter { $0 >= 0 }
+                if reduced { XCTAssertTrue(settling.isEmpty) }
+                else {
+                    XCTAssertTrue(settling.contains(0), "Exact movement pose must begin the sequence")
+                    XCTAssertTrue(settling.contains(16), "Must reach the shared neutral texture")
+                    XCTAssertGreaterThan(Set(settling).count, 2)
+                }
+            }
+            let moving = scene.records.filter { ($0["frame"] as? Int ?? -1) >= 0 && ($0["requestedClip"] as? String) == "player_move" }
             for record in moving {
+                let tick = try XCTUnwrap(record["tick"] as? UInt64)
+                let distance = try XCTUnwrap(expectedDistance[tick])
+                XCTAssertEqual(try XCTUnwrap(record["accumulatedTravel"] as? Double), distance, accuracy: 0.000001)
+                if distancePhaseComparison {
+                    let expectedFrame = Int((distance / 7.5).rounded(.down)) % 16
+                    XCTAssertEqual(record["frame"] as? Int, expectedFrame)
+                }
                 if tracking { XCTAssertEqual(record["playerCanvasVisible"] as? Bool, true) }
 
                 XCTAssertEqual(record["worldFacing"] as? String, facing)
@@ -737,15 +1232,181 @@ final class DisplayedPlaybackTests: XCTestCase {
             }
             let data = try JSONSerialization.data(withJSONObject: scene.records, options: [.prettyPrinted, .sortedKeys])
             let attachment = XCTAttachment(data: data, uniformTypeIdentifier: "public.json")
-            attachment.name = "BP008-shared-traversal-zoom-\(zoom)-tracking-\(tracking)-reduced-\(reduced)-records"
+            attachment.name = "BP008-shared-traversal-release-\(releaseAfterFrame.map(String.init) ?? "timed")-axis-\(scene.inputAxis)-distance-\(distancePhaseComparison)-grounded-\(groundedShadow)-zoom-\(zoom)-tracking-\(tracking)-reduced-\(reduced)-records"
             attachment.lifetime = .keepAlways; add(attachment)
             for (frame, image) in scene.images {
                 let attachment = XCTAttachment(image: image)
-                attachment.name = "BP008-shared-traversal-zoom-\(zoom)-tracking-\(tracking)-reduced-\(reduced)-frame-\(frame)"
+                attachment.name = "BP008-shared-traversal-release-\(releaseAfterFrame.map(String.init) ?? "timed")-axis-\(scene.inputAxis)-distance-\(distancePhaseComparison)-grounded-\(groundedShadow)-zoom-\(zoom)-tracking-\(tracking)-reduced-\(reduced)-frame-\(frame)"
                 attachment.lifetime = .keepAlways; add(attachment)
             }
         }
         }
+    }
+
+    func testBenchmarkSettleCancelsWithoutChangingSelectedState() throws {
+        let library = SpriteLibrary()
+        let move = try XCTUnwrap(library.firstTexture(clipId: "player_move", direction: "s"))
+        let intermediate = try XCTUnwrap(library.firstTexture(clipId: "player_hurt", direction: "s"))
+        let idle = try XCTUnwrap(library.firstTexture(clipId: "player_idle", direction: "s"))
+        // Distinct backed textures isolate lifecycle selection from source-art approval.
+        for trigger in ["complete", "move", "reverse", "hurt", "missing-hurt", "dodge", "extraction", "defeat", "success", "reduced", "reset", "rewind", "idle-turn"] {
+            let renderer = WorldRenderer(sprites: library)
+            renderer.benchmarkPlayerSettleSequences[ObjectIdentifier(move)] = .init(
+                direction: "s", frames: [move, intermediate, idle],
+                timing: try .uniform(frameCount: 3, framesPerSecond: 4))
+            var snap = PresentationSnapshot(try Simulation.make(seed: 1).state)
+            snap.playerDirection = "s"; snap.playerClipId = "player_move"; snap.tick = 0
+            renderer.render(snap)
+            snap.playerClipId = "player_idle"; snap.tick = 1
+            renderer.render(snap)
+            let player = try XCTUnwrap(renderer.root.childNode(withName: "//sprite-player") as? SKSpriteNode)
+            XCTAssertTrue(player.texture === move)
+            XCTAssertEqual(renderer.observePlayerPlayback()?.clipToken, "player_idle|s")
+            snap.tick = 16; renderer.render(snap)
+            XCTAssertTrue(player.texture === intermediate)
+            for _ in 0..<3 { renderer.render(snap) }
+            XCTAssertTrue(player.texture === intermediate, "Repeated/paused tick must retain phase")
+            snap.tick = 17
+            switch trigger {
+            case "complete": snap.tick = 31
+            case "rewind": snap.tick = 0
+            case "idle-turn": snap.playerDirection = "n"
+            case "move": snap.playerClipId = "player_move"
+            case "reverse": snap.playerClipId = "player_move"; snap.playerDirection = "n"
+            case "hurt", "missing-hurt":
+                snap.playerReactionClipId = trigger == "hurt" ? "player_hurt" : "missing-reaction"
+                snap.playerReactionOccurrence = ClipOccurrence(direction: "s", startTick: 17)
+            case "dodge": snap.playerClipId = "player_dodge"
+            case "extraction": snap.playerClipId = "player_extraction"
+            case "defeat": snap.playerClipId = "player_defeat"
+            case "success": snap.playerClipId = "player_complete"
+            case "reset": renderer.reset()
+            default: break
+            }
+            let reduced = trigger == "reduced"
+            let control = WorldRenderer(sprites: library)
+            control.render(snap, reducedMotion: reduced)
+            renderer.render(snap, reducedMotion: reduced)
+            let expected = control.root.childNode(withName: "//sprite-player") as? SKSpriteNode
+            let actual = renderer.root.childNode(withName: "//sprite-player") as? SKSpriteNode
+            XCTAssertTrue(actual?.texture === expected?.texture, trigger)
+            XCTAssertEqual(renderer.observePlayerPlayback()?.clipToken, control.observePlayerPlayback()?.clipToken, trigger)
+            snap.playerClipId = "player_idle"; snap.playerReactionClipId = nil
+            snap.playerReactionOccurrence = nil; snap.tick = 60
+            // No new backed movement sample for this stop: do not resurrect it.
+            renderer.benchmarkPlayerSettleSequences = [:]
+            renderer.render(snap)
+            XCTAssertTrue((renderer.root.childNode(withName: "//sprite-player") as? SKSpriteNode)?.texture === library.firstTexture(clipId: "player_idle", direction: snap.playerDirection), trigger)
+        }
+    }
+
+    func testSourceBackedSettleInterruptionsKeepConfigurationInstalled() throws {
+        try validateSourceBackedSettleInterruptions(fractionalClock: false)
+    }
+
+    private func validateSourceBackedSettleInterruptions(fractionalClock: Bool) throws {
+        let bundle = Bundle(for: Self.self)
+        let legacy = SpriteLibrary()
+        let timing = try ClipTiming(unitsPerSecond: 128, frameUnits: Array(repeating: 3, count: 17))
+        let initial = PresentationSnapshot(try Simulation.make(seed: 1).state)
+        var evidence: [[String: Any]] = []
+        for release in [4, 12] {
+            let names = [String(format: "player-source-s-%02d", release)] + (1..<16).map {
+                String(format: "player-settle-%02d-%02d", release + 1, $0)
+            } + ["player-source-s-neutral"]
+            let sequence = try names.map { name -> SKTexture in
+                let path = try XCTUnwrap(bundle.url(forResource: name, withExtension: "png"))
+                return SKTexture(image: try XCTUnwrap(UIImage(contentsOfFile: path.path)))
+            }
+            // One-frame state sentinels isolate selection; only the settling sequence
+            // claims source-backed pose coverage. Legacy north is not new-facing art.
+            var clips: [String: ClipFrameLibrary.Clip] = [:]
+            var paths: [String: String] = [:]
+            var images: [String: SKTexture] = [:]
+            for name in ["player_move", "player_idle", "player_hurt", "player_dodge",
+                         "player_extraction", "player_defeat", "player_complete"] {
+                let ids = ["s", "n"].map { "\(name)_\($0)_00" }
+                clips[name] = .init(clipId: name, actorRole: "player", directions: ["s", "n"],
+                    framesPerSecond: 1, authoredTiming: nil, loop: name == "player_move" || name == "player_idle",
+                    anchor: VecI(x: 32, y: 56), frameIds: ids)
+                for (direction, id) in zip(["s", "n"], ids) {
+                    paths[id] = id
+                    if name == "player_move", direction == "s" { images[id] = sequence[0] }
+                    else if name == "player_idle", direction == "s" { images[id] = sequence[16] }
+                    else if let texture = legacy.firstTexture(clipId: name, direction: direction) { images[id] = texture }
+                    else { paths.removeValue(forKey: id) }
+                }
+            }
+            let library = try XCTUnwrap(SpriteLibrary(benchmarkFrames: .init(clips: clips, deliveredPaths: paths), benchmarkTextures: images))
+            let renderer = WorldRenderer(sprites: library)
+            let control = WorldRenderer(sprites: library)
+            XCTAssertTrue(library.isBacked(clipId: "player_hurt", direction: "s"))
+            renderer.benchmarkPlayerSettleSequences[ObjectIdentifier(sequence[0])] = .init(direction: "s", frames: sequence, timing: timing)
+            func player(_ owner: WorldRenderer) -> SKSpriteNode? {
+                owner.root.childNode(withName: "//sprite-player") as? SKSpriteNode
+            }
+            func renderCandidate(_ snapshot: PresentationSnapshot, reducedMotion: Bool = false) {
+                renderer.benchmarkPlayerPresentationTime = fractionalClock ? Double(snapshot.tick) / 60 : nil
+                renderer.render(snapshot, reducedMotion: reducedMotion)
+            }
+            for pose in 0..<17 {
+                let offset = try XCTUnwrap((UInt64(0)...23).first { timing.frameIndex(atTickOffset: $0) == pose })
+                for trigger in ["complete", "move", "reverse", "hurt", "missing-hurt", "dodge",
+                                "extraction", "defeat", "success", "reduced", "reset", "rewind", "idle-turn"] {
+                    renderer.reset(); control.reset()
+                    var snap = initial
+                    snap.playerDirection = "s"; snap.playerClipId = "player_move"; snap.tick = 100
+                    renderCandidate(snap)
+                    XCTAssertTrue(player(renderer)?.texture === sequence[0])
+                    snap.playerClipId = "player_idle"; snap.tick = 101
+                    renderCandidate(snap)
+                    snap.tick = 101 + offset; renderCandidate(snap)
+                    XCTAssertTrue(player(renderer)?.texture === sequence[pose], "release \(release), pose \(pose)")
+                    renderCandidate(snap)
+                    XCTAssertTrue(player(renderer)?.texture === sequence[pose], "Repeated tick cannot restart phase")
+                    snap.tick += 1
+                    switch trigger {
+                    case "complete": snap.tick = 124
+                    case "move": snap.playerClipId = "player_move"
+                    case "reverse": snap.playerClipId = "player_move"; snap.playerDirection = "n"
+                    case "hurt", "missing-hurt":
+                        snap.playerReactionClipId = trigger == "hurt" ? "player_hurt" : "missing-reaction"
+                        snap.playerReactionOccurrence = ClipOccurrence(direction: "s", startTick: snap.tick)
+                    case "dodge": snap.playerClipId = "player_dodge"
+                    case "extraction": snap.playerClipId = "player_extraction"
+                    case "defeat": snap.playerClipId = "player_defeat"
+                    case "success": snap.playerClipId = "player_complete"
+                    case "reduced": break
+                    case "reset": renderer.reset()
+                    case "rewind": snap.tick = 0
+                    case "idle-turn": snap.playerDirection = "n"
+                    default: XCTFail("Unknown trigger")
+                    }
+                    let reduced = trigger == "reduced"
+                    control.render(snap, reducedMotion: reduced)
+                    renderCandidate(snap, reducedMotion: reduced)
+                    XCTAssertTrue(player(renderer)?.texture === player(control)?.texture, trigger)
+                    XCTAssertEqual(renderer.observePlayerPlayback()?.clipToken, control.observePlayerPlayback()?.clipToken, trigger)
+                    XCTAssertEqual(renderer.benchmarkPlayerSettleSequences.count, 1)
+                    snap.playerClipId = "player_idle"; snap.playerReactionClipId = nil; snap.playerReactionOccurrence = nil
+                    snap.tick += 1
+                    renderCandidate(snap)
+                    if trigger == "move" {
+                        // A new backed movement sample makes this a new eligible stop.
+                        XCTAssertTrue(player(renderer)?.texture === sequence[0])
+                    } else {
+                        XCTAssertTrue(player(renderer)?.texture === library.firstTexture(clipId: "player_idle", direction: snap.playerDirection), "No old occurrence: \(trigger), pose \(pose)")
+                    }
+                    snap.tick += 24; renderCandidate(snap)
+                    XCTAssertTrue(player(renderer)?.texture === library.firstTexture(clipId: "player_idle", direction: snap.playerDirection), trigger)
+                    XCTAssertEqual(renderer.benchmarkPlayerSettleSequences.count, 1)
+                    evidence.append(["releaseFrame": release + 1, "pose": pose, "trigger": trigger, "registryRetained": true, "fractionalClock": fractionalClock])
+                }
+            }
+        }
+        XCTAssertEqual(evidence.count, 442)
+        let attachment = XCTAttachment(data: try JSONSerialization.data(withJSONObject: evidence, options: [.sortedKeys]), uniformTypeIdentifier: "public.json")
+        attachment.name = fractionalClock ? "fractional-source-backed-settle-interruption-matrix" : "source-backed-settle-interruption-matrix"; attachment.lifetime = .keepAlways; add(attachment)
     }
 
     func testSharedReviewArtPreservesSelectedPlayerClips() throws {

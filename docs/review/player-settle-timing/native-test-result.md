@@ -1,0 +1,9 @@
+# Review-only settling lifecycle regression
+
+Xcode simulator test on 2026-10-19 14:31:33–14:31:48: `DisplayedPlaybackTests.testBenchmarkSettleCancelsWithoutChangingSelectedState` passed, 1 test, 0 failures, 14.631 seconds. Covers completion, movement/reversal, reactions including missing reaction art, dodge, extraction, terminal outcomes, Reduced Motion, reset, repeated ticks and no stale resurrection. Uses distinct existing textures to isolate lifecycle; it does not validate the 17-frame candidate art in the renderer. No settling sequences installed by default. Full suite not rerun after this prototype.
+
+Expanded regression at 14:34:00–14:34:20 passed: 1 test, 0 failures, 20.531s. Added rewind and idle-facing change cases (13 triggers total). Rewind now restores backed idle artwork as well as clearing sequence state. Evidence: `work/player-settle-discontinuity.xcresult`, original Test-SSRuntime-2026.10.19_14-33-10--0700.xcresult. Specs validator also passes: 23 JSON artifacts, 7 schemas, 33 contracts, 55 indexed files.
+
+Source-backed real-renderer comparison passed 2026-10-19 14:37:56–14:38:13: 1 test, 4 variants, 0 failures, 16.452s. Both extreme phases in Standard/Reduced Motion. Independent simulation trace/digest matched; zero outline readbacks during playback; shared neutral reached. Native coverage recorded in native-coverage.json. No screen recording or visual timing acceptance claimed.
+
+Full integrated playback class: 19 tests, 1 failure, 374.859s. Failure: shared timed traversal Standard Motion / 1.25× tracking observed 15/16 movement frames (missing zero-based frame 14), with 49 movement observations and largest inter-observation gap 41.38ms. Other five traversal variants covered 16/16. Settling tests passed. Cause remains unproven; do not waive coverage or report a green suite. Evidence: full-playback-attachments and full-playback-coverage.json; xcresult work/player-settle-full-playback.xcresult.

@@ -1,0 +1,706 @@
+{
+  "axis" : 32767,
+  "cleanSilhouetteReview" : true,
+  "coveragePassed" : true,
+  "diagnosticSeconds" : 0.26474606990814209,
+  "distancePhaseComparison" : true,
+  "frameCosts" : [
+    {
+      "renderSeconds" : 0.0060089826583862305,
+      "simulationSeconds" : 0,
+      "tick" : 0
+    },
+    {
+      "renderSeconds" : 0.002904057502746582,
+      "simulationSeconds" : 9.5367431640625e-07,
+      "tick" : 0
+    },
+    {
+      "renderSeconds" : 0.0022740364074707031,
+      "simulationSeconds" : 0,
+      "tick" : 0
+    },
+    {
+      "renderSeconds" : 0.0024480819702148438,
+      "simulationSeconds" : 0,
+      "tick" : 0
+    },
+    {
+      "renderSeconds" : 0.0062520503997802734,
+      "simulationSeconds" : 0.0025720596313476562,
+      "tick" : 1
+    },
+    {
+      "renderSeconds" : 0.0049880743026733398,
+      "simulationSeconds" : 0.0034929513931274414,
+      "tick" : 2
+    },
+    {
+      "renderSeconds" : 0.0047069787979125977,
+      "simulationSeconds" : 0.003085017204284668,
+      "tick" : 3
+    },
+    {
+      "renderSeconds" : 0.0051840543746948242,
+      "simulationSeconds" : 0.0061740875244140625,
+      "tick" : 5
+    },
+    {
+      "renderSeconds" : 0.0054990053176879883,
+      "simulationSeconds" : 0.003255009651184082,
+      "tick" : 6
+    },
+    {
+      "renderSeconds" : 0.0056799650192260742,
+      "simulationSeconds" : 0.0035790205001831055,
+      "tick" : 7
+    },
+    {
+      "renderSeconds" : 0.0053499937057495117,
+      "simulationSeconds" : 0.0034070014953613281,
+      "tick" : 8
+    },
+    {
+      "renderSeconds" : 0.0049790143966674805,
+      "simulationSeconds" : 0.0097450017929077148,
+      "tick" : 10
+    },
+    {
+      "renderSeconds" : 0.0052419900894165039,
+      "simulationSeconds" : 0.0033559799194335938,
+      "tick" : 11
+    },
+    {
+      "renderSeconds" : 0.0049229860305786133,
+      "simulationSeconds" : 0.0034750699996948242,
+      "tick" : 12
+    },
+    {
+      "renderSeconds" : 0.0051440000534057617,
+      "simulationSeconds" : 0.0035380125045776367,
+      "tick" : 13
+    },
+    {
+      "renderSeconds" : 0.0047910213470458984,
+      "simulationSeconds" : 0.0034039020538330078,
+      "tick" : 14
+    },
+    {
+      "renderSeconds" : 0.0051100254058837891,
+      "simulationSeconds" : 0.0031380653381347656,
+      "tick" : 15
+    },
+    {
+      "renderSeconds" : 0.0054850578308105469,
+      "simulationSeconds" : 9.5367431640625e-07,
+      "tick" : 15
+    },
+    {
+      "renderSeconds" : 0.0055990219116210938,
+      "simulationSeconds" : 0.0032690763473510742,
+      "tick" : 16
+    },
+    {
+      "renderSeconds" : 0.0059559345245361328,
+      "simulationSeconds" : 0.0035049915313720703,
+      "tick" : 17
+    },
+    {
+      "renderSeconds" : 0.0069329738616943359,
+      "simulationSeconds" : 0.0039830207824707031,
+      "tick" : 18
+    },
+    {
+      "renderSeconds" : 0.0062999725341796875,
+      "simulationSeconds" : 0.0066829919815063477,
+      "tick" : 20
+    },
+    {
+      "renderSeconds" : 0.0051009654998779297,
+      "simulationSeconds" : 0.0060570240020751953,
+      "tick" : 22
+    },
+    {
+      "renderSeconds" : 0.0047980546951293945,
+      "simulationSeconds" : 0.0080989599227905273,
+      "tick" : 24
+    },
+    {
+      "renderSeconds" : 0.0047630071640014648,
+      "simulationSeconds" : 0.0067720413208007812,
+      "tick" : 26
+    },
+    {
+      "renderSeconds" : 0.0054160356521606445,
+      "simulationSeconds" : 0.0087319612503051758,
+      "tick" : 28
+    },
+    {
+      "renderSeconds" : 0.0060529708862304688,
+      "simulationSeconds" : 0.0036929845809936523,
+      "tick" : 29
+    },
+    {
+      "renderSeconds" : 0.0053499937057495117,
+      "simulationSeconds" : 0.0039829015731811523,
+      "tick" : 30
+    },
+    {
+      "renderSeconds" : 0.0060570240020751953,
+      "simulationSeconds" : 0.0083529949188232422,
+      "tick" : 32
+    },
+    {
+      "renderSeconds" : 0.0066570043563842773,
+      "simulationSeconds" : 0,
+      "tick" : 32
+    },
+    {
+      "renderSeconds" : 0.0052039623260498047,
+      "simulationSeconds" : 0.0038260221481323242,
+      "tick" : 33
+    },
+    {
+      "renderSeconds" : 0.006259918212890625,
+      "simulationSeconds" : 0.011075019836425781,
+      "tick" : 36
+    },
+    {
+      "renderSeconds" : 0.0061789751052856445,
+      "simulationSeconds" : 0.0030050277709960938,
+      "tick" : 37
+    },
+    {
+      "renderSeconds" : 0.0048879384994506836,
+      "simulationSeconds" : 0.0034559965133666992,
+      "tick" : 38
+    },
+    {
+      "renderSeconds" : 0.0050300359725952148,
+      "simulationSeconds" : 0.0038779973983764648,
+      "tick" : 39
+    },
+    {
+      "renderSeconds" : 0.005787968635559082,
+      "simulationSeconds" : 0.0033199787139892578,
+      "tick" : 40
+    },
+    {
+      "renderSeconds" : 0.0054559707641601562,
+      "simulationSeconds" : 0.0038089752197265625,
+      "tick" : 41
+    },
+    {
+      "renderSeconds" : 0.0056780576705932617,
+      "simulationSeconds" : 0.0035610198974609375,
+      "tick" : 42
+    },
+    {
+      "renderSeconds" : 0.0057541131973266602,
+      "simulationSeconds" : 0.0072948932647705078,
+      "tick" : 44
+    },
+    {
+      "renderSeconds" : 0.0082319974899291992,
+      "simulationSeconds" : 0.003805994987487793,
+      "tick" : 45
+    },
+    {
+      "renderSeconds" : 0.0055299997329711914,
+      "simulationSeconds" : 0,
+      "tick" : 45
+    },
+    {
+      "renderSeconds" : 0.0056440830230712891,
+      "simulationSeconds" : 0.0036770105361938477,
+      "tick" : 46
+    },
+    {
+      "renderSeconds" : 0.0057229995727539062,
+      "simulationSeconds" : 0.0037260055541992188,
+      "tick" : 47
+    },
+    {
+      "renderSeconds" : 0.0055240392684936523,
+      "simulationSeconds" : 0.0036140680313110352,
+      "tick" : 48
+    },
+    {
+      "renderSeconds" : 0.0061029195785522461,
+      "simulationSeconds" : 0.0080149173736572266,
+      "tick" : 50
+    },
+    {
+      "renderSeconds" : 0.0066509246826171875,
+      "simulationSeconds" : 0.0043699741363525391,
+      "tick" : 51
+    },
+    {
+      "renderSeconds" : 0.0055780410766601562,
+      "simulationSeconds" : 0.0067020654678344727,
+      "tick" : 53
+    },
+    {
+      "renderSeconds" : 0.0053449869155883789,
+      "simulationSeconds" : 0.0034079551696777344,
+      "tick" : 54
+    },
+    {
+      "renderSeconds" : 0.0058779716491699219,
+      "simulationSeconds" : 0.0043649673461914062,
+      "tick" : 55
+    },
+    {
+      "renderSeconds" : 0.0069310665130615234,
+      "simulationSeconds" : 0.0046039819717407227,
+      "tick" : 56
+    },
+    {
+      "renderSeconds" : 0.0064840316772460938,
+      "simulationSeconds" : 0.0035259723663330078,
+      "tick" : 57
+    },
+    {
+      "renderSeconds" : 0.0066330432891845703,
+      "simulationSeconds" : 0.0041708946228027344,
+      "tick" : 58
+    },
+    {
+      "renderSeconds" : 0.0050719976425170898,
+      "simulationSeconds" : 0.003849029541015625,
+      "tick" : 59
+    },
+    {
+      "renderSeconds" : 0.0053160190582275391,
+      "simulationSeconds" : 0.0034520626068115234,
+      "tick" : 60
+    },
+    {
+      "renderSeconds" : 0.0055199861526489258,
+      "simulationSeconds" : 0,
+      "tick" : 60
+    },
+    {
+      "renderSeconds" : 0.006241917610168457,
+      "simulationSeconds" : 0.0037090778350830078,
+      "tick" : 61
+    },
+    {
+      "renderSeconds" : 0.0055710077285766602,
+      "simulationSeconds" : 0.0037320852279663086,
+      "tick" : 62
+    },
+    {
+      "renderSeconds" : 0.0053380727767944336,
+      "simulationSeconds" : 0.010383009910583496,
+      "tick" : 65
+    },
+    {
+      "renderSeconds" : 0.0068320035934448242,
+      "simulationSeconds" : 0.0042519569396972656,
+      "tick" : 66
+    },
+    {
+      "renderSeconds" : 0.0055130720138549805,
+      "simulationSeconds" : 0.0036679506301879883,
+      "tick" : 67
+    },
+    {
+      "renderSeconds" : 0.0051079988479614258,
+      "simulationSeconds" : 0.0067110061645507812,
+      "tick" : 69
+    },
+    {
+      "renderSeconds" : 0.0055050849914550781,
+      "simulationSeconds" : 0.0040240287780761719,
+      "tick" : 70
+    },
+    {
+      "renderSeconds" : 0.0056979656219482422,
+      "simulationSeconds" : 0.0034990310668945312,
+      "tick" : 71
+    },
+    {
+      "renderSeconds" : 0.0063179731369018555,
+      "simulationSeconds" : 0.0042160749435424805,
+      "tick" : 72
+    },
+    {
+      "renderSeconds" : 0.0058749914169311523,
+      "simulationSeconds" : 0.0042589902877807617,
+      "tick" : 73
+    },
+    {
+      "renderSeconds" : 0.0051910877227783203,
+      "simulationSeconds" : 0.0037399530410766602,
+      "tick" : 74
+    },
+    {
+      "renderSeconds" : 0.0059080123901367188,
+      "simulationSeconds" : 0.0036379098892211914,
+      "tick" : 75
+    },
+    {
+      "renderSeconds" : 0.0057300329208374023,
+      "simulationSeconds" : 0,
+      "tick" : 75
+    },
+    {
+      "renderSeconds" : 0.0071299076080322266,
+      "simulationSeconds" : 0.004116058349609375,
+      "tick" : 76
+    },
+    {
+      "renderSeconds" : 0.0055189132690429688,
+      "simulationSeconds" : 0.0036699771881103516,
+      "tick" : 77
+    },
+    {
+      "renderSeconds" : 0.0067830085754394531,
+      "simulationSeconds" : 0.012452006340026855,
+      "tick" : 80
+    },
+    {
+      "renderSeconds" : 0.0065239667892456055,
+      "simulationSeconds" : 0.0038319826126098633,
+      "tick" : 81
+    },
+    {
+      "renderSeconds" : 0.0066169500350952148,
+      "simulationSeconds" : 0.004199981689453125,
+      "tick" : 82
+    },
+    {
+      "renderSeconds" : 0.0062229633331298828,
+      "simulationSeconds" : 0.0082499980926513672,
+      "tick" : 84
+    },
+    {
+      "renderSeconds" : 0.0067069530487060547,
+      "simulationSeconds" : 0.0039750337600708008,
+      "tick" : 85
+    },
+    {
+      "renderSeconds" : 0.0058439970016479492,
+      "simulationSeconds" : 0.0037660598754882812,
+      "tick" : 86
+    },
+    {
+      "renderSeconds" : 0.0058729648590087891,
+      "simulationSeconds" : 0.003956913948059082,
+      "tick" : 87
+    },
+    {
+      "renderSeconds" : 0.0055450201034545898,
+      "simulationSeconds" : 0.0039520263671875,
+      "tick" : 88
+    },
+    {
+      "renderSeconds" : 0.0064420700073242188,
+      "simulationSeconds" : 0.00341796875,
+      "tick" : 89
+    },
+    {
+      "renderSeconds" : 0.0051349401473999023,
+      "simulationSeconds" : 0.0034420490264892578,
+      "tick" : 90
+    },
+    {
+      "renderSeconds" : 0.0054390430450439453,
+      "simulationSeconds" : 0.0034519433975219727,
+      "tick" : 91
+    },
+    {
+      "renderSeconds" : 0.0047149658203125,
+      "simulationSeconds" : 0.0031310319900512695,
+      "tick" : 92
+    },
+    {
+      "renderSeconds" : 0.0053999423980712891,
+      "simulationSeconds" : 0.0032420158386230469,
+      "tick" : 93
+    },
+    {
+      "renderSeconds" : 0.0048930644989013672,
+      "simulationSeconds" : 0.0058000087738037109,
+      "tick" : 95
+    },
+    {
+      "renderSeconds" : 0.0055150985717773438,
+      "simulationSeconds" : 0.0033949613571166992,
+      "tick" : 96
+    },
+    {
+      "renderSeconds" : 0.0055320262908935547,
+      "simulationSeconds" : 0.0040839910507202148,
+      "tick" : 97
+    },
+    {
+      "renderSeconds" : 0.006054997444152832,
+      "simulationSeconds" : 0.0042380094528198242,
+      "tick" : 98
+    },
+    {
+      "renderSeconds" : 0.0074419975280761719,
+      "simulationSeconds" : 0.004243016242980957,
+      "tick" : 99
+    },
+    {
+      "renderSeconds" : 0.0075190067291259766,
+      "simulationSeconds" : 0.0045729875564575195,
+      "tick" : 100
+    },
+    {
+      "renderSeconds" : 0.0068610906600952148,
+      "simulationSeconds" : 0.009489893913269043,
+      "tick" : 102
+    },
+    {
+      "renderSeconds" : 0.0054010152816772461,
+      "simulationSeconds" : 0.0081570148468017578,
+      "tick" : 104
+    },
+    {
+      "renderSeconds" : 0.0054810047149658203,
+      "simulationSeconds" : 0.0035060644149780273,
+      "tick" : 105
+    },
+    {
+      "renderSeconds" : 0.0054869651794433594,
+      "simulationSeconds" : 0.0033259391784667969,
+      "tick" : 106
+    },
+    {
+      "renderSeconds" : 0.0057430267333984375,
+      "simulationSeconds" : 0.0032759904861450195,
+      "tick" : 107
+    },
+    {
+      "renderSeconds" : 0.0048589706420898438,
+      "simulationSeconds" : 0.0034250020980834961,
+      "tick" : 108
+    },
+    {
+      "renderSeconds" : 0.0054769515991210938,
+      "simulationSeconds" : 0.0064580440521240234,
+      "tick" : 110
+    },
+    {
+      "renderSeconds" : 0.005086064338684082,
+      "simulationSeconds" : 0.0030200481414794922,
+      "tick" : 111
+    },
+    {
+      "renderSeconds" : 0.0049889087677001953,
+      "simulationSeconds" : 0.0030519962310791016,
+      "tick" : 112
+    },
+    {
+      "renderSeconds" : 0.0048580169677734375,
+      "simulationSeconds" : 0.0031390190124511719,
+      "tick" : 113
+    },
+    {
+      "renderSeconds" : 0.0057860612869262695,
+      "simulationSeconds" : 0.0037189722061157227,
+      "tick" : 114
+    },
+    {
+      "renderSeconds" : 0.005334019660949707,
+      "simulationSeconds" : 0.0031149387359619141,
+      "tick" : 115
+    },
+    {
+      "renderSeconds" : 0.0050090551376342773,
+      "simulationSeconds" : 0.0031709671020507812,
+      "tick" : 116
+    },
+    {
+      "renderSeconds" : 0.0049699544906616211,
+      "simulationSeconds" : 0.0027860403060913086,
+      "tick" : 117
+    },
+    {
+      "renderSeconds" : 0.0049959421157836914,
+      "simulationSeconds" : 0.0029109716415405273,
+      "tick" : 118
+    },
+    {
+      "renderSeconds" : 0.004819035530090332,
+      "simulationSeconds" : 0.0032720565795898438,
+      "tick" : 119
+    },
+    {
+      "renderSeconds" : 0.0056730508804321289,
+      "simulationSeconds" : 0.00315093994140625,
+      "tick" : 120
+    },
+    {
+      "renderSeconds" : 0.0051690340042114258,
+      "simulationSeconds" : 0,
+      "tick" : 120
+    },
+    {
+      "renderSeconds" : 0.0041929483413696289,
+      "simulationSeconds" : 0.0030781030654907227,
+      "tick" : 121
+    },
+    {
+      "renderSeconds" : 0.003849029541015625,
+      "simulationSeconds" : 0.0034079551696777344,
+      "tick" : 122
+    },
+    {
+      "renderSeconds" : 0.0037440061569213867,
+      "simulationSeconds" : 0.0031050443649291992,
+      "tick" : 123
+    },
+    {
+      "renderSeconds" : 0.0036150217056274414,
+      "simulationSeconds" : 0.006175994873046875,
+      "tick" : 125
+    },
+    {
+      "renderSeconds" : 0.0040949583053588867,
+      "simulationSeconds" : 0.0036970376968383789,
+      "tick" : 126
+    },
+    {
+      "renderSeconds" : 0.0043249130249023438,
+      "simulationSeconds" : 0.0033079385757446289,
+      "tick" : 127
+    },
+    {
+      "renderSeconds" : 0.004017949104309082,
+      "simulationSeconds" : 0.0031839609146118164,
+      "tick" : 128
+    },
+    {
+      "renderSeconds" : 0.0060141086578369141,
+      "simulationSeconds" : 0.0034259557723999023,
+      "tick" : 129
+    },
+    {
+      "renderSeconds" : 0.0043890476226806641,
+      "simulationSeconds" : 0.0035010576248168945,
+      "tick" : 130
+    },
+    {
+      "renderSeconds" : 0.0036309957504272461,
+      "simulationSeconds" : 0.0030789375305175781,
+      "tick" : 131
+    },
+    {
+      "renderSeconds" : 0.0041459798812866211,
+      "simulationSeconds" : 0.0042209625244140625,
+      "tick" : 132
+    },
+    {
+      "renderSeconds" : 0.004528045654296875,
+      "simulationSeconds" : 0.0032030344009399414,
+      "tick" : 133
+    },
+    {
+      "renderSeconds" : 0.003769993782043457,
+      "simulationSeconds" : 0.003085017204284668,
+      "tick" : 134
+    },
+    {
+      "renderSeconds" : 0.0042570829391479492,
+      "simulationSeconds" : 0.0039269924163818359,
+      "tick" : 135
+    },
+    {
+      "renderSeconds" : 0.0044699907302856445,
+      "simulationSeconds" : 0,
+      "tick" : 135
+    },
+    {
+      "renderSeconds" : 0.004037022590637207,
+      "simulationSeconds" : 0.003235936164855957,
+      "tick" : 136
+    },
+    {
+      "renderSeconds" : 0.0054210424423217773,
+      "simulationSeconds" : 0.0028940439224243164,
+      "tick" : 137
+    },
+    {
+      "renderSeconds" : 0.0045729875564575195,
+      "simulationSeconds" : 0.0030620098114013672,
+      "tick" : 138
+    },
+    {
+      "renderSeconds" : 0.0039319992065429688,
+      "simulationSeconds" : 0.0056589841842651367,
+      "tick" : 140
+    },
+    {
+      "renderSeconds" : 0.0042700767517089844,
+      "simulationSeconds" : 0.0028729438781738281,
+      "tick" : 141
+    },
+    {
+      "renderSeconds" : 0.004011988639831543,
+      "simulationSeconds" : 0.0031470060348510742,
+      "tick" : 142
+    },
+    {
+      "renderSeconds" : 0.0036350488662719727,
+      "simulationSeconds" : 0.002781987190246582,
+      "tick" : 143
+    },
+    {
+      "renderSeconds" : 0.0042409896850585938,
+      "simulationSeconds" : 0.0026500225067138672,
+      "tick" : 144
+    },
+    {
+      "renderSeconds" : 0.0041879415512084961,
+      "simulationSeconds" : 0.0030419826507568359,
+      "tick" : 145
+    },
+    {
+      "renderSeconds" : 0.0039389133453369141,
+      "simulationSeconds" : 0.0027680397033691406,
+      "tick" : 146
+    },
+    {
+      "renderSeconds" : 0.0041249990463256836,
+      "simulationSeconds" : 0.0032839775085449219,
+      "tick" : 147
+    },
+    {
+      "renderSeconds" : 0.003811955451965332,
+      "simulationSeconds" : 0.0030200481414794922,
+      "tick" : 148
+    },
+    {
+      "renderSeconds" : 0.003744959831237793,
+      "simulationSeconds" : 0.0030610561370849609,
+      "tick" : 149
+    },
+    {
+      "renderSeconds" : 0.0040270090103149414,
+      "simulationSeconds" : 0.0031200647354125977,
+      "tick" : 150
+    }
+  ],
+  "frames" : 16,
+  "initialDisplaySeconds" : 0.081268083304166794,
+  "moveTicks" : 120,
+  "outlineBuildSeconds" : 0,
+  "outlineBytes" : 299904,
+  "outlineHits" : 206,
+  "outlineMisses" : 0,
+  "outlineReadbacks" : 0,
+  "postActionSeconds" : 0.15685808658599854,
+  "preparationSeconds" : 0.58256208896636963,
+  "reducedMotion" : false,
+  "renderSeconds" : 0.72103357315063477,
+  "repetition" : 20,
+  "scenePreparationSeconds" : 0.21995306015014648,
+  "simulationSeconds" : 0.53485095500946045,
+  "snapshotBuildCount" : 136,
+  "stage" : 4
+}

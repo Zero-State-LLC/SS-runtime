@@ -1,0 +1,23 @@
+# Shared traversal coverage investigation — 2026-10-19
+
+The full class failed one of 19 tests: Standard Motion, 1.25× tracking missed zero-based movement frame 14. The trace jumps 13→15 on both complete cycles (around 0.443→0.480s and 0.944→0.981s). Each authored frame lasts 31.25ms. This is consistent with sampling gaps, not proof of their cause.
+
+An instrumented focused rerun passed all six variants (1 test, 22.560s). No duration, frame-count assertion, simulation command or production playback policy changed. This pass does not erase the prior full-class failure.
+
+Monotonic stage measurements are in stage-attachments and stage-summary.json. For Standard Motion / tracking: median total update 12.959ms (max22.911), projection5.100ms (max8.015), renderer0.491ms, simulation3.820ms, snapshot1.158ms, HUD0.183ms. These are simulator/debug measurements, not physical-device performance. Total update excludes later SpriteKit action/render work and record collection. The stage sums also exclude billboard restoration, so they must not be treated as exhaustive accounting.
+
+Next: isolate review-harness projection/tree enumeration cost, preserve transform/depth/outline equivalence, then compare unchanged six-variant coverage and timing. Retain the 16-frame requirement and failed evidence. Do not merely extend the route or retry until green.
+
+Apple references: [preferredFramesPerSecond](https://developer.apple.com/documentation/spritekit/skview/preferredframespersecond) specifies a preferred rather than guaranteed rate; [frame-cycle events](https://developer.apple.com/documentation/spritekit/responding-to-frame-cycle-events) separates update, action evaluation and later frame work. These support measuring actual callbacks rather than inferring coverage from a requested 60fps.
+
+## Ordered-search experiment
+
+Changed only the review harness: one ordered walk selects the five projected sprites; another walk matches exactly the prior root/player outline scopes after reparenting. Warm-up parity assertions compare node identities and outline identity sets to the legacy name-query implementation. All parity assertions passed. No cache survives updates.
+
+Focused result: 1 test, 1 coverage failure, 24.468s. Five variants delivered16/16; first Standard/1× delivered9/16 with only9 movement callbacks. Records: search-attachments; aggregation: search-summary.json. Standard/tracking projection median fell5.100→1.039ms and total update12.959→7.711ms; this is sequential simulator evidence, not a controlled device FPS claim. First-variant simulation-step block reached114.671ms (total119.441ms), while projection max was1.182ms. This localizes observed expensive work to the simulation-step block but does not yet distinguish per-step cost from accumulated catch-up steps or external scheduling. Retain coverage failure and investigate step counts/timing before changing budgets or playback. Production code and gameplay authority are unchanged.
+
+Clock investigation: failed first-variant trace starts with two tick-zero callbacks separated by214ms. The next callback advances13 ticks in114.671ms; later batches contain5–14 ticks. Therefore the peak is a catch-up block, not a measured115ms individual simulation step. Found a boundary defect: warm-up callbacks assigned previous=time even though they did not accumulate simulation time, so the first active callback consumed the last preparation interval. Correction clears previous during preparation and establishes it on the first active callback; subsequent active accumulation is unchanged. New native regression uses delayed preparation timestamps0/100/200s and expects zero ticks at activation, then3 ticks after51ms of active time. Results pending.
+
+Clock correction validation: native traversal test passed21.317s, 0 failures, including explicit clock-boundary regression called before six live variants. All six captured16/16 movement frames; authoritative replay and node-identity assertions retained. Evidence: clock-attachments, clock-summary.json and work/player-traversal-clock.xcresult. Full playback-class rerun remains pending.
+
+Full playback rerun after search/clock correction: 20 tests, 0 failures, 0 skips, 351.434s test time, iPhone17Pro iOS26.5 Simulator. The prior failing traversal, all-phase release, source-backed settle and clock-boundary tests passed. Source/art input hashes unchanged during run (clock-full-suite-inputs.json). Evidence: clock-full-suite-result.json, clock-full-attachments, work/player-clock-full-playback.xcresult. This verifies the playback class only; visual timing/contact acceptance, complete-family admission, full app/core release regression and device gates remain open.

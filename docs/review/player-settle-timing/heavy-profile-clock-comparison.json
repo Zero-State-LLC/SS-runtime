@@ -1,0 +1,524 @@
+[
+  {
+    "source": "docs/review/player-settle-timing/live-presentation-attachments/DADD0142-5908-4C54-ABB9-6A3ABFB0ACDF.json",
+    "sha256": "12ed4ea70e8b45d2b45d10072344d90f5cc39fc92597b7fea096ac0cc7269d66",
+    "release": 5,
+    "tickReconstructionMatches": true,
+    "observedMissing": [],
+    "proxies": {
+      "post-action-wall-time": {
+        "samples": [
+          {
+            "tick": 70,
+            "elapsed": 0.0,
+            "frame": 0
+          },
+          {
+            "tick": 71,
+            "elapsed": 0.017500877380371094,
+            "frame": 0
+          },
+          {
+            "tick": 72,
+            "elapsed": 0.03322196006774902,
+            "frame": 1
+          },
+          {
+            "tick": 73,
+            "elapsed": 0.05019187927246094,
+            "frame": 2
+          },
+          {
+            "tick": 74,
+            "elapsed": 0.06782007217407227,
+            "frame": 2
+          },
+          {
+            "tick": 75,
+            "elapsed": 0.08326196670532227,
+            "frame": 3
+          },
+          {
+            "tick": 76,
+            "elapsed": 0.09885883331298828,
+            "frame": 4
+          },
+          {
+            "tick": 77,
+            "elapsed": 0.11618280410766602,
+            "frame": 4
+          },
+          {
+            "tick": 78,
+            "elapsed": 0.1323990821838379,
+            "frame": 5
+          },
+          {
+            "tick": 79,
+            "elapsed": 0.14959383010864258,
+            "frame": 6
+          },
+          {
+            "tick": 80,
+            "elapsed": 0.16547107696533203,
+            "frame": 7
+          },
+          {
+            "tick": 81,
+            "elapsed": 0.1824779510498047,
+            "frame": 7
+          },
+          {
+            "tick": 82,
+            "elapsed": 0.2000110149383545,
+            "frame": 8
+          },
+          {
+            "tick": 83,
+            "elapsed": 0.21712303161621094,
+            "frame": 9
+          },
+          {
+            "tick": 84,
+            "elapsed": 0.2338118553161621,
+            "frame": 9
+          },
+          {
+            "tick": 85,
+            "elapsed": 0.2497711181640625,
+            "frame": 10
+          },
+          {
+            "tick": 86,
+            "elapsed": 0.26654696464538574,
+            "frame": 11
+          },
+          {
+            "tick": 87,
+            "elapsed": 0.28237009048461914,
+            "frame": 12
+          },
+          {
+            "tick": 88,
+            "elapsed": 0.29920387268066406,
+            "frame": 12
+          },
+          {
+            "tick": 89,
+            "elapsed": 0.3159041404724121,
+            "frame": 13
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.33273792266845703,
+            "frame": 14
+          },
+          {
+            "tick": 91,
+            "elapsed": 0.3486440181732178,
+            "frame": 14
+          },
+          {
+            "tick": 92,
+            "elapsed": 0.36593198776245117,
+            "frame": 15
+          },
+          {
+            "tick": 93,
+            "elapsed": 0.3832409381866455,
+            "frame": 16
+          }
+        ],
+        "missing": []
+      },
+      "wall-time-minus-update-duration": {
+        "samples": [
+          {
+            "tick": 70,
+            "elapsed": 0.0,
+            "frame": 0
+          },
+          {
+            "tick": 71,
+            "elapsed": 0.01678156852722168,
+            "frame": 0
+          },
+          {
+            "tick": 72,
+            "elapsed": 0.03335261344909668,
+            "frame": 1
+          },
+          {
+            "tick": 73,
+            "elapsed": 0.05001020431518555,
+            "frame": 2
+          },
+          {
+            "tick": 74,
+            "elapsed": 0.06700754165649414,
+            "frame": 2
+          },
+          {
+            "tick": 75,
+            "elapsed": 0.08295917510986328,
+            "frame": 3
+          },
+          {
+            "tick": 76,
+            "elapsed": 0.09931826591491699,
+            "frame": 4
+          },
+          {
+            "tick": 77,
+            "elapsed": 0.11641263961791992,
+            "frame": 4
+          },
+          {
+            "tick": 78,
+            "elapsed": 0.13315033912658691,
+            "frame": 5
+          },
+          {
+            "tick": 79,
+            "elapsed": 0.14965033531188965,
+            "frame": 6
+          },
+          {
+            "tick": 80,
+            "elapsed": 0.16635537147521973,
+            "frame": 7
+          },
+          {
+            "tick": 81,
+            "elapsed": 0.18279719352722168,
+            "frame": 7
+          },
+          {
+            "tick": 82,
+            "elapsed": 0.20021963119506836,
+            "frame": 8
+          },
+          {
+            "tick": 83,
+            "elapsed": 0.21640276908874512,
+            "frame": 9
+          },
+          {
+            "tick": 84,
+            "elapsed": 0.23409032821655273,
+            "frame": 9
+          },
+          {
+            "tick": 85,
+            "elapsed": 0.2500288486480713,
+            "frame": 10
+          },
+          {
+            "tick": 86,
+            "elapsed": 0.26696348190307617,
+            "frame": 11
+          },
+          {
+            "tick": 87,
+            "elapsed": 0.2826218605041504,
+            "frame": 12
+          },
+          {
+            "tick": 88,
+            "elapsed": 0.2997860908508301,
+            "frame": 12
+          },
+          {
+            "tick": 89,
+            "elapsed": 0.3161613941192627,
+            "frame": 13
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.3327968120574951,
+            "frame": 14
+          },
+          {
+            "tick": 91,
+            "elapsed": 0.3491191864013672,
+            "frame": 14
+          },
+          {
+            "tick": 92,
+            "elapsed": 0.3664717674255371,
+            "frame": 15
+          },
+          {
+            "tick": 93,
+            "elapsed": 0.3834257125854492,
+            "frame": 16
+          }
+        ],
+        "missing": []
+      }
+    },
+    "limit": "Neither proxy is SpriteKit update time or physical presentation time. Subtracting update duration does not remove action evaluation or scheduling delay. These are sensitivity comparisons, not validated clock replacements."
+  },
+  {
+    "source": "docs/review/player-settle-timing/live-presentation-attachments/DE2B7450-59FE-4EC7-B40A-F92FD50B2794.json",
+    "sha256": "621d9c0cd6f7b08b4a76ea70914a8ebb1f98f3d71f457aeb02c415ea109916cc",
+    "release": 13,
+    "tickReconstructionMatches": true,
+    "observedMissing": [
+      5
+    ],
+    "proxies": {
+      "post-action-wall-time": {
+        "samples": [
+          {
+            "tick": 86,
+            "elapsed": 0.0,
+            "frame": 0
+          },
+          {
+            "tick": 87,
+            "elapsed": 0.015619754791259766,
+            "frame": 0
+          },
+          {
+            "tick": 88,
+            "elapsed": 0.03142404556274414,
+            "frame": 1
+          },
+          {
+            "tick": 89,
+            "elapsed": 0.048631906509399414,
+            "frame": 2
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.06561899185180664,
+            "frame": 2
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.07833385467529297,
+            "frame": 3
+          },
+          {
+            "tick": 91,
+            "elapsed": 0.0986778736114502,
+            "frame": 4
+          },
+          {
+            "tick": 92,
+            "elapsed": 0.11515474319458008,
+            "frame": 4
+          },
+          {
+            "tick": 93,
+            "elapsed": 0.13238286972045898,
+            "frame": 5
+          },
+          {
+            "tick": 95,
+            "elapsed": 0.15259599685668945,
+            "frame": 6
+          },
+          {
+            "tick": 96,
+            "elapsed": 0.16846179962158203,
+            "frame": 7
+          },
+          {
+            "tick": 97,
+            "elapsed": 0.18268775939941406,
+            "frame": 7
+          },
+          {
+            "tick": 98,
+            "elapsed": 0.19931292533874512,
+            "frame": 8
+          },
+          {
+            "tick": 99,
+            "elapsed": 0.21536779403686523,
+            "frame": 9
+          },
+          {
+            "tick": 100,
+            "elapsed": 0.23080778121948242,
+            "frame": 9
+          },
+          {
+            "tick": 101,
+            "elapsed": 0.24882984161376953,
+            "frame": 10
+          },
+          {
+            "tick": 102,
+            "elapsed": 0.2647109031677246,
+            "frame": 11
+          },
+          {
+            "tick": 103,
+            "elapsed": 0.28183984756469727,
+            "frame": 12
+          },
+          {
+            "tick": 104,
+            "elapsed": 0.29827189445495605,
+            "frame": 12
+          },
+          {
+            "tick": 105,
+            "elapsed": 0.31584978103637695,
+            "frame": 13
+          },
+          {
+            "tick": 105,
+            "elapsed": 0.3290059566497803,
+            "frame": 14
+          },
+          {
+            "tick": 106,
+            "elapsed": 0.34928083419799805,
+            "frame": 14
+          },
+          {
+            "tick": 107,
+            "elapsed": 0.36509180068969727,
+            "frame": 15
+          },
+          {
+            "tick": 108,
+            "elapsed": 0.38217997550964355,
+            "frame": 16
+          }
+        ],
+        "missing": []
+      },
+      "wall-time-minus-update-duration": {
+        "samples": [
+          {
+            "tick": 86,
+            "elapsed": 0.0,
+            "frame": 0
+          },
+          {
+            "tick": 87,
+            "elapsed": 0.015854835510253906,
+            "frame": 0
+          },
+          {
+            "tick": 88,
+            "elapsed": 0.03152179718017578,
+            "frame": 1
+          },
+          {
+            "tick": 89,
+            "elapsed": 0.04935932159423828,
+            "frame": 2
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.06646037101745605,
+            "frame": 2
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.08220767974853516,
+            "frame": 3
+          },
+          {
+            "tick": 91,
+            "elapsed": 0.09908795356750488,
+            "frame": 4
+          },
+          {
+            "tick": 92,
+            "elapsed": 0.1154482364654541,
+            "frame": 4
+          },
+          {
+            "tick": 93,
+            "elapsed": 0.13277792930603027,
+            "frame": 5
+          },
+          {
+            "tick": 95,
+            "elapsed": 0.14997577667236328,
+            "frame": 6
+          },
+          {
+            "tick": 96,
+            "elapsed": 0.1686992645263672,
+            "frame": 7
+          },
+          {
+            "tick": 97,
+            "elapsed": 0.1834089756011963,
+            "frame": 7
+          },
+          {
+            "tick": 98,
+            "elapsed": 0.19966411590576172,
+            "frame": 8
+          },
+          {
+            "tick": 99,
+            "elapsed": 0.21602845191955566,
+            "frame": 9
+          },
+          {
+            "tick": 100,
+            "elapsed": 0.23142123222351074,
+            "frame": 9
+          },
+          {
+            "tick": 101,
+            "elapsed": 0.24976873397827148,
+            "frame": 10
+          },
+          {
+            "tick": 102,
+            "elapsed": 0.26502537727355957,
+            "frame": 11
+          },
+          {
+            "tick": 103,
+            "elapsed": 0.2825806140899658,
+            "frame": 12
+          },
+          {
+            "tick": 104,
+            "elapsed": 0.29908275604248047,
+            "frame": 12
+          },
+          {
+            "tick": 105,
+            "elapsed": 0.31609010696411133,
+            "frame": 13
+          },
+          {
+            "tick": 105,
+            "elapsed": 0.3326876163482666,
+            "frame": 14
+          },
+          {
+            "tick": 106,
+            "elapsed": 0.3494913578033447,
+            "frame": 14
+          },
+          {
+            "tick": 107,
+            "elapsed": 0.36496996879577637,
+            "frame": 15
+          },
+          {
+            "tick": 108,
+            "elapsed": 0.38277578353881836,
+            "frame": 16
+          }
+        ],
+        "missing": []
+      }
+    },
+    "limit": "Neither proxy is SpriteKit update time or physical presentation time. Subtracting update duration does not remove action evaluation or scheduling delay. These are sensitivity comparisons, not validated clock replacements."
+  }
+]

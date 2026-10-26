@@ -1,0 +1,346 @@
+[
+  {
+    "attachment": "BF624FB1-4B0F-4277-965E-85B97434D58E.json",
+    "release": 5,
+    "reducedMotion": false,
+    "stages": {
+      "hud": {
+        "medianMs": 0.17358333570882678,
+        "maxMs": 0.3630000283010304
+      },
+      "outlineSearch": {
+        "medianMs": 0.3564166254363954,
+        "maxMs": 0.7086250116117299
+      },
+      "projection": {
+        "medianMs": 1.0687499889172614,
+        "maxMs": 1.578958355821669
+      },
+      "projectionSearch": {
+        "medianMs": 0.5003750557079911,
+        "maxMs": 0.8019166998565197
+      },
+      "renderer": {
+        "medianMs": 0.4665832966566086,
+        "maxMs": 1.1028333101421595
+      },
+      "simulationSteps": {
+        "medianMs": 3.6742499796673656,
+        "maxMs": 17.149250023066998
+      },
+      "snapshotComposition": {
+        "medianMs": 0.2295833546668291,
+        "maxMs": 22.811291681136936
+      },
+      "total": {
+        "medianMs": 6.86483335448429,
+        "maxMs": 32.17608336126432
+      }
+    },
+    "slowCallbacks": [
+      {
+        "gapMs": 82.10396766662598,
+        "tick": 20,
+        "settleFrame": -1,
+        "stagesMs": {
+          "hud": 0.14379166532307863,
+          "outlineSearch": 0.30783331021666527,
+          "projection": 0.9019166463986039,
+          "projectionSearch": 0.43629168067127466,
+          "renderer": 0.48670830437913537,
+          "simulationSteps": 3.2151250052265823,
+          "snapshotComposition": 1.1109583429060876,
+          "total": 6.882458284962922
+        }
+      },
+      {
+        "gapMs": 50.13322830200195,
+        "tick": 30,
+        "settleFrame": -1,
+        "stagesMs": {
+          "hud": 0.11458335211500525,
+          "outlineSearch": 0.280916690826416,
+          "projection": 0.7547916611656547,
+          "projectionSearch": 0.3798749530687928,
+          "renderer": 0.3697916981764138,
+          "simulationSteps": 7.243500032927841,
+          "snapshotComposition": 22.811291681136936,
+          "total": 32.17608336126432
+        }
+      },
+      {
+        "gapMs": 40.1911735534668,
+        "tick": 26,
+        "settleFrame": -1,
+        "stagesMs": {
+          "hud": 0.2149166539311409,
+          "outlineSearch": 0.2962916623800993,
+          "projection": 0.9459583088755608,
+          "projectionSearch": 0.462583324406296,
+          "renderer": 0.5611249944195151,
+          "simulationSteps": 17.149250023066998,
+          "snapshotComposition": 1.2150416732765734,
+          "total": 21.06837503379211
+        }
+      }
+    ]
+  },
+  {
+    "attachment": "06DE6535-22DE-4C62-9E23-0681222E654D.json",
+    "release": 13,
+    "reducedMotion": true,
+    "stages": {
+      "hud": {
+        "medianMs": 0.18645834643393755,
+        "maxMs": 0.4905416280962527
+      },
+      "outlineSearch": {
+        "medianMs": 0.3595833550207317,
+        "maxMs": 1.0878333705477417
+      },
+      "projection": {
+        "medianMs": 1.0708333575166762,
+        "maxMs": 1.7864166875369847
+      },
+      "projectionSearch": {
+        "medianMs": 0.49554166616871953,
+        "maxMs": 0.9618333424441516
+      },
+      "renderer": {
+        "medianMs": 0.4787916550412774,
+        "maxMs": 1.0622916743159294
+      },
+      "simulationSteps": {
+        "medianMs": 3.5922499955631793,
+        "maxMs": 10.58954163454473
+      },
+      "snapshotComposition": {
+        "medianMs": 0.26599998818710446,
+        "maxMs": 2.6751250261440873
+      },
+      "total": {
+        "medianMs": 7.251416624058038,
+        "maxMs": 15.180208312813193
+      }
+    },
+    "slowCallbacks": [
+      {
+        "gapMs": 27.14395523071289,
+        "tick": 8,
+        "settleFrame": -1,
+        "stagesMs": {
+          "hud": 0.17429166473448277,
+          "outlineSearch": 0.33095834078267217,
+          "projection": 0.9667916456237435,
+          "projectionSearch": 0.4771249950863421,
+          "renderer": 0.5236666183918715,
+          "simulationSteps": 10.58954163454473,
+          "snapshotComposition": 1.814916671719402,
+          "total": 15.180208312813193
+        }
+      },
+      {
+        "gapMs": 22.308826446533203,
+        "tick": 106,
+        "settleFrame": -1,
+        "stagesMs": {
+          "hud": 0.2080000122077763,
+          "outlineSearch": 0.4262083093635738,
+          "projection": 1.215416705235839,
+          "projectionSearch": 0.5878749652765691,
+          "renderer": 0.5433333572000265,
+          "simulationSteps": 4.083874984644353,
+          "snapshotComposition": 0.2544583403505385,
+          "total": 7.742333342321217
+        }
+      },
+      {
+        "gapMs": 22.093772888183594,
+        "tick": 97,
+        "settleFrame": -1,
+        "stagesMs": {
+          "hud": 0.18979166634380817,
+          "outlineSearch": 0.40570832788944244,
+          "projection": 1.1327916872687638,
+          "projectionSearch": 0.5624999757856131,
+          "renderer": 0.3896250273101032,
+          "simulationSteps": 8.529791666660458,
+          "snapshotComposition": 0.20533334463834763,
+          "total": 11.708708305377513
+        }
+      }
+    ]
+  },
+  {
+    "attachment": "90AFF8FD-0FC3-4E55-A92C-1AB24387843D.json",
+    "release": 5,
+    "reducedMotion": true,
+    "stages": {
+      "hud": {
+        "medianMs": 0.18243747763335705,
+        "maxMs": 0.3806666354648769
+      },
+      "outlineSearch": {
+        "medianMs": 0.3601249773055315,
+        "maxMs": 0.6763749988749623
+      },
+      "projection": {
+        "medianMs": 1.0987708519678563,
+        "maxMs": 2.104458340909332
+      },
+      "projectionSearch": {
+        "medianMs": 0.511500024003908,
+        "maxMs": 1.101000001654029
+      },
+      "renderer": {
+        "medianMs": 0.43991667916998267,
+        "maxMs": 1.4238333096727729
+      },
+      "simulationSteps": {
+        "medianMs": 3.661083319457248,
+        "maxMs": 16.30608330015093
+      },
+      "snapshotComposition": {
+        "medianMs": 0.2276041777804494,
+        "maxMs": 3.500125021673739
+      },
+      "total": {
+        "medianMs": 7.077187532559037,
+        "maxMs": 24.12949997233227
+      }
+    },
+    "slowCallbacks": [
+      {
+        "gapMs": 49.15118217468262,
+        "tick": 9,
+        "settleFrame": -1,
+        "stagesMs": {
+          "hud": 0.20187499467283487,
+          "outlineSearch": 0.6763749988749623,
+          "projection": 2.104458340909332,
+          "projectionSearch": 1.101000001654029,
+          "renderer": 0.6151666748337448,
+          "simulationSteps": 16.30608330015093,
+          "snapshotComposition": 3.19912499981001,
+          "total": 24.12949997233227
+        }
+      },
+      {
+        "gapMs": 42.64998435974121,
+        "tick": 12,
+        "settleFrame": -1,
+        "stagesMs": {
+          "hud": 0.2159583382308483,
+          "outlineSearch": 0.40725001599639654,
+          "projection": 1.1504166759550571,
+          "projectionSearch": 0.5764582892879844,
+          "renderer": 0.5665416829288006,
+          "simulationSteps": 12.31187500525266,
+          "snapshotComposition": 1.607833313755691,
+          "total": 17.17983331764117
+        }
+      },
+      {
+        "gapMs": 33.6148738861084,
+        "tick": 73,
+        "settleFrame": -1,
+        "stagesMs": {
+          "hud": 0.22704165894538164,
+          "outlineSearch": 0.48133329255506396,
+          "projection": 1.513708382844925,
+          "projectionSearch": 0.7072916487231851,
+          "renderer": 0.38100004894658923,
+          "simulationSteps": 3.546541673131287,
+          "snapshotComposition": 0.22179167717695236,
+          "total": 7.053166627883911
+        }
+      }
+    ]
+  },
+  {
+    "attachment": "DA72EA2E-35CF-422A-A80B-B49AD7EF0DD8.json",
+    "release": 13,
+    "reducedMotion": false,
+    "stages": {
+      "hud": {
+        "medianMs": 0.18112501129508018,
+        "maxMs": 0.48512499779462814
+      },
+      "outlineSearch": {
+        "medianMs": 0.36287499824538827,
+        "maxMs": 0.6514583365060389
+      },
+      "projection": {
+        "medianMs": 1.106791663914919,
+        "maxMs": 1.6854583518579602
+      },
+      "projectionSearch": {
+        "medianMs": 0.5099999834783375,
+        "maxMs": 0.844833324663341
+      },
+      "renderer": {
+        "medianMs": 0.4785833298228681,
+        "maxMs": 1.5237916959449649
+      },
+      "simulationSteps": {
+        "medianMs": 3.699916647747159,
+        "maxMs": 13.555999961681664
+      },
+      "snapshotComposition": {
+        "medianMs": 0.2300833584740758,
+        "maxMs": 3.3651666599325836
+      },
+      "total": {
+        "medianMs": 7.149208337068558,
+        "maxMs": 19.250125042162836
+      }
+    },
+    "slowCallbacks": [
+      {
+        "gapMs": 50.59194564819336,
+        "tick": 5,
+        "settleFrame": -1,
+        "stagesMs": {
+          "hud": 0.19979168428108096,
+          "outlineSearch": 0.417624949477613,
+          "projection": 1.1808749986812472,
+          "projectionSearch": 0.5939999828115106,
+          "renderer": 0.6562083144672215,
+          "simulationSteps": 13.555999961681664,
+          "snapshotComposition": 2.3182083386927843,
+          "total": 19.250125042162836
+        }
+      },
+      {
+        "gapMs": 39.95108604431152,
+        "tick": 8,
+        "settleFrame": -1,
+        "stagesMs": {
+          "hud": 0.19258336396887898,
+          "outlineSearch": 0.41645835153758526,
+          "projection": 1.1687083751894534,
+          "projectionSearch": 0.5609166692011058,
+          "renderer": 0.6085833301767707,
+          "simulationSteps": 12.00979168061167,
+          "snapshotComposition": 2.289791649673134,
+          "total": 17.62337499530986
+        }
+      },
+      {
+        "gapMs": 38.630008697509766,
+        "tick": 31,
+        "settleFrame": -1,
+        "stagesMs": {
+          "hud": 0.19691669149324298,
+          "outlineSearch": 0.276541686616838,
+          "projection": 0.758624984882772,
+          "projectionSearch": 0.3838749835267663,
+          "renderer": 0.37925003562122583,
+          "simulationSteps": 6.258499983232468,
+          "snapshotComposition": 1.2478333665058017,
+          "total": 9.793916658964008
+        }
+      }
+    ]
+  }
+]

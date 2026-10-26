@@ -155,3 +155,78 @@ enum BenchmarkProjectionGeometry {
     }
 
 }
+
+/// BP-007/BP-009 review repair. Geometry stays presentation-only.
+enum BenchmarkProjectionFinishing {
+    static func coverage(center: CGPoint, viewport: CGSize, zoom: CGFloat) -> CGRect {
+        let corners = [-1.0, 1.0].flatMap { x in [-1.0, 1.0].map { y in
+            BenchmarkProjectionGeometry.inverse(CGPoint(x: x * viewport.width / (2 * zoom),
+                                                        y: y * viewport.height / (2 * zoom)))
+        } }
+        let xs = corners.map { $0.x + center.x }, ys = corners.map { $0.y + center.y }
+        // One tile of overscan prevents filtering from exposing the clear colour.
+        return CGRect(x: xs.min()! - 128, y: ys.min()! - 128,
+                      width: xs.max()! - xs.min()! + 256, height: ys.max()! - ys.min()! + 256)
+    }
+
+    static func exterior(arena: CGRect, coverage: CGRect) -> [CGRect] {
+        let outer = arena.union(coverage)
+        return [CGRect(x: outer.minX, y: outer.minY, width: outer.width, height: arena.minY-outer.minY),
+                CGRect(x: outer.minX, y: arena.maxY, width: outer.width, height: outer.maxY-arena.maxY),
+                CGRect(x: outer.minX, y: arena.minY, width: arena.minX-outer.minX, height: arena.height),
+                CGRect(x: arena.maxX, y: arena.minY, width: outer.maxX-arena.maxX, height: arena.height)]
+            .map { $0.intersection(coverage) }.filter { !$0.isNull && $0.width > 0 && $0.height > 0 }
+    }
+
+    @MainActor
+    static func boundary(arena: CGRect, coverage: CGRect, asphalt: SKTexture) -> SKNode {
+        let root = SKNode(); root.name = "benchmark-exterior"; root.zPosition = -1
+        let tile: CGFloat = 128
+        for strip in exterior(arena: arena, coverage: coverage) {
+            for y in stride(from: floor(strip.minY/tile)*tile, to: strip.maxY, by: tile) {
+                for x in stride(from: floor(strip.minX/tile)*tile, to: strip.maxX, by: tile) {
+                    let cell = CGRect(x: x, y: y, width: tile, height: tile)
+                    let rect = cell.intersection(strip)
+                    let uv = CGRect(x: (rect.minX-x)/tile, y: (rect.minY-y)/tile,
+                                    width: rect.width/tile, height: rect.height/tile)
+                    let sprite = SKSpriteNode(texture: SKTexture(rect: uv, in: asphalt), size: rect.size)
+                    sprite.position = CGPoint(x: rect.midX, y: rect.midY)
+                    root.addChild(sprite)
+                }
+            }
+        }
+        // All curb width is outside the legal arena; it never reduces walkable ground.
+        for (width, shade): (CGFloat, CGFloat) in [(8, 0.28), (2, 0.56)] {
+            let strips = [CGRect(x: arena.minX-width, y: arena.minY-width, width: arena.width+2*width, height: width),
+                          CGRect(x: arena.minX-width, y: arena.maxY, width: arena.width+2*width, height: width),
+                          CGRect(x: arena.minX-width, y: arena.minY, width: width, height: arena.height),
+                          CGRect(x: arena.maxX, y: arena.minY, width: width, height: arena.height)]
+            for rect in strips where rect.intersects(coverage) {
+                let sprite = SKSpriteNode(color: SKColor(white: shade, alpha: 1), size: rect.size)
+                sprite.position = CGPoint(x: rect.midX, y: rect.midY); sprite.zPosition = width == 8 ? 0.1 : 0.2
+                root.addChild(sprite)
+            }
+        }
+        return root
+    }
+
+    /// Returns occluding Camera IDs. All participants share the actor layer;
+    /// children retain their own local ordering. Buildings need separate footprint depth.
+    @MainActor
+    static func orderActors(_ actors: [SKSpriteNode], player: SKSpriteNode, baseDepth: CGFloat) -> [String] {
+        let sorted = actors.sorted {
+            if $0.position.y != $1.position.y { return $0.position.y > $1.position.y }
+            return ($0.name ?? "") < ($1.name ?? "")
+        }
+        for (index, actor) in sorted.enumerated() {
+            actor.zPosition = baseDepth + CGFloat(index) / CGFloat(max(sorted.count, 1)) * 0.5
+        }
+        var obscuring: [String] = []
+        for camera in actors where camera.name?.hasPrefix("sprite-camera-") == true {
+            let overlaps = camera.position.y < player.position.y && camera.frame.intersects(player.frame)
+            camera.alpha = overlaps ? 0.35 : 1
+            if overlaps { obscuring.append(camera.name!) }
+        }
+        return obscuring.sorted()
+    }
+}

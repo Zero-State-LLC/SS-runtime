@@ -1,0 +1,46 @@
+{
+  "status": "TEST_ONLY_SOURCE_CANDIDATE_NOT_ADMITTED",
+  "sourceRevision": "SS-player-knee-material-boundary / 2026-10-19",
+  "specRevision": "d602775",
+  "sourceCanvas": [
+    384,
+    416
+  ],
+  "rootPixels": [
+    192,
+    336
+  ],
+  "logicalSize": [
+    64,
+    69.33333333333333
+  ],
+  "cycleSeconds": 0.5,
+  "frameDurationSeconds": 0.03125,
+  "projection": "ground x unchanged, ground y times 0.5; upright player keeps uniform scale; no diagonal view claim",
+  "sourceFiles": {
+    "player-source-s-00.png": "282498330e633db3bf2671089f0749c7c05b4a92f4a258a8f8fda3da9b64a5e1",
+    "player-source-s-01.png": "48de15a5d600ecb9a60622756fb3bb6df8f643010d0756e70b1a4fea082c6fc1",
+    "player-source-s-02.png": "b94ad6b11699af11b4d8bd38d441446e82704478bfa99073e10527060d9e536e",
+    "player-source-s-03.png": "2cce49909b788501a5af56be535fb52be61ccc7a722c3fac83ea19913ce76a24",
+    "player-source-s-04.png": "911a04bbde04cb223b79d3d34466273959fcc787671fa5ab52e7e98786208421",
+    "player-source-s-05.png": "75ae7cf1585c47e044a91b4a0d6dcb56db6e27259248e0614cdb8a2ed6125d8c",
+    "player-source-s-06.png": "e784ecf1ada3e7eb4913bc2b13c62fae983f5b877b57780c40f5a42339ebf520",
+    "player-source-s-07.png": "543cd4a51ab32fccffe488054849006788c3ed45a10aad95891921361e3daaa5",
+    "player-source-s-08.png": "36347ee41f70b187ef022510b41867c73ec86d21f3d0a08fa7df43f87d75bc0e",
+    "player-source-s-09.png": "ac07296115217d718689eca2731481ed509fb3d2fa7171360b3bc7c31ec9d217",
+    "player-source-s-10.png": "7b2aa4c5a758f8dae23d1e36f56b057a68ad7bc9652b14036c5a474efa5862c8",
+    "player-source-s-11.png": "c6e64cb82cba5f957d51b1da42b2a05c0e8b44810deb074d3f538c3c9b1ded21",
+    "player-source-s-12.png": "bc4387c0cfe3acdb8f9ded6336d9bf5b086127ffa16049e9584ba34c95ccf6bb",
+    "player-source-s-13.png": "b456c57e29398e81534446adf45b1d72508ef7056375a4a03790f89989460e10",
+    "player-source-s-14.png": "fa6bb38c19bbeed85ffffe2a1c5fae0bb30061cc773e0c2965681a6e75b4cd79",
+    "player-source-s-15.png": "2a1c8b5316a95a443f1556b6b9076097e0f1f1be9a7647f2949d231693dd445b",
+    "player-source-s-poses.json": "f1e7f9d6763dcaabac9a89bab9d40fce5adbeb51eb5833dec10072691fc6042c"
+  },
+  "reviewStatus": "PROPOSED_KNEE_SURFACE_TEST_FIXTURE_PENDING_RENDERER_VALIDATION",
+  "specSupplement": {
+    "path": "specs/001-single-level-vertical-slice/benchmark-production.md",
+    "status": "local working-tree clarification, not a production pin migration",
+    "sha256": "81d9762524317818d73b2138e46e3684dfdfb5edcad91cf1ddb17cfbdcb38843"
+  },
+  "materialChange": "Retained painted knee face with fixed neutral-view UV mapping and proposed cap radius 2.8; pose/stance/arms/boots/root unchanged. Geometry differs from earlier material-detail fixture."
+}
