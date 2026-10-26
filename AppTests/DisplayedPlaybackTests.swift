@@ -1041,6 +1041,12 @@ final class DisplayedPlaybackTests: XCTestCase {
             scene.inputAxis = comparisonAxis ?? PlayerCommand.axisMaximum
             scene.movementTicks = comparisonMovementTicks
             scene.distancePhaseComparison = distancePhaseComparison
+            if distancePhaseComparison {
+                // Distance phase is sampled once per update. Under host frame drops a
+                // single update can step two ticks (8 units) across a 7.5-unit bin and
+                // hide a pose. Advance exactly one authoritative tick per update here.
+                scene.explicitStepSeconds = 1.0 / 60.0
+            }
             if let axis = comparisonAxis,
                let caption = scene.camera?.childNode(withName: "benchmark-review-caption") as? SKLabelNode {
                 let magnitude = axis == 32767 ? "full" : (axis == 11585 ? "half" : "quarter")
@@ -1102,7 +1108,9 @@ final class DisplayedPlaybackTests: XCTestCase {
                     native.render(withViewport: CGRect(x: 0, y: 0, width: 704, height: 326),
                         commandBuffer: command, renderPassDescriptor: pass)
                     await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
-                        command.addCompletedHandler { _ in continuation.resume() }
+                        // Metal completes on its own thread. Capture only the Sendable
+                        // continuation, not this test's MainActor isolation.
+                        command.addCompletedHandler { @Sendable _ in continuation.resume() }
                         command.commit()
                     }
                     XCTAssertEqual(command.status, .completed)
