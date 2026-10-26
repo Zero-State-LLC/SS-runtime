@@ -63,6 +63,79 @@ final class WorldRenderer {
 #if DEBUG || SS_RENDERER_TEST_SUPPORT
     // BP-007/008 candidate registration is installed before contrast resources.
     var benchmarkPlayerRegistration: (size: CGSize, anchor: CGPoint)?
+    // Isolated BP-008 comparison; retain production shadow placement by default.
+    var benchmarkPlayerShadowAtGroundRoot = false
+    struct BenchmarkPlayerSettleSequence {
+        let direction: String
+        let frames: [SKTexture]
+        let timing: ClipTiming
+    }
+    var benchmarkPlayerSettleSequences: [ObjectIdentifier: BenchmarkPlayerSettleSequence] = [:]
+    var benchmarkPlayerPresentationTime: TimeInterval?
+    private var benchmarkPlayerSettle: (sequence: BenchmarkPlayerSettleSequence, startTick: UInt64,
+        startTime: TimeInterval?, lastTime: TimeInterval?)?
+    var benchmarkPlayerSettleFrame: Int?
+
+    private func applyBenchmarkPlayerSettle(_ snap: PresentationSnapshot, reducedMotion: Bool,
+        drawn: Bool, previousClip: String?, previousTexture: SKTexture?) {
+        guard let sprite = nodes[.actors]?["sprite-player"] as? SKSpriteNode else {
+            benchmarkPlayerSettle = nil; benchmarkPlayerSettleFrame = nil; return
+        }
+        let wasSettling = benchmarkPlayerSettle != nil
+        guard drawn, snap.playerClipId == "player_idle", snap.playerReactionClipId == nil,
+              !reducedMotion, reviewArt?.playerPresentation != .staticComposition else {
+            benchmarkPlayerSettle = nil; benchmarkPlayerSettleFrame = nil
+            // The idle token may be unchanged when Reduced Motion is enabled.
+            // Restore its backed pose rather than leaving a partial settle behind.
+            if wasSettling, reviewArt?.playerPresentation != .staticComposition,
+               activeClips["player"] == "player_idle|\(snap.playerDirection)" {
+                sprite.removeAllActions()
+                sprite.texture = sprites.firstTexture(clipId: "player_idle", direction: snap.playerDirection)
+            }
+            return
+        }
+        if previousClip == "player_move|\(snap.playerDirection)", let previousTexture,
+           let sequence = benchmarkPlayerSettleSequences[ObjectIdentifier(previousTexture)],
+           sequence.direction == snap.playerDirection, sequence.frames.count > 1,
+           sequence.timing.frameUnits.count == sequence.frames.count,
+           sequence.frames.first === previousTexture {
+            benchmarkPlayerSettle = (sequence, snap.tick,
+                benchmarkPlayerPresentationTime, benchmarkPlayerPresentationTime)
+        }
+        guard let settle = benchmarkPlayerSettle else { benchmarkPlayerSettleFrame = nil; return }
+        let clockValid: Bool
+        if let start = settle.startTime, let now = benchmarkPlayerPresentationTime {
+            clockValid = start.isFinite && now.isFinite && now >= (settle.lastTime ?? start)
+        } else {
+            clockValid = settle.startTime == nil && benchmarkPlayerPresentationTime == nil
+        }
+        guard snap.tick >= settle.startTick, settle.sequence.direction == snap.playerDirection, clockValid else {
+            benchmarkPlayerSettle = nil; benchmarkPlayerSettleFrame = nil
+            // A rewound snapshot can retain the idle token. Drop the stale pose too.
+            sprite.removeAllActions()
+            sprite.texture = sprites.firstTexture(clipId: "player_idle", direction: snap.playerDirection)
+            return
+        }
+        let frame: Int
+        if let start = settle.startTime, let now = benchmarkPlayerPresentationTime {
+            let elapsedUnits = (now - start) * Double(settle.sequence.timing.unitsPerSecond)
+            var boundary = 0.0
+            var selected = 0
+            for index in 1..<settle.sequence.frames.count {
+                boundary += Double(settle.sequence.timing.frameUnits[index - 1])
+                if elapsedUnits >= boundary { selected = index } else { break }
+            }
+            frame = selected
+            benchmarkPlayerSettle?.lastTime = now
+        } else {
+            frame = settle.sequence.timing.frameIndex(atTickOffset: snap.tick - settle.startTick)
+        }
+        sprite.removeAllActions()
+        sprite.texture = settle.sequence.frames[frame]
+        benchmarkPlayerSettleFrame = frame
+        if frame == settle.sequence.frames.count - 1 { benchmarkPlayerSettle = nil }
+    }
+
     var benchmarkOutlineMetrics: OutlineTextures.Metrics { outlines.metrics }
     var benchmarkOutlineBytes: Int { outlines.retainedMaskBytes }
     func resetBenchmarkOutlineMetrics() { outlines.resetMetrics() }
@@ -173,6 +246,10 @@ final class WorldRenderer {
     }
 
     func reset() {
+#if DEBUG || SS_RENDERER_TEST_SUPPORT
+        benchmarkPlayerSettle = nil
+        benchmarkPlayerSettleFrame = nil
+#endif
         for layer in Layer.allCases {
             layers[layer]?.removeAllChildren()
             nodes[layer] = [:]
@@ -1068,6 +1145,10 @@ final class WorldRenderer {
 
     private func renderActors(_ snap: PresentationSnapshot, reducedMotion: Bool) {
         let playerPosition = CGPoint(x: snap.player.x, y: snap.player.y)
+#if DEBUG || SS_RENDERER_TEST_SUPPORT
+        let previousPlayerClip = activeClips["player"]
+        let previousPlayerTexture = (nodes[.actors]?["sprite-player"] as? SKSpriteNode)?.texture
+#endif
         // clip-metadata-001 sprite box for the Player.
         // A reaction (hurt) is preferred and the state clip is the fallback,
         // so an unbacked reaction never costs the Player its sprite.
@@ -1086,6 +1167,10 @@ final class WorldRenderer {
                 layer: .actors, occurrence: candidate.1, tick: snap.tick, reducedMotion: reducedMotion
             )
         }
+#if DEBUG || SS_RENDERER_TEST_SUPPORT
+        applyBenchmarkPlayerSettle(snap, reducedMotion: reducedMotion, drawn: playerDrawn,
+            previousClip: previousPlayerClip, previousTexture: previousPlayerTexture)
+#endif
         if let ghost {
             // A silhouette only: no sprite, clip, or reaction, so it cannot be
             // mistaken for the live Player. Drawn beneath the live Player.
@@ -1212,6 +1297,11 @@ final class WorldRenderer {
             return sprite
         }
         shadow.position = CGPoint(x: position.x, y: position.y - CGFloat(radius) * Self.shadowDrop)
+#if DEBUG || SS_RENDERER_TEST_SUPPORT
+        if key == "player", benchmarkPlayerShadowAtGroundRoot {
+            shadow.position = position
+        }
+#endif
 
         if spriteDrawn, let sprite = nodes[.actors]?["sprite-\(key)"] as? SKSpriteNode {
             outlineTargets.append((sprite, faction))

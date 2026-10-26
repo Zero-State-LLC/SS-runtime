@@ -1,0 +1,639 @@
+{
+  "actors" : [
+    {
+      "bounds" : [
+        1655.7340087890625,
+        668.49798583984375,
+        64,
+        96
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "sprite-camera-2"
+    },
+    {
+      "bounds" : [
+        1259.7540283203125,
+        764.66497802734375,
+        64,
+        96
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "sprite-camera-3"
+    },
+    {
+      "bounds" : [
+        1452.0880126953125,
+        996.59600830078125,
+        64,
+        95.99993896484375
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "sprite-camera-4"
+    },
+    {
+      "bounds" : [
+        1248.4410400390625,
+        1324.6929931640625,
+        64,
+        96
+      ],
+      "contained" : true,
+      "intersects" : true,
+      "name" : "sprite-camera-5"
+    },
+    {
+      "bounds" : [
+        1700.989013671875,
+        1369.947998046875,
+        64,
+        96
+      ],
+      "contained" : true,
+      "intersects" : true,
+      "name" : "sprite-camera-6"
+    },
+    {
+      "bounds" : [
+        1700.989013671875,
+        1234.1839599609375,
+        64,
+        96
+      ],
+      "contained" : true,
+      "intersects" : true,
+      "name" : "sprite-camera-7"
+    },
+    {
+      "bounds" : [
+        2063.028076171875,
+        1415.2030029296875,
+        64,
+        96
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "sprite-camera-8"
+    },
+    {
+      "bounds" : [
+        2357.18408203125,
+        1200.241943359375,
+        64,
+        96
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "sprite-camera-9"
+    },
+    {
+      "bounds" : [
+        1313.4949951171875,
+        1373.4840087890625,
+        64,
+        64
+      ],
+      "contained" : true,
+      "intersects" : true,
+      "name" : "sprite-player"
+    },
+    {
+      "bounds" : [
+        1136.718017578125,
+        1209.43505859375,
+        64,
+        64
+      ],
+      "contained" : false,
+      "intersects" : true,
+      "name" : "sprite-enemy-144"
+    },
+    {
+      "bounds" : [
+        1319.1519775390625,
+        1326.1070556640625,
+        64,
+        64
+      ],
+      "contained" : true,
+      "intersects" : true,
+      "name" : "sprite-enemy-148"
+    },
+    {
+      "bounds" : [
+        1502.9990234375,
+        1217.2130126953125,
+        64,
+        64
+      ],
+      "contained" : true,
+      "intersects" : true,
+      "name" : "sprite-enemy-150"
+    },
+    {
+      "bounds" : [
+        1724.323974609375,
+        1223.9300537109375,
+        64,
+        64
+      ],
+      "contained" : true,
+      "intersects" : true,
+      "name" : "sprite-enemy-151"
+    },
+    {
+      "bounds" : [
+        1438.916015625,
+        472.49099731445312,
+        96,
+        127.99996948242188
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-2-env_prop_street_tree"
+    },
+    {
+      "bounds" : [
+        1443.116943359375,
+        579.4439697265625,
+        48,
+        64
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-3-env_prop_newsbox"
+    },
+    {
+      "bounds" : [
+        1211.6710205078125,
+        538.4320068359375,
+        64,
+        64
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-4-env_prop_hydrant_meters"
+    },
+    {
+      "bounds" : [
+        1507.68603515625,
+        545.58599853515625,
+        32,
+        160
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-5-env_prop_trolley_pole"
+    },
+    {
+      "bounds" : [
+        1487.5260009765625,
+        680.823974609375,
+        160,
+        96
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-6-env_prop_bus_shelter"
+    },
+    {
+      "bounds" : [
+        1491.199951171875,
+        733.19097900390625,
+        48,
+        144
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-7-env_prop_signal_mast"
+    },
+    {
+      "bounds" : [
+        1277.696044921875,
+        714.7230224609375,
+        96,
+        48
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-8-env_prop_bike_rack"
+    },
+    {
+      "bounds" : [
+        1542.237060546875,
+        815.17401123046875,
+        192,
+        96
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-9-env_prop_parklet"
+    },
+    {
+      "bounds" : [
+        1620.906005859375,
+        1106.4610595703125,
+        128,
+        48
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-12-env_prop_barricade"
+    },
+    {
+      "bounds" : [
+        1299.35205078125,
+        1257.3790283203125,
+        64,
+        128
+      ],
+      "contained" : true,
+      "intersects" : true,
+      "name" : "environment-upright-14-env_prop_seismic_brace"
+    },
+    {
+      "bounds" : [
+        2186.591064453125,
+        1170.0999755859375,
+        128,
+        48
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-15-env_prop_barricade"
+    },
+    {
+      "bounds" : [
+        2099.31201171875,
+        1263.52197265625,
+        48,
+        144
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-16-env_prop_signal_mast"
+    },
+    {
+      "bounds" : [
+        1808.468994140625,
+        1261.094970703125,
+        64,
+        64
+      ],
+      "contained" : false,
+      "intersects" : true,
+      "name" : "environment-upright-17-env_prop_hydrant_meters"
+    },
+    {
+      "bounds" : [
+        2697.56591796875,
+        1038.176025390625,
+        96,
+        128
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-20-env_prop_street_tree"
+    },
+    {
+      "bounds" : [
+        944.9119873046875,
+        352.61599731445312,
+        128,
+        511.99996948242188
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_01_residential_west"
+    },
+    {
+      "bounds" : [
+        839.53900146484375,
+        682.32098388671875,
+        384.00006103515625,
+        192
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_02_residential_north"
+    },
+    {
+      "bounds" : [
+        1261.696044921875,
+        748.26300048828125,
+        128,
+        128
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_03_transit_kiosk"
+    },
+    {
+      "bounds" : [
+        1229.696044921875,
+        801.281982421875,
+        192,
+        384
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_04_civic_west"
+    },
+    {
+      "bounds" : [
+        1607.7340087890625,
+        945.281982421875,
+        160,
+        96
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_05_civic_dais"
+    },
+    {
+      "bounds" : [
+        1252.322998046875,
+        1048.241943359375,
+        192,
+        320
+      ],
+      "contained" : false,
+      "intersects" : true,
+      "name" : "environment-upright-env_solid_06_service_yard_a"
+    },
+    {
+      "bounds" : [
+        1319.469970703125,
+        1215.947998046875,
+        512,
+        512
+      ],
+      "contained" : false,
+      "intersects" : true,
+      "name" : "environment-upright-env_solid_07_service_yard_b"
+    },
+    {
+      "bounds" : [
+        1684.989013671875,
+        1084.928955078125,
+        96,
+        224
+      ],
+      "contained" : false,
+      "intersects" : true,
+      "name" : "environment-upright-env_solid_08_service_divider"
+    },
+    {
+      "bounds" : [
+        1985.77294921875,
+        1110.301025390625,
+        128,
+        128
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_09_grid_island_a"
+    },
+    {
+      "bounds" : [
+        1940.5179443359375,
+        1268.6929931640625,
+        128.0001220703125,
+        128
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_10_grid_island_b"
+    },
+    {
+      "bounds" : [
+        2244.047119140625,
+        1215.43798828125,
+        64,
+        144
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_11_court_column_a"
+    },
+    {
+      "bounds" : [
+        2425.06591796875,
+        1305.947998046875,
+        64,
+        144
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_12_court_column_b"
+    },
+    {
+      "bounds" : [
+        2560.8310546875,
+        955.7919921875,
+        64,
+        256
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_13_phoenix_west"
+    },
+    {
+      "bounds" : [
+        2832.360107421875,
+        1091.5560302734375,
+        64,
+        256
+      ],
+      "contained" : false,
+      "intersects" : false,
+      "name" : "environment-upright-env_solid_14_phoenix_east"
+    }
+  ],
+  "cameras" : 8,
+  "enemies" : 4,
+  "framing" : "hud-safe",
+  "hudExclusions" : [
+    [
+      -333.24301147460938,
+      124.75700378417969,
+      185.48599243164062,
+      19.486007690429688
+    ],
+    [
+      -332,
+      127,
+      145.17999267578125,
+      15
+    ],
+    [
+      -247.5,
+      130.5,
+      15,
+      9
+    ],
+    [
+      -126.24299621582031,
+      119.75700378417969,
+      252.48599243164062,
+      22.486007690429688
+    ],
+    [
+      -125,
+      122,
+      150,
+      18
+    ],
+    [
+      -76.242996215820312,
+      121,
+      2.4860000610351562,
+      20
+    ],
+    [
+      -13.743000030517578,
+      121,
+      2.4860000610351562,
+      20
+    ],
+    [
+      48.756999969482422,
+      121,
+      2.4860000610351562,
+      20
+    ],
+    [
+      123.75700378417969,
+      121,
+      2.4860000610351562,
+      20
+    ],
+    [
+      -120.11199951171875,
+      122.44400024414062,
+      250.22300720214844,
+      17.11199951171875
+    ],
+    [
+      -26,
+      103,
+      53,
+      10
+    ],
+    [
+      -332,
+      91,
+      73,
+      9
+    ],
+    [
+      -332,
+      55.5,
+      32,
+      9
+    ],
+    [
+      226.64999389648438,
+      35.650001525878906,
+      55.70001220703125,
+      55.700004577636719
+    ],
+    [
+      247.5,
+      59.5,
+      15,
+      9
+    ],
+    [
+      292,
+      66,
+      40,
+      8
+    ],
+    [
+      273,
+      53,
+      59,
+      8
+    ],
+    [
+      -338.635986328125,
+      -148.63600158691406,
+      147.27099609375,
+      147.27099609375
+    ],
+    [
+      -296.58999633789062,
+      -106.58999633789062,
+      63.17999267578125,
+      63.180000305175781
+    ],
+    [
+      236.36399841308594,
+      -121.63600158691406,
+      91.271011352539062,
+      91.271003723144531
+    ],
+    [
+      273,
+      -80,
+      19,
+      8
+    ],
+    [
+      297.64999389648438,
+      108.65000152587891,
+      46.70001220703125,
+      46.700004577636719
+    ],
+    [
+      317,
+      127,
+      9,
+      11
+    ],
+    [
+      268,
+      40,
+      64,
+      9
+    ],
+    [
+      -262.54998779296875,
+      28.75,
+      11.100006103515625,
+      16.700000762939453
+    ],
+    [
+      -248.55000305175781,
+      28.75,
+      11.100006103515625,
+      16.700000762939453
+    ],
+    [
+      -234.55000305175781,
+      28.75,
+      11.100006103515625,
+      16.700000762939453
+    ]
+  ],
+  "occlusionCandidate" : false,
+  "occlusionTreatment" : "control",
+  "projectiles" : [
+
+  ],
+  "safeRegion" : [
+    -191.364990234375,
+    -100.65000915527344,
+    418.01498413085938,
+    158.65000915527344
+  ],
+  "tick" : 4259,
+  "worldFocus" : [
+    1504.859619140625,
+    1379.4835205078125
+  ],
+  "zoom" : 1
+}

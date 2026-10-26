@@ -301,6 +301,9 @@ final class GameScene: SKScene {
         renderer.benchmarkFieldContrast = style
     }
 
+    /// Refresh the shipping presentation without advancing authoritative gameplay.
+    func redrawBenchmarkPresentation() { redraw() }
+
     /// Re-present the same authoritative snapshot for a paused visual comparison.
     func refreshBenchmarkPresentation(reducedMotion: Bool) {
         renderer.render(session.snapshot, reducedMotion: reducedMotion)

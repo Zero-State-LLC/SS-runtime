@@ -1,0 +1,79 @@
+{
+  "status": "INCOMPLETE_TRANSITION_EVIDENCE",
+  "expectedSimulationEndTick": 90,
+  "observed": [
+    {
+      "file": "36426987-DA4F-4C3B-9DCF-95AFD20C786F.json",
+      "sha256": "5c0b4bb2d1a86c331ebfb2dd6e9e70a8e269cc3c9dd506c1d6d2184df4e5143f",
+      "records": 61,
+      "firstTick": 1,
+      "lastTick": 75,
+      "idleRecords": 0,
+      "movementFrames": 16,
+      "reducedMotion": false,
+      "magnification": 1.25,
+      "tracksPlayer": true
+    },
+    {
+      "file": "4161D33D-0316-4CE7-BD8B-E6A812167D2A.json",
+      "sha256": "8293ce00d34bd482acba5491f2344c560a6ca975aaad5361a95240c30d0cbeab",
+      "records": 56,
+      "firstTick": 1,
+      "lastTick": 75,
+      "idleRecords": 0,
+      "movementFrames": 16,
+      "reducedMotion": true,
+      "magnification": 1.25,
+      "tracksPlayer": false
+    },
+    {
+      "file": "6C63845C-392D-4936-8040-7FC57ED8D16E.json",
+      "sha256": "de5a98cb881043dce7cb62927443cc9fa29b84158c6816d0b2b31d6a3e22bcee",
+      "records": 52,
+      "firstTick": 8,
+      "lastTick": 75,
+      "idleRecords": 0,
+      "movementFrames": 16,
+      "reducedMotion": false,
+      "magnification": 1,
+      "tracksPlayer": false
+    },
+    {
+      "file": "B945FAAB-10C3-480E-8C43-68A979ABD006.json",
+      "sha256": "40d6adc2feb35046c0bce76c0a4c96f697f98635ab9822d0855ddf351f97db29",
+      "records": 61,
+      "firstTick": 1,
+      "lastTick": 75,
+      "idleRecords": 0,
+      "movementFrames": 16,
+      "reducedMotion": true,
+      "magnification": 1,
+      "tracksPlayer": false
+    },
+    {
+      "file": "D40CE146-B760-400C-98A0-ED30A7EA80DB.json",
+      "sha256": "e671aef1130446b806cc01bb263a64d34f01d4aa2aec009c875a0e9760f83151",
+      "records": 62,
+      "firstTick": 1,
+      "lastTick": 75,
+      "idleRecords": 0,
+      "movementFrames": 16,
+      "reducedMotion": true,
+      "magnification": 1.25,
+      "tracksPlayer": true
+    },
+    {
+      "file": "F7FFCF10-CD0A-4F9C-8F0A-D60793D006C6.json",
+      "sha256": "0b0f6d86dcbff8b7cddfbb3740b25cb3523e6b929df0cf1452acaa5fc3e83656",
+      "records": 60,
+      "firstTick": 1,
+      "lastTick": 75,
+      "idleRecords": 0,
+      "movementFrames": 16,
+      "reducedMotion": false,
+      "magnification": 1.25,
+      "tracksPlayer": false
+    }
+  ],
+  "reason": "SharedTraversalScene.didEvaluateActions returns without recording when player sprite is absent. Warm-up also omits initial callbacks. Movement coverage is not entry/exit coverage."
+}

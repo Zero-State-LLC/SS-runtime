@@ -1,0 +1,46 @@
+{
+  "status": "TEST_ONLY_SOURCE_CANDIDATE_NOT_ADMITTED",
+  "sourceRevision": "SS-player-material-detail / 2026-10-16",
+  "specRevision": "d602775",
+  "sourceCanvas": [
+    384,
+    416
+  ],
+  "rootPixels": [
+    192,
+    336
+  ],
+  "logicalSize": [
+    64,
+    69.33333333333333
+  ],
+  "cycleSeconds": 0.5,
+  "frameDurationSeconds": 0.03125,
+  "projection": "ground x unchanged, ground y times 0.5; upright player keeps uniform scale; no diagonal view claim",
+  "sourceFiles": {
+    "player-source-s-00.png": "b33bf87a529d04f7b2379c35839ee9c46194ef9a94aaf8a7f12742038ab20ab2",
+    "player-source-s-01.png": "eb8bc3bf7c948a508442c2493c3ec4a91e84a0dfb4059678dc3d062cebba6715",
+    "player-source-s-02.png": "f3f2e505606b5b2338fb3425e385257e705c6cc48566a8910a81146e16830b83",
+    "player-source-s-03.png": "b9a9ddb211d2060ff47ec8cca1e551da4d126b5e0bdd668fbac05b92620afc52",
+    "player-source-s-04.png": "aef38ee15e22280e5d492dcabbba0fb25237d361cffc6dc05dde9e8eebece2c2",
+    "player-source-s-05.png": "17290ba6d688718d8ed4c12f6b2a795e155452aff91d6e5871b38cd03eb75a88",
+    "player-source-s-06.png": "2fd11068a9b7ebebf2df419c67f531f31a11bb9db1abeff309c68fcfbef29efc",
+    "player-source-s-07.png": "2f2cde5a4dcc740cbe910c5bc28330007c8b4253c33abd783abd9057bafb84ad",
+    "player-source-s-08.png": "df2fe0d86833cfbcc186c7e90618d6a3b0f417c17287c8f94c44c536d7839fd9",
+    "player-source-s-09.png": "be8b1085cae51cde12c96a29ef03c1f330d92c17dfd8012b2bb4b44bcc6ecf00",
+    "player-source-s-10.png": "bacb6a5060efa5d13651729c04e12a0309eda507e6d2ba1846f6b6ceddf079be",
+    "player-source-s-11.png": "4b87dda61630f888954880bf12bef13752173ebfca8a36c68c9769a85d7e26af",
+    "player-source-s-12.png": "14a566eb9c46343ea0a07c45387946dc87b55eb656a2e4fc81673f9830341d62",
+    "player-source-s-13.png": "c0a35b42a175c69114f8422a679e2f63e0e5c5549092e284d754b1acdea3dcaf",
+    "player-source-s-14.png": "c4432a8448d2608b6ba65ec843e6896cb36f9e1e9ee3f2b3b1487b105eff8a97",
+    "player-source-s-15.png": "ba5f9e7530bddfa643cd3e36d23caab5ed4873cba75d1b6c1f9fc9c13f2e7c57",
+    "player-source-s-poses.json": "f1e7f9d6763dcaabac9a89bab9d40fce5adbeb51eb5833dec10072691fc6042c"
+  },
+  "reviewStatus": "PROPOSED_MATERIAL_TEST_FIXTURE_PENDING_RENDERER_VALIDATION",
+  "specSupplement": {
+    "path": "specs/001-single-level-vertical-slice/benchmark-production.md",
+    "status": "local working-tree clarification, not a production pin migration",
+    "sha256": "6aea951e182ebd29da77629296d04783fcd6f7010132abf2953ed0d1aa6ff777"
+  },
+  "materialChange": "Retained calf/boot source contrast only; pose, geometry, UV, assembly and alpha unchanged."
+}

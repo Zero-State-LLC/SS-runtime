@@ -1,0 +1,226 @@
+{
+  "status": "SOURCE_RIG_SCAFFOLD_NOT_ANIMATION_ADMISSION",
+  "coordinateConvention": "384x384 source space; x right, y down; positive angles clockwise; all pivots in setup coordinates",
+  "boneOrder": [
+    "right_shoulder",
+    "right_elbow",
+    "left_shoulder",
+    "left_elbow",
+    "right_hip",
+    "right_knee",
+    "left_hip",
+    "left_knee",
+    "right_boot",
+    "left_boot"
+  ],
+  "bones": {
+    "right_shoulder": {
+      "parent": null,
+      "pivot": [
+        148,
+        107
+      ],
+      "visible": "right_upper_arm"
+    },
+    "right_elbow": {
+      "parent": "right_shoulder",
+      "pivot": [
+        131,
+        145
+      ],
+      "visible": "right_forearm_hand"
+    },
+    "left_shoulder": {
+      "parent": null,
+      "pivot": [
+        236,
+        107
+      ],
+      "visible": "left_upper_arm"
+    },
+    "left_elbow": {
+      "parent": "left_shoulder",
+      "pivot": [
+        252,
+        145
+      ],
+      "visible": "left_forearm_hand"
+    },
+    "right_hip": {
+      "parent": null,
+      "pivot": [
+        180,
+        203
+      ],
+      "visible": "right_thigh"
+    },
+    "right_knee": {
+      "parent": "right_hip",
+      "pivot": [
+        166,
+        265
+      ],
+      "visible": "right_shin_boot"
+    },
+    "left_hip": {
+      "parent": null,
+      "pivot": [
+        205,
+        203
+      ],
+      "visible": "left_thigh"
+    },
+    "left_knee": {
+      "parent": "left_hip",
+      "pivot": [
+        217,
+        265
+      ],
+      "visible": "left_shin_boot"
+    },
+    "right_boot": {
+      "parent": "right_knee",
+      "pivot": [
+        161,
+        309
+      ],
+      "visible": "right_boot"
+    },
+    "left_boot": {
+      "parent": "left_knee",
+      "pivot": [
+        220,
+        309
+      ],
+      "visible": "left_boot"
+    }
+  },
+  "layerOrderTopToBottom": [
+    "hood",
+    "right_forearm_hand",
+    "right_upper_arm",
+    "left_forearm_hand",
+    "left_upper_arm",
+    "right_coat_tail",
+    "left_coat_tail",
+    "torso_coat_equipment",
+    "right_boot",
+    "right_shin_boot",
+    "left_boot",
+    "left_shin_boot",
+    "right_thigh",
+    "left_thigh",
+    "right_elbow_hidden",
+    "left_elbow_hidden",
+    "left_knee_hidden",
+    "right_knee_hidden",
+    "right_shoulder_hidden",
+    "left_shoulder_hidden",
+    "right_hip_hidden",
+    "left_hip_hidden",
+    "right_boot_hidden",
+    "left_boot_hidden"
+  ],
+  "layerBindings": {
+    "right_upper_arm": "right_shoulder",
+    "right_forearm_hand": "right_elbow",
+    "left_upper_arm": "left_shoulder",
+    "left_forearm_hand": "left_elbow",
+    "right_thigh": "right_hip",
+    "right_shin_boot": "right_knee",
+    "left_thigh": "left_hip",
+    "left_shin_boot": "left_knee",
+    "right_shoulder_hidden": "right_shoulder",
+    "right_elbow_hidden": "right_elbow",
+    "left_shoulder_hidden": "left_shoulder",
+    "left_elbow_hidden": "left_elbow",
+    "right_hip_hidden": "right_hip",
+    "right_knee_hidden": "right_knee",
+    "left_hip_hidden": "left_hip",
+    "left_knee_hidden": "left_knee",
+    "right_boot": "right_boot",
+    "left_boot": "left_boot",
+    "right_boot_hidden": "right_boot",
+    "left_boot_hidden": "left_boot"
+  },
+  "poses": [
+    {},
+    {
+      "right_shoulder": 6
+    },
+    {
+      "right_shoulder": -6
+    },
+    {
+      "left_shoulder": 6
+    },
+    {
+      "left_shoulder": -6
+    },
+    {
+      "right_hip": 6
+    },
+    {
+      "right_hip": -6
+    },
+    {
+      "left_hip": 6
+    },
+    {
+      "left_hip": -6
+    },
+    {
+      "right_shoulder": 6,
+      "right_elbow": -12,
+      "left_shoulder": -6,
+      "left_elbow": 12,
+      "right_hip": -6,
+      "right_knee": 8,
+      "left_hip": 6,
+      "left_knee": -8
+    }
+  ],
+  "limits": "Source study only. Boot overlap and south front-garment order have bounded pose evidence; gait depth and heel/toe contacts remain unfinished.",
+  "meshDeformations": {
+    "right_coat_tail": {
+      "rows": [
+        205,
+        210,
+        220,
+        232,
+        244,
+        258
+      ],
+      "hemWeights": [
+        0,
+        0,
+        0.15,
+        0.4,
+        0.7,
+        1
+      ],
+      "control": "horizontal hem offset in source pixels; root rows fixed",
+      "status": "authored source study, not cloth simulation"
+    },
+    "left_coat_tail": {
+      "rows": [
+        205,
+        210,
+        220,
+        232,
+        244,
+        258
+      ],
+      "hemWeights": [
+        0,
+        0,
+        0.15,
+        0.4,
+        0.7,
+        1
+      ],
+      "control": "horizontal hem offset in source pixels; root rows fixed",
+      "status": "authored source study, not cloth simulation"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+# Stop transition: source comparison and researched next prototype
+
+All-phase renderer tests establish state delivery, not smoothness. Current source poses 5 and 13 have the largest 3D landmark changes when switched directly to the common held neutral. The inspection plate exposes the stride-to-parallel-stance change. projected-pose-changes.json recomputes screen-space differences from current source samples and current neutral, without adopting a tolerance. Model landmarks are not pixel-tracked soles.
+
+Primary research: Spine Applying Animations (https://us.esotericsoftware.com/spine-applying-animations) describes pose-property blending with configurable mix durations. Epic Animation Blueprint Blend Nodes (https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-blueprint-blend-nodes-in-unreal-engine) describes motion-preserving inertial transitions. These are comparison mechanisms; they do not prescribe SS durations or justify adding a skeletal runtime. Blender manual fetch failed and is not used as supporting evidence.
+
+Recommended next source experiment: author a contact-aware settle for the paired extreme phases using the existing editable mesh/paint and limb lengths. Keep the supporting foot fixed until a deliberately authored lift; land the free foot before moving the other contact. Compare a stable offset-foot idle if reaching the parallel neutral would require sliding. Preserve anatomical sides, knee direction, boot rigidity, coat/arm ownership and the ground root. Timing, lift and final stance remain authored proposals to review, not researched numerical constants.
+
+Export poses offline for SpriteKit. Do not alpha-crossfade complete character bitmaps as a substitute for a single coherent pose. Retain immediate authoritative stop; presentation must be cancellable on resumed movement, reversal, hurt, Dodge or terminal state. No new gameplay state or event delay. Standard/Reduced Motion behavior must be specified before runtime integration. First compare the extreme-phase source prototype at normal/quarter speeds, then expand all 16 release phases and re-run actual renderer contacts. The static plate motivates the experiment but does not establish a preferred duration.
+
+No production or source-frame modification in this investigation.

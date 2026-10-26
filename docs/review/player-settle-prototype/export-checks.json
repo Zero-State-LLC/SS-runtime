@@ -1,0 +1,24 @@
+{
+  "framesPerVideo": 112,
+  "normalFPS": 32,
+  "quarterFPS": 8,
+  "endpoints": [
+    {
+      "phase": 5,
+      "firstFrameExactMovement": true,
+      "lastFrameExactNeutral": true,
+      "distinctFrames": 17
+    },
+    {
+      "phase": 13,
+      "firstFrameExactMovement": true,
+      "lastFrameExactNeutral": true,
+      "distinctFrames": 17
+    }
+  ],
+  "limits": [
+    "Source-only stationary root; not real-renderer footage",
+    "Half-second settling remains proposed",
+    "No gameplay input delay"
+  ]
+}

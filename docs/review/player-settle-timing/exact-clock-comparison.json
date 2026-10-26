@@ -1,0 +1,1024 @@
+[
+  {
+    "source": "docs/review/player-settle-timing/exact-clock-attachments/BE67F8F2-2A4E-4AD0-8EB0-2363931AAFFF.json",
+    "sha256": "c5fa400d4bd8a589e26a5905580c17c924d3971509469302e71af980fdbacd30",
+    "release": 5,
+    "tickReconstructionMatches": true,
+    "observedMissing": [
+      1
+    ],
+    "proxies": {
+      "post-action-wall-time": {
+        "samples": [
+          {
+            "tick": 70,
+            "elapsed": 0.0,
+            "frame": 0
+          },
+          {
+            "tick": 71,
+            "elapsed": 0.01667189598083496,
+            "frame": 0
+          },
+          {
+            "tick": 73,
+            "elapsed": 0.03667783737182617,
+            "frame": 1
+          },
+          {
+            "tick": 74,
+            "elapsed": 0.05106496810913086,
+            "frame": 2
+          },
+          {
+            "tick": 75,
+            "elapsed": 0.06656694412231445,
+            "frame": 2
+          },
+          {
+            "tick": 75,
+            "elapsed": 0.08079385757446289,
+            "frame": 3
+          },
+          {
+            "tick": 76,
+            "elapsed": 0.09958600997924805,
+            "frame": 4
+          },
+          {
+            "tick": 77,
+            "elapsed": 0.11646080017089844,
+            "frame": 4
+          },
+          {
+            "tick": 78,
+            "elapsed": 0.133375883102417,
+            "frame": 5
+          },
+          {
+            "tick": 79,
+            "elapsed": 0.15177679061889648,
+            "frame": 6
+          },
+          {
+            "tick": 80,
+            "elapsed": 0.16678905487060547,
+            "frame": 7
+          },
+          {
+            "tick": 81,
+            "elapsed": 0.18330693244934082,
+            "frame": 7
+          },
+          {
+            "tick": 82,
+            "elapsed": 0.1988067626953125,
+            "frame": 8
+          },
+          {
+            "tick": 83,
+            "elapsed": 0.21727490425109863,
+            "frame": 9
+          },
+          {
+            "tick": 84,
+            "elapsed": 0.2327418327331543,
+            "frame": 9
+          },
+          {
+            "tick": 85,
+            "elapsed": 0.24971985816955566,
+            "frame": 10
+          },
+          {
+            "tick": 86,
+            "elapsed": 0.26712989807128906,
+            "frame": 11
+          },
+          {
+            "tick": 88,
+            "elapsed": 0.2874758243560791,
+            "frame": 12
+          },
+          {
+            "tick": 89,
+            "elapsed": 0.30206298828125,
+            "frame": 12
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.31723499298095703,
+            "frame": 13
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.32977294921875,
+            "frame": 14
+          },
+          {
+            "tick": 91,
+            "elapsed": 0.3497939109802246,
+            "frame": 14
+          },
+          {
+            "tick": 92,
+            "elapsed": 0.3662109375,
+            "frame": 15
+          },
+          {
+            "tick": 93,
+            "elapsed": 0.3842597007751465,
+            "frame": 16
+          }
+        ],
+        "missing": []
+      },
+      "wall-time-minus-update-duration": {
+        "samples": [
+          {
+            "tick": 70,
+            "elapsed": 0.0,
+            "frame": 0
+          },
+          {
+            "tick": 71,
+            "elapsed": 0.01697254180908203,
+            "frame": 0
+          },
+          {
+            "tick": 73,
+            "elapsed": 0.03392648696899414,
+            "frame": 1
+          },
+          {
+            "tick": 74,
+            "elapsed": 0.051442623138427734,
+            "frame": 2
+          },
+          {
+            "tick": 75,
+            "elapsed": 0.06681370735168457,
+            "frame": 2
+          },
+          {
+            "tick": 75,
+            "elapsed": 0.08392953872680664,
+            "frame": 3
+          },
+          {
+            "tick": 76,
+            "elapsed": 0.09959745407104492,
+            "frame": 4
+          },
+          {
+            "tick": 77,
+            "elapsed": 0.1169424057006836,
+            "frame": 4
+          },
+          {
+            "tick": 78,
+            "elapsed": 0.13384270668029785,
+            "frame": 5
+          },
+          {
+            "tick": 79,
+            "elapsed": 0.15209293365478516,
+            "frame": 6
+          },
+          {
+            "tick": 80,
+            "elapsed": 0.1669466495513916,
+            "frame": 7
+          },
+          {
+            "tick": 81,
+            "elapsed": 0.18360471725463867,
+            "frame": 7
+          },
+          {
+            "tick": 82,
+            "elapsed": 0.19938373565673828,
+            "frame": 8
+          },
+          {
+            "tick": 83,
+            "elapsed": 0.21693968772888184,
+            "frame": 9
+          },
+          {
+            "tick": 84,
+            "elapsed": 0.2330036163330078,
+            "frame": 9
+          },
+          {
+            "tick": 85,
+            "elapsed": 0.25028491020202637,
+            "frame": 10
+          },
+          {
+            "tick": 86,
+            "elapsed": 0.26735711097717285,
+            "frame": 11
+          },
+          {
+            "tick": 88,
+            "elapsed": 0.283674955368042,
+            "frame": 12
+          },
+          {
+            "tick": 89,
+            "elapsed": 0.3023216724395752,
+            "frame": 12
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.3176758289337158,
+            "frame": 13
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.33383774757385254,
+            "frame": 14
+          },
+          {
+            "tick": 91,
+            "elapsed": 0.3499729633331299,
+            "frame": 14
+          },
+          {
+            "tick": 92,
+            "elapsed": 0.3666806221008301,
+            "frame": 15
+          },
+          {
+            "tick": 93,
+            "elapsed": 0.3843226432800293,
+            "frame": 16
+          }
+        ],
+        "missing": []
+      },
+      "spritekit-update-time": {
+        "samples": [
+          {
+            "tick": 70,
+            "elapsed": 0.0,
+            "frame": 0
+          },
+          {
+            "tick": 71,
+            "elapsed": 0.016666666662786156,
+            "frame": 0
+          },
+          {
+            "tick": 73,
+            "elapsed": 0.03333333338377997,
+            "frame": 1
+          },
+          {
+            "tick": 74,
+            "elapsed": 0.05000000004656613,
+            "frame": 2
+          },
+          {
+            "tick": 75,
+            "elapsed": 0.06666666670935228,
+            "frame": 2
+          },
+          {
+            "tick": 75,
+            "elapsed": 0.08333333337213844,
+            "frame": 3
+          },
+          {
+            "tick": 76,
+            "elapsed": 0.1000000000349246,
+            "frame": 4
+          },
+          {
+            "tick": 77,
+            "elapsed": 0.11666666669771075,
+            "frame": 4
+          },
+          {
+            "tick": 78,
+            "elapsed": 0.1333333333604969,
+            "frame": 5
+          },
+          {
+            "tick": 79,
+            "elapsed": 0.15000000002328306,
+            "frame": 6
+          },
+          {
+            "tick": 80,
+            "elapsed": 0.16666666668606922,
+            "frame": 7
+          },
+          {
+            "tick": 81,
+            "elapsed": 0.18333333334885538,
+            "frame": 7
+          },
+          {
+            "tick": 82,
+            "elapsed": 0.20000000001164153,
+            "frame": 8
+          },
+          {
+            "tick": 83,
+            "elapsed": 0.2166666666744277,
+            "frame": 9
+          },
+          {
+            "tick": 84,
+            "elapsed": 0.23333333333721384,
+            "frame": 9
+          },
+          {
+            "tick": 85,
+            "elapsed": 0.25,
+            "frame": 10
+          },
+          {
+            "tick": 86,
+            "elapsed": 0.26666666666278616,
+            "frame": 11
+          },
+          {
+            "tick": 88,
+            "elapsed": 0.28333333338378,
+            "frame": 12
+          },
+          {
+            "tick": 89,
+            "elapsed": 0.30000000004656613,
+            "frame": 12
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.3166666667093523,
+            "frame": 13
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.33333333337213844,
+            "frame": 14
+          },
+          {
+            "tick": 91,
+            "elapsed": 0.3500000000349246,
+            "frame": 14
+          },
+          {
+            "tick": 92,
+            "elapsed": 0.36666666669771075,
+            "frame": 15
+          },
+          {
+            "tick": 93,
+            "elapsed": 0.3833333333604969,
+            "frame": 16
+          }
+        ],
+        "missing": []
+      },
+      "tick-plus-residual": {
+        "samples": [
+          {
+            "tick": 70,
+            "elapsed": 0.0,
+            "frame": 0
+          },
+          {
+            "tick": 71,
+            "elapsed": 0.016666666662786156,
+            "frame": 0
+          },
+          {
+            "tick": 73,
+            "elapsed": 0.03333333338377975,
+            "frame": 1
+          },
+          {
+            "tick": 74,
+            "elapsed": 0.05000000004656613,
+            "frame": 2
+          },
+          {
+            "tick": 75,
+            "elapsed": 0.06666666670935228,
+            "frame": 2
+          },
+          {
+            "tick": 75,
+            "elapsed": 0.08333333337213844,
+            "frame": 3
+          },
+          {
+            "tick": 76,
+            "elapsed": 0.10000000003492437,
+            "frame": 4
+          },
+          {
+            "tick": 77,
+            "elapsed": 0.11666666669771075,
+            "frame": 4
+          },
+          {
+            "tick": 78,
+            "elapsed": 0.1333333333604969,
+            "frame": 5
+          },
+          {
+            "tick": 79,
+            "elapsed": 0.15000000002328306,
+            "frame": 6
+          },
+          {
+            "tick": 80,
+            "elapsed": 0.166666666686069,
+            "frame": 7
+          },
+          {
+            "tick": 81,
+            "elapsed": 0.18333333334885538,
+            "frame": 7
+          },
+          {
+            "tick": 82,
+            "elapsed": 0.20000000001164153,
+            "frame": 8
+          },
+          {
+            "tick": 83,
+            "elapsed": 0.2166666666744277,
+            "frame": 9
+          },
+          {
+            "tick": 84,
+            "elapsed": 0.23333333333721362,
+            "frame": 9
+          },
+          {
+            "tick": 85,
+            "elapsed": 0.25,
+            "frame": 10
+          },
+          {
+            "tick": 86,
+            "elapsed": 0.26666666666278616,
+            "frame": 11
+          },
+          {
+            "tick": 88,
+            "elapsed": 0.28333333338377975,
+            "frame": 12
+          },
+          {
+            "tick": 89,
+            "elapsed": 0.30000000004656613,
+            "frame": 12
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.3166666667093523,
+            "frame": 13
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.33333333337213844,
+            "frame": 14
+          },
+          {
+            "tick": 91,
+            "elapsed": 0.3500000000349246,
+            "frame": 14
+          },
+          {
+            "tick": 92,
+            "elapsed": 0.36666666669771075,
+            "frame": 15
+          },
+          {
+            "tick": 93,
+            "elapsed": 0.3833333333604969,
+            "frame": 16
+          }
+        ],
+        "missing": []
+      }
+    },
+    "limit": "No sampled clock proves physical presentation. Wall-time proxies are not SpriteKit time. Subtracting update duration does not remove action evaluation or scheduling delay. These are sensitivity comparisons, not validated clock replacements."
+  },
+  {
+    "source": "docs/review/player-settle-timing/exact-clock-attachments/D9F43437-E596-41A6-A75F-3EDF9BDA776E.json",
+    "sha256": "d5dd5a65daf20e4690931d4fbd8258d475a1928712e952e461b9e8fd520e5298",
+    "release": 13,
+    "tickReconstructionMatches": true,
+    "observedMissing": [],
+    "proxies": {
+      "post-action-wall-time": {
+        "samples": [
+          {
+            "tick": 86,
+            "elapsed": 0.0,
+            "frame": 0
+          },
+          {
+            "tick": 87,
+            "elapsed": 0.015430927276611328,
+            "frame": 0
+          },
+          {
+            "tick": 88,
+            "elapsed": 0.03344988822937012,
+            "frame": 1
+          },
+          {
+            "tick": 89,
+            "elapsed": 0.05024290084838867,
+            "frame": 2
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.07374286651611328,
+            "frame": 3
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.0836639404296875,
+            "frame": 3
+          },
+          {
+            "tick": 91,
+            "elapsed": 0.09946393966674805,
+            "frame": 4
+          },
+          {
+            "tick": 92,
+            "elapsed": 0.11802792549133301,
+            "frame": 5
+          },
+          {
+            "tick": 93,
+            "elapsed": 0.13296294212341309,
+            "frame": 5
+          },
+          {
+            "tick": 94,
+            "elapsed": 0.15004396438598633,
+            "frame": 6
+          },
+          {
+            "tick": 95,
+            "elapsed": 0.1672358512878418,
+            "frame": 7
+          },
+          {
+            "tick": 96,
+            "elapsed": 0.18334197998046875,
+            "frame": 7
+          },
+          {
+            "tick": 97,
+            "elapsed": 0.20026874542236328,
+            "frame": 8
+          },
+          {
+            "tick": 98,
+            "elapsed": 0.22583580017089844,
+            "frame": 9
+          },
+          {
+            "tick": 100,
+            "elapsed": 0.2442319393157959,
+            "frame": 10
+          },
+          {
+            "tick": 101,
+            "elapsed": 0.2616848945617676,
+            "frame": 11
+          },
+          {
+            "tick": 102,
+            "elapsed": 0.2747068405151367,
+            "frame": 11
+          },
+          {
+            "tick": 103,
+            "elapsed": 0.28774499893188477,
+            "frame": 12
+          },
+          {
+            "tick": 104,
+            "elapsed": 0.30231189727783203,
+            "frame": 12
+          },
+          {
+            "tick": 105,
+            "elapsed": 0.31546688079833984,
+            "frame": 13
+          },
+          {
+            "tick": 105,
+            "elapsed": 0.3295109272003174,
+            "frame": 14
+          },
+          {
+            "tick": 106,
+            "elapsed": 0.34938907623291016,
+            "frame": 14
+          },
+          {
+            "tick": 107,
+            "elapsed": 0.3664379119873047,
+            "frame": 15
+          },
+          {
+            "tick": 108,
+            "elapsed": 0.3834989070892334,
+            "frame": 16
+          }
+        ],
+        "missing": []
+      },
+      "wall-time-minus-update-duration": {
+        "samples": [
+          {
+            "tick": 86,
+            "elapsed": 0.0,
+            "frame": 0
+          },
+          {
+            "tick": 87,
+            "elapsed": 0.01595020294189453,
+            "frame": 0
+          },
+          {
+            "tick": 88,
+            "elapsed": 0.03358769416809082,
+            "frame": 1
+          },
+          {
+            "tick": 89,
+            "elapsed": 0.05015850067138672,
+            "frame": 2
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.06827306747436523,
+            "frame": 2
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.08586692810058594,
+            "frame": 3
+          },
+          {
+            "tick": 91,
+            "elapsed": 0.09958648681640625,
+            "frame": 4
+          },
+          {
+            "tick": 92,
+            "elapsed": 0.11837053298950195,
+            "frame": 5
+          },
+          {
+            "tick": 93,
+            "elapsed": 0.1325538158416748,
+            "frame": 5
+          },
+          {
+            "tick": 94,
+            "elapsed": 0.15012788772583008,
+            "frame": 6
+          },
+          {
+            "tick": 95,
+            "elapsed": 0.16665887832641602,
+            "frame": 7
+          },
+          {
+            "tick": 96,
+            "elapsed": 0.18350791931152344,
+            "frame": 7
+          },
+          {
+            "tick": 97,
+            "elapsed": 0.19992685317993164,
+            "frame": 8
+          },
+          {
+            "tick": 98,
+            "elapsed": 0.21688461303710938,
+            "frame": 9
+          },
+          {
+            "tick": 100,
+            "elapsed": 0.24150323867797852,
+            "frame": 10
+          },
+          {
+            "tick": 101,
+            "elapsed": 0.26117658615112305,
+            "frame": 11
+          },
+          {
+            "tick": 102,
+            "elapsed": 0.2751808166503906,
+            "frame": 11
+          },
+          {
+            "tick": 103,
+            "elapsed": 0.28812170028686523,
+            "frame": 12
+          },
+          {
+            "tick": 104,
+            "elapsed": 0.3024783134460449,
+            "frame": 12
+          },
+          {
+            "tick": 105,
+            "elapsed": 0.3163914680480957,
+            "frame": 13
+          },
+          {
+            "tick": 105,
+            "elapsed": 0.3332674503326416,
+            "frame": 14
+          },
+          {
+            "tick": 106,
+            "elapsed": 0.3502049446105957,
+            "frame": 14
+          },
+          {
+            "tick": 107,
+            "elapsed": 0.36663031578063965,
+            "frame": 15
+          },
+          {
+            "tick": 108,
+            "elapsed": 0.3841841220855713,
+            "frame": 16
+          }
+        ],
+        "missing": []
+      },
+      "spritekit-update-time": {
+        "samples": [
+          {
+            "tick": 86,
+            "elapsed": 0.0,
+            "frame": 0
+          },
+          {
+            "tick": 87,
+            "elapsed": 0.016666666662786156,
+            "frame": 0
+          },
+          {
+            "tick": 88,
+            "elapsed": 0.03333333332557231,
+            "frame": 1
+          },
+          {
+            "tick": 89,
+            "elapsed": 0.04999999998835847,
+            "frame": 2
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.06666666665114462,
+            "frame": 2
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.08333333331393078,
+            "frame": 3
+          },
+          {
+            "tick": 91,
+            "elapsed": 0.09999999997671694,
+            "frame": 4
+          },
+          {
+            "tick": 92,
+            "elapsed": 0.11666666663950309,
+            "frame": 4
+          },
+          {
+            "tick": 93,
+            "elapsed": 0.13333333330228925,
+            "frame": 5
+          },
+          {
+            "tick": 94,
+            "elapsed": 0.1499999999650754,
+            "frame": 6
+          },
+          {
+            "tick": 95,
+            "elapsed": 0.16666666662786156,
+            "frame": 7
+          },
+          {
+            "tick": 96,
+            "elapsed": 0.18333333329064772,
+            "frame": 7
+          },
+          {
+            "tick": 97,
+            "elapsed": 0.19999999995343387,
+            "frame": 8
+          },
+          {
+            "tick": 98,
+            "elapsed": 0.21666666661622003,
+            "frame": 9
+          },
+          {
+            "tick": 100,
+            "elapsed": 0.23333333333721384,
+            "frame": 9
+          },
+          {
+            "tick": 101,
+            "elapsed": 0.25,
+            "frame": 10
+          },
+          {
+            "tick": 102,
+            "elapsed": 0.26666666666278616,
+            "frame": 11
+          },
+          {
+            "tick": 103,
+            "elapsed": 0.2833333333255723,
+            "frame": 12
+          },
+          {
+            "tick": 104,
+            "elapsed": 0.29999999998835847,
+            "frame": 12
+          },
+          {
+            "tick": 105,
+            "elapsed": 0.3166666666511446,
+            "frame": 13
+          },
+          {
+            "tick": 105,
+            "elapsed": 0.3333333333139308,
+            "frame": 14
+          },
+          {
+            "tick": 106,
+            "elapsed": 0.34999999997671694,
+            "frame": 14
+          },
+          {
+            "tick": 107,
+            "elapsed": 0.3666666666395031,
+            "frame": 15
+          },
+          {
+            "tick": 108,
+            "elapsed": 0.38333333330228925,
+            "frame": 16
+          }
+        ],
+        "missing": []
+      },
+      "tick-plus-residual": {
+        "samples": [
+          {
+            "tick": 86,
+            "elapsed": 0.0,
+            "frame": 0
+          },
+          {
+            "tick": 87,
+            "elapsed": 0.016666666662785934,
+            "frame": 0
+          },
+          {
+            "tick": 88,
+            "elapsed": 0.03333333332557209,
+            "frame": 1
+          },
+          {
+            "tick": 89,
+            "elapsed": 0.04999999998835847,
+            "frame": 2
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.06666666665114462,
+            "frame": 2
+          },
+          {
+            "tick": 90,
+            "elapsed": 0.08333333331393078,
+            "frame": 3
+          },
+          {
+            "tick": 91,
+            "elapsed": 0.09999999997671671,
+            "frame": 4
+          },
+          {
+            "tick": 92,
+            "elapsed": 0.11666666663950309,
+            "frame": 4
+          },
+          {
+            "tick": 93,
+            "elapsed": 0.13333333330228925,
+            "frame": 5
+          },
+          {
+            "tick": 94,
+            "elapsed": 0.1499999999650754,
+            "frame": 6
+          },
+          {
+            "tick": 95,
+            "elapsed": 0.16666666662786134,
+            "frame": 7
+          },
+          {
+            "tick": 96,
+            "elapsed": 0.18333333329064772,
+            "frame": 7
+          },
+          {
+            "tick": 97,
+            "elapsed": 0.19999999995343387,
+            "frame": 8
+          },
+          {
+            "tick": 98,
+            "elapsed": 0.21666666661622003,
+            "frame": 9
+          },
+          {
+            "tick": 100,
+            "elapsed": 0.23333333333721384,
+            "frame": 9
+          },
+          {
+            "tick": 101,
+            "elapsed": 0.25,
+            "frame": 10
+          },
+          {
+            "tick": 102,
+            "elapsed": 0.26666666666278616,
+            "frame": 11
+          },
+          {
+            "tick": 103,
+            "elapsed": 0.2833333333255721,
+            "frame": 12
+          },
+          {
+            "tick": 104,
+            "elapsed": 0.29999999998835847,
+            "frame": 12
+          },
+          {
+            "tick": 105,
+            "elapsed": 0.3166666666511446,
+            "frame": 13
+          },
+          {
+            "tick": 105,
+            "elapsed": 0.3333333333139308,
+            "frame": 14
+          },
+          {
+            "tick": 106,
+            "elapsed": 0.34999999997671694,
+            "frame": 14
+          },
+          {
+            "tick": 107,
+            "elapsed": 0.3666666666395031,
+            "frame": 15
+          },
+          {
+            "tick": 108,
+            "elapsed": 0.38333333330228925,
+            "frame": 16
+          }
+        ],
+        "missing": []
+      }
+    },
+    "limit": "No sampled clock proves physical presentation. Wall-time proxies are not SpriteKit time. Subtracting update duration does not remove action evaluation or scheduling delay. These are sensitivity comparisons, not validated clock replacements."
+  }
+]

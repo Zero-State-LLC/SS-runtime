@@ -1,0 +1,45 @@
+{
+  "status": "SOURCE_EXPERIMENT_NOT_APPROVED",
+  "checks": [
+    {
+      "phase": 5,
+      "frames": 17,
+      "durationSecondsProposed": 0.5,
+      "liftUnitsProposed": 3,
+      "firstToeLandingFrame": 1,
+      "supportSide": "right",
+      "supportToeFixedFrames": [
+        1,
+        8
+      ],
+      "otherFootFixedFrames": [
+        8,
+        16
+      ],
+      "geometry": "all segment lengths/reach/ground clearance/knee height checks passed"
+    },
+    {
+      "phase": 13,
+      "frames": 17,
+      "durationSecondsProposed": 0.5,
+      "liftUnitsProposed": 3,
+      "firstToeLandingFrame": 1,
+      "supportSide": "left",
+      "supportToeFixedFrames": [
+        1,
+        8
+      ],
+      "otherFootFixedFrames": [
+        8,
+        16
+      ],
+      "geometry": "all segment lengths/reach/ground clearance/knee height checks passed"
+    }
+  ],
+  "limitations": [
+    "Preserves toe contact, not full-sole contact while heel is raised",
+    "Authored 0.5-second timing and 3-unit lift are proposals",
+    "No real-renderer integration",
+    "Not a complete idle/transition family"
+  ]
+}

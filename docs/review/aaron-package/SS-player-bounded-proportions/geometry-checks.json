@@ -1,0 +1,47 @@
+{
+  "status": "SAMPLED_SOURCE_GEOMETRY_ONLY",
+  "supportedTargetsPreserved": true,
+  "hipAndFootPitchPreserved": true,
+  "segmentLengths": [
+    12.5,
+    14.5
+  ],
+  "rows": [
+    {
+      "side": "right",
+      "version": "control",
+      "maxKneeStep": 5.28889697854752,
+      "seamKneeStep": 0.40305022622147796,
+      "maxKneeZ": 21.043477882921724,
+      "kneesAboveHip": 0
+    },
+    {
+      "side": "right",
+      "version": "candidate",
+      "maxKneeStep": 5.038150611333491,
+      "seamKneeStep": 0.4308835006308744,
+      "maxKneeZ": 21.043477882921724,
+      "kneesAboveHip": 0
+    },
+    {
+      "side": "left",
+      "version": "control",
+      "maxKneeStep": 5.28889697854752,
+      "seamKneeStep": 4.201102949981291,
+      "maxKneeZ": 21.043477882921724,
+      "kneesAboveHip": 0
+    },
+    {
+      "side": "left",
+      "version": "candidate",
+      "maxKneeStep": 5.038150611333491,
+      "seamKneeStep": 3.6170849210276286,
+      "maxKneeZ": 21.043477882921724,
+      "kneesAboveHip": 0
+    }
+  ],
+  "limits": [
+    "No continuous interpolation guarantee",
+    "No runtime travel or contact acceptance"
+  ]
+}

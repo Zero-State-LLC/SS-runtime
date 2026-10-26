@@ -1,0 +1,40 @@
+{
+  "status": "REUSE_REJECTED_PENDING_SOURCE_RECONCILIATION",
+  "canvas": [
+    384,
+    416
+  ],
+  "root": [
+    192,
+    336
+  ],
+  "neutralPadding": "32 transparent pixels below existing 384-square source; no translation/resampling",
+  "sources": [
+    {
+      "path": "SS-painted-character-source/south.png",
+      "sha256": "51cb032d4ae340a5dfe48b701aa41c619edc9e888480992adf80ddce2fd10765"
+    },
+    {
+      "path": "SS-player-material-detail/frames/00.png",
+      "sha256": "b33bf87a529d04f7b2379c35839ee9c46194ef9a94aaf8a7f12742038ab20ab2"
+    },
+    {
+      "path": "SS-player-material-detail/frames/04.png",
+      "sha256": "aef38ee15e22280e5d492dcabbba0fb25237d361cffc6dc05dde9e8eebece2c2"
+    },
+    {
+      "path": "SS-player-material-detail/frames/08.png",
+      "sha256": "df2fe0d86833cfbcc186c7e90618d6a3b0f417c17287c8f94c44c536d7839fd9"
+    },
+    {
+      "path": "SS-player-material-detail/frames/12.png",
+      "sha256": "14a566eb9c46343ea0a07c45387946dc87b55eb656a2e4fc81673f9830341d62"
+    }
+  ],
+  "limits": [
+    "Shared root does not prove compatible anatomy or sole contact.",
+    "Movement phases are not neutral poses.",
+    "Alternation is not an animation proposal.",
+    "Existing root was manually approximate, not measured ground contact."
+  ]
+}

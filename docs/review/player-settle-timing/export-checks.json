@@ -1,0 +1,41 @@
+{
+  "framesPerVideo": 224,
+  "normalFPS": 64,
+  "quarterFPS": 16,
+  "proposedDurationsSeconds": [
+    0.5,
+    0.25
+  ],
+  "movementFPS": 32,
+  "endpoints": [
+    {
+      "phase": 5,
+      "firstFrameExactMovement": true,
+      "lastFrameExactNeutral": true,
+      "distinctFrames": 17
+    },
+    {
+      "phase": 13,
+      "firstFrameExactMovement": true,
+      "lastFrameExactNeutral": true,
+      "distinctFrames": 17
+    }
+  ],
+  "limits": [
+    "Source-only stationary root; not real-renderer footage",
+    "Both timings remain proposed; half-second judged too slow by user",
+    "No gameplay input delay"
+  ],
+  "encoded": {
+    "normal": {
+      "r_frame_rate": "64/1",
+      "duration": "3.500000",
+      "nb_frames": "224"
+    },
+    "quarter": {
+      "r_frame_rate": "16/1",
+      "duration": "14.000000",
+      "nb_frames": "224"
+    }
+  }
+}

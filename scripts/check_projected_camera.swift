@@ -98,7 +98,32 @@ struct ProjectedCameraCheck {
             }
         }
         precondition(conflict.contains { ($0["rootVisible"] as? Bool) == false })
-        let data = try JSONSerialization.data(withJSONObject: ["spriteKitCornerChecks": checked,
+        var exteriorChecks = 0
+        for x: CGFloat in [18,1152,2286] { for y: CGFloat in [18,768,1518] {
+            for zoom: CGFloat in [0.75,1,1.25,1.4] {
+                let center = CGPoint(x: x, y: y)
+                let coverage = BenchmarkProjectionFinishing.coverage(center: center, viewport: viewport, zoom: zoom)
+                let strips = BenchmarkProjectionFinishing.exterior(arena: bounds, coverage: coverage)
+                for a in strips.indices {
+                    precondition(strips[a].intersection(bounds).isEmpty)
+                    for b in strips.indices where b > a { precondition(strips[a].intersection(strips[b]).isEmpty) }
+                }
+                // Dense independent SpriteKit inverse grid, including every viewport edge/corner.
+                let scene = SKScene(), scale = SKNode(), rotation = SKNode(), translation = SKNode()
+                scale.xScale = zoom; scale.yScale = zoom/2; rotation.zRotation = .pi/4
+                translation.position = CGPoint(x: -x, y: -y)
+                scene.addChild(scale); scale.addChild(rotation); rotation.addChild(translation)
+                for sx in stride(from: CGFloat(-352), through: 352, by: 44) {
+                    for sy in stride(from: CGFloat(-163), through: 163, by: 32.6) {
+                        let world = scene.convert(CGPoint(x: sx, y: sy), to: translation)
+                        precondition(coverage.contains(world))
+                        precondition(bounds.contains(world) || strips.contains { $0.insetBy(dx: -0.002, dy: -0.002).contains(world) })
+                        exteriorChecks += 1
+                    }
+                }
+            }
+        } }
+        let data = try JSONSerialization.data(withJSONObject: ["exteriorCoverageChecks": exteriorChecks, "spriteKitCornerChecks": checked,
             "invalidInputChecks": 2, "hudSafeBoundaryChecks": hudChecks, "hudRegionEdgeCases": 3, "visibilityConflicts": conflict,
             "scope": "Host SpriteKit geometry, not iOS displayed framing or production camera admission"], options: [.prettyPrinted,.sortedKeys])
         print(String(decoding: data, as: UTF8.self))

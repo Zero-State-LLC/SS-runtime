@@ -1,0 +1,162 @@
+[
+  {
+    "release": 13,
+    "callbackMedianMs": 16.80612564086914,
+    "callbackMaxMs": 46.118736267089844,
+    "stages": {
+      "hud": {
+        "medianMs": 0.18383332644589245,
+        "maxMs": 0.4384166677482426
+      },
+      "outlineSearch": {
+        "medianMs": 0.35272917011752725,
+        "maxMs": 0.6229166756384075
+      },
+      "projection": {
+        "medianMs": 1.0765416373033077,
+        "maxMs": 1.719208317808807
+      },
+      "projectionSearch": {
+        "medianMs": 0.48760417848825455,
+        "maxMs": 0.8484999998472631
+      },
+      "renderer": {
+        "medianMs": 0.49754168139770627,
+        "maxMs": 0.8966250461526215
+      },
+      "simulationSteps": {
+        "medianMs": 3.3681666536722332,
+        "maxMs": 16.429125040303916
+      },
+      "snapshotComposition": {
+        "medianMs": 1.2953749974258244,
+        "maxMs": 4.083166713826358
+      },
+      "total": {
+        "medianMs": 7.566395855974406,
+        "maxMs": 22.730958356987685
+      }
+    },
+    "worstUpdateTicks": [
+      {
+        "tick": 10,
+        "stages": {
+          "hud": 0.00018312502652406693,
+          "outlineSearch": 0.0005864583654329181,
+          "projection": 0.0016197083168663085,
+          "projectionSearch": 0.0007624583668075502,
+          "renderer": 0.0006460417062044144,
+          "simulationSteps": 0.016429125040303916,
+          "snapshotComposition": 0.0021737083443440497,
+          "total": 0.022730958356987685
+        }
+      },
+      {
+        "tick": 7,
+        "stages": {
+          "hud": 0.0004384166677482426,
+          "outlineSearch": 0.0006229166756384075,
+          "projection": 0.001719208317808807,
+          "projectionSearch": 0.0008250000537373126,
+          "renderer": 0.000785458309110254,
+          "simulationSteps": 0.0058525417116470635,
+          "snapshotComposition": 0.004083166713826358,
+          "total": 0.014701750013045967
+        }
+      },
+      {
+        "tick": 30,
+        "stages": {
+          "hud": 0.00013833330012857914,
+          "outlineSearch": 0.00046904163900762796,
+          "projection": 0.0011809583520516753,
+          "projectionSearch": 0.0005618750001303852,
+          "renderer": 0.0005967499455437064,
+          "simulationSteps": 0.007916583330370486,
+          "snapshotComposition": 0.0018648749683052301,
+          "total": 0.01299895829288289
+        }
+      }
+    ]
+  },
+  {
+    "release": 5,
+    "callbackMedianMs": 17.473340034484863,
+    "callbackMaxMs": 26.620149612426758,
+    "stages": {
+      "hud": {
+        "medianMs": 0.16258336836472154,
+        "maxMs": 0.3934583510272205
+      },
+      "outlineSearch": {
+        "medianMs": 0.34837500425055623,
+        "maxMs": 0.6736249779351056
+      },
+      "projection": {
+        "medianMs": 1.0287916520610452,
+        "maxMs": 1.6988750430755317
+      },
+      "projectionSearch": {
+        "medianMs": 0.4642083076760173,
+        "maxMs": 0.7988750003278255
+      },
+      "renderer": {
+        "medianMs": 0.4606667207553983,
+        "maxMs": 0.9045833139680326
+      },
+      "simulationSteps": {
+        "medianMs": 3.252541646361351,
+        "maxMs": 8.505708363372833
+      },
+      "snapshotComposition": {
+        "medianMs": 1.8201666534878314,
+        "maxMs": 2.4716666666790843
+      },
+      "total": {
+        "medianMs": 7.976708351634443,
+        "maxMs": 14.060416666325182
+      }
+    },
+    "worstUpdateTicks": [
+      {
+        "tick": 9,
+        "stages": {
+          "hud": 0.00019866664661094546,
+          "outlineSearch": 0.0004146250430494547,
+          "projection": 0.0010941667133010924,
+          "projectionSearch": 0.0005484583089128137,
+          "renderer": 0.0005951666389591992,
+          "simulationSteps": 0.008379083301406354,
+          "snapshotComposition": 0.002423041616566479,
+          "total": 0.014060416666325182
+        }
+      },
+      {
+        "tick": 12,
+        "stages": {
+          "hud": 0.00017870834562927485,
+          "outlineSearch": 0.00036875001387670636,
+          "projection": 0.0010088749695569277,
+          "projectionSearch": 0.000462583324406296,
+          "renderer": 0.00045220833271741867,
+          "simulationSteps": 0.008505708363372833,
+          "snapshotComposition": 0.0024716666666790843,
+          "total": 0.013724333315622061
+        }
+      },
+      {
+        "tick": 20,
+        "stages": {
+          "hud": 0.00015479163266718388,
+          "outlineSearch": 0.0003489583032205701,
+          "projection": 0.0009911666857078671,
+          "projectionSearch": 0.0004983749822713435,
+          "renderer": 0.0006716666975989938,
+          "simulationSteps": 0.0071967499679885805,
+          "snapshotComposition": 0.002072666655294597,
+          "total": 0.01224399998318404
+        }
+      }
+    ]
+  }
+]
