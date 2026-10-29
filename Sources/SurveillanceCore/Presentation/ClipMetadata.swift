@@ -1,5 +1,4 @@
 import Foundation
-import CoreFoundation
 
 public struct ClipAnchor: Equatable, Hashable, Sendable {
     public var x: Int
@@ -386,14 +385,12 @@ enum ClipCatalogLoader {
     }
 
     private static func boolValue(_ value: Any?) -> Bool? {
-        guard let number = value as? NSNumber,
-              CFGetTypeID(number) == CFBooleanGetTypeID() else { return nil }
+        guard JSONScalar.isBool(value), let number = value as? NSNumber else { return nil }
         return number.boolValue
     }
 
     private static func intValue(_ value: Any?) -> Int? {
-        guard let number = value as? NSNumber,
-              CFGetTypeID(number) != CFBooleanGetTypeID() else { return nil }
+        guard !JSONScalar.isBool(value), let number = value as? NSNumber else { return nil }
         // Parse the exact decimal representation: no truncation or overflow wrap.
         return Int(number.stringValue)
     }

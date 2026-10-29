@@ -288,6 +288,9 @@ struct GameFeelTests {
 
     // MARK: - A real Blackout, played
 
+    // `debug_seedScenario` is compiled only into Debug builds, so the tests
+    // that seed a scenario are too. Release-mode probe runs still compile.
+    #if DEBUG
     /// The `blackout` debug scenario leaves one Camera in the line of fire; the
     /// weapon's kill publishes `cameraDestroyed` and `allCamerasDestroyed` in
     /// one tick, and the cascade covers every Camera in stable-ID order.
@@ -319,6 +322,8 @@ struct GameFeelTests {
         #expect(blackout.cascade.map(\.cameraId) == sim.state.cameras.map(\.entityId).sorted())
         #expect(sim.state.networkBlackout)
     }
+
+    #endif
 
     // MARK: - Determinism
 
@@ -357,6 +362,7 @@ struct GameFeelTests {
         )
     }
 
+    #if DEBUG
     /// The same, through a Camera kill and Network Blackout.
     @Test func hitStopNeverChangesTheDigestThroughABlackout() throws {
         let plain = try Self.drive(seed: 1, upgrade: .signalJammer, feel: false, scenario: "blackout", ticks: 900)
@@ -367,6 +373,7 @@ struct GameFeelTests {
         #expect(felt.digest == plain.digest)
         #expect(felt.receipt == plain.receipt)
     }
+    #endif
 
     private struct Drive {
         var ticks: UInt64
@@ -390,7 +397,11 @@ struct GameFeelTests {
         ticks limit: UInt64 = PacingProbe.tickCeiling
     ) throws -> Drive {
         var sim = try Simulation.make(seed: seed)
+        #if DEBUG
         if let scenario { _ = sim.debug_seedScenario(scenario) }
+        #else
+        precondition(scenario == nil, "scenario seeding is Debug-only")
+        #endif
         var pilot = ProbePilot(profile: .competent, arena: sim.state.arena)
         let catalog = try ProceduralVFXCatalog.bundled()
         var projector = VFXProjector()
