@@ -24,3 +24,5 @@ Spec: `2377b99c6b6d1654e2cb976ee1b7e07b75c77e1a`. No gameplay, content, arena, o
 - C-003 p95 <=16.67 ms remains unproven. The connected iPhone 17 Pro is not the baseline iPhone 12; report actual hardware rather than relabel it.
 
 No release or full-QA pass is claimed. Further animation/clipping symptoms require reproduction on the candidate; issues remain open until verified.
+
+Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
