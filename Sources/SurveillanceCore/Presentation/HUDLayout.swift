@@ -178,6 +178,13 @@ public enum HUDLayout {
     public static func tamperSpike() -> HUDRect { HUDRect(x: 642, y: 26, width: 120, height: 24) }
 
     public static let tamperCopy = "+\(ExposureState.tamperSpike) TAMPER"
+
+    /// hud-tutorial.md § Exposure presentation, Tamper floor (D-110): where
+    /// the floor marker sits on the 0–1000 bar. Nil while no Camera is down.
+    public static func tamperFloor(camerasDestroyed: Int) -> Int? {
+        guard camerasDestroyed > 0 else { return nil }
+        return min(1000, ExposureState.tamperFloorPerCamera * camerasDestroyed)
+    }
     public static let integrityNotchCount = 3
     public static let integrityNotchPersistTicks: UInt64 = 90
     public static let firstEncounterCameraCopy = "MOVE TOWARD A CAMERA TO SHOOT IT • DESTRUCTION ADDS EXPOSURE"

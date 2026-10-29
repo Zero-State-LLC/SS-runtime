@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `c81541e037800b5257a22d8976f529c8bc4b8977` |
+| Specification commit | `ec67e5dbc4dd7a77f21cdd3202a9265915c1736a` |
 | Ruleset | `ss-rules-009` |
 | Content | `civic-seam-content-006` |
 | Arena | `civic-seam-arena-004` |
@@ -66,3 +66,5 @@ D-105/D-106 adoption: SS-specs #67 (device checks no longer wait for the D-104 a
 D-107/D-108 adoption: SS-specs #73 (`run-shell.md` § 14 Court rehearsal, T1051, RS-033–RS-040), #74 (BP-011 palette report, BP-012 breadth-first bar) and #75 (status). No contract or fixture changed between `a2119c93` and `0f0fb95f`, so this is a pin move only. T1051 is implemented in this runtime change. Ruleset, content, arena, replay and presentation identities are unchanged.
 
 D-109 adoption (SS-specs #76, ruleset `ss-rules-009`): Court release and Court Lockdown (T1052, EX-021–EX-024, BO-010–BO-012). `versions.json`, `runtime-kernel-001` and the four golden fixtures change. The new digests were computed independently from the reviewed ruleset-008 canonical states with only `rulesetVersion` replaced (SS-specs `docs/review/D109.md`), and actual execution reproduces them. `ss-rules-008` replays fail closed. Content, arena and presentation identities are unchanged.
+
+D-110 adoption (SS-specs #77): Tamper floor marker on the Exposure meter (UI-012–UI-014). No contract or fixture change; pin move only. Presentation only.
