@@ -178,7 +178,7 @@ final class GameSession {
     }
 
     private func persistTerminalReceiptIfNeeded() {
-        guard !terminalReceiptStored, simulation.state.outcome != .playing else { return }
+        guard !terminalReceiptStored, simulation.state.outcome.isTerminal else { return }
         if (try? ReceiptStore.persistTerminalReceipt(for: simulation.state)) != nil {
             terminalReceiptStored = true
         }
