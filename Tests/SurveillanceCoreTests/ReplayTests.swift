@@ -17,7 +17,7 @@ struct ReplayTests {
 
     @Test func duplicateCommandTickIsRejected() throws {
         let json = """
-        {"schemaVersion":"runtime-kernel-001","rulesetVersion":"ss-rules-008","contentVersion":"civic-seam-content-006","arenaVersion":"civic-seam-arena-004","seed":1,"commands":[{"tick":1,"moveX":0,"moveY":0,"dodgePressed":false},{"tick":1,"moveX":0,"moveY":0,"dodgePressed":false}]}
+        {"schemaVersion":"runtime-kernel-001","rulesetVersion":"ss-rules-009","contentVersion":"civic-seam-content-006","arenaVersion":"civic-seam-arena-004","seed":1,"commands":[{"tick":1,"moveX":0,"moveY":0,"dodgePressed":false},{"tick":1,"moveX":0,"moveY":0,"dodgePressed":false}]}
         """.data(using: .utf8)!
         let result = ReplayEnvelope.load(json: json)
         guard case .failure(.duplicateCommandTick(1)) = result else {
@@ -49,7 +49,7 @@ struct ReplayTests {
         #expect(sim.state.digest() == initial)
         #expect(sim.state.cameras.allSatisfy { $0.integrity == 3 })
     }
-    @Test(arguments: ["ss-rules-006", "ss-rules-007"]) func previousRulesetFailsClosedBeforeExecution(previous: String) throws {
+    @Test(arguments: ["ss-rules-006", "ss-rules-007", "ss-rules-008"]) func previousRulesetFailsClosedBeforeExecution(previous: String) throws {
         let json = String(decoding: SpecBundle.fixture("replay-smoke-001"), as: UTF8.self)
             .replacingOccurrences(of: ContractVersions.ruleset, with: previous)
         guard case .failure(.incompatibleIdentity) = ReplayEnvelope.load(json: Data(json.utf8)) else {

@@ -55,6 +55,18 @@ public struct ExposureState: Equatable, Sendable {
     /// `exposure.md` constants: Tamper floor, per Camera destroyed this run (D-084).
     public static let tamperFloorPerCamera = 150
 
+    /// exposure.md § Court release (D-109): the Exposure assigned when the
+    /// Daemon falls and the Lockdown latch is released.
+    public static let courtReleaseExposure = 700
+
+    /// § Court release, step 1: clear the latch and assign 700. The Detection
+    /// State is left as it is; the next tick's resolution projects it and
+    /// publishes the one `lockdown`→final change.
+    public mutating func releaseForCourt() {
+        lockdownEntered = false
+        exposure = Self.courtReleaseExposure
+    }
+
     /// `upgrades.md` Signal Jammer: positive contact delta reduced by 1, to a
     /// minimum of 1; Fog and Observation pulses scaled by 75/100. The combat
     /// content contract must state the same values (`CombatContent.decode`).

@@ -1,6 +1,6 @@
 public enum ContractVersions {
     public static let specificationCommit = "0f0fb95fd84a9b0e85009500038310698e169797"
-    public static let ruleset = "ss-rules-008"
+    public static let ruleset = "ss-rules-009"
     public static let content = "civic-seam-content-006"
     public static let arena = "civic-seam-arena-004"
     public static let replaySchema = "runtime-kernel-001"

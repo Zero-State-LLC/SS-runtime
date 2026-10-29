@@ -197,7 +197,8 @@ public struct Simulation: Equatable, Sendable {
                 playerDamage: &playerDamage,
                 events: &events,
                 baseSpeed: state.content.bossSpeed,
-                baseContact: state.content.bossContactDps
+                baseContact: state.content.bossContactDps,
+                courtLockdown: state.exposure.lockdownEntered
             )
             state.bossRuntime = runtime
             state.bossPhase = runtime.phase.rawValue
@@ -763,6 +764,8 @@ public struct Simulation: Equatable, Sendable {
         if enemy.archetype == .improperSearchDaemon {
             state.eliteDefeated = true
             state.eliteGateOpenTick = tick + 60
+            // D-109: Lockdown was M-C's climax; the Court starts live at 700.
+            state.exposure.releaseForCourt()
             events.emit(
                 tick: tick,
                 phase: 16,

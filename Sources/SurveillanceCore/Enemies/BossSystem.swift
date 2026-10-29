@@ -139,7 +139,8 @@ public enum BossSystem {
         playerDamage: inout Int,
         events: inout EventBuffer,
         baseSpeed: Int,
-        baseContact: Int
+        baseContact: Int,
+        courtLockdown: Bool = false
     ) {
         if let transition = runtime.syncPhase(hp: boss.integrity), boss.alive {
             retireBossProjectiles(&projectiles)
@@ -210,7 +211,10 @@ public enum BossSystem {
             return
         }
         if runtime.cooldownRemaining > 0 {
-            runtime.cooldownRemaining -= 1
+            // bosses.md § Court Lockdown (D-109): while Lockdown holds in the
+            // Court the cooldown counts down faster. Telegraphs are unchanged.
+            let step = courtLockdown ? Self.courtLockdownCooldownStep : 1
+            runtime.cooldownRemaining = max(0, runtime.cooldownRemaining - step)
             return
         }
         let sequence = runtime.phase.sequence
@@ -228,6 +232,9 @@ public enum BossSystem {
             runtime.telegraphRemaining = 60
         }
     }
+
+    /// bosses.md § Court Lockdown (D-109).
+    public static let courtLockdownCooldownStep = 2
 
     public static func observationAmount(base: Int, numerator: Int, signalJammer: Bool) -> Int {
         var amount = IntMath.divHalfAway(Int64(base) * Int64(numerator), 100)
