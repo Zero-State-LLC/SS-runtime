@@ -285,7 +285,16 @@ struct PacingProbe {
                     guard let shot = sim.state.projectiles.first(where: { $0.id == id }) else { return nil }
                     let owner = sim.state.enemies.first { $0.id == shot.ownerId }?.archetype.rawValue ?? "unknown"
                     return owner + "Projectile"
-                } ?? "unattributed"
+                } ?? {
+                    // A source that no longer exists after the tick (a mine
+                    // that detonated) is named from the event's own owner and
+                    // kind, e.g. `victorianVendorMine`.
+                    guard case .string(let ownerId)? = event.payload["ownerEntityId"], let raw = UInt64(ownerId),
+                          let owner = sim.state.enemies.first(where: { $0.id.raw == raw }),
+                          case .string(let kind)? = event.payload["damageKind"]
+                    else { return "unattributed" }
+                    return owner.archetype.rawValue + kind.prefix(1).uppercased() + kind.dropFirst()
+                }()
                 damageBySource[source, default: 0] += amount
                 if bossActive { bossDamageBySource[source, default: 0] += amount }
                 if mobCStartTick == nil { damageBeforeMobC += amount }
