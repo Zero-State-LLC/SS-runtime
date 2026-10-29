@@ -673,24 +673,34 @@ final class GameScene: SKScene {
         session.dodgePressed = command.dodgePressed
     }
 
+    /// Once per run, at its real end. `upgradeSelectionPending` is not an end
+    /// (`RunOutcome.isTerminal`): treating "not playing" as over recorded the
+    /// upgrade gate as the run's outcome, so the T905 consecutive-run count
+    /// reset every run and the QA damage export stopped at M-A.
+    nonisolated static func recordsTerminalEvidence(outcome: RunOutcome, alreadyStored: Bool) -> Bool {
+        !alreadyStored && outcome.isTerminal
+    }
+
     private func persistDeviceEvidenceIfNeeded() {
-        guard !terminalEvidenceStored, session.simulation.state.outcome != .playing else { return }
+        let outcome = session.simulation.state.outcome
+        guard Self.recordsTerminalEvidence(outcome: outcome, alreadyStored: terminalEvidenceStored) else { return }
         terminalEvidenceStored = true
-        if qaEnabled {
-            let report = DamageDiagnosticRun(seed: session.simulation.state.seed,
-                device: DeviceTelemetrySample.hardwareModel, droppedRecords: session.droppedDamageDiagnostics,
-                damage: session.damageDiagnostics, commands: session.commandLog.map(DamageDiagnosticRun.Command.init))
-            do {
-                let directory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask,
-                                                           appropriateFor: nil, create: true)
-                let url = directory.appendingPathComponent("SS-damage-QA-latest.json")
-                try JSONEncoder().encode(report).write(to: url, options: .atomic)
-                Self.qaLog.notice("QA_DAMAGE_EXPORT \(url.lastPathComponent, privacy: .public)")
-            } catch {
-                Self.qaLog.error("QA_DAMAGE_EXPORT failed: \(String(describing: error), privacy: .public)")
-            }
+        deviceRunTracker.noteTerminalOutcome(outcome)
+        // Evidence is the operator's QA tool (T905/T907, `-SSQA`). A player's
+        // run end does not write files or profile anything.
+        guard qaEnabled else { return }
+        let report = DamageDiagnosticRun(seed: session.simulation.state.seed,
+            device: DeviceTelemetrySample.hardwareModel, droppedRecords: session.droppedDamageDiagnostics,
+            damage: session.damageDiagnostics, commands: session.commandLog.map(DamageDiagnosticRun.Command.init))
+        do {
+            let directory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask,
+                                                       appropriateFor: nil, create: true)
+            let url = directory.appendingPathComponent("SS-damage-QA-latest.json")
+            try JSONEncoder().encode(report).write(to: url, options: .atomic)
+            Self.qaLog.notice("QA_DAMAGE_EXPORT \(url.lastPathComponent, privacy: .public)")
+        } catch {
+            Self.qaLog.error("QA_DAMAGE_EXPORT failed: \(String(describing: error), privacy: .public)")
         }
-        deviceRunTracker.noteTerminalOutcome(session.simulation.state.outcome)
         let snapshot = instrumentation.evidence()
         let deviceEvidence = snapshot.makeDeviceRunEvidence(
             deviceClass: DeviceTelemetrySample.hardwareModel,
@@ -698,9 +708,15 @@ final class GameScene: SKScene {
             atlasMemoryBytes: nil
         )
         _ = try? ReleaseEvidenceStore.exportDeviceRunEvidence(deviceEvidence)
-        if deviceRunTracker.consecutiveCompleteRuns >= 3,
-           let simulationCeilings = try? D021CeilingEvaluator.profileAndMeasure(),
-           let settled = deviceEvidence.settledD021Ceilings(from: simulationCeilings) {
+        guard deviceRunTracker.consecutiveCompleteRuns >= 3 else { return }
+        // D-021 profiling simulates the peak-density scenarios, the replay
+        // matrix and complete runs. It runs off the main thread so the terminal
+        // surface stays responsive; it may still share the CPU with a run
+        // started immediately after.
+        Task.detached(priority: .utility) {
+            guard let simulationCeilings = try? D021CeilingEvaluator.profileAndMeasure(),
+                  let settled = deviceEvidence.settledD021Ceilings(from: simulationCeilings)
+            else { return }
             _ = try? ReleaseEvidenceStore.exportReleaseCandidateWithBundledPlaytests(
                 deviceEvidence: [deviceEvidence],
                 d021DeviceProfiling: settled
