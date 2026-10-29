@@ -1659,6 +1659,28 @@ public struct Simulation: Equatable, Sendable {
         state.eliteDefeated = true
     }
 
+    /// D-109 tests: spawn the Daemon and defeat it through the real defeat
+    /// path, which releases the Lockdown latch for the Court.
+    mutating func testing_defeatElite() {
+        spawnElite(tick: state.tick)
+        guard let index = state.enemies.firstIndex(where: { $0.archetype == .improperSearchDaemon && $0.alive }) else {
+            return
+        }
+        state.enemies[index].integrity = 0
+        killEnemy(at: index, tick: state.tick)
+    }
+
+    /// D-109 tests: the Captain between attacks, with `ticks` of cooldown left.
+    mutating func testing_setBossCooldown(_ ticks: Int) {
+        guard var runtime = state.bossRuntime else { return }
+        runtime.recoveryRemaining = 0
+        runtime.telegraphRemaining = 0
+        runtime.attackRemaining = 0
+        runtime.currentAttack = nil
+        runtime.cooldownRemaining = ticks
+        state.bossRuntime = runtime
+    }
+
     mutating func testing_defeatBoss() {
         guard let index = state.enemies.firstIndex(where: { $0.archetype == .algorithmicModerate && $0.alive }) else {
             return
