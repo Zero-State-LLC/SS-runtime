@@ -363,7 +363,7 @@ public struct CombatContent: Equatable, Sendable {
                 throw CombatContentError.wrongType("\(path).id")
             }
             guard let value = phase["minHp"] else { throw CombatContentError.missingField("\(path).minHp") }
-            guard !isJSONBool(value), let floor = value as? Int, floor >= 1, floor <= hp,
+            guard !JSONScalar.isBool(value), let floor = value as? Int, floor >= 1, floor <= hp,
                   floors.last.map({ floor < $0 }) ?? true
             else {
                 throw CombatContentError.wrongType("\(path).minHp")
@@ -389,7 +389,7 @@ public struct CombatContent: Equatable, Sendable {
         var values: [String: Int] = [:]
         for (key, minimum) in minimums.sorted(by: { $0.key < $1.key }) {
             guard let value = block[key] else { throw CombatContentError.missingField("\(name).\(key)") }
-            guard !isJSONBool(value), let number = value as? Int, number >= minimum else {
+            guard !JSONScalar.isBool(value), let number = value as? Int, number >= minimum else {
                 throw CombatContentError.wrongType("\(name).\(key)")
             }
             values[key] = number
@@ -474,7 +474,7 @@ public struct CombatContent: Equatable, Sendable {
         }
         func strictInt(_ key: String, minimum: Int) throws -> Int {
             let value = block[key]
-            guard !isJSONBool(value), let number = value as? Int, number >= minimum else {
+            guard !JSONScalar.isBool(value), let number = value as? Int, number >= minimum else {
                 throw CombatContentError.wrongType("awareness.\(key)")
             }
             return number
@@ -488,7 +488,7 @@ public struct CombatContent: Equatable, Sendable {
             throw CombatContentError.wrongType("awareness.awareEncounters")
         }
         let spawnAware = block["heatReinforcementsSpawnAware"]
-        guard isJSONBool(spawnAware), let reinforcementsAware = spawnAware as? Bool else {
+        guard JSONScalar.isBool(spawnAware), let reinforcementsAware = spawnAware as? Bool else {
             throw CombatContentError.wrongType("awareness.heatReinforcementsSpawnAware")
         }
         return AwarenessSpec(
@@ -502,14 +502,6 @@ public struct CombatContent: Equatable, Sendable {
             unawareDriftPercent: try strictInt("unawareDriftPercent", minimum: 0),
             unawareDriftStopUnits: try strictInt("unawareDriftStopUnits", minimum: 0)
         )
-    }
-
-    /// `JSONSerialization` bridges both JSON booleans and numbers to
-    /// `NSNumber`, so `as? Int` accepts `true` and `as? Bool` accepts `1`.
-    /// The CoreFoundation type tells them apart.
-    private static func isJSONBool(_ value: Any?) -> Bool {
-        guard let number = value as? NSNumber else { return false }
-        return CFGetTypeID(number) == CFBooleanGetTypeID()
     }
 
     /// All five Detection States are required; any other key fails closed.

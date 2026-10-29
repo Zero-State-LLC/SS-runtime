@@ -8,7 +8,8 @@ If a gotcha is fixed, delete the row. Do not leave historical traps as current g
 | Trap | What happens | What to do |
 |---|---|---|
 | Commit `SSRuntime.xcodeproj` or signing data | Personal team / bundle IDs leak; project.yml is no longer the source | Generate with `xcodegen generate`. The xcodeproj is gitignored. |
-| Expect `swift test` on Linux | Toolchain / iOS 18 SDK missing | Core tests are macOS CI (`macos-15`). Do not invent a Linux substitute. |
+| Run `swift test` on Linux with Swift 6.0/6.1 | 6.0.3 rejects a Swift Testing `#expect` in `ClipMetadataTests`; 6.1 debug overflows the test-worker stack | Use Swift 6.2+ (e.g. the `swift:6.2-noble` image). macOS CI (`macos-15`) stays the authority; Linux runs only `SurveillanceCore`, never the app. |
+| Expect scenario-seeded tests in a release probe build | `debug_` hooks and the two feel tests that use them compile only in Debug | Release probes compile; those two tests run in Debug and CI. |
 
 ## CI and validators
 
