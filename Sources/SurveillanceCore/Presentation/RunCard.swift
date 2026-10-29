@@ -19,6 +19,18 @@ public struct RunCard: Equatable, Sendable {
     /// § 12: the earned medals that are new today.
     public let newMedals: Set<Medal>
     public static let medalsLabel = "MEDALS"
+    /// `run-shell.md` § 14.3 (D-107): a rehearsal's card. It is not a run, so it
+    /// has no date, best, medals or Share.
+    public let isRehearsal: Bool
+    public static let rehearsalLabel = "REHEARSAL"
+
+    /// § 14.3: a single row, the time spent in the Court.
+    public init(rehearsalCourtTicks ticks: UInt64) {
+        rows = [Row(label: Self.rehearsalLabel, value: Self.clock(ticks: ticks))]
+        medals = []
+        newMedals = []
+        isRehearsal = true
+    }
 
     /// - Parameters:
     ///   - state: the finished run.
@@ -63,6 +75,7 @@ public struct RunCard: Equatable, Sendable {
         self.rows = rows
         self.medals = earned
         self.newMedals = newMedals.intersection(earned)
+        self.isRehearsal = false
     }
 
     /// § 11 share text: the game's name and the same rows, nothing else.

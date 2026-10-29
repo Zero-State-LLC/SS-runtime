@@ -690,6 +690,8 @@ final class HUDRenderer {
     var tutorialsEnabled = true
     /// `run-shell.md` § 11: the run card, set once the run is terminal.
     var runCard: RunCard?
+    /// `run-shell.md` § 14.1: Rehearse Court is offered on this terminal surface.
+    var rehearsalAvailable = false
 
     /// Terminal surface geometry comes from `HUDLayout`, which owns HUD layout
     /// maths and can be tested without the App target.
@@ -716,13 +718,27 @@ final class HUDRenderer {
     }
 
     func terminalShareHit(atPoints point: CGPoint, projector: HUDProjector) -> Bool {
-        terminalShareRect(projector: projector).contains(point)
+        guard !(runCard?.isRehearsal ?? false) else { return false }
+        return terminalShareRect(projector: projector).contains(point)
+    }
+
+    /// `run-shell.md` § 14: Rehearse Court, left of Restart, only when offered.
+    func terminalRehearseRect(projector: HUDProjector) -> CGRect {
+        rect(HUDLayout.terminalRehearse(safeWidth: projector.safeWidth, safeHeight: projector.safeHeight))
+    }
+
+    func terminalRehearseHit(atPoints point: CGPoint, projector: HUDProjector) -> Bool {
+        rehearsalAvailable && terminalRehearseRect(projector: projector).contains(point)
     }
 
     /// Drawn once the run is over, so a finished run says so instead of looking
     /// like a game that stopped responding.
     private func drawTerminal(_ snap: PresentationSnapshot, _ projector: HUDProjector) {
-        guard let title = HUDLayout.terminalCopy(for: snap.outcome) else { return }
+        let rehearsal = runCard?.isRehearsal ?? false
+        guard let title = rehearsal
+            ? HUDLayout.terminalRehearsalCopy(for: snap.outcome)
+            : HUDLayout.terminalCopy(for: snap.outcome)
+        else { return }
         let panel = terminalPanelRect(projector: projector)
         let panelCentre = projector.scenePoint(fromPoints: CGPoint(x: panel.midX, y: panel.midY))
 
@@ -811,15 +827,33 @@ final class HUDRenderer {
             rect: terminalRestartRect(projector: projector),
             projector: projector
         )
-        drawTerminalControl(
-            key: "terminal-share",
-            text: "SHARE",
-            rect: terminalShareRect(projector: projector),
-            projector: projector
-        )
+        // § 14.3: a rehearsal cannot be shared.
+        if !rehearsal {
+            drawTerminalControl(
+                key: "terminal-share",
+                text: "SHARE",
+                rect: terminalShareRect(projector: projector),
+                projector: projector
+            )
+        }
+        if rehearsalAvailable {
+            drawTerminalControl(
+                key: "terminal-rehearse",
+                text: HUDLayout.rehearseControlCopy,
+                rect: terminalRehearseRect(projector: projector),
+                projector: projector,
+                textSize: 10
+            )
+        }
     }
 
-    private func drawTerminalControl(key: String, text: String, rect button: CGRect, projector: HUDProjector) {
+    private func drawTerminalControl(
+        key: String,
+        text: String,
+        rect button: CGRect,
+        projector: HUDProjector,
+        textSize: CGFloat = 13
+    ) {
         let buttonCentre = projector.scenePoint(fromPoints: CGPoint(x: button.midX, y: button.midY))
         let plate = node(key) { () -> SKShapeNode in
             let shape = SKShapeNode(
@@ -834,7 +868,7 @@ final class HUDRenderer {
             return shape
         }
         plate.position = buttonCentre
-        label(key: "\(key)-label", text: text, at: buttonCentre, size: 13, colour: HUDPalette.text)
+        label(key: "\(key)-label", text: text, at: buttonCentre, size: textSize, colour: HUDPalette.text)
     }
 
     // MARK: - Text

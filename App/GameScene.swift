@@ -58,6 +58,23 @@ final class GameSession {
     /// the simulation.
     private(set) var feel = FeelPassPresenter()
 
+    /// `run-shell.md` § 14 (D-107): the authoritative state after the tick the
+    /// Captain activated, kept in memory for its seed only and never written
+    /// to disk. Rehearse Court resumes from it.
+    struct CourtSnapshot {
+        let seed: UInt64
+        let simulation: Simulation
+        let commandLog: [PlayerCommand]
+    }
+    private(set) var courtSnapshot: CourtSnapshot?
+    /// True once the Captain is active in the current run or rehearsal.
+    private(set) var courtReached = false
+    /// The tick the Court began in the current run or rehearsal.
+    private(set) var courtStartTick: UInt64?
+    /// § 14.3: a rehearsal is not a run. It is never archived, stored as a
+    /// best, or awarded medals.
+    private(set) var isRehearsal = false
+
     init(simulation: Simulation) { self.simulation = simulation }
 
     init(seed: UInt64 = 1) {
@@ -136,6 +153,15 @@ final class GameSession {
         if let command, simulation.state.tick == tick {
             commandLog.append(command)
         }
+        // § 14.2: the Captain is installed on the tick `bossActivated` is
+        // emitted, so the first step with a boss runtime is that tick.
+        if !courtReached, simulation.state.bossRuntime != nil {
+            courtReached = true
+            courtStartTick = simulation.state.tick
+            if !isRehearsal {
+                courtSnapshot = CourtSnapshot(seed: simulation.state.seed, simulation: simulation, commandLog: commandLog)
+            }
+        }
 #if DEBUG
         markStage("diagnosticsAndCommandLog")
 #endif
@@ -186,8 +212,35 @@ final class GameSession {
 
     func restartRun(seed: UInt64 = 1) {
         simulation = try! Simulation.make(seed: seed)
-        playerMovedLastStep = nil
         commandLog = []
+        if courtSnapshot?.seed != seed { courtSnapshot = nil }
+        isRehearsal = false
+        courtReached = false
+        courtStartTick = nil
+        resetPresentation()
+    }
+
+    /// § 14.2: resume from the Court snapshot. False when there is none.
+    @discardableResult
+    func beginRehearsal() -> Bool {
+        guard let snapshot = courtSnapshot else { return false }
+        simulation = snapshot.simulation
+        commandLog = snapshot.commandLog
+        isRehearsal = true
+        courtReached = true
+        courtStartTick = simulation.state.tick
+        resetPresentation()
+        // § 14.3: never archived. The receipt guard reads this flag.
+        terminalReceiptStored = true
+        feel.observe(simulation.state)
+        return true
+    }
+
+    /// Everything a new run or a rehearsal starts without: presentation
+    /// projectors, diagnostics and held input. Authoritative state is set by
+    /// the caller.
+    private func resetPresentation() {
+        playerMovedLastStep = nil
         damageDiagnostics = []
         latestDamageDiagnostics = []
         droppedDamageDiagnostics = 0
@@ -358,6 +411,10 @@ final class GameScene: SKScene {
     private var ghostGeneration = 0
     /// `run-shell.md` § 11: built once, when the run reaches a terminal outcome.
     private var runCard: RunCard?
+    /// The terminal card shown, if any (tests and evidence).
+    var currentRunCard: RunCard? { runCard }
+    /// `run-shell.md` § 14.1: whether this terminal surface offers Rehearse Court.
+    var rehearsalOffered: Bool { hud.rehearsalAvailable }
     /// D-098 intro beat; non-nil and unfinished means no tick may run.
     private(set) var intro: IntroSequence?
     private let introOverlay = IntroOverlay()
@@ -812,6 +869,15 @@ final class GameScene: SKScene {
     private func finishRunIfNeeded() {
         let state = session.simulation.state
         guard state.outcome.isTerminal, runCard == nil else { return }
+        // § 14.1: offered after any failure in which the Captain was active.
+        hud.rehearsalAvailable = state.outcome == .failure && session.courtReached && session.courtSnapshot != nil
+        // § 14.3: a rehearsal is not a run. No best, no ghost, no medals.
+        if session.isRehearsal {
+            let card = RunCard(rehearsalCourtTicks: state.tick - (session.courtStartTick ?? state.tick))
+            runCard = card
+            hud.runCard = card
+            return
+        }
         var bestTicks: UInt64?
         if let dailyRun,
            let stored = GhostStore.load(seed: dailyRun.seed),
@@ -872,9 +938,31 @@ final class GameScene: SKScene {
     func restartRun(seed: UInt64? = nil) {
         let nextSeed = seed ?? session.simulation.state.seed
         session.restartRun(seed: nextSeed)
+        resetForNewSimulation()
+        loadGhost()
+        terminalEvidenceStored = false
+        redraw()
+    }
+
+    /// `run-shell.md` § 14 (D-107): resume from the Court snapshot. No intro,
+    /// no ghost, input cleared. A rehearsal is not a run, so it is not counted
+    /// as device-run evidence either.
+    @discardableResult
+    func rehearseCourt() -> Bool {
+        guard session.beginRehearsal() else { return false }
+        resetForNewSimulation()
+        ghost = nil
+        ghostGeneration += 1
+        terminalEvidenceStored = true
+        redraw()
+        return true
+    }
+
+    /// Presentation state shared by Restart and Rehearse Court.
+    private func resetForNewSimulation() {
         runCard = nil
         hud.runCard = nil
-        loadGhost()
+        hud.rehearsalAvailable = false
         soundEngine.reset()
         renderer.reset()
         combatFeedbackRenderer.reset()
@@ -893,8 +981,6 @@ final class GameScene: SKScene {
         // stick when the run ended would otherwise carry that heading — and
         // that dead `stickTouch` binding — straight into the new run.
         controller.reset()
-        terminalEvidenceStored = false
-        redraw()
     }
 
     /// Sole UI selection boundary: accepts once, with neutral movement.
@@ -944,6 +1030,8 @@ final class GameScene: SKScene {
         if snap.outcome.isTerminal {
             if hud.terminalRestartHit(atPoints: point, projector: projector) {
                 restartRun()
+            } else if hud.terminalRehearseHit(atPoints: point, projector: projector) {
+                rehearseCourt()
             } else if hud.terminalShareHit(atPoints: point, projector: projector) {
                 presentShare()
             }
