@@ -247,6 +247,33 @@ public enum HUDLayout {
         )
     }
 
+    /// `run-shell.md` § 14 (D-107): Rehearse Court, the secondary control that
+    /// mirrors Share on the left of Restart. Same row, same height, at or above
+    /// `minimumTouchTargetPoints`; it never moves with handedness.
+    public static func terminalRehearse(safeWidth: Int, safeHeight: Int) -> HUDRect {
+        let panel = terminalPanel(safeWidth: safeWidth, safeHeight: safeHeight)
+        let restart = terminalRestart(safeWidth: safeWidth, safeHeight: safeHeight)
+        let x = panel.x + terminalButtonInset
+        return HUDRect(
+            x: x,
+            y: restart.y,
+            width: restart.x - terminalButtonGap - x,
+            height: terminalButtonHeight
+        )
+    }
+
+    /// `run-shell.md` § 5 / § 14: rehearsal outcome copy. Nil for a live run.
+    public static func terminalRehearsalCopy(for outcome: RunOutcome) -> String? {
+        switch outcome {
+        case .success: return "REHEARSAL COMPLETE"
+        case .failure: return "REHEARSAL DOWN"
+        case .invalid: return "RUN INVALID"
+        case .playing, .upgradeSelectionPending: return nil
+        }
+    }
+
+    public static let rehearseControlCopy = "REHEARSE COURT"
+
     /// Vertical centre of the outcome title, in safe-rectangle points.
     public static func terminalTitleCentreY(safeWidth: Int, safeHeight: Int) -> Int {
         terminalPanel(safeWidth: safeWidth, safeHeight: safeHeight).y + 34
