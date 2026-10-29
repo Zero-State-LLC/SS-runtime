@@ -10,6 +10,7 @@ import SwiftUI
 struct GameContainerView: View {
     @StateObject private var store = SettingsStore()
     @State private var showSettings = false
+    @Environment(\.scenePhase) private var scenePhase
     /// `run-shell-001` §8: the app presents the title surface on launch, and a
     /// run begins only when the player asks for one.
     ///
@@ -54,6 +55,15 @@ struct GameContainerView: View {
         }
         .onChange(of: started) { _, running in
             scene.setPaused(!running || showSettings)
+        }
+        // `run-shell.md` § 13.1 (D-106): a run that leaves the foreground comes
+        // back paused, on the Pause surface, and resumes only when the player
+        // resumes it. `.inactive` arrives first, including for a call banner or
+        // Control Center that never reaches the background.
+        .onChange(of: scenePhase) { _, phase in
+            guard phase != .active, scene.pausesOnInterruption else { return }
+            scene.setPaused(true)
+            showSettings = true
         }
     }
 
