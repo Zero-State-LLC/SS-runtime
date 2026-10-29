@@ -93,6 +93,7 @@ struct PacingProbeTests {
     /// ```
     /// SS_HEAT_SEEDS=20 SS_HEAT_REPORT=/path/heat.jsonl \
     ///   swift test -c release -Xswiftc -enable-testing --filter heatD083StyleSweep
+    /// python3 scripts/probe_summary.py /path/heat.jsonl
     /// ```
     ///
     /// It measures and does not assert the design verdict. It does assert
