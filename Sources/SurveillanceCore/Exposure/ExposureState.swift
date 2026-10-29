@@ -55,11 +55,18 @@ public struct ExposureState: Equatable, Sendable {
     /// `exposure.md` constants: Tamper floor, per Camera destroyed this run (D-084).
     public static let tamperFloorPerCamera = 150
 
+    /// `upgrades.md` Signal Jammer: positive contact delta reduced by 1, to a
+    /// minimum of 1; Fog and Observation pulses scaled by 75/100. The combat
+    /// content contract must state the same values (`CombatContent.decode`).
+    public static let jammerContactReduction = 1
+    public static let jammerMinimumContact = 1
+    public static let jammerPulseRatio = (numerator: 75, denominator: 100)
+
     public static func contactDelta(cameraCount n: Int, signalJammer: Bool) -> Int {
         guard n > 0 else { return 0 }
         var delta = min(5, 2 + n - 1)
         if signalJammer {
-            delta = max(1, delta - 1)
+            delta = max(jammerMinimumContact, delta - jammerContactReduction)
         }
         return delta
     }
@@ -142,7 +149,7 @@ public struct ExposureState: Equatable, Sendable {
         // Observation amounts already carry the boss phase and Signal Jammer
         // modifiers. Fog's existing modifier applies here exactly once.
         let namedPulses = fogPulseAmounts.map {
-            (signalJammer ? Int(IntMath.divHalfAway(Int64($0) * 75, 100)) : $0, ExposureReason.fogPulse)
+            (signalJammer ? Int(IntMath.divHalfAway(Int64($0) * Int64(Self.jammerPulseRatio.numerator), Int64(Self.jammerPulseRatio.denominator))) : $0, ExposureReason.fogPulse)
         } + observationPulseAmounts.map { ($0, ExposureReason.observationPulse) }
         for (amount, pulseReason) in namedPulses where exposure < 1000 {
             let pulseBefore = exposure
