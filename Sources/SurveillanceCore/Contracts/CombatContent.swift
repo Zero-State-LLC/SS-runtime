@@ -270,6 +270,11 @@ public enum CombatContentError: Equatable, Sendable, Error {
     /// A `standardEnemies` key or wave `members` entry names an archetype the
     /// kernel does not know, e.g. `"phantomCritic"`.
     case unknownArchetype(String)
+    /// An `upgrades` value differs from the value the simulation uses, e.g.
+    /// `"upgrades.ricochetPulse.range"`. The upgrade numbers are compiled in,
+    /// so a contract change without the matching code change fails closed
+    /// rather than shipping with no effect (SS-runtime #148).
+    case simulationMismatch(String)
 }
 
 extension CombatContentError: LocalizedError {
@@ -283,6 +288,8 @@ extension CombatContentError: LocalizedError {
             "combat content field \"\(path)\" has the wrong type"
         case let .unknownArchetype(key):
             "combat content references unknown archetype \"\(key)\""
+        case let .simulationMismatch(path):
+            "combat content field \"\(path)\" differs from the value the simulation uses"
         }
     }
 }
@@ -326,7 +333,7 @@ public struct CombatContent: Equatable, Sendable {
         let elite = try decodeObject(root["elite"], path: "elite")
         let boss = try decodeObject(root["boss"], path: "boss")
 
-        return CombatContent(
+        let content = CombatContent(
             standardEnemies: try parseEnemies(root["standardEnemies"]),
             encounters: try parseEncounters(root["encounters"]),
             eliteHP: try elite.int("hp", within: "elite"),
@@ -345,6 +352,65 @@ public struct CombatContent: Equatable, Sendable {
             patrol: try parsePatrol(root["patrol"]),
             player: try parsePlayer(root["player"])
         )
+        // Last, so a payload broken elsewhere still reports that field first.
+        try validateUpgrades(root["upgrades"])
+        return content
+    }
+
+    /// `upgrades` (`upgrades.md`): strictly typed, and every value must equal
+    /// the one the simulation uses. The block is validated, not stored, so the
+    /// content value type and the state digest are unchanged.
+    static func validateUpgrades(_ raw: Any?) throws {
+        let block = try decodeObject(raw, path: "upgrades")
+        let names = Set(UpgradeID.allCases.map(\.rawValue))
+        for key in block.keys.sorted() where !names.contains(key) {
+            throw CombatContentError.wrongType("upgrades.\(key)")
+        }
+        func expect(_ path: String, _ actual: Int, _ simulation: Int) throws {
+            guard actual == simulation else { throw CombatContentError.simulationMismatch(path) }
+        }
+
+        let jammer = "upgrades.signalJammer"
+        let jammerBlock = try decodeObject(block["signalJammer"], path: jammer)
+        guard let ratio = jammerBlock["pulseRatio"] as? [Any], ratio.count == 2,
+              let numerator = ratio[0] as? Int, !JSONScalar.isBool(ratio[0]),
+              let denominator = ratio[1] as? Int, !JSONScalar.isBool(ratio[1]), denominator > 0
+        else { throw CombatContentError.wrongType("\(jammer).pulseRatio") }
+        var jammerInts = jammerBlock
+        jammerInts.removeValue(forKey: "pulseRatio")
+        let jammerValues = try strictInts(jammerInts, block: jammer, minimums: [
+            "index": 0, "contactReduction": 0, "minimumContact": 0
+        ])
+        try expect("\(jammer).index", jammerValues["index"]!, Int(UpgradeID.signalJammer.selectionIndex))
+        try expect("\(jammer).contactReduction", jammerValues["contactReduction"]!, ExposureState.jammerContactReduction)
+        try expect("\(jammer).minimumContact", jammerValues["minimumContact"]!, ExposureState.jammerMinimumContact)
+        try expect("\(jammer).pulseRatio[0]", numerator, ExposureState.jammerPulseRatio.numerator)
+        try expect("\(jammer).pulseRatio[1]", denominator, ExposureState.jammerPulseRatio.denominator)
+
+        let ricochet = "upgrades.ricochetPulse"
+        let ricochetValues = try strictInts(block["ricochetPulse"], block: ricochet, minimums: [
+            "index": 0, "continuations": 0, "range": 0, "enemyDamage": 0, "cameraDamage": 0
+        ])
+        try expect("\(ricochet).index", ricochetValues["index"]!, Int(UpgradeID.ricochetPulse.selectionIndex))
+        // The kernel implements exactly one continuation per hit.
+        try expect("\(ricochet).continuations", ricochetValues["continuations"]!, 1)
+        try expect("\(ricochet).range", ricochetValues["range"]!, Targeting.ricochetRange)
+        try expect("\(ricochet).enemyDamage", ricochetValues["enemyDamage"]!, Targeting.enemyDamage)
+        try expect("\(ricochet).cameraDamage", ricochetValues["cameraDamage"]!, Targeting.cameraDamage)
+
+        let ghost = "upgrades.ghostStep"
+        let ghostValues = try strictInts(block["ghostStep"], block: ghost, minimums: [
+            "index": 0, "dodgeSpeed": 0, "dodgeTicks": 0, "cooldown": 0, "postDodgeCameraImmunity": 0
+        ])
+        try expect("\(ghost).index", ghostValues["index"]!, Int(UpgradeID.ghostStep.selectionIndex))
+        // Units per second in the contract, units per tick in the kernel.
+        try expect("\(ghost).dodgeSpeed", ghostValues["dodgeSpeed"]!, PlayerBody.ghostDodgeSpeedUnitsPerTick * 60)
+        try expect("\(ghost).dodgeTicks", ghostValues["dodgeTicks"]!, PlayerBody.dodgeDurationTicks)
+        try expect("\(ghost).cooldown", ghostValues["cooldown"]!, PlayerBody.ghostDodgeCooldownTicks)
+        // `cameraInvisibleUntilTick = start + 29` covers the 12 active ticks
+        // and the 18 after them, inclusive.
+        try expect("\(ghost).postDodgeCameraImmunity", ghostValues["postDodgeCameraImmunity"]!,
+                   PlayerBody.ghostCameraImmunityTicks + 1 - PlayerBody.dodgeDurationTicks)
     }
 
     /// `boss.phases`: exactly the four phases, in `BossPhase.receiptOrder`,

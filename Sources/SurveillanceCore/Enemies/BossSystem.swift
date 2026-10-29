@@ -232,7 +232,10 @@ public enum BossSystem {
     public static func observationAmount(base: Int, numerator: Int, signalJammer: Bool) -> Int {
         var amount = IntMath.divHalfAway(Int64(base) * Int64(numerator), 100)
         if signalJammer {
-            amount = IntMath.divHalfAway(amount * 75, 100)
+            amount = IntMath.divHalfAway(
+                amount * Int64(ExposureState.jammerPulseRatio.numerator),
+                Int64(ExposureState.jammerPulseRatio.denominator)
+            )
         }
         return Int(amount)
     }
