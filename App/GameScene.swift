@@ -532,6 +532,13 @@ final class GameScene: SKScene {
         }
     }
 
+    /// `run-shell.md` § 13.1 (D-106): whether leaving the foreground must raise
+    /// Pause. Only a run that is ticking: the title, the terminal surface, the
+    /// intro and the upgrade selection advance no tick, so they stay as they are.
+    var pausesOnInterruption: Bool {
+        !runPaused && intro == nil && session.simulation.state.outcome == .playing
+    }
+
     func setPaused(_ paused: Bool) {
         runPaused = paused
         renderer.root.isPaused = paused

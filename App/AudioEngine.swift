@@ -67,11 +67,16 @@ final class AudioEngine {
     private lazy var pitchedVoice = PitchedVoice()
     /// Pitched cues played so far (D-097 evidence and tests).
     private(set) var pitchedCuesPlayed: [(audioId: String, cents: Int)] = []
+    /// `run-shell.md` § 13.2 (D-106): true between an audio-session
+    /// interruption's start and end. Nothing plays while it is set.
+    private(set) var interrupted = false
+    private var interruptionObserver: NSObjectProtocol?
 
     init() {
         deliveredPaths = (try? AssetCatalog.bundled())?.deliveredAudioPaths ?? [:]
         configureSession()
         prepareHaptics()
+        observeInterruptions()
     }
 
     private func configureSession() {
@@ -92,10 +97,58 @@ final class AudioEngine {
         notify.prepare()
     }
 
+    // MARK: - Interruptions
+
+    private func observeInterruptions() {
+        interruptionObserver = NotificationCenter.default.addObserver(
+            forName: AVAudioSession.interruptionNotification,
+            object: AVAudioSession.sharedInstance(),
+            queue: .main
+        ) { [weak self] note in
+            guard let raw = note.userInfo?[AVAudioSessionInterruptionTypeKey] as? UInt,
+                  let type = AVAudioSession.InterruptionType(rawValue: raw)
+            else { return }
+            MainActor.assumeIsolated { self?.handleInterruption(type) }
+        }
+    }
+
+    /// § 13.2: an interruption stops every game sound. When it ends, the bed
+    /// for the last projected music state comes back; cut-off one-shots do not.
+    /// This is the same whether or not the run is paused.
+    func handleInterruption(_ type: AVAudioSession.InterruptionType) {
+        switch type {
+        case .began:
+            interrupted = true
+            dropGeneration += 1
+            musicDropped = false
+            for index in voices.indices {
+                voices[index]?.stop()
+                voices[index] = nil
+            }
+            for player in musicPlayers.values { player.stop() }
+            ambience?.stop()
+            ambience = nil
+            musicStarted = false
+        case .ended:
+            interrupted = false
+            try? AVAudioSession.sharedInstance().setActive(true)
+            if let bed = currentBedId { setMusic(musicState, bed: bed) }
+        @unknown default:
+            break
+        }
+    }
+
     // MARK: - Frame
 
     /// Consumes one tick of projection.
     func apply(_ projection: AudioProjection) {
+        guard !interrupted else {
+            // Silent, but keep following the projection, so the bed restored
+            // when the interruption ends is the current state's (§ 13.2).
+            musicState = projection.musicState
+            currentBedId = projection.musicBedAssetId
+            return
+        }
         let drop = BlackoutMusicDrop.triggers(projection)
         if drop { beginBlackoutDrop() }
         for cue in projection.cues {
@@ -114,6 +167,7 @@ final class AudioEngine {
     /// A cue the presentation raises itself (the D-098 intro chirps): played
     /// and felt like a projected cue, outside any tick.
     func playPresentationCue(_ cue: ProjectedCue) {
+        guard !interrupted else { return }
         play(cue)
         fire(cue.haptic)
     }
