@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `d6027758fa8e46ed2073cbb3b6face8ee19847ef` |
+| Specification commit | `a2119c93bca29ef974249abb1050f58da61b285c` |
 | Ruleset | `ss-rules-008` |
 | Content | `civic-seam-content-006` |
 | Arena | `civic-seam-arena-004` |
@@ -60,3 +60,5 @@ BP-008 displayed-playback clarification adoption: source, exported-frame and act
 BP-001/BP-010 field contrast adoption: compare existing fill, dark contour and paired contour on the unchanged solid-clipped field path. D-104/T1045–T1046; presentation comparison only, no ruleset/content/arena/replay or active art migration. Recorded selection and coordinated visual-contract update remain required before changing shipping treatment.
 
 BP-001 street-surface comparison adoption: separate repeating surfaces from placed continuous curb/embedded rails in the benchmark fixture. T1042/T1046; authored presentation parameters only, no arena, ruleset, content or active art migration. Legal arena integration and visual acceptance remain open.
+
+D-105/D-106 adoption: SS-specs #67 (device checks no longer wait for the D-104 art review) and #68 (`run-shell.md` § 13 interruptions, T1050, RS-025–RS-032). No contract or fixture changed between `d6027758` and `a2119c93` (`git diff --stat` on `contracts/` and `fixtures/` is empty), so this is a pin move only. Ruleset, content, arena, replay and presentation identities are unchanged. T1050 is implemented in this runtime change; the iOS interruption sequence itself still needs a physical-device session.
