@@ -194,6 +194,36 @@ final class HUDRenderer {
                 y: centre.y
             )
         }
+        // D-110 Tamper floor: heavier than the threshold notches, with an
+        // upward cap under the bar, so it reads by weight and shape.
+        if let floor = HUDLayout.tamperFloor(camerasDestroyed: snap.camerasDestroyed) {
+            let x = centre.x - width / 2 + width * CGFloat(floor) / 1000
+            let marker = node("exposure-floor") { () -> SKShapeNode in
+                let shape = SKShapeNode()
+                shape.strokeColor = HUDPalette.text
+                shape.lineWidth = 3 * Self.framingScale
+                return shape
+            }
+            let line = CGMutablePath()
+            line.move(to: CGPoint(x: 0, y: -height / 2 - 2 * Self.framingScale))
+            line.addLine(to: CGPoint(x: 0, y: height / 2 + 2 * Self.framingScale))
+            marker.path = line
+            marker.position = CGPoint(x: x, y: centre.y)
+            let cap = node("exposure-floor-cap") { () -> SKShapeNode in
+                let shape = SKShapeNode()
+                shape.fillColor = HUDPalette.text
+                shape.strokeColor = .clear
+                return shape
+            }
+            let size = 5 * Self.framingScale
+            let triangle = CGMutablePath()
+            triangle.move(to: CGPoint(x: 0, y: 0))
+            triangle.addLine(to: CGPoint(x: -size, y: -size))
+            triangle.addLine(to: CGPoint(x: size, y: -size))
+            triangle.closeSubpath()
+            cap.path = triangle
+            cap.position = CGPoint(x: x, y: centre.y - height / 2 - 2 * Self.framingScale)
+        }
         // UI-008 non-colour carrier: the bar's fill *pattern* distinguishes the
         // state without relying on hue, so grayscale and colour-vision review
         // plates still read. Drawn inside the bar rather than labelled beside
