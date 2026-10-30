@@ -37,6 +37,12 @@ struct GameContainerView: View {
         ZStack {
             game
             UpgradeOverlayHost(scene: scene)
+            TerminalAccessibilityOverlay(
+                model: scene.terminalAccessibility,
+                onRestart: { scene.restartRun() },
+                onShare: { scene.presentShare() },
+                onRehearse: { _ = scene.rehearseCourt() }
+            )
             if !started {
                 TitleView(
                     onStart: startDailyRun,
@@ -110,10 +116,16 @@ private struct UpgradeOverlayHost: View {
 private struct GameplaySurface: View {
     let scene: GameScene
     @ObservedObject var selection: UpgradeSelectionModel
-    init(scene: GameScene) { self.scene = scene; self.selection = scene.upgradeSelection }
+    @ObservedObject var terminal: TerminalAccessibilityModel
+    init(scene: GameScene) {
+        self.scene = scene
+        self.selection = scene.upgradeSelection
+        self.terminal = scene.terminalAccessibility
+    }
     var body: some View {
         SpriteView(scene: scene, preferredFramesPerSecond: 60)
-            .accessibilityHidden(selection.isPresented)
+            // F-007: the results overlay speaks for the surface while it shows.
+            .accessibilityHidden(selection.isPresented || terminal.surface != nil)
             .allowsHitTesting(!selection.isPresented)
     }
 }

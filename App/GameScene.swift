@@ -336,6 +336,8 @@ final class GameScene: SKScene {
         super.init(coder: coder)
     }
     let upgradeSelection = UpgradeSelectionModel()
+    /// F-007: the results surface, for SwiftUI's accessible controls.
+    let terminalAccessibility = TerminalAccessibilityModel()
     private let combatFeedbackRenderer = CombatFeedbackRenderer()
     private let instrumentation = RunInstrumentation()
     private let deviceRunTracker = DeviceRunTracker()
@@ -1070,8 +1072,25 @@ final class GameScene: SKScene {
         controller.ended(token: token)
     }
 
+    /// F-007: what the drawn results surface says and where its controls are,
+    /// or nil while there is none. The same copy and rects the HUD draws.
+    private func terminalSurface(_ snap: PresentationSnapshot) -> TerminalAccessibilitySurface? {
+        guard let projector, let runCard else { return nil }
+        guard let title = runCard.isRehearsal
+            ? HUDLayout.terminalRehearsalCopy(for: snap.outcome)
+            : HUDLayout.terminalCopy(for: snap.outcome)
+        else { return nil }
+        return TerminalAccessibilitySurface(
+            summary: TerminalSpeech.summary(title: title, card: runCard),
+            panel: hud.terminalPanelRect(projector: projector),
+            restart: hud.terminalRestartRect(projector: projector),
+            share: runCard.isRehearsal ? nil : hud.terminalShareRect(projector: projector),
+            rehearse: hud.rehearsalAvailable ? hud.terminalRehearseRect(projector: projector) : nil
+        )
+    }
+
     /// § 11 Share: the system share sheet contains only the run card copy.
-    private func presentShare() {
+    func presentShare() {
         guard let text = runCard?.shareText,
               let view,
               var presenter = view.window?.rootViewController
@@ -1173,6 +1192,7 @@ final class GameScene: SKScene {
         var snap = session.snapshot
         if snap.upgradePending && !upgradeSelection.isPresented { clearGameplayInput() }
         upgradeSelection.synchronize(pending: snap.upgradePending)
+        terminalAccessibility.synchronize(terminalSurface(snap))
         // D-098: during the intro a Camera's field is drawn only once it has
         // powered on. Presentation copy of the snapshot; state is untouched.
         if let intro, !intro.isFinished {
