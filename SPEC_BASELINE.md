@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `95c0cbffbbe798ac0b28e85816cc369f0b691bbe` |
+| Specification commit | `fb3284c9d733c636b582d8c4eb1770296e203a46` |
 | Ruleset | `ss-rules-009` |
 | Content | `civic-seam-content-006` |
 | Arena | `civic-seam-arena-004` |
@@ -70,3 +70,5 @@ D-109 adoption (SS-specs #76, ruleset `ss-rules-009`): Court release and Court L
 D-110 adoption (SS-specs #77): Tamper floor marker on the Exposure meter (UI-012–UI-014). No contract or fixture change; pin move only. Presentation only.
 
 D-111 adoption (SS-specs #78): Captain and Daemon caption copy (AH-007, AH-008). No contract or fixture change; pin move only. Presentation only.
+
+D-112 adoption (SS-specs #79): Share as an incident report (RS-041, RS-042). No contract or fixture change; pin move only. Presentation only.
