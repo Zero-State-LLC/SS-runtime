@@ -440,8 +440,9 @@ struct RunCardTests {
         }
         #expect(!text.lowercased().contains("seed"))
         #expect(!text.lowercased().contains("receipt"))
-        // Nothing but the name and one line per row.
-        #expect(text.split(separator: "\n").count == card.rows.count + 1)
+        // Nothing but the name, the D-112 report header (which carries the
+        // DATE row) and outcome line, and one line per remaining row.
+        #expect(text.split(separator: "\n").count == card.rows.count + 2)
     }
 }
 
