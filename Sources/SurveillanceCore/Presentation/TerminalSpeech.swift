@@ -19,7 +19,7 @@ public enum TerminalSpeech {
     }
 
     /// `PEAK DETECTION` → `Peak detection`.
-    static func sentence(_ copy: String) -> String {
+    public static func sentence(_ copy: String) -> String {
         let lowered = copy.lowercased()
         guard let first = lowered.first else { return lowered }
         return first.uppercased() + lowered.dropFirst()
