@@ -440,11 +440,19 @@ final class HUDRenderer {
 
     /// The card shows a safety message (Lockdown, Extraction) when one is
     /// up; otherwise the one D-098 tutorial line `TutorialLineQueue` chose.
-    private func drawTutorial(_ snap: PresentationSnapshot, _ projector: HUDProjector) {
+    /// The tutorial card's copy this frame, if it shows: a safety message
+    /// always, otherwise the queued line when tutorials are on. VoiceOver
+    /// announces exactly this (`SpokenHUD`).
+    func shownTutorialCopy(_ snap: PresentationSnapshot) -> String? {
         let candidate = snap.tutorialCopyIsSafetyMessage
             ? snap.tutorialCopy
             : (tutorialsEnabled ? tutorialLine : nil)
-        guard let copy = candidate, !copy.isEmpty else { return }
+        guard let candidate, !candidate.isEmpty else { return nil }
+        return candidate
+    }
+
+    private func drawTutorial(_ snap: PresentationSnapshot, _ projector: HUDProjector) {
+        guard let copy = shownTutorialCopy(snap) else { return }
         let mapped = rect(.tutorialCard, projector)
         let centre = projector.sceneCentre(of: mapped)
         let width = projector.sceneLength(points: mapped.width)

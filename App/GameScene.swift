@@ -340,6 +340,8 @@ final class GameScene: SKScene {
     let upgradeSelection = UpgradeSelectionModel()
     /// F-007: the results surface, for SwiftUI's accessible controls.
     let terminalAccessibility = TerminalAccessibilityModel()
+    /// hud-tutorial.md / F-013: what VoiceOver announces during play.
+    private var spokenHUD = SpokenHUD()
     private let combatFeedbackRenderer = CombatFeedbackRenderer()
     private let instrumentation = RunInstrumentation()
     private let deviceRunTracker = DeviceRunTracker()
@@ -964,6 +966,7 @@ final class GameScene: SKScene {
 
     /// Presentation state shared by Restart and Rehearse Court.
     private func resetForNewSimulation() {
+        spokenHUD.reset()
         runCard = nil
         hud.runCard = nil
         hud.rehearsalAvailable = false
@@ -1238,5 +1241,24 @@ final class GameScene: SKScene {
         hud.quietFrame = session.quietFrame
         hud.awarenessHintCopy = session.awarenessHintCopy
         hud.render(snap, cameraHUD: session.cameraHUDProjection, paused: runPaused)
+        announceForVoiceOver(snap)
+    }
+
+    /// Tutorial copy, the heat reinforcement caption and safety captions,
+    /// spoken once each as they appear, queued behind whatever VoiceOver is
+    /// already saying rather than cutting it off.
+    private func announceForVoiceOver(_ snap: PresentationSnapshot) {
+        guard UIAccessibility.isVoiceOverRunning else { return }
+        let lines = spokenHUD.announcements(
+            tutorial: hud.shownTutorialCopy(snap),
+            reinforcement: hud.reinforcementCopy,
+            captions: hud.captions
+        )
+        guard !lines.isEmpty else { return }
+        let text = NSAttributedString(
+            string: lines.joined(separator: " "),
+            attributes: [.accessibilitySpeechQueueAnnouncement: true]
+        )
+        UIAccessibility.post(notification: .announcement, argument: text)
     }
 }
