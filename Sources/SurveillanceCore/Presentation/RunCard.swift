@@ -23,6 +23,9 @@ public struct RunCard: Equatable, Sendable {
     /// has no date, best, medals or Share.
     public let isRehearsal: Bool
     public static let rehearsalLabel = "REHEARSAL"
+    /// The run's outcome, for the D-112 incident report. Nil on a rehearsal
+    /// card, which cannot be shared.
+    public let outcome: RunOutcome?
 
     /// § 14.3: a single row, the time spent in the Court.
     public init(rehearsalCourtTicks ticks: UInt64) {
@@ -30,6 +33,7 @@ public struct RunCard: Equatable, Sendable {
         medals = []
         newMedals = []
         isRehearsal = true
+        outcome = nil
     }
 
     /// - Parameters:
@@ -76,21 +80,44 @@ public struct RunCard: Equatable, Sendable {
         self.medals = earned
         self.newMedals = newMedals.intersection(earned)
         self.isRehearsal = false
+        self.outcome = state.outcome
     }
 
-    /// § 11 share text: the game's name and the same rows, nothing else.
+    /// § 11 share text: the game's name and the same rows, nothing else,
+    /// written as an incident report (D-112).
     ///
     /// § 12: Share appends the earned medal names, without the `NEW` marks,
     /// which only mean something on this device.
     public var shareText: String {
         var lines = [Self.gameName]
-        for row in rows where row.label != Self.medalsLabel {
-            lines.append("\(row.label) \(row.value)")
+        lines.append(value(for: "DATE").map { "INCIDENT REPORT · DATE \($0)" } ?? "INCIDENT REPORT")
+        lines.append("OUTCOME: " + Self.reportOutcome(outcome))
+        for row in rows where row.label != Self.medalsLabel && row.label != "DATE" {
+            lines.append("\(Self.reportLabel(row.label)) \(row.value)")
         }
         if !medals.isEmpty {
             lines.append("\(Self.medalsLabel) " + medals.map(\.name).joined(separator: " "))
         }
         return lines.joined(separator: "\n")
+    }
+
+    /// D-112: the outcome in the authority's terms.
+    static func reportOutcome(_ outcome: RunOutcome?) -> String {
+        switch outcome {
+        case .success: "SUBJECT EXTRACTED"
+        case .failure: "SUBJECT DETAINED"
+        default: "REPORT VOID"
+        }
+    }
+
+    /// D-112: card labels phrased as observation and tampering. Each keeps the
+    /// card's own label, so RS-016's row check still reads.
+    static func reportLabel(_ label: String) -> String {
+        switch label {
+        case "TIME": "TIME UNDER OBSERVATION"
+        case "CAMERAS": "CAMERAS TAMPERED WITH"
+        default: label
+        }
     }
 
     public func value(for label: String) -> String? {
