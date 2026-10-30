@@ -644,7 +644,10 @@ final class BenchmarkCaptureTests: XCTestCase {
     func testCaptureCameraFieldsInReplayableEncounter() throws {
         let session = GameSession(seed: 1)
         session.audioSettings = .init(effectsEnabled: false, hapticsEnabled: false, musicEnabled: false)
-        var pilot = try XCTUnwrap(DebugAutopilot(scenario: "run", arena: session.simulation.state.arena))
+        // D-114 changed the seed-1 route: with Ricochet the pilot never stands
+        // with two enemies, a hostile shot and a Camera field in frame at
+        // once; with Ghost Step it does by step ~4970 (scratch probe).
+        var pilot = try XCTUnwrap(DebugAutopilot(scenario: "run", arena: session.simulation.state.arena, upgrade: .ghostStep))
         var found = false
         for _ in 0..<6000 {
             let before = session.snapshot
