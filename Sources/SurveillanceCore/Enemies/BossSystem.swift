@@ -157,7 +157,7 @@ public enum BossSystem {
             )
         }
 
-        applyLocomotion(boss: &boss, runtime: runtime, player: player, baseSpeed: baseSpeed)
+        applyLocomotion(boss: &boss, runtime: runtime, player: player, baseSpeed: baseSpeed, solids: solids)
         boss.contactDps = Int(IntMath.divHalfAway(Int64(baseContact) * Int64(runtime.contactNumerator), 100))
 
         if runtime.fieldRemaining > 0 {
@@ -283,12 +283,19 @@ public enum BossSystem {
         boss: inout EnemyBody,
         runtime: BossRuntime,
         player: PlayerBody,
-        baseSpeed: Int
+        baseSpeed: Int,
+        solids: [(id: String, box: AABB)]
     ) {
         let speedUnits = Int(IntMath.divHalfAway(Int64(baseSpeed) * Int64(runtime.speedNumerator), 100))
         let speed = Steering.speedQ8(speedUnits)
-        let dx = player.position.x.raw - boss.position.x.raw
-        let dy = player.position.y.raw - boss.position.y.raw
+        // D-116: with the line to the Player blocked, the Captain heads for the
+        // § Corner pursuit approach point, and drops its orbit while it does.
+        let target = CornerPursuit.waypoint(
+            from: boss.position, to: player.position, radius: boss.radius, solids: solids
+        )
+        let routing = target != player.position
+        let dx = target.x.raw - boss.position.x.raw
+        let dy = target.y.raw - boss.position.y.raw
         let mag = IntMath.isqrt(dx * dx + dy * dy)
         if mag == 0 {
             boss.velocity = .zero
@@ -296,7 +303,7 @@ public enum BossSystem {
         }
         var cx = IntMath.mulDivHalfAway(dx, Q8.scale, mag)
         var cy = IntMath.mulDivHalfAway(dy, Q8.scale, mag)
-        let orbit = runtime.orbitNumerator
+        let orbit = routing ? 0 : runtime.orbitNumerator
         if orbit != 0 {
             let even = boss.id.raw.isMultiple(of: 2)
             var px = even ? cy : 0 &- cy
