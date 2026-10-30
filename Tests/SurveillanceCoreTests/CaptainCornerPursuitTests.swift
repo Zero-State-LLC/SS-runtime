@@ -39,3 +39,30 @@ import Testing
         #expect(closest > 90)
     }
 }
+
+extension CaptainCornerPursuitTests {
+    /// BO-027 (D-117): the debug boss scenario with the Player standing still
+    /// at the far spawn. Under D-116 as first written the Captain froze under
+    /// `solid-11-court-column-a`, its line to a corner clear but its body not.
+    @Test func theCaptainCrossesTheArenaToAStillPlayer() throws {
+        var sim = try Simulation.make(seed: 1)
+        let seeded = sim.debug_seedScenario("boss")
+        #expect(seeded)
+        var ticks = 0
+        while !sim.isTerminal && ticks < 6_000 {
+            _ = sim.step(command: .neutral(tick: sim.state.tick + 1))
+            ticks += 1
+        }
+        #expect(sim.state.outcome == .failure, "the Captain reached the Player within \(ticks) ticks")
+    }
+
+    /// D-117: a path counts as clear for the Captain only if its body keeps
+    /// its radius from every solid.
+    @Test func bodyClearanceRejectsAPathThatGrazesACorner() {
+        let column: [(id: String, box: AABB)] = [("column", AABB(center: VecI(x: 1920, y: 704), halfSize: VecI(x: 32, y: 72)))]
+        // 26 units under the column: a line clears it, a radius-30 body does not.
+        #expect(!CornerPursuit.bodyClear(from: VecI(x: 1966, y: 802).asQ8, to: VecI(x: 1502, y: 802).asQ8, radius: 30, solids: column))
+        #expect(CornerPursuit.bodyClear(from: VecI(x: 1966, y: 810).asQ8, to: VecI(x: 1502, y: 810).asQ8, radius: 30, solids: column))
+        #expect(CornerPursuit.bodyReachedUnits == 2)
+    }
+}

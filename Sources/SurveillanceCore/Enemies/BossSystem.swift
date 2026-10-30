@@ -288,10 +288,12 @@ public enum BossSystem {
     ) {
         let speedUnits = Int(IntMath.divHalfAway(Int64(baseSpeed) * Int64(runtime.speedNumerator), 100))
         let speed = Steering.speedQ8(speedUnits)
-        // D-116: with the line to the Player blocked, the Captain heads for the
-        // § Corner pursuit approach point, and drops its orbit while it does.
+        // D-116/D-117: with the line to the Player blocked, the Captain heads for
+        // the § Corner pursuit approach point, taking only corners its body can
+        // reach (D-117), and drops its orbit while it does.
         let target = CornerPursuit.waypoint(
-            from: boss.position, to: player.position, radius: boss.radius, solids: solids
+            from: boss.position, to: player.position, radius: boss.radius, solids: solids,
+            bodyClearance: true
         )
         let routing = target != player.position
         let dx = target.x.raw - boss.position.x.raw
