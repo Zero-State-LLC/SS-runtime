@@ -1846,6 +1846,11 @@ public struct Simulation: Equatable, Sendable {
         return id
     }
 
+    mutating func testing_setEnemyPosition(_ id: EntityID, _ position: VecI) {
+        guard let index = state.enemies.firstIndex(where: { $0.id == id }) else { return }
+        state.enemies[index].position = position.asQ8
+    }
+
     mutating func testing_setPlayerPosition(_ position: VecI) {
         state.player.position = position.asQ8
     }

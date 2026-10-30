@@ -5,8 +5,8 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `27a41d221a522cc86ed2669efc62631023e1e61e` |
-| Ruleset | `ss-rules-012` |
+| Specification commit | `678e727979e9d4b7e0f1b9a824415a115d17a3d8` |
+| Ruleset | `ss-rules-013` |
 | Content | `civic-seam-content-008` |
 | Arena | `civic-seam-arena-004` |
 | Replay schema | `runtime-kernel-001` |
@@ -78,3 +78,5 @@ D-113 adoption (SS-specs #80, ruleset `ss-rules-010`, content `civic-seam-conten
 D-114 adoption (SS-specs #82, ruleset `ss-rules-011`): corner pursuit (T1054, EN-036–EN-041). An aware standard enemy whose line to the Player is blocked steers for the specified corner of the blocking solid (`CornerPursuit`); the Correlator charge and the Witch cast begin only with a clear line. `versions.json`, `runtime-kernel-001` and the four golden fixtures change; the new digests were computed independently from the reviewed ruleset-010 canonical states with only `rulesetVersion` replaced (SS-specs `docs/review/D114.md`), and actual execution reproduces them. `ss-rules-010` replays fail closed. Content, arena and presentation identities are unchanged.
 
 D-115 adoption (SS-specs #83, ruleset `ss-rules-012`, content `civic-seam-content-008`): Signal Jammer cancels heat reinforcements (T1055, UP-013). `heatReinforcementReduction` is 2 in `combat-content-008` (`upgrades-003`) and in `ExposureState`, validated against each other; no M-A/M-B wave gains heat reinforcements under the Jammer and no caption shows. `versions.json`, `runtime-kernel-001` and the four golden fixtures change; the new digests were computed independently from the reviewed ruleset-011 canonical states with only the ruleset and content identities replaced (SS-specs `docs/review/D115.md`), and actual execution reproduces them. `ss-rules-011` replays fail closed. Arena and presentation identities are unchanged. The pinned commit also carries the accepted intent `2026-10-30-captain-goes-round-solids` (#84).
+
+D-116 adoption (SS-specs #85, ruleset `ss-rules-013`): the Captain goes round solids (T1056, BO-025, BO-026). `BossSystem` steers for the `CornerPursuit` approach point with the Captain's radius and drops its orbit while routing; no leash. Recorded limit BO-026: a gap narrower than the Captain with a clear line through it still holds it. `versions.json`, `runtime-kernel-001` and the four golden fixtures change; the new digests were computed independently from the reviewed ruleset-012 canonical states with only `rulesetVersion` replaced (SS-specs `docs/review/D116.md`), and actual execution reproduces them. `ss-rules-012` replays fail closed. Content, arena and presentation identities are unchanged.

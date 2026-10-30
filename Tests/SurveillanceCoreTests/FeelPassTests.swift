@@ -20,8 +20,10 @@ enum FeelPassFixtures {
 
     static let pilotedSuccess: Run? = {
         for seed in successSeeds {
+            // RS-022 compares medals, so the evidence needs a success that
+            // earns at least one; a rules change can leave a success bare.
             guard let run = try? PacingProbe.run(seed: seed, upgrade: .ricochetPulse, profile: .competent),
-                  run.outcome == .success
+                  run.outcome == .success, !run.medals.isEmpty
             else { continue }
             return Run(seed: seed, commands: run.commands)
         }
