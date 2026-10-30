@@ -182,7 +182,7 @@ struct HeatReinforcementTests {
 
     @Test func heatBlockFailsClosed() throws {
         let bundled = try #require(
-            try JSONSerialization.jsonObject(with: BundledResource.data(name: "combat-content-007", subdirectory: "contracts"))
+            try JSONSerialization.jsonObject(with: BundledResource.data(name: "combat-content-008", subdirectory: "contracts"))
                 as? [String: Any]
         )
         func decodeError(_ mutate: (inout [String: Any]) -> Void) -> CombatContentError? {

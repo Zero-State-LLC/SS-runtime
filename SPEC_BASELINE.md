@@ -5,9 +5,9 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `6b4680a2f0a1fe344ca3fa28274e41efb3669cfa` |
-| Ruleset | `ss-rules-011` |
-| Content | `civic-seam-content-007` |
+| Specification commit | `27a41d221a522cc86ed2669efc62631023e1e61e` |
+| Ruleset | `ss-rules-012` |
+| Content | `civic-seam-content-008` |
 | Arena | `civic-seam-arena-004` |
 | Replay schema | `runtime-kernel-001` |
 
@@ -76,3 +76,5 @@ D-112 adoption (SS-specs #79): Share as an incident report (RS-041, RS-042). No 
 D-113 adoption (SS-specs #80, ruleset `ss-rules-010`, content `civic-seam-content-007`): upgrade parity (T1053, UP-011–UP-014). Ricochet continues from an enemy hit only when the hit defeats it; Signal Jammer lowers each M-A/M-B heat reinforcement by 1, minimum 0, and the heat caption reads the same reduced count. `combat-content-007` (`upgrades-002`) carries both values, validated against the simulation constants. `versions.json`, `runtime-kernel-001` and the four golden fixtures change; the new digests were computed independently from the reviewed ruleset-009 canonical states with only the ruleset and content identities replaced (SS-specs `docs/review/D113.md`), and actual execution reproduces them. `ss-rules-009` replays fail closed. Arena and presentation identities are unchanged.
 
 D-114 adoption (SS-specs #82, ruleset `ss-rules-011`): corner pursuit (T1054, EN-036–EN-041). An aware standard enemy whose line to the Player is blocked steers for the specified corner of the blocking solid (`CornerPursuit`); the Correlator charge and the Witch cast begin only with a clear line. `versions.json`, `runtime-kernel-001` and the four golden fixtures change; the new digests were computed independently from the reviewed ruleset-010 canonical states with only `rulesetVersion` replaced (SS-specs `docs/review/D114.md`), and actual execution reproduces them. `ss-rules-010` replays fail closed. Content, arena and presentation identities are unchanged.
+
+D-115 adoption (SS-specs #83, ruleset `ss-rules-012`, content `civic-seam-content-008`): Signal Jammer cancels heat reinforcements (T1055, UP-013). `heatReinforcementReduction` is 2 in `combat-content-008` (`upgrades-003`) and in `ExposureState`, validated against each other; no M-A/M-B wave gains heat reinforcements under the Jammer and no caption shows. `versions.json`, `runtime-kernel-001` and the four golden fixtures change; the new digests were computed independently from the reviewed ruleset-011 canonical states with only the ruleset and content identities replaced (SS-specs `docs/review/D115.md`), and actual execution reproduces them. `ss-rules-011` replays fail closed. Arena and presentation identities are unchanged. The pinned commit also carries the accepted intent `2026-10-30-captain-goes-round-solids` (#84).
