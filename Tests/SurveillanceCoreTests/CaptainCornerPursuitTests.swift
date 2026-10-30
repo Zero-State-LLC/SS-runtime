@@ -56,8 +56,8 @@ extension CaptainCornerPursuitTests {
         #expect(sim.state.outcome == .failure, "the Captain reached the Player within \(ticks) ticks")
     }
 
-    /// D-117: a path counts as clear for the Captain only if its body keeps
-    /// its radius from every solid.
+    /// BO-028 (D-117): a path counts as clear for the Captain only if its body
+    /// keeps its radius from every solid.
     @Test func bodyClearanceRejectsAPathThatGrazesACorner() {
         let column: [(id: String, box: AABB)] = [("column", AABB(center: VecI(x: 1920, y: 704), halfSize: VecI(x: 32, y: 72)))]
         // 26 units under the column: a line clears it, a radius-30 body does not.
