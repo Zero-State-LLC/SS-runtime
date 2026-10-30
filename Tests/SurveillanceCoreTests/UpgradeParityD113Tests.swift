@@ -2,8 +2,9 @@ import Testing
 @testable import SurveillanceCore
 
 /// D-113 (upgrades.md, enemies-and-encounters.md § Heat): Ricochet continues
-/// from an enemy hit only when the hit defeats it; Signal Jammer removes one
-/// heat reinforcement from each wave.
+/// from an enemy hit only when the hit defeats it. Signal Jammer removes heat
+/// reinforcements: one per wave under D-113, two under D-115, which is all
+/// the heat table ever adds.
 @Suite(.serialized)
 struct UpgradeParityD113Tests {
     /// Ricochet selected, two stationary Informants side by side in the open,
@@ -42,13 +43,14 @@ struct UpgradeParityD113Tests {
 
     @Test func theRuleIsOn() {
         #expect(Targeting.ricochetContinuationRequiresEnemyKill)
-        #expect(ExposureState.jammerHeatReinforcementReduction == 1)
+        #expect(ExposureState.jammerHeatReinforcementReduction == 2)
     }
 
-    @Test func jammerRemovesOneReinforcementPerWaveNeverBelowZero() {
+    /// UP-013 (D-115): no wave gains heat reinforcements under the Jammer.
+    @Test func jammerCancelsHeatReinforcements() {
         let heat = CombatContent.bundled().heat
         let expected: [DetectionState: (Int, Int)] = [
-            .hidden: (0, 0), .observed: (0, 0), .tracked: (1, 0), .hunted: (2, 1), .lockdown: (2, 1)
+            .hidden: (0, 0), .observed: (0, 0), .tracked: (1, 0), .hunted: (2, 0), .lockdown: (2, 0)
         ]
         for (state, (plain, jammer)) in expected {
             #expect(heat.reinforcements(encounter: "M-A", state: state, signalJammer: false) == plain, "\(state)")
@@ -57,16 +59,17 @@ struct UpgradeParityD113Tests {
         #expect(heat.reinforcements(encounter: "M-C", state: .hunted, signalJammer: true) == 0)
     }
 
-    /// The caption and the chevrons read the same reduced count, so the HUD
-    /// never announces reinforcements the Jammer removed.
+    /// The caption reads the same count as the spawn queue, so the HUD never
+    /// announces reinforcements the Jammer removed.
     @Test func theCaptionAgreesWithTheJammer() {
         let heat = CombatContent.bundled().heat
         let wave = [AuthoritativeEvent(tick: 9, phase: 15, type: .waveStarted,
                                        payload: ["encounterId": .string("M-A"), "waveId": .string("A1")], insertion: 0)]
-        #expect(HeatCaptionProjector.reinforcements(events: wave, detection: .hunted, heat: heat, signalJammer: true) == 1)
+        #expect(HeatCaptionProjector.reinforcements(events: wave, detection: .hunted, heat: heat, signalJammer: true) == 0)
         var projector = HeatCaptionProjector()
         #expect(projector.project(tick: 9, events: wave, detection: .tracked, heat: heat, signalJammer: true) == nil)
-        #expect(projector.project(tick: 10, events: wave, detection: .hunted, heat: heat, signalJammer: true)
-            == "REINFORCEMENTS +1 • HUNTED")
+        #expect(projector.project(tick: 10, events: wave, detection: .lockdown, heat: heat, signalJammer: true) == nil)
+        #expect(projector.project(tick: 11, events: wave, detection: .hunted, heat: heat, signalJammer: false)
+            == "REINFORCEMENTS +2 • HUNTED")
     }
 }

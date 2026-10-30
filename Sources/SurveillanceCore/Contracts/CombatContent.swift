@@ -317,7 +317,7 @@ public struct CombatContent: Equatable, Sendable {
     public var player: PlayerDamageSpec
 
     public static func bundled() -> CombatContent {
-        let data = BundledResource.data(name: "combat-content-007", subdirectory: "contracts")
+        let data = BundledResource.data(name: "combat-content-008", subdirectory: "contracts")
         return try! decode(data)
     }
 

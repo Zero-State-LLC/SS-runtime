@@ -7,7 +7,7 @@ import Testing
 /// side alone fails closed instead of shipping a contract with no effect.
 @Suite struct UpgradesContractParityTests {
     private static func bundledRoot() throws -> [String: Any] {
-        let data = BundledResource.data(name: "combat-content-007", subdirectory: "contracts")
+        let data = BundledResource.data(name: "combat-content-008", subdirectory: "contracts")
         return try #require(JSONSerialization.jsonObject(with: data) as? [String: Any])
     }
 
@@ -49,7 +49,7 @@ import Testing
         ("signalJammer", "contactReduction", 2),
         ("signalJammer", "minimumContact", 0),
         ("signalJammer", "index", 2),
-        ("signalJammer", "heatReinforcementReduction", 2),
+        ("signalJammer", "heatReinforcementReduction", 1),
     ])
     func aChangedValueFailsClosed(upgrade: String, field: String, value: Int) throws {
         let error = try Self.decodeError(Self.setting(upgrade, field, to: value))
