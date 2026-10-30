@@ -435,15 +435,16 @@ public struct AudioProjector: Equatable, Sendable {
             let attack = payloadString(event, "attackId") ?? ""
             let audioId: String
             let caption: String
+            // D-111: form first, then the authority's justification.
             if attack.contains("query") {
                 audioId = "daemon_query"
-                caption = "Query telegraph"
+                caption = CaptainCaptions.daemonQuery
             } else if attack.contains("dash") {
                 audioId = "daemon_dash"
-                caption = "Dash telegraph"
+                caption = CaptainCaptions.daemonDash
             } else {
                 audioId = "boss_telegraph_\(attack)"
-                caption = "Boss telegraph"
+                caption = BossAttackID(rawValue: attack).map(CaptainCaptions.telegraph) ?? "Boss telegraph"
             }
             candidates.append(cue(audioId, haptic: .warning, caption: caption, priority: 2, entity: event.primaryEntityId))
         }
@@ -452,12 +453,18 @@ public struct AudioProjector: Equatable, Sendable {
                let after = payloadString(event, "after")
             {
                 candidates.append(
-                    cue("boss_phase_\(after)", haptic: .heavy, caption: "Policy phase", priority: 2, entity: nil)
+                    cue(
+                        "boss_phase_\(after)",
+                        haptic: .heavy,
+                        caption: BossPhase(rawValue: after).map(CaptainCaptions.phase) ?? "Policy phase",
+                        priority: 2,
+                        entity: nil
+                    )
                 )
             }
         }
         if events.contains(where: { $0.type == .bossDefeated }) {
-            candidates.append(cue("boss_defeated", haptic: .success, caption: "Authority defeated", priority: 2, entity: nil))
+            candidates.append(cue("boss_defeated", haptic: .success, caption: CaptainCaptions.defeated, priority: 2, entity: nil))
         }
         if events.contains(where: { $0.type == .allCamerasDestroyed }) {
             candidates.append(cue("network_blackout", haptic: .success, caption: "Network Blackout 8/8", priority: 4, entity: nil))

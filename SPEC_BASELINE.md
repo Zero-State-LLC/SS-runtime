@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `ec67e5dbc4dd7a77f21cdd3202a9265915c1736a` |
+| Specification commit | `95c0cbffbbe798ac0b28e85816cc369f0b691bbe` |
 | Ruleset | `ss-rules-009` |
 | Content | `civic-seam-content-006` |
 | Arena | `civic-seam-arena-004` |
@@ -68,3 +68,5 @@ D-107/D-108 adoption: SS-specs #73 (`run-shell.md` § 14 Court rehearsal, T1051,
 D-109 adoption (SS-specs #76, ruleset `ss-rules-009`): Court release and Court Lockdown (T1052, EX-021–EX-024, BO-010–BO-012). `versions.json`, `runtime-kernel-001` and the four golden fixtures change. The new digests were computed independently from the reviewed ruleset-008 canonical states with only `rulesetVersion` replaced (SS-specs `docs/review/D109.md`), and actual execution reproduces them. `ss-rules-008` replays fail closed. Content, arena and presentation identities are unchanged.
 
 D-110 adoption (SS-specs #77): Tamper floor marker on the Exposure meter (UI-012–UI-014). No contract or fixture change; pin move only. Presentation only.
+
+D-111 adoption (SS-specs #78): Captain and Daemon caption copy (AH-007, AH-008). No contract or fixture change; pin move only. Presentation only.
