@@ -62,3 +62,14 @@ import Testing
         #expect(TerminalSpeech.rehearse == "Rehearse Court", "the Court is a proper name")
     }
 }
+
+extension TerminalSpeechTests {
+    /// The reflowed card reads its header and its rows separately; together
+    /// they are the drawn panel's summary.
+    @Test func theSummaryIsTheTitleThenTheRows() {
+        let card = RunCard(rehearsalCourtTicks: 3_660)
+        #expect(TerminalSpeech.rows(card) == "Rehearsal 1 minute 1 second.")
+        #expect(TerminalSpeech.summary(title: "REHEARSAL DOWN", card: card)
+            == "Rehearsal down. " + TerminalSpeech.rows(card))
+    }
+}

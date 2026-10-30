@@ -10,11 +10,12 @@ public enum TerminalSpeech {
 
     /// The outcome title, then each card row in drawn order, as sentences.
     public static func summary(title: String, card: RunCard?) -> String {
-        var sentences = [sentence(title)]
-        if let card {
-            sentences += card.rows.map { spoken($0, card: card) }
-        }
-        return sentences.joined(separator: ". ") + "."
+        sentence(title) + "." + (card.map { " " + rows($0) } ?? "")
+    }
+
+    /// Each card row in drawn order, as sentences.
+    public static func rows(_ card: RunCard) -> String {
+        card.rows.map { spoken($0, card: card) }.joined(separator: ". ") + "."
     }
 
     /// `PEAK DETECTION` → `Peak detection`.

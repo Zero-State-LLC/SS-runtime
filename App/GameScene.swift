@@ -1083,7 +1083,10 @@ final class GameScene: SKScene {
             : HUDLayout.terminalCopy(for: snap.outcome)
         else { return nil }
         return TerminalAccessibilitySurface(
+            title: title,
+            rows: runCard.rows,
             summary: TerminalSpeech.summary(title: title, card: runCard),
+            spokenRows: TerminalSpeech.rows(runCard),
             panel: hud.terminalPanelRect(projector: projector),
             restart: hud.terminalRestartRect(projector: projector),
             share: runCard.isRehearsal ? nil : hud.terminalShareRect(projector: projector),
