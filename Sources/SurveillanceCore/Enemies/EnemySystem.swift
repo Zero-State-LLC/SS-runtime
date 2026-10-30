@@ -151,9 +151,15 @@ public enum EnemySystem {
             return
         }
 
+        // D-114: where the enemy heads when it closes on the Player, and
+        // whether it has the clear line a charge or a bolt needs.
+        let clearLine = Collision.lineOfFireClear(from: enemy.position, to: player.position, solids: solids)
+        let approach = clearLine
+            ? player.position
+            : CornerPursuit.waypoint(from: enemy.position, to: player.position, radius: enemy.radius, solids: solids)
         switch enemy.archetype {
         case .autonomousInformant:
-            enemy.velocity = Steering.toward(enemy.position, player.position, speedPerTickQ8: speed)
+            enemy.velocity = Steering.toward(enemy.position, approach, speedPerTickQ8: speed)
 
         case .fogAnalyticsCloud:
             let stats = content.standardEnemies[.fogAnalyticsCloud]!
@@ -171,7 +177,7 @@ public enum EnemySystem {
                 enemy.stateTicks = pulse.telegraph
             } else if distSq > Int64(210) * Int64(210) * Q8.scale * Q8.scale {
                 enemy.state = .pursue
-                enemy.velocity = Steering.toward(enemy.position, player.position, speedPerTickQ8: speed)
+                enemy.velocity = Steering.toward(enemy.position, approach, speedPerTickQ8: speed)
             } else {
                 enemy.state = .orbit
                 enemy.velocity = Steering.orbitVelocity(
@@ -202,13 +208,13 @@ public enum EnemySystem {
                 enemy.nextSpecialTick = tick + UInt64(charge.cooldown)
             } else if enemy.state == .charge {
                 break
-            } else if tick >= enemy.nextSpecialTick, distSq <= Int64(240) * Int64(240) * Q8.scale * Q8.scale {
+            } else if tick >= enemy.nextSpecialTick, distSq <= Int64(240) * Int64(240) * Q8.scale * Q8.scale, clearLine {
                 enemy.state = .telegraph
                 enemy.stateTicks = charge.telegraph
                 enemy.velocity = .zero
             } else {
                 enemy.state = .pursue
-                enemy.velocity = Steering.toward(enemy.position, player.position, speedPerTickQ8: speed)
+                enemy.velocity = Steering.toward(enemy.position, approach, speedPerTickQ8: speed)
             }
 
         case .sutroSignalWitch:
@@ -232,12 +238,12 @@ public enum EnemySystem {
                 )
                 enemy.state = .cooldown
                 enemy.nextSpecialTick = tick + UInt64(shot.cooldown)
-            } else if tick >= enemy.nextSpecialTick && enemy.state != .telegraph {
+            } else if tick >= enemy.nextSpecialTick && enemy.state != .telegraph && clearLine {
                 enemy.state = .telegraph
                 enemy.stateTicks = shot.telegraph
                 enemy.velocity = .zero
-            } else if dist > maxR {
-                enemy.velocity = Steering.toward(enemy.position, player.position, speedPerTickQ8: speed)
+            } else if dist > maxR || !clearLine {
+                enemy.velocity = Steering.toward(enemy.position, approach, speedPerTickQ8: speed)
             } else if dist < minR {
                 enemy.velocity = Steering.toward(player.position, enemy.position, speedPerTickQ8: speed)
             } else {
@@ -279,7 +285,7 @@ public enum EnemySystem {
                 enemy.stateTicks = mine.telegraph
                 enemy.velocity = .zero
             } else if dist > maxR {
-                enemy.velocity = Steering.toward(enemy.position, player.position, speedPerTickQ8: speed)
+                enemy.velocity = Steering.toward(enemy.position, approach, speedPerTickQ8: speed)
             } else if dist < minR {
                 enemy.velocity = Steering.toward(player.position, enemy.position, speedPerTickQ8: speed)
             } else {
