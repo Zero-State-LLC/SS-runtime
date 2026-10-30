@@ -6,8 +6,8 @@ iPhone runtime for the one-level **Surveillance Survivor** reboot.
 
 - Repository: [scrimshawlife-ctrl/SS-specs](https://github.com/scrimshawlife-ctrl/SS-specs)
 - Baseline commit: see [SPEC_BASELINE.md](SPEC_BASELINE.md).
-- Ruleset: `ss-rules-009`
-- Content: `civic-seam-content-006`
+- Ruleset: `ss-rules-010`
+- Content: `civic-seam-content-007`
 - Arena: `civic-seam-arena-004`
 - Replay schema: `runtime-kernel-001`
 

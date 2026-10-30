@@ -5,9 +5,9 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `fb3284c9d733c636b582d8c4eb1770296e203a46` |
-| Ruleset | `ss-rules-009` |
-| Content | `civic-seam-content-006` |
+| Specification commit | `1cb5383d3cdcdee8ee19bd96a46b8a969f2b1677` |
+| Ruleset | `ss-rules-010` |
+| Content | `civic-seam-content-007` |
 | Arena | `civic-seam-arena-004` |
 | Replay schema | `runtime-kernel-001` |
 
@@ -72,3 +72,5 @@ D-110 adoption (SS-specs #77): Tamper floor marker on the Exposure meter (UI-012
 D-111 adoption (SS-specs #78): Captain and Daemon caption copy (AH-007, AH-008). No contract or fixture change; pin move only. Presentation only.
 
 D-112 adoption (SS-specs #79): Share as an incident report (RS-041, RS-042). No contract or fixture change; pin move only. Presentation only.
+
+D-113 adoption (SS-specs #80, ruleset `ss-rules-010`, content `civic-seam-content-007`): upgrade parity (T1053, UP-011–UP-014). Ricochet continues from an enemy hit only when the hit defeats it; Signal Jammer lowers each M-A/M-B heat reinforcement by 1, minimum 0, and the heat caption reads the same reduced count. `combat-content-007` (`upgrades-002`) carries both values, validated against the simulation constants. `versions.json`, `runtime-kernel-001` and the four golden fixtures change; the new digests were computed independently from the reviewed ruleset-009 canonical states with only the ruleset and content identities replaced (SS-specs `docs/review/D113.md`), and actual execution reproduces them. `ss-rules-009` replays fail closed. Arena and presentation identities are unchanged.

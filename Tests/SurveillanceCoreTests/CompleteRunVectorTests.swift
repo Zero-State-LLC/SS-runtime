@@ -11,15 +11,15 @@ struct CompleteRunVectorTests {
     private static let expectedVectors: [UpgradeID: ExpectedVector] = [
         .signalJammer: ExpectedVector(
             elapsedTicks: 302,
-            terminalDigest: "1282a735c5e5af9edb5e0dd6c866fd4cc4a7682c680970df945c63ec7943f7cd"
+            terminalDigest: "b6c5681271d2a6e8919a0bc773314a481e19439b41da9dcef26b97fed47fe191"
         ),
         .ricochetPulse: ExpectedVector(
             elapsedTicks: 302,
-            terminalDigest: "7b499009aa68c59a6cd9fe9c5ff2e8b6e89b5634b7fb6dd6afe43cb9a617e59c"
+            terminalDigest: "95dd22f488dcbfe709b2131cd062c22dd17e2c8924a2866c970d4db9c6920cc6"
         ),
         .ghostStep: ExpectedVector(
             elapsedTicks: 302,
-            terminalDigest: "a841cdca3e68bd7e689abdfc876f16f0de6d38b4407a969da70fef9177aea7c7"
+            terminalDigest: "b9a689d6daa1c484e42501b5400ca4c83b3d2db213bce95d950b79a00b8eec5a"
         )
     ]
 

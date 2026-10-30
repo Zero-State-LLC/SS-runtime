@@ -174,13 +174,15 @@ final class GameSession {
         lastHeatReinforcements = HeatCaptionProjector.reinforcements(
             events: result.events,
             detection: simulation.state.exposure.detectionState,
-            heat: simulation.state.content.heat
+            heat: simulation.state.content.heat,
+            signalJammer: simulation.state.upgrade.signalJammer
         )
         reinforcementCopy = heatCaption.project(
             tick: result.tick,
             events: result.events,
             detection: simulation.state.exposure.detectionState,
-            heat: simulation.state.content.heat
+            heat: simulation.state.content.heat,
+            signalJammer: simulation.state.upgrade.signalJammer
         )
         quietFrame = quietApproach.project(tick: result.tick, events: result.events, state: simulation.state)
         feel.didStep(events: result.events, enemiesBefore: enemiesBefore, state: simulation.state)

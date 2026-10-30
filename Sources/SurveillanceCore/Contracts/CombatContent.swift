@@ -105,10 +105,13 @@ public struct HeatSpec: Equatable, Sendable {
     /// Informants appended to a wave of `encounter` that starts while
     /// `state`. Zero for any encounter the block does not name (M-C). The
     /// table covers every Detection State, `lockdown` included (D-084,
-    /// EN-015), and decoding requires all five.
-    public func reinforcements(encounter: String, state: DetectionState) -> Int {
+    /// EN-015), and decoding requires all five. D-113: Signal Jammer removes
+    /// `ExposureState.jammerHeatReinforcementReduction` from each wave's count,
+    /// never below zero.
+    public func reinforcements(encounter: String, state: DetectionState, signalJammer: Bool) -> Int {
         guard encounters.contains(encounter) else { return 0 }
-        return byDetectionState[state] ?? 0
+        let base = byDetectionState[state] ?? 0
+        return signalJammer ? max(0, base - ExposureState.jammerHeatReinforcementReduction) : base
     }
 }
 
@@ -314,7 +317,7 @@ public struct CombatContent: Equatable, Sendable {
     public var player: PlayerDamageSpec
 
     public static func bundled() -> CombatContent {
-        let data = BundledResource.data(name: "combat-content-006", subdirectory: "contracts")
+        let data = BundledResource.data(name: "combat-content-007", subdirectory: "contracts")
         return try! decode(data)
     }
 
@@ -379,16 +382,28 @@ public struct CombatContent: Equatable, Sendable {
         var jammerInts = jammerBlock
         jammerInts.removeValue(forKey: "pulseRatio")
         let jammerValues = try strictInts(jammerInts, block: jammer, minimums: [
-            "index": 0, "contactReduction": 0, "minimumContact": 0
+            "index": 0, "contactReduction": 0, "minimumContact": 0, "heatReinforcementReduction": 0
         ])
         try expect("\(jammer).index", jammerValues["index"]!, Int(UpgradeID.signalJammer.selectionIndex))
         try expect("\(jammer).contactReduction", jammerValues["contactReduction"]!, ExposureState.jammerContactReduction)
         try expect("\(jammer).minimumContact", jammerValues["minimumContact"]!, ExposureState.jammerMinimumContact)
         try expect("\(jammer).pulseRatio[0]", numerator, ExposureState.jammerPulseRatio.numerator)
         try expect("\(jammer).pulseRatio[1]", denominator, ExposureState.jammerPulseRatio.denominator)
+        try expect("\(jammer).heatReinforcementReduction", jammerValues["heatReinforcementReduction"]!,
+                   ExposureState.jammerHeatReinforcementReduction)
 
         let ricochet = "upgrades.ricochetPulse"
-        let ricochetValues = try strictInts(block["ricochetPulse"], block: ricochet, minimums: [
+        var ricochetBlock = try decodeObject(block["ricochetPulse"], path: ricochet)
+        guard let requiresKill = ricochetBlock.removeValue(forKey: "continuationRequiresEnemyKill") else {
+            throw CombatContentError.missingField("\(ricochet).continuationRequiresEnemyKill")
+        }
+        guard JSONScalar.isBool(requiresKill), let requiresKillValue = requiresKill as? Bool else {
+            throw CombatContentError.wrongType("\(ricochet).continuationRequiresEnemyKill")
+        }
+        guard requiresKillValue == Targeting.ricochetContinuationRequiresEnemyKill else {
+            throw CombatContentError.simulationMismatch("\(ricochet).continuationRequiresEnemyKill")
+        }
+        let ricochetValues = try strictInts(ricochetBlock, block: ricochet, minimums: [
             "index": 0, "continuations": 0, "range": 0, "enemyDamage": 0, "cameraDamage": 0
         ])
         try expect("\(ricochet).index", ricochetValues["index"]!, Int(UpgradeID.ricochetPulse.selectionIndex))

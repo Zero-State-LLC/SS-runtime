@@ -7,7 +7,7 @@ import Testing
 /// side alone fails closed instead of shipping a contract with no effect.
 @Suite struct UpgradesContractParityTests {
     private static func bundledRoot() throws -> [String: Any] {
-        let data = BundledResource.data(name: "combat-content-006", subdirectory: "contracts")
+        let data = BundledResource.data(name: "combat-content-007", subdirectory: "contracts")
         return try #require(JSONSerialization.jsonObject(with: data) as? [String: Any])
     }
 
@@ -49,10 +49,25 @@ import Testing
         ("signalJammer", "contactReduction", 2),
         ("signalJammer", "minimumContact", 0),
         ("signalJammer", "index", 2),
+        ("signalJammer", "heatReinforcementReduction", 2),
     ])
     func aChangedValueFailsClosed(upgrade: String, field: String, value: Int) throws {
         let error = try Self.decodeError(Self.setting(upgrade, field, to: value))
         #expect(error == .simulationMismatch("upgrades.\(upgrade).\(field)"))
+    }
+
+    @Test func d113ContinuationRuleFailsClosed() throws {
+        #expect(try Self.decodeError(Self.setting("ricochetPulse", "continuationRequiresEnemyKill", to: false))
+            == .simulationMismatch("upgrades.ricochetPulse.continuationRequiresEnemyKill"))
+        #expect(try Self.decodeError(Self.setting("ricochetPulse", "continuationRequiresEnemyKill", to: 1))
+            == .wrongType("upgrades.ricochetPulse.continuationRequiresEnemyKill"))
+        #expect(try Self.decodeError { root in
+            var upgrades = root["upgrades"] as! [String: Any]
+            var block = upgrades["ricochetPulse"] as! [String: Any]
+            block.removeValue(forKey: "continuationRequiresEnemyKill")
+            upgrades["ricochetPulse"] = block
+            root["upgrades"] = upgrades
+        } == .missingField("upgrades.ricochetPulse.continuationRequiresEnemyKill"))
     }
 
     @Test func aChangedPulseRatioFailsClosed() throws {

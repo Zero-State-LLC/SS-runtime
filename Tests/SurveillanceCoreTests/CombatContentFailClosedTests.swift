@@ -84,7 +84,7 @@ struct CombatContentFailClosedTests {
     /// or nil if it decoded.
     private static func mutated(_ mutate: (inout [String: Any]) -> Void) -> CombatContentError? {
         var root = (try? JSONSerialization.jsonObject(
-            with: BundledResource.data(name: "combat-content-006", subdirectory: "contracts")
+            with: BundledResource.data(name: "combat-content-007", subdirectory: "contracts")
         )) as? [String: Any] ?? [:]
         mutate(&root)
         do {

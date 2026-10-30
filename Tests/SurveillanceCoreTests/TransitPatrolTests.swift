@@ -397,7 +397,7 @@ struct TransitPatrolTests {
         sim.testing_setPlayerPosition(trigger.center)
         _ = Self.step(&sim)
         let authored = HeatReinforcementTests.authored("M-A", wave: 0, content: sim.state.content).count
-        let heat = sim.state.content.heat.reinforcements(encounter: "M-A", state: .tracked)
+        let heat = sim.state.content.heat.reinforcements(encounter: "M-A", state: .tracked, signalJammer: false)
         #expect(sim.state.encounters["M-A"]?.spawnQueue.count == authored + heat)
         #expect(sim.state.enemies.filter { $0.patrol != nil }.allSatisfy { $0.encounterId.hasPrefix("patrol:") })
     }

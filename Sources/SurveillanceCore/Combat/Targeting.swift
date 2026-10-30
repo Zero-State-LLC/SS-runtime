@@ -47,6 +47,9 @@ public enum Targeting {
     public static let enemyDamage = 10
     public static let cameraDamage = 1
     public static let ricochetRange = 160
+    /// D-113 (upgrades.md): a Civic Pulse that hits an enemy continues only
+    /// when that hit defeats it. A hit on a damageable Camera always continues.
+    public static let ricochetContinuationRequiresEnemyKill = true
 
     /// D-031 / D-082 / `camera-destruction-001` §6 / T409: class, then squared
     /// distance to anchor, then stable ID. Only a chosen Camera is a candidate.
