@@ -198,6 +198,7 @@ public struct Simulation: Equatable, Sendable {
                 events: &events,
                 baseSpeed: state.content.bossSpeed,
                 baseContact: state.content.bossContactDps,
+                bounds: state.arena.boundsUnits.aabb,
                 courtLockdown: state.exposure.lockdownEntered
             )
             state.bossRuntime = runtime

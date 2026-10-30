@@ -381,7 +381,9 @@ public enum IsolatedKernel {
             playerDamage: &playerDamage,
             events: &events,
             baseSpeed: 120,
-            baseContact: 16
+            baseContact: 16,
+            // No solids here, so the Captain always has a clear line.
+            bounds: AABB(center: VecI(x: 0, y: 0), halfSize: VecI(x: 100_000, y: 100_000))
         )
         let liveBossBolts = projectiles.filter { $0.kind == .bossBolt && $0.alive }.count
         return (
