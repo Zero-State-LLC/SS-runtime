@@ -41,6 +41,7 @@ import Testing
 }
 
 extension CaptainCornerPursuitTests {
+    #if DEBUG
     /// BO-027 (D-117): the debug boss scenario with the Player standing still
     /// at the far spawn. Under D-116 as first written the Captain froze under
     /// `solid-11-court-column-a`, its line to a corner clear but its body not.
@@ -55,6 +56,7 @@ extension CaptainCornerPursuitTests {
         }
         #expect(sim.state.outcome == .failure, "the Captain reached the Player within \(ticks) ticks")
     }
+    #endif
 
     /// BO-028 (D-117): a path counts as clear for the Captain only if its body
     /// keeps its radius from every solid.
