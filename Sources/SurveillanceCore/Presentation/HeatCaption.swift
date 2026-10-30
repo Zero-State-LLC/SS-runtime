@@ -46,11 +46,13 @@ public struct HeatCaptionProjector: Equatable, Sendable {
     /// tick, by the same rule as the caption. It feeds the
     /// `heatReinforcements` VFX recipe (D-088), so the chevrons and the
     /// caption can never disagree.
-    public static func reinforcements(events: [AuthoritativeEvent], detection: DetectionState, heat: HeatSpec) -> Int {
+    public static func reinforcements(
+        events: [AuthoritativeEvent], detection: DetectionState, heat: HeatSpec, signalJammer: Bool
+    ) -> Int {
         let state = stateAtWaveStart(events: events, current: detection)
         return events.reduce(0) { total, event in
             guard event.type == .waveStarted, case .string(let encounter)? = event.payload["encounterId"] else { return total }
-            return total + heat.reinforcements(encounter: encounter, state: state)
+            return total + heat.reinforcements(encounter: encounter, state: state, signalJammer: signalJammer)
         }
     }
 
@@ -59,12 +61,13 @@ public struct HeatCaptionProjector: Equatable, Sendable {
         tick: UInt64,
         events: [AuthoritativeEvent],
         detection: DetectionState,
-        heat: HeatSpec
+        heat: HeatSpec,
+        signalJammer: Bool
     ) -> String? {
         for event in events where event.type == .waveStarted {
             guard case .string(let encounter)? = event.payload["encounterId"] else { continue }
             let state = Self.stateAtWaveStart(events: events, current: detection)
-            let count = heat.reinforcements(encounter: encounter, state: state)
+            let count = heat.reinforcements(encounter: encounter, state: state, signalJammer: signalJammer)
             // A wave with none clears an older caption: it no longer describes
             // the wave on screen.
             copy = Self.copy(count: count, state: state)

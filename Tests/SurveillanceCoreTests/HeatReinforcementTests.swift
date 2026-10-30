@@ -177,12 +177,12 @@ struct HeatReinforcementTests {
         #expect(heat.reinforcementArchetype == .autonomousInformant)
         #expect(heat.encounters == ["M-A", "M-B"])
         #expect(heat.byDetectionState == [.hidden: 0, .observed: 0, .tracked: 1, .hunted: 2, .lockdown: 2])
-        #expect(heat.reinforcements(encounter: "M-C", state: .hunted) == 0)
+        #expect(heat.reinforcements(encounter: "M-C", state: .hunted, signalJammer: false) == 0)
     }
 
     @Test func heatBlockFailsClosed() throws {
         let bundled = try #require(
-            try JSONSerialization.jsonObject(with: BundledResource.data(name: "combat-content-006", subdirectory: "contracts"))
+            try JSONSerialization.jsonObject(with: BundledResource.data(name: "combat-content-007", subdirectory: "contracts"))
                 as? [String: Any]
         )
         func decodeError(_ mutate: (inout [String: Any]) -> Void) -> CombatContentError? {
@@ -238,21 +238,24 @@ struct HeatReinforcementTests {
             tick: result.tick,
             events: result.events,
             detection: sim.state.exposure.detectionState,
-            heat: sim.state.content.heat
+            heat: sim.state.content.heat,
+            signalJammer: false
         )
         #expect(copy == "REINFORCEMENTS +2 • HUNTED")
         let later = projector.project(
             tick: result.tick + HeatCaptionProjector.visibleTicks - 1,
             events: [],
             detection: .hidden,
-            heat: sim.state.content.heat
+            heat: sim.state.content.heat,
+            signalJammer: false
         )
         #expect(later == copy)
         let expired = projector.project(
             tick: result.tick + HeatCaptionProjector.visibleTicks,
             events: [],
             detection: .hidden,
-            heat: sim.state.content.heat
+            heat: sim.state.content.heat,
+            signalJammer: false
         )
         #expect(expired == nil)
     }
@@ -266,12 +269,12 @@ struct HeatReinforcementTests {
         let wave = AuthoritativeEvent(tick: 1, phase: 14, type: .waveStarted, payload: ["encounterId": .string("M-A"), "waveId": .string("A1")], insertion: 0)
         let mc = AuthoritativeEvent(tick: 1, phase: 14, type: .waveStarted, payload: ["encounterId": .string("M-C"), "waveId": .string("C1")], insertion: 1)
         for state in [DetectionState.hidden, .observed, .tracked, .hunted, .lockdown] {
-            let count = HeatCaptionProjector.reinforcements(events: [wave], detection: state, heat: heat)
-            #expect(count == heat.reinforcements(encounter: "M-A", state: state), "\(state)")
+            let count = HeatCaptionProjector.reinforcements(events: [wave], detection: state, heat: heat, signalJammer: false)
+            #expect(count == heat.reinforcements(encounter: "M-A", state: state, signalJammer: false), "\(state)")
             #expect(HeatCaptionProjector.copy(count: count, state: state) != nil || count == 0)
         }
-        #expect(HeatCaptionProjector.reinforcements(events: [mc], detection: .hunted, heat: heat) == 0)
-        #expect(HeatCaptionProjector.reinforcements(events: [], detection: .hunted, heat: heat) == 0)
+        #expect(HeatCaptionProjector.reinforcements(events: [mc], detection: .hunted, heat: heat, signalJammer: false) == 0)
+        #expect(HeatCaptionProjector.reinforcements(events: [], detection: .hunted, heat: heat, signalJammer: false) == 0)
     }
 
     @Test func captionUsesTheStateBeforeThisTicksChange() {
@@ -283,7 +286,7 @@ struct HeatReinforcementTests {
                                payload: ["encounterId": .string("M-B"), "waveId": .string("B2")], insertion: 1),
         ]
         var projector = HeatCaptionProjector()
-        #expect(projector.project(tick: 5, events: events, detection: .hunted, heat: heat) == "REINFORCEMENTS +1 • TRACKED")
+        #expect(projector.project(tick: 5, events: events, detection: .hunted, heat: heat, signalJammer: false) == "REINFORCEMENTS +1 • TRACKED")
     }
 
     @Test func captionIsAbsentForHiddenObservedAndMobC() {
@@ -293,12 +296,12 @@ struct HeatReinforcementTests {
                                 payload: ["encounterId": .string(id), "waveId": .string("x")], insertion: 0)]
         }
         var projector = HeatCaptionProjector()
-        #expect(projector.project(tick: 9, events: wave("M-A"), detection: .observed, heat: heat) == nil)
-        #expect(projector.project(tick: 9, events: wave("M-A"), detection: .hidden, heat: heat) == nil)
-        #expect(projector.project(tick: 9, events: wave("M-C"), detection: .lockdown, heat: heat) == nil)
+        #expect(projector.project(tick: 9, events: wave("M-A"), detection: .observed, heat: heat, signalJammer: false) == nil)
+        #expect(projector.project(tick: 9, events: wave("M-A"), detection: .hidden, heat: heat, signalJammer: false) == nil)
+        #expect(projector.project(tick: 9, events: wave("M-C"), detection: .lockdown, heat: heat, signalJammer: false) == nil)
         // A wave with none clears an older caption.
-        _ = projector.project(tick: 10, events: wave("M-B"), detection: .hunted, heat: heat)
-        #expect(projector.project(tick: 11, events: wave("M-B"), detection: .hidden, heat: heat) == nil)
+        _ = projector.project(tick: 10, events: wave("M-B"), detection: .hunted, heat: heat, signalJammer: false)
+        #expect(projector.project(tick: 11, events: wave("M-B"), detection: .hidden, heat: heat, signalJammer: false) == nil)
     }
 
     // MARK: - Helpers

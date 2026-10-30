@@ -209,7 +209,8 @@ struct PacingProbe {
             reinforcementsCaptioned += HeatCaptionProjector.reinforcements(
                 events: result.events,
                 detection: sim.state.exposure.detectionState,
-                heat: sim.state.content.heat
+                heat: sim.state.content.heat,
+                signalJammer: sim.state.upgrade.signalJammer
             )
             for event in result.events where event.type == .waveStarted {
                 guard case .string(let encounter)? = event.payload["encounterId"] else { continue }
@@ -328,7 +329,9 @@ struct PacingProbe {
                     wave: wave,
                     tick: event.tick,
                     state: state,
-                    added: sim.state.content.heat.reinforcements(encounter: encounter, state: state),
+                    added: sim.state.content.heat.reinforcements(
+                        encounter: encounter, state: state, signalJammer: sim.state.upgrade.signalJammer
+                    ),
                     queued: sim.state.encounters[encounter]?.spawnQueue.count ?? 0,
                     authored: authored,
                     peakExposureSincePreviousWave: peakSinceWave,

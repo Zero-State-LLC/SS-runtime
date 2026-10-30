@@ -565,10 +565,13 @@ public struct Simulation: Equatable, Sendable {
                     ]
                 )
                 state.projectiles[hit.index].hitEntityIds.append(hit.target)
-                if state.enemies[eIndex].integrity <= 0 {
+                let defeated = state.enemies[eIndex].integrity <= 0
+                if defeated {
                     killEnemy(at: eIndex, tick: tick)
                 }
-                if state.upgrade.ricochetPulse && state.projectiles[hit.index].kind == .civicPulse {
+                // D-113: an enemy hit continues only when it defeats the enemy.
+                if state.upgrade.ricochetPulse && state.projectiles[hit.index].kind == .civicPulse
+                    && (defeated || !Targeting.ricochetContinuationRequiresEnemyKill) {
                     ricochetFrom.append((state.projectiles[hit.index], state.enemies[eIndex].position, hit.target))
                     consumed.insert(hit.projectile)
                     continue
@@ -1072,7 +1075,9 @@ public struct Simulation: Equatable, Sendable {
 
     private func waveQueue(_ wave: WaveSpec, encounter: String) -> (queue: [ArchetypeID], reinforcements: Int) {
         let heat = state.content.heat
-        let added = heat.reinforcements(encounter: encounter, state: state.exposure.detectionState)
+        let added = heat.reinforcements(
+            encounter: encounter, state: state.exposure.detectionState, signalJammer: state.upgrade.signalJammer
+        )
         return (flatten(wave.members) + repeatElement(heat.reinforcementArchetype, count: added), added)
     }
 

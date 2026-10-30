@@ -73,6 +73,8 @@ public struct ExposureState: Equatable, Sendable {
     public static let jammerContactReduction = 1
     public static let jammerMinimumContact = 1
     public static let jammerPulseRatio = (numerator: 75, denominator: 100)
+    /// D-113: heat reinforcements removed from each M-A/M-B wave (minimum 0).
+    public static let jammerHeatReinforcementReduction = 1
 
     public static func contactDelta(cameraCount n: Int, signalJammer: Bool) -> Int {
         guard n > 0 else { return 0 }
