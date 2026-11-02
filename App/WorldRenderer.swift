@@ -1121,9 +1121,10 @@ final class WorldRenderer {
             }
             mineNode.position = CGPoint(x: mine.x, y: mine.y)
             if let shape = mineNode as? SKShapeNode {
-                shape.fillColor = mine.armed ? Palette.mineArmed : Palette.mineArming
+                shape.fillColor = .clear
                 shape.strokeColor = Palette.mineStroke
-                shape.lineWidth = mine.armed ? 3 : 1
+                // Weight carries arming versus armed. The path stays the radius.
+                shape.lineWidth = mine.armed ? 4 : 2
             }
         }
         endLayer(.mines)
@@ -1576,9 +1577,8 @@ enum Palette {
     static let playerProjectileTrail = SKColor(red: 1, green: 0.94, blue: 0.78, alpha: 0.35)
     static let hostileProjectile = SKColor(red: 0.95, green: 0.45, blue: 0.30, alpha: 1)
     static let hostileProjectileTrail = SKColor(red: 0.95, green: 0.45, blue: 0.30, alpha: 0.30)
-    static let mineArmed = SKColor(red: 0.85, green: 0.35, blue: 0.25, alpha: 0.35)
-    static let mineArming = SKColor(white: 0.6, alpha: 0.15)
-    static let mineStroke = SKColor(red: 0.9, green: 0.5, blue: 0.35, alpha: 0.8)
+    /// D-121. The ring is this stroke. White 0.92 at alpha 0.95. The fill is clear.
+    static let mineStroke = SKColor(white: 0.92, alpha: 0.95)
     static let telegraphStroke = SKColor(red: 0.95, green: 0.55, blue: 0.35, alpha: 0.9)
     /// D-094 gate barrier: the rail the warning lights sit on, the lights,
     /// and the drawn fallback used only if the barricade art is missing.
