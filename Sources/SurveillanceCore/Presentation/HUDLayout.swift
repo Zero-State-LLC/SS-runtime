@@ -281,6 +281,11 @@ public enum HUDLayout {
 
     public static let rehearseControlCopy = "REHEARSE COURT"
 
+    /// `run-shell.md` § 5 (D-120). The labels already on the title and the results control.
+    public static let startControlCopy = "START"
+    public static let settingsControlCopy = "SETTINGS"
+    public static let restartControlCopy = "RESTART"
+
     /// Vertical centre of the outcome title, in safe-rectangle points.
     public static func terminalTitleCentreY(safeWidth: Int, safeHeight: Int) -> Int {
         terminalPanel(safeWidth: safeWidth, safeHeight: safeHeight).y + 34

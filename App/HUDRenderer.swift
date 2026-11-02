@@ -861,7 +861,7 @@ final class HUDRenderer {
 
         drawTerminalControl(
             key: "terminal-restart",
-            text: "RESTART",
+            text: HUDLayout.restartControlCopy,
             rect: terminalRestartRect(projector: projector),
             projector: projector
         )
