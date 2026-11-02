@@ -77,7 +77,7 @@ struct TerminalAccessibilityOverlay: View {
                     .accessibilityElement(children: .ignore)
                     .accessibilityLabel(surface.spokenRows)
                     VStack(alignment: .leading, spacing: 12) {
-                        reflowedButton("RESTART", TerminalSpeech.restart, action: onRestart)
+                        reflowedButton(HUDLayout.restartControlCopy, TerminalSpeech.restart, action: onRestart)
                         if surface.share != nil {
                             reflowedButton("SHARE", TerminalSpeech.share, action: onShare)
                         }

@@ -77,8 +77,8 @@ struct TitleView: View {
                 // Centred, so neither handedness is favoured. Handedness
                 // reflects the stick and Dodge only, and never shell chrome.
                 VStack(spacing: 16) {
-                    TitleButton(title: "START", action: onStart)
-                    TitleButton(title: "SETTINGS", action: onSettings)
+                    TitleButton(title: HUDLayout.startControlCopy, action: onStart)
+                    TitleButton(title: HUDLayout.settingsControlCopy, action: onSettings)
                 }
 
                 Spacer(minLength: 0)

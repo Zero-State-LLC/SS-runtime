@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `7dd84d818369d11cb2a405459bb5d04a4a057b7d` |
+| Specification commit | `393b06f7c195e6040be74d4d170e4f930d2a8845` |
 | Ruleset | `ss-rules-014` |
 | Content | `civic-seam-content-009` |
 | Arena | `civic-seam-arena-004` |
@@ -84,3 +84,5 @@ D-116 adoption (SS-specs #85, ruleset `ss-rules-013`): the Captain goes round so
 D-118 adoption (SS-specs #87, ruleset `ss-rules-014`, content `civic-seam-content-009`): the Captain's path search (T1057, BO-025–BO-028). Without a body-clear line to the Player, `CaptainPath` follows the shortest path of body-clear legs around the live solids and drops its orbit while routing. Base speed is 96 (`combat-content-009`, `bosses-002`). This replaces the Captain corner rule from D-116, including the body-clearance amendment that shipped inside SS-runtime #163. `versions.json`, `runtime-kernel-001` and the four golden fixtures change; the new digests were computed independently from the reviewed ruleset-013 canonical states with the ruleset and content identities replaced (SS-specs `docs/review/D118.md`). `ss-rules-013` replays fail closed. Arena and presentation identities are unchanged. The asset catalog's `specificationCommit` moves with this pin; its entries do not.
 
 D-119 adoption (SS-specs #89): lethal warning, option 2 (T1058). A telegraph or a 60-tick contact horizon that would remove the current Integrity shows `LETHAL THREAT` ahead of Lockdown and Extraction. The card is presentation only: no lethal-warning event, no golden-stream change, and no ruleset, content, arena, or replay identity change. No admitted file matches the cue, so the carriers are the card and the `warning` haptic. The asset catalog's `specificationCommit` moves with this pin; its entries do not.
+
+D-120 adoption (SS-specs #90): own the existing shell labels `START`, `SETTINGS`, and `RESTART` (T1059). No rename and no new control. Run-shell § 8.1 stays open. No contract or fixture change; pin move only. Ruleset, content, arena, and replay identities are unchanged.
