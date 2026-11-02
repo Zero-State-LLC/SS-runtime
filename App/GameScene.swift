@@ -273,7 +273,8 @@ final class GameSession {
             tick: result.tick,
             events: result.events,
             world: AudioWorldQuery.from(simulation.state),
-            settings: audioSettings
+            settings: audioSettings,
+            lethalWarning: simulation.state.tutorial.lethalWarningPreempts
         )
     }
 

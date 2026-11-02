@@ -192,6 +192,18 @@ struct TutorialPreemptionTests {
         #expect(tutorial.copy == "CAMERA FIELDS RAISE EXPOSURE")
     }
 
+    /// D-119. The lethal warning outranks Lockdown, which still outranks Extraction.
+    @Test func lethalWarningOutranksLockdown() {
+        var tutorial = TutorialState()
+        tutorial.extractionPreempts = .armed
+        tutorial.lockdownPreempts = true
+        tutorial.lethalWarningPreempts = true
+        #expect(tutorial.copy == "LETHAL THREAT")
+        #expect(tutorial.copyIsSafetyMessage)
+        tutorial.lethalWarningPreempts = false
+        #expect(tutorial.copy == "LOCKDOWN")
+    }
+
     /// Lockdown outranks Extraction: M-C activation is the more urgent state.
     @Test func lockdownOutranksExtraction() {
         var tutorial = TutorialState()

@@ -141,7 +141,7 @@ public struct PresentationSnapshot: Equatable, Sendable {
     public var upgrade: UpgradeID?
     public var upgradePending: Bool
     public var tutorialCopy: String?
-    /// True when `tutorialCopy` is a Lockdown or Extraction message rather than
+    /// True when `tutorialCopy` is a lethal warning, Lockdown, or Extraction message rather than
     /// a tutorial card. The tutorial setting hides cards, never safety copy.
     public var tutorialCopyIsSafetyMessage: Bool
     public var camera: PresentationCamera
