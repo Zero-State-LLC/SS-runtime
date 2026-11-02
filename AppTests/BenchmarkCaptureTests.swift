@@ -1034,6 +1034,11 @@ final class BenchmarkCaptureTests: XCTestCase {
         building.size = CGSize(width: canvas, height: canvas)
         building.anchorPoint = CGPoint(x: CGFloat(653) / 1254, y: 1 - CGFloat(1152) / 1254)
         building.position = CGPoint(x: box.minX, y: box.minY)
+        // Issue #128: the registered comparison is a square of the 1254 source,
+        // anchored at (653, 1152). The 190×217 control is restored after capture.
+        XCTAssertEqual(building.size.width, building.size.height)
+        XCTAssertEqual(building.anchorPoint.x, CGFloat(653) / 1254, accuracy: 0.000_000_1)
+        XCTAssertEqual(building.anchorPoint.y, 1 - CGFloat(1152) / 1254, accuracy: 0.000_000_1)
         var geometryNode: SKNode?
         if geometryOverlay {
             let playerPoint = scene.convert(billboards[0].position, from: try XCTUnwrap(billboards[0].parent))
@@ -1214,6 +1219,11 @@ final class BenchmarkCaptureTests: XCTestCase {
             snap.cameras[0].fieldVisible = integrity > 0
             scene.renderBenchmark(snapshot: snap, art: art, center: center)
             XCTAssertNil(scene.childNode(withName: "//benchmark-ground-line-0"))
+            let controlBuilding = try XCTUnwrap(scene.childNode(withName: "//benchmark-building") as? SKSpriteNode)
+            XCTAssertEqual(controlBuilding.size.width, 190, accuracy: 0.001)
+            XCTAssertEqual(controlBuilding.size.height, 217, accuracy: 0.001)
+            XCTAssertEqual(controlBuilding.anchorPoint.x, 0.5, accuracy: 0.001)
+            XCTAssertEqual(controlBuilding.anchorPoint.y, 0, accuracy: 0.001)
             let sprite = try XCTUnwrap(scene.childNode(withName: "//sprite-camera-\(snap.cameras[0].id.raw)") as? SKSpriteNode)
             XCTAssertTrue(sprite.texture === candidates[clips[integrity]!]!.last)
             XCTAssertFalse(sprite.hasActions())
