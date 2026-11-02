@@ -1,3 +1,4 @@
+import CoreImage
 import SpriteKit
 import UIKit
 import XCTest
@@ -147,7 +148,7 @@ final class BenchmarkCaptureTests: XCTestCase {
     @MainActor
     private func captureProjectedLegalEncounter(scene: SKScene, view: SKView,
         snap: PresentationSnapshot, zoom: CGFloat, label: String, prefix: String = "BP010-legal", treatment: String = "control",
-        framing: String = "legacy", arena: CGRect? = nil, fixedSafeRegion: CGRect? = nil, repairDepthAndEdges: Bool = false) throws {
+        framing: String = "legacy", arena: CGRect? = nil, fixedSafeRegion: CGRect? = nil, repairDepthAndEdges: Bool = false, registerServiceBuilding: Bool = true, deriveSheets: Bool = false) throws {
         let camera = try XCTUnwrap(scene.camera)
         let originalCamera = camera.position
         var hudExclusions: [CGRect] = []
@@ -227,17 +228,21 @@ final class BenchmarkCaptureTests: XCTestCase {
             building.anchorPoint = originalBuilding.2; building.position = originalBuilding.3
             building.alpha = originalBuildingAlpha
         }
-        let sourceURL = try XCTUnwrap(Bundle(for: Self.self).url(
-            forResource: "service-building-v3-registered", withExtension: "png"))
-        let sourceImage = try XCTUnwrap(UIImage(contentsOfFile: sourceURL.path))
-        XCTAssertEqual(sourceImage.cgImage?.width, 1024)
-        XCTAssertEqual(sourceImage.cgImage?.height, 1024)
-        building.texture = SKTexture(image: sourceImage)
-        building.texture?.filteringMode = .linear
-        building.size = CGSize(width: 512, height: 512)
-        building.anchorPoint = CGPoint(x: 419.745 / 1024, y: 1 - 858.392 / 1024)
+        // The registered service building is a separate study. BP-001 compares
+        // projection on the art already in the scene, so that call leaves it.
         let front = CGPoint(x: box.center.x - box.halfSize.x, y: box.center.y - box.halfSize.y)
-        building.position = try XCTUnwrap(building.parent).convert(front, from: scene)
+        if registerServiceBuilding {
+            let sourceURL = try XCTUnwrap(Bundle(for: Self.self).url(
+                forResource: "service-building-v3-registered", withExtension: "png"))
+            let sourceImage = try XCTUnwrap(UIImage(contentsOfFile: sourceURL.path))
+            XCTAssertEqual(sourceImage.cgImage?.width, 1024)
+            XCTAssertEqual(sourceImage.cgImage?.height, 1024)
+            building.texture = SKTexture(image: sourceImage)
+            building.texture?.filteringMode = .linear
+            building.size = CGSize(width: 512, height: 512)
+            building.anchorPoint = CGPoint(x: 419.745 / 1024, y: 1 - 858.392 / 1024)
+            building.position = try XCTUnwrap(building.parent).convert(front, from: scene)
+        }
         let saved = try actors.map { ($0, try XCTUnwrap($0.parent), $0.position, $0.zPosition) }
         func project(_ point: CGPoint) -> CGPoint {
             let x = point.x - center.x, y = point.y - center.y, r = CGFloat(0.5).squareRoot()
@@ -251,6 +256,7 @@ final class BenchmarkCaptureTests: XCTestCase {
         }
         // Check the actual SpriteKit source-to-scene mapping against independent
         // authoritative corners. This proves placement, not visual contact quality.
+        if registerServiceBuilding {
         for (pixel, corner) in [
             (CGPoint(x: 148.216, y: 722.627), CGPoint(x: box.center.x - box.halfSize.x, y: box.center.y + box.halfSize.y)),
             (CGPoint(x: 419.745, y: 858.392), front),
@@ -261,6 +267,7 @@ final class BenchmarkCaptureTests: XCTestCase {
             let actual = building.convert(local, to: scene), expected = project(corner)
             XCTAssertEqual(actual.x, expected.x, accuracy: 0.002)
             XCTAssertEqual(actual.y, expected.y, accuracy: 0.002)
+        }
         }
         // BP-009 bounded comparison, not a production occlusion classifier.
         let player = try XCTUnwrap(actors.first { $0.name == "sprite-player" })
@@ -356,8 +363,13 @@ final class BenchmarkCaptureTests: XCTestCase {
         XCTAssertEqual(camera.xScale, 1)
         XCTAssertEqual(actors.count, saved.count)
         let texture = try XCTUnwrap(view.texture(from: scene, crop: crop))
-        let image = XCTAttachment(image: UIImage(cgImage: texture.cgImage()))
-        image.name = "\(prefix)-projected-\(Int(zoom*100))-\(label)"; image.lifetime = .keepAlways; add(image)
+        let pictured = UIImage(cgImage: texture.cgImage())
+        if deriveSheets {
+            attachDerivedSheets(of: pictured, name: "\(prefix)-projected-\(Int(zoom*100))-\(label)")
+        } else {
+            let image = XCTAttachment(image: pictured)
+            image.name = "\(prefix)-projected-\(Int(zoom*100))-\(label)"; image.lifetime = .keepAlways; add(image)
+        }
         let data = try JSONSerialization.data(withJSONObject: ["zoom": zoom, "actors": visibility,
             "projectiles": projectiles, "enemies": snap.enemies.count, "cameras": snap.cameras.count,
             "tick": snap.tick, "occlusionTreatment": treatment, "occlusionCandidate": occluded,
@@ -365,9 +377,44 @@ final class BenchmarkCaptureTests: XCTestCase {
             "depthAndEdgesRepaired": repairDepthAndEdges, "obscuringCameras": obscuringCameras,
             "exteriorCoverage": exteriorBounds.map { [$0.minX,$0.minY,$0.width,$0.height] } ?? [],
             "hudExclusions": hudExclusions.map { [$0.minX,$0.minY,$0.width,$0.height] },
-            "safeRegion": safeRegion.map { [$0.minX,$0.minY,$0.width,$0.height] } ?? []], options: [.sortedKeys, .prettyPrinted])
+            "safeRegion": safeRegion.map { [$0.minX,$0.minY,$0.width,$0.height] } ?? [],
+            "registerServiceBuilding": registerServiceBuilding], options: [.sortedKeys, .prettyPrinted])
         let record = XCTAttachment(data: data, uniformTypeIdentifier: "public.json")
         record.name = "\(prefix)-visibility-\(Int(zoom*100))-\(label)"; record.lifetime = .keepAlways; add(record)
+    }
+
+    /// Native plate plus a half-size sheet and a saturation-zero sheet of that same image.
+    @MainActor
+    private func attachDerivedSheets(of image: UIImage, name: String) {
+        let native = XCTAttachment(image: image)
+        native.name = name
+        native.lifetime = .keepAlways
+        add(native)
+        let halfSize = CGSize(width: image.size.width / 2, height: image.size.height / 2)
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+        format.opaque = true
+        let half = UIGraphicsImageRenderer(size: halfSize, format: format).image { _ in
+            image.draw(in: CGRect(origin: .zero, size: halfSize))
+        }
+        let halfSheet = XCTAttachment(image: half)
+        halfSheet.name = "\(name)-half"
+        halfSheet.lifetime = .keepAlways
+        add(halfSheet)
+        let graySheet = XCTAttachment(image: grayscale(image))
+        graySheet.name = "\(name)-gray"
+        graySheet.lifetime = .keepAlways
+        add(graySheet)
+    }
+
+    @MainActor
+    private func grayscale(_ image: UIImage) -> UIImage {
+        guard let input = CIImage(image: image), let filter = CIFilter(name: "CIColorControls") else { return image }
+        filter.setValue(input, forKey: kCIInputImageKey)
+        filter.setValue(0, forKey: kCIInputSaturationKey)
+        guard let output = filter.outputImage,
+              let cg = CIContext(options: nil).createCGImage(output, from: output.extent) else { return image }
+        return UIImage(cgImage: cg)
     }
 
     @MainActor
@@ -700,6 +747,13 @@ final class BenchmarkCaptureTests: XCTestCase {
                 let attachment = XCTAttachment(image: UIImage(cgImage: texture.cgImage()))
                 attachment.name = "BP010-field-encounter-\(style.rawValue)-reduced-\(reduced)"
                 attachment.lifetime = .keepAlways; add(attachment)
+                if style == .paired && !reduced {
+                    attachDerivedSheets(of: UIImage(cgImage: texture.cgImage()), name: "BP001-encounter-current")
+                    try captureProjectedLegalEncounter(scene: scene, view: view, snap: snap,
+                        zoom: 1, label: "same-art", prefix: "BP001-encounter",
+                        registerServiceBuilding: false, deriveSheets: true)
+                    XCTAssertEqual(session.simulation.state.digest(), digest)
+                }
                 if style == .paired {
                     for zoom: CGFloat in [1, 1.25] {
                         try captureProjectedLegalEncounter(scene: scene, view: view, snap: snap,
@@ -871,17 +925,28 @@ final class BenchmarkCaptureTests: XCTestCase {
     /// Restores the tree after capture so repeated state samples cannot accumulate transforms.
     @MainActor
     private func projectedSharedCameraScene(scene: GameScene, view: SKView, center: CGPoint,
-                                             crop: CGRect, cameraID: UInt64, box: AABB, magnification: CGFloat = 1) throws -> UIImage {
+                                             crop: CGRect, cameraID: UInt64, box: AABB, magnification: CGFloat = 1, projectGround: Bool = true) throws -> UIImage {
         let camera = try XCTUnwrap(scene.camera)
         let names = ["sprite-player", "sprite-camera-\(cameraID)", "benchmark-building",
                      "benchmark-prop-0", "benchmark-prop-1"]
         let billboards = try names.map { try XCTUnwrap(scene.childNode(withName: "//" + $0)) }
         let building = try XCTUnwrap(billboards[2] as? SKSpriteNode)
         XCTAssertEqual(box.halfSize, VecI(x: 64, y: 64))
+        let savedBuilding = (building.size, building.anchorPoint, building.position)
         let canvas = CGFloat(1254) * (CGFloat(128) * CGFloat(2).squareRoot() / 934)
         building.size = CGSize(width: canvas, height: canvas)
         building.anchorPoint = CGPoint(x: CGFloat(653) / 1254, y: 1 - CGFloat(1152) / 1254)
         building.position = CGPoint(x: box.minX, y: box.minY)
+        // Same uniform building, shipping ground mapping. The projecting call
+        // below is the midpoint. Restoring here keeps that call independent.
+        if !projectGround {
+            XCTAssertEqual(building.size.width, building.size.height)
+            let rendered = try XCTUnwrap(view.texture(from: scene, crop: crop))
+            building.size = savedBuilding.0
+            building.anchorPoint = savedBuilding.1
+            building.position = savedBuilding.2
+            return UIImage(cgImage: rendered.cgImage())
+        }
         let originals = try billboards.map { node in
             (node, try XCTUnwrap(node.parent), node.position, node.zPosition)
         }
@@ -1072,12 +1137,29 @@ final class BenchmarkCaptureTests: XCTestCase {
                 XCTAssertEqual(tile.texture?.size(), tile.size, "128px/128-unit source density must survive edge cropping")
             }
             XCTAssertEqual(patchCount, 11 * 12)
+            if style == .paired && integrity == 3 {
+                let current = try projectedSharedCameraScene(scene: scene, view: view, center: center,
+                    crop: crop, cameraID: snap.cameras[0].id.raw, box: box, projectGround: false)
+                XCTAssertEqual(scene.session.simulation.state.digest(), digest)
+                attachDerivedSheets(of: current, name: "BP001-quiet-street-current")
+            }
             let street = try projectedSharedCameraScene(scene: scene, view: view, center: center,
                 crop: crop, cameraID: snap.cameras[0].id.raw, box: box)
             XCTAssertEqual(scene.session.simulation.state.digest(), digest)
             let furnished = XCTAttachment(image: street)
             furnished.name = "BP004-street-shared-scene-\(style.rawValue)-integrity-\(integrity)"
             furnished.lifetime = .keepAlways; add(furnished)
+            if style == .paired && integrity == 3 {
+                attachDerivedSheets(of: street, name: "BP001-quiet-street-midpoint")
+                let note = XCTAttachment(string: """
+                BP-001 same-art pair. Viewport 704x326 points. Read pixels from the image.
+                Current is the shipping ground mapping. Midpoint is the existing 45-degree
+                rotation and half height. Both use the uniform constrained building on the
+                street fixture. The encounter pair uses the production art of one snapshot.
+                The projection choice is not recorded.
+                """)
+                note.name = "BP001-same-art-record"; note.lifetime = .keepAlways; add(note)
+            }
             // Revised source composition only. Keep the old neutral control above.
             if style == .paired && integrity == 3 {
                 for frame in [0, 4, 8, 12] {
