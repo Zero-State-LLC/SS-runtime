@@ -140,6 +140,7 @@ public enum BossSystem {
         events: inout EventBuffer,
         baseSpeed: Int,
         baseContact: Int,
+        bounds: AABB,
         courtLockdown: Bool = false
     ) {
         if let transition = runtime.syncPhase(hp: boss.integrity), boss.alive {
@@ -157,7 +158,7 @@ public enum BossSystem {
             )
         }
 
-        applyLocomotion(boss: &boss, runtime: runtime, player: player, baseSpeed: baseSpeed, solids: solids)
+        applyLocomotion(boss: &boss, runtime: runtime, player: player, baseSpeed: baseSpeed, bounds: bounds, solids: solids)
         boss.contactDps = Int(IntMath.divHalfAway(Int64(baseContact) * Int64(runtime.contactNumerator), 100))
 
         if runtime.fieldRemaining > 0 {
@@ -284,18 +285,17 @@ public enum BossSystem {
         runtime: BossRuntime,
         player: PlayerBody,
         baseSpeed: Int,
+        bounds: AABB,
         solids: [(id: String, box: AABB)]
     ) {
         let speedUnits = Int(IntMath.divHalfAway(Int64(baseSpeed) * Int64(runtime.speedNumerator), 100))
         let speed = Steering.speedQ8(speedUnits)
-        // D-116/D-117: with the line to the Player blocked, the Captain heads for
-        // the § Corner pursuit approach point, taking only corners its body can
-        // reach (D-117), and drops its orbit while it does.
-        let target = CornerPursuit.waypoint(
-            from: boss.position, to: player.position, radius: boss.radius, solids: solids,
-            bodyClearance: true
+        // D-118: without a body-clear line to the Player, the Captain follows
+        // the shortest clear path round the solids, and drops its orbit while
+        // it does.
+        let (target, routing) = CaptainPath.approach(
+            from: boss.position, to: player.position, radius: boss.radius, bounds: bounds, solids: solids
         )
-        let routing = target != player.position
         let dx = target.x.raw - boss.position.x.raw
         let dy = target.y.raw - boss.position.y.raw
         let mag = IntMath.isqrt(dx * dx + dy * dy)

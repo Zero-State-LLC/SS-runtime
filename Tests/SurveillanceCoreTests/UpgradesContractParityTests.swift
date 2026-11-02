@@ -7,7 +7,7 @@ import Testing
 /// side alone fails closed instead of shipping a contract with no effect.
 @Suite struct UpgradesContractParityTests {
     private static func bundledRoot() throws -> [String: Any] {
-        let data = BundledResource.data(name: "combat-content-008", subdirectory: "contracts")
+        let data = BundledResource.data(name: "combat-content-009", subdirectory: "contracts")
         return try #require(JSONSerialization.jsonObject(with: data) as? [String: Any])
     }
 
