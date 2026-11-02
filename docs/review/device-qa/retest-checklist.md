@@ -41,6 +41,21 @@ Mark each PASS / FAIL / NOT SEEN, with a timestamp or screenshot.
 | 4 | Damage with no visible source | When Integrity drops and you can't see why, note the time. Afterwards, match it to the `QA_DAMAGE` line: `sourceEntityId`, `damageKind`, `ownerEntityId`. Probes show Vendor **mines** are ~9% of all damage, so look at the ground. |
 | — | Stutter and view jumps | Note any hitch. Afterwards, copy the `p95/p99/worst` lines. C-003 target: p95 ≤ 16.67 ms. |
 
+## Bot column
+
+Not a PASS/FAIL row. Do not mark it, and do not close #117, T903, or T904 from it. The human rows above stay as they are, including the note that probes showed Vendor mines at about 9% of damage.
+
+Pinned in `DeviceSittingQA` on `31345cd`. That test's comment says the rows were measured on `15b1c94`. UTC day 2026-11-02. Seed `9_972_847_794_717_746_389`, salt 0, upgrade Ricochet Pulse. Vendor mine counts are the `victorianVendorMine` totals. The sneaky row has no mine key.
+
+| Pilot | Outcome | Ticks | Integrity | Medals | Vendor mines |
+|---|---|---|---|---|---|
+| natural-lower-bound | failure, playerDeath | 18018 | 0 | none | 66 |
+| natural-style | success | 18921 | 7 | BLACKOUT, SWIFT | 12 |
+| sneaky | success | 15681 | 11 | GHOST, SWIFT | 0 |
+| loud | success | 19479 | 18 | BLACKOUT, SWIFT | 6 |
+
+None of the four is SURGICAL.
+
 ## Interruptions (D-106, once runtime #142 is merged)
 
 | Vector | Action | Expected |
