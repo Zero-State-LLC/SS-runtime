@@ -1772,6 +1772,189 @@ final class BenchmarkCaptureTests: XCTestCase {
         record.lifetime = .keepAlways
         add(record)
     }
+
+    /// Shipping plates for issue #117 rows 2 and 4. The daily seed is the one
+    /// `DeviceSittingQA` already runs. No midpoint plate and no combat change.
+    @MainActor
+    func testCaptureShippingWalkAndDamagePlates() throws {
+        let daily = try DailyRun(day: DailyRun.Day(year: 2026, month: 11, day: 2))
+        var sim = try Simulation.make(seed: daily.seed)
+        var pilot = ProbePilot(profile: .competent, arena: sim.state.arena)
+        let solidIDs = ["solid-01-residential-west", "solid-13-phoenix-west"]
+        var commands: [PlayerCommand] = []
+        var closest: [String: (dist: Int, tick: UInt64, x: Int, y: Int)] = [:]
+        var hits: [String: (kind: String, owner: String, source: String, ownerID: String, tick: UInt64, x: Int, y: Int)] = [:]
+        while !sim.isTerminal, sim.state.tick < 17_500 {
+            let snap = PresentationSnapshot(sim.state)
+            let tick = sim.state.tick + 1
+            let command: PlayerCommand
+            if sim.state.upgrade.pending {
+                command = PlayerCommand(
+                    tick: tick, moveX: 0, moveY: 0, dodgePressed: false,
+                    upgradeChoiceIndex: UpgradeID.ricochetPulse.selectionIndex)
+            } else {
+                let steer = pilot.command(snap)
+                if pilot.stalled { break }
+                command = PlayerCommand(
+                    tick: tick, moveX: steer.moveX, moveY: steer.moveY, dodgePressed: steer.dodge)
+            }
+            commands.append(command)
+            let result = sim.step(command: command)
+            let px = sim.state.player.position.x.unitsTruncated
+            let py = sim.state.player.position.y.unitsTruncated
+            for id in solidIDs {
+                guard let index = snap.solidIds.firstIndex(of: id) else { continue }
+                let box = snap.solids[index]
+                let dx = max(box.minX - px, 0, px - box.maxX)
+                let dy = max(box.minY - py, 0, py - box.maxY)
+                let dist = Int(hypot(Double(dx), Double(dy)).rounded())
+                if closest[id] == nil || dist < closest[id]!.dist {
+                    closest[id] = (dist, sim.state.tick, px, py)
+                }
+            }
+            for event in result.events where event.type == .playerDamaged {
+                guard case .string(let kind)? = event.payload["damageKind"] else { continue }
+                let owner = damageOwner(event, sim: sim)
+                let key: String
+                if kind == "contact" { key = "contact" }
+                else if kind == "projectile", owner == "sutroSignalWitch" { key = "witch-shot" }
+                else if kind == "mine", owner == "victorianVendor" { key = "vendor-mine" }
+                else { continue }
+                if hits[key] != nil { continue }
+                hits[key] = (
+                    kind, owner,
+                    payloadString(event, "sourceEntityId"),
+                    payloadString(event, "ownerEntityId"),
+                    event.tick, px, py)
+            }
+            let walksFound = solidIDs.allSatisfy { (closest[$0]?.dist ?? 999) <= 30 }
+            if walksFound, hits["contact"] != nil, hits["witch-shot"] != nil, hits["vendor-mine"] != nil,
+               sim.state.tick >= 16_700 {
+                break
+            }
+        }
+        var plates: [(tick: UInt64, name: String, note: String)] = []
+        for id in solidIDs {
+            let sample = try XCTUnwrap(closest[id], "\(id) was not on the route")
+            XCTAssertLessThanOrEqual(sample.dist, 48, "\(id) walk")
+            plates.append((sample.tick, "BP117-walk-\(id)", """
+                Shipping mapping. Viewport 704x326. HUD on. Magenta stroke is the blocking rect.
+                No midpoint plate. Seed \(daily.seed), Ricochet Pulse, competent pilot.
+                solid \(id) tick \(sample.tick) distance \(sample.dist) player \(sample.x),\(sample.y)
+                Does not close #117 row 2.
+                """))
+        }
+        for key in ["contact", "witch-shot", "vendor-mine"] {
+            guard let hit = hits[key] else {
+                let missing = XCTAttachment(string: "\(key) did not appear on seed \(daily.seed)")
+                missing.name = "BP117-damage-\(key)-not-seen"
+                missing.lifetime = .keepAlways
+                add(missing)
+                continue
+            }
+            plates.append((hit.tick, "BP117-damage-\(key)", """
+                Shipping mapping plus the geometry overlay. No midpoint plate.
+                Seed \(daily.seed), Ricochet Pulse, competent pilot.
+                tick \(hit.tick) damageKind \(hit.kind) sourceEntityId \(hit.source) ownerEntityId \(hit.ownerID) owner \(hit.owner)
+                player \(hit.x),\(hit.y)
+                The hurt reaction and the player-hit arc come from this tick's events.
+                The bolt and the mine are already retired in authoritative state.
+                """))
+        }
+        XCTAssertNotNil(hits["contact"])
+        XCTAssertNotNil(hits["witch-shot"])
+        XCTAssertNotNil(hits["vendor-mine"])
+        try captureShippingPlates(seed: daily.seed, commands: commands, plates: plates)
+    }
+
+    @MainActor
+    private func captureShippingPlates(seed: UInt64, commands: [PlayerCommand],
+                                       plates: [(tick: UInt64, name: String, note: String)]) throws {
+        let pending = plates.sorted { $0.tick < $1.tick }
+        let session = GameSession(simulation: try Simulation.make(seed: seed))
+        session.audioSettings = .init(effectsEnabled: false, hapticsEnabled: false, musicEnabled: false)
+        var index = 0
+        for command in commands {
+            session.moveX = command.moveX
+            session.moveY = command.moveY
+            session.dodgePressed = command.dodgePressed
+            session.pendingUpgradeChoice = command.upgradeChoiceIndex
+            session.step()
+            XCTAssertEqual(session.simulation.state.tick, command.tick)
+            while index < pending.count, session.simulation.state.tick == pending[index].tick {
+                let plate = pending[index]
+                try captureShippingPlate(
+                    session: session, name: plate.name, note: plate.note,
+                    expectHit: plate.name.hasPrefix("BP117-damage-"))
+                index += 1
+            }
+            if index == pending.count { break }
+        }
+        XCTAssertEqual(index, pending.count)
+    }
+
+    @MainActor
+    private func captureShippingPlate(session: GameSession, name: String, note: String,
+                                      expectHit: Bool) throws {
+        let digest = session.simulation.state.digest()
+        var observed = note
+        if expectHit {
+            XCTAssertTrue(session.lastEvents.contains { $0.type == .playerDamaged }, name)
+            let reaction = session.snapshot.playerReactionClipId ?? "none"
+            let base = session.snapshot.playerClipId ?? "none"
+            observed += "\nplayerClip \(base) hurtReaction \(reaction)\n"
+        }
+        let view = SKView(frame: CGRect(x: 0, y: 0, width: 704, height: 326))
+        view.isPaused = true
+        let scene = GameScene(size: view.bounds.size, session: session)
+        view.presentScene(scene)
+        defer { view.presentScene(nil) }
+        scene.skipIntroIfRunning()
+        scene.ingestBenchmarkEvents()
+        let snap = session.snapshot
+        let geometry = authoritativeGeometryOverlay(
+            solids: snap.solids,
+            player: CGPoint(x: CGFloat(snap.player.x), y: CGFloat(snap.player.y)))
+        scene.addChild(geometry)
+        defer { geometry.removeFromParent() }
+        scene.redrawBenchmarkPresentation()
+        if expectHit {
+            let arc = scene.childNode(withName: "//damage-impact-direction")
+                ?? scene.childNode(withName: "//damage-impact-ring")
+            XCTAssertNotNil(arc, name)
+        }
+        let camera = try XCTUnwrap(scene.camera)
+        let lower = scene.convert(CGPoint(x: -352, y: -163), from: camera)
+        let upper = scene.convert(CGPoint(x: 352, y: 163), from: camera)
+        let crop = CGRect(x: lower.x, y: lower.y, width: upper.x - lower.x, height: upper.y - lower.y)
+        let texture = try XCTUnwrap(view.texture(from: scene, crop: crop))
+        let image = UIImage(cgImage: texture.cgImage())
+        attachDerivedSheets(of: image, name: name)
+        XCTAssertEqual(session.simulation.state.digest(), digest, name)
+        XCTAssertGreaterThan(image.size.width, 0)
+        let record = XCTAttachment(string: observed)
+        record.name = "\(name)-record"
+        record.lifetime = .keepAlways
+        add(record)
+    }
+
+    private func damageOwner(_ event: AuthoritativeEvent, sim: Simulation) -> String {
+        if case .string(let ownerID)? = event.payload["ownerEntityId"],
+           let raw = UInt64(ownerID),
+           let owner = sim.state.enemies.first(where: { $0.id.raw == raw }) {
+            return owner.archetype.rawValue
+        }
+        if let id = event.secondaryEntityId,
+           let enemy = sim.state.enemies.first(where: { $0.id == id }) {
+            return enemy.archetype.rawValue
+        }
+        return "unknown"
+    }
+
+    private func payloadString(_ event: AuthoritativeEvent, _ key: String) -> String {
+        if case .string(let value)? = event.payload[key] { return value }
+        return ""
+    }
 #endif
 
 }
