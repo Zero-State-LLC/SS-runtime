@@ -1847,6 +1847,8 @@ final class BenchmarkCaptureTests: XCTestCase {
                 Seed \(daily.seed), Ricochet Pulse, competent pilot.
                 tick \(hit.tick) damageKind \(hit.kind) sourceEntityId \(hit.source) ownerEntityId \(hit.ownerID) owner \(hit.owner)
                 player \(hit.x),\(hit.y)
+                The hurt reaction and the player-hit arc come from this tick's events.
+                The bolt and the mine are already retired in authoritative state.
                 """))
         }
         XCTAssertNotNil(hits["contact"])
@@ -1859,13 +1861,21 @@ final class BenchmarkCaptureTests: XCTestCase {
     private func captureShippingPlates(seed: UInt64, commands: [PlayerCommand],
                                        plates: [(tick: UInt64, name: String, note: String)]) throws {
         let pending = plates.sorted { $0.tick < $1.tick }
-        var replay = try Simulation.make(seed: seed)
+        let session = GameSession(simulation: try Simulation.make(seed: seed))
+        session.audioSettings = .init(effectsEnabled: false, hapticsEnabled: false, musicEnabled: false)
         var index = 0
         for command in commands {
-            replay.step(command: command)
-            while index < pending.count, replay.state.tick == pending[index].tick {
+            session.moveX = command.moveX
+            session.moveY = command.moveY
+            session.dodgePressed = command.dodgePressed
+            session.pendingUpgradeChoice = command.upgradeChoiceIndex
+            session.step()
+            XCTAssertEqual(session.simulation.state.tick, command.tick)
+            while index < pending.count, session.simulation.state.tick == pending[index].tick {
                 let plate = pending[index]
-                try captureShippingPlate(state: replay, name: plate.name, note: plate.note)
+                try captureShippingPlate(
+                    session: session, name: plate.name, note: plate.note,
+                    expectHit: plate.name.hasPrefix("BP117-damage-"))
                 index += 1
             }
             if index == pending.count { break }
@@ -1874,16 +1884,23 @@ final class BenchmarkCaptureTests: XCTestCase {
     }
 
     @MainActor
-    private func captureShippingPlate(state: Simulation, name: String, note: String) throws {
-        let digest = state.state.digest()
-        let session = GameSession(simulation: state)
-        session.audioSettings = .init(effectsEnabled: false, hapticsEnabled: false, musicEnabled: false)
+    private func captureShippingPlate(session: GameSession, name: String, note: String,
+                                      expectHit: Bool) throws {
+        let digest = session.simulation.state.digest()
+        var observed = note
+        if expectHit {
+            XCTAssertTrue(session.lastEvents.contains { $0.type == .playerDamaged }, name)
+            let reaction = session.snapshot.playerReactionClipId ?? "none"
+            let base = session.snapshot.playerClipId ?? "none"
+            observed += "\nplayerClip \(base) hurtReaction \(reaction)\n"
+        }
         let view = SKView(frame: CGRect(x: 0, y: 0, width: 704, height: 326))
         view.isPaused = true
         let scene = GameScene(size: view.bounds.size, session: session)
         view.presentScene(scene)
         defer { view.presentScene(nil) }
         scene.skipIntroIfRunning()
+        scene.ingestBenchmarkEvents()
         let snap = session.snapshot
         let geometry = authoritativeGeometryOverlay(
             solids: snap.solids,
@@ -1891,6 +1908,11 @@ final class BenchmarkCaptureTests: XCTestCase {
         scene.addChild(geometry)
         defer { geometry.removeFromParent() }
         scene.redrawBenchmarkPresentation()
+        if expectHit {
+            let arc = scene.childNode(withName: "//damage-impact-direction")
+                ?? scene.childNode(withName: "//damage-impact-ring")
+            XCTAssertNotNil(arc, name)
+        }
         let camera = try XCTUnwrap(scene.camera)
         let lower = scene.convert(CGPoint(x: -352, y: -163), from: camera)
         let upper = scene.convert(CGPoint(x: 352, y: 163), from: camera)
@@ -1900,7 +1922,7 @@ final class BenchmarkCaptureTests: XCTestCase {
         attachDerivedSheets(of: image, name: name)
         XCTAssertEqual(session.simulation.state.digest(), digest, name)
         XCTAssertGreaterThan(image.size.width, 0)
-        let record = XCTAttachment(string: note)
+        let record = XCTAttachment(string: observed)
         record.name = "\(name)-record"
         record.lifetime = .keepAlways
         add(record)

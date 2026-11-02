@@ -364,6 +364,18 @@ final class GameScene: SKScene {
     /// Refresh the shipping presentation without advancing authoritative gameplay.
     func redrawBenchmarkPresentation() { redraw() }
 
+    /// Project this tick's events into the hit VFX without stepping.
+    /// `update()` is the only other caller of `vfx.ingest`, and it also steps.
+    func ingestBenchmarkEvents() {
+        guard !session.lastEvents.isEmpty else { return }
+        vfx.ingest(
+            tick: session.simulation.state.tick,
+            events: session.lastEvents,
+            snapshot: session.snapshot,
+            heatReinforcements: session.lastHeatReinforcements
+        )
+    }
+
     /// Re-present the same authoritative snapshot for a paused visual comparison.
     func refreshBenchmarkPresentation(reducedMotion: Bool) {
         renderer.render(session.snapshot, reducedMotion: reducedMotion)
