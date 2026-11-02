@@ -94,3 +94,12 @@ jobs:
             /tmp/xcodebuild.log
             /tmp/SSRuntime.xcresult
           retention-days: 7
+
+  device-sitting:
+    runs-on: macos-15
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe the device-sitting runs
+        run: bash scripts/device_sitting_qa.sh
