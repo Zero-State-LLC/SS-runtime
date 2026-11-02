@@ -148,7 +148,7 @@ final class BenchmarkCaptureTests: XCTestCase {
     @MainActor
     private func captureProjectedLegalEncounter(scene: SKScene, view: SKView,
         snap: PresentationSnapshot, zoom: CGFloat, label: String, prefix: String = "BP010-legal", treatment: String = "control",
-        framing: String = "legacy", arena: CGRect? = nil, fixedSafeRegion: CGRect? = nil, repairDepthAndEdges: Bool = false, registerServiceBuilding: Bool = true, deriveSheets: Bool = false) throws {
+        framing: String = "legacy", arena: CGRect? = nil, fixedSafeRegion: CGRect? = nil, repairDepthAndEdges: Bool = false, registerServiceBuilding: Bool = true, deriveSheets: Bool = false, geometryOverlay: Bool = false) throws {
         let camera = try XCTUnwrap(scene.camera)
         let originalCamera = camera.position
         var hudExclusions: [CGRect] = []
@@ -329,6 +329,18 @@ final class BenchmarkCaptureTests: XCTestCase {
         let offset: CGFloat = zoom == 1 || framing != "legacy" ? 0 : 1
         world.position = CGPoint(x: center.x - (center.x + 35 * offset) * zoom,
                                  y: center.y - (center.y + 25 * offset) * zoom)
+        // Actors live on `world`, above the ground chain, so a stroke parented under
+        // `translate` is covered by the sprites. Draw the same mapping in scene space.
+        // `project` matches the ground chain at zoom 1. The removal defer stays in
+        // this function scope; a defer inside the if would run before the snapshot.
+        var geometryNode: SKNode?
+        if geometryOverlay {
+            XCTAssertEqual(zoom, 1)
+            XCTAssertEqual(framing, "legacy")
+            geometryNode = projectedGeometryOverlay(solids: snap.solids, player: playerGround, project: project)
+            scene.addChild(geometryNode!)
+        }
+        defer { geometryNode?.removeFromParent() }
         defer {
             for node in ground { node.removeFromParent(); scene.addChild(node) }
             for (node, parent, position, z) in saved {
@@ -381,6 +393,81 @@ final class BenchmarkCaptureTests: XCTestCase {
             "registerServiceBuilding": registerServiceBuilding], options: [.sortedKeys, .prettyPrinted])
         let record = XCTAttachment(data: data, uniformTypeIdentifier: "public.json")
         record.name = "\(prefix)-visibility-\(Int(zoom*100))-\(label)"; record.lifetime = .keepAlways; add(record)
+    }
+
+    /// Magenta solid footprints and a cyan player-body outline, already projected.
+    /// Each shape is centered on its own node so a far path is not culled.
+    @MainActor
+    private func projectedGeometryOverlay(solids: [AABB], player: CGPoint, project: (CGPoint) -> CGPoint) -> SKNode {
+        let overlay = SKNode()
+        overlay.name = "bp001-geometry"
+        overlay.zPosition = 50_000
+        func stroke(_ path: CGPath, at origin: CGPoint, color: SKColor) -> SKShapeNode {
+            let node = SKShapeNode(path: path)
+            node.position = origin
+            node.fillColor = .clear
+            node.strokeColor = color
+            node.lineWidth = 1.5
+            return node
+        }
+        for solid in solids {
+            let hx = CGFloat(solid.halfSize.x), hy = CGFloat(solid.halfSize.y)
+            let cx = CGFloat(solid.center.x), cy = CGFloat(solid.center.y)
+            let corners = [
+                project(CGPoint(x: cx - hx, y: cy - hy)),
+                project(CGPoint(x: cx + hx, y: cy - hy)),
+                project(CGPoint(x: cx + hx, y: cy + hy)),
+                project(CGPoint(x: cx - hx, y: cy + hy))
+            ]
+            let origin = corners.reduce(CGPoint.zero) { CGPoint(x: $0.x + $1.x, y: $0.y + $1.y) }
+            let center = CGPoint(x: origin.x / 4, y: origin.y / 4)
+            let path = CGMutablePath()
+            path.move(to: CGPoint(x: corners[0].x - center.x, y: corners[0].y - center.y))
+            for corner in corners.dropFirst() {
+                path.addLine(to: CGPoint(x: corner.x - center.x, y: corner.y - center.y))
+            }
+            path.closeSubpath()
+            overlay.addChild(stroke(path, at: center, color: .magenta))
+        }
+        let radius = CGFloat(PlayerBody.radiusUnits)
+        let origin = project(player)
+        let path = CGMutablePath()
+        let steps = 48
+        for step in 0...steps {
+            let angle = CGFloat(step) / CGFloat(steps) * 2 * .pi
+            let world = CGPoint(x: player.x + cos(angle) * radius, y: player.y + sin(angle) * radius)
+            let screen = project(world)
+            let local = CGPoint(x: screen.x - origin.x, y: screen.y - origin.y)
+            if step == 0 { path.move(to: local) } else { path.addLine(to: local) }
+        }
+        path.closeSubpath()
+        overlay.addChild(stroke(path, at: origin, color: .cyan))
+        return overlay
+    }
+
+    /// Magenta solid rectangles and a cyan player-body circle, in world space.
+    /// A ground transform parents this node with the ground, so the strokes follow the mapping.
+    @MainActor
+    private func authoritativeGeometryOverlay(solids: [AABB], player: CGPoint) -> SKNode {
+        let overlay = SKNode()
+        overlay.name = "bp001-geometry"
+        overlay.zPosition = 50_000
+        for solid in solids {
+            let boundary = SKShapeNode(rectOf: CGSize(
+                width: CGFloat(solid.halfSize.x) * 2, height: CGFloat(solid.halfSize.y) * 2))
+            boundary.position = CGPoint(x: CGFloat(solid.center.x), y: CGFloat(solid.center.y))
+            boundary.fillColor = .clear
+            boundary.strokeColor = .magenta
+            boundary.lineWidth = 1
+            overlay.addChild(boundary)
+        }
+        let body = SKShapeNode(circleOfRadius: CGFloat(PlayerBody.radiusUnits))
+        body.position = player
+        body.fillColor = .clear
+        body.strokeColor = .cyan
+        body.lineWidth = 1
+        overlay.addChild(body)
+        return overlay
     }
 
     /// Native plate plus a half-size sheet and a saturation-zero sheet of that same image.
@@ -753,6 +840,16 @@ final class BenchmarkCaptureTests: XCTestCase {
                         zoom: 1, label: "same-art", prefix: "BP001-encounter",
                         registerServiceBuilding: false, deriveSheets: true)
                     XCTAssertEqual(session.simulation.state.digest(), digest)
+                    let playerPoint = scene.convert(player.position, from: try XCTUnwrap(player.parent))
+                    let geometry = authoritativeGeometryOverlay(solids: snap.solids, player: playerPoint)
+                    scene.addChild(geometry)
+                    let over = try XCTUnwrap(view.texture(from: scene, crop: crop))
+                    geometry.removeFromParent()
+                    attachDerivedSheets(of: UIImage(cgImage: over.cgImage()), name: "BP001-encounter-current-geometry")
+                    try captureProjectedLegalEncounter(scene: scene, view: view, snap: snap,
+                        zoom: 1, label: "same-art-geometry", prefix: "BP001-encounter",
+                        registerServiceBuilding: false, deriveSheets: true, geometryOverlay: true)
+                    XCTAssertEqual(session.simulation.state.digest(), digest)
                 }
                 if style == .paired {
                     for zoom: CGFloat in [1, 1.25] {
@@ -925,7 +1022,7 @@ final class BenchmarkCaptureTests: XCTestCase {
     /// Restores the tree after capture so repeated state samples cannot accumulate transforms.
     @MainActor
     private func projectedSharedCameraScene(scene: GameScene, view: SKView, center: CGPoint,
-                                             crop: CGRect, cameraID: UInt64, box: AABB, magnification: CGFloat = 1, projectGround: Bool = true) throws -> UIImage {
+                                             crop: CGRect, cameraID: UInt64, box: AABB, magnification: CGFloat = 1, projectGround: Bool = true, geometryOverlay: Bool = false) throws -> UIImage {
         let camera = try XCTUnwrap(scene.camera)
         let names = ["sprite-player", "sprite-camera-\(cameraID)", "benchmark-building",
                      "benchmark-prop-0", "benchmark-prop-1"]
@@ -937,6 +1034,13 @@ final class BenchmarkCaptureTests: XCTestCase {
         building.size = CGSize(width: canvas, height: canvas)
         building.anchorPoint = CGPoint(x: CGFloat(653) / 1254, y: 1 - CGFloat(1152) / 1254)
         building.position = CGPoint(x: box.minX, y: box.minY)
+        var geometryNode: SKNode?
+        if geometryOverlay {
+            let playerPoint = scene.convert(billboards[0].position, from: try XCTUnwrap(billboards[0].parent))
+            geometryNode = authoritativeGeometryOverlay(solids: [box], player: playerPoint)
+            scene.addChild(geometryNode!)
+        }
+        defer { geometryNode?.removeFromParent() }
         // Same uniform building, shipping ground mapping. The projecting call
         // below is the midpoint. Restoring here keeps that call independent.
         if !projectGround {
@@ -1151,6 +1255,13 @@ final class BenchmarkCaptureTests: XCTestCase {
             furnished.lifetime = .keepAlways; add(furnished)
             if style == .paired && integrity == 3 {
                 attachDerivedSheets(of: street, name: "BP001-quiet-street-midpoint")
+                let currentGeometry = try projectedSharedCameraScene(scene: scene, view: view, center: center,
+                    crop: crop, cameraID: snap.cameras[0].id.raw, box: box, projectGround: false, geometryOverlay: true)
+                attachDerivedSheets(of: currentGeometry, name: "BP001-quiet-street-current-geometry")
+                let midpointGeometry = try projectedSharedCameraScene(scene: scene, view: view, center: center,
+                    crop: crop, cameraID: snap.cameras[0].id.raw, box: box, geometryOverlay: true)
+                attachDerivedSheets(of: midpointGeometry, name: "BP001-quiet-street-midpoint-geometry")
+                XCTAssertEqual(scene.session.simulation.state.digest(), digest)
                 let note = XCTAttachment(string: """
                 BP-001 same-art pair. Viewport 704x326 points. Read pixels from the image.
                 Current is the shipping ground mapping. Midpoint is the existing 45-degree
