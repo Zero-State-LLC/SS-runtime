@@ -223,6 +223,9 @@ final class AudioEngine {
     // MARK: - Effects
 
     private func play(_ cue: ProjectedCue) {
+        // D-119: the lethal haptic has no file yet. An empty id is not a
+        // missing asset, and it must not be recorded as one.
+        guard !cue.audioId.isEmpty else { return }
         guard settings.effectsEnabled else { return }
         guard let template = player(for: cue.audioId) else {
             missingCueIds.insert(cue.audioId)
@@ -338,8 +341,9 @@ final class AudioEngine {
 
     // MARK: - Haptics
 
-    /// Haptics are never the only carrier: every cue that fires one also carries
-    /// a caption, so disabling them loses nothing safety-critical.
+    /// Haptics are not the only carrier. Event cues carry a caption. The
+    /// lethal-warning haptic's caption is the HUD card, so its cue caption
+    /// is empty on purpose.
     private func fire(_ pattern: HapticPattern) {
         guard settings.hapticsEnabled, !settings.reducedSensory, mix.haptics > 0 else { return }
         switch pattern {

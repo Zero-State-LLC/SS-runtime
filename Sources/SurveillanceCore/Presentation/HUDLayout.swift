@@ -367,13 +367,13 @@ public struct TutorialState: Equatable, Sendable {
     public var noContactTicks: Int
     public var cameraEligibleTicks: Int
     public var lockdownPreempts: Bool
+    /// D-119. Outranks Lockdown and Extraction. Presentation only: it is not
+    /// in the gameplay digest, and setting it does not advance `phase`.
+    public var lethalWarningPreempts: Bool
     /// hud-tutorial-001: "Higher safety messages (lethal warning, Lockdown,
     /// Extraction) temporarily replace it without changing tutorial progress."
-    /// Lockdown has its own flag above; this carries the Extraction pair.
-    ///
-    /// The lethal warning is deliberately absent: the specs name it as a
-    /// preemptor and as audio priority 1, but no contract gives it HUD copy,
-    /// and inventing a string here would be inventing product intent.
+    /// Lockdown and the lethal warning have their own flags; this carries the
+    /// Extraction pair.
     public var extractionPreempts: ExtractionPrompt?
     /// Ticks the current card has been presented, capped so the counter cannot
     /// run away on a long phase.
@@ -398,16 +398,17 @@ public struct TutorialState: Equatable, Sendable {
         noContactTicks = 0
         cameraEligibleTicks = 0
         lockdownPreempts = false
+        lethalWarningPreempts = false
         extractionPreempts = nil
         phaseVisibleTicks = 0
     }
 
     /// True when `copy` is a safety message rather than a tutorial card.
     ///
-    /// The tutorial setting hides tutorial cards. It must never hide Lockdown
-    /// or Extraction, which share the same card but are not tutorial content.
+    /// The tutorial setting hides tutorial cards. It must never hide the
+    /// lethal warning, Lockdown, or Extraction.
     public var copyIsSafetyMessage: Bool {
-        lockdownPreempts || extractionPreempts != nil
+        lethalWarningPreempts || lockdownPreempts || extractionPreempts != nil
     }
 
     /// Advance the current card's visual duration by one presented tick.
@@ -419,6 +420,7 @@ public struct TutorialState: Equatable, Sendable {
         // Safety messages are read before the cap: the maximum visual duration
         // governs tutorial cards, and a Lockdown that expired off-screen after
         // five seconds would be a safety regression, not a tutorial one.
+        if lethalWarningPreempts { return LethalWarning.card }
         if lockdownPreempts { return "LOCKDOWN" }
         if let extractionPreempts {
             switch extractionPreempts {

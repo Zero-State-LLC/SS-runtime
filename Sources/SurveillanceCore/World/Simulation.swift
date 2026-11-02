@@ -229,6 +229,7 @@ public struct Simulation: Equatable, Sendable {
             solids: state.liveSolids
         )
         state.tutorial.noteContact(!contacts.isEmpty)
+        state.tutorial.lethalWarningPreempts = LethalWarning.isOn(state)
         state.tutorial.lockdownPreempts = state.exposure.lockdownEntered && state.tutorial.phase != .complete
         state.tutorial.extractionPreempts = tutorialExtractionPrompt()
         state.tutorial.notePresentedTick()
@@ -1454,6 +1455,26 @@ public struct Simulation: Equatable, Sendable {
 
     mutating func testing_setPlayerIntegrity(_ value: Int) {
         state.player.integrity = min(max(0, value), state.player.maxIntegrity)
+    }
+
+    /// D-119 digest check. The flag is presentation. Flipping it must not
+    /// change `digest()`.
+    mutating func testing_setLethalWarning(_ value: Bool) {
+        state.tutorial.lethalWarningPreempts = value
+    }
+
+    mutating func testing_setEnemyCombat(
+        _ id: EntityID,
+        ai: EnemyAIState? = nil,
+        stateTicks: Int? = nil,
+        contactDps: Int? = nil,
+        queryMarkers: [VecQ8]? = nil
+    ) {
+        guard let index = state.enemies.firstIndex(where: { $0.id == id }) else { return }
+        if let ai { state.enemies[index].state = ai }
+        if let stateTicks { state.enemies[index].stateTicks = stateTicks }
+        if let contactDps { state.enemies[index].contactDps = contactDps }
+        if let queryMarkers { state.enemies[index].queryMarkers = queryMarkers }
     }
 
     mutating func testing_keepOnlyCamera(at index: Int, integrity: Int) {

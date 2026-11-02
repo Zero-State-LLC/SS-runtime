@@ -184,6 +184,11 @@ public struct AudioProjector: Equatable, Sendable {
     public var lastDisplayedCountdown: Int?
     public var captionHistory: [String]
     public var nextSequence: Int
+    /// D-119. The first rising edge fires. A later one fires only after the
+    /// warning has been off for 60 ticks. This is presenter memory, not world
+    /// state, so it stays out of the gameplay digest.
+    var lethalWarningArmed: Bool
+    var lethalWarningOffTicks: Int
 
     public init() {
         lastWeaponVoiceTick = nil
@@ -191,6 +196,8 @@ public struct AudioProjector: Equatable, Sendable {
         lastDisplayedCountdown = nil
         captionHistory = []
         nextSequence = 0
+        lethalWarningArmed = true
+        lethalWarningOffTicks = 0
     }
 
     public mutating func reset() {
@@ -201,7 +208,8 @@ public struct AudioProjector: Equatable, Sendable {
         tick: UInt64,
         events: [AuthoritativeEvent],
         world: AudioWorldQuery,
-        settings: PresentationAudioSettings = .enabled
+        settings: PresentationAudioSettings = .enabled,
+        lethalWarning: Bool = false
     ) -> AudioProjection {
         var candidates: [ProjectedCue] = []
         let cameraHits = events.filter { $0.type == .cameraIntegrityChanged }
@@ -220,6 +228,7 @@ public struct AudioProjector: Equatable, Sendable {
         appendBossAndElite(events: events, into: &candidates)
         appendExtraction(events: events, into: &candidates)
         appendTerminal(events: events, into: &candidates)
+        appendLethalWarning(on: lethalWarning, into: &candidates)
 
         for index in candidates.indices {
             candidates[index].sequence = nextSequence
@@ -237,6 +246,9 @@ public struct AudioProjector: Equatable, Sendable {
         }
 
         let voices = stealVoices(candidates.filter(\.consumesEffectVoice))
+        // The lethal haptic has no audio file. It does not take an effects
+        // voice, and silencing effects does not silence it.
+        let hapticOnly = candidates.filter { $0.audioId.isEmpty && $0.haptic != .none }
         for cue in voices where !cue.caption.isEmpty {
             captionHistory.append(cue.caption)
         }
@@ -245,7 +257,7 @@ public struct AudioProjector: Equatable, Sendable {
         }
 
         return AudioProjection(
-            cues: settings.effectsEnabled ? voices : [],
+            cues: (settings.effectsEnabled ? voices : []) + hapticOnly,
             musicState: Self.musicState(world),
             musicBedAssetId: Self.musicBedAssetId(world),
             captions: captionHistory,
@@ -511,6 +523,33 @@ public struct AudioProjector: Equatable, Sendable {
             remaining.remove(at: oldest.offset)
         }
         return remaining
+    }
+
+    /// Rising edge only, and again only after 60 ticks clear. Empty audio id:
+    /// the cue is reserved until a playable master exists. The HUD card is
+    /// the caption, so this cue does not carry a second one.
+    private mutating func appendLethalWarning(on: Bool, into candidates: inout [ProjectedCue]) {
+        if on {
+            if lethalWarningArmed {
+                candidates.append(
+                    ProjectedCue(
+                        audioId: "",
+                        haptic: .warning,
+                        caption: "",
+                        priority: 1,
+                        consumesEffectVoice: false,
+                        sourceEntityId: nil,
+                        sector: nil,
+                        sequence: 0
+                    )
+                )
+                lethalWarningArmed = false
+            }
+            lethalWarningOffTicks = 0
+        } else {
+            if lethalWarningOffTicks < 60 { lethalWarningOffTicks += 1 }
+            if lethalWarningOffTicks >= 60 { lethalWarningArmed = true }
+        }
     }
 
     private func cue(

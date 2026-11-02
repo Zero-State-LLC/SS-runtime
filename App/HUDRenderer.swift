@@ -438,7 +438,7 @@ final class HUDRenderer {
         }
     }
 
-    /// The card shows a safety message (Lockdown, Extraction) when one is
+    /// The card shows a safety message (lethal threat, Lockdown, Extraction) when one is
     /// up; otherwise the one D-098 tutorial line `TutorialLineQueue` chose.
     /// The tutorial card's copy this frame, if it shows: a safety message
     /// always, otherwise the queued line when tutorials are on. VoiceOver
