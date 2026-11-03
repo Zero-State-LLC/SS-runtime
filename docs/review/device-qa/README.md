@@ -80,5 +80,16 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [vendor-throw-rest-frames-2026-11-03.md](vendor-throw-rest-frames-2026-11-03.md) | Vendor throw frames 02–03 and throwCommit 02 in north, east, and west |
 | [player-copied-direction-rows-2026-11-03.md](player-copied-direction-rows-2026-11-03.md) | North, east, and west hurt, defeat, and extraction files, which match the south bytes |
 | [shell-image-bounds-2026-11-03.md](shell-image-bounds-2026-11-03.md) | Title backdrop, wordmark, plates, launch mark, and app icon |
+| [captain-housing-bounds-2026-11-03.md](captain-housing-bounds-2026-11-03.md) | The two Captain housing PNGs, idle and active |
+| [audio-file-bytes-2026-11-03.md](audio-file-bytes-2026-11-03.md) | The 34 shipped m4a files |
+| [world-layer-order-2026-11-03.md](world-layer-order-2026-11-03.md) | World layers 0 through 14, and the roots above that stack |
+| [layer-offsets-2026-11-03.md](layer-offsets-2026-11-03.md) | Foundation, gate, ghost, and camera-badge offsets inside a layer |
+| [haptic-patterns-2026-11-03.md](haptic-patterns-2026-11-03.md) | The six haptic patterns and the UIKit call each one makes |
+| [player-weapon-cues-2026-11-03.md](player-weapon-cues-2026-11-03.md) | Civic Pulse, impact, player damage, and dodge cues |
+| [camera-cues-2026-11-03.md](camera-cues-2026-11-03.md) | Camera hit, critical, destroy, field-off, and tamper cues |
+| [run-state-cues-2026-11-03.md](run-state-cues-2026-11-03.md) | Detection, lockdown, extraction, blackout, and terminal cues |
+| [boss-upgrade-cues-2026-11-03.md](boss-upgrade-cues-2026-11-03.md) | Boss telegraph and phase cues, the three upgrades, and the lethal warning |
+| [effect-voice-ceiling-2026-11-03.md](effect-voice-ceiling-2026-11-03.md) | Eight effect voices, and which cue is dropped first |
+| [mix-and-blackout-2026-11-03.md](mix-and-blackout-2026-11-03.md) | Mix defaults, crossfades, music beds, and the blackout drop |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
