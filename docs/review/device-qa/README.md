@@ -54,5 +54,7 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [enemy-idle-frame-01-2026-11-03.md](enemy-idle-frame-01-2026-11-03.md) | Idle frame 01 in north, east, and west for the five standard enemies |
 | [boss-facing-frame-01-2026-11-03.md](boss-facing-frame-01-2026-11-03.md) | Boss frame 01 in north, east, and west of the seven states |
 | [elite-facing-frame-01-2026-11-03.md](elite-facing-frame-01-2026-11-03.md) | Elite frame 01 in north, east, and west of the eight states |
+| [enemy-action-facing-frame-01-2026-11-03.md](enemy-action-facing-frame-01-2026-11-03.md) | Non-idle frame 01 in north, east, and west for the five standard enemies |
+| [player-action-rest-frames-2026-11-03.md](player-action-rest-frames-2026-11-03.md) | Dodge 02–04, recover 02, and complete 02–04 in north, east, and west |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
