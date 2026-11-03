@@ -49,5 +49,10 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [player-facing-frame-01-2026-11-03.md](player-facing-frame-01-2026-11-03.md) | Idle and move frame 01 in each direction; the other directions are not copies of south |
 | [south-state-frame-01-2026-11-03.md](south-state-frame-01-2026-11-03.md) | South frame 01 of the non-idle enemy states and of the elite |
 | [player-direction-copies-2026-11-03.md](player-direction-copies-2026-11-03.md) | Hurt, defeat, and extraction reuse the south bytes in every direction |
+| [direction-distinct-2026-11-03.md](direction-distinct-2026-11-03.md) | Outside those three clips, no two directions share a PNG hash |
+| [player-action-facing-frame-01-2026-11-03.md](player-action-facing-frame-01-2026-11-03.md) | Dodge, recover, and complete frame 01 in north, east, and west |
+| [enemy-idle-frame-01-2026-11-03.md](enemy-idle-frame-01-2026-11-03.md) | Idle frame 01 in north, east, and west for the five standard enemies |
+| [boss-facing-frame-01-2026-11-03.md](boss-facing-frame-01-2026-11-03.md) | Boss frame 01 in north, east, and west of the seven states |
+| [elite-facing-frame-01-2026-11-03.md](elite-facing-frame-01-2026-11-03.md) | Elite frame 01 in north, east, and west of the eight states |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
