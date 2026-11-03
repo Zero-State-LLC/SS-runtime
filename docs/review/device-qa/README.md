@@ -25,4 +25,24 @@ Spec: `2377b99c6b6d1654e2cb976ee1b7e07b75c77e1a`. No gameplay, content, arena, o
 
 No release or full-QA pass is claimed. Further animation/clipping symptoms require reproduction on the candidate; issues remain open until verified.
 
+## Measurement notes
+
+Each note records one fact about bytes or draw calls already on main. None of them closes a parent task.
+
+| Note | Fact |
+|---|---|
+| [solid-footprint-2026-11-01.md](solid-footprint-2026-11-01.md) | Two blocking solids: canvas, ink, and the blocking rectangle |
+| [solid-footprint-twelve-2026-11-02.md](solid-footprint-twelve-2026-11-02.md) | The other twelve blocking solids, same three facts |
+| [camera-frame-bounds-2026-11-02.md](camera-frame-bounds-2026-11-02.md) | Camera head frames and the five housings, at anchor (32, 88) |
+| [enemy-sprite-bounds-2026-11-02.md](enemy-sprite-bounds-2026-11-02.md) | Five standard enemies, canvas 64×64, anchor (32, 56), body radii |
+| [retest-checklist.md](retest-checklist.md) | Human rows, plus the device-sitting bot column |
+| [decoration-placement-2026-11-02.md](decoration-placement-2026-11-02.md) | Twenty-one placed decoration canvases and their draw boxes |
+| [tiled-planes-2026-11-02.md](tiled-planes-2026-11-02.md) | Six ground tiles and the two fog bands |
+| [player-sprite-bounds-2026-11-03.md](player-sprite-bounds-2026-11-03.md) | Shipped player frames, canvas 64×64, anchor (32, 56), radius 18 |
+| [boss-sprite-bounds-2026-11-03.md](boss-sprite-bounds-2026-11-03.md) | Shipped `algorithmicModerate` frames, canvas 96×96, anchor (48, 84), radius 30 |
+| [shape-hazards-2026-11-03.md](shape-hazards-2026-11-03.md) | Projectile, mine, and telegraph shapes the renderer already draws |
+| [unplaced-images-2026-11-03.md](unplaced-images-2026-11-03.md) | Motif, telegraph, and objective PNGs the draw path does not place |
+| [hud-shapes-2026-11-03.md](hud-shapes-2026-11-03.md) | HUD and control PNGs, and the shapes the HUD draws instead |
+| [decoration-solid-overlap-2026-11-03.md](decoration-solid-overlap-2026-11-03.md) | No placed decoration canvas shares area with a blocking rectangle |
+
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
