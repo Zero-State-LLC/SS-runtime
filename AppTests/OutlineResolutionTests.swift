@@ -20,6 +20,20 @@ struct OutlineResolutionTests {
         return try #require(OutlineTextures.texture(pixels: pixels, width: edge, height: edge, smooth: false))
     }
 
+    /// A vertical bar. `sourceWidth` is in source pixels. A logical column is `density` source pixels wide.
+    private func bar(density: Int, sourceWidth: Int) throws -> SKTexture {
+        let edge = 64 * density
+        var pixels = [UInt8](repeating: 0, count: edge * edge * 4)
+        let x0 = 8 * density
+        for y in (16 * density)..<(48 * density) {
+            for x in x0..<(x0 + sourceWidth) {
+                let i = (y * edge + x) * 4
+                pixels[i] = 255; pixels[i + 3] = 255
+            }
+        }
+        return try #require(OutlineTextures.texture(pixels: pixels, width: edge, height: edge, smooth: false))
+    }
+
     @Test func sourceDensityDoesNotChangeStrokeOrEnemyDashes() throws {
         for faction in [ActorContrast.Faction.player, .enemy] {
             var baseline: [UInt8]?
@@ -177,5 +191,43 @@ struct OutlineResolutionTests {
             #expect(!outline.isHidden && outline.texture === originalOutline)
             #expect(sprite.position == position)
         }
+    }
+
+    @Test func oneLogicalPixelBarKeepsOneMaskAtScaleOne() throws {
+        for faction in [ActorContrast.Faction.player, .enemy] {
+            var baseline: [UInt8]?
+            for density in [1, 4, 6] {
+                let texture = try bar(density: density, sourceWidth: density)
+                let entry = try #require(OutlineTextures.make(from: texture.cgImage(), faction: faction,
+                    logicalSize: CGSize(width: 64, height: 64), samplingScale: 1))
+                #expect(entry.maskSize == CGSize(width: 64, height: 64))
+                #expect(entry.pad == 1)
+                let image = entry.texture.cgImage()
+                #expect(image.width == 66 && image.height == 66)
+                let bytes = try #require(OutlineTextures.rgba(image))
+                let count = stride(from: 3, to: bytes.count, by: 4).filter { bytes[$0] > 0 }.count
+                #expect(count > 0)
+                if let baseline { #expect(bytes == baseline) } else { baseline = bytes }
+                if density > 1 {
+                    let thin = try bar(density: density, sourceWidth: 1)
+                    let thinEntry = try #require(OutlineTextures.make(from: thin.cgImage(), faction: faction,
+                        logicalSize: CGSize(width: 64, height: 64), samplingScale: 1))
+                    let thinBytes = try #require(OutlineTextures.rgba(thinEntry.texture.cgImage()))
+                    #expect(thinBytes != bytes)
+                }
+            }
+        }
+        // Scale 3 is a size probe only. Production play omits the argument and stays at scale 1.
+        // This does not claim the finer mask recovers a one-source-pixel bar.
+        let thin = try bar(density: 6, sourceWidth: 1)
+        let cache = OutlineTextures()
+        let fine = try #require(cache.outline(for: thin, faction: .player,
+            logicalSize: CGSize(width: 64, height: 64), samplingScale: 3))
+        #expect(fine.maskSize == CGSize(width: 192, height: 192))
+        #expect(fine.pad == 3)
+        let omitted = try #require(cache.outline(for: thin, faction: .player,
+            logicalSize: CGSize(width: 64, height: 64)))
+        #expect(omitted.maskSize == CGSize(width: 64, height: 64))
+        #expect(omitted.pad == 1)
     }
 }
