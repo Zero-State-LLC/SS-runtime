@@ -56,5 +56,11 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [elite-facing-frame-01-2026-11-03.md](elite-facing-frame-01-2026-11-03.md) | Elite frame 01 in north, east, and west of the eight states |
 | [enemy-action-facing-frame-01-2026-11-03.md](enemy-action-facing-frame-01-2026-11-03.md) | Non-idle frame 01 in north, east, and west for the five standard enemies |
 | [player-action-rest-frames-2026-11-03.md](player-action-rest-frames-2026-11-03.md) | Dodge 02–04, recover 02, and complete 02–04 in north, east, and west |
+| [clip-lengths-2026-11-03.md](clip-lengths-2026-11-03.md) | Every shipped actor clip has the same frame count in all four directions |
+| [player-idle-rest-frames-2026-11-03.md](player-idle-rest-frames-2026-11-03.md) | Idle frames 02–04 in north, east, and west |
+| [player-move-rest-frames-2026-11-03.md](player-move-rest-frames-2026-11-03.md) | Move frames 02–06 in north, east, and west |
+| [enemy-idle-rest-frames-2026-11-03.md](enemy-idle-rest-frames-2026-11-03.md) | Idle frames 02–04 in north, east, and west for the five standard enemies |
+| [enemy-south-move-rest-2026-11-03.md](enemy-south-move-rest-2026-11-03.md) | South move frames 02–06 for the four enemies that have a move clip |
+| [enemy-move-rest-frames-2026-11-03.md](enemy-move-rest-frames-2026-11-03.md) | Move frames 02–06 in north, east, and west for those four enemies |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
