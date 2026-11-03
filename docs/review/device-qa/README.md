@@ -70,5 +70,13 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [elite-short-rest-frames-2026-11-03.md](elite-short-rest-frames-2026-11-03.md) | Elite short frames in north, east, and west |
 | [enemy-south-hurt-defeat-rest-2026-11-03.md](enemy-south-hurt-defeat-rest-2026-11-03.md) | Standard-enemy hurt and defeat, south, after frame 01 |
 | [enemy-hurt-defeat-rest-frames-2026-11-03.md](enemy-hurt-defeat-rest-frames-2026-11-03.md) | Standard-enemy hurt and defeat in north, east, and west |
+| [enemy-south-action-rest-2026-11-03.md](enemy-south-action-rest-2026-11-03.md) | South frames 02–03 of pursuit, charge, recover, pulse, cast, and throw |
+| [enemy-south-commit-rest-2026-11-03.md](enemy-south-commit-rest-2026-11-03.md) | South frame 02 of the five commit clips |
+| [informant-action-rest-frames-2026-11-03.md](informant-action-rest-frames-2026-11-03.md) | Informant pursuit frames 02–03 and pursuitCommit 02 in north, east, and west |
+| [cable-charge-rest-frames-2026-11-03.md](cable-charge-rest-frames-2026-11-03.md) | Cable charge frames 02–03 and chargeCommit 02 in north, east, and west |
+| [cable-recover-rest-frames-2026-11-03.md](cable-recover-rest-frames-2026-11-03.md) | Cable recover frames 02–03 in north, east, and west |
+| [fog-pulse-rest-frames-2026-11-03.md](fog-pulse-rest-frames-2026-11-03.md) | Fog pulse frames 02–03 and pulseCommit 02 in north, east, and west |
+| [witch-cast-rest-frames-2026-11-03.md](witch-cast-rest-frames-2026-11-03.md) | Witch cast frames 02–03 and castCommit 02 in north, east, and west |
+| [vendor-throw-rest-frames-2026-11-03.md](vendor-throw-rest-frames-2026-11-03.md) | Vendor throw frames 02–03 and throwCommit 02 in north, east, and west |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
