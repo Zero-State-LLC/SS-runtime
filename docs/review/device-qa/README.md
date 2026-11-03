@@ -78,5 +78,7 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [fog-pulse-rest-frames-2026-11-03.md](fog-pulse-rest-frames-2026-11-03.md) | Fog pulse frames 02–03 and pulseCommit 02 in north, east, and west |
 | [witch-cast-rest-frames-2026-11-03.md](witch-cast-rest-frames-2026-11-03.md) | Witch cast frames 02–03 and castCommit 02 in north, east, and west |
 | [vendor-throw-rest-frames-2026-11-03.md](vendor-throw-rest-frames-2026-11-03.md) | Vendor throw frames 02–03 and throwCommit 02 in north, east, and west |
+| [player-copied-direction-rows-2026-11-03.md](player-copied-direction-rows-2026-11-03.md) | North, east, and west hurt, defeat, and extraction files, which match the south bytes |
+| [shell-image-bounds-2026-11-03.md](shell-image-bounds-2026-11-03.md) | Title backdrop, wordmark, plates, launch mark, and app icon |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
