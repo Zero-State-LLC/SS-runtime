@@ -44,5 +44,7 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [unplaced-images-2026-11-03.md](unplaced-images-2026-11-03.md) | Motif, telegraph, and objective PNGs the draw path does not place |
 | [hud-shapes-2026-11-03.md](hud-shapes-2026-11-03.md) | HUD and control PNGs, and the shapes the HUD draws instead |
 | [decoration-solid-overlap-2026-11-03.md](decoration-solid-overlap-2026-11-03.md) | No placed decoration canvas shares area with a blocking rectangle |
+| [player-action-frames-2026-11-03.md](player-action-frames-2026-11-03.md) | South dodge, recover, hurt, defeat, extraction, and complete frames |
+| [world-shapes-2026-11-03.md](world-shapes-2026-11-03.md) | Kerb, solid foundation, extraction, fields, cones, sockets, markers, shadow, and gate |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
