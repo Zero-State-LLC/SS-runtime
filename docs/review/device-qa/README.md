@@ -82,6 +82,7 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [shell-image-bounds-2026-11-03.md](shell-image-bounds-2026-11-03.md) | Title backdrop, wordmark, plates, launch mark, and app icon |
 | [captain-housing-bounds-2026-11-03.md](captain-housing-bounds-2026-11-03.md) | The two Captain housing PNGs, idle and active |
 | [audio-file-bytes-2026-11-03.md](audio-file-bytes-2026-11-03.md) | The 34 shipped m4a files |
+| [catalog-png-digests-2026-11-03.md](catalog-png-digests-2026-11-03.md) | Catalog digests against the 1030 shipped PNG files |
 | [world-layer-order-2026-11-03.md](world-layer-order-2026-11-03.md) | World layers 0 through 14, and the roots above that stack |
 | [layer-offsets-2026-11-03.md](layer-offsets-2026-11-03.md) | Foundation, gate, ghost, and camera-badge offsets inside a layer |
 | [haptic-patterns-2026-11-03.md](haptic-patterns-2026-11-03.md) | The six haptic patterns and the UIKit call each one makes |
