@@ -62,5 +62,13 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [enemy-idle-rest-frames-2026-11-03.md](enemy-idle-rest-frames-2026-11-03.md) | Idle frames 02–04 in north, east, and west for the five standard enemies |
 | [enemy-south-move-rest-2026-11-03.md](enemy-south-move-rest-2026-11-03.md) | South move frames 02–06 for the four enemies that have a move clip |
 | [enemy-move-rest-frames-2026-11-03.md](enemy-move-rest-frames-2026-11-03.md) | Move frames 02–06 in north, east, and west for those four enemies |
+| [boss-south-rest-frames-2026-11-03.md](boss-south-rest-frames-2026-11-03.md) | Boss south frames after 01 |
+| [boss-six-rest-frames-2026-11-03.md](boss-six-rest-frames-2026-11-03.md) | Boss frames 02–06 in north, east, and west |
+| [boss-long-rest-frames-2026-11-03.md](boss-long-rest-frames-2026-11-03.md) | Boss stagger and long frames in north, east, and west |
+| [elite-south-rest-frames-2026-11-03.md](elite-south-rest-frames-2026-11-03.md) | Elite south frames after 01 |
+| [elite-six-rest-frames-2026-11-03.md](elite-six-rest-frames-2026-11-03.md) | Elite frames 02–06 in north, east, and west |
+| [elite-short-rest-frames-2026-11-03.md](elite-short-rest-frames-2026-11-03.md) | Elite short frames in north, east, and west |
+| [enemy-south-hurt-defeat-rest-2026-11-03.md](enemy-south-hurt-defeat-rest-2026-11-03.md) | Standard-enemy hurt and defeat, south, after frame 01 |
+| [enemy-hurt-defeat-rest-frames-2026-11-03.md](enemy-hurt-defeat-rest-frames-2026-11-03.md) | Standard-enemy hurt and defeat in north, east, and west |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
