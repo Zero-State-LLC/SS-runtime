@@ -48,5 +48,6 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [world-shapes-2026-11-03.md](world-shapes-2026-11-03.md) | Kerb, solid foundation, extraction, fields, cones, sockets, markers, shadow, and gate |
 | [player-facing-frame-01-2026-11-03.md](player-facing-frame-01-2026-11-03.md) | Idle and move frame 01 in each direction; the other directions are not copies of south |
 | [south-state-frame-01-2026-11-03.md](south-state-frame-01-2026-11-03.md) | South frame 01 of the non-idle enemy states and of the elite |
+| [player-direction-copies-2026-11-03.md](player-direction-copies-2026-11-03.md) | Hurt, defeat, and extraction reuse the south bytes in every direction |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
