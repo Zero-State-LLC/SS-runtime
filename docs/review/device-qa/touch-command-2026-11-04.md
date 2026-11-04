@@ -6,4 +6,4 @@ The command axes run from −32,767 to 32,767. The stick clamps the finger to it
 
 A dodge touch sets one rising edge. `takeCommand` returns that edge once and clears it. Releasing the stick zeroes both axes. A pause touch is a pause hit and does not claim the stick.
 
-The stick may begin in its half of the safe canvas from 30 percent of the height to the bottom: the right half for the right hand, the left half for the left hand. The knob is centred on the drawn stick. Walk speed and dodge length stay in [player-movement-2026-11-04.md](player-movement-2026-11-04.md).
+The stick may begin in its half of the safe canvas from 30 percent of the height to the bottom: the left half for the right hand, the right half for the left hand. The knob is centred on the drawn stick. Walk speed and dodge length stay in [player-movement-2026-11-04.md](player-movement-2026-11-04.md).
