@@ -106,5 +106,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [extraction-and-tick-2026-11-04.md](extraction-and-tick-2026-11-04.md) | Extraction arm and countdown, and the order of one tick |
 | [placed-cameras-2026-11-04.md](placed-cameras-2026-11-04.md) | Eight placed cameras, integrity 3, and the shared geometry |
 | [hud-bindings-2026-11-04.md](hud-bindings-2026-11-04.md) | The numbers and labels the HUD draws on the existing shapes |
+| [touch-command-2026-11-04.md](touch-command-2026-11-04.md) | The stick dead zone, the remap, and the one dodge edge |
+| [pause-2026-11-04.md](pause-2026-11-04.md) | Pause stops the step and clears the held touch |
+| [hit-stop-2026-11-04.md](hit-stop-2026-11-04.md) | The 50 ms and 90 ms freezes, and the 15-tick coalesce |
+| [lockdown-tint-2026-11-04.md](lockdown-tint-2026-11-04.md) | The world tint from 6 percent to 10 percent |
+| [caption-board-2026-11-04.md](caption-board-2026-11-04.md) | Three captions, safety first, for 150 ticks |
+| [fog-thinning-2026-11-04.md](fog-thinning-2026-11-04.md) | Fog eases to half opacity while an aware enemy is in view |
+| [upgrade-cards-2026-11-04.md](upgrade-cards-2026-11-04.md) | The three card sentences and their selection indexes |
+| [terminal-surface-2026-11-04.md](terminal-surface-2026-11-04.md) | The results panel, Restart, Share, and Rehearse Court |
+| [player-spawn-2026-11-04.md](player-spawn-2026-11-04.md) | The player spawn at (160, 192), heading 0 |
+| [restart-and-rehearsal-2026-11-04.md](restart-and-rehearsal-2026-11-04.md) | Restart keeps the seed; rehearsal restores the court snapshot |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
