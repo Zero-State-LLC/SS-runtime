@@ -2,7 +2,7 @@
 
 Read 2026-11-04 from `TutorialState`, `TutorialLineQueue`, and `EncounterLabelGate` on `93f6d67`. No card was added.
 
-The tutorial starts at move. The copy is `MOVE` until displacement reaches 96, then `CAMERA FIELDS RAISE EXPOSURE` until 60 in-view ticks or a contact, then `BREAK LINE OF SIGHT TO RECOVER` until 30 ticks without contact, then `MOVE TOWARD A CAMERA TO SHOOT IT • DESTRUCTION ADDS EXPOSURE` until 300 eligible ticks or a camera impact, then `CHOOSE ONE COUNTERMEASURE`. Completing M-A also forces the upgrade phase. Selecting the upgrade completes it, and the copy is empty. A card stops being drawn after 300 presented ticks. The phase stays.
+The tutorial starts at move. The copy is `MOVE` until displacement reaches 96, then `CAMERA FIELDS RAISE EXPOSURE` until 60 in-view ticks or a contact, then `BREAK LINE OF SIGHT TO RECOVER` until 30 ticks without contact, then `MOVE TOWARD A CAMERA TO SHOOT IT • DESTRUCTION ADDS EXPOSURE` until 300 eligible ticks or a camera impact, then `CHOOSE ONE COUNTERMEASURE`. A Civic Pulse that selects a damageable camera during the field phase or the contact phase moves straight to the camera card on that tick, so those two waits are the path when that shot has not happened. Completing M-A also forces the upgrade phase. Selecting the upgrade completes it, and the copy is empty. A card stops being drawn after 300 presented ticks. The phase stays.
 
 Safety copy is drawn before that cap. Turning tutorials off leaves it up. The lethal-warning card is `LETHAL THREAT`. Lockdown copy is `LOCKDOWN`. The locked box uses `DEFEAT THE CURRENT AUTHORITY`, and the armed extraction uses `PHOENIX STEPS OPEN`. Those two sentences stay in [hud-bindings-2026-11-04.md](hud-bindings-2026-11-04.md).
 
