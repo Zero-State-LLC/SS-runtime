@@ -92,5 +92,9 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [boss-upgrade-cues-2026-11-03.md](boss-upgrade-cues-2026-11-03.md) | Boss telegraph and phase cues, the three upgrades, and the lethal warning |
 | [effect-voice-ceiling-2026-11-03.md](effect-voice-ceiling-2026-11-03.md) | Eight effect voices, and which cue is dropped first |
 | [mix-and-blackout-2026-11-03.md](mix-and-blackout-2026-11-03.md) | Mix defaults, crossfades, music beds, and the blackout drop |
+| [camera-follow-2026-11-03.md](camera-follow-2026-11-03.md) | The scene follow, the snapshot framing, and the shake added to the camera node |
+| [exposure-bands-2026-11-03.md](exposure-bands-2026-11-03.md) | Detection bands and the exposure added or removed on a tick |
+| [medal-predicates-2026-11-03.md](medal-predicates-2026-11-03.md) | The five medals a successful run can earn |
+| [upgrade-effects-2026-11-03.md](upgrade-effects-2026-11-03.md) | Signal Jammer, Ricochet Pulse, and Ghost Step as shipped |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
