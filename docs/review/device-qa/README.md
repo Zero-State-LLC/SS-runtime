@@ -96,5 +96,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [exposure-bands-2026-11-03.md](exposure-bands-2026-11-03.md) | Detection bands and the exposure added or removed on a tick |
 | [medal-predicates-2026-11-03.md](medal-predicates-2026-11-03.md) | The five medals a successful run can earn |
 | [upgrade-effects-2026-11-03.md](upgrade-effects-2026-11-03.md) | Signal Jammer, Ricochet Pulse, and Ghost Step as shipped |
+| [player-movement-2026-11-04.md](player-movement-2026-11-04.md) | Walk, dodge, and the slide of the player circle |
+| [player-integrity-2026-11-04.md](player-integrity-2026-11-04.md) | The 50 percent loss scale, contact, and the court floor |
+| [civic-pulse-2026-11-04.md](civic-pulse-2026-11-04.md) | Civic Pulse cadence, travel, and damage |
+| [standard-enemy-stats-2026-11-04.md](standard-enemy-stats-2026-11-04.md) | The five standard enemies and the one special each has |
+| [elite-boss-attacks-2026-11-04.md](elite-boss-attacks-2026-11-04.md) | The elite cycle and the four boss attacks |
+| [encounter-waves-2026-11-04.md](encounter-waves-2026-11-04.md) | M-A, M-B, and M-C waves, triggers, and totals |
+| [heat-awareness-patrol-2026-11-04.md](heat-awareness-patrol-2026-11-04.md) | Heat counts, awareness, and the Transit Patrol |
+| [extraction-and-tick-2026-11-04.md](extraction-and-tick-2026-11-04.md) | Extraction arm and countdown, and the order of one tick |
+| [placed-cameras-2026-11-04.md](placed-cameras-2026-11-04.md) | Eight placed cameras, integrity 3, and the shared geometry |
+| [hud-bindings-2026-11-04.md](hud-bindings-2026-11-04.md) | The numbers and labels the HUD draws on the existing shapes |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
