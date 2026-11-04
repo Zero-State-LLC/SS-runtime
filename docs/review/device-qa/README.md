@@ -106,5 +106,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [extraction-and-tick-2026-11-04.md](extraction-and-tick-2026-11-04.md) | Extraction arm and countdown, and the order of one tick |
 | [placed-cameras-2026-11-04.md](placed-cameras-2026-11-04.md) | Eight placed cameras, integrity 3, and the shared geometry |
 | [hud-bindings-2026-11-04.md](hud-bindings-2026-11-04.md) | The numbers and labels the HUD draws on the existing shapes |
+| [hit-order-2026-11-04.md](hit-order-2026-11-04.md) | Earliest hit, then a wall, then the lower ids |
+| [target-order-2026-11-04.md](target-order-2026-11-04.md) | Close enemy, chosen camera, then other enemy |
+| [projectile-step-2026-11-04.md](projectile-step-2026-11-04.md) | A projectile steps after its first tick, then retires |
+| [forward-gates-2026-11-04.md](forward-gates-2026-11-04.md) | Encounter gates, the elite gate at plus 60, and the boss gate |
+| [camera-destruction-record-2026-11-04.md](camera-destruction-record-2026-11-04.md) | The destruction record and the blackout latch at eight |
+| [spawn-socket-choice-2026-11-04.md](spawn-socket-choice-2026-11-04.md) | Farthest fair socket, offscreen first, on the 896×414 rules view |
+| [intro-sequence-2026-11-04.md](intro-sequence-2026-11-04.md) | The title hold, the field power-on, and the reduced-motion fade |
+| [tutorial-timing-2026-11-04.md](tutorial-timing-2026-11-04.md) | Tutorial cards, one line at a time, and the encounter-label hold |
+| [control-rects-2026-11-04.md](control-rects-2026-11-04.md) | Stick, dodge, and pause on the reference canvas |
+| [presentation-settings-2026-11-04.md](presentation-settings-2026-11-04.md) | Local settings, and what the receipt may declare |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
