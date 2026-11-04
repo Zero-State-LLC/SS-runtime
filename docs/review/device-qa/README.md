@@ -126,5 +126,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [terminal-surface-2026-11-04.md](terminal-surface-2026-11-04.md) | The results panel, Restart, Share, and Rehearse Court |
 | [player-spawn-2026-11-04.md](player-spawn-2026-11-04.md) | The player spawn at (160, 192), heading 0 |
 | [restart-and-rehearsal-2026-11-04.md](restart-and-rehearsal-2026-11-04.md) | Restart keeps the seed; rehearsal restores the court snapshot |
+| [clip-frame-clock-2026-11-04.md](clip-frame-clock-2026-11-04.md) | Frame selection at 60 Hz, rounded up, last frame held |
+| [ghost-replay-2026-11-04.md](ghost-replay-2026-11-04.md) | The best ghost, verified, fading over 30 ticks |
+| [run-card-2026-11-04.md](run-card-2026-11-04.md) | The m:ss clock, NEW BEST, and the incident report |
+| [terminal-speech-2026-11-04.md](terminal-speech-2026-11-04.md) | What VoiceOver reads on the results surface |
+| [daily-seed-2026-11-04.md](daily-seed-2026-11-04.md) | The UTC day key and the first placement that passes |
+| [daily-flavour-2026-11-04.md](daily-flavour-2026-11-04.md) | The day's grade, fog percent, and headline |
+| [court-light-2026-11-04.md](court-light-2026-11-04.md) | The four boss-phase lights and the 60-tick crossfade |
+| [terminal-seal-2026-11-04.md](terminal-seal-2026-11-04.md) | The sealed tick and digest when a run ends |
+| [replay-identity-2026-11-04.md](replay-identity-2026-11-04.md) | The four version strings a replay must match |
+| [ambient-motion-2026-11-04.md](ambient-motion-2026-11-04.md) | Twelve ambient slots, one rare slot, and each recipe's period |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
