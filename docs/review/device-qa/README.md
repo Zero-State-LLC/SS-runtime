@@ -236,6 +236,16 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [title-type-2026-11-05.md](title-type-2026-11-05.md) | The headline size, and the button type |
 | [grade-margin-2026-11-05.md](grade-margin-2026-11-05.md) | One fog tile past the arena, each side |
 | [notch-seat-2026-11-05.md](notch-seat-2026-11-05.md) | Beside the camera line, one step down |
+| [captain-mark-2026-11-05.md](captain-mark-2026-11-05.md) | The diamond, or the contracting ring |
+| [extraction-brackets-2026-11-05.md](extraction-brackets-2026-11-05.md) | The zone corners, and the inward bits |
+| [phase-slam-2026-11-05.md](phase-slam-2026-11-05.md) | The phase words, and the broken ring |
+| [spawn-chevrons-2026-11-05.md](spawn-chevrons-2026-11-05.md) | Up to six marks, aimed at the sockets |
+| [alert-mark-2026-11-05.md](alert-mark-2026-11-05.md) | The exclamation above the enemy |
+| [caption-column-2026-11-05.md](caption-column-2026-11-05.md) | Safety with a bar, routine without |
+| [outline-cache-2026-11-05.md](outline-cache-2026-11-05.md) | 128 entries, and the byte cap |
+| [extraction-sweep-2026-11-05.md](extraction-sweep-2026-11-05.md) | The clockwise arc, and the numeral |
+| [detection-ink-2026-11-05.md](detection-ink-2026-11-05.md) | Lockdown in the critical colour |
+| [upgrade-badge-2026-11-05.md](upgrade-badge-2026-11-05.md) | The panel, the frame, and the glyph |
 | [mix-readout-2026-11-05.md](mix-readout-2026-11-05.md) | The percent, and the spoken value |
 | [title-access-2026-11-05.md](title-access-2026-11-05.md) | The hidden art, and the spoken lines |
 | [lip-seat-2026-11-05.md](lip-seat-2026-11-05.md) | The quarter strip, and the band centres |
