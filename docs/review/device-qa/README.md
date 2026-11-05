@@ -156,6 +156,16 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [daemon-query-2026-11-04.md](daemon-query-2026-11-04.md) | Three query markers, 14 per circle, and the dash literal |
 | [spawn-lethal-volumes-2026-11-04.md](spawn-lethal-volumes-2026-11-04.md) | The volumes a fair socket must sit strictly outside |
 | [extraction-presence-2026-11-04.md](extraction-presence-2026-11-04.md) | The truncated player point against the inclusive extraction box |
+| [boss-attack-clock-2026-11-04.md](boss-attack-clock-2026-11-04.md) | Recovery consumes the tick; the attack resolves when the telegraph hits zero |
+| [boss-attack-resolve-2026-11-04.md](boss-attack-resolve-2026-11-04.md) | The four resolves, the dropped lane, and the field pulse |
+| [observation-pulse-2026-11-04.md](observation-pulse-2026-11-04.md) | The phase ratio and the jammer, applied before the exposure add |
+| [awareness-alerts-2026-11-04.md](awareness-alerts-2026-11-04.md) | Surveillance, then damage, sight, and one ally hop |
+| [patrol-sight-2026-11-04.md](patrol-sight-2026-11-04.md) | The patrol cone, and the spawn pose |
+| [unaware-movement-2026-11-04.md](unaware-movement-2026-11-04.md) | The drift, the dwell, and the hold at a waypoint |
+| [camera-legal-set-2026-11-04.md](camera-legal-set-2026-11-04.md) | Four housings, four return-visible, and the Z-02 tutorial socket |
+| [combat-authority-node-2026-11-04.md](combat-authority-node-2026-11-04.md) | The current node, and the receipt order of the phases |
+| [line-of-fire-2026-11-04.md](line-of-fire-2026-11-04.md) | The zero-width segment against a solid box |
+| [lethal-warning-2026-11-04.md](lethal-warning-2026-11-04.md) | The sixty-tick contact copy, and a telegraph that would exhaust |
 | [actor-clip-choice-2026-11-04.md](actor-clip-choice-2026-11-04.md) | Idle while unaware, then the state clip |
 | [facing-direction-2026-11-04.md](facing-direction-2026-11-04.md) | The velocity letter, and the heading sector |
 | [player-clip-2026-11-04.md](player-clip-2026-11-04.md) | Defeat, extraction, dodge, then idle or move |
