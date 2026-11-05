@@ -216,5 +216,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [terminal-chrome-2026-11-04.md](terminal-chrome-2026-11-04.md) | The scrim, the rows, and the accolade |
 | [scene-frame-2026-11-04.md](scene-frame-2026-11-04.md) | The scene colour, and aspect fit |
 | [mount-solids-2026-11-04.md](mount-solids-2026-11-04.md) | A mount is omitted from the solid draw |
+| [settings-footnotes-2026-11-05.md](settings-footnotes-2026-11-05.md) | The four footers under the sections |
+| [settings-hints-2026-11-05.md](settings-hints-2026-11-05.md) | Captions, scale, handedness, and the ghost |
+| [heat-type-2026-11-05.md](heat-type-2026-11-05.md) | The reinforcement label at size 11 |
+| [quiet-type-2026-11-05.md](quiet-type-2026-11-05.md) | The tag at 10, and the caption at 11 |
+| [streak-type-2026-11-05.md](streak-type-2026-11-05.md) | The streak label at size 11 |
+| [extraction-numeral-2026-11-05.md](extraction-numeral-2026-11-05.md) | The seconds, and the clockwise arc |
+| [medal-type-2026-11-05.md](medal-type-2026-11-05.md) | The seal at 11, and the name at 10 |
+| [upgrade-plate-2026-11-05.md](upgrade-plate-2026-11-05.md) | The card padding, and the corner |
+| [terminal-type-2026-11-05.md](terminal-type-2026-11-05.md) | The reflowed type, and the button plate |
+| [pattern-ink-2026-11-05.md](pattern-ink-2026-11-05.md) | A clear fill, and the pale stroke |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
