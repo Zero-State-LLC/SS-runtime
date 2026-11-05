@@ -146,6 +146,16 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [circle-slide-2026-11-04.md](circle-slide-2026-11-04.md) | X then Y, and a touch is not a penetration |
 | [corner-pursuit-2026-11-04.md](corner-pursuit-2026-11-04.md) | One corner, recomputed, reached at 8 |
 | [arena-bounds-2026-11-04.md](arena-bounds-2026-11-04.md) | The arena from (0, 0) to (2304, 1536) |
+| [ricochet-continuation-2026-11-04.md](ricochet-continuation-2026-11-04.md) | A defeated enemy or any damageable camera continues once, then resolves the same tick |
+| [replay-commands-2026-11-04.md](replay-commands-2026-11-04.md) | Load checks, a missing command is neutral, and the ghost omits neutral steps |
+| [millidegree-2026-11-04.md](millidegree-2026-11-04.md) | Clockwise millidegrees, the CORDIC table, and the heading unit |
+| [run-receipt-2026-11-04.md](run-receipt-2026-11-04.md) | The `run-receipt-001` fields |
+| [mine-resolution-2026-11-04.md](mine-resolution-2026-11-04.md) | Arm and life countdowns, then one detonation inside the radius |
+| [enemy-bands-2026-11-04.md](enemy-bands-2026-11-04.md) | The five steering bands and the orbit perpendicular |
+| [canonical-json-2026-11-04.md](canonical-json-2026-11-04.md) | Sorted keys, decimal integers, and the string escapes |
+| [daemon-query-2026-11-04.md](daemon-query-2026-11-04.md) | Three query markers, 14 per circle, and the dash literal |
+| [spawn-lethal-volumes-2026-11-04.md](spawn-lethal-volumes-2026-11-04.md) | The volumes a fair socket must sit strictly outside |
+| [extraction-presence-2026-11-04.md](extraction-presence-2026-11-04.md) | The truncated player point against the inclusive extraction box |
 | [boss-attack-clock-2026-11-04.md](boss-attack-clock-2026-11-04.md) | Recovery consumes the tick; the attack resolves when the telegraph hits zero |
 | [boss-attack-resolve-2026-11-04.md](boss-attack-resolve-2026-11-04.md) | The four resolves, the dropped lane, and the field pulse |
 | [observation-pulse-2026-11-04.md](observation-pulse-2026-11-04.md) | The phase ratio and the jammer, applied before the exposure add |
