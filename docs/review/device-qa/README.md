@@ -286,5 +286,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [expansion-gate-2026-11-05.md](expansion-gate-2026-11-05.md) | The expansion gate, computed |
 | [draw-pass-2026-11-05.md](draw-pass-2026-11-05.md) | The world pass, in call order |
 | [device-sample-2026-11-05.md](device-sample-2026-11-05.md) | The phone sample, beside the frames |
+| [playtest-gates-2026-11-05.md](playtest-gates-2026-11-05.md) | The playtest gates, five and four |
+| [device-run-gates-2026-11-05.md](device-run-gates-2026-11-05.md) | The device-run gates, and the nil atlas |
+| [peak-density-2026-11-05.md](peak-density-2026-11-05.md) | The peak the profiler keeps |
+| [ceiling-status-2026-11-05.md](ceiling-status-2026-11-05.md) | The ceiling, measured then settled |
+| [replay-matrix-2026-11-05.md](replay-matrix-2026-11-05.md) | The replay matrix, three times |
+| [asset-intake-2026-11-05.md](asset-intake-2026-11-05.md) | The intake, against the files |
+| [bundle-filter-2026-11-05.md](bundle-filter-2026-11-05.md) | The bundle, reachable ids |
+| [pacing-window-2026-11-05.md](pacing-window-2026-11-05.md) | The pacing windows |
+| [env-groups-2026-11-05.md](env-groups-2026-11-05.md) | A group, fully backed |
+| [seam-checks-2026-11-05.md](seam-checks-2026-11-05.md) | The seam checks |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
