@@ -226,6 +226,16 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [lockdown-frame-2026-11-04.md](lockdown-frame-2026-11-04.md) | The edge bars, and the broken ring |
 | [camera-shatter-2026-11-04.md](camera-shatter-2026-11-04.md) | The crack, the shards, and the sparks |
 | [blackout-card-2026-11-04.md](blackout-card-2026-11-04.md) | The title, the dim, and the field cascade |
+| [takedown-ring-2026-11-05.md](takedown-ring-2026-11-05.md) | The grey wash, and the pale ring |
+| [unbacked-body-2026-11-05.md](unbacked-body-2026-11-05.md) | The role fill when the clip is missing |
+| [camera-fallback-2026-11-05.md](camera-fallback-2026-11-05.md) | Four whites for a missing camera clip |
+| [integrity-ink-2026-11-05.md](integrity-ink-2026-11-05.md) | The healthy fill, and the numeral |
+| [objective-ink-2026-11-05.md](objective-ink-2026-11-05.md) | Left labels, and the blackout colour |
+| [decoration-turn-2026-11-05.md](decoration-turn-2026-11-05.md) | The milli-degree turn, counter-clockwise |
+| [outline-seat-2026-11-05.md](outline-seat-2026-11-05.md) | The grown mask, and the shifted anchor |
+| [title-type-2026-11-05.md](title-type-2026-11-05.md) | The headline size, and the button type |
+| [grade-margin-2026-11-05.md](grade-margin-2026-11-05.md) | One fog tile past the arena, each side |
+| [notch-seat-2026-11-05.md](notch-seat-2026-11-05.md) | Beside the camera line, one step down |
 | [captain-mark-2026-11-05.md](captain-mark-2026-11-05.md) | The diamond, or the contracting ring |
 | [extraction-brackets-2026-11-05.md](extraction-brackets-2026-11-05.md) | The zone corners, and the inward bits |
 | [phase-slam-2026-11-05.md](phase-slam-2026-11-05.md) | The phase words, and the broken ring |
