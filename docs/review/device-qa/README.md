@@ -176,5 +176,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [exposure-events-2026-11-04.md](exposure-events-2026-11-04.md) | Phase 13 for the amount, phase 14 for the state |
 | [medal-record-2026-11-04.md](medal-record-2026-11-04.md) | The sampling call, and today's stored set |
 | [boss-bar-2026-11-04.md](boss-bar-2026-11-04.md) | The bar, the transition fill, and the short phase name |
+| [hud-anchors-2026-11-04.md](hud-anchors-2026-11-04.md) | Top-left, top-centre, top-right, and centre |
+| [combat-feedback-marks-2026-11-04.md](combat-feedback-marks-2026-11-04.md) | The shot marks, the jammer arcs, and the concealment corners |
+| [telegraph-ring-2026-11-04.md](telegraph-ring-2026-11-04.md) | The boss ring from 72 to 18, and the court shader |
+| [receipt-archive-2026-11-04.md](receipt-archive-2026-11-04.md) | Fifty receipts, the UTC name, and the rehearsal skip |
+| [settings-persistence-2026-11-04.md](settings-persistence-2026-11-04.md) | The defaults file, and Reduce Motion until the player chooses |
+| [actor-silhouettes-2026-11-04.md](actor-silhouettes-2026-11-04.md) | The eight blockout contours |
+| [faction-outline-2026-11-04.md](faction-outline-2026-11-04.md) | The player stroke, and the enemy dash |
+| [gate-barrier-2026-11-04.md](gate-barrier-2026-11-04.md) | Tiles, the open-face strip, and the lights |
+| [vfx-pool-2026-11-04.md](vfx-pool-2026-11-04.md) | The recipe pool, the rank, and the frame lifetime |
+| [upgrade-choice-layout-2026-11-04.md](upgrade-choice-layout-2026-11-04.md) | One column or three, and the spoken card |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
