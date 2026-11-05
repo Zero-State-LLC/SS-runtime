@@ -186,5 +186,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [gate-barrier-2026-11-04.md](gate-barrier-2026-11-04.md) | Tiles, the open-face strip, and the lights |
 | [vfx-pool-2026-11-04.md](vfx-pool-2026-11-04.md) | The recipe pool, the rank, and the frame lifetime |
 | [upgrade-choice-layout-2026-11-04.md](upgrade-choice-layout-2026-11-04.md) | One column or three, and the spoken card |
+| [heat-caption-2026-11-04.md](heat-caption-2026-11-04.md) | The last wave's count, for 300 ticks, in the boss-bar slot |
+| [quiet-approach-tag-2026-11-04.md](quiet-approach-tag-2026-11-04.md) | The tag, the lost caption, and the paid caption |
+| [spoken-hud-2026-11-04.md](spoken-hud-2026-11-04.md) | Tutorial, reinforcements, then safety captions, each once |
+| [exposure-pattern-2026-11-04.md](exposure-pattern-2026-11-04.md) | The five bar patterns, and the tamper-floor marker |
+| [camera-field-polygon-2026-11-04.md](camera-field-polygon-2026-11-04.md) | Display rays, corner offsets, and the slab reach |
+| [patrol-cone-outline-2026-11-04.md](patrol-cone-outline-2026-11-04.md) | Twenty-four rays, clipped, from the content cone |
+| [takedown-streak-2026-11-04.md](takedown-streak-2026-11-04.md) | An unaware kill, the streak reset, and the pitched impact |
+| [patrol-near-miss-2026-11-04.md](patrol-near-miss-2026-11-04.md) | The wide cone, the true sight test, and the edge pulse |
+| [tutorial-line-offer-2026-11-04.md](tutorial-line-offer-2026-11-04.md) | The patrol line, the awareness line, and what blocks them |
+| [camera-notch-window-2026-11-04.md](camera-notch-window-2026-11-04.md) | Live notches, the hit window, and the tamper window |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
