@@ -196,5 +196,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [patrol-near-miss-2026-11-04.md](patrol-near-miss-2026-11-04.md) | The wide cone, the true sight test, and the edge pulse |
 | [tutorial-line-offer-2026-11-04.md](tutorial-line-offer-2026-11-04.md) | The patrol line, the awareness line, and what blocks them |
 | [camera-notch-window-2026-11-04.md](camera-notch-window-2026-11-04.md) | Live notches, the hit window, and the tamper window |
+| [camera-reticle-2026-11-04.md](camera-reticle-2026-11-04.md) | The corners when detection leaves hidden |
+| [exposure-brackets-2026-11-04.md](exposure-brackets-2026-11-04.md) | The screen corners for tracked, hunted, or lockdown |
+| [damage-impact-2026-11-04.md](damage-impact-2026-11-04.md) | The ring or the arc, and the two-frame circle |
+| [enemy-spark-2026-11-04.md](enemy-spark-2026-11-04.md) | The reduced circle, and the traveling squares |
+| [enemy-burst-2026-11-04.md](enemy-burst-2026-11-04.md) | The debris squares, and the short reduced reach |
+| [step-echo-2026-11-04.md](step-echo-2026-11-04.md) | The silhouette echo every three frames |
+| [ricochet-trace-2026-11-04.md](ricochet-trace-2026-11-04.md) | The dashed pair, and the impact marks |
+| [lockdown-frame-2026-11-04.md](lockdown-frame-2026-11-04.md) | The edge bars, and the broken ring |
+| [camera-shatter-2026-11-04.md](camera-shatter-2026-11-04.md) | The crack, the shards, and the sparks |
+| [blackout-card-2026-11-04.md](blackout-card-2026-11-04.md) | The title, the dim, and the field cascade |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
