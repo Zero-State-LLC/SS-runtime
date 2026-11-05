@@ -206,6 +206,16 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [audio-interruption-2026-11-04.md](audio-interruption-2026-11-04.md) | Silence while interrupted, then the stored bed |
 | [share-sheet-2026-11-04.md](share-sheet-2026-11-04.md) | One string, on the system sheet |
 | [ghost-silhouette-2026-11-04.md](ghost-silhouette-2026-11-04.md) | The blockout under the live player |
+| [ground-tint-2026-11-04.md](ground-tint-2026-11-04.md) | One blend per tile, from the corner |
+| [hud-fit-2026-11-04.md](hud-fit-2026-11-04.md) | The safe canvas, and the control floor |
+| [control-chrome-2026-11-04.md](control-chrome-2026-11-04.md) | The stick label, DODGE, and PAUSED |
+| [tutorial-plate-2026-11-04.md](tutorial-plate-2026-11-04.md) | The card behind the one line |
+| [clip-playback-2026-11-04.md](clip-playback-2026-11-04.md) | Nearest frames, and the running action |
+| [heading-draw-2026-11-04.md](heading-draw-2026-11-04.md) | The negated heading, and the plain span |
+| [exposure-fills-2026-11-04.md](exposure-fills-2026-11-04.md) | Five fills, inset inside the frame |
+| [terminal-chrome-2026-11-04.md](terminal-chrome-2026-11-04.md) | The scrim, the rows, and the accolade |
+| [scene-frame-2026-11-04.md](scene-frame-2026-11-04.md) | The scene colour, and aspect fit |
+| [mount-solids-2026-11-04.md](mount-solids-2026-11-04.md) | A mount is omitted from the solid draw |
 | [captain-mark-2026-11-05.md](captain-mark-2026-11-05.md) | The diamond, or the contracting ring |
 | [extraction-brackets-2026-11-05.md](extraction-brackets-2026-11-05.md) | The zone corners, and the inward bits |
 | [phase-slam-2026-11-05.md](phase-slam-2026-11-05.md) | The phase words, and the broken ring |
