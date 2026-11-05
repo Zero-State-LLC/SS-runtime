@@ -246,5 +246,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [extraction-sweep-2026-11-05.md](extraction-sweep-2026-11-05.md) | The clockwise arc, and the numeral |
 | [detection-ink-2026-11-05.md](detection-ink-2026-11-05.md) | Lockdown in the critical colour |
 | [upgrade-badge-2026-11-05.md](upgrade-badge-2026-11-05.md) | The panel, the frame, and the glyph |
+| [mix-readout-2026-11-05.md](mix-readout-2026-11-05.md) | The percent, and the spoken value |
+| [title-access-2026-11-05.md](title-access-2026-11-05.md) | The hidden art, and the spoken lines |
+| [lip-seat-2026-11-05.md](lip-seat-2026-11-05.md) | The quarter strip, and the band centres |
+| [camera-badge-seat-2026-11-05.md](camera-badge-seat-2026-11-05.md) | Thirteen left, and eighteen up |
+| [fog-grid-2026-11-05.md](fog-grid-2026-11-05.md) | One tile outside the arena |
+| [ground-walk-2026-11-05.md](ground-walk-2026-11-05.md) | Tiles from the arena corner |
+| [env-filter-2026-11-05.md](env-filter-2026-11-05.md) | Nearest pixels, cached by asset |
+| [phase-seat-2026-11-05.md](phase-seat-2026-11-05.md) | The phase word, one bar down |
+| [marker-align-2026-11-05.md](marker-align-2026-11-05.md) | The question mark, from its bottom |
+| [stick-zone-2026-11-05.md](stick-zone-2026-11-05.md) | The thumb half, below the top band |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
