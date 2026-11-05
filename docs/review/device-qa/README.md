@@ -196,6 +196,16 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [patrol-near-miss-2026-11-04.md](patrol-near-miss-2026-11-04.md) | The wide cone, the true sight test, and the edge pulse |
 | [tutorial-line-offer-2026-11-04.md](tutorial-line-offer-2026-11-04.md) | The patrol line, the awareness line, and what blocks them |
 | [camera-notch-window-2026-11-04.md](camera-notch-window-2026-11-04.md) | Live notches, the hit window, and the tamper window |
+| [ghost-file-2026-11-04.md](ghost-file-2026-11-04.md) | One daily file, replaced only when it is the best |
+| [settings-surface-2026-11-04.md](settings-surface-2026-11-04.md) | The five sliders, the pickers, and Resume |
+| [shell-host-2026-11-04.md](shell-host-2026-11-04.md) | The title, the settings sheet, and the 60-frame view |
+| [intro-card-2026-11-04.md](intro-card-2026-11-04.md) | The veil, the title, and the two lines under it |
+| [fog-drift-2026-11-04.md](fog-drift-2026-11-04.md) | The density split, and the two drift speeds |
+| [terminal-access-2026-11-04.md](terminal-access-2026-11-04.md) | The clear buttons, and the reflowed card |
+| [title-chrome-2026-11-04.md](title-chrome-2026-11-04.md) | The scrim, the pressed plate, and the medal colours |
+| [audio-interruption-2026-11-04.md](audio-interruption-2026-11-04.md) | Silence while interrupted, then the stored bed |
+| [share-sheet-2026-11-04.md](share-sheet-2026-11-04.md) | One string, on the system sheet |
+| [ghost-silhouette-2026-11-04.md](ghost-silhouette-2026-11-04.md) | The blockout under the live player |
 | [ground-tint-2026-11-04.md](ground-tint-2026-11-04.md) | One blend per tile, from the corner |
 | [hud-fit-2026-11-04.md](hud-fit-2026-11-04.md) | The safe canvas, and the control floor |
 | [control-chrome-2026-11-04.md](control-chrome-2026-11-04.md) | The stick label, DODGE, and PAUSED |
