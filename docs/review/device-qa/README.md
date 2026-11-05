@@ -216,5 +216,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [terminal-chrome-2026-11-04.md](terminal-chrome-2026-11-04.md) | The scrim, the rows, and the accolade |
 | [scene-frame-2026-11-04.md](scene-frame-2026-11-04.md) | The scene colour, and aspect fit |
 | [mount-solids-2026-11-04.md](mount-solids-2026-11-04.md) | A mount is omitted from the solid draw |
+| [takedown-ring-2026-11-05.md](takedown-ring-2026-11-05.md) | The grey wash, and the pale ring |
+| [unbacked-body-2026-11-05.md](unbacked-body-2026-11-05.md) | The role fill when the clip is missing |
+| [camera-fallback-2026-11-05.md](camera-fallback-2026-11-05.md) | Four whites for a missing camera clip |
+| [integrity-ink-2026-11-05.md](integrity-ink-2026-11-05.md) | The healthy fill, and the numeral |
+| [objective-ink-2026-11-05.md](objective-ink-2026-11-05.md) | Left labels, and the blackout colour |
+| [decoration-turn-2026-11-05.md](decoration-turn-2026-11-05.md) | The milli-degree turn, counter-clockwise |
+| [outline-seat-2026-11-05.md](outline-seat-2026-11-05.md) | The grown mask, and the shifted anchor |
+| [title-type-2026-11-05.md](title-type-2026-11-05.md) | The headline size, and the button type |
+| [grade-margin-2026-11-05.md](grade-margin-2026-11-05.md) | One fog tile past the arena, each side |
+| [notch-seat-2026-11-05.md](notch-seat-2026-11-05.md) | Beside the camera line, one step down |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
