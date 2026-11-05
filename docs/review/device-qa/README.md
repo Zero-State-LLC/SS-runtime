@@ -136,6 +136,16 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [terminal-seal-2026-11-04.md](terminal-seal-2026-11-04.md) | The sealed tick and digest when a run ends |
 | [replay-identity-2026-11-04.md](replay-identity-2026-11-04.md) | The four version strings a replay must match |
 | [ambient-motion-2026-11-04.md](ambient-motion-2026-11-04.md) | Twelve ambient slots, one rare slot, and each recipe's period |
+| [enemy-separation-2026-11-04.md](enemy-separation-2026-11-04.md) | The lower id is pushed inside radii plus 8 |
+| [camera-contact-2026-11-04.md](camera-contact-2026-11-04.md) | The cone, the live solids, and the sorted contacts |
+| [state-digest-2026-11-04.md](state-digest-2026-11-04.md) | The fields in the SHA-256 state digest |
+| [share-text-2026-11-04.md](share-text-2026-11-04.md) | The incident-report lines Share sends |
+| [rng-streams-2026-11-04.md](rng-streams-2026-11-04.md) | The combat stream and the cosmetic stream |
+| [captain-path-2026-11-04.md](captain-path-2026-11-04.md) | The corner search, and the orbit while the line is clear |
+| [q8-scale-2026-11-04.md](q8-scale-2026-11-04.md) | One world unit is 256 raw |
+| [circle-slide-2026-11-04.md](circle-slide-2026-11-04.md) | X then Y, and a touch is not a penetration |
+| [corner-pursuit-2026-11-04.md](corner-pursuit-2026-11-04.md) | One corner, recomputed, reached at 8 |
+| [arena-bounds-2026-11-04.md](arena-bounds-2026-11-04.md) | The arena from (0, 0) to (2304, 1536) |
 | [ricochet-continuation-2026-11-04.md](ricochet-continuation-2026-11-04.md) | A defeated enemy or any damageable camera continues once, then resolves the same tick |
 | [replay-commands-2026-11-04.md](replay-commands-2026-11-04.md) | Load checks, a missing command is neutral, and the ghost omits neutral steps |
 | [millidegree-2026-11-04.md](millidegree-2026-11-04.md) | Clockwise millidegrees, the CORDIC table, and the heading unit |
