@@ -186,5 +186,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [gate-barrier-2026-11-04.md](gate-barrier-2026-11-04.md) | Tiles, the open-face strip, and the lights |
 | [vfx-pool-2026-11-04.md](vfx-pool-2026-11-04.md) | The recipe pool, the rank, and the frame lifetime |
 | [upgrade-choice-layout-2026-11-04.md](upgrade-choice-layout-2026-11-04.md) | One column or three, and the spoken card |
+| [ghost-file-2026-11-04.md](ghost-file-2026-11-04.md) | One daily file, replaced only when it is the best |
+| [settings-surface-2026-11-04.md](settings-surface-2026-11-04.md) | The five sliders, the pickers, and Resume |
+| [shell-host-2026-11-04.md](shell-host-2026-11-04.md) | The title, the settings sheet, and the 60-frame view |
+| [intro-card-2026-11-04.md](intro-card-2026-11-04.md) | The veil, the title, and the two lines under it |
+| [fog-drift-2026-11-04.md](fog-drift-2026-11-04.md) | The density split, and the two drift speeds |
+| [terminal-access-2026-11-04.md](terminal-access-2026-11-04.md) | The clear buttons, and the reflowed card |
+| [title-chrome-2026-11-04.md](title-chrome-2026-11-04.md) | The scrim, the pressed plate, and the medal colours |
+| [audio-interruption-2026-11-04.md](audio-interruption-2026-11-04.md) | Silence while interrupted, then the stored bed |
+| [share-sheet-2026-11-04.md](share-sheet-2026-11-04.md) | One string, on the system sheet |
+| [ghost-silhouette-2026-11-04.md](ghost-silhouette-2026-11-04.md) | The blockout under the live player |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
