@@ -206,5 +206,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [audio-interruption-2026-11-04.md](audio-interruption-2026-11-04.md) | Silence while interrupted, then the stored bed |
 | [share-sheet-2026-11-04.md](share-sheet-2026-11-04.md) | One string, on the system sheet |
 | [ghost-silhouette-2026-11-04.md](ghost-silhouette-2026-11-04.md) | The blockout under the live player |
+| [captain-mark-2026-11-05.md](captain-mark-2026-11-05.md) | The diamond, or the contracting ring |
+| [extraction-brackets-2026-11-05.md](extraction-brackets-2026-11-05.md) | The zone corners, and the inward bits |
+| [phase-slam-2026-11-05.md](phase-slam-2026-11-05.md) | The phase words, and the broken ring |
+| [spawn-chevrons-2026-11-05.md](spawn-chevrons-2026-11-05.md) | Up to six marks, aimed at the sockets |
+| [alert-mark-2026-11-05.md](alert-mark-2026-11-05.md) | The exclamation above the enemy |
+| [caption-column-2026-11-05.md](caption-column-2026-11-05.md) | Safety with a bar, routine without |
+| [outline-cache-2026-11-05.md](outline-cache-2026-11-05.md) | 128 entries, and the byte cap |
+| [extraction-sweep-2026-11-05.md](extraction-sweep-2026-11-05.md) | The clockwise arc, and the numeral |
+| [detection-ink-2026-11-05.md](detection-ink-2026-11-05.md) | Lockdown in the critical colour |
+| [upgrade-badge-2026-11-05.md](upgrade-badge-2026-11-05.md) | The panel, the frame, and the glyph |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
