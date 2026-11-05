@@ -136,5 +136,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [terminal-seal-2026-11-04.md](terminal-seal-2026-11-04.md) | The sealed tick and digest when a run ends |
 | [replay-identity-2026-11-04.md](replay-identity-2026-11-04.md) | The four version strings a replay must match |
 | [ambient-motion-2026-11-04.md](ambient-motion-2026-11-04.md) | Twelve ambient slots, one rare slot, and each recipe's period |
+| [ricochet-continuation-2026-11-04.md](ricochet-continuation-2026-11-04.md) | A defeated enemy or any damageable camera continues once, then resolves the same tick |
+| [replay-commands-2026-11-04.md](replay-commands-2026-11-04.md) | Load checks, a missing command is neutral, and the ghost omits neutral steps |
+| [millidegree-2026-11-04.md](millidegree-2026-11-04.md) | Clockwise millidegrees, the CORDIC table, and the heading unit |
+| [run-receipt-2026-11-04.md](run-receipt-2026-11-04.md) | The `run-receipt-001` fields |
+| [mine-resolution-2026-11-04.md](mine-resolution-2026-11-04.md) | Arm and life countdowns, then one detonation inside the radius |
+| [enemy-bands-2026-11-04.md](enemy-bands-2026-11-04.md) | The five steering bands and the orbit perpendicular |
+| [canonical-json-2026-11-04.md](canonical-json-2026-11-04.md) | Sorted keys, decimal integers, and the string escapes |
+| [daemon-query-2026-11-04.md](daemon-query-2026-11-04.md) | Three query markers, 14 per circle, and the dash literal |
+| [spawn-lethal-volumes-2026-11-04.md](spawn-lethal-volumes-2026-11-04.md) | The volumes a fair socket must sit strictly outside |
+| [extraction-presence-2026-11-04.md](extraction-presence-2026-11-04.md) | The truncated player point against the inclusive extraction box |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
