@@ -276,5 +276,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [court-capture-2026-11-05.md](court-capture-2026-11-05.md) | The court, stored on the first boss tick |
 | [damage-log-2026-11-05.md](damage-log-2026-11-05.md) | The damage log, last 512 |
 | [field-cache-2026-11-05.md](field-cache-2026-11-05.md) | The field polygon, cached |
+| [evidence-names-2026-11-05.md](evidence-names-2026-11-05.md) | The evidence file names |
+| [run-streak-2026-11-05.md](run-streak-2026-11-05.md) | A success adds one |
+| [playtest-load-2026-11-05.md](playtest-load-2026-11-05.md) | The playtest file, loaded |
+| [catalog-gate-2026-11-05.md](catalog-gate-2026-11-05.md) | The asset catalog, refused |
+| [ambient-gate-2026-11-05.md](ambient-gate-2026-11-05.md) | The ambient contract, refused |
+| [frame-backing-2026-11-05.md](frame-backing-2026-11-05.md) | A direction, fully backed |
+| [frame-times-2026-11-05.md](frame-times-2026-11-05.md) | The frame sample, and gate C |
+| [expansion-gate-2026-11-05.md](expansion-gate-2026-11-05.md) | The expansion gate, computed |
+| [draw-pass-2026-11-05.md](draw-pass-2026-11-05.md) | The world pass, in call order |
+| [device-sample-2026-11-05.md](device-sample-2026-11-05.md) | The phone sample, beside the frames |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
