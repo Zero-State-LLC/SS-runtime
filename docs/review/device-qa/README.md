@@ -266,5 +266,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [upgrade-plate-2026-11-05.md](upgrade-plate-2026-11-05.md) | The card padding, and the corner |
 | [terminal-type-2026-11-05.md](terminal-type-2026-11-05.md) | The reflowed type, and the button plate |
 | [pattern-ink-2026-11-05.md](pattern-ink-2026-11-05.md) | A clear fill, and the pale stroke |
+| [clip-interrupt-2026-11-05.md](clip-interrupt-2026-11-05.md) | The cancel window, and the commit cut |
+| [pitched-voice-2026-11-05.md](pitched-voice-2026-11-05.md) | The pitch node, reconnected |
+| [ambient-roll-2026-11-05.md](ambient-roll-2026-11-05.md) | The rare roll, and who is dropped |
+| [visual-gate-2026-11-05.md](visual-gate-2026-11-05.md) | The visual contract, refused |
+| [clip-gate-2026-11-05.md](clip-gate-2026-11-05.md) | The clip contract, refused |
+| [redraw-order-2026-11-05.md](redraw-order-2026-11-05.md) | The frame, from the intro to the HUD |
+| [present-pass-2026-11-05.md](present-pass-2026-11-05.md) | The tick, from the command to the caption |
+| [court-capture-2026-11-05.md](court-capture-2026-11-05.md) | The court, stored on the first boss tick |
+| [damage-log-2026-11-05.md](damage-log-2026-11-05.md) | The damage log, last 512 |
+| [field-cache-2026-11-05.md](field-cache-2026-11-05.md) | The field polygon, cached |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
