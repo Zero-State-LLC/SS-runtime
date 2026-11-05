@@ -296,5 +296,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [pacing-window-2026-11-05.md](pacing-window-2026-11-05.md) | The pacing windows |
 | [env-groups-2026-11-05.md](env-groups-2026-11-05.md) | A group, fully backed |
 | [seam-checks-2026-11-05.md](seam-checks-2026-11-05.md) | The seam checks |
+| [event-order-2026-11-05.md](event-order-2026-11-05.md) | The published order |
+| [upgrade-match-2026-11-05.md](upgrade-match-2026-11-05.md) | The upgrade block, matched |
+| [content-bands-2026-11-05.md](content-bands-2026-11-05.md) | The bands, the angle, and the percents |
+| [awareness-heat-2026-11-05.md](awareness-heat-2026-11-05.md) | The awareness block, and the heat table |
+| [arena-reach-2026-11-05.md](arena-reach-2026-11-05.md) | The walk, and the spine |
+| [patrol-fair-2026-11-05.md](patrol-fair-2026-11-05.md) | The patrol proof |
+| [camera-fair-2026-11-05.md](camera-fair-2026-11-05.md) | The camera sets, checked |
+| [camera-receipt-2026-11-05.md](camera-receipt-2026-11-05.md) | The destruction totals |
+| [gate-spans-2026-11-05.md](gate-spans-2026-11-05.md) | The gate ids, and the unmapped ones |
+| [candidate-collect-2026-11-05.md](candidate-collect-2026-11-05.md) | The candidate the collector builds |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
