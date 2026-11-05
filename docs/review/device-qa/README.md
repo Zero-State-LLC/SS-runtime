@@ -166,5 +166,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [combat-authority-node-2026-11-04.md](combat-authority-node-2026-11-04.md) | The current node, and the receipt order of the phases |
 | [line-of-fire-2026-11-04.md](line-of-fire-2026-11-04.md) | The zero-width segment against a solid box |
 | [lethal-warning-2026-11-04.md](lethal-warning-2026-11-04.md) | The sixty-tick contact copy, and a telegraph that would exhaust |
+| [actor-clip-choice-2026-11-04.md](actor-clip-choice-2026-11-04.md) | Idle while unaware, then the state clip |
+| [facing-direction-2026-11-04.md](facing-direction-2026-11-04.md) | The velocity letter, and the heading sector |
+| [player-clip-2026-11-04.md](player-clip-2026-11-04.md) | Defeat, extraction, dodge, then idle or move |
+| [reaction-clips-2026-11-04.md](reaction-clips-2026-11-04.md) | Hurt, defeat, and the held commit |
+| [camera-clip-states-2026-11-04.md](camera-clip-states-2026-11-04.md) | The clip follows integrity |
+| [telegraph-shapes-2026-11-04.md](telegraph-shapes-2026-11-04.md) | The preview cone, the lanes, and the emitter field |
+| [encounter-completion-2026-11-04.md](encounter-completion-2026-11-04.md) | The last wave, and M-A's upgrade gate |
+| [exposure-events-2026-11-04.md](exposure-events-2026-11-04.md) | Phase 13 for the amount, phase 14 for the state |
+| [medal-record-2026-11-04.md](medal-record-2026-11-04.md) | The sampling call, and today's stored set |
+| [boss-bar-2026-11-04.md](boss-bar-2026-11-04.md) | The bar, the transition fill, and the short phase name |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
