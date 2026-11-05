@@ -156,5 +156,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [daemon-query-2026-11-04.md](daemon-query-2026-11-04.md) | Three query markers, 14 per circle, and the dash literal |
 | [spawn-lethal-volumes-2026-11-04.md](spawn-lethal-volumes-2026-11-04.md) | The volumes a fair socket must sit strictly outside |
 | [extraction-presence-2026-11-04.md](extraction-presence-2026-11-04.md) | The truncated player point against the inclusive extraction box |
+| [actor-clip-choice-2026-11-04.md](actor-clip-choice-2026-11-04.md) | Idle while unaware, then the state clip |
+| [facing-direction-2026-11-04.md](facing-direction-2026-11-04.md) | The velocity letter, and the heading sector |
+| [player-clip-2026-11-04.md](player-clip-2026-11-04.md) | Defeat, extraction, dodge, then idle or move |
+| [reaction-clips-2026-11-04.md](reaction-clips-2026-11-04.md) | Hurt, defeat, and the held commit |
+| [camera-clip-states-2026-11-04.md](camera-clip-states-2026-11-04.md) | The clip follows integrity |
+| [telegraph-shapes-2026-11-04.md](telegraph-shapes-2026-11-04.md) | The preview cone, the lanes, and the emitter field |
+| [encounter-completion-2026-11-04.md](encounter-completion-2026-11-04.md) | The last wave, and M-A's upgrade gate |
+| [exposure-events-2026-11-04.md](exposure-events-2026-11-04.md) | Phase 13 for the amount, phase 14 for the state |
+| [medal-record-2026-11-04.md](medal-record-2026-11-04.md) | The sampling call, and today's stored set |
+| [boss-bar-2026-11-04.md](boss-bar-2026-11-04.md) | The bar, the transition fill, and the short phase name |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
