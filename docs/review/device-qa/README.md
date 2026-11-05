@@ -146,5 +146,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [circle-slide-2026-11-04.md](circle-slide-2026-11-04.md) | X then Y, and a touch is not a penetration |
 | [corner-pursuit-2026-11-04.md](corner-pursuit-2026-11-04.md) | One corner, recomputed, reached at 8 |
 | [arena-bounds-2026-11-04.md](arena-bounds-2026-11-04.md) | The arena from (0, 0) to (2304, 1536) |
+| [boss-attack-clock-2026-11-04.md](boss-attack-clock-2026-11-04.md) | Recovery consumes the tick; the attack resolves when the telegraph hits zero |
+| [boss-attack-resolve-2026-11-04.md](boss-attack-resolve-2026-11-04.md) | The four resolves, the dropped lane, and the field pulse |
+| [observation-pulse-2026-11-04.md](observation-pulse-2026-11-04.md) | The phase ratio and the jammer, applied before the exposure add |
+| [awareness-alerts-2026-11-04.md](awareness-alerts-2026-11-04.md) | Surveillance, then damage, sight, and one ally hop |
+| [patrol-sight-2026-11-04.md](patrol-sight-2026-11-04.md) | The patrol cone, and the spawn pose |
+| [unaware-movement-2026-11-04.md](unaware-movement-2026-11-04.md) | The drift, the dwell, and the hold at a waypoint |
+| [camera-legal-set-2026-11-04.md](camera-legal-set-2026-11-04.md) | Four housings, four return-visible, and the Z-02 tutorial socket |
+| [combat-authority-node-2026-11-04.md](combat-authority-node-2026-11-04.md) | The current node, and the receipt order of the phases |
+| [line-of-fire-2026-11-04.md](line-of-fire-2026-11-04.md) | The zero-width segment against a solid box |
+| [lethal-warning-2026-11-04.md](lethal-warning-2026-11-04.md) | The sixty-tick contact copy, and a telegraph that would exhaust |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
