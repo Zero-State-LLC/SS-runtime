@@ -306,5 +306,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [camera-receipt-2026-11-05.md](camera-receipt-2026-11-05.md) | The destruction totals |
 | [gate-spans-2026-11-05.md](gate-spans-2026-11-05.md) | The gate ids, and the unmapped ones |
 | [candidate-collect-2026-11-05.md](candidate-collect-2026-11-05.md) | The candidate the collector builds |
+| [integer-roots-2026-11-05.md](integer-roots-2026-11-05.md) | The integer roots |
+| [circle-sweep-2026-11-05.md](circle-sweep-2026-11-05.md) | The circle sweep |
+| [lead-aim-2026-11-05.md](lead-aim-2026-11-05.md) | The lead on a shot |
+| [enemy-grammar-2026-11-05.md](enemy-grammar-2026-11-05.md) | The enemy block, loaded |
+| [waypoint-pilot-2026-11-05.md](waypoint-pilot-2026-11-05.md) | The waypoint pilot |
+| [probe-order-2026-11-05.md](probe-order-2026-11-05.md) | The probe's order |
+| [layout-check-2026-11-05.md](layout-check-2026-11-05.md) | The layout check |
+| [civic-slots-2026-11-05.md](civic-slots-2026-11-05.md) | The civic slots |
+| [detection-shapes-2026-11-05.md](detection-shapes-2026-11-05.md) | The detection shapes |
+| [tutorial-flags-2026-11-05.md](tutorial-flags-2026-11-05.md) | The tutorial flags this tick |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
