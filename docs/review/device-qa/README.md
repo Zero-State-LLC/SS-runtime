@@ -346,5 +346,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [concealment-flag-2026-11-05.md](concealment-flag-2026-11-05.md) | The concealment flag |
 | [body-clearance-2026-11-05.md](body-clearance-2026-11-05.md) | The body clearance |
 | [ghost-verify-2026-11-05.md](ghost-verify-2026-11-05.md) | The ghost's second check |
+| [camera-overlay-2026-11-05.md](camera-overlay-2026-11-05.md) | The camera event overlay |
+| [daemon-expiry-2026-11-05.md](daemon-expiry-2026-11-05.md) | The daemon expiry |
+| [pool-rejects-2026-11-05.md](pool-rejects-2026-11-05.md) | The pool rejects |
+| [captain-field-2026-11-05.md](captain-field-2026-11-05.md) | The captain field sprite |
+| [outline-weight-2026-11-05.md](outline-weight-2026-11-05.md) | The outline weight |
+| [display-delta-2026-11-05.md](display-delta-2026-11-05.md) | The display interval |
+| [view-clamp-2026-11-05.md](view-clamp-2026-11-05.md) | The view clamp |
+| [closest-point-2026-11-05.md](closest-point-2026-11-05.md) | The closest point |
+| [defeat-count-2026-11-05.md](defeat-count-2026-11-05.md) | The defeat count |
+| [diagnostic-seal-2026-11-05.md](diagnostic-seal-2026-11-05.md) | The diagnostic seal |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
