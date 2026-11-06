@@ -326,5 +326,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [vfx-project-2026-11-05.md](vfx-project-2026-11-05.md) | The effect projection |
 | [probe-sidestep-2026-11-05.md](probe-sidestep-2026-11-05.md) | The probe's sidestep |
 | [probe-grid-2026-11-05.md](probe-grid-2026-11-05.md) | The probe's grid |
+| [probe-replan-2026-11-05.md](probe-replan-2026-11-05.md) | The probe's replan |
+| [probe-firing-2026-11-05.md](probe-firing-2026-11-05.md) | The probe's firing cell |
+| [probe-ambush-2026-11-05.md](probe-ambush-2026-11-05.md) | The probe's ambush cell |
+| [probe-fields-2026-11-05.md](probe-fields-2026-11-05.md) | The probe's camera fields |
+| [probe-loud-2026-11-05.md](probe-loud-2026-11-05.md) | The probe's camera walk |
+| [probe-hide-2026-11-05.md](probe-hide-2026-11-05.md) | The probe's hide |
+| [probe-heading-2026-11-05.md](probe-heading-2026-11-05.md) | The probe's heading |
+| [anchor-offset-2026-11-05.md](anchor-offset-2026-11-05.md) | The camera offset |
+| [view-contains-2026-11-05.md](view-contains-2026-11-05.md) | The view contains a point |
+| [utf8-order-2026-11-05.md](utf8-order-2026-11-05.md) | The byte order |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
