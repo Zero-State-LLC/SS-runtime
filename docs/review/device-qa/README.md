@@ -336,5 +336,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [anchor-offset-2026-11-05.md](anchor-offset-2026-11-05.md) | The camera offset |
 | [view-contains-2026-11-05.md](view-contains-2026-11-05.md) | The view contains a point |
 | [utf8-order-2026-11-05.md](utf8-order-2026-11-05.md) | The byte order |
+| [hint-latch-2026-11-05.md](hint-latch-2026-11-05.md) | The hint, shown once |
+| [offscreen-sector-2026-11-05.md](offscreen-sector-2026-11-05.md) | The offscreen sector |
+| [clip-select-2026-11-05.md](clip-select-2026-11-05.md) | The selected frames |
+| [upgrade-accept-2026-11-05.md](upgrade-accept-2026-11-05.md) | The one upgrade accept |
+| [touch-route-2026-11-05.md](touch-route-2026-11-05.md) | The touch route |
+| [court-rehearse-2026-11-05.md](court-rehearse-2026-11-05.md) | The rehearsal card |
+| [intro-frame-2026-11-05.md](intro-frame-2026-11-05.md) | The intro frame |
+| [concealment-flag-2026-11-05.md](concealment-flag-2026-11-05.md) | The concealment flag |
+| [body-clearance-2026-11-05.md](body-clearance-2026-11-05.md) | The body clearance |
+| [ghost-verify-2026-11-05.md](ghost-verify-2026-11-05.md) | The ghost's second check |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
