@@ -356,5 +356,13 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [closest-point-2026-11-05.md](closest-point-2026-11-05.md) | The closest point |
 | [defeat-count-2026-11-05.md](defeat-count-2026-11-05.md) | The defeat count |
 | [diagnostic-seal-2026-11-05.md](diagnostic-seal-2026-11-05.md) | The diagnostic seal |
+| [court-luma-2026-11-06.md](court-luma-2026-11-06.md) | The court luma, and the exact lerp ends |
+| [fog-clock-2026-11-06.md](fog-clock-2026-11-06.md) | The fog clock, on the first sample |
+| [fog-unbacked-2026-11-06.md](fog-unbacked-2026-11-06.md) | Fog steps, then draws nothing |
+| [camera-assert-2026-11-06.md](camera-assert-2026-11-06.md) | The camera array, already sorted |
+| [spawn-mounts-2026-11-06.md](spawn-mounts-2026-11-06.md) | The spawn mounts, in the flood |
+| [socket-lists-2026-11-06.md](socket-lists-2026-11-06.md) | The socket lists, not a rejection |
+| [medal-directory-2026-11-06.md](medal-directory-2026-11-06.md) | The medal directory, DailyMedals |
+| [patrol-spawn-2026-11-06.md](patrol-spawn-2026-11-06.md) | The patrol spawn, without fairness |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
