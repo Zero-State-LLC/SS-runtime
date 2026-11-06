@@ -306,5 +306,45 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [camera-receipt-2026-11-05.md](camera-receipt-2026-11-05.md) | The destruction totals |
 | [gate-spans-2026-11-05.md](gate-spans-2026-11-05.md) | The gate ids, and the unmapped ones |
 | [candidate-collect-2026-11-05.md](candidate-collect-2026-11-05.md) | The candidate the collector builds |
+| [integer-roots-2026-11-05.md](integer-roots-2026-11-05.md) | The integer roots |
+| [circle-sweep-2026-11-05.md](circle-sweep-2026-11-05.md) | The circle sweep |
+| [lead-aim-2026-11-05.md](lead-aim-2026-11-05.md) | The lead on a shot |
+| [enemy-grammar-2026-11-05.md](enemy-grammar-2026-11-05.md) | The enemy block, loaded |
+| [waypoint-pilot-2026-11-05.md](waypoint-pilot-2026-11-05.md) | The waypoint pilot |
+| [probe-order-2026-11-05.md](probe-order-2026-11-05.md) | The probe's order |
+| [layout-check-2026-11-05.md](layout-check-2026-11-05.md) | The layout check |
+| [civic-slots-2026-11-05.md](civic-slots-2026-11-05.md) | The civic slots |
+| [detection-shapes-2026-11-05.md](detection-shapes-2026-11-05.md) | The detection shapes |
+| [tutorial-flags-2026-11-05.md](tutorial-flags-2026-11-05.md) | The tutorial flags this tick |
+| [sha-padding-2026-11-05.md](sha-padding-2026-11-05.md) | The hash padding |
+| [bundle-load-2026-11-05.md](bundle-load-2026-11-05.md) | The bundled lookup |
+| [telemetry-sample-2026-11-05.md](telemetry-sample-2026-11-05.md) | The telemetry sample |
+| [q8-offset-2026-11-05.md](q8-offset-2026-11-05.md) | The offset along a direction |
+| [live-solids-2026-11-05.md](live-solids-2026-11-05.md) | The solids this tick |
+| [box-edges-2026-11-05.md](box-edges-2026-11-05.md) | The box edges |
+| [vfx-budgets-2026-11-05.md](vfx-budgets-2026-11-05.md) | The effect budgets |
+| [vfx-project-2026-11-05.md](vfx-project-2026-11-05.md) | The effect projection |
+| [probe-sidestep-2026-11-05.md](probe-sidestep-2026-11-05.md) | The probe's sidestep |
+| [probe-grid-2026-11-05.md](probe-grid-2026-11-05.md) | The probe's grid |
+| [probe-replan-2026-11-05.md](probe-replan-2026-11-05.md) | The probe's replan |
+| [probe-firing-2026-11-05.md](probe-firing-2026-11-05.md) | The probe's firing cell |
+| [probe-ambush-2026-11-05.md](probe-ambush-2026-11-05.md) | The probe's ambush cell |
+| [probe-fields-2026-11-05.md](probe-fields-2026-11-05.md) | The probe's camera fields |
+| [probe-loud-2026-11-05.md](probe-loud-2026-11-05.md) | The probe's camera walk |
+| [probe-hide-2026-11-05.md](probe-hide-2026-11-05.md) | The probe's hide |
+| [probe-heading-2026-11-05.md](probe-heading-2026-11-05.md) | The probe's heading |
+| [anchor-offset-2026-11-05.md](anchor-offset-2026-11-05.md) | The camera offset |
+| [view-contains-2026-11-05.md](view-contains-2026-11-05.md) | The view contains a point |
+| [utf8-order-2026-11-05.md](utf8-order-2026-11-05.md) | The byte order |
+| [hint-latch-2026-11-05.md](hint-latch-2026-11-05.md) | The hint, shown once |
+| [offscreen-sector-2026-11-05.md](offscreen-sector-2026-11-05.md) | The offscreen sector |
+| [clip-select-2026-11-05.md](clip-select-2026-11-05.md) | The selected frames |
+| [upgrade-accept-2026-11-05.md](upgrade-accept-2026-11-05.md) | The one upgrade accept |
+| [touch-route-2026-11-05.md](touch-route-2026-11-05.md) | The touch route |
+| [court-rehearse-2026-11-05.md](court-rehearse-2026-11-05.md) | The rehearsal card |
+| [intro-frame-2026-11-05.md](intro-frame-2026-11-05.md) | The intro frame |
+| [concealment-flag-2026-11-05.md](concealment-flag-2026-11-05.md) | The concealment flag |
+| [body-clearance-2026-11-05.md](body-clearance-2026-11-05.md) | The body clearance |
+| [ghost-verify-2026-11-05.md](ghost-verify-2026-11-05.md) | The ghost's second check |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
