@@ -316,5 +316,15 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [civic-slots-2026-11-05.md](civic-slots-2026-11-05.md) | The civic slots |
 | [detection-shapes-2026-11-05.md](detection-shapes-2026-11-05.md) | The detection shapes |
 | [tutorial-flags-2026-11-05.md](tutorial-flags-2026-11-05.md) | The tutorial flags this tick |
+| [sha-padding-2026-11-05.md](sha-padding-2026-11-05.md) | The hash padding |
+| [bundle-load-2026-11-05.md](bundle-load-2026-11-05.md) | The bundled lookup |
+| [telemetry-sample-2026-11-05.md](telemetry-sample-2026-11-05.md) | The telemetry sample |
+| [q8-offset-2026-11-05.md](q8-offset-2026-11-05.md) | The offset along a direction |
+| [live-solids-2026-11-05.md](live-solids-2026-11-05.md) | The solids this tick |
+| [box-edges-2026-11-05.md](box-edges-2026-11-05.md) | The box edges |
+| [vfx-budgets-2026-11-05.md](vfx-budgets-2026-11-05.md) | The effect budgets |
+| [vfx-project-2026-11-05.md](vfx-project-2026-11-05.md) | The effect projection |
+| [probe-sidestep-2026-11-05.md](probe-sidestep-2026-11-05.md) | The probe's sidestep |
+| [probe-grid-2026-11-05.md](probe-grid-2026-11-05.md) | The probe's grid |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
