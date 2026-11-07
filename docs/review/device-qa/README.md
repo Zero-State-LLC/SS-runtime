@@ -364,5 +364,6 @@ Each note records one fact about bytes or draw calls already on main. None of th
 | [socket-lists-2026-11-06.md](socket-lists-2026-11-06.md) | The socket lists, not a rejection |
 | [medal-directory-2026-11-06.md](medal-directory-2026-11-06.md) | The medal directory, DailyMedals |
 | [patrol-spawn-2026-11-06.md](patrol-spawn-2026-11-06.md) | The patrol spawn, without fairness |
+| [retest-2026-11-06.md](retest-2026-11-06.md) | Debug autopilot on an iPhone 17 Pro. Issue #117 stays open |
 
 Next session: follow [retest-checklist.md](retest-checklist.md) (D-105 allows device checks on any build).
