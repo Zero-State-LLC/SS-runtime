@@ -5,7 +5,7 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `393b06f7c195e6040be74d4d170e4f930d2a8845` |
+| Specification commit | `b1ed874e1e8eb0e61b2174b9093201e9a61e1a4b` |
 | Ruleset | `ss-rules-014` |
 | Content | `civic-seam-content-009` |
 | Arena | `civic-seam-arena-004` |
@@ -86,3 +86,5 @@ D-118 adoption (SS-specs #87, ruleset `ss-rules-014`, content `civic-seam-conten
 D-119 adoption (SS-specs #89): lethal warning, option 2 (T1058). A telegraph or a 60-tick contact horizon that would remove the current Integrity shows `LETHAL THREAT` ahead of Lockdown and Extraction. The card is presentation only: no lethal-warning event, no golden-stream change, and no ruleset, content, arena, or replay identity change. No admitted file matches the cue, so the carriers are the card and the `warning` haptic. The asset catalog's `specificationCommit` moves with this pin; its entries do not.
 
 D-120 adoption (SS-specs #90): own the existing shell labels `START`, `SETTINGS`, and `RESTART` (T1059). No rename and no new control. Run-shell § 8.1 stays open. No contract or fixture change; pin move only. Ruleset, content, arena, and replay identities are unchanged.
+
+D-121 adoption (SS-specs #91): the Victorian Vendor mine is a clear-filled ring (T1060). One light neutral stroke, white 0.92 at alpha 0.95, weight 2 while arming and 4 once armed. Arm, life, radius, damage, and the cap of two are unchanged. No caption and no asset id. No ruleset or content identity change. The asset catalog's `specificationCommit` moves with this pin; its entries do not.
