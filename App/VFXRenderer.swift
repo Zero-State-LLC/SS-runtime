@@ -32,7 +32,26 @@ final class VFXRenderer {
     static let worldZ: CGFloat = 20
     static let screenZ: CGFloat = 900
 
-    var settings: PresentationVFXSettings = .standard
+    var settings: PresentationVFXSettings = .standard {
+        didSet {
+            if settings.reducedMotion && !oldValue.reducedMotion { cancelShake() }
+            if (settings.reducedMotion && !oldValue.reducedMotion)
+                || (settings.reducedFlash && !oldValue.reducedFlash) {
+                clearTransientEffects()
+            }
+        }
+    }
+
+    /// Cancel old optional effects instead of replaying impacts with new recipes.
+    /// Persistent HUD/state cues remain; subsequent impacts use reduced recipes.
+    private func clearTransientEffects() {
+        worldLayer.removeAllChildren()
+        screenLayer.removeAllChildren()
+        nodes.removeAll()
+        linked.removeAll()
+        trails.removeAll()
+        pool?.reset()
+    }
 
     private let catalog: ProceduralVFXCatalog?
     private var projector = VFXProjector()
@@ -50,6 +69,8 @@ final class VFXRenderer {
     private var knownPositions: [EntityID: CGPoint] = [:]
     var rememberedPositionCount: Int { knownPositions.count }
     private weak var worldRoot: SKNode?
+    private weak var cameraNode: SKCameraNode?
+    private var runPaused = false
     private var cameraBase: CGPoint = .zero
     private var frozen = false
 
@@ -78,6 +99,9 @@ final class VFXRenderer {
         scene.addChild(worldLayer)
         camera.addChild(screenLayer)
         self.worldRoot = worldRoot
+        cameraNode = camera
+        cameraBase = camera.position
+        applyFreeze()
     }
 
     func reset() {
@@ -89,7 +113,7 @@ final class VFXRenderer {
         knownPositions = [:]
         projector.reset()
         hitStop.reset()
-        shake.reset()
+        cancelShake()
         pool?.reset()
         frame = 0
         drawnByRecipe = [:]
@@ -105,14 +129,31 @@ final class VFXRenderer {
     /// Call once per display frame before stepping. True means this frame is
     /// a hit-stop frame: do not step and do not redraw the world.
     func consumeHitStopFrame() -> Bool {
+        guard !runPaused else { return true }
         let isFrozen = hitStop.consumeFrame()
         setFrozen(isFrozen)
         return isFrozen
     }
 
     private func setFrozen(_ value: Bool) {
-        guard frozen != value else { return }
         frozen = value
+        applyFreeze()
+    }
+
+    /// Pause cancels camera impulses, but retains the remaining hit-stop frames.
+    func setRunPaused(_ paused: Bool) {
+        runPaused = paused
+        if paused { cancelShake() }
+        applyFreeze()
+    }
+
+    private func cancelShake() {
+        shake.reset()
+        cameraNode?.position = cameraBase
+    }
+
+    private func applyFreeze() {
+        let value = runPaused || frozen
         worldLayer.isPaused = value
         screenLayer.isPaused = value
         worldRoot?.isPaused = value

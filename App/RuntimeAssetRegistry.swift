@@ -1,11 +1,24 @@
+import OSLog
 import SurveillanceCore
 
-/// App-side gate: only runtime-reachable SS-001 asset IDs may be referenced at integration time.
+/// Invalid identities never escape this gate. Current callers draw procedural
+/// shapes and use these strings as node names, so a sentinel preserves the
+/// readable shape without looking up an unapproved asset.
 enum RuntimeAssetRegistry {
-    static let presentation: PresentationAssetRegistry = try! PresentationAssetRegistry.bundled()
+    static let presentation = try? PresentationAssetRegistry.bundled()
+    static let unavailable = "runtime_asset_unavailable"
+    private static let logger = Logger(subsystem: "com.zer0state.surveillancesurvivor", category: "AssetRegistry")
 
-    static func require(_ assetId: String) -> String {
-        (try? presentation.require(assetId)) ?? assetId
+    static func require(_ assetId: String, diagnose: (String) -> Void = report) -> String {
+        guard let presentation, (try? presentation.require(assetId)) != nil else {
+            diagnose("Rejected runtime asset ID: \(assetId); registry unavailable or ID unreachable")
+            return unavailable
+        }
+        return assetId
+    }
+
+    private static func report(_ message: String) {
+        logger.error("\(message, privacy: .public)")
     }
 
     enum HUD {

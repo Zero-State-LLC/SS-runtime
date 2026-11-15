@@ -27,7 +27,6 @@ final class AudioEngine {
 
     /// The contract's ceiling: "At most eight effects voices play simultaneously."
     /// The projector already caps its output; the pool enforces it at the device.
-    private static let effectVoiceCount = 8
     private static let musicCrossfadeSeconds: TimeInterval = 1.0
     /// Terminal music "begins within 100 ms".
     private static let terminalCrossfadeSeconds: TimeInterval = 0.08
@@ -36,9 +35,7 @@ final class AudioEngine {
     var settings: PresentationAudioSettings = .enabled
 
     private var buffers: [String: AVAudioPlayer] = [:]
-    /// Round-robin effect voices; index of the next one to reuse.
-    private var voices: [AVAudioPlayer?] = Array(repeating: nil, count: effectVoiceCount)
-    private var voiceCursor = 0
+    private let effectPool = EffectVoicePool()
 
     /// Beds by asset ID, not by state: the boss state selects among four phase
     /// beds, so state alone is not enough to identify what is playing.
@@ -63,13 +60,14 @@ final class AudioEngine {
     private let deliveredPaths: [String: String]
 
     private(set) var missingCueIds: Set<String> = []
-    /// D-097 pitched voice, created on first use.
-    private lazy var pitchedVoice = PitchedVoice()
     /// Pitched cues played so far (D-097 evidence and tests).
     private(set) var pitchedCuesPlayed: [(audioId: String, cents: Int)] = []
     /// `run-shell.md` § 13.2 (D-106): true between an audio-session
     /// interruption's start and end. Nothing plays while it is set.
     private(set) var interrupted = false
+    private var suspended = false
+    private var cueTasks: [UUID: Task<Void, Never>] = [:]
+    private var dropTask: Task<Void, Never>?
     private var interruptionObserver: NSObjectProtocol?
 
     init() {
@@ -113,36 +111,58 @@ final class AudioEngine {
     }
 
     /// § 13.2: an interruption stops every game sound. When it ends, the bed
-    /// for the last projected music state comes back; cut-off one-shots do not.
-    /// This is the same whether or not the run is paused.
+    /// for the last projected music state comes back only if the run is active;
+    /// cut-off one-shots do not. Scene suspension independently keeps buses silent.
     func handleInterruption(_ type: AVAudioSession.InterruptionType) {
         switch type {
         case .began:
             interrupted = true
-            dropGeneration += 1
-            musicDropped = false
-            for index in voices.indices {
-                voices[index]?.stop()
-                voices[index] = nil
-            }
-            for player in musicPlayers.values { player.stop() }
-            ambience?.stop()
-            ambience = nil
-            musicStarted = false
+            suspendPlayback()
         case .ended:
             interrupted = false
             try? AVAudioSession.sharedInstance().setActive(true)
-            if let bed = currentBedId { setMusic(musicState, bed: bed) }
+            if !suspended, let bed = currentBedId { setMusic(musicState, bed: bed) }
         @unknown default:
             break
         }
+    }
+
+    /// Pause and OS interruption are independent: either keeps every bus silent.
+    func setSuspended(_ value: Bool) {
+        suspended = value
+        if value {
+            suspendPlayback()
+        } else if !interrupted, let bed = currentBedId {
+            setMusic(musicState, bed: bed)
+        }
+    }
+
+    private func cancelDeferredWork() {
+        dropGeneration += 1
+        cueTasks.values.forEach { $0.cancel() }
+        cueTasks.removeAll()
+        dropTask?.cancel()
+        dropTask = nil
+        musicDropped = false
+    }
+
+    private func suspendPlayback() {
+        cancelDeferredWork()
+        effectPool.stopAll()
+        for player in musicPlayers.values { player.stop() }
+        ambience?.stop()
+        ambience = nil
+        musicStarted = false
+        haptics?.stop(completionHandler: nil)
+        // UIKit feedback generators expose no cancellation for an already
+        // submitted pulse. No new pulses are admitted while suspended.
     }
 
     // MARK: - Frame
 
     /// Consumes one tick of projection.
     func apply(_ projection: AudioProjection) {
-        guard !interrupted else {
+        guard !interrupted, !suspended else {
             // Silent, but keep following the projection, so the bed restored
             // when the interruption ends is the current state's (§ 13.2).
             musicState = projection.musicState
@@ -167,7 +187,7 @@ final class AudioEngine {
     /// A cue the presentation raises itself (the D-098 intro chirps): played
     /// and felt like a projected cue, outside any tick.
     func playPresentationCue(_ cue: ProjectedCue) {
-        guard !interrupted else { return }
+        guard !interrupted, !suspended else { return }
         play(cue)
         fire(cue.haptic)
     }
@@ -177,16 +197,21 @@ final class AudioEngine {
     /// audio-haptics.md § Network Blackout drop: duck the bed to silence over
     /// 0.1 s, hold 1.0 s, restore over 0.5 s. The music state machine is not
     /// touched; only the bed's volume moves.
-    private func beginBlackoutDrop() {
+    func beginBlackoutDrop() {
+        guard !interrupted, !suspended else { return }
         dropGeneration += 1
         let generation = dropGeneration
         musicDropped = true
         for player in musicPlayers.values {
             player.setVolume(0, fadeDuration: BlackoutMusicDrop.duckSeconds)
         }
-        Task { @MainActor [weak self] in
-            try? await Task.sleep(nanoseconds: UInt64(BlackoutMusicDrop.restoreStartSeconds * 1_000_000_000))
-            guard let self, self.dropGeneration == generation else { return }
+        dropTask?.cancel()
+        dropTask = Task { @MainActor [weak self] in
+            do { try await Task.sleep(nanoseconds: UInt64(BlackoutMusicDrop.restoreStartSeconds * 1_000_000_000)) }
+            catch { return }
+            guard !Task.isCancelled, let self, self.dropGeneration == generation,
+                  !self.interrupted, !self.suspended else { return }
+            self.dropTask = nil
             self.musicDropped = false
             guard self.settings.musicEnabled, !self.settings.reducedSensory,
                   let bed = self.currentBedId, let player = self.musicPlayers[bed]
@@ -195,22 +220,23 @@ final class AudioEngine {
         }
     }
 
-    private func playAfterDuck(_ cue: ProjectedCue) {
+    func playAfterDuck(_ cue: ProjectedCue, delayMs: Int = Int(BlackoutMusicDrop.cueDelaySeconds * 1000)) {
+        guard !interrupted, !suspended else { return }
         let generation = dropGeneration
-        Task { @MainActor [weak self] in
-            try? await Task.sleep(nanoseconds: UInt64(BlackoutMusicDrop.cueDelaySeconds * 1_000_000_000))
-            guard let self, self.dropGeneration == generation else { return }
+        let id = UUID()
+        cueTasks[id] = Task { @MainActor [weak self] in
+            do { try await Task.sleep(nanoseconds: UInt64(max(0, delayMs)) * 1_000_000) }
+            catch { return }
+            guard !Task.isCancelled, let self else { return }
+            self.cueTasks[id] = nil
+            guard self.dropGeneration == generation else { return }
             self.play(cue)
         }
     }
 
     func reset() {
-        dropGeneration += 1
-        musicDropped = false
-        for index in voices.indices {
-            voices[index]?.stop()
-            voices[index] = nil
-        }
+        cancelDeferredWork()
+        effectPool.stopAll()
         for player in musicPlayers.values { player.stop() }
         musicPlayers = [:]
         ambience?.stop()
@@ -223,6 +249,7 @@ final class AudioEngine {
     // MARK: - Effects
 
     private func play(_ cue: ProjectedCue) {
+        guard !interrupted, !suspended else { return }
         // D-119: the lethal haptic has no file yet. An empty id is not a
         // missing asset, and it must not be recorded as one.
         guard !cue.audioId.isEmpty else { return }
@@ -233,12 +260,14 @@ final class AudioEngine {
         }
         // D-097: a pitched cue (the takedown) takes the pitch-shifting voice.
         if cue.pitchCents != 0, let url = template.url {
+            let voice = PitchedVoice()
+            guard effectPool.admit(priority: cue.priority, isPlaying: { voice.isPlaying }, stop: { voice.stop() }) else { return }
+            voice.play(url: url, cents: cue.pitchCents, volume: mix.master * mix.effects)
             pitchedCuesPlayed.append((cue.audioId, cue.pitchCents))
-            pitchedVoice.play(url: url, cents: cue.pitchCents, volume: mix.master * mix.effects)
             return
         }
         // A fresh player per voice: AVAudioPlayer cannot overlap itself.
-        guard let voice = try? AVAudioPlayer(contentsOf: template.url!) else { return }
+        guard let url = template.url, let voice = try? AVAudioPlayer(contentsOf: url) else { return }
         voice.volume = mix.master * mix.effects
         // Camera hits alternate by hit count; the projector supplies the
         // variant, and pitch is the only carrier that does not need a new file.
@@ -246,9 +275,7 @@ final class AudioEngine {
             voice.enableRate = true
             voice.rate = min(2.0, 1.0 + Float(variant) * 0.06)
         }
-        voices[voiceCursor]?.stop()
-        voices[voiceCursor] = voice
-        voiceCursor = (voiceCursor + 1) % Self.effectVoiceCount
+        guard effectPool.admit(priority: cue.priority, isPlaying: { voice.isPlaying }, stop: { voice.stop() }) else { return }
         voice.prepareToPlay()
         voice.play()
     }
@@ -268,6 +295,7 @@ final class AudioEngine {
     /// `explore → observed → lockdown → boss → extraction → terminal`, crossfading
     /// over one second; terminal begins within 100 ms.
     private func setMusic(_ state: MusicState, bed: String) {
+        guard !interrupted, !suspended else { return }
         guard settings.musicEnabled, !settings.reducedSensory else {
             if musicStarted { fadeOutAll() }
             return
@@ -345,6 +373,7 @@ final class AudioEngine {
     /// lethal-warning haptic's caption is the HUD card, so its cue caption
     /// is empty on purpose.
     private func fire(_ pattern: HapticPattern) {
+        guard !interrupted, !suspended else { return }
         guard settings.hapticsEnabled, !settings.reducedSensory, mix.haptics > 0 else { return }
         switch pattern {
         case .none: break

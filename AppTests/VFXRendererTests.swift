@@ -174,6 +174,43 @@ struct VFXRendererTests {
         }
     }
 
+    @Test func pauseCancelsShakeButPreservesRemainingHitStop() throws {
+        let stage = Stage()
+        let snap = try Self.snapshot()
+        let base = CGPoint(x: 400, y: 300)
+        stage.vfx.ingest(tick: 1, events: [AuthoritativeEvent(tick: 1, phase: 10,
+            type: .cameraDestroyed, primary: snap.cameras[0].id, insertion: 0)], snapshot: snap)
+        stage.camera.position = stage.vfx.cameraPosition(base: base)
+        #expect(stage.camera.position != base)
+        #expect(stage.vfx.consumeHitStopFrame())
+        let remaining = stage.vfx.frozenFrames
+        stage.vfx.setRunPaused(true)
+        #expect(stage.camera.position == base)
+        #expect(stage.world.isPaused && stage.vfx.worldLayer.isPaused && stage.vfx.screenLayer.isPaused)
+        #expect(stage.vfx.consumeHitStopFrame())
+        #expect(stage.vfx.frozenFrames == remaining)
+        stage.vfx.setRunPaused(false)
+        #expect(stage.world.isPaused)
+        while stage.vfx.consumeHitStopFrame() {}
+        #expect(!stage.world.isPaused && !stage.vfx.screenLayer.isPaused)
+        #expect(stage.vfx.cameraPosition(base: base) == base)
+    }
+
+    @Test func liveReducedMotionClearsImmediatelyWithoutAnotherEvent() throws {
+        let stage = Stage()
+        let snap = try Self.snapshot()
+        let base = CGPoint(x: 400, y: 300)
+        stage.vfx.ingest(tick: 1, events: Self.everyRecipeEvents(snap), snapshot: snap)
+        stage.camera.position = stage.vfx.cameraPosition(base: base)
+        #expect(stage.camera.position != base)
+        stage.vfx.settings.reducedMotion = true
+        #expect(stage.camera.position == base)
+        #expect(stage.vfx.liveEffectCount == 0)
+        #expect(stage.vfx.worldLayer.children.isEmpty && stage.vfx.screenLayer.children.isEmpty)
+        #expect(stage.vfx.frozenCameraPosition() == base)
+        #expect(stage.vfx.cameraPosition(base: base) == base)
+    }
+
     @Test func hitStopFreezesTheWorldThenReleases() throws {
         let stage = Stage()
         let snap = try Self.snapshot()
