@@ -39,6 +39,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Verify pinned specification
         run: grep -q "b1ed874e1e8eb0e61b2174b9093201e9a61e1a4b" SPEC_BASELINE.md
+      - name: Test runtime audit wiring guards
+        run: python3 -B scripts/test_runtime_audit_guards.py
       - name: Byte-compare bundled contracts and fixtures against the pinned SS-specs
         run: bash scripts/spec_parity.sh
 
