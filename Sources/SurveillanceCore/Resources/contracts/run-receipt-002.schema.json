@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/scrimshawlife-ctrl/SS-specs/contracts/run-receipt-002.schema.json",
+  "title": "Surveillance Survivor Run Receipt v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "identity", "seed", "outcome", "elapsedTicks", "finalDigest", "player", "exposure", "combat", "objectives", "cameraPlacement", "cameraDestructions", "camerasDamaged", "camerasDestroyed", "tamperExposureApplied", "cameraObjective", "upgrade", "boss", "diagnostics", "presentation"],
+  "properties": {
+    "schemaVersion": {"const": "run-receipt-002"},
+    "identity": {"type": "object", "additionalProperties": false, "required": ["rulesetVersion", "contentVersion", "arenaVersion", "replaySchemaVersion"], "properties": {
+      "rulesetVersion": {"const": "ss-rules-014"}, "contentVersion": {"const": "civic-seam-content-009"}, "arenaVersion": {"const": "civic-seam-arena-004"}, "replaySchemaVersion": {"const": "runtime-kernel-001"}
+    }},
+    "seed": {"$ref": "#/$defs/uint64"},
+    "outcome": {"enum": ["success", "failure", "invalid"]},
+    "elapsedTicks": {"$ref": "#/$defs/uint64"},
+    "finalDigest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "player": {"type": "object", "additionalProperties": false, "required": ["finalIntegrity", "damageTaken", "integrityRestored"], "properties": {
+      "finalIntegrity": {"type": "integer"}, "damageTaken": {"$ref": "#/$defs/count"}, "integrityRestored": {"$ref": "#/$defs/count"}
+    }},
+    "exposure": {"type": "object", "additionalProperties": false, "required": ["final", "peak", "finalState", "lockdownEntered"], "properties": {
+      "final": {"$ref": "#/$defs/count"}, "peak": {"$ref": "#/$defs/count"}, "finalState": {"enum": ["hidden", "observed", "tracked", "hunted", "lockdown"]}, "lockdownEntered": {"type": "boolean"}
+    }},
+    "combat": {"type": "object", "additionalProperties": false, "required": ["damageDealt", "defeatsByArchetype"], "properties": {
+      "damageDealt": {"$ref": "#/$defs/count"}, "defeatsByArchetype": {"type": "object", "propertyNames": {"type": "string", "minLength": 1}, "additionalProperties": {"$ref": "#/$defs/count"}}
+    }},
+    "objectives": {"type": "object", "additionalProperties": false, "required": ["combatAuthority", "networkBlackout", "extractionArmed"], "properties": {
+      "combatAuthority": {"type": "object", "additionalProperties": false, "required": ["mobEncountersComplete", "mobEncountersRequired", "currentNode", "elite", "boss", "complete"], "properties": {
+        "mobEncountersComplete": {"type": "integer", "minimum": 0, "maximum": 3}, "mobEncountersRequired": {"const": 3}, "currentNode": {"enum": ["M-A", "M-B", "M-C", "improperSearchDaemon", "algorithmicModerate", "extraction"]},
+        "elite": {"type": "object", "additionalProperties": false, "required": ["id", "defeated"], "properties": {"id": {"const": "improper-search-daemon"}, "defeated": {"type": "boolean"}}},
+        "boss": {"type": "object", "additionalProperties": false, "required": ["id", "defeated", "phasesReached"], "properties": {"id": {"const": "algorithmic-moderate"}, "defeated": {"type": "boolean"}, "phasesReached": {"$ref": "#/$defs/phases"}}}, "complete": {"type": "boolean"}
+      }},
+      "networkBlackout": {"type": "object", "additionalProperties": false, "required": ["camerasDestroyed", "camerasTotal", "complete"], "properties": {"camerasDestroyed": {"$ref": "#/$defs/cameras"}, "camerasTotal": {"const": 8}, "complete": {"type": "boolean"}}},
+      "extractionArmed": {"type": "boolean"}
+    }},
+    "cameraPlacement": {"type": "object", "additionalProperties": false, "required": ["version", "placementSeed", "selectedSockets"], "properties": {
+      "version": {"const": "camera-placement-001"}, "placementSeed": {"$ref": "#/$defs/uint64"}, "selectedSockets": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["socketId", "cameraEntityId", "housingFamily"], "properties": {"socketId": {"type": "string", "minLength": 1}, "cameraEntityId": {"$ref": "#/$defs/uint64"}, "housingFamily": {"$ref": "#/$defs/housing"}}}}
+    }},
+    "cameraDestructions": {"type": "array", "maxItems": 8, "items": {"type": "object", "additionalProperties": false, "required": ["cameraId", "tick", "housingFamily", "wasDetectingPlayer", "source", "exposureBefore", "exposureAfter", "triggeredLockdown"], "properties": {
+      "cameraId": {"type": "string", "pattern": "^(0|[1-9][0-9]*)$"}, "tick": {"$ref": "#/$defs/uint64"}, "housingFamily": {"$ref": "#/$defs/housing"}, "wasDetectingPlayer": {"type": "boolean"}, "source": {"type": "string", "minLength": 1}, "exposureBefore": {"$ref": "#/$defs/count"}, "exposureAfter": {"$ref": "#/$defs/count"}, "triggeredLockdown": {"type": "boolean"}
+    }}},
+    "camerasDamaged": {"$ref": "#/$defs/cameras"}, "camerasDestroyed": {"$ref": "#/$defs/cameras"}, "tamperExposureApplied": {"$ref": "#/$defs/count"},
+    "cameraObjective": {"type": "object", "additionalProperties": false, "required": ["destroyed", "total", "complete"], "properties": {"destroyed": {"$ref": "#/$defs/cameras"}, "total": {"const": 8}, "complete": {"type": "boolean"}}},
+    "upgrade": {"oneOf": [{"type": "null"}, {"type": "object", "additionalProperties": false, "required": ["id", "contractVersion"], "properties": {"id": {"enum": ["signalJammer", "ricochetPulse", "ghostStep"]}, "contractVersion": {"const": "upgrades-003"}}}]},
+    "boss": {"type": "object", "additionalProperties": false, "required": ["phasesReached", "defeated"], "properties": {"phasesReached": {"$ref": "#/$defs/phases"}, "defeated": {"type": "boolean"}}},
+    "diagnostics": {"type": "array", "items": {"enum": ["incompatibleIdentity", "duplicateCommandTick", "lateOrFutureCommand", "digestMismatch", "arenaValidation", "spawnFairnessTimeout"]}},
+    "presentation": {"type": "object", "additionalProperties": false, "required": ["tutorialsEnabled", "hudScale", "handedness", "reducedMotion", "reducedFlash", "reducedSensory"], "properties": {"tutorialsEnabled": {"type": "boolean"}, "hudScale": {"enum": [1000, 1150, 1300]}, "handedness": {"enum": ["right", "left"]}, "reducedMotion": {"type": "boolean"}, "reducedFlash": {"type": "boolean"}, "reducedSensory": {"type": "boolean"}}}
+  },
+  "$defs": {
+    "uint64": {"type": "integer", "minimum": 0, "maximum": 18446744073709551615},
+    "count": {"type": "integer", "minimum": 0},
+    "cameras": {"type": "integer", "minimum": 0, "maximum": 8},
+    "housing": {"enum": ["municipalDome", "storefrontCamera", "trafficReader", "ornamentalCivicCamera", "temporarySensorMast"]},
+    "phases": {"type": "array", "uniqueItems": true, "items": {"enum": ["publicSafety", "civilLiberties", "temporarySafeguard", "independentReview"]}}
+  }
+}

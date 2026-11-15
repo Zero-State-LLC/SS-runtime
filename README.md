@@ -38,6 +38,15 @@ open SSRuntime.xcodeproj
 
 XcodeGen is used only to generate the project from `project.yml`. Do not commit personal signing data.
 
+## Diagnostic receipt validation
+
+New diagnostic receipts use `run-receipt-002`. Run `python3 -B scripts/test_run_receipt_schema.py`
+with `jsonschema` 4.x installed to produce actual Swift serializer/archive output twice,
+validate all eleven terminal/selection cases, and reject malformed evidence. CI runs this
+in an isolated Python environment in addition to the deterministic core suite.
+Historical v1 receipts are preserved, not converted or certified. Archive format status
+recognizes identity only. See [the migration evidence and consumer inventory](docs/review/receipt-v2-20261115.md).
+
 ## Architecture boundary
 
 `SurveillanceCore` owns gameplay authority and has no SpriteKit, SwiftUI, wall-clock, audio, haptic, or device dependencies. `App/` projects authoritative state to iPhone presentation.

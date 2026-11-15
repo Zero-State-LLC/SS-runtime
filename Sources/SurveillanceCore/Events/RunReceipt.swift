@@ -36,7 +36,7 @@ public struct RunReceipt: Equatable, Sendable {
 
     public init(_ state: WorldState, presentation: PresentationReceiptMetadata = .default) {
         self.presentation = presentation
-        schemaVersion = "run-receipt-001"
+        schemaVersion = ContractVersions.runReceipt
         identity = state.identity
         seed = state.seed
         outcome = state.outcome
@@ -148,7 +148,12 @@ public struct RunReceipt: Equatable, Sendable {
                 "total": .integer(Int64(cameraDestructionSummary.objectiveTotal)),
                 "complete": .bool(cameraDestructionSummary.objectiveComplete)
             ]),
-            "upgrade": upgrade.map { .string($0.rawValue) } ?? .null,
+            "upgrade": upgrade.map {
+                .object([
+                    "id": .string($0.rawValue),
+                    "contractVersion": .string(ContractVersions.upgrades)
+                ])
+            } ?? .null,
             "boss": .object([
                 "phasesReached": .array(combatAuthority.bossPhasesReached.map { .string($0) }),
                 "defeated": .bool(combatAuthority.bossDefeated)
