@@ -1,0 +1,6 @@
+Schema: Sources/SurveillanceCore/Resources/contracts/run-receipt-001.schema.json
+Receipt: docs/review/qa-2026-11-15/live-run-receipt.json
+Live receipt schema violations: 3
+<root>: Additional properties are not allowed ('cameraObjective', 'camerasDamaged', 'camerasDestroyed', 'tamperExposureApplied' were unexpected)
+objectives: 'extraction' is a required property
+upgrade: 'ricochetPulse' is not of type 'object', 'null'

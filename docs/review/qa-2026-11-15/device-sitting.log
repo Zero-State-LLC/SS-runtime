@@ -1,0 +1,18 @@
+[0/1] Planning build
+Building for debugging...
+[0/2] Write swift-version--58304C5D6DBC2206.txt
+Build complete! (1.95s)
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite DeviceSittingQA started.
+◇ Test pinnedDailySeed() started.
+day 2026-11-02 seed 9972847794717746389 upgrade ricochetPulse
+comprehension NOT SEEN; art rows NOT SEEN; phone interruptions NOT SEEN
+natural-lower-bound | failure | 5:00 | integrity 0 | medals []
+natural-style | success | 5:15 | integrity 7 | medals ["BLACKOUT", "SWIFT"]
+sneaky | success | 4:21 | integrity 11 | medals ["GHOST", "SWIFT"]
+loud | success | 5:24 | integrity 18 | medals ["BLACKOUT", "SWIFT"]
+✔ Test pinnedDailySeed() passed after 675.900 seconds.
+✔ Suite DeviceSittingQA passed after 675.902 seconds.
+✔ Test run with 1 test in 1 suite passed after 675.903 seconds.
