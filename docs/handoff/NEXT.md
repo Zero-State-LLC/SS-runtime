@@ -1,6 +1,8 @@
 # SS QA handoff
 
-Updated: 2026-11-15 23:01 UTC.
+Updated: 2026-11-15 23:03 UTC.
+
+Published evidence: runtime PR #234 on `qa/2026-11-15`. Initial evidence commit: `f8f608b144a7e478bffa4360a57af31c4e9f64ac`. Initial CI run `43772601765` was still running when the PR was opened. Re-fetch the latest PR head and checks before claiming remote CI success. Defect #233 and acceptance board #135 both link to the evidence PR.
 
 ## Request and authority
 
