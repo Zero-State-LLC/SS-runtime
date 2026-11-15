@@ -617,7 +617,8 @@ final class GameScene: SKScene {
 
     func setPaused(_ paused: Bool) {
         runPaused = paused
-        renderer.root.isPaused = paused
+        vfx.setRunPaused(paused)
+        soundEngine.setSuspended(paused)
         lastDisplayTime = nil
         // Input must not survive a pause boundary.
         //

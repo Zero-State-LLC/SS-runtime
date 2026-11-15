@@ -13,6 +13,8 @@ final class PitchedVoice {
     private let pitch = AVAudioUnitTimePitch()
     private var files: [URL: AVAudioFile] = [:]
     private var connectedFormat: AVAudioFormat?
+    private(set) var isPlaying = false
+    private var generation = 0
 
     init() {
         engine.attach(player)
@@ -21,6 +23,7 @@ final class PitchedVoice {
 
     /// Plays `url` once at `cents` (100 cents = 1 semitone) and `volume`.
     func play(url: URL, cents: Int, volume: Float) {
+        stop()
         guard let file = file(url) else { return }
         if connectedFormat != file.processingFormat {
             engine.stop()
@@ -35,12 +38,22 @@ final class PitchedVoice {
         if !engine.isRunning {
             do { try engine.start() } catch { return }
         }
-        player.scheduleFile(file, at: nil)
+        isPlaying = true
+        let current = generation
+        player.scheduleFile(file, at: nil, completionCallbackType: .dataPlayedBack) { [weak self] _ in
+            Task { @MainActor [weak self] in
+                guard let self, self.generation == current else { return }
+                self.stop()
+            }
+        }
         if !player.isPlaying { player.play() }
     }
 
     func stop() {
+        generation += 1
+        isPlaying = false
         player.stop()
+        engine.stop()
     }
 
     private func file(_ url: URL) -> AVAudioFile? {
