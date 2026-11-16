@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "rectConvention": "Pillow half-open [left,top,right,bottom], explicitly authored, no inferred bounds",
+  "atlas": "inputs/atlas.png",
+  "rects": {
+    "facade": [
+      29,
+      120,
+      552,
+      894
+    ],
+    "door": [
+      594,
+      120,
+      914,
+      894
+    ],
+    "roof": [
+      956,
+      248,
+      1508,
+      796
+    ]
+  },
+  "reuse": "Facade is copied upright onto south/west and hidden east/north, never silently mirrored. Hidden walls stretch the same full panel over 128 units.",
+  "relief": "Authored piecewise planar window/door recesses, jambs, cornice ledges/brackets, entry treads and parapet coping/inner walls correspond to explicit atlas UV cells. Original painted fine bevels, stair taper, lamp and weathering remain baked. Roof ventilator remains separately registered 2.5D paint, not geometry. See geometry-controls.json and output/mesh.json.",
+  "sourceCitation": "Adapted byte-identical atlas from docs/review/stone-painted-facade-20261116/inputs/atlas.png, cropped by unchanged half-open rectangles. No benchmark pixels sampled.",
+  "perspectiveCorrection": "The original D108 prism basis was not wrong. New geometric offsets and horizontal treads replace flat-plane-only depth at named boundaries. Painted fine shading is not a fully perspective-free material and is not claimed corrected at every texel."
+}
