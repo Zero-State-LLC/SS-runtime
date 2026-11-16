@@ -1,5 +1,13 @@
 # Next work order
 
+## Continuation scoped, November16 23:44UTC
+
+Owner said “continue” at23:43:25UTC. This is not recorded as V8 acceptance or approval of a newly widened aesthetic pass. Read `intent/2026-11-16-blocked-base-curb-relief.md`: **DRAFT, awaiting explicit approval**. Recommended next bounded comparison is visibly solid kiosk blocked-corner treatment plus curb relief along the existing V8 boundary, preserving collision, ground topology, prop/actor roots, framing and all old source bytes. One first preview plus at most one correction, then three-zoom native comparison and owner review. No V9 art, source or native execution has begun.
+
+One exact-head CI query at23:43 confirmed PR236/local head404d6b2 and run43980477923 still **queued**, not passing. Do not start an automatic polling chain or infer success from earlier local checks. V8 evidence, final verdict and all prior failure artifacts remain immutable. No production admission, merge, issue closure, motion/encounter expansion or physical certification.
+
+**Needed from owner:** approve the narrow blocked-kiosk-base and existing-boundary curb-relief proposal before implementation. The broader fidelity deficits remain recorded, not silently accepted.
+
 ## V8 final comparison published, November16 23:34UTC
 
 Evidence commit `429752f105ca85bfe88645ecaa0b6e770a85d352` was pushed and independently matched both remote branch and openPR236 head at23:34. PR body now records V8 final verdict and preserved gates. Exact-head CI43980383721 was fetched once as **queued**, NOT certified passing. This documentation-only checkpoint has its own final head; do not substitute earlier CI success or start an automatic polling chain.
