@@ -10,7 +10,9 @@ Independent coordinator validation at22:22 passed all12 kiosk tests in14.720s, i
 
 Reviewed bindings:
 - Image: `output/source-full.png`, SHA256`c411e33b79e0ffc5b0eb86143cd8785a564e573b5819bc1d4c399ef5d3b60264`.
-- Registration: `output/registration.json`, SHA256`9a00502006c3070dd2ae30de0299797fb983b1418437768d1ac9b09c6eabcd9f`.
-- Manifest: `output/manifest.json`, SHA256`b2c8695bbf21b0bd48c7f7ddd8cdbaf0eb0240b3d45d4d5c9163e0da538d28fe`.
+- Registration: `output/registration.json`, SHA256`ef07f7d8ecc8292dd2e7e8756eadac03317d8d92e6d3bbb05be87c567b6e8beb`.
+- Manifest: `output/manifest.json`, SHA256`48a2728f50ba07edc674c46bdc63fb7743062063bb1177d2fa92b6e842b5883f`.
+
+At 22:36 the source author added explicit ground-pixel metadata in authoritative min/min, max/min, max/max, min/max order. The first corner is a virtual footprint corner omitted by the chamfer, not a fabricated visible mesh vertex. All PNG bytes are unchanged, including the reviewed image hash above. `ground-binding-metadata-audit.json` preserves that comparison. This metadata correction does not grant another aesthetic pass.
 
 Root[512,640], canvas[1000,1200], source root[500,1160], uniform draw size[200,240]. All authority and motion gates remain unchanged.

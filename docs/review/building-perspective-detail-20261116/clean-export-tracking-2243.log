@@ -1,0 +1,30 @@
+[stderr] Traceback (most recent call last):
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/building-perspective-detail-20261116/scene/retained.py", line 38, in <module>
+[stderr]     print(json.dumps(verify(args.capture, args.prepared, args.test_executable), indent=2))
+[stderr]                      ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/building-perspective-detail-20261116/scene/retained.py", line 24, in verify
+[stderr]     result = _verify(capture, Path(prepared) if prepared else HERE / n.PREPARED_DIR)
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/scene-qa-repair-20261116/retained.py", line 37, in verify
+[stderr]     n.a.need(inputs == n.expected_input(), 'Retained preparation is not current exact binding')
+[stderr]                        ~~~~~~~~~~~~~~~~^^
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/building-perspective-detail-20261116/scene/native.py", line 170, in expected_input
+[stderr]     m = validate_manifest(load(manifest), root)
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/building-perspective-detail-20261116/scene/native.py", line 144, in validate_manifest
+[stderr]     v6.expected_input(root, V6 / 'assembly.json')
+[stderr]     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/scene-qa-framing-20261116/native.py", line 61, in expected_input
+[stderr]     prepared = v5.expected_input(root, manifest)
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/scene-qa-repair-20261116/native.py", line 124, in expected_input
+[stderr]     blockers, _ = a.validate(m, root)
+[stderr]                   ~~~~~~~~~~^^^^^^^^^
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/scene-source-assembly-20261116/assemble.py", line 98, in validate
+[stderr]     dependency(root, record, tracked)
+[stderr]     ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/scene-source-assembly-20261116/assemble.py", line 69, in dependency
+[stderr]     need(name in tracked, 'Untracked dependency: ' + name)
+[stderr]     ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/scene-source-assembly-20261116/assemble.py", line 26, in need
+[stderr]     raise Invalid(message)
+[stderr] _scene_qa_v5_assemble.Invalid: Untracked dependency: intent/2026-11-16-scene-qa-repair.md
+
+--- Command finished with exit code: 1 ---

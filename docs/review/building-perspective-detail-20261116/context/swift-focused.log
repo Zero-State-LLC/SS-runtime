@@ -1,0 +1,67 @@
+[0/1] Planning build
+Test Suite 'Selected tests' started at 2026-11-16 14:21:47.619.
+Test Suite 'SSRuntimePackageTests.xctest' started at 2026-11-16 14:21:47.623.
+Test Suite 'SSRuntimePackageTests.xctest' passed at 2026-11-16 14:21:47.623.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-11-16 14:21:47.623.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.004) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite EnvironmentContractTests started.
+◇ Suite EnvironmentAssetsAreDrawnTests started.
+◇ Suite EnvironmentLibraryTests started.
+◇ Suite CaptainCameraTests started.
+◇ Suite CameraMountSolidTests started.
+◇ Suite CameraHousingArtTests started.
+◇ Test theContractNamesEveryArenaSolid() started.
+◇ Test everyMountSolidCarriesTheSharedPrefix() started.
+◇ Test everyHousingFamilyNamesADeclaredAsset() started.
+◇ Test captainIdsAreTheirOwnGroup() started.
+◇ Test everyDeclaredEnvironmentAssetHasARouteToTheScreen() started.
+◇ Test oneMissingAssetLeavesTheWholeGroupUnbacked() started.
+✔ Test captainIdsAreTheirOwnGroup() passed after 0.001 seconds.
+◇ Test captainArtIsAllOrNothing() started.
+✔ Test captainArtIsAllOrNothing() passed after 0.001 seconds.
+◇ Test captainAndStandardHousingsAreBothBacked() started.
+✔ Test oneMissingAssetLeavesTheWholeGroupUnbacked() passed after 0.001 seconds.
+◇ Test aCompleteGroupIsBacked() started.
+✔ Test aCompleteGroupIsBacked() passed after 0.001 seconds.
+◇ Test groupsAreBackedIndependently() started.
+✔ Test groupsAreBackedIndependently() passed after 0.001 seconds.
+◇ Test nothingDeliveredMeansNothingBacked() started.
+✔ Test nothingDeliveredMeansNothingBacked() passed after 0.001 seconds.
+◇ Test anEmptyGroupIsNotBacked() started.
+✔ Test anEmptyGroupIsNotBacked() passed after 0.001 seconds.
+◇ Test solidAssetIdsDeriveFromArenaSolidIds() started.
+✔ Test solidAssetIdsDeriveFromArenaSolidIds() passed after 0.001 seconds.
+◇ Test runtimeMountSolidsHaveNoArt() started.
+✔ Test runtimeMountSolidsHaveNoArt() passed after 0.001 seconds.
+◇ Test coverageCountsOnlyDeclaredIds() started.
+✔ Test coverageCountsOnlyDeclaredIds() passed after 0.001 seconds.
+✔ Suite EnvironmentLibraryTests passed after 0.002 seconds.
+✔ Test everyHousingFamilyNamesADeclaredAsset() passed after 0.011 seconds.
+◇ Test familiesMapToDistinctAssets() started.
+✔ Test familiesMapToDistinctAssets() passed after 0.001 seconds.
+◇ Test noDeclaredHousingIsUnreachable() started.
+✔ Test everyMountSolidCarriesTheSharedPrefix() passed after 0.021 seconds.
+◇ Test snapshotCamerasCarryTheirHousingFamily() started.
+✔ Test snapshotCamerasCarryTheirHousingFamily() passed after 0.004 seconds.
+✔ Suite CameraMountSolidTests passed after 0.026 seconds.
+✔ Test everyDeclaredEnvironmentAssetHasARouteToTheScreen() passed after 0.323 seconds.
+◇ Test stagedAssetsAreStillUnplaced() started.
+✔ Test stagedAssetsAreStillUnplaced() passed after 0.002 seconds.
+✔ Suite EnvironmentAssetsAreDrawnTests passed after 0.326 seconds.
+✔ Test noDeclaredHousingIsUnreachable() passed after 0.315 seconds.
+✔ Suite CameraHousingArtTests passed after 0.328 seconds.
+✔ Test theContractNamesEveryArenaSolid() passed after 0.328 seconds.
+◇ Test environmentIdsAreRuntimeReachable() started.
+✔ Test captainAndStandardHousingsAreBothBacked() passed after 0.332 seconds.
+◇ Test everyEmitterHasAHousingAndOnlyTheLiveOneIsActive() started.
+✔ Test everyEmitterHasAHousingAndOnlyTheLiveOneIsActive() passed after 0.004 seconds.
+✔ Suite CaptainCameraTests passed after 0.338 seconds.
+✔ Test environmentIdsAreRuntimeReachable() passed after 0.297 seconds.
+◇ Test fogIDsResolveThroughThePresentationContract() started.
+✔ Test fogIDsResolveThroughThePresentationContract() passed after 0.286 seconds.
+✔ Suite EnvironmentContractTests passed after 0.913 seconds.
+✔ Test run with 22 tests in 6 suites passed after 0.913 seconds.

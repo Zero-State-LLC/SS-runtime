@@ -1,0 +1,67 @@
+{
+  "status": "NEW_REVIEW_SOURCE_NOT_ADMITTED",
+  "inputs": [
+    {
+      "originalPath": "docs/review/stone-painted-facade-20261116/output/textures/facade.png",
+      "localPath": "inputs/facade.png",
+      "sha256": "1cc2f9178246755462d049934c1825bd451e04d82a268dd522cfeb9d6772a949"
+    },
+    {
+      "originalPath": "docs/review/stone-painted-facade-20261116/output/textures/door.png",
+      "localPath": "inputs/door.png",
+      "sha256": "21e6ab6ed1540142728c43e0f9d8dacfd5924eac0d3fe64a257bac13af94c2b1"
+    },
+    {
+      "originalPath": "docs/review/stone-painted-facade-20261116/output/textures/roof.png",
+      "localPath": "inputs/roof.png",
+      "sha256": "79137825a204ae53a1eeeccecc3d391503d5d56419ddc0e42c2e2806e8b1124b"
+    },
+    {
+      "originalPath": "docs/review/stone-painted-facade-20261116/inputs/provider.json",
+      "localPath": "inputs/stone-provider.json",
+      "sha256": "dca6c47f00614c5af77eab8a53d6c7b3dbc5e585f471296f1695d21061efbdf4"
+    },
+    {
+      "originalPath": "docs/review/stone-painted-facade-20261116/README.md",
+      "localPath": "inputs/stone-source-provenance.md",
+      "sha256": "536ffc39d5b7cbdc9765ae766f66c58d5a0d624b49b35e922f6cf8d62e4d0c71"
+    },
+    {
+      "originalPath": "docs/review/scene-qa-framing-20261116/native-capture-v6/source-scene-records.json",
+      "localPath": "inputs/v6-records.json",
+      "sha256": "1cc28f757fb6e9e7ed6e53843c745bcb63f8adc42a2eef6413362582eac4930d"
+    },
+    {
+      "originalPath": "docs/review/scene-qa-framing-20261116/native-capture-v6/source-scene-candidate-ordinary-z100-native.png",
+      "localPath": "inputs/v6-z100-native.png",
+      "sha256": "5774f9d3c581323d437307fd6addfa21583372a4568f8edce108d15553d52ec3"
+    },
+    {
+      "originalPath": "Sources/SurveillanceCore/Resources/RuntimeAssets/env_solid_01_residential_west@1x.png",
+      "localPath": "inputs/env_solid_01_residential_west@1x.png",
+      "sha256": "1171bd8f9ff905b96e54cb33aac6ea98779b712f4119d2fa76593a2c693bdf6e"
+    },
+    {
+      "originalPath": "Sources/SurveillanceCore/Resources/RuntimeAssets/env_solid_02_residential_north@1x.png",
+      "localPath": "inputs/env_solid_02_residential_north@1x.png",
+      "sha256": "6c19e10ce277fe32c7085ab263ef7bbcb8f4c121509dd1053400bca097a5e154"
+    },
+    {
+      "originalPath": "Sources/SurveillanceCore/Resources/RuntimeAssets/env_solid_04_civic_west@1x.png",
+      "localPath": "inputs/env_solid_04_civic_west@1x.png",
+      "sha256": "b1d9002bd547eb482190fa28e4c53557220a37eabbdceb54297186a04a7edb0b"
+    },
+    {
+      "originalPath": "Sources/SurveillanceCore/Resources/RuntimeAssets/env_solid_05_civic_dais@1x.png",
+      "localPath": "inputs/env_solid_05_civic_dais@1x.png",
+      "sha256": "04a5ee7285c65271c67e3ad7649f9234413b38a05fa14483f1397f16f9bd4cb6"
+    }
+  ],
+  "method": "New explicit axis-aligned world-space architectural geometry and per-face UVs. Existing independently generated painted atlas reused, not old isometric sprites stretched.",
+  "residentialBrick": "New procedural mortar course layout over tinted painted stone pixels. Not original residential brick paint recovered.",
+  "limits": [
+    "Windows contain baked painted recess and mullions. New geometric cornices, sills, pilasters, bays, roof caps and chimneys are actual relief.",
+    "Hidden faces reuse materials, not uniquely authored historical facades.",
+    "No provider generation performed in this packet. Existing provider metadata is inherited provenance, not a new generation receipt."
+  ]
+}

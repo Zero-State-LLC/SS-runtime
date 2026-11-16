@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "registrationSHA256": "6e06a01d1bf398ba2f6f5a8808d42652ab84e62a75b220bf02c50b9d6fcb208b",
+  "geometrySHA256": "72bde7f060cdc88ea82aa43701bdff4b6fe142a614ccb7922e81fa9c817ae772",
+  "v6RecordsSHA256": "1cc28f757fb6e9e7ed6e53843c745bcb63f8adc42a2eef6413362582eac4930d",
+  "checks": [
+    {
+      "solidID": "solid-01-residential-west",
+      "originalWorldRoot": [
+        64,
+        640
+      ],
+      "fourFootprintCornersChecked": 4,
+      "maxInverseResidualWorld": 2.842170943040401e-14,
+      "status": "PASS"
+    },
+    {
+      "solidID": "solid-02-residential-north",
+      "originalWorldRoot": [
+        320,
+        864
+      ],
+      "fourFootprintCornersChecked": 4,
+      "maxInverseResidualWorld": 2.842170943040401e-14,
+      "status": "PASS"
+    },
+    {
+      "solidID": "solid-04-civic-west",
+      "originalWorldRoot": [
+        832,
+        960
+      ],
+      "fourFootprintCornersChecked": 4,
+      "maxInverseResidualWorld": 0,
+      "status": "PASS"
+    },
+    {
+      "solidID": "solid-05-civic-dais",
+      "originalWorldRoot": [
+        1088,
+        704
+      ],
+      "fourFootprintCornersChecked": 4,
+      "maxInverseResidualWorld": 0,
+      "status": "PASS"
+    }
+  ],
+  "testCount": 9,
+  "standaloneReplay": "PASS_BYTE_IDENTICAL",
+  "nativeCapture": false
+}

@@ -1,0 +1,30 @@
+{
+  "status": "RETAINED_BYTES_AND_CONTRACT_VERIFIED_NOT_NEW_NATIVE_RUN",
+  "fixtureVersion": "source-scene-building-007-perspective-detail",
+  "captures": 6,
+  "images": 18,
+  "ownerAcceptance": false,
+  "physicalDeviceEvidence": false,
+  "binaryCheck": "agreement of preserved original import records, not a fresh local binary comparison"
+}
+{
+  "status": "EXACT_BASELINE_PIXELS_VERIFIED",
+  "comparisons": [
+    "100/native",
+    "100/half",
+    "100/grayscale",
+    "125/native",
+    "125/half",
+    "125/grayscale",
+    "140/native",
+    "140/half",
+    "140/grayscale"
+  ],
+  "count": 9,
+  "newNativeRun": false,
+  "visualAcceptance": false
+}
+{"result":"PASS","actualCaptureVersions":2,"images":36,"selections":48,"rejectedMutations":53,"v7NativeEvidence":true,"browserEvidence":false}
+{"result":"PASS","missingV7":true,"mismatchedCaptureRejected":true,"corruptedPNGRejected":true,"corruptedRecordRejected":true,"noFallback":true,"retainedVersions":2,"selections":72,"browserEvidence":false,"nativeRun":false}
+
+--- Command finished with exit code: 0 ---

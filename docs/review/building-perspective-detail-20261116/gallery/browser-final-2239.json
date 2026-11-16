@@ -1,0 +1,20 @@
+{
+  "observedAtUTC": "2026-11-16T22:39:32.875Z",
+  "browser": "Brave",
+  "tabId": 827533014,
+  "url": "http://127.0.0.1:8768/building-perspective-detail-20261116/gallery/?final=2238",
+  "result": "PASS",
+  "versions": ["v6", "v7"],
+  "selections": 72,
+  "imageDisplays": 96,
+  "cssNative": [704, 326],
+  "cssHalf": [352, 163],
+  "benchmarkNatural": [1672, 941],
+  "benchmarkRatioError": 0.00003319232601795008,
+  "grayscaleRestored": true,
+  "pageOverflow": false,
+  "finalVersion": "v7",
+  "actualBrowser": true,
+  "nativeEvidenceSeparate": true,
+  "notes": "Jev handoff returned401 without taking actions. Direct actions in same tab completed checks. First probe used unsupported top-level await and failed before action; corrected promise-return probe produced these observations. Both versions loaded all importer-matched hashes. Technical browser checks do not establish aesthetic acceptance."
+}

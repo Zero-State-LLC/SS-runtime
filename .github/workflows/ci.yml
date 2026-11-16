@@ -126,6 +126,15 @@ jobs:
           python3 -B docs/review/scene-qa-framing-20261116/retained.py docs/review/scene-qa-framing-20261116/native-capture-v6
           node docs/review/scene-qa-repair-20261116/gallery/test_evidence.js --require-v6
           node docs/review/scene-qa-repair-20261116/gallery/test_loader.js
+      - name: Verify bounded building perspective review without admission
+        run: |
+          python3 -B -W error::ResourceWarning docs/review/building-perspective-detail-20261116/kiosk/test_kiosk.py
+          python3 -B -W error::ResourceWarning docs/review/building-perspective-detail-20261116/context/test_context.py
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/building-perspective-detail-20261116/scene -p 'test_*.py'
+          python3 -B docs/review/building-perspective-detail-20261116/scene/retained.py docs/review/building-perspective-detail-20261116/scene/native-capture-v7
+          python3 -B docs/review/building-perspective-detail-20261116/verify_baseline.py
+          node docs/review/building-perspective-detail-20261116/gallery/test_evidence.js --require-v7
+          node docs/review/building-perspective-detail-20261116/gallery/test_loader.js --require-v7
       - name: Test retained playback failure diagnosis without hiding the failure
         run: python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/playback237-diagnosis-20261116 -p 'test_trace_probe.py' -v
       - name: Byte-compare bundled contracts and fixtures against the pinned SS-specs

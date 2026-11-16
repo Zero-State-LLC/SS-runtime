@@ -1,5 +1,13 @@
 # Next work order
 
+## Bounded building scene completed locally, November16 22:42UTC
+
+Actual v7 native2237 passed exactly1test and imported6captures/18images with loaded/fresh-built SHA2ab2c18e4aa4ea18e488d242c716e67a8dd8af6655aa325248b08e0ca827024b. All9fresh baseline images exactly preserve v6candidate RGBA pixels. Five explicit footprint registrations preserve24solids,18uprights, roots/fields/depth/framing/controls and non-building sources. Actual Brave passed72selections/96image displays across v6/v7, native/half/grayscale. Independent13kiosk+11context+41scene tests and both gallery suites pass. See `docs/review/building-perspective-detail-20261116/REVIEW-FINAL.md`.
+
+**Perspective/detail improved, overall benchmark NOT MET.** New context fills its plots coherently and kiosk relief improves, but repetitive facades/roof weathering, large masses, tree contact, clean ground and stationary Player silhouette remain deficient. Owner must review this bounded final scene before another aesthetic pass or motion/encounter expansion. No production admission, merge, issue closure or physical certification.
+
+Retain context recovery failure2233: correction scripts/tests existed but had not executed before compaction. Initial recommendation was withdrawn, actual final render regenerated and visually re-reviewed,11strict tests passed unchanged. Kiosk ground metadata now labels chamfer-omitted virtual footprint corner honestly, PNGs unchanged. Issue251 records inherited v5/v6 manifest semantic-validation gap. V7 independently rejects it, old bytes/validators remain unchanged. No unfiltered Swift retry or automatic CI polling chain. Native slot free. Publication and tracked-export validation are the remaining allowed follow-through, not another source attempt.
+
 ## Building perspective/detail pass authorized, November16 22:13UTC
 
 Owner reviewed v6 as closer but explicitly identified building perspective and missing detail, then approved continuation at22:13:11UTC. `intent/2026-11-16-building-perspective-detail.md` is the accepted bounded work order. V6 is NOT accepted and remains immutable. Motion/encounter expansion, production admission, merge, physical certification and issue closure stay gated.

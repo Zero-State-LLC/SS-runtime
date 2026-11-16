@@ -42,6 +42,16 @@ class KioskTests(unittest.TestCase):
             self.assertAlmostEqual(u/5,(x-y)/math.sqrt(2),places=12)
             self.assertAlmostEqual(-v/5,(x+y)/(2*math.sqrt(2)),places=12)
 
+    def test_explicit_ground_boundary(self):
+        worlds=[[512,640],[640,640],[640,768],[512,768]]
+        self.assertEqual(self.reg['groundBoundaryWorld'],worlds)
+        self.assertEqual(len(self.reg['groundPixelsTopLeft']),4)
+        for (u,v),(x,y) in zip(self.reg['groundPixelsTopLeft'],worlds):
+            self.assertAlmostEqual((u-500)*.2,((x-512)-(y-640))/math.sqrt(2),places=11)
+            self.assertAlmostEqual((1160-v)*.2,((x-512)+(y-640))/(2*math.sqrt(2)),places=11)
+        self.assertIn('virtual',self.reg['groundBoundaryProvenance'][0])
+        self.assertIn('not visible mesh contact',self.reg['groundBoundaryProvenance'][0])
+
     def test_basis_vectors_and_upright(self):
         a=replay.base.raw([0,0,0]);x=replay.base.raw([1,0,0]);y=replay.base.raw([0,1,0]);z=replay.base.raw([0,0,1])
         self.assertAlmostEqual(x[1]/x[0],-.5)

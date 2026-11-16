@@ -131,6 +131,14 @@ def render(mesh,textures):
                         depth[idx]=d;pixels[left+xx,top+yy]=tc[xx,yy]
     return image
 
+def add_ground_boundary(reg):
+    corners=[[512,640],[640,640],[640,768],[512,768]]
+    root=reg['rootPixelsTopLeft']
+    reg['groundPixelsTopLeft']=[[root[0]+5*((x-512)-(y-640))/math.sqrt(2),root[1]-5*((x-512)+(y-640))/(2*math.sqrt(2))] for x,y in corners]
+    reg['groundBoundaryWorld']=corners
+    reg['groundBoundaryProvenance']=['virtual authoritative rectangle corner, omitted by visible chamfer39; not visible mesh contact','authored footprint corner','authored footprint corner','authored footprint corner']
+    return reg
+
 def build(out):
     out.mkdir(parents=True,exist_ok=True)
     config=load(HERE/'geometry-controls.json')
@@ -140,6 +148,7 @@ def build(out):
     for name,im in tex.items():im.save(out/'textures'/f'{name}.png')
     reg=base.registration(mesh)
     reg.update(canvasPixels=reg['sourceCanvas'],rootPixelsTopLeft=reg['sourceRoot'],worldPosition=[512,640],drawSizeWorld=[v*.2 for v in reg['sourceCanvas']],status='FIRST_SAMPLE_AWAITING_COORDINATOR_VISUAL_REVIEW')
+    add_ground_boundary(reg)
     dump(out/'registration.json',reg)
     image=render(mesh,tex);image.save(out/'building-alpha.png')
     roof=load(HERE/'roof-layer.json');roof['localWorldAnchor'][2]=config['roofZ']
