@@ -22,7 +22,7 @@ No complete coherent-scene correction is available yet. Do not relabel a scene a
 - Camera: two new provider-native edits are coordinator-rejected. Their actual opaque RGB output and source drift are retained in `../camera-first-sample-20261116/`. No third same-approach retry or native substitution.
 - Player: the four-view comparison exposes, rather than fixes, independent-source costume, satchel and viewpoint mismatches. A partition of separate images is not a common editable master.
 - Building: opaque silhouette samples are not established wall-to-ground landmarks. A contour fit cannot prove wall registration or hidden world correspondence. The source remains unregistered.
-- Paving: first edge-blend repair has zero outer-edge differences but obvious periodic dark frames in the actual1881-square preview. It is rejected as a correction. A separate repair of that diagnosed blending error is in progress, without changing the original.
+- Paving: first edge-blend repair has zero outer-edge differences but obvious periodic dark frames in the actual1881-square preview. It is rejected as a correction. Revision02 repairs that diagnosed blending error using corresponding opposite strips and an immutable second-pass input. Coordinator independently reran its exhaustive paired-bound, interior, exact-edge and mutation checks on November16 at06:33UTC and viewed the actual1881-square repeat at06:34UTC: the broad dark frames are absent, but distinctive stains/cracks repeat every four slabs and fine tile boundaries remain discernible. This is a bounded technical improvement, not aesthetic approval, native integration or proof of curb/rail continuity. Original and rejected attempt1 pixels remain retained.
 
 ## Physical diagnostic availability
 

@@ -1,5 +1,17 @@
 # Next work order
 
+## Independent source packet checkpoint, November 16 06:35 UTC
+
+Coordinator reran seven retained playback regressions, five stone-registration consistency tests and Player-family integrity checks (107 assertions, two explicitly absent south roles) successfully. The stone source remains unregistered and the four independent Player views remain an unreconciled family, not a common editable master. Revision02 paving passes paired-bound, mean/interior/edge and mutation checks; actual1881-square repeat review shows the broad attempt1 dark frame removed, but four-slab stain repetition remains. No native paving integration or visual acceptance. Parent paving verifier emitted ignored file-handle warnings despite exit0; a context-manager repair and clean rerun are required before publication of that packet.
+
+Existing-art independent follow-through is assigned: blowfish owns new traversal test/packet, deer owns legal-encounter test/packet, crab owns viewport/accessibility test/packet. These diagnose existing supported presentation, not the blocked coherent repaired scene. No new state/clip art or production edits. Workers must request the serialized native slot before running. Camera, Player and building source gates still block slice7. Exact baseline fd83ed7 CI43816291364 was fetched06:34UTC as queued, not passing.
+
+## Exact playback failure narrowed, November 16 06:25 UTC
+
+`docs/review/playback237-diagnosis-20261116/` retains six original failed-run attachments, full-head GitHub metadata, extractor and seven portable trace-reader regressions. Coordinator independently re-exported/byte-compared the failed case from artifact14198828420 for run43803119616/head9769d922cc8f3e908c0d611dd2f48df6418089cd. Actual failing case: zoom1.25, tracking=true, Reduced Motion=false,63records, missing frame15. Gaps64.4489ms and315.5293ms bracket missing observations in both complete cycles. The strict failed-case probe still returns1, while the control returns0. Root stall origin remains UNPROVEN:299.3588ms is outside the preceding measured update, not thereby proven host-only. Initial cold-order/harness-only claims were withdrawn. No deterministic selector replaces the live test and no assertion is weakened.
+
+Independent #238 checks: corrected3ad31ad is an ancestor, and all14existing portable native-evidence regressions pass, including clamped/missing-loop rejection. That integration evidence is not a #237 fix or a closure of either issue. CI now checks that retained failed evidence remains detectable. Source/fidelity/device/production gates remain separate. Native slot is free, but new source-dependent scene expansion remains blocked.
+
 ## Baseline provenance verified, November 16 06:20 UTC
 
 Fresh revision02 `WholeSceneBoundInputsTests/testBoundInputsRevision02` actual0601 xcresult has1passed/0failed/0skipped. Coordinator independently re-export-verified54plates/18records,2runtime ground assets,16Camera frame hashes and6upright/paving inputs. All54images reproduce revision01 pixels exactly, without retroactively attesting revision01's unbound inputs. Original baseline14tests, paving7tests and revision02's10evidence/color plus3gallery checks pass independently. Actual Brave exercised all54new selections at704x326 or352x163, correct reference aspect/grayscale, no overflow. Original fixtures/plates remain unchanged. CI now runs the portable evidence guards.

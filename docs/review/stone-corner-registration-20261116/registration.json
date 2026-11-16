@@ -1,0 +1,79 @@
+{
+  "status": "PROVISIONAL_DIAGNOSTIC_MISSING_CORRESPONDENCE",
+  "readyForNative": false,
+  "ownerAccepted": false,
+  "productionAdmitted": false,
+
+  "source": "../stone-corner-source-20261116/source/generated-stone-corner.png",
+  "sourceSHA256": "1226f74865aceafc0835501465e0be6aa94c8bbdad7f3b3e61af00a4af2ee475",
+  "provenance": "../stone-corner-source-20261116/source/generation.json",
+  "coordinateConvention": "source pixels, origin top-left, x right, y down",
+  "actualCanvas": [1254, 1254],
+  "requestedCanvas": [1024, 1024],
+  "canvasScaleFactor": 1.2246,
+
+  "observedWallContactLandmarks": null,
+  "observedWallContactNote": "The source contains no rendered ground surface. There is no visible wall-meets-ground junction in the image. What is visible at the base of each wall face is the bottom edge of the stone plinth/base course, which terminates sharply into transparency (alpha drops from ~251 to ~62 to ~3 within 4 pixels). This plinth edge is NOT identified as wall-ground contact: its depth, offset, and relationship to the actual ground plane are unknown. No wall-ground contact landmarks have been manually identified.",
+
+  "plintheBaseEdgeDiagnostic": {
+    "note": "PROVISIONAL ONLY. The plinth-base edge is the closest visually detectable feature to a wall base, but it is not wall-ground contact. Its slope is diagnostic only.",
+    "leftPlintheBase": {
+      "leftmostObservedPoint": [142, 922],
+      "rightObservedPoint": [400, 1078],
+      "observedSlope": 0.600,
+      "referenceGroundSlope": 0.500,
+      "slopeDifferenceAbsolute": 0.100,
+      "interpretation": "PROVISIONAL — slope of the plinth-base painted edge, not of a measured wall-ground junction. The mismatch may reflect plinth geometry, perspective bake, or a genuinely steeper ground angle; it is not proved to be a registration blocker.",
+      "fitMaxResidualPx": 2.80,
+      "fitRMSPx": 1.37
+    },
+    "rightPlintheBase": {
+      "rightmostObservedPoint": [1111, 914],
+      "leftObservedPoint": [840, 1082],
+      "observedSlope": -0.608,
+      "referenceGroundSlope": -0.500,
+      "slopeDifferenceAbsolute": 0.108,
+      "interpretation": "PROVISIONAL — same caveat as left face.",
+      "fitMaxResidualPx": 6.07,
+      "fitRMSPx": 2.66
+    }
+  },
+
+  "hiddenWallContactLandmarks": null,
+  "hiddenWallNote": "Back-left and back-right wall-ground corners are not visible in this 2D isometric source and have not been inferred from roof extent or alpha bounds.",
+
+  "stairsAndApronLandmarks": {
+    "stairBottomFlat": {
+      "y": 1139,
+      "xStart": 480,
+      "xEnd": 740,
+      "shape": "flat horizontal, fully opaque in this span"
+    },
+    "leftApronJunction": [460, 1126],
+    "rightApronJunction": [760, 1134],
+    "note": "Stair/apron identified visually (three descending steps toward camera beneath the chamfered entrance). The stair bottom y=1139 is the deepest rendered pixel of the stair, not a ground-contact point. The stair is excluded from the wall-footprint measurement."
+  },
+
+  "groundContactAnchor": null,
+  "worldFootprintCorrespondence": null,
+  "uniformDrawScale": null,
+
+  "registrationBlocker": "MISSING_CORRESPONDENCE",
+  "registrationBlockerDetail": "No manually verified correspondence between a visible structural wall-ground junction and the existing solid has been established. The absence of rendered ground alone does not prove impossibility. Alpha silhouettes, plinth edges and prompt targets do not establish correspondence. Contour slope differences are provisional diagnostics only, not proof of a geometry defect.",
+
+  "requestedOnlyFootprint": {
+    "note": "Prompt targets only, not measured geometry. Scaled to actual 1254-px canvas by factor 1.2246.",
+    "back_scaled": [627, 551],
+    "left_scaled": [137, 796],
+    "frontVirtual_scaled": [627, 1041],
+    "right_scaled": [1117, 796],
+    "chamferLeft_scaled": [554, 1004],
+    "chamferRight_scaled": [700, 1004]
+  },
+
+  "annotatedOverlay": "landmark-overlay.png",
+  "nativeSizePreview": "index.html",
+  "withdrawnPreviews": ["withdrawn/native-size-preview.png", "withdrawn/side-by-side-comparison.png", "withdrawn/side-by-side-half.png"],
+  "selfTests": "test_registration.py",
+  "packet": "docs/review/stone-corner-registration-20261116/"
+}

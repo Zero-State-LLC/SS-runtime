@@ -1,0 +1,194 @@
+{
+  "status": "BLOCKED_UNRECONCILED_FAMILY",
+  "coherent": false,
+  "ready": false,
+  "accepted": false,
+  "absentRoleLayers": {
+    "south-equipment": "hood and satchel merged into original_upper; no separate layer; role mask is empty canvas",
+    "south-head": "hood merged into original_upper; no separate layer; role mask is empty canvas"
+  },
+  "kind": "PARTITIONED_RECORD_OF_INDEPENDENT_GENERATED_VIEWS_NOT_COMMON_EDITABLE_MASTER",
+  "coherenceWarning": "The four facings are independent image_generation outputs from separate sheets. No shared anatomical model, rig, or single editable source underpins them. Hash and dimension checks do not establish anatomical continuity, costume coherence, or consistent viewpoint. The open blockers are unresolved cross-facing discrepancies.",
+  "sliceRef": "slice-5 of 2026-11-16 ten-slice plan",
+  "ownerAuthorization": "2026-11-16 05:56:35 UTC",
+  "contractIDs": [
+    "BP-002",
+    "BP-007",
+    "BP-012",
+    "T1045"
+  ],
+  "canvas": [
+    384,
+    416
+  ],
+  "groundRoot": [
+    192,
+    336
+  ],
+  "logicalCanvas": [
+    64,
+    69.333333
+  ],
+  "logicalRoot": [
+    32,
+    56
+  ],
+  "facingOrder": [
+    "south",
+    "east",
+    "north",
+    "west"
+  ],
+  "anatomy": {
+    "south": "anatomical right on screen left; cloth patch on anatomical-left thigh (screen right)",
+    "north": "anatomical right on screen right; satchel on anatomical-right hip (screen right)",
+    "east": "screen-right facing; anatomical right near (screen right); anatomical left far",
+    "west": "screen-left facing; anatomical left near (screen left); anatomical right far"
+  },
+  "equipment": {
+    "satchel": {
+      "anatomicalBind": "right_hip",
+      "facingNotes": {
+        "south": "front-right hip, visible",
+        "north": "right hip, visible at back",
+        "east": "near right hip, partially behind torso at rear edge - BLOCKER: depth unresolved",
+        "west": "far right hip, partially occluded - BLOCKER: depth unresolved"
+      }
+    },
+    "clothPatch": {
+      "anatomicalBind": "left_thigh",
+      "facingNotes": {
+        "south": "screen right thigh, visible",
+        "north": "screen left thigh (hidden side), not visible",
+        "east": "anatomical left = far thigh, partially visible or occluded",
+        "west": "anatomical left = near thigh, visible"
+      }
+    }
+  },
+  "partVocabulary": {
+    "note": "Parts are per-facing; names beginning far_/near_ are side-facing variants.",
+    "canonical_parts": [
+      "far_left_coat_tail",
+      "far_left_forearm_hand",
+      "far_left_shin_boot",
+      "far_left_thigh",
+      "far_left_upper_arm",
+      "far_right_coat_tail",
+      "far_right_forearm_hand",
+      "far_right_shin_boot",
+      "far_right_thigh",
+      "far_right_upper_arm",
+      "hood",
+      "left_coat_tail",
+      "left_forearm_hand",
+      "left_shin_boot",
+      "left_shin_kneepad",
+      "left_thigh",
+      "left_upper_arm",
+      "near_left_coat_tail",
+      "near_left_forearm_hand",
+      "near_left_shin_boot",
+      "near_left_thigh",
+      "near_left_upper_arm",
+      "near_right_coat_tail",
+      "near_right_forearm_hand",
+      "near_right_shin_boot",
+      "near_right_thigh",
+      "near_right_upper_arm",
+      "original_boots",
+      "original_upper",
+      "right_coat_tail",
+      "right_forearm_hand",
+      "right_satchel",
+      "right_shin_boot",
+      "right_shin_kneepad",
+      "right_thigh",
+      "right_upper_arm",
+      "torso_coat_equipment"
+    ],
+    "roles": {
+      "lower_body": [
+        "far_left_shin_boot",
+        "far_left_thigh",
+        "far_right_shin_boot",
+        "far_right_thigh",
+        "left_shin_boot",
+        "left_shin_kneepad",
+        "left_thigh",
+        "near_left_shin_boot",
+        "near_left_thigh",
+        "near_right_shin_boot",
+        "near_right_thigh",
+        "original_boots",
+        "right_shin_boot",
+        "right_shin_kneepad",
+        "right_thigh"
+      ],
+      "upper_body": [
+        "far_left_coat_tail",
+        "far_left_forearm_hand",
+        "far_left_upper_arm",
+        "far_right_coat_tail",
+        "far_right_forearm_hand",
+        "far_right_upper_arm",
+        "left_coat_tail",
+        "left_forearm_hand",
+        "left_upper_arm",
+        "near_left_coat_tail",
+        "near_left_forearm_hand",
+        "near_left_upper_arm",
+        "near_right_coat_tail",
+        "near_right_forearm_hand",
+        "near_right_upper_arm",
+        "original_upper",
+        "right_coat_tail",
+        "right_forearm_hand",
+        "right_upper_arm",
+        "torso_coat_equipment"
+      ],
+      "equipment": [
+        "right_satchel"
+      ],
+      "head": [
+        "hood"
+      ]
+    }
+  },
+  "sourcePackets": {
+    "south": {
+      "path": "docs/review/player-baggy-south-source-20261116",
+      "image": "south-baggy-neutral.png",
+      "sha256": "a4ff7035ec256c613bc96eaf65b59a64e837c81adc895bcd4e5cd42e6f18a2a3",
+      "layersDir": "layers"
+    },
+    "north": {
+      "path": "docs/review/player-north-source-20261116",
+      "image": "north-neutral.png",
+      "sha256": "0a6e15bd2aa8cc486dd14521b60680bed6a2dd0833707972850e65d7991f4fbb",
+      "layersDir": "layers",
+      "activeAttempt": "attempts/01-uniform-0.4"
+    },
+    "east": {
+      "path": "docs/review/player-side-source-20261116/east",
+      "image": "east-neutral.png",
+      "sha256": "4be91d1db958938de2fbbc403279345ebfd2c45363beb0829bed2c35d20948af",
+      "layersDir": "layers"
+    },
+    "west": {
+      "path": "docs/review/player-side-source-20261116/west",
+      "image": "west-neutral.png",
+      "sha256": "9d06aa548271ed8249dd59087a8ea0d293d7b3dc9dad23cc0ee7d5526211b744",
+      "layersDir": "layers"
+    }
+  },
+  "openBlockers": [
+    "Satchel depth placement differs between south (front-hip) and north/east/west (rear-hip). Not resolved; tests do not assert it.",
+    "Coat tails generated broader and flatter on north/east/west than south. Not reconciled.",
+    "Camera elevation: side views appear closer to eye level than south. Not proven.",
+    "Baggy-south trouser shins 5-7 px narrower than north reference at row 295. Trade-off deferred.",
+    "Shin and boot are one part on all non-south facings; no independent boot control.",
+    "No joint-range, contact, heel/toe, native renderer, simulator, live-cadence or device verification.",
+    "These generated facings are not original master paint. Hidden surfaces are generated proposals."
+  ],
+  "limits": "PROPOSED source samples only. No production admission, animation, native-render, shipping or pin change authorized."
+}
