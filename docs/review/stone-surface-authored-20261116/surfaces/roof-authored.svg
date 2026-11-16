@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<title>roof-authored: authored surface paint</title>
+<rect width="512" height="512" fill="rgb(69, 73, 71)"/>
+<polygon id="paint-0" points="10,10 128,10 128,133 10,133" fill="rgb(76, 78, 73)"/>
+<polygon id="paint-1" points="261,10 383,10 383,133 261,133" fill="rgb(67, 71, 68)"/>
+<polygon id="paint-2" points="133,138 256,138 256,261 133,261" fill="rgb(75, 76, 70)"/>
+<polygon id="paint-3" points="388,138 501,138 501,261 388,261" fill="rgb(61, 66, 65)"/>
+<polygon id="paint-4" points="10,266 128,266 128,388 10,388" fill="rgb(67, 71, 68)"/>
+<polygon id="paint-5" points="261,266 383,266 383,388 261,388" fill="rgb(73, 76, 72)"/>
+<polygon id="paint-6" points="133,393 256,393 256,501 133,501" fill="rgb(61, 65, 63)"/>
+<polygon id="paint-7" points="388,393 501,393 501,501 388,501" fill="rgb(73, 75, 70)"/>
+<polygon id="paint-8" points="56,31 107,26 102,46 118,61 97,82 82,72 72,102 51,92 61,66 41,51" fill="rgb(80, 82, 75)"/>
+<polygon id="paint-9" points="296,296 363,286 358,317 337,332 363,353 332,373 307,353 322,332 286,317" fill="rgb(84, 84, 75)"/>
+<polygon id="paint-10" points="174,409 220,414 215,434 235,455 204,475 179,465 184,445 158,439" fill="rgb(89, 92, 82)"/>
+<polygon id="paint-11" points="393,169 450,153 460,179 429,199 445,220 409,235 383,215 404,194" fill="rgb(85, 90, 83)"/>
+<path id="edge-0" d="M 128 0 L 128 511" stroke="rgb(51, 57, 55)" stroke-width="4"/>
+<path id="edge-1" d="M 256 0 L 256 511" stroke="rgb(51, 57, 55)" stroke-width="4"/>
+<path id="edge-2" d="M 383 0 L 383 511" stroke="rgb(51, 57, 55)" stroke-width="4"/>
+<path id="edge-3" d="M 0 133 L 511 133" stroke="rgb(51, 57, 55)" stroke-width="4"/>
+<path id="edge-4" d="M 0 261 L 511 261" stroke="rgb(51, 57, 55)" stroke-width="4"/>
+<path id="edge-5" d="M 0 388 L 511 388" stroke="rgb(51, 57, 55)" stroke-width="4"/>
+<defs><filter id="soft-0"><feGaussianBlur stdDeviation="0.8"/></filter></defs>
+<polyline id="brush-0" points="31,61 46,56 56,66 77,56 87,61" fill="none" stroke="rgb(110, 108, 94)" stroke-opacity="0.34" stroke-width="9" filter="url(#soft-0)"/>
+<defs><filter id="soft-1"><feGaussianBlur stdDeviation="0.5"/></filter></defs>
+<polyline id="brush-1" points="41,82 51,77 61,92 77,87" fill="none" stroke="rgb(112, 110, 95)" stroke-opacity="0.4" stroke-width="6" filter="url(#soft-1)"/>
+<defs><filter id="soft-2"><feGaussianBlur stdDeviation="0.6"/></filter></defs>
+<polyline id="brush-2" points="77,36 97,41 102,61" fill="none" stroke="rgb(119, 116, 99)" stroke-opacity="0.3" stroke-width="4" filter="url(#soft-2)"/>
+<defs><filter id="soft-3"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<polyline id="brush-3" points="158,158 179,164 199,153 215,174" fill="none" stroke="rgb(92, 94, 84)" stroke-opacity="0.25" stroke-width="22" filter="url(#soft-3)"/>
+<defs><filter id="soft-4"><feGaussianBlur stdDeviation="0.7"/></filter></defs>
+<polyline id="brush-4" points="179,179 194,174 215,184 220,204" fill="none" stroke="rgb(108, 106, 90)" stroke-opacity="0.3" stroke-width="6" filter="url(#soft-4)"/>
+<defs><filter id="soft-5"><feGaussianBlur stdDeviation="1"/></filter></defs>
+<polyline id="brush-5" points="286,301 301,291 317,307 332,296 353,312" fill="none" stroke="rgb(121, 116, 98)" stroke-opacity="0.4" stroke-width="11" filter="url(#soft-5)"/>
+<defs><filter id="soft-6"><feGaussianBlur stdDeviation="0.4"/></filter></defs>
+<polyline id="brush-6" points="296,327 312,337 332,327 347,342" fill="none" stroke="rgb(110, 106, 90)" stroke-opacity="0.37" stroke-width="7" filter="url(#soft-6)"/>
+<defs><filter id="soft-7"><feGaussianBlur stdDeviation="0.6"/></filter></defs>
+<polyline id="brush-7" points="317,358 332,347 358,358" fill="none" stroke="rgb(129, 120, 98)" stroke-opacity="0.27" stroke-width="4" filter="url(#soft-7)"/>
+<defs><filter id="soft-8"><feGaussianBlur stdDeviation="2"/></filter></defs>
+<polyline id="brush-8" points="388,184 409,179 424,194 445,184 460,204" fill="none" stroke="rgb(91, 97, 88)" stroke-opacity="0.32" stroke-width="15" filter="url(#soft-8)"/>
+<defs><filter id="soft-9"><feGaussianBlur stdDeviation="0.3"/></filter></defs>
+<polyline id="brush-9" points="409,215 424,204 439,220" fill="none" stroke="rgb(109, 110, 95)" stroke-opacity="0.32" stroke-width="4" filter="url(#soft-9)"/>
+<defs><filter id="soft-10"><feGaussianBlur stdDeviation="1"/></filter></defs>
+<polyline id="brush-10" points="158,439 179,429 199,450 220,439" fill="none" stroke="rgb(102, 105, 92)" stroke-opacity="0.35" stroke-width="12" filter="url(#soft-10)"/>
+<defs><filter id="soft-11"><feGaussianBlur stdDeviation="0.5"/></filter></defs>
+<polyline id="brush-11" points="174,465 199,460 215,470" fill="none" stroke="rgb(113, 112, 96)" stroke-opacity="0.3" stroke-width="5" filter="url(#soft-11)"/>
+</svg>

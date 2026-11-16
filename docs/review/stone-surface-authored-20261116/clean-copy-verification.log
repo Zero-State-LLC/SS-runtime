@@ -1,0 +1,22 @@
+ISOLATED ROOT: /Users/appliedalchemylabs/.jcode/scratch/stone-clean-copy-stu3l5jy
+EXTERNAL INPUTS: committed benchmark and arena contract only
+Authored 144 closed parts
+FIRST SAMPLE READY /Users/appliedalchemylabs/.jcode/scratch/stone-clean-copy-stu3l5jy/docs/review/stone-surface-authored-20261116/comparison.png
+/Users/appliedalchemylabs/.jcode/scratch/stone-clean-copy-stu3l5jy/docs/review/stone-surface-authored-20261116/painted-direct-replay.png
+test_alpha_native_half_and_original_unchanged (__main__.AuthoredStoneTests.test_alpha_native_half_and_original_unchanged) ... ok
+test_authored_surface_sources_and_common_lighting (__main__.AuthoredStoneTests.test_authored_surface_sources_and_common_lighting) ... ok
+test_closed_surfaces_outward_normals_and_nonzero_volume (__main__.AuthoredStoneTests.test_closed_surfaces_outward_normals_and_nonzero_volume) ... ok
+test_direct_edits_change_actual_render (__main__.AuthoredStoneTests.test_direct_edits_change_actual_render) ... ok
+test_direct_source_replay_is_byte_identical (__main__.AuthoredStoneTests.test_direct_source_replay_is_byte_identical) ... FIRST SAMPLE READY /Users/appliedalchemylabs/.jcode/scratch/stone-clean-copy-stu3l5jy/docs/review/stone-surface-authored-20261116/replay-test-bgq6g8aa/comparison.png
+ok
+test_foundation_registered_to_unchanged_original_solid (__main__.AuthoredStoneTests.test_foundation_registered_to_unchanged_original_solid) ... ok
+test_projection_and_uprights_have_not_changed (__main__.AuthoredStoneTests.test_projection_and_uprights_have_not_changed) ... ok
+test_stairs_separate_and_within_collision_rectangle (__main__.AuthoredStoneTests.test_stairs_separate_and_within_collision_rectangle) ... ok
+test_windows_are_recessed_not_painted_over_filled_shell (__main__.AuthoredStoneTests.test_windows_are_recessed_not_painted_over_filled_shell) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 29.275s
+
+OK
+PASS: author mesh byte-identical, 112 existing PNG/SVG exports byte-identical, registration mapping unchanged, direct painted replay identical, nine source tests passed.
+Updated source hashes only in packet registration.json.

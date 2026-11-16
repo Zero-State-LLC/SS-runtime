@@ -1,0 +1,159 @@
+{
+  "schema": "authored-registration-001",
+  "status": "SOURCE_TECHNICAL_REVIEW_ONLY",
+  "referenceSHA256": "49aa35447230187e3eabe948cdc8eba6d6d465b2605d624e2cf7443f6cb69ffb",
+  "arenaSHA256": "60dbcd598bb4184fc3ad917b8967381a1669316699947bba9ccde3d2e7c54ee3",
+  "solidID": "solid-03-transit-kiosk",
+  "sourceSHA256": {
+    "model.json": "b56fb3f608acc1359516e644d72d267f792b365ea65144c7dcd9b509956608b5",
+    "build.py": "2be90bdd8244efc4503741cf5dc3818fdb19e21cf7e0ba182a9562d133b1df8a",
+    "mesh.json": "376396df6878baf67bf8b691e451da55779052e139a0340740ca8af52b07c2b0"
+  },
+  "authoritativeBounds": [
+    512,
+    640,
+    640,
+    768
+  ],
+  "worldRoot": [
+    512,
+    640,
+    0
+  ],
+  "sourceRoot": [
+    560,
+    885
+  ],
+  "sourcePixelsPerWorldUnit": 5,
+  "uniformDrawScale": 0.2,
+  "sourceCanvas": [
+    1120,
+    960
+  ],
+  "spriteSizeScenePoints": [
+    224,
+    192
+  ],
+  "spriteAnchorBottomLeft": [
+    0.5,
+    0.078125
+  ],
+  "screenProjection": "u=rootU+s*(x-y)/sqrt(2), v=rootV-s*((x+y)/(2*sqrt(2))+z)",
+  "landmarks": [
+    {
+      "id": "A",
+      "local": [
+        0,
+        0,
+        0
+      ],
+      "world": [
+        512,
+        640,
+        0
+      ],
+      "source": [
+        560.0,
+        885.0
+      ],
+      "provenance": "collision-only virtual corner"
+    },
+    {
+      "id": "B",
+      "local": [
+        128,
+        0,
+        0
+      ],
+      "world": [
+        640,
+        640,
+        0
+      ],
+      "source": [
+        1012.5483399593904,
+        658.7258300203048
+      ],
+      "provenance": "authored wall base"
+    },
+    {
+      "id": "C",
+      "local": [
+        128,
+        128,
+        0
+      ],
+      "world": [
+        640,
+        768,
+        0
+      ],
+      "source": [
+        560.0,
+        432.45166004060957
+      ],
+      "provenance": "authored hidden wall base"
+    },
+    {
+      "id": "D",
+      "local": [
+        0,
+        128,
+        0
+      ],
+      "world": [
+        512,
+        768,
+        0
+      ],
+      "source": [
+        107.45166004060957,
+        658.7258300203048
+      ],
+      "provenance": "authored wall base"
+    },
+    {
+      "id": "E",
+      "local": [
+        24,
+        0,
+        0
+      ],
+      "world": [
+        536,
+        640,
+        0
+      ],
+      "source": [
+        644.8528137423857,
+        842.5735931288071
+      ],
+      "provenance": "authored chamfer endpoint"
+    },
+    {
+      "id": "F",
+      "local": [
+        0,
+        24,
+        0
+      ],
+      "world": [
+        512,
+        664,
+        0
+      ],
+      "source": [
+        475.1471862576143,
+        842.5735931288071
+      ],
+      "provenance": "authored chamfer endpoint"
+    }
+  ],
+  "measuredReferenceGeometry": null,
+  "hiddenGeometry": "Deliberately authored closed surfaces, not observations of the cropped benchmark.",
+  "collision": "Original 128x128 rectangle is unchanged. Chamfer cutback and stairs are presentation only. The visual entrance remains blocked.",
+  "stairs": "Separate closed meshes and stairs-alpha.png, same explicit root/scale, entirely within rectangular collision bounds.",
+  "ownerAccepted": false,
+  "productionAdmitted": false,
+  "readyForNative": false
+}

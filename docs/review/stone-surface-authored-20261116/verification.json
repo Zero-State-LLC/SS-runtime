@@ -1,0 +1,17 @@
+{
+  "status": "TECHNICAL_SOURCE_VERIFIED_VISUAL_MISMATCH",
+  "tests": {"command": "python3 docs/review/stone-surface-authored-20261116/test_source.py", "passed": 9, "failed": 0, "seconds": 26.837, "log": "tests.log"},
+  "geometry": {"closedParts": 144, "faces": 963, "paintSurfaces": 51},
+  "directPaintedReplay": {"entrypoint": "replay_painted.py", "byteIdenticalToSource": true, "sha256": "fcb5313fd7cbfc53516e9a517c5a331d5d3a12a21fd8f55899d72e4057c4135e"},
+  "comparisonSHA256": "b486f13bbbb29482bfbf72c421a7aa15a732f59102b0ecbd6134bdaeaf420ee1",
+  "oldPacketPreviewSHA256Unchanged": "85146b489f63d43976aa3bd1c0d52163526d03a2707925b4c5298d271870740b",
+  "fullSourceUnchangedByAreaNormalization": true,
+  "visualDesignAttempts": 2,
+  "preservedFailures": ["attempt-01/topology-check.log", "attempt-02-before-alpha-fix/tests.log"],
+  "authorVisualReview": "Mismatch: improved dimensional architecture, but angular paint/roof/glass remain model-like rather than benchmark painterly stone.",
+  "coordinatorReview": "Requested, not assumed",
+  "ownerAccepted": false,
+  "nativeIntegrationReady": false,
+  "productionAdmitted": false,
+  "nextAction": "Coordinator visual/method decision, not a third same-method visual iteration."
+}

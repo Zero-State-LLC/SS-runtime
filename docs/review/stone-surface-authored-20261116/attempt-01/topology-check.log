@@ -1,0 +1,15 @@
+test_closed_surfaces_outward_normals_and_nonzero_volume (__main__.AuthoredStoneTests.test_closed_surfaces_outward_normals_and_nonzero_volume) ... FAIL
+
+======================================================================
+FAIL: test_closed_surfaces_outward_normals_and_nonzero_volume (__main__.AuthoredStoneTests.test_closed_surfaces_outward_normals_and_nonzero_volume)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/stone-surface-authored-20261116/test_source.py", line 37, in test_closed_surfaces_outward_normals_and_nonzero_volume
+    self.assertGreater(volume,0,part['name'])
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: -711.6595199999999 not greater than 0 : stair-1
+
+----------------------------------------------------------------------
+Ran 1 test in 0.021s
+
+FAILED (failures=1)

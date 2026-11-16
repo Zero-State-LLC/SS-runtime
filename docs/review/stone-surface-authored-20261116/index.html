@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stone surface-authored source review</title>
+<style>body{background:#303436;color:#eee;font:16px system-ui;margin:24px}h1{font-size:24px}p{max-width:960px}img{max-width:100%;height:auto}figure{margin:24px 0}a{color:#9cd6e9}.alpha{background:repeating-conic-gradient(#44494b 0 25%,#383d40 0 50%) 0/24px 24px}.native{display:flex;gap:28px;align-items:start;overflow:auto}.native img{max-width:none}</style>
+<h1>Stone: direct mesh and individually authored surface paint</h1>
+<p><strong>Source review only, not native runtime evidence or accepted painterly art.</strong> Actual entry/window depth and trim improved, but pigment edges, roof and glass remain model-like. Two bounded visual attempts retained. Collision is the unchanged blocked 128×128 rectangle, including the visible chamfer/steps.</p>
+<figure><figcaption>Original unchanged/un-cropped, candidate 1×, half and 1.4× with complete roof retained</figcaption><img src="comparison.png" width="1408" height="530" alt="Original versus surface-authored stone"></figure>
+<div class="native"><figure><figcaption>1× logical canvas</figcaption><img class="alpha" src="native-alpha.png" width="224" height="192" alt="Native logical scale"></figure><figure><figcaption>Half</figcaption><img class="alpha" src="half-alpha.png" width="112" height="96" alt="Half logical scale"></figure></div>
+<figure><figcaption>Grayscale comparison</figcaption><img src="comparison-grayscale.png" width="1408" height="530" alt="Grayscale source comparison"></figure>
+<figure><figcaption>Actual full source alpha, no hidden roof crop</figcaption><img class="alpha" src="preview-alpha.png" width="1120" height="960" alt="Full source"></figure>
+<figure><figcaption>Authored foundation/collision registration, not measured reference landmarks</figcaption><img class="alpha" src="registration-overlay.png" width="560" height="480" alt="Registration overlay"></figure>
+<figure><figcaption>Deliberately authored hidden surfaces</figcaption><img class="alpha" src="hidden-surfaces.png" width="560" height="480" alt="Authored reverse geometry"></figure>
+<p><a href="README.md">Source handoff and limitations</a> · <a href="mesh.json">Editable mesh</a> · <a href="surface-paint.json">Surface paint</a> · <a href="brushwork.json">Authored brush paths</a> · <a href="registration.json">Registration</a> · <a href="tests.log">Focused tests</a></p>
+<p>Retained <a href="attempt-01/comparison.png">first visual attempt</a>, <a href="attempt-01/topology-check.log">honest topology failure</a>, and <a href="attempt-02-before-alpha-fix/tests.log">half-scale alpha failure</a>. Numerical normalization correction did not change raw source pixels. No owner acceptance or production admission.</p>
+</html>

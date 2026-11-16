@@ -6,11 +6,11 @@ Approved continuation intent is retained as `intent/2026-11-16-source-to-scene-c
 
 | Slice | Current outcome | Remaining gate |
 | --- | --- | --- |
-| 1 CI | #244 repair published be7db0d8cbdf95c84f94456389bb22433a86d59d, exact run43833371384 queued at08:42 | Exact-head remote completion, not certified green |
+| 1 CI | #244 repair be7db0d8cbdf95c84f94456389bb22433a86d59d: exact run43833371384 spec-parity SUCCESS at08:50 | Swift/Debug/Release still running; newer1752e22 run43834306239 queued |
 | 2 Camera | First authored source NOT RECOMMENDED; final bounded surface pass underway | Independent visual recommendation, portable inputs |
 | 3 south Player | Knees restored and material sampling fixed, but thigh patch/folds still mismatched. Two previews exhausted, NOT RECOMMENDED | Changed garment surface/UV method decision |
 | 4 family | Not started | South recommendation |
-| 5 stone | Two direct-source attempts still model-like, NOT RECOMMENDED | Changed-method decision; finish portable rejected record |
+| 5 stone | Two direct-source attempts still model-like, NOT RECOMMENDED. Coordinator clean-copy replay passed at08:53:144mesh components,112exports byte-identical,9tests passed | Changed-method decision; no third visual attempt |
 | 6 paving | Bounded material/layout recommendation only | Whole-scene review, not finished environment |
 | 7 scene | Not started | Recommended Player/Camera/stone sources |
 | 8 motion | Not started | Owner scene approval |
