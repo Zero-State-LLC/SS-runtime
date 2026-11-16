@@ -1,0 +1,25 @@
+test_all_v7_bytes_immutable (__main__.PlanTests.test_all_v7_bytes_immutable) ... ok
+test_ground_canvas (__main__.PlanTests.test_ground_canvas) ... /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/footprint-ground-repair-20261116/plan/test_plan.py:92: ResourceWarning: unclosed file <_io.BufferedReader name='/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/footprint-ground-repair-20261116/plan/ground.png'>
+  def test_ground_canvas(self):self.assertEqual(Image.open(HERE/'ground.png').size,(4608,4608))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_mutation_camera_root (__main__.PlanTests.test_mutation_camera_root) ... ok
+test_mutation_excess_shadow (__main__.PlanTests.test_mutation_excess_shadow) ... ok
+test_mutation_field (__main__.PlanTests.test_mutation_field) ... ok
+test_mutation_foundation_hole (__main__.PlanTests.test_mutation_foundation_hole) ... ok
+test_mutation_invented_neighbor_contact (__main__.PlanTests.test_mutation_invented_neighbor_contact) ... ok
+test_mutation_missing_neighbor (__main__.PlanTests.test_mutation_missing_neighbor) ... ok
+test_mutation_painted_road_inside_solid (__main__.PlanTests.test_mutation_painted_road_inside_solid) ... ok
+test_mutation_registration (__main__.PlanTests.test_mutation_registration) ... ok
+test_mutation_solid_change (__main__.PlanTests.test_mutation_solid_change) ... ok
+test_mutation_source_landmark (__main__.PlanTests.test_mutation_source_landmark) ... ok
+test_mutation_tree_old_interior (__main__.PlanTests.test_mutation_tree_old_interior) ... ok
+test_mutation_tree_on_road (__main__.PlanTests.test_mutation_tree_on_road) ... ok
+test_mutation_virtual_as_actual (__main__.PlanTests.test_mutation_virtual_as_actual) ... ok
+test_mutation_zero_sidewalk (__main__.PlanTests.test_mutation_zero_sidewalk) ... ok
+test_semantics_and_material_intersections (__main__.PlanTests.test_semantics_and_material_intersections) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 1.244s
+
+OK

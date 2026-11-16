@@ -1,0 +1,29 @@
+{
+  "schema": "bounded-material-correction-002",
+  "attempt": 2,
+  "maximumAttempts": 2,
+  "sharedPlanSHA256": "3b145fc228ac73367b1d6c5d60ee48e1578ebdbc972493afa9ba5a91018d880b",
+  "retainedPaving": {"path": "docs/review/paving-corner-review-20261116/paving-supertile.png", "sha256": "1b864486f0859262c4e851a95e3fe3c3b0210ee5ec3306ada5ee066a05319c7a"},
+  "retainedOriginal": {"path": "docs/review/paving-repeat-repair-20261116/revision02/paving-muted-candidate.png", "sha256": "7a1f29c7b0f1a0a96e12484de84da21e7ab4ebee10cab2e829ed19309ca17d35"},
+  "pavingTilePixels": [512,384],
+  "curbJointSpacingWorld": 24,
+  "curbJointWidthPixels": 2,
+  "foundationCoursePixels": [48,24],
+  "roadDetails": [
+    {"kind":"crossing", "bounds":[676,536,756,544]},
+    {"kind":"crossing", "bounds":[676,552,756,560]},
+    {"kind":"crossing", "bounds":[676,568,756,576]},
+    {"kind":"crossing", "bounds":[676,584,756,592]},
+    {"kind":"lane", "bounds":[260,502,300,504]},
+    {"kind":"lane", "bounds":[340,502,380,504]},
+    {"kind":"lane", "bounds":[420,502,460,504]},
+    {"kind":"lane", "bounds":[500,502,540,504]},
+    {"kind":"lane", "bounds":[580,502,620,504]},
+    {"kind":"lane", "bounds":[804,502,844,504]},
+    {"kind":"lane", "bounds":[884,502,924,504]},
+    {"kind":"lane", "bounds":[964,502,1004,504]},
+    {"kind":"drain", "bounds":[912,580,932,590]},
+    {"kind":"manhole", "bounds":[812,530,836,554]}
+  ],
+  "limits": ["All details are clipped strictly to road material1, never foundations/sidewalk/curb.", "Road paint is presentation decoration, not new navigation or collision.", "Plan geometry, solids, roots, controls, field, framing and registration stay byte-identical to attempt01.", "Exactly one correction. No third art pass."]
+}
