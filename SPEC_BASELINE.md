@@ -5,11 +5,12 @@ Status: PINNED
 | Identity | Value |
 |---|---|
 | Specification repository | `scrimshawlife-ctrl/SS-specs` |
-| Specification commit | `b1ed874e1e8eb0e61b2174b9093201e9a61e1a4b` |
+| Specification commit | `194ded987740a330bce50bd23cd0dcdcadebc853` |
 | Ruleset | `ss-rules-014` |
 | Content | `civic-seam-content-009` |
 | Arena | `civic-seam-arena-004` |
 | Replay schema | `runtime-kernel-001` |
+| Diagnostic receipt | `run-receipt-002` |
 
 Changing any pinned identity requires:
 
@@ -88,3 +89,5 @@ D-119 adoption (SS-specs #89): lethal warning, option 2 (T1058). A telegraph or 
 D-120 adoption (SS-specs #90): own the existing shell labels `START`, `SETTINGS`, and `RESTART` (T1059). No rename and no new control. Run-shell § 8.1 stays open. No contract or fixture change; pin move only. Ruleset, content, arena, and replay identities are unchanged.
 
 D-121 adoption (SS-specs #91): the Victorian Vendor mine is a clear-filled ring (T1060). One light neutral stroke, white 0.92 at alpha 0.95, weight 2 while arming and 4 once armed. Arm, life, radius, damage, and the cap of two are unchanged. No caption and no asset id. No ruleset or content identity change. The asset catalog's `specificationCommit` moves with this pin; its entries do not.
+
+D-123 / T1061 candidate adoption (SS-specs #115, owner intent accepted 2026-11-15 23:18 UTC): new diagnostic writes declare `run-receipt-002`, preserve Camera/objective evidence and record the selected upgrade as exact ID plus `upgrades-003`. Historical v1 schema and archived bytes remain unchanged. Archive reads report identity recognition without conformance certification; unsupported writer identities fail before side effects. RC-001–RC-008 govern verification. Ruleset, content, arena, replay schema and golden gameplay digests are unchanged. The asset catalog pin field alone follows the specification commit. **Merge SS-specs #115 before this dependent runtime change.** Candidate implementation is not main adoption, defect closure or physical acceptance.

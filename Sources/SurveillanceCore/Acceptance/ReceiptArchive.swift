@@ -6,10 +6,31 @@ public enum ReceiptArchiveError: Equatable, Sendable, Error {
     case writeFailed
 }
 
+public enum ReceiptArchiveFormatStatus: Equatable, Sendable {
+    case currentUnverified
+    case historicalUnverified
+    case unrecognized
+}
+
 public struct ReceiptArchiveEntry: Equatable, Sendable {
     public var filename: String
     public var digestPrefix: String
     public var serialized: String
+
+    /// Recognizes only the declared identity, never schema conformance.
+    public var formatStatus: ReceiptArchiveFormatStatus {
+        guard let data = serialized.data(using: .utf8),
+              let object = try? JSONSerialization.jsonObject(with: data),
+              let fields = object as? [String: Any],
+              let identity = fields["schemaVersion"] as? String else {
+            return .unrecognized
+        }
+        switch identity {
+        case ContractVersions.runReceipt: return .currentUnverified
+        case "run-receipt-001": return .historicalUnverified
+        default: return .unrecognized
+        }
+    }
 
     public init(filename: String, digestPrefix: String, serialized: String) {
         self.filename = filename
@@ -36,6 +57,9 @@ public struct ReceiptArchive {
     }
 
     public func store(_ receipt: RunReceipt) throws -> ReceiptArchiveEntry {
+        guard receipt.schemaVersion == ContractVersions.runReceipt else {
+            throw ReceiptArchiveError.invalidReceipt
+        }
         let canonical = receipt.canonical()
         let serialized = canonical.serialize()
         guard serialized.utf8.count > 0, receipt.finalDigest.count >= 12 else {

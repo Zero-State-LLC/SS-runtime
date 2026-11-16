@@ -1,0 +1,11 @@
+# Receipt v2 and next-slice handoff
+
+Updated: 2026-11-16 00:03 UTC. Owner accepted receipt execution on November 15 at 23:18 UTC and the ten-slice plan on November 16 at 00:01 UTC. Neither authorizes merges or chooses BP-001 projection.
+
+Runtime PR #235, branch `fix/receipt-v2-contract`, depends on SS-specs #115 D-123/T1061 at final contract pin `194ded987740a330bce50bd23cd0dcdcadebc853`. Merge specification first, runtime second, only after explicit authorization. QA-only #234 is separate. Defects runtime #233/specs #114 remain open until adopted repair is verified.
+
+Evidence and consumer inventory: `docs/review/receipt-v2-20261115.md`. Local core: 855 tests/125 suites, separate placement 9 and fairness 1, pinned sitting four profiles, native Debug 166 and Release 124 logical tests, zero native failures/skips, all commands exit 0. Final-pin integration validates 11 repeated actual archived outputs and rejects 132 mutations; final-pin targeted archive/receipt/golden tests pass 22/5. Historical schema/observed receipt hashes unchanged. Original implementation commit62cf6f9 has all five remote CI jobs green in run43775461066; final correction publication requires latest-head CI verification.
+
+A complete legal-input SE simulator run succeeded: tick17776, Integrity11, Cameras7/8, same gameplay digest as v1. The committed actual v2 JSON validates against final schema, differs only in envelope identity/upgrade shape, and coexists with exact old bytes in the installed app archive. Not manual, Release-play or physical-device evidence. Host logs/xcresults: `/Users/appliedalchemylabs/.jcode/scratch/ss-receipt-v2-20261115`.
+
+Next approved slice: prepare BP-001 original-reference versus midpoint comparison in the actual704×326 renderer, then request the owner-reserved projection decision. Use the newer D-108 breadth-first sequence after this gate. Preserve accepted0.375s Player timing. Do not resume recorder/OBS troubleshooting. No production art admission, new gameplay, physical acceptance or expansion is implied. Follow with remaining Player releases/facings, municipal Camera, existing enemy roles, environment, shared scene, reviewed-family admission and device/human QA as the approved plan allows.
