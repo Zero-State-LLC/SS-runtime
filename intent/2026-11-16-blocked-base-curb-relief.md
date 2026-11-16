@@ -2,11 +2,11 @@
 
 Author: Jcode
 Date: November 16, 2026, 23:44 UTC
-Status: **DRAFT, awaiting explicit owner approval**
+Status: **ACCEPTED** by owner November 16, 2026, 23:48:25UTC
 Product: Surveillance Survivor Runtime
 Task/contract references: BP-001/007/012, T1045
 
-The owner's23:43 request to continue authorizes follow-through and preparation of this proposal. It is not recorded as V8 visual acceptance or approval of this new aesthetic scope. V8 remains immutable and the benchmark remains NOT MET.
+The owner explicitly approved this proposal at23:48:25UTC. This supersedes only the exhausted V8 aesthetic-attempt limit for the new isolated V9 work below. It does not grant V8 visual acceptance or open production/gameplay gates. V8 remains immutable and the benchmark remains NOT MET.
 
 ## Problem / why now
 
@@ -33,8 +33,8 @@ One new isolated V9 comparison, with V8 as immutable pixel-identical baseline:
 
 Only a new isolated review packet, review-only fixture, gallery, portable guards and documentation. No production admission, shipping asset or spec-pin changes, new gameplay, collision or targeting behavior, motion/family/encounter expansion, merge, issue closure or device certification. Nine offcrop legacy raster contacts remain unknown, not silently repaired.
 
-## Decision needed
+## Approved boundary
 
-Approve this narrow **blocked kiosk base plus existing-boundary curb relief** comparison. This approval would supersede only the exhausted V8 aesthetic-attempt limit for the newly isolated V9 work, not accept V8 or open any other gate. If product behavior or authoritative geometry must change, stop and specify in SS-specs instead.
+Approved scope is this narrow **blocked kiosk base plus existing-boundary curb relief** comparison. Approval supersedes only the exhausted V8 aesthetic-attempt limit for the newly isolated V9 work, not acceptance of V8 or any other gate. If product behavior or authoritative geometry must change, stop and specify in SS-specs instead.
 
-After approval: write the review implementation contract, create the new packet, implement and validate the bounded comparison, publish it, then stop for owner scene review again. No art, source mutation or native V9 execution occurs while this intent remains draft.
+Next: write the review implementation contract, create the new packet, implement and validate the bounded comparison, publish it, then stop for owner scene review again. This is review-only work with no product behavior change.

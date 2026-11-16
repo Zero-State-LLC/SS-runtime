@@ -1,5 +1,13 @@
 # Next work order
 
+## V9 bounded relief approved, November16 23:48UTC
+
+Owner explicitly approved `intent/2026-11-16-blocked-base-curb-relief.md` at23:48:25UTC. New isolated packet `docs/review/blocked-base-curb-relief-20261116/`, implementation contract `CONTRACT.md`. Gorilla owns `source/` editable supplemental blocked-kiosk masonry base and existing-boundary curb relief. Orangutan owns `scene/` and `AppTests/BlockedBaseCurbSceneTests.swift`. Coordinator owns gallery, source/scene visual review, protected-state audit, serialized native capture, export and publication. Lower-cost gallery worker could not start because its API route lacked credentials, so coordinator performs that lane without model escalation.
+
+Preserve V8 candidate as immutable baseline, all old source bytes,24solids,18existing uprights, actor/prop roots and fields, ground topology, center[684,724], controls and depth algorithm. Additional review-only registered relief nodes must be disclosed, not confused with gameplay actors. One first source preview, at most one bounded correction, then one final native comparison at3zooms. No V9 source recommended or native capture yet. Coordinator must inspect actual first preview before authorizing any correction.
+
+Native slot free. No unfiltered Swift retry, automatic CI polling chain, production admission, merge, issue closure, motion/encounter expansion or physical certification. V8 remains unaccepted, benchmark NOT MET. New approval supersedes only the prior bounded aesthetic-attempt stop for this exact V9 scope. Preserve unrelated untracked source packets and all failed evidence.
+
 ## Continuation scoped, November16 23:44UTC
 
 Owner said “continue” at23:43:25UTC. This is not recorded as V8 acceptance or approval of a newly widened aesthetic pass. Read `intent/2026-11-16-blocked-base-curb-relief.md`: **DRAFT, awaiting explicit approval**. Recommended next bounded comparison is visibly solid kiosk blocked-corner treatment plus curb relief along the existing V8 boundary, preserving collision, ground topology, prop/actor roots, framing and all old source bytes. One first preview plus at most one correction, then three-zoom native comparison and owner review. No V9 art, source or native execution has begun.
