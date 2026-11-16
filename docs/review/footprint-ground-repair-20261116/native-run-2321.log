@@ -1,0 +1,52 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project SSRuntime.xcodeproj -scheme SSRuntime -sdk iphonesimulator -configuration Debug -destination "platform=iOS Simulator,id=CACB3927-A76E-43A5-9ACA-C389EB38C0C3" CODE_SIGNING_ALLOWED=NO ENABLE_TESTABILITY=YES "SS_RENDERER_TEST_CONDITIONS=SS_RENDERER_TEST_SUPPORT SS_SOURCE_SCENE_REVIEW SS_FOOTPRINT_GROUND_REVIEW" -derivedDataPath /Users/appliedalchemylabs/.jcode/scratch/ss-footprint-ground-v8-derived-20261116 -resultBundlePath /Users/appliedalchemylabs/.jcode/scratch/ss-footprint-ground-v8-2321.xcresult "-only-testing:SSRuntimeTests/FootprintGroundSceneTests/testQuietSouthNeutralOrdinaryScene" test-without-building
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+    ENABLE_TESTABILITY = YES
+    SDKROOT = iphonesimulator26.5
+    SS_RENDERER_TEST_CONDITIONS = SS_RENDERER_TEST_SUPPORT SS_SOURCE_SCENE_REVIEW SS_FOOTPRINT_GROUND_REVIEW
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  SSRuntime: /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114
+
+Writing result bundle at path:
+	/Users/appliedalchemylabs/.jcode/scratch/ss-footprint-ground-v8-2321.xcresult
+
+Resolve Package Graph
+
+Resolve Package Graph
+
+Resolve Package Graph
+
+2026-11-16 15:22:22.854677-0800 SSRuntime[9184:15882091] [plugin] AddInstanceForFactory: No factory registered for id <CFUUID 0x107f80ec0> F8BB1C28-BAE8-11D6-9C31-00039315CD46
+2026-11-16 15:22:23.058558-0800 SSRuntime[9184:15882951] [AudioConverter]     AudioConverterOOP.cpp:1084  Failed to prepare AudioConverterService: -302
+2026-11-16 15:22:23.139226-0800 SSRuntime[9184:15882091] [UIFocus] _TtC18_SpriteKit_SwiftUIP33_4A29C38A751B2448A1E2FA85CDDEAA5324SpriteKitViewCoordinator implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+2026-11-16 15:22:24.362634-0800 SSRuntime[9184:15882091] SKView: no drawables available for rendering. Skipping this frame.
+Test Suite 'Selected tests' started at 2026-11-16 15:22:24.767.
+Test Suite 'SSRuntimeTests.xctest' started at 2026-11-16 15:22:24.768.
+Test Suite 'FootprintGroundSceneTests' started at 2026-11-16 15:22:24.769.
+Test Case '-[SSRuntimeTests.FootprintGroundSceneTests testQuietSouthNeutralOrdinaryScene]' started.
+2026-11-16 15:22:27.861496-0800 SSRuntime[9184:15882091] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+2026-11-16 15:22:34.481429-0800 SSRuntime[9184:15882091] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+Test Case '-[SSRuntimeTests.FootprintGroundSceneTests testQuietSouthNeutralOrdinaryScene]' passed (15.455 seconds).
+Test Suite 'FootprintGroundSceneTests' passed at 2026-11-16 15:22:40.241.
+	 Executed 1 test, with 0 failures (0 unexpected) in 15.455 (15.472) seconds
+Test Suite 'SSRuntimeTests.xctest' passed at 2026-11-16 15:22:40.241.
+	 Executed 1 test, with 0 failures (0 unexpected) in 15.455 (15.473) seconds
+Test Suite 'Selected tests' passed at 2026-11-16 15:22:40.242.
+	 Executed 1 test, with 0 failures (0 unexpected) in 15.455 (15.474) seconds
+2026-11-16 15:22:40.277862-0800 SSRuntime[9184:15882091] SKView: no drawables available for rendering. Skipping this frame.
+2026-11-16 15:22:42.149 xcodebuild[5090:15871162] [MT] IDETestOperationsObserverDebug: 73.247 elapsed -- Testing started completed.
+2026-11-16 15:22:42.153 xcodebuild[5090:15871162] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-11-16 15:22:42.153 xcodebuild[5090:15871162] [MT] IDETestOperationsObserverDebug: 73.247 sec, +73.247 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/appliedalchemylabs/.jcode/scratch/ss-footprint-ground-v8-2321.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

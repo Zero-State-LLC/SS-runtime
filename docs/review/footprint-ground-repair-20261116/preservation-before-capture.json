@@ -1,0 +1,424 @@
+{
+  "preservation": {
+    "referenceCommit": "09f1432b25dc573d829e6181799ea18a37ca7c2e",
+    "protectedTrackedFiles": 1591,
+    "exactGitBlobEquality": true,
+    "scope": [
+      "App/",
+      "Sources/",
+      "AppTests/BuildingPerspectiveSceneTests.swift",
+      "AppTests/SceneQAReviewDepth.swift",
+      "SPEC_BASELINE.md",
+      "docs/review/building-perspective-detail-20261116/",
+      "docs/review/scene-qa-framing-20261116/",
+      "docs/review/scene-qa-repair-20261116/",
+      "docs/review/footprint-consistency-20261116/"
+    ]
+  },
+  "buildingCropCensus": {
+    "method": "Conservative full sprite canvas versus 704x326 crop, not inferred visible alpha/contact",
+    "source": "immutable actual V7 candidate records, same building registration/framing required for V8",
+    "views": [
+      {
+        "zoom": 1,
+        "possiblyVisible": [
+          {
+            "name": "benchmark-building",
+            "logicalCanvasBounds": [
+              189.77459716796875,
+              21.509643971920013,
+              200,
+              240
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_01_residential_west",
+            "logicalCanvasBounds": [
+              -259.5092468261719,
+              165.151580452919,
+              465,
+              366
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_02_residential_north",
+            "logicalCanvasBounds": [
+              -214.13180541992188,
+              6.695983037352562,
+              419.5,
+              343.5
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_04_civic_west",
+            "logicalCanvasBounds": [
+              80.02459716796875,
+              -231.76452377438545,
+              419.5,
+              367
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_05_civic_dais",
+            "logicalCanvasBounds": [
+              555.0632934570312,
+              -51.764527693390846,
+              193.5,
+              130.5
+            ]
+          }
+        ],
+        "entireCanvasOutside": [
+          {
+            "name": "environment-upright-env_solid_06_service_yard_a",
+            "logicalCanvasBounds": [
+              216.40203857421875,
+              -347.7249755859375,
+              192,
+              320
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_07_service_yard_b",
+            "logicalCanvasBounds": [
+              388.04876708984375,
+              -453.4305419921875,
+              256,
+              192
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_08_service_divider",
+            "logicalCanvasBounds": [
+              649.068115234375,
+              -288.4112548828125,
+              96,
+              224
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_09_grid_island_a",
+            "logicalCanvasBounds": [
+              949.8519287109375,
+              -217.7838134765625,
+              128,
+              128
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_10_grid_island_b",
+            "logicalCanvasBounds": [
+              904.59716796875,
+              -376.17578125,
+              128,
+              128
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_11_court_column_a",
+            "logicalCanvasBounds": [
+              1208.1260986328125,
+              -338.9208984375,
+              64,
+              144
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_12_court_column_b",
+            "logicalCanvasBounds": [
+              1389.1455078125,
+              -429.4305419921875,
+              64,
+              144
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_13_phoenix_west",
+            "logicalCanvasBounds": [
+              1524.909912109375,
+              -191.274169921875,
+              64,
+              256
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_14_phoenix_east",
+            "logicalCanvasBounds": [
+              1796.43896484375,
+              -327.0386962890625,
+              64,
+              256
+            ]
+          }
+        ]
+      },
+      {
+        "zoom": 1.25,
+        "possiblyVisible": [
+          {
+            "name": "benchmark-building",
+            "logicalCanvasBounds": [
+              149.21826171875,
+              -13.862914517521858,
+              250.0,
+              300.0
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_01_residential_west",
+            "logicalCanvasBounds": [
+              -412.3865661621094,
+              165.68945267796516,
+              581.25,
+              457.5
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_02_residential_north",
+            "logicalCanvasBounds": [
+              -355.6647644042969,
+              -32.380005944520235,
+              524.375,
+              429.375
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_04_civic_west",
+            "logicalCanvasBounds": [
+              12.03076171875,
+              -330.45568523555994,
+              524.375,
+              458.75
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_05_civic_dais",
+            "logicalCanvasBounds": [
+              605.8291015625,
+              -105.45569013431668,
+              241.875,
+              163.125
+            ]
+          }
+        ],
+        "entireCanvasOutside": [
+          {
+            "name": "environment-upright-env_solid_06_service_yard_a",
+            "logicalCanvasBounds": [
+              182.5025634765625,
+              -475.40625,
+              240.0,
+              400.0
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_07_service_yard_b",
+            "logicalCanvasBounds": [
+              397.0609130859375,
+              -607.5382080078125,
+              320.0,
+              240.0
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_08_service_divider",
+            "logicalCanvasBounds": [
+              723.335205078125,
+              -401.2640380859375,
+              120.0,
+              280.0
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_09_grid_island_a",
+            "logicalCanvasBounds": [
+              1099.31494140625,
+              -312.979736328125,
+              160.0,
+              160.0
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_10_grid_island_b",
+            "logicalCanvasBounds": [
+              1042.7464599609375,
+              -510.9697265625,
+              160.0,
+              160.0
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_11_court_column_a",
+            "logicalCanvasBounds": [
+              1422.1575927734375,
+              -464.401123046875,
+              80.0,
+              180.0
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_12_court_column_b",
+            "logicalCanvasBounds": [
+              1648.431884765625,
+              -577.5382080078125,
+              80.0,
+              180.0
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_13_phoenix_west",
+            "logicalCanvasBounds": [
+              1818.137451171875,
+              -279.8427734375,
+              80.0,
+              320.0
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_14_phoenix_east",
+            "logicalCanvasBounds": [
+              2157.548828125,
+              -449.54833984375,
+              80.0,
+              320.0
+            ]
+          }
+        ]
+      },
+      {
+        "zoom": 1.4,
+        "possiblyVisible": [
+          {
+            "name": "benchmark-building",
+            "logicalCanvasBounds": [
+              124.8843994140625,
+              -35.08649843931198,
+              280.0,
+              336.0
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_01_residential_west",
+            "logicalCanvasBounds": [
+              -504.1129455566406,
+              166.0122492551804,
+              651.0,
+              512.4
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_02_residential_north",
+            "logicalCanvasBounds": [
+              -440.58453979492185,
+              -55.82561154067514,
+              587.3,
+              480.9
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_04_civic_west",
+            "logicalCanvasBounds": [
+              -28.765600585937477,
+              -389.6703088700771,
+              587.3,
+              513.8
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_05_civic_dais",
+            "logicalCanvasBounds": [
+              636.2886474609375,
+              -137.67031435668468,
+              270.9,
+              182.7
+            ]
+          }
+        ],
+        "entireCanvasOutside": [
+          {
+            "name": "environment-upright-env_solid_06_service_yard_a",
+            "logicalCanvasBounds": [
+              162.16286621093752,
+              -552.0150146484375,
+              268.79999999999995,
+              448.0
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_07_service_yard_b",
+            "logicalCanvasBounds": [
+              402.4683349609375,
+              -700.002783203125,
+              358.4,
+              268.79999999999995
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_08_service_divider",
+            "logicalCanvasBounds": [
+              767.8953369140625,
+              -468.97578124999995,
+              134.39999999999998,
+              313.59999999999997
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_09_grid_island_a",
+            "logicalCanvasBounds": [
+              1188.9926513671876,
+              -370.097314453125,
+              179.2,
+              179.2
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_10_grid_island_b",
+            "logicalCanvasBounds": [
+              1125.636083984375,
+              -591.84609375,
+              179.2,
+              179.2
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_11_court_column_a",
+            "logicalCanvasBounds": [
+              1550.5765869140625,
+              -539.6892822265625,
+              89.6,
+              201.6
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_12_court_column_b",
+            "logicalCanvasBounds": [
+              1804.003466796875,
+              -666.402783203125,
+              89.6,
+              201.6
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_13_phoenix_west",
+            "logicalCanvasBounds": [
+              1994.073779296875,
+              -332.9838134765625,
+              89.6,
+              358.4
+            ]
+          },
+          {
+            "name": "environment-upright-env_solid_14_phoenix_east",
+            "logicalCanvasBounds": [
+              2374.214404296875,
+              -523.0541259765625,
+              89.6,
+              358.4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "actualCaptureCompared": false
+}

@@ -1,0 +1,52 @@
+[0/1] Planning build
+Building for debugging...
+[0/2] Write swift-version--58304C5D6DBC2206.txt
+Build complete! (0.68s)
+Test Suite 'Selected tests' started at 2026-11-16 15:04:43.119.
+Test Suite 'SSRuntimePackageTests.xctest' started at 2026-11-16 15:04:43.124.
+Test Suite 'SSRuntimePackageTests.xctest' passed at 2026-11-16 15:04:43.124.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-11-16 15:04:43.124.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.005) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite CameraFollowTests started.
+◇ Suite CameraPlacementTests started.
+◇ Suite CanonicalArenaZonesTests started.
+◇ Test motionInsideDeadZoneDoesNotMoveTheAnchor() started.
+◇ Test clampsAndResetsAcrossRuns() started.
+◇ Test verticalHeadingHasNoSpuriousHorizontalLookAhead() started.
+◇ Test turnDoesNotSnapByTheLookAheadDistance() started.
+◇ Test zonesAreTheSevenCanonicalZonesInOrder() started.
+◇ Test gridIs36By24SixtyFourUnitCells() started.
+◇ Test everyZoneLiesInsideTheArena() started.
+◇ Test cameraCP001TenRestartsMatchSocketsHousingAndIds() started.
+✔ Test clampsAndResetsAcrossRuns() passed after 0.001 seconds.
+✔ Test turnDoesNotSnapByTheLookAheadDistance() passed after 0.001 seconds.
+✔ Test verticalHeadingHasNoSpuriousHorizontalLookAhead() passed after 0.001 seconds.
+✔ Test motionInsideDeadZoneDoesNotMoveTheAnchor() passed after 0.001 seconds.
+✔ Suite CameraFollowTests passed after 0.001 seconds.
+✔ Test gridIs36By24SixtyFourUnitCells() passed after 0.013 seconds.
+✔ Test everyZoneLiesInsideTheArena() passed after 0.013 seconds.
+✔ Test zonesAreTheSevenCanonicalZonesInOrder() passed after 0.013 seconds.
+✔ Suite CanonicalArenaZonesTests passed after 0.014 seconds.
+✔ Test cameraCP001TenRestartsMatchSocketsHousingAndIds() passed after 0.021 seconds.
+◇ Test cameraCP002ZoneQuotaTwoOneTwoTwoOne() started.
+✔ Test cameraCP002ZoneQuotaTwoOneTwoTwoOne() passed after 0.002 seconds.
+◇ Test cameraCP003TutorialFourFamiliesFourReturnVisible() started.
+✔ Test cameraCP003TutorialFourFamiliesFourReturnVisible() passed after 0.004 seconds.
+◇ Test cameraCP004IncompatiblePairShuffledFirstYieldsNextLegal() started.
+✔ Test cameraCP004IncompatiblePairShuffledFirstYieldsNextLegal() passed after 0.001 seconds.
+◇ Test cameraCP005InsufficientZonePoolRejectedBeforeTickOne() started.
+✔ Test cameraCP005InsufficientZonePoolRejectedBeforeTickOne() passed after 0.002 seconds.
+◇ Test cameraCP006NoCompatibleSetFailsArenaValidation() started.
+✔ Test cameraCP006NoCompatibleSetFailsArenaValidation() passed after 0.002 seconds.
+◇ Test cameraCP007DifferentSeedsObserveMoreThanOneLayout() started.
+✔ Test cameraCP007DifferentSeedsObserveMoreThanOneLayout() passed after 0.021 seconds.
+◇ Test cameraCP008DestroyedThenSameSeedRestartRestoresOperational() started.
+✔ Test cameraCP008DestroyedThenSameSeedRestartRestoresOperational() passed after 0.005 seconds.
+◇ Test cameraCP009PlacementDoesNotPerturbCombatRng() started.
+✔ Test cameraCP009PlacementDoesNotPerturbCombatRng() passed after 0.003 seconds.
+✔ Suite CameraPlacementTests passed after 0.065 seconds.
+✔ Test run with 16 tests in 3 suites passed after 0.065 seconds.

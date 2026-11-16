@@ -135,6 +135,15 @@ jobs:
           python3 -B docs/review/building-perspective-detail-20261116/verify_baseline.py
           node docs/review/building-perspective-detail-20261116/gallery/test_evidence.js --require-v7
           node docs/review/building-perspective-detail-20261116/gallery/test_loader.js --require-v7
+      - name: Verify coordinated footprint ground review without admission
+        run: |
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/footprint-ground-repair-20261116 -p 'test_*.py'
+          python3 -B -W error::ResourceWarning docs/review/footprint-ground-repair-20261116/plan/test_plan.py
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/footprint-ground-repair-20261116/scene -p 'test_*.py'
+          python3 -B docs/review/footprint-ground-repair-20261116/scene/retained.py docs/review/footprint-ground-repair-20261116/scene/native-capture-v8
+          python3 -B docs/review/footprint-ground-repair-20261116/verify_prop_bases.py
+          node docs/review/footprint-ground-repair-20261116/gallery/test_evidence.js --require-v8
+          node docs/review/footprint-ground-repair-20261116/gallery/test_loader.js --require-v8
       - name: Test retained playback failure diagnosis without hiding the failure
         run: python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/playback237-diagnosis-20261116 -p 'test_trace_probe.py' -v
       - name: Byte-compare bundled contracts and fixtures against the pinned SS-specs

@@ -1,0 +1,1527 @@
+Final correction preview generated. ground.png 4608x4608. One correction; no third art pass.
+{
+  "schema": "footprint-ground-assembly-008",
+  "fixtureVersion": "source-scene-footprint-008-ground-plan",
+  "baselineRecordSHA256": "9728f0a030020dff0caad52e8d3791be092a3b6ada8b5ffd845ee9d370785889",
+  "viewCenterWorld": [
+    684,
+    724
+  ],
+  "contextDependencies": [
+    {
+      "path": "docs/review/scene-source-assembly-20261116/authoritative-placement-1014.json",
+      "sha256": "b112b8685dd03c1cd1fd0214f7b010e33dbde3e714c5f21e4e48c4e342238e07"
+    },
+    {
+      "path": "docs/review/scene-source-assembly-20261116/authoritative-placement-1014-export-manifest.json",
+      "sha256": "fefd43866f4b753a88db4b8827e7bcee10d08863da4e4c8efd78e724458864e6"
+    },
+    {
+      "path": "docs/review/paving-corner-review-20261116/source.json",
+      "sha256": "3fabc473f8469241fb928c7dc7b8281c6e6e8e304d6789f7e9387eaf66ea6f1b"
+    },
+    {
+      "path": "docs/review/paving-corner-review-20261116/manifest.json",
+      "sha256": "d1aa4d017362038ece657d36719871fac6203810c6790bc96f4ffcb3ed786ba9"
+    },
+    {
+      "path": "docs/review/paving-corner-review-20261116/build.py",
+      "sha256": "a5dedc85a67ba91d85efccea6be7bb2d0e9d46e31da7be33659f92bd15f0c061"
+    },
+    {
+      "path": "docs/review/paving-repeat-repair-20261116/revision02/paving-muted-candidate.png",
+      "sha256": "7a1f29c7b0f1a0a96e12484de84da21e7ab4ebee10cab2e829ed19309ca17d35"
+    },
+    {
+      "path": "intent/2026-11-16-scene-qa-repair.md",
+      "sha256": "9a6fd7e917edec942f8f24b77f6e74e34d57361dc48161124e92e79ae457b7d4"
+    },
+    {
+      "path": "AppTests/SceneQAReviewDepth.swift",
+      "sha256": "c15b85a01ceb957e1567900b23126e2429febd9811e3d5c6d5dd1a225a89cea6"
+    },
+    {
+      "path": "docs/review/scene-qa-repair-20261116/ground/build.py",
+      "sha256": "cc149ddaaa23b62faf8286cf3be102afac6626cdda51626b5dc202995e3e48e5"
+    },
+    {
+      "path": "docs/review/scene-qa-repair-20261116/ground/manifest.json",
+      "sha256": "e357fd4f9cb874914ef5db079f4be1862297553df4b35932b98f27e5d32b1910"
+    }
+  ],
+  "sources": [
+    {
+      "role": "paving",
+      "status": "recommended",
+      "image": {
+        "path": "docs/review/scene-qa-repair-20261116/ground/ground-patch-square.png",
+        "sha256": "f4a3f542d8879b036c1a1979ab5fa03356b69350181fb526e190098982191dac"
+      },
+      "registration": {
+        "canvasPixels": [
+          4608,
+          4608
+        ],
+        "rootPixelsTopLeft": [
+          0,
+          4608
+        ],
+        "worldPosition": [
+          0,
+          0
+        ],
+        "drawSizeWorld": [
+          2304,
+          2304
+        ],
+        "kind": "ground",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": {
+        "reviewerRole": "coordinator",
+        "decision": "recommended",
+        "scope": "bounded-material-layout",
+        "sourceSHA256": "f4a3f542d8879b036c1a1979ab5fa03356b69350181fb526e190098982191dac",
+        "registrationSHA256": "55b1f6671633a2b8fad5077d369b82a558555dacd7ac097119f88c74d1787b2e",
+        "evidence": {
+          "path": "docs/review/scene-qa-repair-20261116/COORDINATOR-GROUND.md",
+          "sha256": "b49dddd5df386463e832f7f9d78b26393cf60011c26b61fedfaa0ecba6ead4ba"
+        },
+        "transcription": "Bounded continuous-ground seam repair only. Square source is uniformly sampled, clipped to authoritative arena[0,0,2304,1536]. No layout/authority/source admission or owner acceptance."
+      }
+    },
+    {
+      "role": "camera",
+      "status": "recommended",
+      "image": {
+        "path": "docs/review/camera-raster-material-20261116/painted-assembly/padded-final/final/camera-master.png",
+        "sha256": "1343507b7517cd2a4848810b14aca88644677f35266ec8299dcbbf8347ef5ab1"
+      },
+      "registration": {
+        "canvasPixels": [
+          204,
+          450
+        ],
+        "rootPixelsTopLeft": [
+          58,
+          427
+        ],
+        "worldPosition": [
+          496,
+          672
+        ],
+        "drawSizeWorld": [
+          46.85167464114833,
+          103.34928229665071
+        ],
+        "kind": "upright",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": {
+        "reviewerRole": "coordinator",
+        "decision": "recommended",
+        "scope": "isolated-ordinary-scene",
+        "sourceSHA256": "1343507b7517cd2a4848810b14aca88644677f35266ec8299dcbbf8347ef5ab1",
+        "registrationSHA256": "3678d519f914417b37ff1bc52cdba5fb176eac1bc87554c0f21c4ee6f14aeefd",
+        "evidence": {
+          "path": "docs/review/camera-raster-material-20261116/painted-assembly/COORDINATOR-REVIEW.md",
+          "sha256": "0ae470a74ea0010be3a5de0c78bf5cc42ed2fff194045fca9ba337f47af7eb8f"
+        },
+        "transcription": "Bounded source recommendation only, not fidelity or owner acceptance. Uniform96/418 scale. Actual seed1 Camera id3 [496,672], visible integrity3, from placement probe1014. Field origin and all authoritative solids unchanged. No rejected fallback."
+      }
+    },
+    {
+      "role": "player",
+      "status": "recommended",
+      "image": {
+        "path": "docs/review/player-garment-correspondence-20261116/canonical-identity-02/south-neutral.png",
+        "sha256": "b32bfcba5ac7cee383715d5f0b918e53b2e7be56634886754ab82357431d6ed4"
+      },
+      "registration": {
+        "canvasPixels": [
+          384,
+          416
+        ],
+        "rootPixelsTopLeft": [
+          192,
+          336
+        ],
+        "worldPosition": [
+          736,
+          654
+        ],
+        "drawSizeWorld": [
+          64,
+          69.33333333333333
+        ],
+        "kind": "upright",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": {
+        "reviewerRole": "coordinator",
+        "decision": "recommended",
+        "scope": "isolated-ordinary-scene",
+        "sourceSHA256": "b32bfcba5ac7cee383715d5f0b918e53b2e7be56634886754ab82357431d6ed4",
+        "registrationSHA256": "57c225f922a45b449b2b3f8b521555585cfba45826bb0e679f319b6850e7f27c",
+        "evidence": {
+          "path": "docs/review/player-garment-correspondence-20261116/COORDINATOR-REVIEW.md",
+          "sha256": "ae070c6a4296738c6f1ab30acc7e96734564472ab549344371bb1b28526875e7"
+        },
+        "transcription": "Quiet south-neutral only, uniform1/6 scale and coordinator-directed presentation-only root[736,654]. This is not the seed1 simulation spawn[160,192]. No other facing, motion family, old rejected pilot or owner acceptance."
+      }
+    },
+    {
+      "role": "stone",
+      "status": "recommended",
+      "image": {
+        "path": "docs/review/stone-painted-facade-20261116/output/preview-alpha.png",
+        "sha256": "5b5751602fb5299777a134fcb1dbedf4de1822a8e1375d86505c88056a240539"
+      },
+      "registration": {
+        "canvasPixels": [
+          1000,
+          1200
+        ],
+        "rootPixelsTopLeft": [
+          500,
+          1160
+        ],
+        "worldPosition": [
+          512,
+          640
+        ],
+        "drawSizeWorld": [
+          200,
+          240
+        ],
+        "kind": "upright",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": {
+        "reviewerRole": "coordinator",
+        "decision": "recommended",
+        "scope": "isolated-ordinary-scene",
+        "sourceSHA256": "5b5751602fb5299777a134fcb1dbedf4de1822a8e1375d86505c88056a240539",
+        "registrationSHA256": "605c2f01bfb3bca6a8966669370ba6b5be63368c06d879df8a429c6d12814dd2",
+        "evidence": {
+          "path": "docs/review/stone-painted-facade-20261116/COORDINATOR-REVIEW.md",
+          "sha256": "3d779404e838c6428e22ba3627de02d673fcdbafa6d115d26603a4cf2790ac2a"
+        },
+        "transcription": "Bounded source recommendation only. Explicit mesh root, uniform0.2 scale, unchanged solid-03-transit-kiosk[512,640]..[640,768] verified in placement probe1014. Painted stairs and roof prop do not alter collision. Not fidelity or owner acceptance."
+      }
+    },
+    {
+      "role": "kiosk",
+      "status": "recommended",
+      "image": {
+        "path": "docs/review/building-perspective-detail-20261116/kiosk/output/source-full.png",
+        "sha256": "c411e33b79e0ffc5b0eb86143cd8785a564e573b5819bc1d4c399ef5d3b60264"
+      },
+      "registration": {
+        "canvasPixels": [
+          1000,
+          1200
+        ],
+        "rootPixelsTopLeft": [
+          500,
+          1160
+        ],
+        "worldPosition": [
+          512,
+          640
+        ],
+        "drawSizeWorld": [
+          200.0,
+          240.0
+        ]
+      },
+      "dependencies": [
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/audit_originals.py",
+          "sha256": "47ca2ccca50879a9ae29e023456f41ecef69e2dd921417eac9024f2c31a35f89"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/baseline_renderer.py",
+          "sha256": "c94e6d121ab8237c780ffb06c956cf53f032d63416c0c9ebf915ff1759000755"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/geometry-controls.json",
+          "sha256": "33f9ab99a463fd18263d55c76879f3bbbcf113c57721f44d6494d02c5f97760b"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/inputs/atlas.png",
+          "sha256": "efa98063a04e0814a8be533a3cf19fc337b6cc65eb50e3d6d0f0607f09769e75"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/inputs/baseline-mesh.json",
+          "sha256": "24ac22ac44414d64e08e763bc84fb07c4369e16fe7e417c90b9322e8b956ffc2"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/inputs/benchmark.png",
+          "sha256": "49aa35447230187e3eabe948cdc8eba6d6d465b2605d624e2cf7443f6cb69ffb"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/inputs/provider.json",
+          "sha256": "dca6c47f00614c5af77eab8a53d6c7b3dbc5e585f471296f1695d21061efbdf4"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/inputs/roof-vent-provider.json",
+          "sha256": "23fdd4da08a8aec3bf24f717e4e719c1b2e325ee6124b710f1c269f2c0cd2851"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/inputs/roof-vent.png",
+          "sha256": "b99f0b536306bf317e897bda133640bd1e3ee14eeddcdb1871ec60209bea90f2"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/materials.json",
+          "sha256": "5c6ad5b4d7f44dc82e71200553a4366ce0e57503321f8f16850c8d177450c7ba"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/output/building-alpha.png",
+          "sha256": "84d0ddf63ea976a8c809bea7ce7fd3cd00b2e0f49782cc66dbdc70786038e9ac"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/output/building.mtl",
+          "sha256": "7aa20e10d162aad9238f0277c13dd4114e47a3ce7e8a5b3fa02b4ca6541a3c65"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/output/building.obj",
+          "sha256": "00a5d5b2ea518153195ab797037627207ece8178944458e7b67405cf91014e7c"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/output/first-sample-comparison.png",
+          "sha256": "02d98dcb2a634ce2d8d532608a2db0b94a982c975684a0378dca47a3c44b2f28"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/output/half-alpha.png",
+          "sha256": "25d9473b91b7951e53cef8f91d4b2c4aceaeec72629619d89ba30c8e4b3b3a7c"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/output/manifest.json",
+          "sha256": "48a2728f50ba07edc674c46bdc63fb7743062063bb1177d2fa92b6e842b5883f"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/output/mesh.json",
+          "sha256": "8f3ea9552ecd0e8c00bbdc40a54c3e4499b2f204adcab27dea647916b2a8e302"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/output/native-alpha.png",
+          "sha256": "4555de74ba8eb67eeef314207c8242b32a6006e4dfaae1ba9bbb1e59527d1a7e"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/output/registration.json",
+          "sha256": "ef07f7d8ecc8292dd2e7e8756eadac03317d8d92e6d3bbb05be87c567b6e8beb"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/output/roof-layer-alpha.png",
+          "sha256": "4354bf1ac70bacd81f6e8da6c0293a0781079059fb592ecc239ef917c6c6510f"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/output/roof-layer-registration.json",
+          "sha256": "1d14315076d870cfe8d63d31832564c9e35b18717a4f1809b21188749ae99c5f"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/output/source-full.png",
+          "sha256": "c411e33b79e0ffc5b0eb86143cd8785a564e573b5819bc1d4c399ef5d3b60264"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/output/textures/door.png",
+          "sha256": "21e6ab6ed1540142728c43e0f9d8dacfd5924eac0d3fe64a257bac13af94c2b1"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/output/textures/facade.png",
+          "sha256": "1cc2f9178246755462d049934c1825bd451e04d82a268dd522cfeb9d6772a949"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/output/textures/roof.png",
+          "sha256": "79137825a204ae53a1eeeccecc3d391503d5d56419ddc0e42c2e2806e8b1124b"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/patch_ground_metadata.py",
+          "sha256": "1c5d5d716fbdfcc4034ab552e10a49e670fc044cb071b78036ea1228967c1105"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/replay.py",
+          "sha256": "57bd9b02c5b6980510eee314d4808ec60d0f9be62b6d6cd137913adf80f4c836"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/roof-layer.json",
+          "sha256": "90df4211541b50f52203129631e9a52b8fb8f11b4c4f7c5cb5984543f96b0b9b"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/test_kiosk.py",
+          "sha256": "6a5d7fe70faafd073b32adb8cfee764f20c9bb46cbd003bed79ebdf4b435c93c"
+        }
+      ],
+      "recommendation": {
+        "reviewerRole": "coordinator",
+        "decision": "recommended",
+        "scope": "isolated-ordinary-scene",
+        "sourceSHA256": "c411e33b79e0ffc5b0eb86143cd8785a564e573b5819bc1d4c399ef5d3b60264",
+        "evidence": {
+          "path": "docs/review/building-perspective-detail-20261116/kiosk/COORDINATOR-REVIEW.md",
+          "sha256": "5e83d9f73e42f97bde6c275ee2b0579832d3b547f148dbd6861f5d7b1c0f04c7"
+        }
+      }
+    },
+    {
+      "role": "context-01",
+      "status": "recommended",
+      "image": {
+        "path": "docs/review/building-perspective-detail-20261116/context/output/solid-01-residential-west.png",
+        "sha256": "edf9d79bb71337eb908ab654a11e6011e8b69354101f30dab2dffbd401073482"
+      },
+      "registration": {
+        "canvasPixels": [
+          1860,
+          1464
+        ],
+        "rootPixelsTopLeft": [
+          930,
+          987
+        ],
+        "worldPosition": [
+          64.0,
+          640.0
+        ],
+        "drawSizeWorld": [
+          465.0,
+          366.0
+        ]
+      },
+      "dependencies": [
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/attempt-01/geometry.json",
+          "sha256": "72bde7f060cdc88ea82aa43701bdff4b6fe142a614ccb7922e81fa9c817ae772"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/author.py",
+          "sha256": "c5d7d98c8bbf60e6e5c272c6e7e79e5afff039a523df653c9e2591c7d5f0d9fd"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/geometry.json",
+          "sha256": "f570e28bcb421d4c15cf67efd15e58613d1129712d3fd61c9873dea62bc0c0c4"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/door.png",
+          "sha256": "21e6ab6ed1540142728c43e0f9d8dacfd5924eac0d3fe64a257bac13af94c2b1"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/env_solid_01_residential_west@1x.png",
+          "sha256": "1171bd8f9ff905b96e54cb33aac6ea98779b712f4119d2fa76593a2c693bdf6e"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/env_solid_02_residential_north@1x.png",
+          "sha256": "6c19e10ce277fe32c7085ab263ef7bbcb8f4c121509dd1053400bca097a5e154"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/env_solid_04_civic_west@1x.png",
+          "sha256": "b1d9002bd547eb482190fa28e4c53557220a37eabbdceb54297186a04a7edb0b"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/env_solid_05_civic_dais@1x.png",
+          "sha256": "04a5ee7285c65271c67e3ad7649f9234413b38a05fa14483f1397f16f9bd4cb6"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/facade.png",
+          "sha256": "1cc2f9178246755462d049934c1825bd451e04d82a268dd522cfeb9d6772a949"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/roof.png",
+          "sha256": "79137825a204ae53a1eeeccecc3d391503d5d56419ddc0e42c2e2806e8b1124b"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/stone-provider.json",
+          "sha256": "dca6c47f00614c5af77eab8a53d6c7b3dbc5e585f471296f1695d21061efbdf4"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/stone-source-provenance.md",
+          "sha256": "536ffc39d5b7cbdc9765ae766f66c58d5a0d624b49b35e922f6cf8d62e4d0c71"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/v6-records.json",
+          "sha256": "1cc28f757fb6e9e7ed6e53843c745bcb63f8adc42a2eef6413362582eac4930d"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/v6-z100-native.png",
+          "sha256": "5774f9d3c581323d437307fd6addfa21583372a4568f8edce108d15553d52ec3"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/manifest.json",
+          "sha256": "5ac5fd81fd591bce2fb6ae61db82b7e7a34444707266d7ed04d0621b40116468"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/materials.json",
+          "sha256": "bee535e96a65a8845b299a9c32a468e505a08ad14534a23e7042d8576e5a33af"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/first-preview-half.png",
+          "sha256": "cbdeafde27f42857459248c403b0d40e67909485fa8ee2dc981cd91768142615"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/first-preview-native.png",
+          "sha256": "da123708f8cd4014456c7b631395ea46691340ae8cdc14f455d7e8cb360b43eb"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-01-residential-west-footprint-witness.png",
+          "sha256": "b17d7bf9c4be218332bd108b7de67972778068fcc7716ebf8ef117028032616f"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-01-residential-west-half.png",
+          "sha256": "689c9a73ab16b26194df9d052ea4e12e8fe49c53c58bb699cc16c44a3696a3aa"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-01-residential-west-native.png",
+          "sha256": "3564db376cb79507b6c1ab8da38687e96b18cdea079a8e6c656cfd603cff826a"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-01-residential-west.png",
+          "sha256": "edf9d79bb71337eb908ab654a11e6011e8b69354101f30dab2dffbd401073482"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-02-residential-north-footprint-witness.png",
+          "sha256": "143d56805068ba57ce2d9938f91b05ea0309f9e70678a069ddbd1e3d63d58c59"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-02-residential-north-half.png",
+          "sha256": "e87b382c80f7ea8f1e3b5791454fde917e9d7c1d189b3f79411b51e11e0b3ca4"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-02-residential-north-native.png",
+          "sha256": "43d732967943a144e64ce3657f318a83d14d7c70ddaaf216f8d04271929c72ac"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-02-residential-north.png",
+          "sha256": "d1ed85e7a64965c9063db1533672ef07d8b4e9c81588f5c11f9a711f57a75355"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-04-civic-west-footprint-witness.png",
+          "sha256": "c3ade3be43c77eab4b3ac4b8f924e89bfa762c5ddeee2cb329e23bdecfa8930f"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-04-civic-west-half.png",
+          "sha256": "0f31b37f32c983f6230c2fc21e4c2eb1f48cd197cfbe5bc784de219ec780ce84"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-04-civic-west-native.png",
+          "sha256": "4664d62672149d8e9e9c697c921b8e820feaae0b48b6e20b55e18d2877019b15"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-04-civic-west.png",
+          "sha256": "26640bb8c2c92e08679643e028346f5c926a5d2fbd021f5996b03d6081a42948"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-05-civic-dais-footprint-witness.png",
+          "sha256": "d58ebb1be0787aded4848ffe8a336a7d36fac6733b6eda18f5d49c88d3db9f4d"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-05-civic-dais-half.png",
+          "sha256": "406d15742ce55b3bb222358a08e301c8c6b5543db55e6cbd069b934fd956c1ab"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-05-civic-dais-native.png",
+          "sha256": "3b58d0ed843d3c887b3018b190ee1518bf4432c069ec0a0a77f73d538726b475"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-05-civic-dais.png",
+          "sha256": "4cb22248df71f1a3ff956c52ab76bdcc3a8aac01ce598e13097db52b9615a204"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/provenance.json",
+          "sha256": "7f4ee61625e8f68fa5fa50135b57127859032161342aa8b6441ed0a0877239a9"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/registration.json",
+          "sha256": "423a3ac4f3d214dafe4f48785f87d1d5d713e54e4c4b8b9dcc0dd1dff5af6d77"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/repair_roof_density.py",
+          "sha256": "9e86b3a28ed3f774702310fd2ba5c340c9b1feac3cef1b39ca0007b2836ad5f2"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/replay.py",
+          "sha256": "41c2662a755d4bbfa4191298eb56302800e03d1e4ff3d9f71fd88a75dde4f374"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/test_context.py",
+          "sha256": "847f47ff91d963cc43bd3037e8d51e981d6676810e449059aada89ea4af9624b"
+        }
+      ],
+      "recommendation": {
+        "reviewerRole": "coordinator",
+        "decision": "recommended",
+        "scope": "isolated-ordinary-scene",
+        "sourceSHA256": "edf9d79bb71337eb908ab654a11e6011e8b69354101f30dab2dffbd401073482",
+        "evidence": {
+          "path": "docs/review/building-perspective-detail-20261116/context/COORDINATOR-REVIEW.md",
+          "sha256": "b3fe6119e73d07148a9dd2d97de2f6a28d5a50c6c2e03f84be72dc4fe5c9d34a"
+        }
+      }
+    },
+    {
+      "role": "context-02",
+      "status": "recommended",
+      "image": {
+        "path": "docs/review/building-perspective-detail-20261116/context/output/solid-02-residential-north.png",
+        "sha256": "d1ed85e7a64965c9063db1533672ef07d8b4e9c81588f5c11f9a711f57a75355"
+      },
+      "registration": {
+        "canvasPixels": [
+          1678,
+          1374
+        ],
+        "rootPixelsTopLeft": [
+          839,
+          942
+        ],
+        "worldPosition": [
+          320.0,
+          864.0
+        ],
+        "drawSizeWorld": [
+          419.5,
+          343.5
+        ]
+      },
+      "dependencies": [
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/attempt-01/geometry.json",
+          "sha256": "72bde7f060cdc88ea82aa43701bdff4b6fe142a614ccb7922e81fa9c817ae772"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/author.py",
+          "sha256": "c5d7d98c8bbf60e6e5c272c6e7e79e5afff039a523df653c9e2591c7d5f0d9fd"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/geometry.json",
+          "sha256": "f570e28bcb421d4c15cf67efd15e58613d1129712d3fd61c9873dea62bc0c0c4"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/door.png",
+          "sha256": "21e6ab6ed1540142728c43e0f9d8dacfd5924eac0d3fe64a257bac13af94c2b1"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/env_solid_01_residential_west@1x.png",
+          "sha256": "1171bd8f9ff905b96e54cb33aac6ea98779b712f4119d2fa76593a2c693bdf6e"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/env_solid_02_residential_north@1x.png",
+          "sha256": "6c19e10ce277fe32c7085ab263ef7bbcb8f4c121509dd1053400bca097a5e154"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/env_solid_04_civic_west@1x.png",
+          "sha256": "b1d9002bd547eb482190fa28e4c53557220a37eabbdceb54297186a04a7edb0b"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/env_solid_05_civic_dais@1x.png",
+          "sha256": "04a5ee7285c65271c67e3ad7649f9234413b38a05fa14483f1397f16f9bd4cb6"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/facade.png",
+          "sha256": "1cc2f9178246755462d049934c1825bd451e04d82a268dd522cfeb9d6772a949"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/roof.png",
+          "sha256": "79137825a204ae53a1eeeccecc3d391503d5d56419ddc0e42c2e2806e8b1124b"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/stone-provider.json",
+          "sha256": "dca6c47f00614c5af77eab8a53d6c7b3dbc5e585f471296f1695d21061efbdf4"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/stone-source-provenance.md",
+          "sha256": "536ffc39d5b7cbdc9765ae766f66c58d5a0d624b49b35e922f6cf8d62e4d0c71"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/v6-records.json",
+          "sha256": "1cc28f757fb6e9e7ed6e53843c745bcb63f8adc42a2eef6413362582eac4930d"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/v6-z100-native.png",
+          "sha256": "5774f9d3c581323d437307fd6addfa21583372a4568f8edce108d15553d52ec3"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/manifest.json",
+          "sha256": "5ac5fd81fd591bce2fb6ae61db82b7e7a34444707266d7ed04d0621b40116468"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/materials.json",
+          "sha256": "bee535e96a65a8845b299a9c32a468e505a08ad14534a23e7042d8576e5a33af"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/first-preview-half.png",
+          "sha256": "cbdeafde27f42857459248c403b0d40e67909485fa8ee2dc981cd91768142615"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/first-preview-native.png",
+          "sha256": "da123708f8cd4014456c7b631395ea46691340ae8cdc14f455d7e8cb360b43eb"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-01-residential-west-footprint-witness.png",
+          "sha256": "b17d7bf9c4be218332bd108b7de67972778068fcc7716ebf8ef117028032616f"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-01-residential-west-half.png",
+          "sha256": "689c9a73ab16b26194df9d052ea4e12e8fe49c53c58bb699cc16c44a3696a3aa"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-01-residential-west-native.png",
+          "sha256": "3564db376cb79507b6c1ab8da38687e96b18cdea079a8e6c656cfd603cff826a"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-01-residential-west.png",
+          "sha256": "edf9d79bb71337eb908ab654a11e6011e8b69354101f30dab2dffbd401073482"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-02-residential-north-footprint-witness.png",
+          "sha256": "143d56805068ba57ce2d9938f91b05ea0309f9e70678a069ddbd1e3d63d58c59"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-02-residential-north-half.png",
+          "sha256": "e87b382c80f7ea8f1e3b5791454fde917e9d7c1d189b3f79411b51e11e0b3ca4"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-02-residential-north-native.png",
+          "sha256": "43d732967943a144e64ce3657f318a83d14d7c70ddaaf216f8d04271929c72ac"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-02-residential-north.png",
+          "sha256": "d1ed85e7a64965c9063db1533672ef07d8b4e9c81588f5c11f9a711f57a75355"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-04-civic-west-footprint-witness.png",
+          "sha256": "c3ade3be43c77eab4b3ac4b8f924e89bfa762c5ddeee2cb329e23bdecfa8930f"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-04-civic-west-half.png",
+          "sha256": "0f31b37f32c983f6230c2fc21e4c2eb1f48cd197cfbe5bc784de219ec780ce84"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-04-civic-west-native.png",
+          "sha256": "4664d62672149d8e9e9c697c921b8e820feaae0b48b6e20b55e18d2877019b15"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-04-civic-west.png",
+          "sha256": "26640bb8c2c92e08679643e028346f5c926a5d2fbd021f5996b03d6081a42948"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-05-civic-dais-footprint-witness.png",
+          "sha256": "d58ebb1be0787aded4848ffe8a336a7d36fac6733b6eda18f5d49c88d3db9f4d"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-05-civic-dais-half.png",
+          "sha256": "406d15742ce55b3bb222358a08e301c8c6b5543db55e6cbd069b934fd956c1ab"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-05-civic-dais-native.png",
+          "sha256": "3b58d0ed843d3c887b3018b190ee1518bf4432c069ec0a0a77f73d538726b475"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-05-civic-dais.png",
+          "sha256": "4cb22248df71f1a3ff956c52ab76bdcc3a8aac01ce598e13097db52b9615a204"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/provenance.json",
+          "sha256": "7f4ee61625e8f68fa5fa50135b57127859032161342aa8b6441ed0a0877239a9"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/registration.json",
+          "sha256": "423a3ac4f3d214dafe4f48785f87d1d5d713e54e4c4b8b9dcc0dd1dff5af6d77"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/repair_roof_density.py",
+          "sha256": "9e86b3a28ed3f774702310fd2ba5c340c9b1feac3cef1b39ca0007b2836ad5f2"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/replay.py",
+          "sha256": "41c2662a755d4bbfa4191298eb56302800e03d1e4ff3d9f71fd88a75dde4f374"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/test_context.py",
+          "sha256": "847f47ff91d963cc43bd3037e8d51e981d6676810e449059aada89ea4af9624b"
+        }
+      ],
+      "recommendation": {
+        "reviewerRole": "coordinator",
+        "decision": "recommended",
+        "scope": "isolated-ordinary-scene",
+        "sourceSHA256": "d1ed85e7a64965c9063db1533672ef07d8b4e9c81588f5c11f9a711f57a75355",
+        "evidence": {
+          "path": "docs/review/building-perspective-detail-20261116/context/COORDINATOR-REVIEW.md",
+          "sha256": "b3fe6119e73d07148a9dd2d97de2f6a28d5a50c6c2e03f84be72dc4fe5c9d34a"
+        }
+      }
+    },
+    {
+      "role": "context-04",
+      "status": "recommended",
+      "image": {
+        "path": "docs/review/building-perspective-detail-20261116/context/output/solid-04-civic-west.png",
+        "sha256": "26640bb8c2c92e08679643e028346f5c926a5d2fbd021f5996b03d6081a42948"
+      },
+      "registration": {
+        "canvasPixels": [
+          1678,
+          1468
+        ],
+        "rootPixelsTopLeft": [
+          839,
+          1036
+        ],
+        "worldPosition": [
+          832.0,
+          960.0
+        ],
+        "drawSizeWorld": [
+          419.5,
+          367.0
+        ]
+      },
+      "dependencies": [
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/attempt-01/geometry.json",
+          "sha256": "72bde7f060cdc88ea82aa43701bdff4b6fe142a614ccb7922e81fa9c817ae772"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/author.py",
+          "sha256": "c5d7d98c8bbf60e6e5c272c6e7e79e5afff039a523df653c9e2591c7d5f0d9fd"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/geometry.json",
+          "sha256": "f570e28bcb421d4c15cf67efd15e58613d1129712d3fd61c9873dea62bc0c0c4"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/door.png",
+          "sha256": "21e6ab6ed1540142728c43e0f9d8dacfd5924eac0d3fe64a257bac13af94c2b1"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/env_solid_01_residential_west@1x.png",
+          "sha256": "1171bd8f9ff905b96e54cb33aac6ea98779b712f4119d2fa76593a2c693bdf6e"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/env_solid_02_residential_north@1x.png",
+          "sha256": "6c19e10ce277fe32c7085ab263ef7bbcb8f4c121509dd1053400bca097a5e154"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/env_solid_04_civic_west@1x.png",
+          "sha256": "b1d9002bd547eb482190fa28e4c53557220a37eabbdceb54297186a04a7edb0b"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/env_solid_05_civic_dais@1x.png",
+          "sha256": "04a5ee7285c65271c67e3ad7649f9234413b38a05fa14483f1397f16f9bd4cb6"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/facade.png",
+          "sha256": "1cc2f9178246755462d049934c1825bd451e04d82a268dd522cfeb9d6772a949"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/roof.png",
+          "sha256": "79137825a204ae53a1eeeccecc3d391503d5d56419ddc0e42c2e2806e8b1124b"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/stone-provider.json",
+          "sha256": "dca6c47f00614c5af77eab8a53d6c7b3dbc5e585f471296f1695d21061efbdf4"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/stone-source-provenance.md",
+          "sha256": "536ffc39d5b7cbdc9765ae766f66c58d5a0d624b49b35e922f6cf8d62e4d0c71"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/v6-records.json",
+          "sha256": "1cc28f757fb6e9e7ed6e53843c745bcb63f8adc42a2eef6413362582eac4930d"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/v6-z100-native.png",
+          "sha256": "5774f9d3c581323d437307fd6addfa21583372a4568f8edce108d15553d52ec3"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/manifest.json",
+          "sha256": "5ac5fd81fd591bce2fb6ae61db82b7e7a34444707266d7ed04d0621b40116468"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/materials.json",
+          "sha256": "bee535e96a65a8845b299a9c32a468e505a08ad14534a23e7042d8576e5a33af"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/first-preview-half.png",
+          "sha256": "cbdeafde27f42857459248c403b0d40e67909485fa8ee2dc981cd91768142615"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/first-preview-native.png",
+          "sha256": "da123708f8cd4014456c7b631395ea46691340ae8cdc14f455d7e8cb360b43eb"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-01-residential-west-footprint-witness.png",
+          "sha256": "b17d7bf9c4be218332bd108b7de67972778068fcc7716ebf8ef117028032616f"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-01-residential-west-half.png",
+          "sha256": "689c9a73ab16b26194df9d052ea4e12e8fe49c53c58bb699cc16c44a3696a3aa"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-01-residential-west-native.png",
+          "sha256": "3564db376cb79507b6c1ab8da38687e96b18cdea079a8e6c656cfd603cff826a"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-01-residential-west.png",
+          "sha256": "edf9d79bb71337eb908ab654a11e6011e8b69354101f30dab2dffbd401073482"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-02-residential-north-footprint-witness.png",
+          "sha256": "143d56805068ba57ce2d9938f91b05ea0309f9e70678a069ddbd1e3d63d58c59"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-02-residential-north-half.png",
+          "sha256": "e87b382c80f7ea8f1e3b5791454fde917e9d7c1d189b3f79411b51e11e0b3ca4"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-02-residential-north-native.png",
+          "sha256": "43d732967943a144e64ce3657f318a83d14d7c70ddaaf216f8d04271929c72ac"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-02-residential-north.png",
+          "sha256": "d1ed85e7a64965c9063db1533672ef07d8b4e9c81588f5c11f9a711f57a75355"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-04-civic-west-footprint-witness.png",
+          "sha256": "c3ade3be43c77eab4b3ac4b8f924e89bfa762c5ddeee2cb329e23bdecfa8930f"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-04-civic-west-half.png",
+          "sha256": "0f31b37f32c983f6230c2fc21e4c2eb1f48cd197cfbe5bc784de219ec780ce84"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-04-civic-west-native.png",
+          "sha256": "4664d62672149d8e9e9c697c921b8e820feaae0b48b6e20b55e18d2877019b15"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-04-civic-west.png",
+          "sha256": "26640bb8c2c92e08679643e028346f5c926a5d2fbd021f5996b03d6081a42948"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-05-civic-dais-footprint-witness.png",
+          "sha256": "d58ebb1be0787aded4848ffe8a336a7d36fac6733b6eda18f5d49c88d3db9f4d"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-05-civic-dais-half.png",
+          "sha256": "406d15742ce55b3bb222358a08e301c8c6b5543db55e6cbd069b934fd956c1ab"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-05-civic-dais-native.png",
+          "sha256": "3b58d0ed843d3c887b3018b190ee1518bf4432c069ec0a0a77f73d538726b475"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-05-civic-dais.png",
+          "sha256": "4cb22248df71f1a3ff956c52ab76bdcc3a8aac01ce598e13097db52b9615a204"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/provenance.json",
+          "sha256": "7f4ee61625e8f68fa5fa50135b57127859032161342aa8b6441ed0a0877239a9"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/registration.json",
+          "sha256": "423a3ac4f3d214dafe4f48785f87d1d5d713e54e4c4b8b9dcc0dd1dff5af6d77"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/repair_roof_density.py",
+          "sha256": "9e86b3a28ed3f774702310fd2ba5c340c9b1feac3cef1b39ca0007b2836ad5f2"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/replay.py",
+          "sha256": "41c2662a755d4bbfa4191298eb56302800e03d1e4ff3d9f71fd88a75dde4f374"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/test_context.py",
+          "sha256": "847f47ff91d963cc43bd3037e8d51e981d6676810e449059aada89ea4af9624b"
+        }
+      ],
+      "recommendation": {
+        "reviewerRole": "coordinator",
+        "decision": "recommended",
+        "scope": "isolated-ordinary-scene",
+        "sourceSHA256": "26640bb8c2c92e08679643e028346f5c926a5d2fbd021f5996b03d6081a42948",
+        "evidence": {
+          "path": "docs/review/building-perspective-detail-20261116/context/COORDINATOR-REVIEW.md",
+          "sha256": "b3fe6119e73d07148a9dd2d97de2f6a28d5a50c6c2e03f84be72dc4fe5c9d34a"
+        }
+      }
+    },
+    {
+      "role": "context-05",
+      "status": "recommended",
+      "image": {
+        "path": "docs/review/building-perspective-detail-20261116/context/output/solid-05-civic-dais.png",
+        "sha256": "4cb22248df71f1a3ff956c52ab76bdcc3a8aac01ce598e13097db52b9615a204"
+      },
+      "registration": {
+        "canvasPixels": [
+          774,
+          522
+        ],
+        "rootPixelsTopLeft": [
+          387,
+          316
+        ],
+        "worldPosition": [
+          1088.0,
+          704.0
+        ],
+        "drawSizeWorld": [
+          193.5,
+          130.5
+        ]
+      },
+      "dependencies": [
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/attempt-01/geometry.json",
+          "sha256": "72bde7f060cdc88ea82aa43701bdff4b6fe142a614ccb7922e81fa9c817ae772"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/author.py",
+          "sha256": "c5d7d98c8bbf60e6e5c272c6e7e79e5afff039a523df653c9e2591c7d5f0d9fd"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/geometry.json",
+          "sha256": "f570e28bcb421d4c15cf67efd15e58613d1129712d3fd61c9873dea62bc0c0c4"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/door.png",
+          "sha256": "21e6ab6ed1540142728c43e0f9d8dacfd5924eac0d3fe64a257bac13af94c2b1"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/env_solid_01_residential_west@1x.png",
+          "sha256": "1171bd8f9ff905b96e54cb33aac6ea98779b712f4119d2fa76593a2c693bdf6e"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/env_solid_02_residential_north@1x.png",
+          "sha256": "6c19e10ce277fe32c7085ab263ef7bbcb8f4c121509dd1053400bca097a5e154"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/env_solid_04_civic_west@1x.png",
+          "sha256": "b1d9002bd547eb482190fa28e4c53557220a37eabbdceb54297186a04a7edb0b"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/env_solid_05_civic_dais@1x.png",
+          "sha256": "04a5ee7285c65271c67e3ad7649f9234413b38a05fa14483f1397f16f9bd4cb6"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/facade.png",
+          "sha256": "1cc2f9178246755462d049934c1825bd451e04d82a268dd522cfeb9d6772a949"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/roof.png",
+          "sha256": "79137825a204ae53a1eeeccecc3d391503d5d56419ddc0e42c2e2806e8b1124b"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/stone-provider.json",
+          "sha256": "dca6c47f00614c5af77eab8a53d6c7b3dbc5e585f471296f1695d21061efbdf4"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/stone-source-provenance.md",
+          "sha256": "536ffc39d5b7cbdc9765ae766f66c58d5a0d624b49b35e922f6cf8d62e4d0c71"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/v6-records.json",
+          "sha256": "1cc28f757fb6e9e7ed6e53843c745bcb63f8adc42a2eef6413362582eac4930d"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/inputs/v6-z100-native.png",
+          "sha256": "5774f9d3c581323d437307fd6addfa21583372a4568f8edce108d15553d52ec3"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/manifest.json",
+          "sha256": "5ac5fd81fd591bce2fb6ae61db82b7e7a34444707266d7ed04d0621b40116468"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/materials.json",
+          "sha256": "bee535e96a65a8845b299a9c32a468e505a08ad14534a23e7042d8576e5a33af"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/first-preview-half.png",
+          "sha256": "cbdeafde27f42857459248c403b0d40e67909485fa8ee2dc981cd91768142615"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/first-preview-native.png",
+          "sha256": "da123708f8cd4014456c7b631395ea46691340ae8cdc14f455d7e8cb360b43eb"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-01-residential-west-footprint-witness.png",
+          "sha256": "b17d7bf9c4be218332bd108b7de67972778068fcc7716ebf8ef117028032616f"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-01-residential-west-half.png",
+          "sha256": "689c9a73ab16b26194df9d052ea4e12e8fe49c53c58bb699cc16c44a3696a3aa"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-01-residential-west-native.png",
+          "sha256": "3564db376cb79507b6c1ab8da38687e96b18cdea079a8e6c656cfd603cff826a"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-01-residential-west.png",
+          "sha256": "edf9d79bb71337eb908ab654a11e6011e8b69354101f30dab2dffbd401073482"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-02-residential-north-footprint-witness.png",
+          "sha256": "143d56805068ba57ce2d9938f91b05ea0309f9e70678a069ddbd1e3d63d58c59"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-02-residential-north-half.png",
+          "sha256": "e87b382c80f7ea8f1e3b5791454fde917e9d7c1d189b3f79411b51e11e0b3ca4"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-02-residential-north-native.png",
+          "sha256": "43d732967943a144e64ce3657f318a83d14d7c70ddaaf216f8d04271929c72ac"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-02-residential-north.png",
+          "sha256": "d1ed85e7a64965c9063db1533672ef07d8b4e9c81588f5c11f9a711f57a75355"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-04-civic-west-footprint-witness.png",
+          "sha256": "c3ade3be43c77eab4b3ac4b8f924e89bfa762c5ddeee2cb329e23bdecfa8930f"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-04-civic-west-half.png",
+          "sha256": "0f31b37f32c983f6230c2fc21e4c2eb1f48cd197cfbe5bc784de219ec780ce84"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-04-civic-west-native.png",
+          "sha256": "4664d62672149d8e9e9c697c921b8e820feaae0b48b6e20b55e18d2877019b15"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-04-civic-west.png",
+          "sha256": "26640bb8c2c92e08679643e028346f5c926a5d2fbd021f5996b03d6081a42948"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-05-civic-dais-footprint-witness.png",
+          "sha256": "d58ebb1be0787aded4848ffe8a336a7d36fac6733b6eda18f5d49c88d3db9f4d"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-05-civic-dais-half.png",
+          "sha256": "406d15742ce55b3bb222358a08e301c8c6b5543db55e6cbd069b934fd956c1ab"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-05-civic-dais-native.png",
+          "sha256": "3b58d0ed843d3c887b3018b190ee1518bf4432c069ec0a0a77f73d538726b475"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/output/solid-05-civic-dais.png",
+          "sha256": "4cb22248df71f1a3ff956c52ab76bdcc3a8aac01ce598e13097db52b9615a204"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/provenance.json",
+          "sha256": "7f4ee61625e8f68fa5fa50135b57127859032161342aa8b6441ed0a0877239a9"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/registration.json",
+          "sha256": "423a3ac4f3d214dafe4f48785f87d1d5d713e54e4c4b8b9dcc0dd1dff5af6d77"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/repair_roof_density.py",
+          "sha256": "9e86b3a28ed3f774702310fd2ba5c340c9b1feac3cef1b39ca0007b2836ad5f2"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/replay.py",
+          "sha256": "41c2662a755d4bbfa4191298eb56302800e03d1e4ff3d9f71fd88a75dde4f374"
+        },
+        {
+          "path": "docs/review/building-perspective-detail-20261116/context/test_context.py",
+          "sha256": "847f47ff91d963cc43bd3037e8d51e981d6676810e449059aada89ea4af9624b"
+        }
+      ],
+      "recommendation": {
+        "reviewerRole": "coordinator",
+        "decision": "recommended",
+        "scope": "isolated-ordinary-scene",
+        "sourceSHA256": "4cb22248df71f1a3ff956c52ab76bdcc3a8aac01ce598e13097db52b9615a204",
+        "evidence": {
+          "path": "docs/review/building-perspective-detail-20261116/context/COORDINATOR-REVIEW.md",
+          "sha256": "b3fe6119e73d07148a9dd2d97de2f6a28d5a50c6c2e03f84be72dc4fe5c9d34a"
+        }
+      }
+    },
+    {
+      "role": "ground-plan",
+      "status": "recommended",
+      "image": {
+        "path": "docs/review/footprint-ground-repair-20261116/plan/ground.png",
+        "sha256": "97ae5825c57c9e21b48a3d863bfd3e93b940e3eb5c5134b9c51172cc6656b7c7"
+      },
+      "registration": {
+        "canvasPixels": [
+          4608,
+          4608
+        ],
+        "rootPixelsTopLeft": [
+          0,
+          4608
+        ],
+        "worldPosition": [
+          0,
+          0
+        ],
+        "drawSizeWorld": [
+          2304,
+          2304
+        ],
+        "kind": "ground",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "dependencies": [
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/README.md",
+          "sha256": "2b46cc34240189d1a4d968464b4d1553655f45ded9db0a617c8cf6192d1ec3ef"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/attempt-01/README.md",
+          "sha256": "aa05ded750fb4fda15515372f9f4eb2093523e3adfff448673819471d871f8f1"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/attempt-01/author.py",
+          "sha256": "bac6a11a59f3c41ee578d318b7291860e48eb5ee1d4514ca3371d7340220a216"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/attempt-01/first-plan-preview.png",
+          "sha256": "5252e0ff855d0e7a0d5f8d095f0e84e21bbd57f9de149f0c1697cd226e3d094a"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/attempt-01/first-source-detail.png",
+          "sha256": "56526f258bc2dfc6083463fc51c3b617b5eb97afa4ddd9e6c1a0833eaf77c9d7"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/attempt-01/ground.png",
+          "sha256": "21ed93b2733a70fab9c485e8c9df06ed12627e79b37cc9d47dbcc9abe11840e5"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/attempt-01/ground.svg",
+          "sha256": "3539e7e919d3514e593f9a372498462e4b8dd80b595253f25892030afe06e8be"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/attempt-01/manifest.json",
+          "sha256": "ecbf9f50cf9d4860f64520c7c8c2d4aac250b204a7c7131dc8f042ab75b8f463"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/attempt-01/material-ids.png",
+          "sha256": "e67458c319fce9ff63e2c54409023813b07f7265a35c45a87f99c6b04e41af1b"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/attempt-01/plan.json",
+          "sha256": "3b145fc228ac73367b1d6c5d60ee48e1578ebdbc972493afa9ba5a91018d880b"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/attempt-01/replay.py",
+          "sha256": "33909a90a97d66f7022db78b7f5e09bd97c17eaa39704681896e34fe67f6f5d9"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/attempt-01/test_plan.py",
+          "sha256": "08f758d7a98d78745b93224ca231b4d801781e92b8f64b3fdf8800298462d1b3"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/attempt-01/tests-final.log",
+          "sha256": "9c2ebaa74d568f89d51a12abe4f46928d7847f920de74cf9f5e95ccd7f657512"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/attempt-01/tests-first.log",
+          "sha256": "cd807f7c1ccdabddca654e537f294ccb7208c752613e84c330d7efb0cdfe6a64"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/attempt-01/v7-immutable-sha256.json",
+          "sha256": "859fa4a8614d2eb8a05cd1c0f0deaf6cf1d2350f6a69b1a73d284eafdb311381"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/attempt-01/validate.py",
+          "sha256": "73d6f01c2537592e0bfe3a4813d8bf507374c5d2fa4da799224030066f7d0074"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/attempt-01/validation-tests.log",
+          "sha256": "22e4cea971f386450e93b95e857f2eab42f91a86abf4c380f034931209ec298a"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/attempt-01/validation.json",
+          "sha256": "817bf58b80514c3173511c400317b98c240d78b2a9751a03a20d9742e2f24f6f"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/author.py",
+          "sha256": "bac6a11a59f3c41ee578d318b7291860e48eb5ee1d4514ca3371d7340220a216"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/final-plan-preview.png",
+          "sha256": "57bf7ae1f33c825444f00819c442144c814ec1839323f5eb4eb61bd066d27ac4"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/final-source-detail.png",
+          "sha256": "16bf52ed1631306d3fd56a6c0afbb8cf5c45eb0672dc111552c67a21f7319f1e"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/first-plan-preview.png",
+          "sha256": "5252e0ff855d0e7a0d5f8d095f0e84e21bbd57f9de149f0c1697cd226e3d094a"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/first-source-detail.png",
+          "sha256": "56526f258bc2dfc6083463fc51c3b617b5eb97afa4ddd9e6c1a0833eaf77c9d7"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/ground.png",
+          "sha256": "97ae5825c57c9e21b48a3d863bfd3e93b940e3eb5c5134b9c51172cc6656b7c7"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/ground.svg",
+          "sha256": "0493fc06daa08190683facb0316a7fddbb72a126f324a5d7ca4eac59e35329a8"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/material-1-tile.png",
+          "sha256": "cbb59d7bedb531b71f9b8759601f015d1f0c5b1dd7afd9bb6249e7ce4713a159"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/material-2-tile.png",
+          "sha256": "fe7ec78b92b318404acbfc27e169bc89463de7e558f2f7aa311867798842708f"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/material-3-tile.png",
+          "sha256": "d58d8730d017c34260c701ea5a3a645b04f386aa1b80745c28ab7a7c8ca80d91"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/material-4-tile.png",
+          "sha256": "53972bf86b6defea3d1b5b3e5ae839c1a91b7ce9142b52cff589110073ee81d8"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/material-ids.png",
+          "sha256": "e67458c319fce9ff63e2c54409023813b07f7265a35c45a87f99c6b04e41af1b"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/material.py",
+          "sha256": "af151d985619a614e56d5561f889cbc3e83ed8c7c12c4a987a7e3b8d2dea7b30"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/materials.json",
+          "sha256": "a7c107fa5aeb4d323f6b8ad3fda4c84aaeb523a927daafa44425ade08d30826e"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/plan.json",
+          "sha256": "3b145fc228ac73367b1d6c5d60ee48e1578ebdbc972493afa9ba5a91018d880b"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/replay.py",
+          "sha256": "3e9fb35edfc39f54842c934537b584cead73505748a113d45ce626bc152f53d9"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/road-details-mask.png",
+          "sha256": "5271f3c5322ad90f855ad9ccef1a0ac92f481be6ea155a8b59a8f4893db96534"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/road-details.png",
+          "sha256": "4d55d9a9864bef07892901730de383e7769b0358be91f3bb03c3491f09b305d2"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/road-details.svg-fragment",
+          "sha256": "c84ab8080da4dc7e17782eff93a63ea4eb7648de133accdcd2bd87e2e0ba4a82"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/road-mask.png",
+          "sha256": "07823acb6559272c5b78419cf6112e00cf92bd256a0f302137ab68b188f97121"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/test_plan.py",
+          "sha256": "a926e1739008e7541f0d4cf36d65d62f60ad0bc1152e4079c17533a77ab8abcf"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/tests-correction.log",
+          "sha256": "1ffde35b895873d2ca1ea33661c8f25d6407db910ae784b47091b129888b013c"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/tests-final.log",
+          "sha256": "9c2ebaa74d568f89d51a12abe4f46928d7847f920de74cf9f5e95ccd7f657512"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/tests-first.log",
+          "sha256": "cd807f7c1ccdabddca654e537f294ccb7208c752613e84c330d7efb0cdfe6a64"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/v7-immutable-sha256.json",
+          "sha256": "859fa4a8614d2eb8a05cd1c0f0deaf6cf1d2350f6a69b1a73d284eafdb311381"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/validate.py",
+          "sha256": "641e6131d6879a9ef070d45a41331a3de9dab3cafff97faf720cd4cae7403aa1"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/validation-tests.log",
+          "sha256": "f27a6d8507b1929548f2b40d453d1f3bb7e54e6d82ee948a9aa12644189324b7"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/validation.json",
+          "sha256": "0ecc2438cbb6b35504271e22afce44c29fb212e811d72ada2980600748333d3f"
+        },
+        {
+          "path": "docs/review/paving-corner-review-20261116/paving-supertile.png",
+          "sha256": "1b864486f0859262c4e851a95e3fe3c3b0210ee5ec3306ada5ee066a05319c7a"
+        },
+        {
+          "path": "docs/review/paving-repeat-repair-20261116/revision02/paving-muted-candidate.png",
+          "sha256": "7a1f29c7b0f1a0a96e12484de84da21e7ab4ebee10cab2e829ed19309ca17d35"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/manifest.json",
+          "sha256": "e25b2ba9e5b52171a5fd97902557707c3cf05938ccc9371809bd7d1a5483d3d9"
+        },
+        {
+          "path": "docs/review/footprint-ground-repair-20261116/plan/test_plan.py",
+          "sha256": "a926e1739008e7541f0d4cf36d65d62f60ad0bc1152e4079c17533a77ab8abcf"
+        }
+      ],
+      "recommendation": {
+        "reviewerRole": "coordinator",
+        "decision": "recommended",
+        "scope": "isolated-ordinary-scene",
+        "sourceSHA256": "97ae5825c57c9e21b48a3d863bfd3e93b940e3eb5c5134b9c51172cc6656b7c7",
+        "evidence": {
+          "path": "docs/review/footprint-ground-repair-20261116/SOURCE-REVIEW-FINAL.md",
+          "sha256": "a633d036627b0b7da7ea09faa370b0d1a5fb00615d117f5c0760d7c4b5d2ac9e"
+        }
+      }
+    }
+  ],
+  "buildings": [
+    {
+      "role": "kiosk",
+      "solidID": "solid-03-transit-kiosk",
+      "nodeName": "benchmark-building",
+      "groundPixelsTopLeft": [
+        [
+          500.0,
+          1160.0
+        ],
+        [
+          952.5483399593904,
+          933.7258300203048
+        ],
+        [
+          500.0,
+          707.4516600406096
+        ],
+        [
+          47.451660040609625,
+          933.7258300203048
+        ]
+      ]
+    },
+    {
+      "role": "context-01",
+      "solidID": "solid-01-residential-west",
+      "nodeName": "environment-upright-env_solid_01_residential_west",
+      "groundPixelsTopLeft": [
+        [
+          1473.0580079512683,
+          1439.5483399593904
+        ],
+        [
+          1835.0966799187809,
+          1258.5290039756342
+        ],
+        [
+          386.94199204873155,
+          534.4516600406096
+        ],
+        [
+          24.90332008121925,
+          715.4709960243658
+        ]
+      ]
+    },
+    {
+      "role": "context-02",
+      "solidID": "solid-02-residential-north",
+      "nodeName": "environment-upright-env_solid_02_residential_north",
+      "groundPixelsTopLeft": [
+        [
+          567.4709960243658,
+          1349.2935059634515
+        ],
+        [
+          1653.5870119269027,
+          806.2354980121829
+        ],
+        [
+          1110.5290039756342,
+          534.7064940365486
+        ],
+        [
+          24.412988073097267,
+          1077.764501987817
+        ]
+      ]
+    },
+    {
+      "role": "context-04",
+      "solidID": "solid-04-civic-west",
+      "nodeName": "environment-upright-env_solid_04_civic_west",
+      "groundPixelsTopLeft": [
+        [
+          1110.5290039756342,
+          1443.2935059634515
+        ],
+        [
+          1653.5870119269027,
+          1171.764501987817
+        ],
+        [
+          567.4709960243658,
+          628.7064940365486
+        ],
+        [
+          24.412988073097267,
+          900.2354980121829
+        ]
+      ]
+    },
+    {
+      "role": "context-05",
+      "solidID": "solid-05-civic-dais",
+      "nodeName": "environment-upright-env_solid_05_civic_dais",
+      "groundPixelsTopLeft": [
+        [
+          296.4903320081219,
+          497.01933598375615
+        ],
+        [
+          749.0386719675123,
+          270.74516600406093
+        ],
+        [
+          477.5096679918781,
+          134.98066401624385
+        ],
+        [
+          24.9613280324877,
+          361.25483399593907
+        ]
+      ]
+    }
+  ],
+  "planBinding": {
+    "schema": "footprint-ground-recommendations-008",
+    "plan": {
+      "path": "docs/review/footprint-ground-repair-20261116/plan/plan.json",
+      "sha256": "3b145fc228ac73367b1d6c5d60ee48e1578ebdbc972493afa9ba5a91018d880b"
+    },
+    "manifest": {
+      "path": "docs/review/footprint-ground-repair-20261116/plan/manifest.json",
+      "sha256": "e25b2ba9e5b52171a5fd97902557707c3cf05938ccc9371809bd7d1a5483d3d9"
+    },
+    "validator": {
+      "path": "docs/review/footprint-ground-repair-20261116/plan/test_plan.py",
+      "sha256": "a926e1739008e7541f0d4cf36d65d62f60ad0bc1152e4079c17533a77ab8abcf"
+    },
+    "recommendation": {
+      "reviewerRole": "coordinator",
+      "decision": "recommended",
+      "scope": "isolated-ordinary-scene",
+      "planSHA256": "3b145fc228ac73367b1d6c5d60ee48e1578ebdbc972493afa9ba5a91018d880b",
+      "sourceSHA256": "97ae5825c57c9e21b48a3d863bfd3e93b940e3eb5c5134b9c51172cc6656b7c7",
+      "evidence": {
+        "path": "docs/review/footprint-ground-repair-20261116/SOURCE-REVIEW-FINAL.md",
+        "sha256": "a633d036627b0b7da7ea09faa370b0d1a5fb00615d117f5c0760d7c4b5d2ac9e"
+      }
+    }
+  }
+}

@@ -1,5 +1,15 @@
 # Next work order
 
+## Bounded V8 comparison verified, November16 23:29UTC
+
+Actual native2321 passed exactly1test and imported6captures/18images at23:25. Fresh-build/loaded executable SHA7b4efe2e482d3707e8d08aff5bd4406d3ccdedb26467919ce7b5b2fc3545500d matches. Independent retained checker verifies9full baseline RGBA matches to V7 candidate and unchanged authority/source contracts. Actual Brave passed72selections/96image displays overV7/V8 with exact704/352CSS widths and grayscale restoration. Independent59scene+10audit tests and both `--require-v8` Node suites pass. Final scene review is `docs/review/footprint-ground-repair-20261116/REVIEW-FINAL.md`.
+
+**Overall benchmark NOT MET.** Shared paving and relocated decorative tree improve visible ground/base consistency, but kiosk chamfer infill still looks walkable despite its blocked envelope. Thin angular curb, regular slabs, subdued weathering, dominant/repetitive building masses and stationary Player silhouette remain unlike the benchmark. Nine legacy raster contacts remain unknown/offcrop. Do not claim all footprints coherent from registration or semantic tests.
+
+Preserve failed native2317 and exact issue253 oracle correction. No tolerance weakening, art retry or stale-bundle causal claim. One non-erasing dedicated-simulator restart preceded2321. Jev401 required direct browser fallback. First async probe syntax failure and hidden-tab timer timeout are recorded, successful matrix used image-load events. No unfiltered Swift retry or automatic CI polling chain.
+
+Remaining authorized follow-through: gallery default/copy update after verified evidence, staged-only tracked-export validation, commit/push to existingPR236 and publication record. Then STOP for owner scene review. No more aesthetic attempts, motion/encounter expansion, production admission, merge, issue closure or physical certification. Native slot free. Preserve unrelated untracked packets.
+
 ## Coordinated repair source checkpoint, November16 23:16UTC
 
 Final ground source received a bounded coordinator recommendation for native comparison only after actual first/final previews. First flat preview rejected, one material correction retained with attempt01 immutable. GroundSHA97ae5825c57c9e21b48a3d863bfd3e93b940e3eb5c5134b9c51172cc6656b7c7, planSHA3b145fc228ac73367b1d6c5d60ee48e1578ebdbc972493afa9ba5a91018d880b, manifest e25b2ba9e5b52171a5fd97902557707c3cf05938ccc9371809bd7d1a5483d3d9. Exact recommendation is `footprint-ground-repair-20261116/recommendations.json`. Independent27plan+10audit+36scene tests pass, focused Swift16tests pass, V7 historical41tests and retained checker pass. Conservative actual prop base regions remain on sidewalk outside24solids,124200samples. Only five mesh-building canvases can intersect the crop, nine legacy raster contacts remain unknown/offcrop.
