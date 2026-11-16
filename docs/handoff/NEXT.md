@@ -1,5 +1,11 @@
 # Next work order
 
+## Whole-scene scope and fixture decisions, November16 04:56UTC
+
+Recovered owner clarification at04:51:26UTC: rejection concerns the overall scene. This supersedes the scope question below, not the existing visual rejection or admission gates. The unchanged approved benchmark remains authority.
+
+Blowfish owns the isolated WholeSceneBenchmarkTests fixture and its review packet. Proceed with the exact quiet control and an existing-asset composition diagnostic, not a claimed complete correction. No registered replacement building or muted paving asset has been supplied. Retain building-constrained.png with NOT SOLVED status and record paving mismatch. No new procedural shadow art is authorized in this pass. Keep authoritative cone geometry and production HUD unchanged, recording prominence and missing contact shadows as unresolved deficits. Ordinary HUD/field-on captures are primary, staged art-only captures secondary. Retained-control differences must be reported explicitly, never silently waived or overwritten. Capture/import results are pending. Production changes, animation expansion, admission and merges remain gated.
+
 ## Repeated benchmark rejection, November16 04:44:17UTC
 
 Owner: “still not at benchmark.” Camera attempt03 is withdrawn and marked rejected in its record, builder, tests and visible gallery. All three attempts remain history, with pixels unchanged. No active recommendation. The feedback does not identify a specific defect or explicitly establish Camera-only scope. Clarify Camera versus Player versus whole rendered scene before another art proposal. All state/clip/animation expansion remains blocked. Existing bounded exact-head CI monitoring continues separately without production changes, merges or unfiltered Swift retries.
