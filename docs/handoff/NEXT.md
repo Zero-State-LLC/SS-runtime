@@ -1,5 +1,15 @@
 # Next work order
 
+## Camera correction verification, November16 04:29UTC
+
+Attempt03 is a review-only extraction from the original approved benchmark, not a finished editable master. Open `docs/review/camera-midpoint-source-20261116/index.html` for the same-scale original/proposal/contamination comparison. Independently byte-compared its copied reference with the existing approved concept and its full contract with the bundled contract. All17 portable guards pass with ResourceWarnings treated as errors. Actual Brave loaded all9 gallery images, verified64x96 and32x48 device views and grayscale on/off restoration with no horizontal overflow. Visible base debris, baked light, contour downsampling and absent underpaint/layers remain unresolved. Attempts01/02 are explicitly rejected in records and gallery. No owner acceptance, states or clip expansion follows.
+
+Exact native-slice head9a4b7a74a504bee2bfc9a990c7d4185b89fe2e34 run43799888314 completed successfully, all five jobs passed, fetched04:26:30UTC. Later9769d922 run43803119616 remains running, parity and device-sitting passed. Specs7a30967 run43803448237 passed. Runtime#237 independently fetched OPEN. Source success does not certify visual fidelity or the pending native-control fix#238.
+
+## Owner correction, November16 04:22:37UTC
+
+Owner: “this does not match benchmark.” In the latest Camera review context, reject the current sample for fidelity and withdraw the attempt02 recommendation. Preserve attempts01/02 as history. The unchanged approved `street-corner-approved-concept.png` remains the benchmark; the alternate midpoint concept is not substitute authority. Midpoint is the ground transform, not new source proportions/materials/viewpoint approval. Rework Camera first sample only, with states/clips gated. Enemy first-sample work is paused to prioritize this correction. Source tests and browser controls do not override the visual rejection.
+
 ## Independent continuation checkpoint, November16 04:16UTC
 
 North and baggy-south neutral proposals are ready for source review, not family admission. Each passes9 portable source guards. North actual Brave gallery loads17 images and all13 layer toggles hide/restore correctly. Baggy south preserves original upper-body and boot pixels, but its shins remain narrower than north and its knee-pad placement differs. North bag size, coat, material and elevation fidelity remain unresolved. Do not expand these neutrals into animation before review. Original south and5/13 stay unchanged. Separate east/west first samples are in progress.

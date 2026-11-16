@@ -1,0 +1,319 @@
+{
+ "status": "ATTEMPT_01_REJECTED_OWNER_2026-11-16T04:22:37Z_COMPARISON_HISTORY_ONLY",
+ "projection": "D-108 midpoint: +45 deg ground rotation then half-height scaling; upright sprite at projected root",
+ "registration": {
+  "canvasPixels": [
+   256,
+   384
+  ],
+  "logicalCanvas": [
+   64,
+   96
+  ],
+  "logicalGroundAnchor": [
+   32,
+   88
+  ],
+  "groundAnchorPixels": [
+   128,
+   352
+  ],
+  "baseFootprint": {
+   "bottomOpaqueRow": 351,
+   "baseMaxOpaqueWidth": 82,
+   "baseRowsAtMaxWidth": [
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327
+   ]
+  }
+ },
+ "provenance": {
+  "recoveredIntact": "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/camera-shared-source/intact.png",
+  "recoveredIntactSHA256": "aa437f0eac9593fab43e0f2b7317a856fd99c1294821e06f1c95dda09dbedb1f",
+  "origin": "camera-state-study: built-in image_gen output, alpha cleanup and registration; CAPTURED candidate, never accepted",
+  "honestLabel": "GENERATED_PRIOR_CANDIDATE_RECOVERED_NOT_ORIGINAL_MASTER",
+  "otherStates": {
+   "intact": "aa437f0eac9593fab43e0f2b7317a856fd99c1294821e06f1c95dda09dbedb1f",
+   "damaged": "0d6b70f2f1ed172c6e726d8a8f0f4b69f7e3e68a5f2c08d41d8fc782dcb14fc9",
+   "critical": "baae195d331ffb11e1e62193339834d9e8e6229a47c5d565944cc89c8abdd438",
+   "destroyed": "7847e977926526762f968fc72e76083c646f553e7c1b2a5a8a30ddafd48bb3b6"
+  },
+  "concept": "/Users/appliedalchemylabs/.jcode/scratch/ss-specs-audit-pr-20261114/docs/review/phase4/street-corner-approved-concept.png",
+  "conceptSHA256": "49aa35447230187e3eabe948cdc8eba6d6d465b2605d624e2cf7443f6cb69ffb",
+  "midpointConcept": "/Users/appliedalchemylabs/.jcode/scratch/ss-specs-audit-pr-20261114/docs/review/phase4/street-corner-midpoint-concept.png",
+  "midpointConceptSHA256": "61a8ab9b805930284986c0a6ae3596a581fb1e452e292ad3c5f30690c34db561"
+ },
+ "tool": {
+  "name": "Pillow",
+  "version": "12.3.0"
+ },
+ "layerOrderBottomToTop": [
+  "base",
+  "pole",
+  "junction_box",
+  "arm",
+  "head"
+ ],
+ "layers": [
+  {
+   "name": "base",
+   "sha256": "99e4e762f331aafbd344ed9611dc9c17943ce13744324d6d049b5489ca380649",
+   "alphaBounds": [
+    86,
+    276,
+    170,
+    352
+   ],
+   "opaquePixels": 5591,
+   "polygon": [
+    [
+     80,
+     276
+    ],
+    [
+     176,
+     276
+    ],
+    [
+     176,
+     360
+    ],
+    [
+     80,
+     360
+    ]
+   ],
+   "provenance": "recovered pixels, exact partition"
+  },
+  {
+   "name": "pole",
+   "sha256": "1e37ac09282844e9123890cecf92e1eb6c0f8525e92f084f5d5150db35779df9",
+   "alphaBounds": [
+    96,
+    39,
+    252,
+    276
+   ],
+   "opaquePixels": 8447,
+   "polygon": [
+    [
+     0,
+     0
+    ],
+    [
+     256,
+     0
+    ],
+    [
+     256,
+     384
+    ],
+    [
+     0,
+     384
+    ]
+   ],
+   "provenance": "recovered pixels, exact partition"
+  },
+  {
+   "name": "junction_box",
+   "sha256": "815745fdafe9cd2b960f64e54c52215b09c434f25daf9bf3553b68b6439b0ab6",
+   "alphaBounds": [
+    134,
+    192,
+    162,
+    261
+   ],
+   "opaquePixels": 1756,
+   "polygon": [
+    [
+     134,
+     192
+    ],
+    [
+     162,
+     192
+    ],
+    [
+     162,
+     260
+    ],
+    [
+     134,
+     260
+    ]
+   ],
+   "provenance": "recovered pixels, exact partition"
+  },
+  {
+   "name": "arm",
+   "sha256": "305233a5dd4d95749f03cd1d59ad2a86210a0c951f634d07fe584da9a8dae3ba",
+   "alphaBounds": [
+    128,
+    92,
+    231,
+    186
+   ],
+   "opaquePixels": 5562,
+   "polygon": [
+    [
+     128,
+     92
+    ],
+    [
+     160,
+     92
+    ],
+    [
+     165,
+     98
+    ],
+    [
+     230,
+     98
+    ],
+    [
+     230,
+     137
+    ],
+    [
+     199,
+     137
+    ],
+    [
+     185,
+     133
+    ],
+    [
+     172,
+     143
+    ],
+    [
+     164,
+     155
+    ],
+    [
+     163,
+     185
+    ],
+    [
+     128,
+     185
+    ]
+   ],
+   "provenance": "recovered pixels, exact partition"
+  },
+  {
+   "name": "head",
+   "sha256": "577117266233662e2a70be2451f05c7d0c566a18034253c02c9be00b7761f9dc",
+   "alphaBounds": [
+    164,
+    127,
+    255,
+    215
+   ],
+   "opaquePixels": 5812,
+   "polygon": [
+    [
+     164,
+     155
+    ],
+    [
+     172,
+     143
+    ],
+    [
+     185,
+     133
+    ],
+    [
+     199,
+     137
+    ],
+    [
+     218,
+     137
+    ],
+    [
+     227,
+     127
+    ],
+    [
+     241,
+     139
+    ],
+    [
+     255,
+     154
+    ],
+    [
+     256,
+     226
+    ],
+    [
+     163,
+     226
+    ]
+   ],
+   "provenance": "recovered pixels, exact partition"
+  }
+ ],
+ "compositeEqualsRecoveredRGBA": true,
+ "equalityNote": "compared after zeroing RGB of alpha-0 pixels (53 such pixels carry hidden RGB in the recovered file)",
+ "outputSHA256": "a0ffbe4c964765948b27ba1d9eca04e4d9ef0515f4453879b77a1048ae506920",
+ "integrityRequirements": {
+  "source": "SS-specs benchmark-production.md BP-004",
+  "clips": {
+   "operationalIdle": 4,
+   "hit": 2,
+   "criticalEnter": 3,
+   "destroy": 4,
+   "fieldOff": 1,
+   "destroyedIdle": 2
+  },
+  "settled": {
+   "3": "intact complete device, no positional or heading motion",
+   "2": "visible damage, single-notch runtime marker",
+   "1": "exposed damage, double-notch runtime marker",
+   "0": "dark broken head, unchanged mount/base, field off on authoritative event"
+  },
+  "status": "REQUIREMENT_PRESERVED_NOT_EXPANDED_IN_FIRST_SAMPLE"
+ },
+ "limits": [
+  "First sample: intact state only; damaged/critical/destroyed and six clips not re-authored here",
+  "Source pixels are a prior generated candidate, not an approved original master",
+  "Layer polygons are authored visual boundaries, not collision, targeting or field geometry",
+  "No hidden underpaint behind arm/head; layers are a partition, so moving a layer would expose holes",
+  "Review plates are source previews, not real-renderer, native-device or encounter evidence"
+ ]
+}

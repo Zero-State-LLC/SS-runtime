@@ -1,0 +1,88 @@
+{
+ "status": "ATTEMPT_03_PROPOSED_FOR_DIRECT_INSPECTION_NOT_ACCEPTED",
+ "honestLabel": "EXTRACTED_FROM_FIXED_APPROVED_CONCEPT_NOT_GENERATED_NOT_ORIGINAL_MASTER",
+ "authority": "street-corner-approved-concept.png only (owner correction 2026-11-16 04:22:37 UTC)",
+ "source": {
+  "file": "source/approved-concept.png",
+  "sha256": "49aa35447230187e3eabe948cdc8eba6d6d465b2605d624e2cf7443f6cb69ffb",
+  "crop": [
+   880,
+   20,
+   1060,
+   470
+  ],
+  "topY": 31,
+  "baseCentre": [
+   932,
+   446
+  ],
+  "mask": "dark (mean<45) or ivory (mean>150, chroma<60) walls; closing 3; fill holes; opening 1; largest component; clip below base row"
+ },
+ "transform": {
+  "uniformScale": 0.7524038461538461,
+  "resampledSize": [
+   135,
+   339
+  ],
+  "translation": [
+   89,
+   30
+  ],
+  "resample": "Lanczos"
+ },
+ "registration": {
+  "canvasPixels": [
+   256,
+   384
+  ],
+  "logicalCanvas": [
+   64,
+   96
+  ],
+  "logicalGroundAnchor": [
+   32,
+   88
+  ],
+  "groundAnchorPixels": [
+   128,
+   352
+  ]
+ },
+ "contamination": {
+  "method": "opaque px: leaf = chroma>60, R>G>B, R-B>60; pavement = mean 85-140, chroma<20, within 3 px of silhouette edge (may also catch edge metal highlights)",
+  "cutoutLeafPixels": 4,
+  "cutoutPavementLikePixels": 51,
+  "outputLeafPixels": 4,
+  "outputPavementLikePixels": 107
+ },
+ "measurements": {
+  "conceptPoleWidthAtY260": 37,
+  "conceptBaseWidthAtY420": 83,
+  "conceptHeadSpanX": [
+   1044,
+   "right edge"
+  ],
+  "conceptDeviceHeight": 416,
+  "outputOpaqueRows": [
+   38,
+   351
+  ],
+  "outputOpaqueRowsThreshold": "alpha > 128",
+  "outputAnyAlphaRows": [
+   36,
+   353
+  ],
+  "targetRowsNote": "TARGET 39..351 sets the scale; Lanczos edge alpha extends the measured rows"
+ },
+ "outputSHA256": "68c025a66dc112594caf88b1c1a3f4b1157dcd7110e05cf0381688af0723bbdf",
+ "tool": {
+  "pillow": "12.3.0",
+  "scipy": "1.17.1"
+ },
+ "limits": [
+  "Concept lighting, wear and ground tint are baked in",
+  "Mask edges are deterministic, not hand-cut; contamination counts above are shown, not hidden",
+  "Downscale loses contour weight; compare at the same scale in review/benchmark-same-scale.png",
+  "No underpaint; no layers split yet; intact only; no state or clip expansion"
+ ]
+}

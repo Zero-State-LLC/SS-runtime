@@ -46,7 +46,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install source-review dependencies
-        run: python3 -m pip install numpy==2.4.6 Pillow==12.3.0
+        run: python3 -m pip install numpy==2.4.6 Pillow==12.3.0 scipy==1.17.1
       - name: Test portable source geometry and provenance
         run: python3 -B docs/review/player-all-release-source-20261116/test_source.py --source-root docs/review/player-all-release-source-20261116/fixtures
       - name: Test source artifact and browser-readiness guards
@@ -75,6 +75,8 @@ jobs:
         run: |
           python3 -B docs/review/player-north-source-20261116/test_source.py
           python3 -B docs/review/player-baggy-south-source-20261116/test_source.py
+          python3 -B -W error::ResourceWarning docs/review/camera-midpoint-source-20261116/test_source.py
+          cmp docs/review/camera-midpoint-source-20261116/source/clip-metadata-001.json Sources/SurveillanceCore/Resources/contracts/clip-metadata-001.json
       - name: Byte-compare bundled contracts and fixtures against the pinned SS-specs
         run: bash scripts/spec_parity.sh
 
