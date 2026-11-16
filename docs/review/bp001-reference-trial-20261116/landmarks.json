@@ -1,0 +1,22 @@
+{
+  "status": "MANUAL_GROUND_DIRECTION_SAMPLES_NOT_CAMERA_CALIBRATION",
+  "reference": "../bp001-decision-20261116/street-corner-approved-concept.png",
+  "coordinateSystem": "original 1672x941 image pixels, origin top-left, x right, y down",
+  "endpointUncertaintyPixels": 8,
+  "selection": "Approximate manually read visible straight ground directions, refined by inspecting an SVG overlay on the unchanged image. No roof edges, sprite rectangles or hidden vertices. Endpoints select line direction, not known world point correspondences. Fit uses two lines per axis; separately labeled holdouts test disagreement.",
+  "worldAxisConvention": "East maps down-right along the shallow pavement direction; north maps up-right along rail/long pavement direction. This is an explicit trial convention, not recovered world metadata.",
+  "segments": [
+    {"id":"paving-shallow-1","axis":"east","use":"fit","feature":"lower sidewalk paving seam direction","start":[312,666],"end":[555,825]},
+    {"id":"paving-shallow-2","axis":"east","use":"fit","feature":"mid-sidewalk transverse paving seam direction","start":[631,350],"end":[991,535]},
+    {"id":"track-long-1","axis":"north","use":"fit","feature":"left rail longitudinal ground direction","start":[1109,940],"end":[1646,0]},
+    {"id":"track-long-2","axis":"north","use":"fit","feature":"right rail longitudinal ground direction","start":[1330,940],"end":[1665,333]},
+    {"id":"paving-shallow-holdout","axis":"east","use":"holdout","feature":"independent lower transverse pavement joint","start":[521,651],"end":[770,797]},
+    {"id":"paving-long-holdout","axis":"north","use":"holdout","feature":"long sidewalk joint direction","start":[776,794],"end":[1148,179]}
+  ],
+  "limitations": [
+    "Manual endpoint selection is approximate and independently reviewable, not an exact pixel edge fit.",
+    "Paving, rails and wall contacts can disagree in the illustration; report holdout residuals rather than force consistency.",
+    "Direction-only fit cannot recover absolute scale, camera elevation, camera intrinsics, translation or hidden footprints.",
+    "No upright art viewpoint is calibrated by this ground model."
+  ]
+}
