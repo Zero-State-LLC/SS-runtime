@@ -2,6 +2,14 @@
 
 Updated November 16, 2026 after 01:39:04 UTC owner decision: "midpoint is good. continue".
 
+## Phase-variation refinement requested at 02:36:26 UTC
+
+Owner requested slight variation between phases for more dynamic motion. New source candidate is `docs/review/player-release-variation-20261116/`, compared against immutable baseline `15be1316d3817604e751664d5167f1649db2fc6b`. Use small deterministic stance/phase-specific transfer easing, recovery easing and support-foot lift, with exact original endpoints, original5/13 bytes, contact intervals and0.375s neutral arrival preserved. No random jitter or bitmap warp. Scope is recorded in `intent/2026-11-16-release-phase-variation.md`.
+
+Verified source result:272 ordered frames,182 pixel-different intermediate poses across14 new phases,32 exact entry/neutral comparisons and1,012 original-file hashes unchanged. Original5/13 remain byte-preserved. Nineteen source regressions,22 artifact/provenance regressions,7 local checkpoint tests and8 comparison-code harness cases passed. Both actual Brave pages loaded544 images and passed64 synchronized phase/pose checks each. Normal/quarter source videos have147 exact timestamps each. Open `docs/review/player-release-variation-20261116/artifacts/normal-speed.html` and separate `quarter-speed.html`; full independent review is `coordinator-review.md` in that packet. Source-only contact/weight-transfer refinement awaits owner visual review.
+
+Baseline source/native packets below remain unchanged. Their238 native captures do not validate the new variation. No production, four-facing/family admission, live-cadence, device or merge approval is inferred. Issue237 remains open.
+
 ## Selected basis and active continuation
 
 BP-001 midpoint is now selected under the SS-specs D-108 dated clarification, commit `167171d`. It is +45-degree ground rotation followed by half-height scaling, with upright art at projected roots. The approved original concept stays the benchmark. This releases the source-detail prerequisite, not production art/device admission or merge permission. No final zoom or numerical source-camera elevation was selected.
