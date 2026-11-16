@@ -1,0 +1,9 @@
+# Building perspective and detail continuation, November 16 22:13 UTC
+
+Owner reviewed v6 as closer, then identified buildings as out of perspective and insufficiently detailed at 22:10:21 UTC. The proposed next scope was to align roof angles, wall depth and ground contact before adding readable architectural detail, with motion expansion held. Owner explicitly authorized continuation at 22:13:11 UTC.
+
+This accepts this bounded review-only work order, not the visual benchmark or production admission. Preserve every earlier source/capture and all unrelated untracked directories. Make new building source and scene packets, retaining v6 as the immutable comparison. Inspect the kiosk AND surrounding buildings. Use the existing D108 projection and authoritative footprints, preserve all 24 solids, Camera field/root, Player root, framing, controls and non-building source bytes. Do not conceal neighboring buildings, force arbitrary depth, or change simulation to fit art.
+
+Prefer explicit editable geometry/UV/material correspondence using existing independently authored material sources, with rederived registration and actual projected footprint witnesses. Architectural detail must survive native/half size and include honest relief limits. First source preview followed by at most one bounded aesthetic correction, then assess. Technical correctness is not aesthetic acceptance.
+
+Coordinator owns visual review, shared native capture, gallery, handoff and publication to existing PR236. Workers own distinct new paths and validate their own implementation. No full unfiltered Swift retry, automatic CI polling chain, production code/assets, spec pin, merge, issue closure, physical certification or motion/encounter expansion. Run focused portable and native evidence checks, preserve failures and exact loaded executable provenance. Stop for owner review after the bounded revised scene comparison.

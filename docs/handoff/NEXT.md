@@ -1,5 +1,11 @@
 # Next work order
 
+## Building perspective/detail pass authorized, November16 22:13UTC
+
+Owner reviewed v6 as closer but explicitly identified building perspective and missing detail, then approved continuation at22:13:11UTC. `intent/2026-11-16-building-perspective-detail.md` is the accepted bounded work order. V6 is NOT accepted and remains immutable. Motion/encounter expansion, production admission, merge, physical certification and issue closure stay gated.
+
+New work is isolated under `docs/review/building-perspective-detail-20261116/`: whale owns `kiosk/` editable relief source, turtle owns `context/` footprint-correct neighboring sources, rabbit owns `scene/` plus `AppTests/BuildingPerspectiveSceneTests.swift`. Coordinator owns source/scene visual review, serialized native capture, new gallery and publication. Native slot currently free. Preserve unrelated untracked source directories and every historical output. The current kiosk already uses D108 algebra, so do not invent a global camera-math defect. Context sprites retain center anchors and unprojected solid dimensions in v6; their source geometry/contact needs explicit registration rather than whole-image stretching. No new source is recommended or captured yet. One first preview plus one bounded correction, then a scene review.
+
 ## Bounded QA final scene, November16 21:29UTC
 
 V6 evidence publication `6be13ed7f5fb557c215e7783ae1cb118818ca87b` was pushed and matched the exact remote branch SHA at21:31UTC. The final gallery now defaults to v6 only after that evidence exists. Fresh actual Brave load at21:33 selected v6, completed all hash checks and displayed the final candidate; pending/missing evidence still cannot fall back. Both Node suites passed after this default-only follow-through. An initial duplicate test-variable declaration was caught and corrected before publication, with the existing default-selection assertions updated rather than duplicated.
