@@ -1,5 +1,9 @@
 # Municipal Camera midpoint source, FIRST SAMPLE (slice 6)
 
+## Repeated owner rejection, November16 04:44:17UTC
+
+Owner: “still not at benchmark.” Attempt03 is withdrawn and retained as rejected comparison history alongside01/02. No current candidate is recommended. The owner did not identify a particular visual defect or explicitly restrict this feedback to the Camera alone. Do not invent that diagnosis or assume that exact-reference pixels establish whole-scene fidelity. Clarify whether the next correction targets the Camera, Player sources or the complete rendered scene before another proposal. All state/clip/animation expansion remains blocked. Historical measurements and passing guards below describe evidence integrity, not visual acceptance.
+
 ## Owner rejection, November16 04:22:37UTC
 
 Owner: “this does not match benchmark.” The latest Camera sample is rejected for fidelity. The earlier attempt02 recommendation below is withdrawn. The fixed `street-corner-approved-concept.png` remains the benchmark; selecting a midpoint ground transform did not authorize substituting the alternate midpoint concept as source authority. Preserve attempts01/02 as rejected comparison history. Only first-sample correction against the original approved benchmark may continue. No states, clips or production admission follow from the passing source tests.

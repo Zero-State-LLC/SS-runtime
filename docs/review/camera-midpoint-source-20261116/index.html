@@ -3,17 +3,18 @@
 <title>Municipal Camera: first-sample source review</title>
 <style>body{font:16px system-ui;background:#293237;color:#eee;margin:24px;max-width:1100px}p{line-height:1.5}section{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end}figure{margin:16px 0}figcaption{max-width:260px}img{object-fit:contain;background:#414646}.native{width:64px;height:96px}.half{width:32px;height:48px}.plate{max-width:100%;height:auto}body.gray .device{filter:grayscale(1)}a{color:#addde7}.rej{color:#f5a3a3}h2{margin-top:36px}</style>
 <h1>Municipal Camera: first-sample source review</h1>
+<p class="rej"><strong>Attempt03 also REJECTED, November16 04:44:17UTC: “still not at benchmark.” No current candidate is recommended.</strong> All three attempts are history only. The precise scope of the latest feedback is not yet clarified; do not assume Camera-only feedback or infer a specific defect from passing technical tests.</p>
 <p><strong>REJECTED for benchmark fidelity, November16 04:22:37UTC.</strong> The owner rejected the latest sample. Matching an alternate midpoint concept does not establish a match to the unchanged approved benchmark. Attempt01 and02 remain comparison history only. This page shows source PNGs, not native renderer captures.</p>
 <p>The attempt02 recommendation is withdrawn. Rework must use the original approved benchmark, without treating the selected ground transform as a new art reference. Damage states and the six clips / sixteen frame slots remain gated, not delivered by these intact samples.</p>
 
-<h2>Current: attempt03 against the ORIGINAL APPROVED concept, same scale (review only, not accepted)</h2>
+<h2 class="rej">Rejected attempt03 against the ORIGINAL APPROVED concept (history only)</h2>
 <p>Left: approved concept crop (sha <code>49aa3544…6cb69ffb</code>), put through the identical uniform scale 0.7524 and anchor placement. Middle: attempt03, an exact-RGB extraction with no repaint. Right: contamination in magenta, 4 leaf px and 107 pavement-grey edge px, recomputed by the tests. Visible base debris remains. No match is claimed.</p>
 <img class="plate" src="attempts/03-approved-concept-extraction/review/benchmark-same-scale.png" alt="Approved concept crop, attempt03 and contamination map at identical scale">
 <img class="plate" src="attempts/03-approved-concept-extraction/review/benchmark-native-64x96-3x.png" alt="Same three panels at native logical size">
 <label><input id="gray" type="checkbox"> Grayscale device samples</label>
 <section>
-<figure><img class="native device" src="attempts/03-approved-concept-extraction/camera-intact.png" alt="Attempt03 at native logical size"><figcaption>03 current, 64×96</figcaption></figure>
-<figure><img class="half device" src="attempts/03-approved-concept-extraction/camera-intact.png" alt="Attempt03 at half logical size"><figcaption>03 current, 32×48</figcaption></figure>
+<figure><img class="native device" src="attempts/03-approved-concept-extraction/camera-intact.png" alt="Rejected attempt03 at native logical size"><figcaption class="rej">03 REJECTED, 64×96</figcaption></figure>
+<figure><img class="half device" src="attempts/03-approved-concept-extraction/camera-intact.png" alt="Rejected attempt03 at half logical size"><figcaption class="rej">03 REJECTED, 32×48</figcaption></figure>
 </section>
 
 <h2 class="rej">Rejected history (comparison only)</h2>

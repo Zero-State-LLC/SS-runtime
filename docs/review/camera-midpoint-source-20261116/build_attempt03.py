@@ -85,7 +85,7 @@ def main():
                  outputAnyAlphaRows=[int(ys0.min()), int(ys0.max())],
                  targetRowsNote='TARGET 39..351 sets the scale; Lanczos edge alpha extends the measured rows')
     rec = dict(
-        status='ATTEMPT_03_PROPOSED_FOR_DIRECT_INSPECTION_NOT_ACCEPTED',
+        status='ATTEMPT_03_REJECTED_OWNER_2026-11-16T04:44:17Z_NOT_ACCEPTED_HISTORY_ONLY',
         honestLabel='EXTRACTED_FROM_FIXED_APPROVED_CONCEPT_NOT_GENERATED_NOT_ORIGINAL_MASTER',
         authority='street-corner-approved-concept.png only (owner correction 2026-11-16 04:22:37 UTC)',
         source=dict(file='source/approved-concept.png', sha256=sha(APPROVED), crop=list(CROP), topY=TOP_Y,

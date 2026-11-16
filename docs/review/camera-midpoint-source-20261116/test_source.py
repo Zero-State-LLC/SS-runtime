@@ -153,6 +153,7 @@ class Attempt03(unittest.TestCase):
         self.assertEqual(sha(SRC / 'approved-concept.png'), self.R['source']['sha256'])
         self.assertNotIn('midpoint-concept', json.dumps(self.R['source']))
         self.assertIn('NOT_ACCEPTED', self.R['status'])
+        self.assertEqual(self.R['status'], 'ATTEMPT_03_REJECTED_OWNER_2026-11-16T04:44:17Z_NOT_ACCEPTED_HISTORY_ONLY')
         self.assertEqual(sha(self.O / 'camera-intact.png'), self.R['outputSHA256'])
 
     def test_cutout_is_exact_approved_rgb(self):

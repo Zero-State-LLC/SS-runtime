@@ -1,5 +1,9 @@
 # Next work order
 
+## Repeated benchmark rejection, November16 04:44:17UTC
+
+Owner: “still not at benchmark.” Camera attempt03 is withdrawn and marked rejected in its record, builder, tests and visible gallery. All three attempts remain history, with pixels unchanged. No active recommendation. The feedback does not identify a specific defect or explicitly establish Camera-only scope. Clarify Camera versus Player versus whole rendered scene before another art proposal. All state/clip/animation expansion remains blocked. Existing bounded exact-head CI monitoring continues separately without production changes, merges or unfiltered Swift retries.
+
 ## Corrected contact evidence, November16 04:39UTC
 
 Slice2 packet `docs/review/player-ground-contact-20261116/` now retains the corrected0428-looped native run and preserves the invalid0348 clamped run plus the failed0425 heuristic attempt. Direct xcresult verification:1passed/0failed/0skipped,24 runtime-bundled resource hashes,2,400 samples,116 independently reconstructed planted segments,76 byte-matched captures,33 changed/5 unchanged pairs. All14 portable mutation tests and13 full-source checks passed independently, plus the Node38-pair loader/race harness. Actual Brave passed228 fresh native pair/size/grayscale checks. Existing core replay independently passed1/1 and reproduced12traces. CI now includes portable evidence regressions.
