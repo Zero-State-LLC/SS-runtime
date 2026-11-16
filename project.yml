@@ -72,6 +72,9 @@ targets:
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
+        # Native evidence hashes the exact bundled source, not a recompressed PNG.
+        COMPRESS_PNG_FILES: NO
+        STRIP_PNG_TEXT: NO
     sources:
       - path: AppTests
     dependencies:

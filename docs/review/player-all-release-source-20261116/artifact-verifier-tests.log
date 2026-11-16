@@ -1,0 +1,25 @@
+test_acceptance_lift_rejected (__main__.ArtifactVerifierTests.test_acceptance_lift_rejected) ... ok
+test_complete_portable_artifacts (__main__.ArtifactVerifierTests.test_complete_portable_artifacts) ... ok
+test_extra_frame_rejected (__main__.ArtifactVerifierTests.test_extra_frame_rejected) ... ok
+test_file_hash_mutation_rejected (__main__.ArtifactVerifierTests.test_file_hash_mutation_rejected) ... ok
+test_fixture_hash_mutation_rejected (__main__.ArtifactVerifierTests.test_fixture_hash_mutation_rejected) ... ok
+test_frame_reorder_rejected (__main__.ArtifactVerifierTests.test_frame_reorder_rejected) ... ok
+test_missing_frame_rejected (__main__.ArtifactVerifierTests.test_missing_frame_rejected) ... ok
+test_native_changed_bytes_fail (__main__.ArtifactVerifierTests.test_native_changed_bytes_fail) ... ok
+test_native_complete_exact (__main__.ArtifactVerifierTests.test_native_complete_exact) ... ok
+test_native_endpoint_metadata_allowed_when_pixels_exact (__main__.ArtifactVerifierTests.test_native_endpoint_metadata_allowed_when_pixels_exact) ... ok
+test_native_endpoint_pixels_fail (__main__.ArtifactVerifierTests.test_native_endpoint_pixels_fail) ... ok
+test_native_extra_intermediate_fails (__main__.ArtifactVerifierTests.test_native_extra_intermediate_fails) ... ok
+test_native_missing_directory_fails_not_skips (__main__.ArtifactVerifierTests.test_native_missing_directory_fails_not_skips) ... ok
+test_native_missing_intermediate_fails (__main__.ArtifactVerifierTests.test_native_missing_intermediate_fails) ... ok
+test_noncanonical_frame_path_rejected (__main__.ArtifactVerifierTests.test_noncanonical_frame_path_rejected) ... ok
+test_original_endpoint_provenance_rejected (__main__.ArtifactVerifierTests.test_original_endpoint_provenance_rejected) ... ok
+test_phase_reorder_rejected (__main__.ArtifactVerifierTests.test_phase_reorder_rejected) ... ok
+test_preserved_frame_provenance_rejected (__main__.ArtifactVerifierTests.test_preserved_frame_provenance_rejected) ... ok
+test_rgba_mutation_even_with_updated_file_hash_rejected (__main__.ArtifactVerifierTests.test_rgba_mutation_even_with_updated_file_hash_rejected) ... ok
+test_timing_mutation_rejected (__main__.ArtifactVerifierTests.test_timing_mutation_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 25.567s
+
+OK

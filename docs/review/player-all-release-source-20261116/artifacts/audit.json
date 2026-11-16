@@ -1,0 +1,769 @@
+{
+  "status": "CHECKS_PASS_REMAINS_PROPOSED",
+  "inputFilesUnchanged": 1012,
+  "phases": [
+    {
+      "phase": 1,
+      "status": "PROPOSED",
+      "supportSide": "right",
+      "contactIntervals": [
+        {
+          "side": "left",
+          "firstPose": 8,
+          "lastPose": 16,
+          "firstUnits": 24,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 0,
+          "lastPose": 8,
+          "firstUnits": 0,
+          "endExclusiveUnits": 27,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 16,
+          "lastPose": 16,
+          "firstUnits": 48,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        }
+      ],
+      "maxUpperLengthError": 1.7763568394002505e-15,
+      "maxLowerLengthError": 5.329070518200751e-15,
+      "minReach": 17.431645182863576,
+      "maxReach": 23.887653714837715,
+      "minToeHeight": 0.0,
+      "minHeelHeight": 0.0,
+      "maxKneeMinusHipHeight": -6.692721474859212,
+      "kneeInteriorAngleDegreesRange": [
+        80.04970461435461,
+        124.2697384453595
+      ],
+      "maxAdjacentKneeStep": 1.5875897003369706,
+      "supportEntryToeDrop": 0.0,
+      "uniqueRGBAPoses": 17,
+      "exactEntryNeutralPixels": true
+    },
+    {
+      "phase": 2,
+      "status": "PROPOSED",
+      "supportSide": "right",
+      "contactIntervals": [
+        {
+          "side": "left",
+          "firstPose": 8,
+          "lastPose": 16,
+          "firstUnits": 24,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 0,
+          "lastPose": 8,
+          "firstUnits": 0,
+          "endExclusiveUnits": 27,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 16,
+          "lastPose": 16,
+          "firstUnits": 48,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        }
+      ],
+      "maxUpperLengthError": 3.552713678800501e-15,
+      "maxLowerLengthError": 3.552713678800501e-15,
+      "minReach": 16.769474534517247,
+      "maxReach": 22.679726629745783,
+      "minToeHeight": 0.0,
+      "minHeelHeight": 0.0,
+      "maxKneeMinusHipHeight": -3.9195816269426516,
+      "kneeInteriorAngleDegreesRange": [
+        76.3925670148764,
+        114.07406614515021
+      ],
+      "maxAdjacentKneeStep": 1.4139624814894582,
+      "supportEntryToeDrop": 0.0,
+      "uniqueRGBAPoses": 17,
+      "exactEntryNeutralPixels": true
+    },
+    {
+      "phase": 3,
+      "status": "PROPOSED",
+      "supportSide": "right",
+      "contactIntervals": [
+        {
+          "side": "left",
+          "firstPose": 8,
+          "lastPose": 16,
+          "firstUnits": 24,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 0,
+          "lastPose": 8,
+          "firstUnits": 0,
+          "endExclusiveUnits": 27,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 16,
+          "lastPose": 16,
+          "firstUnits": 48,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        }
+      ],
+      "maxUpperLengthError": 1.7763568394002505e-15,
+      "maxLowerLengthError": 5.329070518200751e-15,
+      "minReach": 17.842577321064542,
+      "maxReach": 22.679726629745783,
+      "minToeHeight": 0.0,
+      "minHeelHeight": 0.0,
+      "maxKneeMinusHipHeight": -2.849415335891731,
+      "kneeInteriorAngleDegreesRange": [
+        82.36818803834413,
+        114.07406614515021
+      ],
+      "maxAdjacentKneeStep": 1.6059598688356218,
+      "supportEntryToeDrop": 0.0,
+      "uniqueRGBAPoses": 17,
+      "exactEntryNeutralPixels": true
+    },
+    {
+      "phase": 4,
+      "status": "PROPOSED",
+      "supportSide": "right",
+      "contactIntervals": [
+        {
+          "side": "left",
+          "firstPose": 8,
+          "lastPose": 16,
+          "firstUnits": 24,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 0,
+          "lastPose": 8,
+          "firstUnits": 0,
+          "endExclusiveUnits": 27,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 16,
+          "lastPose": 16,
+          "firstUnits": 48,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        }
+      ],
+      "maxUpperLengthError": 3.552713678800501e-15,
+      "maxLowerLengthError": 3.552713678800501e-15,
+      "minReach": 18.049020095296815,
+      "maxReach": 22.679726629745783,
+      "minToeHeight": 0.0,
+      "minHeelHeight": 0.0,
+      "maxKneeMinusHipHeight": -4.554705288092805,
+      "kneeInteriorAngleDegreesRange": [
+        83.548245259083,
+        114.07406614515021
+      ],
+      "maxAdjacentKneeStep": 1.656344482935918,
+      "supportEntryToeDrop": 0.0,
+      "uniqueRGBAPoses": 17,
+      "exactEntryNeutralPixels": true
+    },
+    {
+      "phase": 5,
+      "status": "PRESERVED",
+      "supportSide": "right",
+      "contactIntervals": [
+        {
+          "side": "left",
+          "firstPose": 8,
+          "lastPose": 16,
+          "firstUnits": 24,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 1,
+          "lastPose": 8,
+          "firstUnits": 3,
+          "endExclusiveUnits": 27,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 16,
+          "lastPose": 16,
+          "firstUnits": 48,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        }
+      ],
+      "maxUpperLengthError": 3.552713678800501e-15,
+      "maxLowerLengthError": 3.552713678800501e-15,
+      "minReach": 18.888499897755487,
+      "maxReach": 24.095168651716673,
+      "minToeHeight": 0.0,
+      "minHeelHeight": 0.0,
+      "maxKneeMinusHipHeight": -5.747847626622416,
+      "kneeInteriorAngleDegreesRange": [
+        88.46277582923499,
+        126.19659155658917
+      ],
+      "maxAdjacentKneeStep": 2.4374536877849438,
+      "supportEntryToeDrop": 0.08257738832434791,
+      "uniqueRGBAPoses": 17,
+      "exactEntryNeutralPixels": true
+    },
+    {
+      "phase": 6,
+      "status": "PROPOSED",
+      "supportSide": "right",
+      "contactIntervals": [
+        {
+          "side": "left",
+          "firstPose": 8,
+          "lastPose": 16,
+          "firstUnits": 24,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 1,
+          "lastPose": 8,
+          "firstUnits": 3,
+          "endExclusiveUnits": 27,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 16,
+          "lastPose": 16,
+          "firstUnits": 48,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        }
+      ],
+      "maxUpperLengthError": 3.552713678800501e-15,
+      "maxLowerLengthError": 3.552713678800501e-15,
+      "minReach": 18.638749060170955,
+      "maxReach": 24.83004736007827,
+      "minToeHeight": 0.0,
+      "minHeelHeight": 0.0,
+      "maxKneeMinusHipHeight": -7.693208209938412,
+      "kneeInteriorAngleDegreesRange": [
+        86.98017607772462,
+        133.6096407011435
+      ],
+      "maxAdjacentKneeStep": 2.1383441362458804,
+      "supportEntryToeDrop": 0.39724917469445187,
+      "uniqueRGBAPoses": 17,
+      "exactEntryNeutralPixels": true
+    },
+    {
+      "phase": 7,
+      "status": "PROPOSED",
+      "supportSide": "left",
+      "contactIntervals": [
+        {
+          "side": "left",
+          "firstPose": 1,
+          "lastPose": 8,
+          "firstUnits": 3,
+          "endExclusiveUnits": 27,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "left",
+          "firstPose": 16,
+          "lastPose": 16,
+          "firstUnits": 48,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 8,
+          "lastPose": 16,
+          "firstUnits": 24,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        }
+      ],
+      "maxUpperLengthError": 3.552713678800501e-15,
+      "maxLowerLengthError": 7.105427357601002e-15,
+      "minReach": 20.388320110859873,
+      "maxReach": 26.516910336699222,
+      "minToeHeight": 0.0,
+      "minHeelHeight": 0.0,
+      "maxKneeMinusHipHeight": -5.696475414240275,
+      "kneeInteriorAngleDegreesRange": [
+        97.79787852058396,
+        158.22999164431022
+      ],
+      "maxAdjacentKneeStep": 1.9567377067826377,
+      "supportEntryToeDrop": 0.48522630501013897,
+      "uniqueRGBAPoses": 17,
+      "exactEntryNeutralPixels": true
+    },
+    {
+      "phase": 8,
+      "status": "PROPOSED",
+      "supportSide": "left",
+      "contactIntervals": [
+        {
+          "side": "left",
+          "firstPose": 1,
+          "lastPose": 8,
+          "firstUnits": 3,
+          "endExclusiveUnits": 27,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "left",
+          "firstPose": 16,
+          "lastPose": 16,
+          "firstUnits": 48,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 8,
+          "lastPose": 16,
+          "firstUnits": 24,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        }
+      ],
+      "maxUpperLengthError": 3.552713678800501e-15,
+      "maxLowerLengthError": 3.552713678800501e-15,
+      "minReach": 18.568939420565638,
+      "maxReach": 25.859896170095684,
+      "minToeHeight": 0.0,
+      "minHeelHeight": 0.0,
+      "maxKneeMinusHipHeight": -5.913362935477021,
+      "kneeInteriorAngleDegreesRange": [
+        86.56897698026718,
+        146.4858615991769
+      ],
+      "maxAdjacentKneeStep": 1.8940769985780712,
+      "supportEntryToeDrop": 0.12881209765174118,
+      "uniqueRGBAPoses": 17,
+      "exactEntryNeutralPixels": true
+    },
+    {
+      "phase": 9,
+      "status": "PROPOSED",
+      "supportSide": "left",
+      "contactIntervals": [
+        {
+          "side": "left",
+          "firstPose": 0,
+          "lastPose": 8,
+          "firstUnits": 0,
+          "endExclusiveUnits": 27,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "left",
+          "firstPose": 16,
+          "lastPose": 16,
+          "firstUnits": 48,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 8,
+          "lastPose": 16,
+          "firstUnits": 24,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        }
+      ],
+      "maxUpperLengthError": 1.7763568394002505e-15,
+      "maxLowerLengthError": 5.329070518200751e-15,
+      "minReach": 17.431645182863576,
+      "maxReach": 23.887653714837715,
+      "minToeHeight": 0.0,
+      "minHeelHeight": 0.0,
+      "maxKneeMinusHipHeight": -6.692721474859212,
+      "kneeInteriorAngleDegreesRange": [
+        80.04970461435461,
+        124.2697384453595
+      ],
+      "maxAdjacentKneeStep": 1.5875897003369706,
+      "supportEntryToeDrop": 0.0,
+      "uniqueRGBAPoses": 17,
+      "exactEntryNeutralPixels": true
+    },
+    {
+      "phase": 10,
+      "status": "PROPOSED",
+      "supportSide": "left",
+      "contactIntervals": [
+        {
+          "side": "left",
+          "firstPose": 0,
+          "lastPose": 8,
+          "firstUnits": 0,
+          "endExclusiveUnits": 27,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "left",
+          "firstPose": 16,
+          "lastPose": 16,
+          "firstUnits": 48,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 8,
+          "lastPose": 16,
+          "firstUnits": 24,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        }
+      ],
+      "maxUpperLengthError": 3.552713678800501e-15,
+      "maxLowerLengthError": 3.552713678800501e-15,
+      "minReach": 16.769474534517247,
+      "maxReach": 22.679726629745783,
+      "minToeHeight": 0.0,
+      "minHeelHeight": 0.0,
+      "maxKneeMinusHipHeight": -3.9195816269426516,
+      "kneeInteriorAngleDegreesRange": [
+        76.3925670148764,
+        114.07406614515021
+      ],
+      "maxAdjacentKneeStep": 1.4139624814894582,
+      "supportEntryToeDrop": 0.0,
+      "uniqueRGBAPoses": 17,
+      "exactEntryNeutralPixels": true
+    },
+    {
+      "phase": 11,
+      "status": "PROPOSED",
+      "supportSide": "left",
+      "contactIntervals": [
+        {
+          "side": "left",
+          "firstPose": 0,
+          "lastPose": 8,
+          "firstUnits": 0,
+          "endExclusiveUnits": 27,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "left",
+          "firstPose": 16,
+          "lastPose": 16,
+          "firstUnits": 48,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 8,
+          "lastPose": 16,
+          "firstUnits": 24,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        }
+      ],
+      "maxUpperLengthError": 1.7763568394002505e-15,
+      "maxLowerLengthError": 5.329070518200751e-15,
+      "minReach": 17.842577321064542,
+      "maxReach": 22.679726629745783,
+      "minToeHeight": 0.0,
+      "minHeelHeight": 0.0,
+      "maxKneeMinusHipHeight": -2.849415335891731,
+      "kneeInteriorAngleDegreesRange": [
+        82.36818803834413,
+        114.07406614515021
+      ],
+      "maxAdjacentKneeStep": 1.6059598688356218,
+      "supportEntryToeDrop": 0.0,
+      "uniqueRGBAPoses": 17,
+      "exactEntryNeutralPixels": true
+    },
+    {
+      "phase": 12,
+      "status": "PROPOSED",
+      "supportSide": "left",
+      "contactIntervals": [
+        {
+          "side": "left",
+          "firstPose": 0,
+          "lastPose": 8,
+          "firstUnits": 0,
+          "endExclusiveUnits": 27,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "left",
+          "firstPose": 16,
+          "lastPose": 16,
+          "firstUnits": 48,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 8,
+          "lastPose": 16,
+          "firstUnits": 24,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        }
+      ],
+      "maxUpperLengthError": 3.552713678800501e-15,
+      "maxLowerLengthError": 3.552713678800501e-15,
+      "minReach": 18.049020095296815,
+      "maxReach": 22.679726629745783,
+      "minToeHeight": 0.0,
+      "minHeelHeight": 0.0,
+      "maxKneeMinusHipHeight": -4.554705288092805,
+      "kneeInteriorAngleDegreesRange": [
+        83.548245259083,
+        114.07406614515021
+      ],
+      "maxAdjacentKneeStep": 1.656344482935918,
+      "supportEntryToeDrop": 0.0,
+      "uniqueRGBAPoses": 17,
+      "exactEntryNeutralPixels": true
+    },
+    {
+      "phase": 13,
+      "status": "PRESERVED",
+      "supportSide": "left",
+      "contactIntervals": [
+        {
+          "side": "left",
+          "firstPose": 1,
+          "lastPose": 8,
+          "firstUnits": 3,
+          "endExclusiveUnits": 27,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "left",
+          "firstPose": 16,
+          "lastPose": 16,
+          "firstUnits": 48,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 8,
+          "lastPose": 16,
+          "firstUnits": 24,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        }
+      ],
+      "maxUpperLengthError": 3.552713678800501e-15,
+      "maxLowerLengthError": 3.552713678800501e-15,
+      "minReach": 18.888499897755487,
+      "maxReach": 24.095168651716673,
+      "minToeHeight": 0.0,
+      "minHeelHeight": 0.0,
+      "maxKneeMinusHipHeight": -5.747847626622416,
+      "kneeInteriorAngleDegreesRange": [
+        88.46277582923499,
+        126.19659155658917
+      ],
+      "maxAdjacentKneeStep": 2.4374536877849438,
+      "supportEntryToeDrop": 0.08257738832434791,
+      "uniqueRGBAPoses": 17,
+      "exactEntryNeutralPixels": true
+    },
+    {
+      "phase": 14,
+      "status": "PROPOSED",
+      "supportSide": "left",
+      "contactIntervals": [
+        {
+          "side": "left",
+          "firstPose": 1,
+          "lastPose": 8,
+          "firstUnits": 3,
+          "endExclusiveUnits": 27,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "left",
+          "firstPose": 16,
+          "lastPose": 16,
+          "firstUnits": 48,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 8,
+          "lastPose": 16,
+          "firstUnits": 24,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        }
+      ],
+      "maxUpperLengthError": 3.552713678800501e-15,
+      "maxLowerLengthError": 3.552713678800501e-15,
+      "minReach": 18.638749060170955,
+      "maxReach": 24.83004736007827,
+      "minToeHeight": 0.0,
+      "minHeelHeight": 0.0,
+      "maxKneeMinusHipHeight": -7.693208209938412,
+      "kneeInteriorAngleDegreesRange": [
+        86.98017607772462,
+        133.6096407011435
+      ],
+      "maxAdjacentKneeStep": 2.1383441362458804,
+      "supportEntryToeDrop": 0.39724917469445187,
+      "uniqueRGBAPoses": 17,
+      "exactEntryNeutralPixels": true
+    },
+    {
+      "phase": 15,
+      "status": "PROPOSED",
+      "supportSide": "right",
+      "contactIntervals": [
+        {
+          "side": "left",
+          "firstPose": 8,
+          "lastPose": 16,
+          "firstUnits": 24,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 1,
+          "lastPose": 8,
+          "firstUnits": 3,
+          "endExclusiveUnits": 27,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 16,
+          "lastPose": 16,
+          "firstUnits": 48,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        }
+      ],
+      "maxUpperLengthError": 3.552713678800501e-15,
+      "maxLowerLengthError": 7.105427357601002e-15,
+      "minReach": 20.388320110859873,
+      "maxReach": 26.516910336699222,
+      "minToeHeight": 0.0,
+      "minHeelHeight": 0.0,
+      "maxKneeMinusHipHeight": -5.696475414240275,
+      "kneeInteriorAngleDegreesRange": [
+        97.79787852058396,
+        158.22999164431022
+      ],
+      "maxAdjacentKneeStep": 1.9567377067826377,
+      "supportEntryToeDrop": 0.48522630501013897,
+      "uniqueRGBAPoses": 17,
+      "exactEntryNeutralPixels": true
+    },
+    {
+      "phase": 16,
+      "status": "PROPOSED",
+      "supportSide": "right",
+      "contactIntervals": [
+        {
+          "side": "left",
+          "firstPose": 8,
+          "lastPose": 16,
+          "firstUnits": 24,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 1,
+          "lastPose": 8,
+          "firstUnits": 3,
+          "endExclusiveUnits": 27,
+          "maximumToeDrift": 0.0
+        },
+        {
+          "side": "right",
+          "firstPose": 16,
+          "lastPose": 16,
+          "firstUnits": 48,
+          "endExclusiveUnits": 51,
+          "maximumToeDrift": 0.0
+        }
+      ],
+      "maxUpperLengthError": 3.552713678800501e-15,
+      "maxLowerLengthError": 3.552713678800501e-15,
+      "minReach": 18.568939420565638,
+      "maxReach": 25.859896170095684,
+      "minToeHeight": 0.0,
+      "minHeelHeight": 0.0,
+      "maxKneeMinusHipHeight": -5.913362935477021,
+      "kneeInteriorAngleDegreesRange": [
+        86.56897698026718,
+        146.4858615991769
+      ],
+      "maxAdjacentKneeStep": 1.8940769985780712,
+      "supportEntryToeDrop": 0.12881209765174118,
+      "uniqueRGBAPoses": 17,
+      "exactEntryNeutralPixels": true
+    }
+  ],
+  "encodedSourceVideos": [
+    {
+      "speed": "normal",
+      "fileSHA256": "9848c3d54b5dab6295673c0d4134888790680f000190d2bc33299547248ca246",
+      "frames": 147,
+      "fps": 128,
+      "exactPTSCount": 147,
+      "timeBase": "1/16384",
+      "neutralAfterReleaseSeconds": 0.375
+    },
+    {
+      "speed": "quarter",
+      "fileSHA256": "7acc40930630f175ec0ab8d7f3904187ceeb677e0b94ec361933aced1b221c90",
+      "frames": 147,
+      "fps": 32,
+      "exactPTSCount": 147,
+      "timeBase": "1/16384",
+      "neutralAfterReleaseSeconds": 1.5
+    }
+  ],
+  "newFrames": 238,
+  "preservedFrames": 34,
+  "exactEndpointComparisons": 32,
+  "nativePlaybackOrLiveCadenceVerified": false,
+  "fullSoleContactVerified": false,
+  "continuouslyInterpolatedGeometryVerified": false,
+  "browserVisualReview": "coordinator-owned, pending"
+}

@@ -41,6 +41,24 @@ jobs:
         run: grep -q "b1ed874e1e8eb0e61b2174b9093201e9a61e1a4b" SPEC_BASELINE.md
       - name: Test runtime audit wiring guards
         run: python3 -B scripts/test_runtime_audit_guards.py
+      - name: Set up source-review Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install source-review dependencies
+        run: python3 -m pip install numpy==2.4.6 Pillow==12.3.0
+      - name: Test portable source geometry and provenance
+        run: python3 -B docs/review/player-all-release-source-20261116/test_source.py --source-root docs/review/player-all-release-source-20261116/fixtures
+      - name: Test source artifact and browser-readiness guards
+        run: |
+          python3 -B docs/review/player-all-release-source-20261116/test_artifact_verifier.py
+          node docs/review/player-all-release-source-20261116/test_readiness.js
+      - name: Verify source artifacts and native resource linkage
+        run: python3 -B docs/review/player-all-release-source-20261116/verify_artifacts.py --native-assets AppTests/BenchmarkAssets
+      - name: Test native source evidence import guards
+        run: python3 -B scripts/test_allrelease_native.py
+      - name: Verify published native source evidence
+        run: python3 -B scripts/import_allrelease_native.py --verify docs/review/player-all-release-native-20261116
       - name: Byte-compare bundled contracts and fixtures against the pinned SS-specs
         run: bash scripts/spec_parity.sh
 
