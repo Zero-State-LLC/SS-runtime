@@ -1,5 +1,13 @@
 # Next work order
 
+## V8 final comparison published, November16 23:34UTC
+
+Evidence commit `429752f105ca85bfe88645ecaa0b6e770a85d352` was pushed and independently matched both remote branch and openPR236 head at23:34. PR body now records V8 final verdict and preserved gates. Exact-head CI43980383721 was fetched once as **queued**, NOT certified passing. This documentation-only checkpoint has its own final head; do not substitute earlier CI success or start an automatic polling chain.
+
+Staged-only export passed all7commands:10audit+27plan+59scene tests, retained capture/baseline checks, conservative prop clearance and both gallery suites. Exported gallery exactly matches the final V8-default working gallery. Fresh actual Brave navigation at23:33 selectedV8, completed all evidence checks and displayed candidate-z100 at704x326CSS pixels. Earlier72control selections/96image displays also passed. See `footprint-ground-repair-20261116/VALIDATION.md` and `browser-check-2328.json`.
+
+**STOP for owner review of the published V8 scene. Overall benchmark NOT MET.** Ground/base/prop relationships improve, but blocked kiosk chamfer infill still looks walkable and curb/material/composition/Player fidelity remain deficient. No further aesthetic pass, motion/encounter expansion, production admission, merge, issue closure or physical certification is authorized. Issues252/253 remain open. Native slot free; unrelated untracked packets unchanged. Trail lexical fixed-frame warning is explicitly dispositioned in `TRAIL-CHECK.md`, not falsely reported green. All publication and validation follow-through below is now complete.
+
 ## Bounded V8 comparison verified, November16 23:29UTC
 
 Actual native2321 passed exactly1test and imported6captures/18images at23:25. Fresh-build/loaded executable SHA7b4efe2e482d3707e8d08aff5bd4406d3ccdedb26467919ce7b5b2fc3545500d matches. Independent retained checker verifies9full baseline RGBA matches to V7 candidate and unchanged authority/source contracts. Actual Brave passed72selections/96image displays overV7/V8 with exact704/352CSS widths and grayscale restoration. Independent59scene+10audit tests and both `--require-v8` Node suites pass. Final scene review is `docs/review/footprint-ground-repair-20261116/REVIEW-FINAL.md`.
