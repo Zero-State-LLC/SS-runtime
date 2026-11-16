@@ -1,5 +1,11 @@
 # Next work order
 
+## Owner rejects footprint consistency, November16 22:50UTC
+
+Owner correction: footprints are inconsistent. This supersedes the earlier coordinator description of corrected/coherent footprints. Read `FACTS.md` first. V7 sources/captures remain byte-unchanged and NOT accepted. Diagnosis is `docs/review/footprint-consistency-20261116/`: whole canonical footprint painted-road overlap41.015625% residential-west,63.5417% civic-west,100% civic-dais. Retained tree root[858,780] is inside civic-west bounds. Four independent diagnostic checks pass, confirming the defect rather than a repair. Issue252 records missing cross-layer validation. Corner projection checks prove registration only, not visible contact/ground/prop consistency; kiosk also uses a virtual chamfer-omitted corner.
+
+The old pass froze ground and prop roots, so another building-only aesthetic retry cannot resolve these confirmed inconsistencies. Proposed `intent/2026-11-16-footprint-ground-consistency.md` requests one coordinated presentation-only ground/base/prop repair while preserving collision, Camera/Player roots/fields, framing and controls. **Await explicit approval of that broader work order.** No new art, native retry, production admission, merge, motion/encounter expansion or issue closure. Diagnosis and correction are published separately, without rewriting historical reviews or evidence.
+
 ## Bounded building scene published, November16 22:45UTC
 
 Evidence commit `a19aa1738add89a2b31ace5a837292f99f3b8937` was pushed and independently matched both remote branch and PR236 head at22:45. Staged-only13kiosk+11context+41scene tests passed, followed by retained capture,9pixel comparisons and both Node suites after supplying the export's tracking receipt and one omitted tracked intent file. Both initial export failures remain preserved. Exact-head CI query at22:45 returned no runs yet, NOT a passing certification. This publication checkpoint is documentation-only follow-through.
