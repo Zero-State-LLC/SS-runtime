@@ -1,0 +1,80 @@
+[stderr] test_actual_binary_hash_mismatch (test_native.NativeV5Tests.test_actual_binary_hash_mismatch) ... ok
+[stderr] test_basis_inventory_and_alpha_guards_preserved (test_native.NativeV5Tests.test_basis_inventory_and_alpha_guards_preserved) ... ok
+[stderr] test_control_outline_stays_old (test_native.NativeV5Tests.test_control_outline_stays_old) ... ok
+[stderr] test_depth_geometry_not_self_reported (test_native.NativeV5Tests.test_depth_geometry_not_self_reported) ... ok
+[stderr] test_depth_order_band_and_constraint_mutations (test_native.NativeV5Tests.test_depth_order_band_and_constraint_mutations) ... ok
+[stderr] test_exact_solids_not_only_census (test_native.NativeV5Tests.test_exact_solids_not_only_census) ... ok
+[stderr] test_forged_environment_root_in_inventory_and_depth_rejected (test_native.NativeV5Tests.test_forged_environment_root_in_inventory_and_depth_rejected) ... ok
+[stderr] test_ground_adapter_rejects_displayed_padding_or_rectangular_source (test_native.NativeV5Tests.test_ground_adapter_rejects_displayed_padding_or_rectangular_source) ... ok
+[stderr] test_hud_field_authority_and_census_preserved (test_native.NativeV5Tests.test_hud_field_authority_and_census_preserved) ... ok
+[stderr] test_kiosk_camera_constraint_is_not_root_only_sort (test_native.NativeV5Tests.test_kiosk_camera_constraint_is_not_root_only_sort) ... ok
+[stderr] test_outline_shadow_ground_mutations (test_native.NativeV5Tests.test_outline_shadow_ground_mutations) ... ok
+[stderr] test_private_import_ignores_unrelated_module_names (test_native.NativeV5Tests.test_private_import_ignores_unrelated_module_names) ... ok
+[stderr] test_projected_shadow_must_match_player_each_zoom (test_native.NativeV5Tests.test_projected_shadow_must_match_player_each_zoom) ... ok
+[stderr] test_ray_box_oracle_1089_positions (test_native.NativeV5Tests.test_ray_box_oracle_1089_positions) ... ok
+[stderr] test_real_v4_rejected_not_reinterpreted (test_native.NativeV5Tests.test_real_v4_rejected_not_reinterpreted) ... ok
+[stderr] test_result_identity_and_skips (test_native.NativeV5Tests.test_result_identity_and_skips) ... ok
+[stderr] test_self_consistent_forged_footprint_still_rejected (test_native.NativeV5Tests.test_self_consistent_forged_footprint_still_rejected) ... ok
+[stderr] test_source_binary_and_schema_guards (test_native.NativeV5Tests.test_source_binary_and_schema_guards) ... ok
+[stderr] test_synthetic_v5_contract (test_native.NativeV5Tests.test_synthetic_v5_contract) ... ok
+[stderr] test_unconstrained_equal_priority_tie_is_lexical (test_native.NativeV5Tests.test_unconstrained_equal_priority_tie_is_lexical) ... ok
+[stderr] test_unearned_claim_inside_record_rejected (test_native.NativeV5Tests.test_unearned_claim_inside_record_rejected) ... ok
+[stderr] test_claimed_depth_fix_without_new_pixels_still_fails (test_qa.PixelProbeTests.test_claimed_depth_fix_without_new_pixels_still_fails) ... ok
+[stderr] test_projected_root_is_not_zoomed_twice (test_qa.PixelProbeTests.test_projected_root_is_not_zoomed_twice) ... ok
+[stderr] test_retained_v4_reproduces_both_defects (test_qa.PixelProbeTests.test_retained_v4_reproduces_both_defects) ... ok
+[stderr] test_edited_bytes_rejected (test_retained.RetainedV5Tests.test_edited_bytes_rejected) ... ok
+[stderr] test_executable_hash_disagreement (test_retained.RetainedV5Tests.test_executable_hash_disagreement) ... ok
+[stderr] test_extra_file_rejected (test_retained.RetainedV5Tests.test_extra_file_rejected) ... ok
+[stderr] test_historical_v4_not_current (test_retained.RetainedV5Tests.test_historical_v4_not_current) ... ok
+[stderr] test_image_hash_disagreement_even_after_report_rehash (test_retained.RetainedV5Tests.test_image_hash_disagreement_even_after_report_rehash) ... ok
+[stderr] test_import_collision_safe (test_retained.RetainedV5Tests.test_import_collision_safe) ... ok
+[stderr] test_preparation_hash_disagreement (test_retained.RetainedV5Tests.test_preparation_hash_disagreement) ... ok
+[stderr] test_rehashed_footprint_forgery_rejected (test_retained.RetainedV5Tests.test_rehashed_footprint_forgery_rejected) ... ok
+[stderr] test_rehashed_ground_forgery_rejected (test_retained.RetainedV5Tests.test_rehashed_ground_forgery_rejected) ... ok
+[stderr] test_rehashed_ground_source_adapter_forgery_rejected (test_retained.RetainedV5Tests.test_rehashed_ground_source_adapter_forgery_rejected) ... ok
+[stderr] test_rehashed_outline_forgery_rejected (test_retained.RetainedV5Tests.test_rehashed_outline_forgery_rejected) ... ok
+[stderr] test_rehashed_projected_shadow_forgery_rejected (test_retained.RetainedV5Tests.test_rehashed_projected_shadow_forgery_rejected) ... ok
+[stderr] test_rehashed_shadow_forgery_rejected (test_retained.RetainedV5Tests.test_rehashed_shadow_forgery_rejected) ... ok
+[stderr] test_source_read_provenance_disagreement (test_retained.RetainedV5Tests.test_source_read_provenance_disagreement) ... ok
+[stderr] test_symlink_and_extra_file_rejected (test_retained.RetainedV5Tests.test_symlink_and_extra_file_rejected) ... ok
+[stderr] test_synthetic_packet_contract_only (test_retained.RetainedV5Tests.test_synthetic_packet_contract_only) ... ok
+[stderr] test_unearned_acceptance_rejected (test_retained.RetainedV5Tests.test_unearned_acceptance_rejected) ... ok
+[stderr] 
+[stderr] ----------------------------------------------------------------------
+[stderr] Ran 41 tests in 6.852s
+[stderr] 
+[stderr] OK
+[stderr] test_empty_single_and_invalid (__main__.DepthTests.test_empty_single_and_invalid) ... ok
+[stderr] test_equal_intersecting_and_contact (__main__.DepthTests.test_equal_intersecting_and_contact) ... ok
+[stderr] test_explicit_synthetic_cycle_failure (__main__.DepthTests.test_explicit_synthetic_cycle_failure) ... ok
+[stderr] test_near_far_mixed_quadrants (__main__.DepthTests.test_near_far_mixed_quadrants) ... ok
+[stderr] test_old_root_regression_and_plane_explanation (__main__.DepthTests.test_old_root_regression_and_plane_explanation) ... ok
+[stderr] test_ray_box_oracle_1089_positions (__main__.DepthTests.test_ray_box_oracle_1089_positions) ... ok
+[stderr] test_ready_node_priority_not_global_resort (__main__.DepthTests.test_ready_node_priority_not_global_resort) ... ok
+[stderr] test_review_gates_exclude_both_files (__main__.DepthTests.test_review_gates_exclude_both_files) ... ok
+[stderr] test_same_projected_column_points_have_depth_edge (__main__.DepthTests.test_same_projected_column_points_have_depth_edge) ... ok
+[stderr] test_solid_solid_and_disjoint_projected_spans (__main__.DepthTests.test_solid_solid_and_disjoint_projected_spans) ... ok
+[stderr] test_stable_all_permutations (__main__.DepthTests.test_stable_all_permutations) ... ok
+[stderr] test_swift_xctest_typechecks (__main__.DepthTests.test_swift_xctest_typechecks) ... ok
+[stderr] test_translation_and_positive_scale_preserve_relations (__main__.DepthTests.test_translation_and_positive_scale_preserve_relations) ... ok
+[stderr] 
+[stderr] ----------------------------------------------------------------------
+[stderr] Ran 13 tests in 4.360s
+[stderr] 
+[stderr] OK
+[stderr] test_01_authoritative_bounds_and_registration (__main__.GroundTests.test_01_authoritative_bounds_and_registration) ... ok
+[stderr] test_02_red_capable_real_v4_crop_coverage (__main__.GroundTests.test_02_red_capable_real_v4_crop_coverage) ... ok
+[stderr] test_03_fixed_crop_coverage_and_inverse_roundtrip (__main__.GroundTests.test_03_fixed_crop_coverage_and_inverse_roundtrip) ... ok
+[stderr] test_04_entire_original_interior_exact (__main__.GroundTests.test_04_entire_original_interior_exact) ... ok
+[stderr] test_05_no_artificial_old_patch_boundary (__main__.GroundTests.test_05_no_artificial_old_patch_boundary) ... ok
+[stderr] test_06_opaque_complete_arena_and_no_repeated_motif (__main__.GroundTests.test_06_opaque_complete_arena_and_no_repeated_motif) ... ok
+[stderr] test_07_square_groundpatch_uv_adapter (__main__.GroundTests.test_07_square_groundpatch_uv_adapter) ... ok
+[stderr] test_08_immutable_sources_fail_closed (__main__.GroundTests.test_08_immutable_sources_fail_closed) ... ok
+[stderr] test_09_deterministic_rebuild_and_output_hashes (__main__.GroundTests.test_09_deterministic_rebuild_and_output_hashes) ... ok
+[stderr] 
+[stderr] ----------------------------------------------------------------------
+[stderr] Ran 9 tests in 23.411s
+[stderr] 
+[stderr] OK
+
+--- Command finished with exit code: 0 ---

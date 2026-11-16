@@ -24,6 +24,8 @@ jobs:
         run: swift test --filter CameraPlacementTests --parallel --num-workers 1
       - name: Test camera fairness
         run: swift test --filter CameraFairnessTests --parallel --num-workers 1
+      - name: Test review-only footprint depth constraints
+        run: python3 -B docs/review/scene-qa-repair-20261116/depth/test_depth.py
 
   spec-parity:
     # D-061: from the adoption commit the runtime bundle must byte-match
@@ -115,6 +117,12 @@ jobs:
           python3 -B -W error::ResourceWarning docs/review/stone-painted-facade-20261116/verify_exports.py
           python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/scene-source-assembly-20261116 -p 'test_*.py'
           python3 -B -W error::ResourceWarning docs/review/upgrade-interaction-20261116/test_evidence.py
+      - name: Verify bounded scene QA evidence
+        run: |
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/scene-qa-repair-20261116 -p 'test_*.py'
+          python3 -B -W error::ResourceWarning docs/review/scene-qa-repair-20261116/ground/test_ground.py
+          python3 -B docs/review/scene-qa-repair-20261116/retained.py docs/review/scene-qa-repair-20261116/native-capture-v5
+          node docs/review/scene-qa-repair-20261116/gallery/test_evidence.js
       - name: Test retained playback failure diagnosis without hiding the failure
         run: python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/playback237-diagnosis-20261116 -p 'test_trace_probe.py' -v
       - name: Byte-compare bundled contracts and fixtures against the pinned SS-specs

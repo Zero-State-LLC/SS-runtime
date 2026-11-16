@@ -1,0 +1,353 @@
+test_empty_single_and_invalid (__main__.DepthTests.test_empty_single_and_invalid) ... ok
+test_equal_intersecting_and_contact (__main__.DepthTests.test_equal_intersecting_and_contact) ... ok
+test_explicit_synthetic_cycle_failure (__main__.DepthTests.test_explicit_synthetic_cycle_failure) ... ok
+test_near_far_mixed_quadrants (__main__.DepthTests.test_near_far_mixed_quadrants) ... ok
+test_old_root_regression_and_plane_explanation (__main__.DepthTests.test_old_root_regression_and_plane_explanation) ... ok
+test_ray_box_oracle_1089_positions (__main__.DepthTests.test_ray_box_oracle_1089_positions) ... ok
+test_ready_node_priority_not_global_resort (__main__.DepthTests.test_ready_node_priority_not_global_resort) ... ok
+test_review_gates_exclude_both_files (__main__.DepthTests.test_review_gates_exclude_both_files) ... ok
+test_same_projected_column_points_have_depth_edge (__main__.DepthTests.test_same_projected_column_points_have_depth_edge) ... ok
+test_solid_solid_and_disjoint_projected_spans (__main__.DepthTests.test_solid_solid_and_disjoint_projected_spans) ... ok
+test_stable_all_permutations (__main__.DepthTests.test_stable_all_permutations) ... ok
+test_swift_xctest_typechecks (__main__.DepthTests.test_swift_xctest_typechecks) ... /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:20:9: error: cannot find 'XCTAssertEqual' in scope
+18 |         let items = [kiosk(), camera]
+19 |         let old = items.sorted { $0.projectedRootY > $1.projectedRootY }.map(\.name)
+20 |         XCTAssertEqual(old, ["camera3", "kiosk"], "v4 paints the kiosk over Camera3")
+   |         `- error: cannot find 'XCTAssertEqual' in scope
+21 |         let result = try D.order(items)
+22 |         XCTAssertEqual(result.backToFrontNames, ["kiosk", "camera3"])
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:22:9: error: cannot find 'XCTAssertEqual' in scope
+20 |         XCTAssertEqual(old, ["camera3", "kiosk"], "v4 paints the kiosk over Camera3")
+21 |         let result = try D.order(items)
+22 |         XCTAssertEqual(result.backToFrontNames, ["kiosk", "camera3"])
+   |         `- error: cannot find 'XCTAssertEqual' in scope
+23 |         XCTAssertEqual(result.edges, [.init(back: "kiosk", front: "camera3", separations: [
+24 |             .init(axis: .x, backMinimum: 512, frontMaximum: 496)
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:23:9: error: cannot find 'XCTAssertEqual' in scope
+21 |         let result = try D.order(items)
+22 |         XCTAssertEqual(result.backToFrontNames, ["kiosk", "camera3"])
+23 |         XCTAssertEqual(result.edges, [.init(back: "kiosk", front: "camera3", separations: [
+   |         `- error: cannot find 'XCTAssertEqual' in scope
+24 |             .init(axis: .x, backMinimum: 512, frontMaximum: 496)
+25 |         ])])
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:23:40: error: 'Any' cannot be constructed because it has no accessible initializers
+21 |         let result = try D.order(items)
+22 |         XCTAssertEqual(result.backToFrontNames, ["kiosk", "camera3"])
+23 |         XCTAssertEqual(result.edges, [.init(back: "kiosk", front: "camera3", separations: [
+   |                                        `- error: 'Any' cannot be constructed because it has no accessible initializers
+24 |             .init(axis: .x, backMinimum: 512, frontMaximum: 496)
+25 |         ])])
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:24:14: error: 'Any' cannot be constructed because it has no accessible initializers
+22 |         XCTAssertEqual(result.backToFrontNames, ["kiosk", "camera3"])
+23 |         XCTAssertEqual(result.edges, [.init(back: "kiosk", front: "camera3", separations: [
+24 |             .init(axis: .x, backMinimum: 512, frontMaximum: 496)
+   |              `- error: 'Any' cannot be constructed because it has no accessible initializers
+25 |         ])])
+26 |     }
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:24:26: error: cannot infer contextual base in reference to member 'x'
+22 |         XCTAssertEqual(result.backToFrontNames, ["kiosk", "camera3"])
+23 |         XCTAssertEqual(result.edges, [.init(back: "kiosk", front: "camera3", separations: [
+24 |             .init(axis: .x, backMinimum: 512, frontMaximum: 496)
+   |                          `- error: cannot infer contextual base in reference to member 'x'
+25 |         ])])
+26 |     }
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:37:13: error: cannot find 'XCTAssertEqual' in scope
+35 |         for (x, y, back, axis) in cases {
+36 |             let result = try D.order([point("point", x, y), kiosk()])
+37 |             XCTAssertEqual(result.edges.first?.back, back, "point [\(x),\(y)]")
+   |             `- error: cannot find 'XCTAssertEqual' in scope
+38 |             if let axis { XCTAssertEqual(result.edges.first?.separations.first?.axis, axis) }
+39 |             XCTAssertEqual(result.edges.count, back == nil ? 0 : 1)
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:38:27: error: cannot find 'XCTAssertEqual' in scope
+36 |             let result = try D.order([point("point", x, y), kiosk()])
+37 |             XCTAssertEqual(result.edges.first?.back, back, "point [\(x),\(y)]")
+38 |             if let axis { XCTAssertEqual(result.edges.first?.separations.first?.axis, axis) }
+   |                           `- error: cannot find 'XCTAssertEqual' in scope
+39 |             XCTAssertEqual(result.edges.count, back == nil ? 0 : 1)
+40 |         }
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:39:13: error: cannot find 'XCTAssertEqual' in scope
+37 |             XCTAssertEqual(result.edges.first?.back, back, "point [\(x),\(y)]")
+38 |             if let axis { XCTAssertEqual(result.edges.first?.separations.first?.axis, axis) }
+39 |             XCTAssertEqual(result.edges.count, back == nil ? 0 : 1)
+   |             `- error: cannot find 'XCTAssertEqual' in scope
+40 |         }
+41 |     }
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:45:13: error: cannot find 'XCTAssertTrue' in scope
+43 |     func testEqualIntersectingAndContactHaveNoInventedEdges() throws {
+44 |         for p in [point("p", 512, 640), point("p", 576, 704), point("p", 640, 768)] {
+45 |             XCTAssertTrue(try D.order([kiosk(), p]).edges.isEmpty)
+   |             `- error: cannot find 'XCTAssertTrue' in scope
+46 |         }
+47 |         let same = D.Item(name: "same", worldRoot: .init(x: 512, y: 640),
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:81:9: note: macro 'XCTAssertTrue' unavailable: function like macros not supported
+ 79 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+ 80 | */
+ 81 | #define XCTAssertTrue(expression, ...) \
+    |         `- note: macro 'XCTAssertTrue' unavailable: function like macros not supported
+ 82 |     _XCTPrimitiveAssertTrue(nil, expression, @#expression, __VA_ARGS__)
+ 83 | 
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:52:9: error: cannot find 'XCTAssertTrue' in scope
+50 |                              solidBounds: .init(minX: 600, minY: 700, maxX: 700, maxY: 800),
+51 |                              projectedRootY: 1300)
+52 |         XCTAssertTrue(try D.order([kiosk(), same, overlap]).edges.isEmpty)
+   |         `- error: cannot find 'XCTAssertTrue' in scope
+53 |     }
+54 | 
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:81:9: note: macro 'XCTAssertTrue' unavailable: function like macros not supported
+ 79 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+ 80 | */
+ 81 | #define XCTAssertTrue(expression, ...) \
+    |         `- note: macro 'XCTAssertTrue' unavailable: function like macros not supported
+ 82 |     _XCTPrimitiveAssertTrue(nil, expression, @#expression, __VA_ARGS__)
+ 83 | 
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:61:9: error: cannot find 'XCTAssertEqual' in scope
+59 |         let free = point("free", -1000, 1000, priority: 2000)
+60 |         let result = try D.order([near, kiosk(), free])
+61 |         XCTAssertEqual(result.backToFrontNames, ["free", "kiosk", "near"])
+   |         `- error: cannot find 'XCTAssertEqual' in scope
+62 |         XCTAssertEqual(result.edges.map(\.back), ["kiosk"])
+63 |     }
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:62:9: error: cannot find 'XCTAssertEqual' in scope
+60 |         let result = try D.order([near, kiosk(), free])
+61 |         XCTAssertEqual(result.backToFrontNames, ["free", "kiosk", "near"])
+62 |         XCTAssertEqual(result.edges.map(\.back), ["kiosk"])
+   |         `- error: cannot find 'XCTAssertEqual' in scope
+63 |     }
+64 | 
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:68:9: error: cannot find 'XCTAssertEqual' in scope
+66 |         let a = point("a", 1, 9)
+67 |         let z = point("z", 9, 1)
+68 |         XCTAssertEqual(try D.order([z, a]).backToFrontNames, ["a", "z"])
+   |         `- error: cannot find 'XCTAssertEqual' in scope
+69 |         let items = [kiosk(), point("camera3", 496, 672), a, z]
+70 |         let expected = try D.order(items)
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:71:9: error: cannot find 'XCTAssertEqual' in scope
+69 |         let items = [kiosk(), point("camera3", 496, 672), a, z]
+70 |         let expected = try D.order(items)
+71 |         XCTAssertEqual(try D.order(Array(items.reversed())), expected)
+   |         `- error: cannot find 'XCTAssertEqual' in scope
+72 |         XCTAssertEqual(try D.order([items[2], items[0], items[3], items[1]]), expected)
+73 |         XCTAssertEqual(try D.order([]).backToFrontNames, [])
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:72:9: error: cannot find 'XCTAssertEqual' in scope
+70 |         let expected = try D.order(items)
+71 |         XCTAssertEqual(try D.order(Array(items.reversed())), expected)
+72 |         XCTAssertEqual(try D.order([items[2], items[0], items[3], items[1]]), expected)
+   |         `- error: cannot find 'XCTAssertEqual' in scope
+73 |         XCTAssertEqual(try D.order([]).backToFrontNames, [])
+74 |     }
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:73:9: error: cannot find 'XCTAssertEqual' in scope
+71 |         XCTAssertEqual(try D.order(Array(items.reversed())), expected)
+72 |         XCTAssertEqual(try D.order([items[2], items[0], items[3], items[1]]), expected)
+73 |         XCTAssertEqual(try D.order([]).backToFrontNames, [])
+   |         `- error: cannot find 'XCTAssertEqual' in scope
+74 |     }
+75 | 
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:77:9: error: cannot find 'XCTAssertThrowsError' in scope
+75 | 
+76 |     func testInvalidInputsFailClosed() {
+77 |         XCTAssertThrowsError(try D.order([point("a", 0, 0), point("a", 1, 1)]))
+   |         `- error: cannot find 'XCTAssertThrowsError' in scope
+78 |         XCTAssertThrowsError(try D.order([point("", 0, 0)]))
+79 |         XCTAssertThrowsError(try D.order([point("nan", .nan, 0)]))
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:78:9: error: cannot find 'XCTAssertThrowsError' in scope
+76 |     func testInvalidInputsFailClosed() {
+77 |         XCTAssertThrowsError(try D.order([point("a", 0, 0), point("a", 1, 1)]))
+78 |         XCTAssertThrowsError(try D.order([point("", 0, 0)]))
+   |         `- error: cannot find 'XCTAssertThrowsError' in scope
+79 |         XCTAssertThrowsError(try D.order([point("nan", .nan, 0)]))
+80 |         XCTAssertThrowsError(try D.order([point("infinite", 0, 0, priority: .infinity)]))
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:79:9: error: cannot find 'XCTAssertThrowsError' in scope
+77 |         XCTAssertThrowsError(try D.order([point("a", 0, 0), point("a", 1, 1)]))
+78 |         XCTAssertThrowsError(try D.order([point("", 0, 0)]))
+79 |         XCTAssertThrowsError(try D.order([point("nan", .nan, 0)]))
+   |         `- error: cannot find 'XCTAssertThrowsError' in scope
+80 |         XCTAssertThrowsError(try D.order([point("infinite", 0, 0, priority: .infinity)]))
+81 |         let inverted = D.Item(name: "bad", worldRoot: .init(x: 0, y: 0),
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:80:9: error: cannot find 'XCTAssertThrowsError' in scope
+78 |         XCTAssertThrowsError(try D.order([point("", 0, 0)]))
+79 |         XCTAssertThrowsError(try D.order([point("nan", .nan, 0)]))
+80 |         XCTAssertThrowsError(try D.order([point("infinite", 0, 0, priority: .infinity)]))
+   |         `- error: cannot find 'XCTAssertThrowsError' in scope
+81 |         let inverted = D.Item(name: "bad", worldRoot: .init(x: 0, y: 0),
+82 |                               solidBounds: .init(minX: 1, minY: 0, maxX: 0, maxY: 1), projectedRootY: 0)
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:83:9: error: cannot find 'XCTAssertThrowsError' in scope
+81 |         let inverted = D.Item(name: "bad", worldRoot: .init(x: 0, y: 0),
+82 |                               solidBounds: .init(minX: 1, minY: 0, maxX: 0, maxY: 1), projectedRootY: 0)
+83 |         XCTAssertThrowsError(try D.order([inverted]))
+   |         `- error: cannot find 'XCTAssertThrowsError' in scope
+84 |     }
+85 | 
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:93:9: error: cannot find 'XCTAssertThrowsError' in scope
+91 |                      D.Edge(back: "b", front: "a", separations: []),
+92 |                      D.Edge(back: "b", front: "c", separations: [])]
+93 |         XCTAssertThrowsError(try D.topologicalNames(items: items, edges: edges)) { error in
+   |         `- error: cannot find 'XCTAssertThrowsError' in scope
+94 |             XCTAssertEqual(error as? D.Failure, .cyclic(blockedNames: ["a", "b", "c"], edges: edges))
+95 |         }
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:94:13: error: cannot find 'XCTAssertEqual' in scope
+92 |                      D.Edge(back: "b", front: "c", separations: [])]
+93 |         XCTAssertThrowsError(try D.topologicalNames(items: items, edges: edges)) { error in
+94 |             XCTAssertEqual(error as? D.Failure, .cyclic(blockedNames: ["a", "b", "c"], edges: edges))
+   |             `- error: cannot find 'XCTAssertEqual' in scope
+95 |         }
+96 |     }
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestAssertions.h:120:9: note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+118 |  * @param ... An optional supplementary description of the failure. A literal NSString, optionally with string format specifiers. This parameter can be completely omitted.
+119 | */
+120 | #define XCTAssertEqual(expression1, expression2, ...) \
+    |         `- note: macro 'XCTAssertEqual' unavailable: function like macros not supported
+121 |     _XCTPrimitiveAssertEqual(nil, expression1, @#expression1, expression2, @#expression2, __VA_ARGS__)
+122 | 
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:94:50: error: cannot infer contextual base in reference to member 'cyclic'
+92 |                      D.Edge(back: "b", front: "c", separations: [])]
+93 |         XCTAssertThrowsError(try D.topologicalNames(items: items, edges: edges)) { error in
+94 |             XCTAssertEqual(error as? D.Failure, .cyclic(blockedNames: ["a", "b", "c"], edges: edges))
+   |                                                  `- error: cannot infer contextual base in reference to member 'cyclic'
+95 |         }
+96 |     }
+ERROR
+test_translation_and_positive_scale_preserve_relations (__main__.DepthTests.test_translation_and_positive_scale_preserve_relations) ... ok
+
+======================================================================
+ERROR: test_swift_xctest_typechecks (__main__.DepthTests.test_swift_xctest_typechecks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/scene-qa-repair-20261116/depth/test_depth.py", line 164, in test_swift_xctest_typechecks
+    subprocess.run([self.compiler, "-typecheck", *self.xctest_flags,
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    "-D", "DEBUG", "-D", "SS_SOURCE_SCENE_REVIEW",
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    str(HELPER), str(XCTEST)], check=True, timeout=60)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/usr/bin/swiftc', '-typecheck', '-F', '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks', '-D', 'DEBUG', '-D', 'SS_SOURCE_SCENE_REVIEW', '/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepth.swift', '/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift']' returned non-zero exit status 1.
+
+----------------------------------------------------------------------
+Ran 13 tests in 7.948s
+
+FAILED (errors=1)

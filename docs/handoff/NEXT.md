@@ -1,5 +1,13 @@
 # Next work order
 
+## Authorized QA repair checkpoint, November16 21:17UTC
+
+Owner's20:45:59UTC QA/diagnose/fix request authorizes `intent/2026-11-16-scene-qa-repair.md`. New isolated v5 packet repairs footprint ordering, Player outline/shadow-root registration and finite ground coverage. Independently verified retained native2100 evidence:1test/6captures/18images, exact built/captured SHA7a31efe5dbee7230bfe6651829289a190b22feee76609401879496f0c606502f before any v6 rebuild. At21:12,41QA tests,13compiled Swift depth tests and9ground tests passed. At21:16,all75prior scene regressions passed. Raw coordinator logs are in `scene-qa-repair-20261116/`.
+
+Actual zoom1.4 image still has Camera/visible-stick overlap. V5 remains intact and is not final aesthetic acceptance. Second bounded comparison is `scene-qa-framing-20261116/DIAGNOSIS.md`: change view center only from[736,672] to[684,724], preserving sum1408 and all actor/field/solid/HUD/control authority. Tiger owns NEW framing fixture and strict verifier, swan owns versioned gallery support, coordinator owns serialized native run, real-browser verification, final review and publication to existing PR236. No native v6 result exists at this checkpoint. Browser v4/v5 exercised36combinations/72image displays with exact704/352CSS sizing and captured grayscale restoration. Initial browser probe wrongly expected CSS grayscale on captures and was corrected to inspect captured-image selection; no app defect inferred.
+
+Keep #249 and prior issues open. No production changes, merge, motion/encounter expansion, owner acceptance, physical certification, automatic CI polling chain or unfiltered Swift retry. Review packet staged locally, not yet published. Unrelated untracked editable/family/enemy source directories stay outside this work.
+
 ## Final bounded scene review, November16 10:47UTC
 
 Final v4 native retry1041 passed and imported into `scene-source-assembly-20261116/native-capture-1040/`: one test, six captures, eighteen images. Loaded/fresh-build SHA f61ad09650b403b926caf38937f925cb773107a7f8d8baece3f2e1c8e39b4af2 matches. The stale1040 attempt and earlier1020/1030 failures remain preserved. All75scene regressions,8gallery structure checks and both JavaScript suites passed this turn. Actual Brave verified36control combinations/48image displays with exact704x326 or352x163CSS sizing and grayscale restoration. No unfiltered Swift retry or automatic CI polling chain.

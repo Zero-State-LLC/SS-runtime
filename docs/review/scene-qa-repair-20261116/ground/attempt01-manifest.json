@@ -1,0 +1,266 @@
+{
+  "status": "REVIEW_SOURCE_READY_NOT_NATIVE_OR_OWNER_ACCEPTED",
+  "dependenciesSHA256": {
+    "paving-corner-review-20261116/source.json": "3fabc473f8469241fb928c7dc7b8281c6e6e8e304d6789f7e9387eaf66ea6f1b",
+    "paving-corner-review-20261116/build.py": "a5dedc85a67ba91d85efccea6be7bb2d0e9d46e31da7be33659f92bd15f0c061",
+    "paving-corner-review-20261116/corner-topdown.png": "a0d937657b5f975246951213168cdeb715871412f7c4c402040228cc570a4e6c",
+    "paving-corner-review-20261116/paving-supertile.png": "1b864486f0859262c4e851a95e3fe3c3b0210ee5ec3306ada5ee066a05319c7a",
+    "paving-repeat-repair-20261116/revision02/paving-muted-candidate.png": "7a1f29c7b0f1a0a96e12484de84da21e7ab4ebee10cab2e829ed19309ca17d35",
+    "scene-source-assembly-20261116/authoritative-placement-1014.json": "b112b8685dd03c1cd1fd0214f7b010e33dbde3e714c5f21e4e48c4e342238e07",
+    "scene-source-assembly-20261116/native-capture-1040/source-scene-records.json": "20ca37e2ce48a24b03d5d313a1605c62cacded73c36687a8a1e30fb5d6bc0138"
+  },
+  "builderSHA256": "88e09d9bbf3e54cc506268c74ae7e5dbc6cb69a44d46d3f13f70481b1a15c44b",
+  "algorithm": "Pinned original material() and context(), changing worldBounds only. Signed corner distance and world-coordinate road grain evaluated across arena. Material modulo 256 world units applies only where distance <= 0. Decorative features drawn once.",
+  "registration": {
+    "boundsWorld": [
+      0,
+      0,
+      2304,
+      1536
+    ],
+    "worldOriginBottomLeft": [
+      0,
+      0
+    ],
+    "canvasPixels": [
+      4608,
+      3072
+    ],
+    "pixelsPerWorldUnit": 2,
+    "pixelToWorld": "x=px/2, y=1536-py/2 (original edge-sample convention retained)",
+    "drawSizeWorld": [
+      2304,
+      1536
+    ],
+    "anchor": [
+      0,
+      0
+    ]
+  },
+  "groundPatches": {
+    "file": "ground-patch-square.png",
+    "canvasPixels": [
+      4608,
+      4608
+    ],
+    "bounds": [
+      0,
+      0,
+      2304,
+      1536
+    ],
+    "tileUnits": 2304,
+    "normalizedTextureRect": [
+      0,
+      0,
+      1,
+      0.6666666666666666
+    ],
+    "paddingTopPixels": 1536,
+    "note": "Replace finite patch and conflicting groundLines. Exactly one patch node. Do not use rectangular ground-arena.png with square tileUnits."
+  },
+  "oldCoverage": {
+    "boundsWorld": [
+      448,
+      384,
+      1024,
+      960
+    ],
+    "passed": false,
+    "results": [
+      {
+        "zoom": 1,
+        "inverseCropCornersWorld": [
+          [
+            256.58160235552083,
+            690.3847763108503
+          ],
+          [
+            754.3847763108503,
+            192.58160235552083
+          ],
+          [
+            1215.4183976444792,
+            653.6152236891497
+          ],
+          [
+            717.6152236891497,
+            1151.4183976444792
+          ]
+        ],
+        "cornersCovered": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "covered": false
+      },
+      {
+        "zoom": 1.25,
+        "inverseCropCornersWorld": [
+          [
+            352.4652818844166,
+            686.7078210486802
+          ],
+          [
+            750.7078210486802,
+            288.4652818844166
+          ],
+          [
+            1119.5347181155835,
+            657.2921789513198
+          ],
+          [
+            721.2921789513198,
+            1055.5347181155835
+          ]
+        ],
+        "cornersCovered": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "covered": false
+      },
+      {
+        "zoom": 1.4,
+        "inverseCropCornersWorld": [
+          [
+            393.55828739680055,
+            685.1319830791788
+          ],
+          [
+            749.1319830791788,
+            329.55828739680055
+          ],
+          [
+            1078.4417126031994,
+            658.8680169208212
+          ],
+          [
+            722.8680169208212,
+            1014.4417126031994
+          ]
+        ],
+        "cornersCovered": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "covered": false
+      }
+    ]
+  },
+  "fixedCoverage": {
+    "boundsWorld": [
+      0,
+      0,
+      2304,
+      1536
+    ],
+    "passed": true,
+    "results": [
+      {
+        "zoom": 1,
+        "inverseCropCornersWorld": [
+          [
+            256.58160235552083,
+            690.3847763108503
+          ],
+          [
+            754.3847763108503,
+            192.58160235552083
+          ],
+          [
+            1215.4183976444792,
+            653.6152236891497
+          ],
+          [
+            717.6152236891497,
+            1151.4183976444792
+          ]
+        ],
+        "cornersCovered": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "covered": true
+      },
+      {
+        "zoom": 1.25,
+        "inverseCropCornersWorld": [
+          [
+            352.4652818844166,
+            686.7078210486802
+          ],
+          [
+            750.7078210486802,
+            288.4652818844166
+          ],
+          [
+            1119.5347181155835,
+            657.2921789513198
+          ],
+          [
+            721.2921789513198,
+            1055.5347181155835
+          ]
+        ],
+        "cornersCovered": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "covered": true
+      },
+      {
+        "zoom": 1.4,
+        "inverseCropCornersWorld": [
+          [
+            393.55828739680055,
+            685.1319830791788
+          ],
+          [
+            749.1319830791788,
+            329.55828739680055
+          ],
+          [
+            1078.4417126031994,
+            658.8680169208212
+          ],
+          [
+            722.8680169208212,
+            1014.4417126031994
+          ]
+        ],
+        "cornersCovered": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "covered": true
+      }
+    ]
+  },
+  "outputsSHA256": {
+    "ground-arena.png": "870428dbbc76bcf9e7a6b5de594285d06427dc1a71b590bb28cd3a7a1fc06fb3",
+    "ground-patch-square.png": "f4a3f542d8879b036c1a1979ab5fa03356b69350181fb526e190098982191dac",
+    "diagnostic-preview.png": "83f45a1b2f3f7d585f490fefec6ad25cf36f95a43c1ff595713ee6d2dbbeda5f"
+  },
+  "limits": [
+    "Finite eight-slab repeat, not aperiodic",
+    "Quilted source material, not a new editable reconstruction of every source pigment",
+    "Curved curb and road are review decoration, not changed collision or walkable bounds",
+    "Midpoint preview is an offline ground-plane transform, not native scene evidence",
+    "No native run, whole-scene lighting/contact or owner acceptance.",
+    "Arena-wide extrapolation preserves authored geometry, not certified street semantics around every other building.",
+    "Square adapter uses 4608-square RGB texture, GPU cost not measured."
+  ]
+}

@@ -1,0 +1,25 @@
+[stderr] .........................................
+[stderr] ----------------------------------------------------------------------
+[stderr] Ran 41 tests in 6.247s
+[stderr] 
+[stderr] OK
+[stderr] Traceback (most recent call last):
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/ss-qa-clean-20261116-2117/docs/review/scene-qa-repair-20261116/retained.py", line 84, in <module>
+[stderr]     print(json.dumps(verify(args.capture, args.prepared), indent=2))
+[stderr]                      ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/ss-qa-clean-20261116-2117/docs/review/scene-qa-repair-20261116/retained.py", line 37, in verify
+[stderr]     n.a.need(inputs == n.expected_input(), 'Retained preparation is not current exact binding')
+[stderr]                        ~~~~~~~~~~~~~~~~^^
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/ss-qa-clean-20261116-2117/docs/review/scene-qa-repair-20261116/native.py", line 124, in expected_input
+[stderr]     blockers, _ = a.validate(m, root)
+[stderr]                   ~~~~~~~~~~^^^^^^^^^
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/ss-qa-clean-20261116-2117/docs/review/scene-source-assembly-20261116/assemble.py", line 95, in validate
+[stderr]     tracked = tracking(root)
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/ss-qa-clean-20261116-2117/docs/review/scene-source-assembly-20261116/assemble.py", line 53, in tracking
+[stderr]     need(record.is_file(), 'No Git tracking or explicit exported tracking receipt')
+[stderr]     ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/ss-qa-clean-20261116-2117/docs/review/scene-source-assembly-20261116/assemble.py", line 26, in need
+[stderr]     raise Invalid(message)
+[stderr] _scene_qa_v5_assemble.Invalid: No Git tracking or explicit exported tracking receipt
+
+--- Command finished with exit code: 1 ---
