@@ -1,0 +1,246 @@
+{
+  "status": "STATIC_OWNER_DECISION_EVIDENCE_ONLY",
+  "ownerChoice": "UNRECORDED",
+  "shippingMappingChanged": false,
+  "capture": {
+    "xcresult": "ss-receipt-v2-20261115/app-Debug.xcresult",
+    "configuration": "Debug",
+    "xcode": "26.5 (17F42)",
+    "os": "iOS Simulator 26.5 (23F77)",
+    "viewportPoints": [
+      704,
+      326
+    ],
+    "nativePixels": [
+      2112,
+      978
+    ],
+    "halfPixels": [
+      1056,
+      489
+    ],
+    "displayScale": 3,
+    "runtimeBase": "df8473713a3d37aeca05d4e1110f979f197b9ceb",
+    "workingTree": "receipt-v2 candidate overlay, not a clean capture commit",
+    "sourceQualification": "Captured App and fixture source bytes equal runtimeBase and receipt-v2 final head dcf073c0; receipt changes do not touch these sources"
+  },
+  "quiet": {
+    "kind": "controlled modified street fixture",
+    "cameraIntegrity": 3,
+    "buildingRegistration": "uniform constrained building, same on both sides"
+  },
+  "encounter": {
+    "kind": "unedited command-driven snapshot, paused presentation",
+    "seed": 1,
+    "upgrade": "ghostStep",
+    "tick": 4976,
+    "player": [
+      1205,
+      1039
+    ],
+    "facing": "s",
+    "enemies": 7,
+    "projectiles": 1,
+    "telegraphs": 0,
+    "cameras": 8,
+    "scenarioSeeded": false,
+    "registerServiceBuilding": false,
+    "digest": "d96494f03b4ade6a6a6dc02961ffd1dc73c5e1f2a86a029ca6dcd22d207162f5"
+  },
+  "paletteExclusions": {
+    "topNativePixelRows": 240,
+    "topViewportPoints": 80,
+    "referenceCrop": "none",
+    "lowerTouchControls": "retained",
+    "zoneAllowance": "none",
+    "geometryOverlays": "not measured"
+  },
+  "referenceOrigin": "SS-specs@08406b9 docs/review/phase4, unchanged copies",
+  "referenceSHA256": {
+    "street-corner-approved-concept.png": "49aa35447230187e3eabe948cdc8eba6d6d465b2605d624e2cf7443f6cb69ffb",
+    "street-corner-midpoint-concept.png": "61a8ab9b805930284986c0a6ae3596a581fb1e452e292ad3c5f30690c34db561"
+  },
+  "sourceSHA256": {
+    "AppTests/BenchmarkCaptureTests.swift": "9f36f695767395f8f27cbc37f866fa6540575ca5ee5547fa19ff9637b58760a3",
+    "App/BenchmarkReviewArt.swift": "ab65ab22aa977b26d6507a63bca86971bc7b62d63400961e96072c9190d996d0",
+    "App/WorldRenderer.swift": "e6cb6a52d8322380818d21a8390d70a5ac8ce3e3cf0481fb516efdf65c4850f8",
+    "App/GameScene.swift": "a3b154e63f208fe999c5ee88b1c02c8ab34002d3708dd8712ec8935dd6fa7e67"
+  },
+  "plateSHA256": {
+    "BP001-encounter-current": "68a396249fd26006f35ce3c6f7a6da3edeb6426f72d19bdf93871d88d7257b5a",
+    "BP001-encounter-current-geometry": "1df68fff70c1100893dfb78747031d2bb7baa66914cb69b67b79b622d0c0bbda",
+    "BP001-encounter-current-geometry-gray": "ade90bfc7eb86554d74b5d8e73f34bbcea55014536daa2d604a4391fee1837f3",
+    "BP001-encounter-current-geometry-half": "37404664b35043df6d91acf30ca220414ee723026efc5e05109069e4239e850f",
+    "BP001-encounter-current-gray": "d20c48f58502ae3643303f6b0cbc9743d8fba4d09f6db97e95b3cf0ccf0b3089",
+    "BP001-encounter-current-half": "c381e5cf1c5b8e882e40b6c658b30e6c372681bfb5f03a3d2dc270743fa5a22e",
+    "BP001-encounter-projected-100-same-art": "fde11b54ae3f398240ff349716edda5f47753b8f7f5f39004aa93e09ed36e1bb",
+    "BP001-encounter-projected-100-same-art-geometry": "081968727524c063b6f51eb94c9a97257e5ded3cb26843ef17bf844dbe2f1eca",
+    "BP001-encounter-projected-100-same-art-geometry-gray": "5356510e4960ff11a697f97dbc48330a268ae035d877a020f522ec7e030f8326",
+    "BP001-encounter-projected-100-same-art-geometry-half": "40293a63e46d231b959c61942feac6fae15a858ed74b646310a3035a38393087",
+    "BP001-encounter-projected-100-same-art-gray": "7fd9117421511ceb264de1ca7d7d0b420eecb5ec291a14f961fe98212087415e",
+    "BP001-encounter-projected-100-same-art-half": "57a91ef2c3e13470656fe0180bb896545efc0d60d5cda8359aac289c0d80ea0f",
+    "BP001-quiet-street-current": "d0577081870d7281e00a4664e27fa5fb249dbbbe2c8d4b53a31608bdc568f097",
+    "BP001-quiet-street-current-geometry": "9e04b67a0d3a99c59da8bde804bdcbdf8af77a9ffec1bed50b703f2e4b2531cd",
+    "BP001-quiet-street-current-geometry-gray": "6cb3763b76ac2e28aa64bf537b0f49a7a321cf3eab606813d931cc75ce9f70f5",
+    "BP001-quiet-street-current-geometry-half": "dcb0fc04b52c3332c892eb9be4f66baeed6b3e96174b6587f3d8ea223a2782bc",
+    "BP001-quiet-street-current-gray": "0ff48721790108c0b04d7ceda392633e835a10cfa699667f543c3ca2a48bd9fe",
+    "BP001-quiet-street-current-half": "e1cab2bd50ae4197445b9184a407a726798fe7adc808bd245ba8964483fba0b3",
+    "BP001-quiet-street-midpoint": "6cddecd969ba477b8de4bf2eed43d66d7ec55a89ecfcb4f1263c0df3ad52054c",
+    "BP001-quiet-street-midpoint-geometry": "64ffcdef088cbfb35a0bc54c87861af8d31b62ab5547ea278677d7babf963989",
+    "BP001-quiet-street-midpoint-geometry-gray": "396e0d98e694d8406e3bbcc6178d03c9d9f446c42e1c928f1b4fd66f0796787b",
+    "BP001-quiet-street-midpoint-geometry-half": "a41a41a1765a3646463ebad80d9c37450d324e66a9d4fd8e6bd5ef7de5b58a33",
+    "BP001-quiet-street-midpoint-gray": "70107af3d686fdabcfd2b18b324018fd55e4cd7efb1e2622829a4d607ac5fc8f",
+    "BP001-quiet-street-midpoint-half": "8e72e435dabd01f0a526723cbafa07c00faad3bf0bd9c31ee150c4379384e5d0"
+  },
+  "attachments": [
+    {
+      "plate": "BP001-quiet-street-midpoint-geometry-gray",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785540.807,
+      "exportedFileName": "A4158CBB-F42D-47E1-A8FB-ED8AC94C99EE.png"
+    },
+    {
+      "plate": "BP001-quiet-street-midpoint-geometry-half",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785540.557,
+      "exportedFileName": "D7B6260E-DEBC-48F1-AE7A-5F7BFB35A319.png"
+    },
+    {
+      "plate": "BP001-quiet-street-midpoint-geometry",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785540.494,
+      "exportedFileName": "46F6800E-B44F-4E9D-8746-E79E3B4C30C2.png"
+    },
+    {
+      "plate": "BP001-quiet-street-current-geometry-gray",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785540.135,
+      "exportedFileName": "08F0525B-B1EE-417D-BCD9-A3DDF90E88B9.png"
+    },
+    {
+      "plate": "BP001-quiet-street-current-geometry-half",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785539.928,
+      "exportedFileName": "4BBAB90B-693C-4B21-B771-E68D2A0EDDB3.png"
+    },
+    {
+      "plate": "BP001-quiet-street-current-geometry",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785539.868,
+      "exportedFileName": "1FC762A0-53EA-4DB1-8027-A2D895AF1C7D.png"
+    },
+    {
+      "plate": "BP001-quiet-street-midpoint-gray",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785539.57,
+      "exportedFileName": "914B9846-E359-4DF2-A2AB-1C3D2682923E.png"
+    },
+    {
+      "plate": "BP001-quiet-street-midpoint-half",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785539.319,
+      "exportedFileName": "15061E79-6FCE-4398-AE92-1C3D74D50278.png"
+    },
+    {
+      "plate": "BP001-quiet-street-midpoint",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785539.254,
+      "exportedFileName": "B332A34B-1D85-4D25-AF0C-AF51661A8D24.png"
+    },
+    {
+      "plate": "BP001-quiet-street-current-gray",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785538.727,
+      "exportedFileName": "77EBD4BE-E553-43DB-92D2-E9AEF2AC589B.png"
+    },
+    {
+      "plate": "BP001-quiet-street-current-half",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785538.506,
+      "exportedFileName": "9E86D973-938F-4B21-8D9F-D0DF22AE4BFD.png"
+    },
+    {
+      "plate": "BP001-quiet-street-current",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785538.437,
+      "exportedFileName": "A92B1BA4-5C57-413E-A70D-B4C81F1F3DE8.png"
+    },
+    {
+      "plate": "BP001-encounter-projected-100-same-art-geometry-gray",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785504.249,
+      "exportedFileName": "5C6259F9-E83E-460E-AC79-C1E06B44758C.png"
+    },
+    {
+      "plate": "BP001-encounter-projected-100-same-art-geometry-half",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785504.027,
+      "exportedFileName": "48B8103F-5583-47BC-880B-45BC2E7225E6.png"
+    },
+    {
+      "plate": "BP001-encounter-projected-100-same-art-geometry",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785503.962,
+      "exportedFileName": "651548F2-5CE3-4364-88F6-49CE69FD5216.png"
+    },
+    {
+      "plate": "BP001-encounter-current-geometry-gray",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785503.631,
+      "exportedFileName": "86CCB884-DC64-48C2-AC8E-21CAA059A436.png"
+    },
+    {
+      "plate": "BP001-encounter-current-geometry-half",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785503.436,
+      "exportedFileName": "1D24052B-D03F-4754-835F-B2AA998D314B.png"
+    },
+    {
+      "plate": "BP001-encounter-current-geometry",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785503.384,
+      "exportedFileName": "7CF0AD69-58FB-4894-BC82-CFB865AAA9AB.png"
+    },
+    {
+      "plate": "BP001-encounter-projected-100-same-art-gray",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785503.126,
+      "exportedFileName": "5CDA7AF3-17D0-4816-B461-27E5C0CD1D27.png"
+    },
+    {
+      "plate": "BP001-encounter-projected-100-same-art-half",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785502.896,
+      "exportedFileName": "4809C387-B00E-44CA-8902-A739E16FFFD4.png"
+    },
+    {
+      "plate": "BP001-encounter-projected-100-same-art",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785502.834,
+      "exportedFileName": "1A8D28ED-CE34-479C-B355-060B39C0D740.png"
+    },
+    {
+      "plate": "BP001-encounter-current-gray",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785502.429,
+      "exportedFileName": "BCA751C5-15CF-43B8-A969-F913CB4A6F4A.png"
+    },
+    {
+      "plate": "BP001-encounter-current-half",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785502.246,
+      "exportedFileName": "7FC9CC6A-FFA3-4B83-8FA0-B47021273BB1.png"
+    },
+    {
+      "plate": "BP001-encounter-current",
+      "device": "iPhone 17 Pro",
+      "unixTimestamp": 1794785502.194,
+      "exportedFileName": "3100CF16-BB0B-4854-8D75-A986909FB4FE.png"
+    }
+  ],
+  "limitations": [
+    "Shipping control is not a measured original-reference projection",
+    "No owner projection selection, live input/facing, traversal, dense-combat or physical-device acceptance",
+    "No production art admission or gameplay change"
+  ]
+}

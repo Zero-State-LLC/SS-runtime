@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BP-001 · Ground mapping owner decision</title>
+<style>
+:root{color-scheme:dark;--bg:#11171b;--panel:#1a2329;--text:#edf2f2;--muted:#b8c6cd;--accent:#94dfcf;--line:#43545e}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,sans-serif}main{max-width:1600px;margin:auto;padding:32px 24px 56px}h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.15;margin:10px 0 16px}h2{font-size:1.35rem}h3{font-size:1.1rem;margin:0 0 8px}p{max-width:90ch}.eyebrow{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.8rem}.muted,figcaption{color:var(--muted)}a{color:var(--accent);text-underline-offset:3px}a:focus-visible,button:focus-visible{outline:3px solid #ffdc8a;outline-offset:4px}.notice{border-left:4px solid var(--accent);padding:12px 20px;background:var(--panel);margin:24px 0}.controls{display:flex;flex-wrap:wrap;gap:16px;margin:24px 0}fieldset{border:1px solid var(--line);border-radius:8px;padding:10px 12px}legend{padding:0 6px;color:var(--muted)}button{font:inherit;background:transparent;color:var(--text);border:1px solid var(--line);border-radius:5px;padding:8px 14px;cursor:pointer;margin:3px}button[aria-pressed="true"]{background:var(--accent);color:#102522;border-color:var(--accent);font-weight:700}.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}figure{margin:0;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden}figure header,figcaption{padding:14px 16px}figure header p{margin:0;font-size:.9rem}figure img{display:block;width:100%;height:auto;aspect-ratio:2112/978;background:#090d10}figcaption{font-size:.88rem}.concept img{aspect-ratio:auto}section{margin-top:32px}.status{min-height:1.5em;color:var(--muted)}li{margin:8px 0}footer{border-top:1px solid var(--line);margin-top:32px;padding-top:16px}@media(max-width:800px){.pair{grid-template-columns:1fr}main{padding:24px 14px}button{padding:10px 12px}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div class="eyebrow">BP-001 / Owner decision / 16 November 2026</div>
+<h1>Choose a visual-source basis.<br>Not production readiness.</h1>
+<p>Compare <strong>A: current shipping ground mapping</strong> with <strong>B: the existing midpoint, 45° rotation then half-height ground, with upright same art</strong>. The question is which ground mapping should inform the next separately validated integration.</p>
+<p class="muted">The shipping-ground control is <strong>not the exact approved concept reference projection</strong>. The concept illustrations below are reference only, separate from the controlled actual-renderer pairs.</p>
+</header>
+<aside class="notice" aria-label="Recommendation and decision status">
+<strong>Recommendation: B, midpoint, as the visual-source basis.</strong>
+<p>Ground and buildings read more coherently together. This is a visual recommendation, <strong>not accepted production readiness</strong>. No choice is recorded and no production mapping is changed. These controls only change the local review display, not the owner decision.</p>
+<p>Choose midpoint as the visual-source basis, or request a faithful original-reference renderer candidate before choosing. A visual choice does not authorize shipping a partial transform.</p>
+</aside>
+<section aria-labelledby="concepts" class="concept"><h2 id="concepts">Reference only / concept illustrations</h2><p class="muted">Unchanged SS-specs references. These are not runtime captures, not a same-art control pair and not geometry or input proof.</p><div class="pair">
+<figure><header><h3>Approved original concept reference</h3></header><a href="street-corner-approved-concept.png" target="_blank" rel="noopener"><img src="street-corner-approved-concept.png" alt="Approved Civic Seam concept illustration, not a runtime screenshot"></a><figcaption>Palette reference. No exact ground projection is reconstructed by control A.</figcaption></figure>
+<figure><header><h3>Midpoint concept reference</h3></header><a href="street-corner-midpoint-concept.png" target="_blank" rel="noopener"><img src="street-corner-midpoint-concept.png" alt="Midpoint concept illustration, not a runtime screenshot"></a><figcaption>Art-direction illustration, separate from midpoint renderer candidate B.</figcaption></figure>
+</div></section>
+<h2>Actual renderer / synchronized same-art pairs</h2>
+<div class="controls" aria-label="Shared comparison controls">
+<fieldset id="rendition"><legend>Plate rendition</legend><button type="button" data-mode="native" aria-pressed="true">Native</button><button type="button" data-mode="half" aria-pressed="false">Half</button><button type="button" data-mode="gray" aria-pressed="false">Grayscale</button></fieldset>
+<fieldset id="geometry"><legend>Geometry</legend><button type="button" data-geometry="normal" aria-pressed="true">Normal</button><button type="button" data-geometry="overlay" aria-pressed="false">Overlay</button></fieldset>
+</div>
+<p id="status" class="status" role="status" aria-live="polite">Native · Normal geometry · both pairs synchronized</p>
+<p class="muted">Viewport: 704×326 points. Native: 2112×978 pixels. Half: 1056×489 pixels (box downsample). Grayscale: native pixels, saturation 0. Plates fit the column, so screen size is not pixel-for-pixel. Select any image to open its corresponding full-color native plate, with the selected geometry, in a new tab.</p>
+<noscript><p>JavaScript is disabled. The normal native pairs below remain viewable. Display toggles require JavaScript, with no network access.</p></noscript>
+<section aria-labelledby="quiet"><h2 id="quiet">01 / Quiet street</h2><p class="muted">Uniform constrained building, street fixture, paired field, camera integrity 3. Building registration is the same in both plates.</p>
+<div class="pair">
+<figure><header><h3>A / Shipping-ground control</h3><p>Current shipping mapping, same upright art.</p></header><a class="plate" data-base="BP001-quiet-street-current" href="../bp001-same-art-pair/BP001-quiet-street-current.png" target="_blank" rel="noopener noreferrer" aria-label="Open quiet street A native plate in a new tab"><img src="../bp001-same-art-pair/BP001-quiet-street-current.png" width="2112" height="978" alt="Quiet street A: current shipping-ground control, native, normal geometry"></a><figcaption>Control, not the exact approved concept reference projection.</figcaption></figure>
+<figure><header><h3>B / Midpoint candidate</h3><p>45° rotation, half-height ground. Upright same art.</p></header><a class="plate" data-base="BP001-quiet-street-midpoint" href="../bp001-same-art-pair/BP001-quiet-street-midpoint.png" target="_blank" rel="noopener noreferrer" aria-label="Open quiet street B native plate in a new tab"><img src="../bp001-same-art-pair/BP001-quiet-street-midpoint.png" width="2112" height="978" alt="Quiet street B: midpoint candidate, native, normal geometry"></a><figcaption>Same registration, different ground mapping.</figcaption></figure>
+</div></section>
+<section aria-labelledby="encounter"><h2 id="encounter">02 / Legal-input encounter</h2><p class="muted">Seed 1, Ghost Step autopilot, tick 4976. Seven enemies and eight cameras. <code>registerServiceBuilding</code> is false, preserving production building art. This paused legal-input snapshot is not input-policy validation.</p>
+<div class="pair">
+<figure><header><h3>A / Shipping-ground control</h3><p>Current shipping mapping, same encounter snapshot.</p></header><a class="plate" data-base="BP001-encounter-current" href="../bp001-same-art-pair/BP001-encounter-current.png" target="_blank" rel="noopener noreferrer" aria-label="Open encounter A native plate in a new tab"><img src="../bp001-same-art-pair/BP001-encounter-current.png" width="2112" height="978" alt="Legal-input encounter A: shipping-ground control, native, normal geometry"></a><figcaption>HUD retained, as in every plate.</figcaption></figure>
+<figure><header><h3>B / Midpoint candidate</h3><p>45° rotation, half-height ground. Upright same art.</p></header><a class="plate" data-base="BP001-encounter-projected-100-same-art" href="../bp001-same-art-pair/BP001-encounter-projected-100-same-art.png" target="_blank" rel="noopener noreferrer" aria-label="Open encounter B native plate in a new tab"><img src="../bp001-same-art-pair/BP001-encounter-projected-100-same-art.png" width="2112" height="978" alt="Legal-input encounter B: midpoint candidate, native, normal geometry"></a><figcaption>World-south reads down-right on this midpoint.</figcaption></figure>
+</div></section>
+<section aria-labelledby="limits"><h2 id="limits">What this evidence does and does not establish</h2><ul>
+<li><strong>Static paused same snapshot:</strong> each A/B pair compares the same snapshot through the current renderer, not new art.</li>
+<li><strong>Not motion/input/facing/dense/physical/admission proof.</strong> These stills do not establish animation quality, control behavior, facing correctness, dense-scene readability, physical alignment, or asset admission.</li>
+<li><strong>Ground world-south reads down-right on midpoint.</strong> Inverse input/facing policy needs separately validated integration before any production mapping decision.</li>
+<li>Geometry overlay: magenta strokes show solid rectangles, cyan shows the player body circle. Shipping keeps rectangles axis-aligned. Midpoint maps their corners into diamonds and the circle into an ellipse. Encounter midpoint strokes are in scene space above actors.</li>
+<li>All 24 comparison images byte-match fresh attachments from the same full Debug xcresult, iPhone 17 Pro Simulator, iOS 26.5. That run passed 166 logical tests with zero failures/skips. These are paused comparisons, not motion acceptance.</li>
+</ul></section>
+<section aria-labelledby="palette"><h2 id="palette">BP-011 / palette drift remains</h2><p>Reference luminance/chroma: <strong>85.2 / 11.4</strong>. Quiet A: <strong>126.8 / 25.2</strong>, quiet B: <strong>127.2 / 25.7</strong>, both flagged. Encounter A: <strong>94.4 / 12.8</strong>, encounter B: <strong>99.3 / 16.0</strong>, both within proposed bands. Projection does not fix quiet-scene palette drift.</p><p class="muted">Natural plates only. Top 240 native pixel rows (80 viewport points) excluded, lower touch controls retained, reference uncropped, no zone allowance. Flags are review prompts, not rejection. Within-band is not acceptance. See the full report for nearest-colour shares.</p></section>
+<footer><h2>Evidence and follow-through</h2><p><a href="../bp001-same-art-pair/README.md">Source pair README.md</a> · <a href="README.md">Decision README.md</a> · <a href="capture-provenance.json">capture-provenance.json</a> · <a href="palette-report.json">palette-report.json</a></p><p class="muted">Decision packet documents and reports are supplied by the coordinator. This offline page makes no requests beyond local linked files and stores no selection.</p></footer>
+</main>
+<script>
+'use strict';
+(() => {
+  let mode = 'native';
+  let geometry = 'normal';
+  const root = '../bp001-same-art-pair/';
+  const labels = { native: 'Native', half: 'Half', gray: 'Grayscale' };
+  const plates = [...document.querySelectorAll('.plate')];
+  const descriptions = plates.map(plate => plate.querySelector('img').alt.split(', native,')[0]);
+  function update() {
+    const overlay = geometry === 'overlay' ? '-geometry' : '';
+    const rendition = mode === 'native' ? '' : '-' + mode;
+    plates.forEach((plate, index) => {
+      const image = plate.querySelector('img');
+      plate.href = root + plate.dataset.base + overlay + '.png';
+      image.src = root + plate.dataset.base + overlay + rendition + '.png';
+      image.width = mode === 'half' ? 1056 : 2112;
+      image.height = mode === 'half' ? 489 : 978;
+      image.alt = descriptions[index] + ', ' + labels[mode].toLowerCase() + ', ' + geometry + ' geometry';
+    });
+    document.querySelectorAll('[data-mode]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.mode === mode)));
+    document.querySelectorAll('[data-geometry]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.geometry === geometry)));
+    document.getElementById('status').textContent = labels[mode] + ' · ' + (geometry === 'normal' ? 'Normal' : 'Overlay') + ' geometry · both pairs synchronized';
+  }
+  document.querySelectorAll('[data-mode]').forEach(button => button.addEventListener('click', () => { mode = button.dataset.mode; update(); }));
+  document.querySelectorAll('[data-geometry]').forEach(button => button.addEventListener('click', () => { geometry = button.dataset.geometry; update(); }));
+})();
+</script>
+</body>
+</html>

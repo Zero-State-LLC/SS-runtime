@@ -1,0 +1,99 @@
+{
+  "method": "BP-011",
+  "reference": {
+    "file": "docs/review/bp001-decision-20261116/street-corner-approved-concept.png",
+    "meanLuminance": 85.2,
+    "meanChroma": 11.4,
+    "paletteShares": {
+      "asphaltBlueGray": 38.3,
+      "brickShadow": 27.0,
+      "weatheredStucco": 15.2,
+      "bayWindowTeal": 9.6,
+      "agedBrass": 9.4,
+      "civicLimestone": 0.5,
+      "fogLight": 0.1,
+      "transitRed": 0.0
+    }
+  },
+  "plates": [
+    {
+      "file": "docs/review/bp001-same-art-pair/BP001-quiet-street-current.png",
+      "meanLuminance": 126.8,
+      "meanChroma": 25.2,
+      "paletteShares": {
+        "weatheredStucco": 56.7,
+        "bayWindowTeal": 23.4,
+        "brickShadow": 6.4,
+        "agedBrass": 5.0,
+        "civicLimestone": 3.1,
+        "asphaltBlueGray": 3.1,
+        "transitRed": 1.6,
+        "fogLight": 0.6,
+        "phoenixGold": 0.0
+      },
+      "zone": null,
+      "flags": [
+        "meanLuminance 126.8 outside 64-106",
+        "meanChroma 25.2 above 17"
+      ]
+    },
+    {
+      "file": "docs/review/bp001-same-art-pair/BP001-quiet-street-midpoint.png",
+      "meanLuminance": 127.2,
+      "meanChroma": 25.7,
+      "paletteShares": {
+        "weatheredStucco": 55.7,
+        "bayWindowTeal": 24.5,
+        "brickShadow": 6.9,
+        "agedBrass": 4.9,
+        "civicLimestone": 3.2,
+        "asphaltBlueGray": 2.8,
+        "transitRed": 1.5,
+        "fogLight": 0.7,
+        "phoenixGold": 0.0
+      },
+      "zone": null,
+      "flags": [
+        "meanLuminance 127.2 outside 64-106",
+        "meanChroma 25.7 above 17"
+      ]
+    },
+    {
+      "file": "docs/review/bp001-same-art-pair/BP001-encounter-current.png",
+      "meanLuminance": 94.4,
+      "meanChroma": 12.8,
+      "paletteShares": {
+        "brickShadow": 32.2,
+        "bayWindowTeal": 32.0,
+        "asphaltBlueGray": 19.4,
+        "weatheredStucco": 9.0,
+        "agedBrass": 5.5,
+        "civicLimestone": 1.1,
+        "transitRed": 0.6,
+        "fogLight": 0.2,
+        "phoenixGold": 0.0
+      },
+      "zone": null,
+      "flags": []
+    },
+    {
+      "file": "docs/review/bp001-same-art-pair/BP001-encounter-projected-100-same-art.png",
+      "meanLuminance": 99.3,
+      "meanChroma": 16.0,
+      "paletteShares": {
+        "bayWindowTeal": 29.0,
+        "brickShadow": 22.5,
+        "weatheredStucco": 20.6,
+        "asphaltBlueGray": 19.9,
+        "agedBrass": 4.8,
+        "civicLimestone": 1.8,
+        "transitRed": 1.0,
+        "fogLight": 0.4,
+        "phoenixGold": 0.2,
+        "detectionRed": 0.0
+      },
+      "zone": null,
+      "flags": []
+    }
+  ]
+}
