@@ -1,5 +1,9 @@
 # Next work order
 
+## Camera source repair checkpoint, November 16 06:06 UTC
+
+`docs/review/camera-first-sample-20261116/` retains two new provider-native source edits, original reference, metadata and equal-height diagnostic comparisons. Both are coordinator-rejected: first too slender/tall, second over-enlarged head/bracket/finial/base. Both actual1024x1536 outputs are RGB with opaque near-white backgrounds and no editable hidden underpaint. Five source/preview guards pass. Actual Brave loaded all three plates at750x510,375x255,750x510 without page overflow. These technical results do not make the sources usable. No third retry of the same approach, no native substitution or state/clip expansion. Slice6 and dependent coherent-source integration remain blocked, while independent baseline, paving, registration and existing-art diagnostic work continues. Earlier owner rejections remain unchanged. No owner acceptance or production admission.
+
 ## Approved ten-slice execution, November 16 05:56:35 UTC
 
 Owner approved `intent/2026-11-16-benchmark-faithful-scene.md`, mirroring the sibling specs ten-slice intent and canonical whole-scene clarification d1bfd1c. This supersedes earlier limits only for the explicitly listed review-only source repairs and isolated contact-lighting/contour experiments. No shipping pin, production asset/HUD, gameplay, collision, field truth, art acceptance or merge change. Whole-scene owner review remains a gate before detailed expansion.

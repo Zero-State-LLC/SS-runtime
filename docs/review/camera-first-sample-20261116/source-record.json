@@ -1,0 +1,81 @@
+{
+  "status": "COORDINATOR_REJECTED_SOURCE_PROPOSALS",
+  "ownerAccepted": false,
+  "productionAdmitted": false,
+  "readyForNative": false,
+  "editableMasterComplete": false,
+  "stateExpansionAllowed": false,
+  "sources": [
+    {
+      "file": "source/approved-concept.png",
+      "sha256": "49aa35447230187e3eabe948cdc8eba6d6d465b2605d624e2cf7443f6cb69ffb",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "diagnosticCrop": [
+        880,
+        20,
+        1060,
+        470
+      ],
+      "uniformPreviewScale": 1.0,
+      "cropWidthHeightRatio": 0.4,
+      "nativeAlpha": false
+    },
+    {
+      "file": "source/proposal-01.png",
+      "sha256": "2f1f77902dcc3266ef17f0a0e9dc92f191e03442aaf61f38250b90a01a10219b",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGB",
+      "diagnosticCrop": [
+        350,
+        33,
+        750,
+        1517
+      ],
+      "uniformPreviewScale": 0.2803234501347709,
+      "cropWidthHeightRatio": 0.2695417789757412,
+      "nativeAlpha": false
+    },
+    {
+      "file": "source/proposal-02.png",
+      "sha256": "b5daa26fc45974bfa3a6ddf2c82738b7ada9b11e34866401029f47d806eb8de3",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGB",
+      "diagnosticCrop": [
+        306,
+        122,
+        799,
+        1373
+      ],
+      "uniformPreviewScale": 0.33253397282174263,
+      "cropWidthHeightRatio": 0.39408473221422863,
+      "nativeAlpha": false
+    }
+  ],
+  "generatedBy": "provider-native image generation, two sequential attempts",
+  "comparison": "Generated diagnostic occupied height 416px matches reference device height from prior observed rows31..446. Original crop retains scenery. Same height is not scene-scale registration.",
+  "outcomes": {
+    "technical": "Diagnostic source hashes and equal-height preview verified only",
+    "coordinatorVisual": "Not recommended: proportions, head/bracket, finial/base and highlights drift from original",
+    "ownerAcceptance": "NOT REQUESTED / NOT GRANTED",
+    "productionAdmission": "BLOCKED"
+  },
+  "limitations": [
+    "Both outputs are RGB with textured near-white backgrounds, not requested transparent PNGs",
+    "Threshold bounding box is for preview only, not a usable alpha contour or ground anchor",
+    "Neither flattened proposal supplies editable hidden underpaint",
+    "No crop, recolor, nonuniform warp or third retry is used to disguise fidelity drift",
+    "Attempts01-03 in the earlier packet remain immutable owner-rejected history",
+    "No production, clip/state, collision, field or scene fixture substitution"
+  ],
+  "nextAction": "Use an explicitly layered artist-authored source matching reference landmarks before native integration. Do not expand rejected art."
+}
