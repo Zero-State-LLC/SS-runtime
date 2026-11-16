@@ -1,5 +1,9 @@
 # Next work order
 
+## Coordinated ground/base/prop repair approved, November16 22:59UTC
+
+Owner explicitly approved `intent/2026-11-16-footprint-ground-consistency.md` at22:59:05UTC. This supersedes only the presentation-only ground/decorative-prop freeze. V7 remains rejected and immutable. New isolated packet: `docs/review/footprint-ground-repair-20261116/`. Parrot owns `plan/` shared ground/base/prop source and semantic checks. Jaguar owns `scene/` and `AppTests/FootprintGroundSceneTests.swift`. Coordinator owns source/scene inspection, serialized native capture, gallery and publication. First plan/source preview plus at most one bounded correction, then actual three-zoom comparison and owner review. Collision, Camera/Player roots/fields, framing, controls, production admission, merge, issue closure, physical certification and motion/encounter expansion remain unchanged/gated. No V8 capture or recommendation exists yet. Preserve unrelated untracked packets. No unfiltered Swift retry or automatic CI polling chain.
+
 ## Owner rejects footprint consistency, November16 22:50UTC
 
 Owner correction: footprints are inconsistent. This supersedes the earlier coordinator description of corrected/coherent footprints. Read `FACTS.md` first. V7 sources/captures remain byte-unchanged and NOT accepted. Diagnosis is `docs/review/footprint-consistency-20261116/`: whole canonical footprint painted-road overlap41.015625% residential-west,63.5417% civic-west,100% civic-dais. Retained tree root[858,780] is inside civic-west bounds. Four independent diagnostic checks pass, confirming the defect rather than a repair. Issue252 records missing cross-layer validation. Corner projection checks prove registration only, not visible contact/ground/prop consistency; kiosk also uses a virtual chamfer-omitted corner.

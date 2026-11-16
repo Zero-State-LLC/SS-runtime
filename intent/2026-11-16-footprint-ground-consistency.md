@@ -1,6 +1,6 @@
 # Footprint, ground and prop consistency repair
 
-Status: **PROPOSED, NOT APPROVED**. November16 22:53UTC.
+Status: **APPROVED** by owner November16 22:59:05UTC, replying “approved” to the coordinated presentation-only repair. Original proposal November16 22:53UTC. All excluded authority and acceptance gates below remain unchanged.
 
 Owner rejected V7 footprint consistency at22:50UTC. Diagnosis is retained in `docs/review/footprint-consistency-20261116/README.md`. Existing corner registration checks are insufficient, and preserving independently authored ground/prop layout prevents a complete repair.
 
