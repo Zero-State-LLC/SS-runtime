@@ -1,12 +1,14 @@
 # Next work order
 
-## Bounded building scene completed locally, November16 22:42UTC
+## Bounded building scene published, November16 22:45UTC
+
+Evidence commit `a19aa1738add89a2b31ace5a837292f99f3b8937` was pushed and independently matched both remote branch and PR236 head at22:45. Staged-only13kiosk+11context+41scene tests passed, followed by retained capture,9pixel comparisons and both Node suites after supplying the export's tracking receipt and one omitted tracked intent file. Both initial export failures remain preserved. Exact-head CI query at22:45 returned no runs yet, NOT a passing certification. This publication checkpoint is documentation-only follow-through.
 
 Actual v7 native2237 passed exactly1test and imported6captures/18images with loaded/fresh-built SHA2ab2c18e4aa4ea18e488d242c716e67a8dd8af6655aa325248b08e0ca827024b. All9fresh baseline images exactly preserve v6candidate RGBA pixels. Five explicit footprint registrations preserve24solids,18uprights, roots/fields/depth/framing/controls and non-building sources. Actual Brave passed72selections/96image displays across v6/v7, native/half/grayscale. Independent13kiosk+11context+41scene tests and both gallery suites pass. See `docs/review/building-perspective-detail-20261116/REVIEW-FINAL.md`.
 
 **Perspective/detail improved, overall benchmark NOT MET.** New context fills its plots coherently and kiosk relief improves, but repetitive facades/roof weathering, large masses, tree contact, clean ground and stationary Player silhouette remain deficient. Owner must review this bounded final scene before another aesthetic pass or motion/encounter expansion. No production admission, merge, issue closure or physical certification.
 
-Retain context recovery failure2233: correction scripts/tests existed but had not executed before compaction. Initial recommendation was withdrawn, actual final render regenerated and visually re-reviewed,11strict tests passed unchanged. Kiosk ground metadata now labels chamfer-omitted virtual footprint corner honestly, PNGs unchanged. Issue251 records inherited v5/v6 manifest semantic-validation gap. V7 independently rejects it, old bytes/validators remain unchanged. No unfiltered Swift retry or automatic CI polling chain. Native slot free. Publication and tracked-export validation are the remaining allowed follow-through, not another source attempt.
+Retain context recovery failure2233: correction scripts/tests existed but had not executed before compaction. Initial recommendation was withdrawn, actual final render regenerated and visually re-reviewed,11strict tests passed unchanged. Kiosk ground metadata now labels chamfer-omitted virtual footprint corner honestly, PNGs unchanged. Issue251 records inherited v5/v6 manifest semantic-validation gap. V7 independently rejects it, old bytes/validators remain unchanged. No unfiltered Swift retry or automatic CI polling chain. Native slot free. Publication and tracked-export validation are complete. Stop for owner scene review, not another source attempt. Do not infer remote CI success from local checks.
 
 ## Building perspective/detail pass authorized, November16 22:13UTC
 
