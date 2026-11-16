@@ -1,6 +1,8 @@
 # BP-001 projection decision packet
 
-Prepared November 16, 2026. **Owner choice UNRECORDED. No shipping mapping or art changes.**
+Owner update, November 16, 2026 at01:39:04UTC: midpoint selected after the isolated reference-ground trial. See SS-specs `decisions.md` and runtime `intent/2026-11-16-midpoint-source-continuation.md`. The research and recommendations below retain their pre-decision historical scope. The approved concept stays fixed, and neither source-family admission nor merge follows from the choice.
+
+Prepared November 16, 2026 before the owner choice. **Historical preparation status: choice was UNRECORDED. No shipping mapping or art changes.**
 
 Open [the offline gallery](index.html). It needs only this checkout, no server, account or network. Concept illustrations are separated from actual-renderer evidence. The existing 24 plates are reused rather than duplicating 31 MB: every byte matches fresh attachments exported from the successful November 15/16 full native Debug run.
 
