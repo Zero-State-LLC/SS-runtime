@@ -1,5 +1,11 @@
 # Next work order
 
+## Approved ten-slice execution, November 16 05:56:35 UTC
+
+Owner approved `intent/2026-11-16-benchmark-faithful-scene.md`, mirroring the sibling specs ten-slice intent and canonical whole-scene clarification d1bfd1c. This supersedes earlier limits only for the explicitly listed review-only source repairs and isolated contact-lighting/contour experiments. No shipping pin, production asset/HUD, gameplay, collision, field truth, art acceptance or merge change. Whole-scene owner review remains a gate before detailed expansion.
+
+Active ownership: blowfish baseline/fresh bound-input capture (first native slot), deer playback237 diagnosis, crab new stone registration packet, duck separate paving repair, frog separate Player neutral family. Coordinator owns Camera first sample, shared integration, independent verification and publication. Workers use distinct new review paths; original packets and rejected history stay immutable. Native runs serialize through coordinator. Latest exact3ad31ad CI passed all5jobs;237/238 remain independently open.
+
 ## Whole-game gate and environment first sample, November16 05:22UTC
 
 `docs/review/visual-acceptance-20261116/CONTRACT.md` translates the unchanged benchmark into scene-wide review requirements and separate technical, coordinator-visual, owner-acceptance and production-admission statuses. It is an implementation checklist, not new gameplay authority.
