@@ -65,6 +65,13 @@ class GalleryTests(unittest.TestCase):
         quiet_only = [r for r in g.COVERAGE if r[3] and r[3].startswith('whole-scene-benchmark')]
         self.assertEqual({r[0] for r in quiet_only}, {'Quiet street, control vs diagnostic', 'Camera field-off'})
 
+    def testUnpublishedEnemySamplesAreNotClaimedAsEvidence(self):
+        rows = [row for row in g.COVERAGE if row[0] == 'Enemy roles (all existing)']
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0][1:4], (False, None, None))
+        self.assertIn('unpublished', rows[0][4])
+        self.assertNotIn('`enemy-role-first-samples-20261116`', self.matrix)
+
     def testBuildRejectsMissingEvidence(self):
         original = g.COVERAGE
         try:

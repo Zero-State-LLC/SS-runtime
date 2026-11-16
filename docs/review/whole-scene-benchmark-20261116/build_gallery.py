@@ -25,7 +25,7 @@ COVERAGE = [
     ('North/east/west facings', True, 'source only', 'player-side-source-20261116', 'Source sheets; no native whole-scene capture.'),
     ('Camera integrity states / damage markers', True, 'earlier capture', 'camera-damage-markers/review.md', 'Not in this scene fixture.'),
     ('Camera field-off', True, 'staged view only', 'whole-scene-benchmark-20261116/capture', 'Staged presentation flag only, not a gameplay field-off state.'),
-    ('Enemy roles (all existing)', True, 'source first samples only', 'enemy-role-first-samples-20261116', 'No native whole-scene capture of any enemy.'),
+    ('Enemy roles (all existing)', False, None, None, 'NOT CAPTURED in this published coverage packet. Local first-sample source work is unpublished and is not evidence here. No native whole-scene capture of any enemy.'),
     ('Combat effects (hits, bolts, mines, telegraphs)', False, None, None, 'NOT CAPTURED in whole-scene review.'),
     ('UI states (pause, upgrade, results, lethal warning)', False, None, None, 'NOT CAPTURED in whole-scene review.'),
     ('Screen sizes / safe areas', True, 'measurements only', 'stable-hud-reservation/README.md', 'Not whole-scene visual.'),

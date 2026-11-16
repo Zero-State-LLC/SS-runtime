@@ -1,5 +1,11 @@
 # Next work order
 
+## Spec-parity publication repair, November 16 08:08 UTC
+
+Owner requested diagnosis and repair of spec-parity. Issue #242 records the shared failure in runs43823194651/d152e6d and43823296806/e64ccd2: the whole-scene gallery claimed an enemy-source directory that was untracked locally and absent from the published tree. Reproduced the exact missing-directory assertion in a `git archive HEAD` export. Corrected the coverage row to explicitly unpublished/NOT CAPTURED, without importing local source work or changing the existing missing-evidence assertion. Added a regression and regenerated the matrix.
+
+Clean-export validation passed all40 tests in the affected CI step, plus5registration,107family assertions,both paving verifiers,57existing-art tests and7retained-playback tests. Exit0 at08:08UTC. See `docs/review/whole-scene-benchmark-20261116/PARITY-REPAIR.md` for interpreter disclosure, logs and reproduction. No capture pixels, production source, pin or acceptance changes. No unfiltered Swift retry. #237/#239/#240/#241 remain separate and source/device/visual/merge gates remain closed. Publish this narrow repair on PR236 and check its exact-head CI before certifying remote success. #242 remains open pending integration evidence. Do not import the unrelated untracked review packets.
+
 ## Existing-art diagnostics verified, November16 07:18UTC
 
 Three independent focused native results are now checked: traversal0659 one passed test with52captures/824callback rows/51selected textures; viewport0653 one passed test with10captures; encounter0710 one passed test in71.885s with9correctly framed v2 captures/1073resource records. Coordinator independently passed22traversal,7viewport and28encounter portable regressions. Actual Brave verified156traversal image/size combinations,20viewport native/half checks and18encounter image elements with grayscale restoration. See `docs/review/existing-art-traversal-20261116/COORDINATOR-REVIEW.md`. These are existing-art diagnostics only, not a coherent repaired scene or full family/pose/occlusion/device acceptance. Encounter playerDamaged and telegraphs remain unobserved.

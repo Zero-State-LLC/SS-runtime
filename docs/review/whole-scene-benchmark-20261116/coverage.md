@@ -14,7 +14,7 @@ Every visual row is **NOT ACCEPTED**: no owner visual acceptance has been record
 | North/east/west facings | captured | source only | NOT ACCEPTED | `player-side-source-20261116` | Source sheets; no native whole-scene capture. |
 | Camera integrity states / damage markers | captured | earlier capture | NOT ACCEPTED | `camera-damage-markers/review.md` | Not in this scene fixture. |
 | Camera field-off | captured | staged view only | NOT ACCEPTED | `whole-scene-benchmark-20261116/capture` | Staged presentation flag only, not a gameplay field-off state. |
-| Enemy roles (all existing) | captured | source first samples only | NOT ACCEPTED | `enemy-role-first-samples-20261116` | No native whole-scene capture of any enemy. |
+| Enemy roles (all existing) | NOT CAPTURED | — | NOT ACCEPTED | — | NOT CAPTURED in this published coverage packet. Local first-sample source work is unpublished and is not evidence here. No native whole-scene capture of any enemy. |
 | Combat effects (hits, bolts, mines, telegraphs) | NOT CAPTURED | — | NOT ACCEPTED | — | NOT CAPTURED in whole-scene review. |
 | UI states (pause, upgrade, results, lethal warning) | NOT CAPTURED | — | NOT ACCEPTED | — | NOT CAPTURED in whole-scene review. |
 | Screen sizes / safe areas | captured | measurements only | NOT ACCEPTED | `stable-hud-reservation/README.md` | Not whole-scene visual. |
