@@ -140,6 +140,7 @@ class RunReceiptSchemaTests(unittest.TestCase):
             (("upgrade", "contractVersion"), "upgrades-999"),
             (("seed",), MAX_UINT64 + 1), (("seed",), -1), (("seed",), True),
             (("elapsedTicks",), MAX_UINT64 + 1), (("finalDigest",), "not-a-digest"),
+            (("finalDigest",), "a" * 64 + "\n"),
             (("outcome",), "playing"), (("exposure", "finalState"), "unknown"),
             (("objectives", "extractionArmed"), "true"),
             (("objectives", "combatAuthority", "currentNode"), "unknown"),
@@ -161,7 +162,7 @@ class RunReceiptSchemaTests(unittest.TestCase):
             del changed["cameraDestructions"][0][key]
             mutations.append((f"missing destruction {key}", changed))
         for field, value in [("cameraId", str(MAX_UINT64 + 1)), ("cameraId", "01"),
-                             ("tick", MAX_UINT64 + 1), ("wasDetectingPlayer", "false"),
+                             ("cameraId", "1\n"), ("tick", MAX_UINT64 + 1), ("wasDetectingPlayer", "false"),
                              ("source", ""), ("unexpected", 1)]:
             changed = deepcopy(destruction_case)
             changed["cameraDestructions"][0][field] = value
@@ -180,6 +181,19 @@ class RunReceiptSchemaTests(unittest.TestCase):
                 with self.assertRaises((ValidationError, ValueError)):
                     validate_receipt(receipt)
         print(f"Receipt v2: {len(mutations)} missing/malformed/identity/order mutations rejected")
+
+    def test_recorded_complete_run_preserves_every_gameplay_projection(self):
+        raw = (ROOT / "docs/review/receipt-v2-live-20261115.json").read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(),
+                         "3718a3233a3429949ecfa20b33b59d2dee03c9e79d80cced3caf1854a57a9316")
+        current = json.loads(raw)
+        validate_receipt(current)
+        historical = json.loads((ROOT / "scripts/fixtures/receipt-v1-observed.json").read_bytes())
+        historical["schemaVersion"] = "run-receipt-002"
+        historical["upgrade"] = {"id": historical["upgrade"], "contractVersion": "upgrades-003"}
+        self.assertEqual(historical, current)
+        self.assertEqual(current["outcome"], "success")
+        self.assertEqual(current["elapsedTicks"], 17776)
 
     def test_historical_schema_and_observed_receipt_are_not_rewritten(self):
         raw_schema = (CONTRACTS / "run-receipt-001.schema.json").read_bytes()

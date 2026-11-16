@@ -13,7 +13,7 @@
     "seed": {"$ref": "#/$defs/uint64"},
     "outcome": {"enum": ["success", "failure", "invalid"]},
     "elapsedTicks": {"$ref": "#/$defs/uint64"},
-    "finalDigest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "finalDigest": {"type": "string", "minLength": 64, "maxLength": 64, "pattern": "^[0-9a-f]{64}$"},
     "player": {"type": "object", "additionalProperties": false, "required": ["finalIntegrity", "damageTaken", "integrityRestored"], "properties": {
       "finalIntegrity": {"type": "integer"}, "damageTaken": {"$ref": "#/$defs/count"}, "integrityRestored": {"$ref": "#/$defs/count"}
     }},
@@ -36,7 +36,7 @@
       "version": {"const": "camera-placement-001"}, "placementSeed": {"$ref": "#/$defs/uint64"}, "selectedSockets": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["socketId", "cameraEntityId", "housingFamily"], "properties": {"socketId": {"type": "string", "minLength": 1}, "cameraEntityId": {"$ref": "#/$defs/uint64"}, "housingFamily": {"$ref": "#/$defs/housing"}}}}
     }},
     "cameraDestructions": {"type": "array", "maxItems": 8, "items": {"type": "object", "additionalProperties": false, "required": ["cameraId", "tick", "housingFamily", "wasDetectingPlayer", "source", "exposureBefore", "exposureAfter", "triggeredLockdown"], "properties": {
-      "cameraId": {"type": "string", "pattern": "^(0|[1-9][0-9]*)$"}, "tick": {"$ref": "#/$defs/uint64"}, "housingFamily": {"$ref": "#/$defs/housing"}, "wasDetectingPlayer": {"type": "boolean"}, "source": {"type": "string", "minLength": 1}, "exposureBefore": {"$ref": "#/$defs/count"}, "exposureAfter": {"$ref": "#/$defs/count"}, "triggeredLockdown": {"type": "boolean"}
+      "cameraId": {"type": "string", "pattern": "^(0|[1-9][0-9]*)$", "not": {"pattern": "[^0-9]"}}, "tick": {"$ref": "#/$defs/uint64"}, "housingFamily": {"$ref": "#/$defs/housing"}, "wasDetectingPlayer": {"type": "boolean"}, "source": {"type": "string", "minLength": 1}, "exposureBefore": {"$ref": "#/$defs/count"}, "exposureAfter": {"$ref": "#/$defs/count"}, "triggeredLockdown": {"type": "boolean"}
     }}},
     "camerasDamaged": {"$ref": "#/$defs/cameras"}, "camerasDestroyed": {"$ref": "#/$defs/cameras"}, "tamperExposureApplied": {"$ref": "#/$defs/count"},
     "cameraObjective": {"type": "object", "additionalProperties": false, "required": ["destroyed", "total", "complete"], "properties": {"destroyed": {"$ref": "#/$defs/cameras"}, "total": {"const": 8}, "complete": {"type": "boolean"}}},
