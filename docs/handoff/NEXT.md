@@ -1,5 +1,9 @@
 # Next work order
 
+## Trail shared-memory follow-through, November16 09:13UTC
+
+Owner requested continued Trail use. Saved two evidence-linked learnings for review-packet portability and evidence/acceptance boundaries, preserving Daniel's existing learning. `trail status` discovers all three and reports the code map in sync; two focused `trail ask` queries retrieved the corresponding new lessons. Track `.trail/README.md` and `.trail/.gitignore`, keeping generated cache ignored. This is documentation-only, not a new source-method approval or CI certification. No automatic hook execution is claimed for Jcode. The source-method owner decision and all gates below remain unchanged.
+
 ## Source-method gate, November16 09:03UTC
 
 The approved ten-slice pass reached its bounded stop: Player, Camera and stone are still NOT RECOMMENDED after their allowed repairs. Camera final surface preview was independently rejected at08:54. Sixteen final-source tests now pass on Python3.14.7 and3.11.15, and a standalone packet without any repository/siblings passes all16. Original interpreter-metadata failure is retained; regenerated manifests must truthfully name the running interpreter while every other field and all export bytes remain exact. Author manifest is separately SHA256-pinned. Camera has100editable surfaces across16parts, but editability does not establish visual fidelity. Actual browser controls and limitations are recorded in its COORDINATOR-REVIEW.md. No third same-method visual pass.
