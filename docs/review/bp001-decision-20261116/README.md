@@ -6,7 +6,7 @@ Open [the offline gallery](index.html). It needs only this checkout, no server, 
 
 ## Decision requested
 
-**Recommendation: choose the midpoint candidate as the visual-source basis for subsequent family work.** Its paving, curb and upright building read as a more coherent shared plane in these stills. This is an art-direction recommendation, not a claim of completed projection integration.
+**Research update: keep the approved visual benchmark fixed and compare a faithful original-reference renderer candidate against midpoint before choosing.** The existing shipping control is not that missing candidate. The [decision research](research.md) supersedes the earlier recommendation to choose midpoint now and specifies the smallest discriminating trial, risks and primary sources. No trial is implemented or owner choice inferred.
 
 - **A: shipping-ground control.** Current ground mapping, with the same candidate art as B. This is **not** a faithful numerical reconstruction of the approved original-reference concept's projection.
 - **B: midpoint candidate.** Existing +45-degree ground rotation followed by half-height scaling, with upright actors and building art at projected roots.
@@ -75,4 +75,4 @@ python3 scripts/palette_conformance.py \
   --exclude-top 240
 ```
 
-Next work is the owner projection record, then the approved breadth-first family slices. Preserve the approved 0.375-second Player settle timing. Do not resume recorder/OBS work or create more source detail before that record.
+Recommended next authorization is the isolated faithful original-reference comparison trial described in [the research](research.md), without further family source detail. The owner projection record must precede the approved breadth-first family slices. Preserve the approved 0.375-second Player settle timing. Do not resume recorder/OBS work or create more source detail before that record.

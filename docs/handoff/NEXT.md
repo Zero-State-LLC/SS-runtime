@@ -4,7 +4,7 @@ Updated November 16, 2026, 00:14 UTC. Approved ten-slice execution is active, bu
 
 ## Current slice: BP-001 decision evidence
 
-Open `docs/review/bp001-decision-20261116/index.html`. Recommendation: midpoint as the visual-source basis, without shipping a partial transform. Choice remains UNRECORDED. Shipping control is not an exact original-reference renderer candidate. Owner may select midpoint or request that faithful original-reference candidate before choosing.
+Open `docs/review/bp001-decision-20261116/index.html` and `research.md` beside it. Owner requested research with the visual benchmark unchanged. Research supersedes the earlier midpoint recommendation: recommend authorization of an isolated faithful original-reference renderer trial, then compare it with midpoint against the fixed approved concept. Shipping control is not that candidate. No trial implemented, no art/source/mapping changed, choice remains UNRECORDED. Primary-source mechanisms, local evidence, limitations and proposed acceptance workflow are in the research brief.
 
 All 24 images byte-match fresh successful native Debug xcresult attachments. Five drift/measurement regressions pass. BP-011 quiet pairs both flag palette drift, encounter pairs are within proposed bands. Six browser rendition/geometry combinations load all24images at expected dimensions with synchronized controls. Full provenance and limitations are in the packet. No gameplay, source art, projection, input or fixture changed.
 
