@@ -1,0 +1,53 @@
+{
+  "devices": [
+    {
+      "architecture": "arm64",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3",
+      "deviceName": "iPhone 17 Pro",
+      "modelName": "iPhone 17 Pro",
+      "osBuildNumber": "23F77",
+      "osVersion": "26.5",
+      "platform": "iOS Simulator"
+    }
+  ],
+  "testNodes": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "duration": "7s",
+                  "durationInSeconds": 7.930514097213745,
+                  "name": "testQuietSouthNeutralOrdinaryScene()",
+                  "nodeIdentifier": "SourceSceneContinuationTests/testQuietSouthNeutralOrdinaryScene()",
+                  "nodeIdentifierURL": "test://com.apple.xcode/SSRuntime/SSRuntimeTests/SourceSceneContinuationTests/testQuietSouthNeutralOrdinaryScene",
+                  "nodeType": "Test Case",
+                  "result": "Passed"
+                }
+              ],
+              "name": "SourceSceneContinuationTests",
+              "nodeIdentifierURL": "test://com.apple.xcode/SSRuntime/SSRuntimeTests/SourceSceneContinuationTests",
+              "nodeType": "Test Suite",
+              "result": "Passed"
+            }
+          ],
+          "name": "SSRuntimeTests",
+          "nodeIdentifierURL": "test://com.apple.xcode/SSRuntime/SSRuntimeTests",
+          "nodeType": "Unit test bundle",
+          "result": "Passed"
+        }
+      ],
+      "name": "SSRuntime",
+      "nodeType": "Test Plan",
+      "result": "Passed"
+    }
+  ],
+  "testPlanConfigurations": [
+    {
+      "configurationId": "1",
+      "configurationName": "Test Scheme Action"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "observedAtUTC": "2026-11-16T10:31:51Z",
+  "browser": "Brave via existing browser bridge",
+  "tabId": 827533012,
+  "origin": "http://127.0.0.1:8768",
+  "scope": "actual gallery state transitions only, not visual acceptance",
+  "defaultCapture": "1040",
+  "default1040Missing": {
+    "observed": true,
+    "message": "Capture 1040: pending or invalid evidence. No native capture is displayed. No fallback to another capture.",
+    "recordsHTTPStatus": 404,
+    "automaticHistoricalFallback": false
+  },
+  "historicalSelections": [
+    {"capture": "1030", "selectedVia": "browser select action", "label": "historical visual failure: issue248", "actualImagesLoaded": true},
+    {"capture": "1020", "selectedVia": "browser select action", "label": "historical visual failure: issue247", "actualImagesLoaded": true}
+  ],
+  "restoredSelection": "1040",
+  "limitations": [
+    "No completed1040 capture existed during these observations.",
+    "The Jev decision service returned HTTP401 before any action. Its tool response explicitly handed back to direct browser actions in the same tab. No user login or credential change was attempted.",
+    "No physical-device, full-game interaction or accessibility certification."
+  ]
+}

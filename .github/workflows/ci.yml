@@ -113,6 +113,7 @@ jobs:
           python3 -B -W error::ResourceWarning docs/review/stone-painted-facade-20261116/test_source.py
           python3 -B -W error::ResourceWarning docs/review/stone-painted-facade-20261116/test_roof_layer.py
           python3 -B -W error::ResourceWarning docs/review/stone-painted-facade-20261116/verify_exports.py
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/scene-source-assembly-20261116 -p 'test_*.py'
           python3 -B -W error::ResourceWarning docs/review/upgrade-interaction-20261116/test_evidence.py
       - name: Test retained playback failure diagnosis without hiding the failure
         run: python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/playback237-diagnosis-20261116 -p 'test_trace_probe.py' -v

@@ -1,0 +1,116 @@
+{
+  "schema": "source-scene-native-003",
+  "fixtureVersion": "source-scene-continuation-003-upright-census",
+  "assemblySHA256": "2ea31fddb62e7fd564f426fdf0ed3f4aad89c2088716973cb0546fac034adb80",
+  "harnessSourceSHA256": "f8b1e61dc81ee72e6e787ae604f23b0bae20eed63e33ec10e6ee6e0488b0bf86",
+  "center": [
+    736,
+    672
+  ],
+  "sources": [
+    {
+      "role": "paving",
+      "file": "paving.png",
+      "sha256": "a0d937657b5f975246951213168cdeb715871412f7c4c402040228cc570a4e6c",
+      "registration": {
+        "canvasPixels": [
+          1152,
+          1152
+        ],
+        "rootPixelsTopLeft": [
+          0,
+          1152
+        ],
+        "worldPosition": [
+          448,
+          384
+        ],
+        "drawSizeWorld": [
+          576,
+          576
+        ],
+        "kind": "ground",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": "coordinator-recommended"
+    },
+    {
+      "role": "camera",
+      "file": "camera.png",
+      "sha256": "1343507b7517cd2a4848810b14aca88644677f35266ec8299dcbbf8347ef5ab1",
+      "registration": {
+        "canvasPixels": [
+          204,
+          450
+        ],
+        "rootPixelsTopLeft": [
+          58,
+          427
+        ],
+        "worldPosition": [
+          496,
+          672
+        ],
+        "drawSizeWorld": [
+          46.85167464114833,
+          103.34928229665071
+        ],
+        "kind": "upright",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": "coordinator-recommended"
+    },
+    {
+      "role": "player",
+      "file": "player.png",
+      "sha256": "b32bfcba5ac7cee383715d5f0b918e53b2e7be56634886754ab82357431d6ed4",
+      "registration": {
+        "canvasPixels": [
+          384,
+          416
+        ],
+        "rootPixelsTopLeft": [
+          192,
+          336
+        ],
+        "worldPosition": [
+          736,
+          654
+        ],
+        "drawSizeWorld": [
+          64,
+          69.33333333333333
+        ],
+        "kind": "upright",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": "coordinator-recommended"
+    },
+    {
+      "role": "stone",
+      "file": "stone.png",
+      "sha256": "5b5751602fb5299777a134fcb1dbedf4de1822a8e1375d86505c88056a240539",
+      "registration": {
+        "canvasPixels": [
+          1000,
+          1200
+        ],
+        "rootPixelsTopLeft": [
+          500,
+          1160
+        ],
+        "worldPosition": [
+          512,
+          640
+        ],
+        "drawSizeWorld": [
+          200,
+          240
+        ],
+        "kind": "upright",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": "coordinator-recommended"
+    }
+  ]
+}

@@ -1,0 +1,689 @@
+{
+  "arenaMaxWorld" : [
+    2304,
+    1536
+  ],
+  "arenaMinWorld" : [
+    0,
+    0
+  ],
+  "authorityAfter" : "1bb6c75ffe9708b1b44725f3bf16ffa7027841234f002e86ba30c66688180d52",
+  "authorityBefore" : "1bb6c75ffe9708b1b44725f3bf16ffa7027841234f002e86ba30c66688180d52",
+  "cameraCount" : 8,
+  "cameras" : [
+    {
+      "clipId" : "camera_operational_idle",
+      "fieldAngleMilli" : 65000,
+      "fieldOriginQ8" : [
+        160582,
+        62277
+      ],
+      "fieldOriginWorld" : [
+        627.2734375,
+        243.26953125
+      ],
+      "fieldVisible" : true,
+      "headingMilli" : 135000,
+      "id" : 2,
+      "integrity" : 3,
+      "presentationState" : "operational",
+      "range" : 320,
+      "rootWorld" : [
+        640,
+        256
+      ]
+    },
+    {
+      "clipId" : "camera_operational_idle",
+      "fieldAngleMilli" : 55000,
+      "fieldOriginQ8" : [
+        128552,
+        167702
+      ],
+      "fieldOriginWorld" : [
+        502.15625,
+        655.0859375
+      ],
+      "fieldVisible" : true,
+      "headingMilli" : 70000,
+      "id" : 3,
+      "integrity" : 3,
+      "presentationState" : "operational",
+      "range" : 280,
+      "rootWorld" : [
+        496,
+        672
+      ]
+    },
+    {
+      "clipId" : "camera_operational_idle",
+      "fieldAngleMilli" : 70000,
+      "fieldOriginQ8" : [
+        249751,
+        223488
+      ],
+      "fieldOriginWorld" : [
+        975.58984375,
+        873
+      ],
+      "fieldVisible" : true,
+      "headingMilli" : 330000,
+      "id" : 4,
+      "integrity" : 3,
+      "presentationState" : "operational",
+      "range" : 340,
+      "rootWorld" : [
+        960,
+        864
+      ]
+    },
+    {
+      "clipId" : "camera_operational_idle",
+      "fieldAngleMilli" : 65000,
+      "fieldOriginQ8" : [
+        329256,
+        381162
+      ],
+      "fieldOriginWorld" : [
+        1286.15625,
+        1488.9140625
+      ],
+      "fieldVisible" : true,
+      "headingMilli" : 290000,
+      "id" : 5,
+      "integrity" : 3,
+      "presentationState" : "operational",
+      "range" : 340,
+      "rootWorld" : [
+        1280,
+        1472
+      ]
+    },
+    {
+      "clipId" : "camera_operational_idle",
+      "fieldAngleMilli" : 60000,
+      "fieldOriginQ8" : [
+        422454,
+        314258
+      ],
+      "fieldOriginWorld" : [
+        1650.2109375,
+        1227.5703125
+      ],
+      "fieldVisible" : true,
+      "headingMilli" : 220000,
+      "id" : 6,
+      "integrity" : 3,
+      "presentationState" : "operational",
+      "range" : 320,
+      "rootWorld" : [
+        1664,
+        1216
+      ]
+    },
+    {
+      "clipId" : "camera_operational_idle",
+      "fieldAngleMilli" : 60000,
+      "fieldOriginQ8" : [
+        380823,
+        264448
+      ],
+      "fieldOriginWorld" : [
+        1487.58984375,
+        1033
+      ],
+      "fieldVisible" : true,
+      "headingMilli" : 330000,
+      "id" : 7,
+      "integrity" : 3,
+      "presentationState" : "operational",
+      "range" : 320,
+      "rootWorld" : [
+        1472,
+        1024
+      ]
+    },
+    {
+      "clipId" : "camera_operational_idle",
+      "fieldAngleMilli" : 65000,
+      "fieldOriginQ8" : [
+        503913,
+        264448
+      ],
+      "fieldOriginWorld" : [
+        1968.41015625,
+        1033
+      ],
+      "fieldVisible" : true,
+      "headingMilli" : 210000,
+      "id" : 8,
+      "integrity" : 3,
+      "presentationState" : "operational",
+      "range" : 340,
+      "rootWorld" : [
+        1984,
+        1024
+      ]
+    },
+    {
+      "clipId" : "camera_operational_idle",
+      "fieldAngleMilli" : 55000,
+      "fieldOriginQ8" : [
+        487319,
+        128768
+      ],
+      "fieldOriginWorld" : [
+        1903.58984375,
+        503
+      ],
+      "fieldVisible" : true,
+      "headingMilli" : 30000,
+      "id" : 9,
+      "integrity" : 3,
+      "presentationState" : "operational",
+      "range" : 280,
+      "rootWorld" : [
+        1888,
+        512
+      ]
+    }
+  ],
+  "fixtureVersion" : "source-scene-continuation-002-three-zooms",
+  "harnessSourceReadSHA256" : "7fc900127cb734ed62db6f1d3e8036b0b230a03fe77c71ce1d10dcfbbad761ee",
+  "loadedTestExecutable" : {
+    "path" : "\/Users\/appliedalchemylabs\/Library\/Developer\/CoreSimulator\/Devices\/CACB3927-A76E-43A5-9ACA-C389EB38C0C3\/data\/Containers\/Bundle\/Application\/E027561A-3C4E-4B35-8F1F-CFCF517AC9CE\/SSRuntime.app\/PlugIns\/SSRuntimeTests.xctest\/SSRuntimeTests",
+    "sha256" : "194909226444a609ee84c761cba8148b2ebf03e69f90068c3e312664ac96d7d9"
+  },
+  "placementVersion" : "source-scene-seed1-placement-001",
+  "playerRootWorld" : [
+    160,
+    192
+  ],
+  "q8Scale" : 256,
+  "seed" : 1,
+  "solidCount" : 24,
+  "solids" : [
+    {
+      "centerWorld" : [
+        64,
+        640
+      ],
+      "halfSizeWorld" : [
+        64,
+        256
+      ],
+      "id" : "solid-01-residential-west",
+      "index" : 0,
+      "maxWorld" : [
+        128,
+        896
+      ],
+      "minWorld" : [
+        0,
+        384
+      ]
+    },
+    {
+      "centerWorld" : [
+        320,
+        864
+      ],
+      "halfSizeWorld" : [
+        192,
+        96
+      ],
+      "id" : "solid-02-residential-north",
+      "index" : 1,
+      "maxWorld" : [
+        512,
+        960
+      ],
+      "minWorld" : [
+        128,
+        768
+      ]
+    },
+    {
+      "centerWorld" : [
+        576,
+        704
+      ],
+      "halfSizeWorld" : [
+        64,
+        64
+      ],
+      "id" : "solid-03-transit-kiosk",
+      "index" : 2,
+      "maxWorld" : [
+        640,
+        768
+      ],
+      "minWorld" : [
+        512,
+        640
+      ]
+    },
+    {
+      "centerWorld" : [
+        832,
+        960
+      ],
+      "halfSizeWorld" : [
+        96,
+        192
+      ],
+      "id" : "solid-04-civic-west",
+      "index" : 3,
+      "maxWorld" : [
+        928,
+        1152
+      ],
+      "minWorld" : [
+        736,
+        768
+      ]
+    },
+    {
+      "centerWorld" : [
+        1088,
+        704
+      ],
+      "halfSizeWorld" : [
+        80,
+        48
+      ],
+      "id" : "solid-05-civic-dais",
+      "index" : 4,
+      "maxWorld" : [
+        1168,
+        752
+      ],
+      "minWorld" : [
+        1008,
+        656
+      ]
+    },
+    {
+      "centerWorld" : [
+        1152,
+        1248
+      ],
+      "halfSizeWorld" : [
+        96,
+        160
+      ],
+      "id" : "solid-06-service-yard-a",
+      "index" : 5,
+      "maxWorld" : [
+        1248,
+        1408
+      ],
+      "minWorld" : [
+        1056,
+        1088
+      ]
+    },
+    {
+      "centerWorld" : [
+        1536,
+        1344
+      ],
+      "halfSizeWorld" : [
+        128,
+        96
+      ],
+      "id" : "solid-07-service-yard-b",
+      "index" : 6,
+      "maxWorld" : [
+        1664,
+        1440
+      ],
+      "minWorld" : [
+        1408,
+        1248
+      ]
+    },
+    {
+      "centerWorld" : [
+        1408,
+        960
+      ],
+      "halfSizeWorld" : [
+        48,
+        112
+      ],
+      "id" : "solid-08-service-divider",
+      "index" : 7,
+      "maxWorld" : [
+        1456,
+        1072
+      ],
+      "minWorld" : [
+        1360,
+        848
+      ]
+    },
+    {
+      "centerWorld" : [
+        1600,
+        704
+      ],
+      "halfSizeWorld" : [
+        64,
+        64
+      ],
+      "id" : "solid-09-grid-island-a",
+      "index" : 8,
+      "maxWorld" : [
+        1664,
+        768
+      ],
+      "minWorld" : [
+        1536,
+        640
+      ]
+    },
+    {
+      "centerWorld" : [
+        1792,
+        960
+      ],
+      "halfSizeWorld" : [
+        64,
+        64
+      ],
+      "id" : "solid-10-grid-island-b",
+      "index" : 9,
+      "maxWorld" : [
+        1856,
+        1024
+      ],
+      "minWorld" : [
+        1728,
+        896
+      ]
+    },
+    {
+      "centerWorld" : [
+        1920,
+        704
+      ],
+      "halfSizeWorld" : [
+        32,
+        72
+      ],
+      "id" : "solid-11-court-column-a",
+      "index" : 10,
+      "maxWorld" : [
+        1952,
+        776
+      ],
+      "minWorld" : [
+        1888,
+        632
+      ]
+    },
+    {
+      "centerWorld" : [
+        2176,
+        704
+      ],
+      "halfSizeWorld" : [
+        32,
+        72
+      ],
+      "id" : "solid-12-court-column-b",
+      "index" : 11,
+      "maxWorld" : [
+        2208,
+        776
+      ],
+      "minWorld" : [
+        2144,
+        632
+      ]
+    },
+    {
+      "centerWorld" : [
+        1856,
+        192
+      ],
+      "halfSizeWorld" : [
+        32,
+        128
+      ],
+      "id" : "solid-13-phoenix-west",
+      "index" : 12,
+      "maxWorld" : [
+        1888,
+        320
+      ],
+      "minWorld" : [
+        1824,
+        64
+      ]
+    },
+    {
+      "centerWorld" : [
+        2240,
+        192
+      ],
+      "halfSizeWorld" : [
+        32,
+        128
+      ],
+      "id" : "solid-14-phoenix-east",
+      "index" : 13,
+      "maxWorld" : [
+        2272,
+        320
+      ],
+      "minWorld" : [
+        2208,
+        64
+      ]
+    },
+    {
+      "centerWorld" : [
+        640,
+        256
+      ],
+      "halfSizeWorld" : [
+        12,
+        12
+      ],
+      "id" : "mount-cam-z02-b",
+      "index" : 14,
+      "maxWorld" : [
+        652,
+        268
+      ],
+      "minWorld" : [
+        628,
+        244
+      ]
+    },
+    {
+      "centerWorld" : [
+        496,
+        672
+      ],
+      "halfSizeWorld" : [
+        12,
+        12
+      ],
+      "id" : "mount-cam-z02-d",
+      "index" : 15,
+      "maxWorld" : [
+        508,
+        684
+      ],
+      "minWorld" : [
+        484,
+        660
+      ]
+    },
+    {
+      "centerWorld" : [
+        960,
+        864
+      ],
+      "halfSizeWorld" : [
+        12,
+        12
+      ],
+      "id" : "mount-cam-z03-a",
+      "index" : 16,
+      "maxWorld" : [
+        972,
+        876
+      ],
+      "minWorld" : [
+        948,
+        852
+      ]
+    },
+    {
+      "centerWorld" : [
+        1280,
+        1472
+      ],
+      "halfSizeWorld" : [
+        12,
+        12
+      ],
+      "id" : "mount-cam-z04-b",
+      "index" : 17,
+      "maxWorld" : [
+        1292,
+        1484
+      ],
+      "minWorld" : [
+        1268,
+        1460
+      ]
+    },
+    {
+      "centerWorld" : [
+        1664,
+        1216
+      ],
+      "halfSizeWorld" : [
+        12,
+        12
+      ],
+      "id" : "mount-cam-z04-c",
+      "index" : 18,
+      "maxWorld" : [
+        1676,
+        1228
+      ],
+      "minWorld" : [
+        1652,
+        1204
+      ]
+    },
+    {
+      "centerWorld" : [
+        1472,
+        1024
+      ],
+      "halfSizeWorld" : [
+        12,
+        12
+      ],
+      "id" : "mount-cam-z05-a",
+      "index" : 19,
+      "maxWorld" : [
+        1484,
+        1036
+      ],
+      "minWorld" : [
+        1460,
+        1012
+      ]
+    },
+    {
+      "centerWorld" : [
+        1984,
+        1024
+      ],
+      "halfSizeWorld" : [
+        12,
+        12
+      ],
+      "id" : "mount-cam-z05-c",
+      "index" : 20,
+      "maxWorld" : [
+        1996,
+        1036
+      ],
+      "minWorld" : [
+        1972,
+        1012
+      ]
+    },
+    {
+      "centerWorld" : [
+        1888,
+        512
+      ],
+      "halfSizeWorld" : [
+        12,
+        12
+      ],
+      "id" : "mount-cam-z06-a",
+      "index" : 21,
+      "maxWorld" : [
+        1900,
+        524
+      ],
+      "minWorld" : [
+        1876,
+        500
+      ]
+    },
+    {
+      "centerWorld" : [
+        1904,
+        576
+      ],
+      "halfSizeWorld" : [
+        16,
+        80
+      ],
+      "id" : "gate-elite-forward",
+      "index" : 22,
+      "maxWorld" : [
+        1920,
+        656
+      ],
+      "minWorld" : [
+        1888,
+        496
+      ]
+    },
+    {
+      "centerWorld" : [
+        2048,
+        384
+      ],
+      "halfSizeWorld" : [
+        96,
+        16
+      ],
+      "id" : "gate-boss-extraction",
+      "index" : 23,
+      "maxWorld" : [
+        2144,
+        400
+      ],
+      "minWorld" : [
+        1952,
+        368
+      ]
+    }
+  ],
+  "status" : "AUTHORITATIVE_SEED1_PLACEMENT_ONLY_NOT_SCENE_EVIDENCE",
+  "tick" : 0
+}

@@ -1,5 +1,11 @@
 # Next work order
 
+## Final bounded scene review, November16 10:47UTC
+
+Final v4 native retry1041 passed and imported into `scene-source-assembly-20261116/native-capture-1040/`: one test, six captures, eighteen images. Loaded/fresh-build SHA f61ad09650b403b926caf38937f925cb773107a7f8d8baece3f2e1c8e39b4af2 matches. The stale1040 attempt and earlier1020/1030 failures remain preserved. All75scene regressions,8gallery structure checks and both JavaScript suites passed this turn. Actual Brave verified36control combinations/48image displays with exact704x326 or352x163CSS sizing and grayscale restoration. No unfiltered Swift retry or automatic CI polling chain.
+
+**Overall visual result remains NOT MET.** Final depth ordering resolves the background building painting over the kiosk, but most of the Camera is now occluded by the kiosk, Player contour/contact remain unlike the benchmark, paving has finite boundaries and mixed surrounding materials, and composition/lighting remain mismatched. See `docs/review/scene-source-assembly-20261116/REVIEW-FINAL.md`. Do not manufacture visibility by moving authority or raising depth. No further aesthetic retry, motion/encounter expansion, production source/pin/admission, merge, physical certification or issue closure is authorized. Owner must review this final scene and authorize the next bounded work order. Technical success is not aesthetic acceptance.
+
 ## Changed-method final sources reviewed, November16 10:17UTC
 
 Coordinator inspected actual final Camera and stone comparison images and recommends both only for an isolated neutral ordinary-scene comparison, with explicit fidelity deficits retained in their new COORDINATOR-REVIEW.md files. This is not benchmark equivalence or owner/production acceptance. Camera uses the final padded204x450 master and three editable painted layers, not a sixteen-part/3D family. Stone is the closed painted-panel mesh plus independently registered2.5D roof prop, with baked rather than geometric relief. No third aesthetic repair is authorized. Player canonical02 remains the previously published bounded south-neutral choice. Historical rejected sources/attempts remain immutable.
