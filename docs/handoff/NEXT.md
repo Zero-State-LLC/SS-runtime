@@ -1,5 +1,9 @@
 # Next work order
 
+## Scene work authorized, November16 09:31UTC
+
+Owner explicitly granted approval for scene work at09:31:20UTC. This resolves the source-method authorization request below, not the prior visual rejections or future owner scene review. See `intent/2026-11-16-scene-method-approval.md`. New work uses an independently generated painterly raster-material Camera pilot plus explicit garment correspondence, rather than another same-method polygon/dab or inflated-knee repair. Snail owns `camera-raster-material-20261116`, spider owns `player-garment-correspondence-20261116`, snake owns `scene-source-assembly-20261116`; coordinator owns visual review and integration. One first pilot per source before a second attempt. The scene assembler must reject unavailable or non-recommended sources, never stage rejected assets as accepted. Original packets remain immutable. Motion/encounter expansion still needs review of the resulting ordinary scene. No production, merge, physical or issue-closure authorization is inferred.
+
 ## Trail shared-memory follow-through, November16 09:13UTC
 
 Owner requested continued Trail use. Saved two evidence-linked learnings for review-packet portability and evidence/acceptance boundaries, preserving Daniel's existing learning. `trail status` discovers all three and reports the code map in sync; two focused `trail ask` queries retrieved the corresponding new lessons. Track `.trail/README.md` and `.trail/.gitignore`, keeping generated cache ignored. This is documentation-only, not a new source-method approval or CI certification. No automatic hook execution is claimed for Jcode. The source-method owner decision and all gates below remain unchanged.
