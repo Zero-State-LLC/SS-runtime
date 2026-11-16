@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>BP-001 · Fixed-reference projection trial</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#171a1c;color:#e1dfd8}body{margin:0}main{max-width:1480px;margin:auto;padding:32px}h1{font-size:clamp(28px,4vw,48px);max-width:950px;line-height:1.1}h2{margin-top:32px}p,li{max-width:1050px;line-height:1.55}.eyebrow{letter-spacing:.15em;text-transform:uppercase;color:#8cb6b9;font-size:12px}a{color:#a9d8df}.notice{border-left:4px solid #c4ac76;background:#242729;padding:12px 20px}.muted,figcaption{color:#b6b9b7;font-size:14px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}figure{margin:0;background:#242729;border:1px solid #45494a;padding:12px}figure img{width:100%;height:auto;display:block}figcaption{padding:10px 0 0}.reference{max-width:840px}.controls{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 12px;position:sticky;top:0;background:#171a1cf2;padding:12px 0;z-index:2}label{display:flex;flex-direction:column;gap:5px;font-size:13px}select{font:inherit;color:inherit;background:#303537;border:1px solid #738080;padding:8px}.error{color:#ffad99}code{overflow-wrap:anywhere}footer{border-top:1px solid #45494a;margin-top:32px;padding-top:14px}@media(max-width:800px){.pair{grid-template-columns:1fr}main{padding:18px}}
+</style></head><body><main>
+<p class="eyebrow">BP-001 / Authorized isolated trial / 16 November 2026</p>
+<h1>Keep the benchmark.<br>Test the ground mapping.</h1>
+<aside class="notice"><strong>No production projection selected.</strong><p>This trial compares a measured ground-direction fit to midpoint using unchanged source art in the real renderer. A ground fit is not a faithful reconstruction of the whole reference. Building viewpoint, anatomy, palette, composition and motion still need their own evidence. No source repaint, collision change or production input migration.</p></aside>
+<h2>The fixed approved visual benchmark</h2>
+<figure class="reference"><a href="../bp001-decision-20261116/street-corner-approved-concept.png" target="_blank" rel="noopener"><img src="../bp001-decision-20261116/street-corner-approved-concept.png" width="1672" height="941" alt="Unchanged approved Civic Seam visual benchmark"></a><figcaption>The full approved image retains its original aspect ratio. It is the visual target, not an admitted gameplay sprite or renderer capture.</figcaption></figure>
+<p><a href="landmarks.svg" target="_blank" rel="noopener">Inspect the six ground-direction samples</a> · <a href="landmarks.json">Raw coordinates and uncertainty</a> · <a href="ground-fit.json">Reproducible fit and residuals</a></p>
+<p class="muted">Four manually sampled segments fit the two ground directions; two other segments are held out. Cyan is fitted, magenta is held out. The fitted scene rotation is approximately −29.76° with ground y-scale 1.018. The shallow paving directions disagree by roughly 6° end-to-end, so this is explicitly an approximate affine direction fit, not recovered camera elevation. Endpoint sensitivity includes y-scale 1.</p>
+<h2>Actual-renderer comparison</h2>
+<div class="controls">
+<label>Fixture<select id="fixture"><option value="quiet-street">Quiet street</option><option value="legal-ghost-step-4976">Legal encounter, tick 4976</option></select></label>
+<label>World magnification<select id="zoom"><option value="100">1×</option><option value="125">1.25×</option><option value="140">1.4×</option></select></label>
+<label>Geometry<select id="geometry"><option value="">Natural</option><option value="-geometry">Authoritative overlay</option></select></label>
+<label>Rendition<select id="rendition"><option value="native">Native pixels</option><option value="half">Half pixels</option><option value="grayscale">Grayscale</option></select></label>
+</div>
+<p id="status" role="status" aria-live="polite">Loading comparison.</p>
+<p class="muted">704×326 logical points. Native pixel dimensions and backing scale are recorded in each metrics file. Images fit these columns, so this page is not a pixel-for-pixel phone simulation. Click a plate to inspect its selected exported image. Both sides share snapshot, art, HUD, world focus and magnification. Different crops and visible threats are results, not removed actors.</p>
+<div class="pair">
+<figure><h3>A / Reference ground-fit trial</h3><p class="muted">Measured ground directions, unchanged upright art.</p><a id="reference-link" target="_blank" rel="noopener"><img id="reference-image" alt="Reference ground-fit renderer comparison"></a><figcaption id="reference-caption"></figcaption></figure>
+<figure><h3>B / Midpoint comparator</h3><p class="muted">+45° rotation, half-height ground, same upright art.</p><a id="midpoint-link" target="_blank" rel="noopener"><img id="midpoint-image" alt="Midpoint renderer comparison"></a><figcaption id="midpoint-caption"></figcaption></figure>
+</div>
+<p id="load-error" class="error" role="alert"></p>
+<h2>What the trial establishes</h2>
+<p><strong>Neither candidate is a faithful whole-scene reconstruction or an approved production choice.</strong> At unchanged world focus, the fitted-reference mapping clips the quiet-scene building at all three zooms. Midpoint contains its canvas at 1× and 1.25×, but clips it at 1.4×. The baked building view remains unchanged rather than being warped to hide the mismatch.</p>
+<p>Both mappings retain quiet-scene luminance and chroma drift at every zoom. The legal encounter has no palette flags except midpoint at 1.4×, which exceeds the chroma band. Player source-alpha height is approximately 15.3%, 19.1% and 21.4% of viewport height across the zooms, not a claim of visible unoccluded anatomy.</p>
+<h2>Read these limits before choosing</h2><ul>
+<li>Quiet street is a controlled composition. Legal encounter uses the existing seed-1 Ghost Step world-command stream at tick 4976, not a newly staged combat fixture.</li>
+<li>Existing baked building perspective and Player facings are unchanged. Mismatch with the fitted ground is visible evidence, not fixed by squashing or mirroring source art.</li>
+<li>Projected roots, collision geometry, fields and projectile origins are measured separately from sprite bounds. Geometry does not come from alpha silhouettes.</li>
+<li>The HUD stays unprojected. Nearer framing may crop actors or attacks. Canvas occupancy is not visible unoccluded anatomy.</li>
+<li>Static captures and inverse-mapping tests do not establish live eight-direction facing, depth behavior, dense-play readability, physical performance or asset admission.</li>
+<li>The approved palette reference and BP-011 review bands remain unchanged. See the report for measured differences and crop conventions.</li>
+</ul>
+<footer><a href="README.md">Trial verdict and reproduction</a> · <a href="capture-manifest.json">Capture manifest</a> · <a href="palette-report.json">Palette report</a> · <a href="../bp001-decision-20261116/research.md">Decision research</a> · <a href="../bp001-decision-20261116/index.html">Earlier shipping-control comparison</a><p class="muted">Offline local review only. Controls do not record an owner choice. Source art and the approved benchmark are unchanged.</p></footer>
+</main><script>
+'use strict';
+const controls=['fixture','zoom','geometry','rendition'];
+let generation=0;
+function render(){
+ const id=++generation;
+ const [fixture,zoom,geometry,rendition]=controls.map(k=>document.getElementById(k).value);
+ document.getElementById('load-error').textContent='';
+ document.getElementById('status').textContent=`${fixture} · ${Number(zoom)/100}× · ${geometry?'geometry overlay':'natural'} · ${rendition}`;
+ for(const [key,mapping] of [['reference','reference-fit'],['midpoint','midpoint']]){
+  const base=`BP001-trial-${fixture}-${mapping}-z${zoom}`;
+  const name=`plates/${base}${geometry}-${rendition}.png`;
+  const image=document.getElementById(`${key}-image`);
+  image.onerror=()=>{if(generation===id)document.getElementById('load-error').textContent=`Missing or unreadable plate: ${name}. This comparison is incomplete.`;};
+  image.onload=()=>{if(generation===id)document.getElementById(`${key}-caption`).textContent=`${image.naturalWidth}×${image.naturalHeight} pixels. ${base}.`;};
+  image.src=name;
+  document.getElementById(`${key}-link`).href=name;
+ }
+}
+controls.forEach(k=>document.getElementById(k).addEventListener('change',render));render();
+</script></body></html>

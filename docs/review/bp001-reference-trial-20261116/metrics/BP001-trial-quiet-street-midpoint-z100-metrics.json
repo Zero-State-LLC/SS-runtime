@@ -1,0 +1,239 @@
+{
+  "actors" : [
+    {
+      "anchor" : [
+        0.5,
+        0.125
+      ],
+      "bounds" : [
+        744.71099853515625,
+        701.85797119140625,
+        64,
+        64
+      ],
+      "canvasHeightViewportFraction" : 0.19631901840490798,
+      "contained" : true,
+      "intersects" : true,
+      "logicalSize" : [
+        64,
+        64
+      ],
+      "name" : "sprite-player",
+      "projectedRoot" : [
+        776.710693359375,
+        709.85784912109375
+      ],
+      "sourceAlphaHeightViewportFraction" : 0.15286298568507159,
+      "sourceAlphaOccupiedRows" : 299,
+      "sourceTexturePixels" : [
+        384,
+        384
+      ],
+      "worldRoot" : [
+        736,
+        654
+      ]
+    },
+    {
+      "anchor" : [
+        0.5,
+        0.083333335816860199
+      ],
+      "bounds" : [
+        772.9949951171875,
+        765.49798583984375,
+        64,
+        96
+      ],
+      "canvasHeightViewportFraction" : 0.29447852760736198,
+      "contained" : true,
+      "intersects" : true,
+      "logicalSize" : [
+        64,
+        96
+      ],
+      "name" : "sprite-camera-2",
+      "projectedRoot" : [
+        804.99493408203125,
+        773.49749755859375
+      ],
+      "sourceAlphaHeightViewportFraction" : 0.24003067484662577,
+      "sourceAlphaOccupiedRows" : 313,
+      "sourceTexturePixels" : [
+        256,
+        384
+      ],
+      "worldRoot" : [
+        846,
+        724
+      ]
+    },
+    {
+      "anchor" : [
+        0.52073365449905396,
+        0.081339709460735321
+      ],
+      "bounds" : [
+        501.66000366210938,
+        605.9429931640625,
+        243.03897094726562,
+        243.03900146484375
+      ],
+      "canvasHeightViewportFraction" : 0.74551840940136116,
+      "contained" : true,
+      "intersects" : true,
+      "logicalSize" : [
+        243.03880310058594,
+        243.03880310058594
+      ],
+      "name" : "benchmark-building",
+      "projectedRoot" : [
+        628.21826171875,
+        625.712158203125
+      ],
+      "sourceAlphaHeightViewportFraction" : 0.63493860556996939,
+      "sourceAlphaOccupiedRows" : 1068,
+      "sourceTexturePixels" : [
+        1254,
+        1254
+      ],
+      "worldRoot" : [
+        512,
+        640
+      ]
+    },
+    {
+      "anchor" : [
+        0.5,
+        0
+      ],
+      "bounds" : [
+        745.49798583984375,
+        688.64501953125,
+        20,
+        40
+      ],
+      "canvasHeightViewportFraction" : 0.12269938650306748,
+      "contained" : true,
+      "intersects" : true,
+      "logicalSize" : [
+        20,
+        40
+      ],
+      "name" : "benchmark-prop-0",
+      "projectedRoot" : [
+        755.49749755859375,
+        688.6446533203125
+      ],
+      "sourceAlphaHeightViewportFraction" : 0.12269938650306748,
+      "sourceAlphaOccupiedRows" : 768,
+      "sourceTexturePixels" : [
+        378,
+        768
+      ],
+      "worldRoot" : [
+        691,
+        639
+      ]
+    },
+    {
+      "anchor" : [
+        0.5,
+        0
+      ],
+      "bounds" : [
+        748.88201904296875,
+        797.53900146484375,
+        50,
+        85
+      ],
+      "canvasHeightViewportFraction" : 0.2607361963190184,
+      "contained" : true,
+      "intersects" : true,
+      "logicalSize" : [
+        50,
+        85
+      ],
+      "name" : "benchmark-prop-1",
+      "projectedRoot" : [
+        773.88226318359375,
+        797.53912353515625
+      ],
+      "sourceAlphaHeightViewportFraction" : 0.2607361963190184,
+      "sourceAlphaOccupiedRows" : 768,
+      "sourceTexturePixels" : [
+        454,
+        768
+      ],
+      "worldRoot" : [
+        858,
+        780
+      ]
+    }
+  ],
+  "authoritativeCornersWorldAndScene" : [
+    [
+      512,
+      640,
+      628.21826171875,
+      625.712158203125
+    ],
+    [
+      512,
+      768,
+      537.70855712890625,
+      670.967041015625
+    ],
+    [
+      640,
+      768,
+      628.21826171875,
+      716.2218017578125
+    ],
+    [
+      640,
+      640,
+      718.7279052734375,
+      670.967041015625
+    ]
+  ],
+  "backingScale" : 3,
+  "buildingRegistrationChangedBetweenMappings" : false,
+  "cameras" : 1,
+  "digest" : "1bb6c75ffe9708b1b44725f3bf16ffa7027841234f002e86ba30c66688180d52",
+  "enemies" : 0,
+  "fixture" : "quiet-street",
+  "hudExcludedFromProjection" : true,
+  "landmarksSHA256" : "4da2792b52b2ca13b61b950f26d30b2d3cdfbd8260474d146da588c2e153a484",
+  "limitations" : [
+    "Ground fit is not camera recovery or faithful original-reference art.",
+    "Upright source pixels, anatomical facings and baked building slab remain unchanged and may disagree with ground mapping.",
+    "Canvas bounds include transparent pixels. Source-alpha height is unoccluded authored occupancy, not visible-pixel segmentation.",
+    "No new occlusion policy, source repaint, dense encounter, live input integration or acceptance."
+  ],
+  "mapping" : "midpoint",
+  "matrixRowMajor" : [
+    0.70710678118654757,
+    -0.70710678118654746,
+    0.35355339059327373,
+    0.35355339059327379
+  ],
+  "nativePixels" : [
+    2112,
+    978
+  ],
+  "projectiles" : 0,
+  "referenceImageSHA256" : "49aa35447230187e3eabe948cdc8eba6d6d465b2605d624e2cf7443f6cb69ffb",
+  "rotationDegrees" : 45,
+  "tick" : 0,
+  "viewportPoints" : [
+    704,
+    326
+  ],
+  "worldFocus" : [
+    706,
+    724
+  ],
+  "yScale" : 0.5,
+  "zoom" : 1
+}

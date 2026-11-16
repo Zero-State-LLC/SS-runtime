@@ -1,0 +1,742 @@
+{
+  "status": "NATIVE_STATIC_TRIAL_NOT_PROJECTION_SELECTION",
+  "preservedSourceHashes": {
+    "AppTests/BenchmarkCaptureTests.swift": "9f36f695767395f8f27cbc37f866fa6540575ca5ee5547fa19ff9637b58760a3",
+    "App/BenchmarkReviewArt.swift": "ab65ab22aa977b26d6507a63bca86971bc7b62d63400961e96072c9190d996d0",
+    "App/WorldRenderer.swift": "e6cb6a52d8322380818d21a8390d70a5ac8ce3e3cf0481fb516efdf65c4850f8",
+    "App/GameScene.swift": "a3b154e63f208fe999c5ee88b1c02c8ab34002d3708dd8712ec8935dd6fa7e67"
+  },
+  "xcresultPath": "/Users/appliedalchemylabs/.jcode/scratch/ss-bp001-reference-trial-20261116/trial-debug-final.xcresult",
+  "xcresultSummary": {
+    "devicesAndConfigurations": [
+      {
+        "device": {
+          "architecture": "arm64",
+          "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3",
+          "deviceName": "iPhone 17 Pro",
+          "modelName": "iPhone 17 Pro",
+          "osBuildNumber": "23F77",
+          "osVersion": "26.5",
+          "platform": "iOS Simulator"
+        },
+        "expectedFailures": 0,
+        "failedTests": 0,
+        "passedTests": 3,
+        "skippedTests": 0,
+        "testPlanConfiguration": {
+          "configurationId": "1",
+          "configurationName": "Test Scheme Action"
+        }
+      }
+    ],
+    "environmentDescription": "SSRuntime \u00b7 Built with macOS 26.3.1",
+    "expectedFailures": 0,
+    "failedTests": 0,
+    "finishTime": 1794790274.953,
+    "passedTests": 3,
+    "result": "Passed",
+    "skippedTests": 0,
+    "startTime": 1794790159.867,
+    "statistics": [],
+    "testFailures": [],
+    "title": "Test - SSRuntime",
+    "topInsights": [],
+    "totalTestCount": 3
+  },
+  "exportManifestSHA256": "2a4858fd08d051fd1cef8d569f79a388d67d7e843dad438ac3fbca64e2f468f5",
+  "sourceHashes": {
+    "AppTests/ReferenceProjectionCaptureTests.swift": "cbfc859da664b1df141a36e1c856dcf5d21707d189eb7bef3f7493b47219e0b0",
+    "AppTests/ReferenceProjectionTrial.swift": "48e68902190c0a9847493b9f2223424ae38dca6b2a52b3148ca80ba2b234e37e",
+    "App/WorldRenderer.swift": "e6cb6a52d8322380818d21a8390d70a5ac8ce3e3cf0481fb516efdf65c4850f8",
+    "App/BenchmarkReviewArt.swift": "ab65ab22aa977b26d6507a63bca86971bc7b62d63400961e96072c9190d996d0",
+    "App/GameScene.swift": "a3b154e63f208fe999c5ee88b1c02c8ab34002d3708dd8712ec8935dd6fa7e67",
+    "scripts/palette_conformance.py": "fda4585588923a7237a66cab69fa5d9541b5299bf062b37f3193120ece38c617"
+  },
+  "fitSHA256": "c33796dc2b548e605a7445fb6061d14ba31a58d25a6d8fc0112501a020556a29",
+  "landmarksSHA256": "4da2792b52b2ca13b61b950f26d30b2d3cdfbd8260474d146da588c2e153a484",
+  "referenceSHA256": "49aa35447230187e3eabe948cdc8eba6d6d465b2605d624e2cf7443f6cb69ffb",
+  "ownerChoice": "UNRECORDED",
+  "shippingMappingChanged": false,
+  "attachments": {
+    "BP001-trial-same-world-commands": {
+      "path": "metrics/BP001-trial-same-world-commands.json",
+      "sha256": "7968bafa5bf64f5f963ec48e613e53f948232804ba9f11deff76f1c503e3dd29",
+      "exportedFileName": "96730221-D043-4975-860A-3808102D368B.json",
+      "timestamp": 1794790235.686,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z140-metrics": {
+      "path": "metrics/BP001-trial-legal-ghost-step-4976-midpoint-z140-metrics.json",
+      "sha256": "76df14a6950fa1dac6789adb10788250775a20d5031066d5ae097faa59511228",
+      "exportedFileName": "161ECDCA-03D2-413A-85DB-3FBE85170DD3.json",
+      "timestamp": 1794790235.655,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z140-geometry-grayscale": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z140-geometry-grayscale.png",
+      "sha256": "31836a4147006e898224a167bc372101c3a04e9df4fb916519a0aa7e9532228d",
+      "exportedFileName": "2037AD85-91B7-4EDD-9382-93BBBC0688D8.png",
+      "timestamp": 1794790235.648,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z140-geometry-half": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z140-geometry-half.png",
+      "sha256": "63834c874cb2e1966e6eadd9ef9b95a435ace099b6c34d922805ff3aee3e54be",
+      "exportedFileName": "3FD59F00-FA1F-4407-879E-1DBF49EFE7AD.png",
+      "timestamp": 1794790235.415,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z140-geometry-native": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z140-geometry-native.png",
+      "sha256": "d741ed79ffaadee70c20a9cc24cce0f63d79abb386819a0da2c227222847f236",
+      "exportedFileName": "C5D58494-6F51-409D-AB9F-C4978B09BCB3.png",
+      "timestamp": 1794790235.344,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z140-grayscale": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z140-grayscale.png",
+      "sha256": "02c3ac4319f7e87b449d4e4580ac45afcf9899de4d482b64a49f42286606cd30",
+      "exportedFileName": "819F5611-3D65-4D09-A549-F17980E50C40.png",
+      "timestamp": 1794790235,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z140-half": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z140-half.png",
+      "sha256": "c1ae131d6289ca984df3bc07c783a7a507207924189271396c80fb0830d04a93",
+      "exportedFileName": "5E7E67FF-E934-4BA8-95B6-3B6EC09D09FE.png",
+      "timestamp": 1794790234.763,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z140-native": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z140-native.png",
+      "sha256": "24dca2dfeee30c106d0f36ab138ff383fbea242dcf24d25fc4782b97935c3672",
+      "exportedFileName": "26706ADE-11B1-443C-A88B-0696E47E92B6.png",
+      "timestamp": 1794790234.688,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z125-metrics": {
+      "path": "metrics/BP001-trial-legal-ghost-step-4976-midpoint-z125-metrics.json",
+      "sha256": "5df5b7d81611f137a57618e8caa686a42ff917ddce7b881fd630732d5266ed97",
+      "exportedFileName": "1CED7550-BC38-4A25-B419-825172EA6597.json",
+      "timestamp": 1794790234.328,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z125-geometry-grayscale": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z125-geometry-grayscale.png",
+      "sha256": "7b382bfeeceaba4ca34192a9e3f66725a32e51a9ec72d9dc2d6a31493d5104ee",
+      "exportedFileName": "4C5F6274-2644-411A-94DC-5434A391FB62.png",
+      "timestamp": 1794790234.321,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z125-geometry-half": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z125-geometry-half.png",
+      "sha256": "5cd80784ac69f41445c9c55517ed7ed503e01b85e502376af5de318b83bbb1e2",
+      "exportedFileName": "95CDE9EF-E65A-4A6F-991D-39A3C680EDBD.png",
+      "timestamp": 1794790234.075,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z125-geometry-native": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z125-geometry-native.png",
+      "sha256": "254ea7e2b26224c21c48d9492147d3f56fca572b5e0e5df6b2bb76b91a144904",
+      "exportedFileName": "11C79D48-9E39-477C-A122-8FBC4200F32A.png",
+      "timestamp": 1794790234,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z125-grayscale": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z125-grayscale.png",
+      "sha256": "4e5a797d0bf012928df8bcaca4f6c4f92b3a1e03354fd529483c57006946b4a4",
+      "exportedFileName": "B44156B0-1A86-4F00-B29B-E7623FA0741D.png",
+      "timestamp": 1794790233.642,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z125-half": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z125-half.png",
+      "sha256": "e994c4254c52bf4a18fe04573742a0e41f50cc4432bfb7723fee71737687a621",
+      "exportedFileName": "9D2B821C-0505-493F-9134-EEE6D678F460.png",
+      "timestamp": 1794790233.395,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z125-native": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z125-native.png",
+      "sha256": "b41ec6c442b81c51da91e744810f25cab62ba24a999507765d541626e8a37180",
+      "exportedFileName": "E34A1EF1-E1EE-45C4-818E-0895DD6DB091.png",
+      "timestamp": 1794790233.324,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z100-metrics": {
+      "path": "metrics/BP001-trial-legal-ghost-step-4976-midpoint-z100-metrics.json",
+      "sha256": "ed17d3b47a9311db2c77f27357f27830f2607429648a58d37db66645dff48c27",
+      "exportedFileName": "ED9A05E9-2632-4A86-AC6D-54FB59C11844.json",
+      "timestamp": 1794790232.948,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z100-geometry-grayscale": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z100-geometry-grayscale.png",
+      "sha256": "5d8dad40f674b81ed8fbdd961d6586969ef5b1d9e2c8983162d34623070cf52a",
+      "exportedFileName": "0D34EC55-B80A-4D46-8EB0-5FA193A343F6.png",
+      "timestamp": 1794790232.941,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z100-geometry-half": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z100-geometry-half.png",
+      "sha256": "223b8245d0e273ed55687c9649296f867454525d361ae72cdc270b613804f99e",
+      "exportedFileName": "78DE5DE0-944C-455B-9AF9-78B51BDAC99F.png",
+      "timestamp": 1794790232.618,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z100-geometry-native": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z100-geometry-native.png",
+      "sha256": "00a1ff67923e9e2f9741eb0ca46a1561ed636a3963810c07faa3c4b063476f9e",
+      "exportedFileName": "CD698AE3-9836-485A-A27D-FD251EDF715F.png",
+      "timestamp": 1794790232.539,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z100-grayscale": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z100-grayscale.png",
+      "sha256": "c829e25db4e528b26d8dfb4d8beba416be99260f2409114ba33af06e0d9455bb",
+      "exportedFileName": "27BBF781-37E4-489E-9F33-1F5E11F5D74A.png",
+      "timestamp": 1794790232.063,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z100-half": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z100-half.png",
+      "sha256": "ef95600cb85d6cd8b4daba992cb5298d8922899a4aff51d83febd0223ca278b1",
+      "exportedFileName": "190A70E6-E439-4A1A-B2BF-D11571D76AD8.png",
+      "timestamp": 1794790231.797,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-midpoint-z100-native": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-midpoint-z100-native.png",
+      "sha256": "1dbb665eb7c0c43eb3941dda2d18a6230a75bb3c013b19f0a14ccf591b3b4a74",
+      "exportedFileName": "8BD0B331-57C1-47F0-BEFD-69109ABFDA62.png",
+      "timestamp": 1794790231.719,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z140-metrics": {
+      "path": "metrics/BP001-trial-legal-ghost-step-4976-reference-fit-z140-metrics.json",
+      "sha256": "b4b9e51ff6291889df84c885a084a39e237de1c015842ebe00f0ec1672be410b",
+      "exportedFileName": "A53B20BB-EEE0-441A-ADE7-74A36FDEADC3.json",
+      "timestamp": 1794790231.333,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z140-geometry-grayscale": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z140-geometry-grayscale.png",
+      "sha256": "34fcded26bee7be7af56c166f1ea5d4187bfc5433ab1ab700a11d3cce81465e1",
+      "exportedFileName": "864E82DA-A442-4C61-985A-A8572A9113B6.png",
+      "timestamp": 1794790231.326,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z140-geometry-half": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z140-geometry-half.png",
+      "sha256": "15664ce3360b16f664594deee42b2eae08872dec7dac7cae1aa4036855f88e47",
+      "exportedFileName": "DB2914CF-02A0-4C92-9FC0-900D861A8DB9.png",
+      "timestamp": 1794790231.054,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z140-geometry-native": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z140-geometry-native.png",
+      "sha256": "8a3981b6f3126f1d353608f2f93817d8e67b10fdbba3281e7b78c2bbb3b339c5",
+      "exportedFileName": "D8FC4E08-33E9-4074-8BC2-E8B187398C5C.png",
+      "timestamp": 1794790230.986,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z140-grayscale": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z140-grayscale.png",
+      "sha256": "4afb99e82cb3b1a3595be4b94d3a518974548b400ded1ed6a915a7cfc094a583",
+      "exportedFileName": "7BC2FAC5-9DA1-4F31-91E7-1F02399C16F8.png",
+      "timestamp": 1794790230.525,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z140-half": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z140-half.png",
+      "sha256": "32b540e4799017bb77999855dd9eaa08e71f78803966a66c0cf782307c6213d1",
+      "exportedFileName": "4DF5693B-9A6E-4CEE-ABCE-259E5A64F432.png",
+      "timestamp": 1794790230.273,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z140-native": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z140-native.png",
+      "sha256": "ee0617b0b7ecc3fe7d46061a58fe9b0ece9f3e2c2842bbb6a1502e3397a60081",
+      "exportedFileName": "B85C1C42-C398-4486-AE0F-FFFFFFCA1677.png",
+      "timestamp": 1794790230.208,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z125-metrics": {
+      "path": "metrics/BP001-trial-legal-ghost-step-4976-reference-fit-z125-metrics.json",
+      "sha256": "fa6524297ca4a7616850b0cecba3b3fe78e4186bacda066daf22d003ff59a923",
+      "exportedFileName": "4269511F-EC90-49AB-9AEA-6EBE01FCBAB1.json",
+      "timestamp": 1794790229.759,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z125-geometry-grayscale": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z125-geometry-grayscale.png",
+      "sha256": "676acb134ace91686ae80fb1b6cda30174a2ec1c403fbb54f12fa35cb883dc10",
+      "exportedFileName": "4BA5DC0B-9C0D-4BE5-A00E-47888982AE1A.png",
+      "timestamp": 1794790229.751,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z125-geometry-half": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z125-geometry-half.png",
+      "sha256": "7899c40695d2b11d63fa66d1abf1f96db7cec61020783ba40cfc475fec8802ce",
+      "exportedFileName": "6292A097-3F43-44F6-951E-700CE4C34B01.png",
+      "timestamp": 1794790229.44,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z125-geometry-native": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z125-geometry-native.png",
+      "sha256": "e46cb90a68cc3d3fcda41ac232e744ab3a64a95f0d9cc45da83c9318c1a21e5b",
+      "exportedFileName": "19AEA575-D121-4613-8E36-EF4AAC593E0D.png",
+      "timestamp": 1794790229.372,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z125-grayscale": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z125-grayscale.png",
+      "sha256": "08a1d505dcaedcb7a4f0524341123e8f75bcd30870c9db7acf67e045a6396b52",
+      "exportedFileName": "B1E83471-9DA9-47BB-838A-E84CD7AD5325.png",
+      "timestamp": 1794790228.923,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z125-half": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z125-half.png",
+      "sha256": "be353dc728fc129e34a4439021532ed36546c3ce8bc1a158ba1a7212e3596611",
+      "exportedFileName": "B0798D3E-9297-4366-ACBD-C10F2176EB70.png",
+      "timestamp": 1794790228.646,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z125-native": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z125-native.png",
+      "sha256": "7b99dc947b5267d0950cd9c3f8dfb9784382081ba0ea58a723170181545aef04",
+      "exportedFileName": "D03DDB18-4C6C-48E9-8823-F2A70CEFF43F.png",
+      "timestamp": 1794790228.579,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z100-metrics": {
+      "path": "metrics/BP001-trial-legal-ghost-step-4976-reference-fit-z100-metrics.json",
+      "sha256": "e10409b6036aaabca81714fcbd5f3c9f16a0771d5c2dcb668464c45607208859",
+      "exportedFileName": "F55F4DA3-216B-4ED9-8816-92D0E94DBE61.json",
+      "timestamp": 1794790228.115,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z100-geometry-grayscale": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z100-geometry-grayscale.png",
+      "sha256": "69342a652cb173350780bed49be04774dc88ff985838a60214161d393e11c4f7",
+      "exportedFileName": "377DD576-C741-4BAB-9001-C58B148D5C5F.png",
+      "timestamp": 1794790228.106,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z100-geometry-half": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z100-geometry-half.png",
+      "sha256": "30f0bae8b4b8ef3468e54ffdea7fceb8e3aeca48a68b79708c2496a06e9c4aab",
+      "exportedFileName": "64055574-C82F-4E8D-80C9-A8804E97080A.png",
+      "timestamp": 1794790227.788,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z100-geometry-native": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z100-geometry-native.png",
+      "sha256": "899f09ef28a51aa067abb1629149b61c401bf29dcf271f6fd6f4bd4874059d04",
+      "exportedFileName": "8E4E4A22-B31B-417A-A734-D2D3F6DD8D44.png",
+      "timestamp": 1794790227.717,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z100-grayscale": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z100-grayscale.png",
+      "sha256": "7b6b315ed2ee8bcb12ef4e786dbee1cfe254ce9c639f7f6af5495c43a7ebaf68",
+      "exportedFileName": "248C3C7C-6A4E-4FB6-861C-B934105DB040.png",
+      "timestamp": 1794790227.301,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z100-half": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z100-half.png",
+      "sha256": "2f8b9b75c18c6c94c7e6d2f264531e87c2980615c7cbed307334bc352ac85efc",
+      "exportedFileName": "9702D938-2C95-47AE-8CAD-DD62452E19A6.png",
+      "timestamp": 1794790227.049,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-legal-ghost-step-4976-reference-fit-z100-native": {
+      "path": "plates/BP001-trial-legal-ghost-step-4976-reference-fit-z100-native.png",
+      "sha256": "217fae481dd6074effb3dddc2d8289c64cd939e4bd7d81ecbbbed9dda6091ea5",
+      "exportedFileName": "3ADA8824-9FFD-4255-93EF-E478BC1AA8C3.png",
+      "timestamp": 1794790226.976,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z140-metrics": {
+      "path": "metrics/BP001-trial-quiet-street-midpoint-z140-metrics.json",
+      "sha256": "4f9dfd4ffb33766096d90b9c339ed77f561c27b774ada9dfc1607d63975eff08",
+      "exportedFileName": "E659600B-0956-4BC9-896F-C0DB4A343956.json",
+      "timestamp": 1794790274.073,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z140-geometry-grayscale": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z140-geometry-grayscale.png",
+      "sha256": "51032f46414542f72e39ba9ca82196ad92f5b73c5d238f40b4bc4130f69dc5e3",
+      "exportedFileName": "169E5A74-DBE5-4D9B-9A5B-25F3FE919FCB.png",
+      "timestamp": 1794790274.07,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z140-geometry-half": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z140-geometry-half.png",
+      "sha256": "9146a4459c4b03aa9fca3b7132e3141c1a9511f13f7ea987283c32a3ba491496",
+      "exportedFileName": "786069B0-3E4F-4801-BBCC-883E25AAD9C8.png",
+      "timestamp": 1794790273.833,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z140-geometry-native": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z140-geometry-native.png",
+      "sha256": "0918c411bda735abf1ea379798b21f48919f6c4c58d311327478ee13d6647972",
+      "exportedFileName": "E2B28BEC-A2C6-4660-93AD-3FCDB17FADD8.png",
+      "timestamp": 1794790273.759,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z140-grayscale": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z140-grayscale.png",
+      "sha256": "727a8b7ea0960550adcc12ae166b63a4ab4b8b191cc1c4960049c50022a6e95e",
+      "exportedFileName": "C89A44D0-82E6-4EB3-BD41-E971D2F370E1.png",
+      "timestamp": 1794790273.38,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z140-half": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z140-half.png",
+      "sha256": "2a90257c4768bc6b3c9d231a5e8e444376666fcc9879cc0947a57e7db0e6ffae",
+      "exportedFileName": "E48908EA-D8B6-4213-9BC6-3CDEE04424A0.png",
+      "timestamp": 1794790273.145,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z140-native": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z140-native.png",
+      "sha256": "797892c165d0d30871a637973618cb2ae03ac99a3c932496e73b3120a244e7f9",
+      "exportedFileName": "EC9DD69E-734D-4DB2-B5D2-3C56916B254C.png",
+      "timestamp": 1794790273.071,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z125-metrics": {
+      "path": "metrics/BP001-trial-quiet-street-midpoint-z125-metrics.json",
+      "sha256": "2303b464d004e2371af95d6d15cbb80189aece932ef3c50c088576c20870c078",
+      "exportedFileName": "AA8737CF-66BE-4E94-9457-8FB9926D7AAD.json",
+      "timestamp": 1794790272.677,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z125-geometry-grayscale": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z125-geometry-grayscale.png",
+      "sha256": "22e3d04f7e68768db6c6507e3898aeb671f72f7759df783fd9c6a7263b896d19",
+      "exportedFileName": "C9F728C6-90CC-46D3-9EA5-B290F1A76B65.png",
+      "timestamp": 1794790272.673,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z125-geometry-half": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z125-geometry-half.png",
+      "sha256": "c6b8ef619252e7441765503aa69cad48163bccb58118ff6a44ce5a15d301836e",
+      "exportedFileName": "B41256FC-F063-45B9-84FD-431A428E2A77.png",
+      "timestamp": 1794790272.436,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z125-geometry-native": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z125-geometry-native.png",
+      "sha256": "4d03231e01348014deae1befcbd0753b49c2a7c35ded6403e3b9215afc991355",
+      "exportedFileName": "62EAB5D8-0CF2-4CFE-92D8-FB142E076D4B.png",
+      "timestamp": 1794790272.361,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z125-grayscale": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z125-grayscale.png",
+      "sha256": "cbbd375dbaec43d6340cc72b5c2bb220d60303bd8a00d9c9498eb624325278e5",
+      "exportedFileName": "9683F522-3916-408F-93AF-CEF37575CDB4.png",
+      "timestamp": 1794790271.97,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z125-half": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z125-half.png",
+      "sha256": "0092257083e3a6bb776f8899f701b0b8a71aa998be8e69610142f8d4269c717c",
+      "exportedFileName": "90551C7E-74D9-40CE-B674-2B6545E5C546.png",
+      "timestamp": 1794790271.717,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z125-native": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z125-native.png",
+      "sha256": "bb65492daab9ddfb83824c7b62c374e326ccb4e949b22086e8e9427784800bea",
+      "exportedFileName": "DE09EE8E-0D30-4099-9B27-B0FCE486D656.png",
+      "timestamp": 1794790271.645,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z100-metrics": {
+      "path": "metrics/BP001-trial-quiet-street-midpoint-z100-metrics.json",
+      "sha256": "c222443d2cfba8606c1f9b3297bcbc8ec3d4fc5391294d5cef4d1b45c3b7498b",
+      "exportedFileName": "8A2F0D7A-944C-4768-BBEB-D0C2338C4343.json",
+      "timestamp": 1794790271.244,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z100-geometry-grayscale": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z100-geometry-grayscale.png",
+      "sha256": "245aa59ac28a5563cbedced142f4b9a0d7ae7043e92e5f076df1e3dd07279d25",
+      "exportedFileName": "17EEEA97-711B-454B-AAF9-253F0F5E8A1E.png",
+      "timestamp": 1794790271.24,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z100-geometry-half": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z100-geometry-half.png",
+      "sha256": "c7d27088c8c404576a6519dbe5b5648e061eacfd5728df0ddfe0dbd44037caa9",
+      "exportedFileName": "AA375B81-93C6-485B-B7E4-C9096861087A.png",
+      "timestamp": 1794790271.003,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z100-geometry-native": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z100-geometry-native.png",
+      "sha256": "d6ec857dc67e0d19d09c9100128bff9feb9baec5788b14effd569043c4596478",
+      "exportedFileName": "B813E1CB-B940-437C-A4F2-A919D6B0AAF2.png",
+      "timestamp": 1794790270.934,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z100-grayscale": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z100-grayscale.png",
+      "sha256": "f9c98ab8a05250f058bbaaf6e690a77ce08d0d60c255d343d2ebd58776d2de5b",
+      "exportedFileName": "D57764BC-000F-4D4D-A472-114A55880AF1.png",
+      "timestamp": 1794790270.557,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z100-half": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z100-half.png",
+      "sha256": "66a962a5a6a21e0d048f3e24919185c236048ee2ea933d8dac4206ca37944bbe",
+      "exportedFileName": "C6003736-B292-4180-ACEC-27620CA1304E.png",
+      "timestamp": 1794790270.319,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-midpoint-z100-native": {
+      "path": "plates/BP001-trial-quiet-street-midpoint-z100-native.png",
+      "sha256": "d8eca050152a71d9a45bc051745c6067e02b10accf440815d1c5d2643e2d20f9",
+      "exportedFileName": "63380174-4F2A-4297-B469-405D1C575790.png",
+      "timestamp": 1794790270.252,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z140-metrics": {
+      "path": "metrics/BP001-trial-quiet-street-reference-fit-z140-metrics.json",
+      "sha256": "61f983704e2e19af1359c644eb353552f53f770e0d8d5b53cbe4a231b8b0e29a",
+      "exportedFileName": "604DD1EF-93D8-4BB3-B258-E060CD990AA2.json",
+      "timestamp": 1794790269.871,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z140-geometry-grayscale": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z140-geometry-grayscale.png",
+      "sha256": "dbea57821c1ab693432a7b07eb4994aff5f980c9b83f559d24ed33054280c59e",
+      "exportedFileName": "D2A43FC5-A700-4E44-921F-92A61B51CC63.png",
+      "timestamp": 1794790269.866,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z140-geometry-half": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z140-geometry-half.png",
+      "sha256": "db7657f4aebdfd530ef57749452d39595bf2989fa5cb6ac750b5fb2a1a7e50fd",
+      "exportedFileName": "2220D0F1-8717-47D4-AAA5-E551506EA9B7.png",
+      "timestamp": 1794790269.629,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z140-geometry-native": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z140-geometry-native.png",
+      "sha256": "660646b2e07299460ffc3955216f85aaf2c5b36117a0a7bcf9407091171b56c3",
+      "exportedFileName": "7E327F45-DA80-4A33-8F72-E58B7A4B2B09.png",
+      "timestamp": 1794790269.562,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z140-grayscale": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z140-grayscale.png",
+      "sha256": "51359d517f7ec53a98c8faf0730f61b4b5f1d455959c4cab401743dfcb12db64",
+      "exportedFileName": "C15BF6C7-C7DE-4D08-9718-B7467CE08B4F.png",
+      "timestamp": 1794790269.207,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z140-half": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z140-half.png",
+      "sha256": "a842e930e50d35d2fe8620e274fae86ad8c5ad12e09529c5ce05bdd83f251505",
+      "exportedFileName": "6E1FD036-6918-40AC-9FE8-C9B646445AF7.png",
+      "timestamp": 1794790268.949,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z140-native": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z140-native.png",
+      "sha256": "5c7a8a87addfe6c79cfc930874890e7e67b3ff5d31b535382ccfd5b4c3b797b7",
+      "exportedFileName": "DBDD1135-FF32-40B2-9244-5F1197E7F9D6.png",
+      "timestamp": 1794790268.884,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z125-metrics": {
+      "path": "metrics/BP001-trial-quiet-street-reference-fit-z125-metrics.json",
+      "sha256": "dbd51c51f09821ebbe69aa5ca82752e90c3f5a2d8f9a0ad40b10df1beaa1f492",
+      "exportedFileName": "BA982D85-5D2E-497C-B0DA-8485B8EA7257.json",
+      "timestamp": 1794790268.538,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z125-geometry-grayscale": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z125-geometry-grayscale.png",
+      "sha256": "5db42ea56cefa8251c8a8283acd43dc78af380bdcea4491a2f9952835aaaf616",
+      "exportedFileName": "1D2C3800-09C1-4F32-984F-4DF95F7EE73D.png",
+      "timestamp": 1794790268.534,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z125-geometry-half": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z125-geometry-half.png",
+      "sha256": "de144f39a22130aeacc87d6f4922fde2635c74276df5e1f0a1a12c778e6e910e",
+      "exportedFileName": "20935048-C554-4A75-9EFC-93E444BA8879.png",
+      "timestamp": 1794790268.292,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z125-geometry-native": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z125-geometry-native.png",
+      "sha256": "0f5b51e6746d7b1a2e0af178f125fba80dc42620a456f382c2d3619489eb6ecc",
+      "exportedFileName": "9F2D5D04-BF80-46EF-98F5-6E3BCDB27CBB.png",
+      "timestamp": 1794790268.223,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z125-grayscale": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z125-grayscale.png",
+      "sha256": "4600a2df8ec1e0a95cb2246f363a27131b3b33970690604470d67fca406fdb1f",
+      "exportedFileName": "70622AF5-CADE-4180-A871-7294EAD889E2.png",
+      "timestamp": 1794790267.867,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z125-half": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z125-half.png",
+      "sha256": "2b55ccf8b2cba8cd923668e4807aa1cf0ba9b7447091f1dc353c182117c72af0",
+      "exportedFileName": "199CD742-DE80-4AD0-BC1F-369264BC3118.png",
+      "timestamp": 1794790267.62,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z125-native": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z125-native.png",
+      "sha256": "0122ff6ef95ccd23d5e2e56b232738e01c42eece6cc57409a5468e533f3a4743",
+      "exportedFileName": "E1AB9875-8C9C-47E7-804F-37167AFAD15D.png",
+      "timestamp": 1794790267.553,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z100-metrics": {
+      "path": "metrics/BP001-trial-quiet-street-reference-fit-z100-metrics.json",
+      "sha256": "4ffee33632fbac1baf504936235676f6b2b03ed29325082f002d607a2dbb3762",
+      "exportedFileName": "558BAB16-3C2D-46AB-AF4F-6D05DD56C1F5.json",
+      "timestamp": 1794790267.185,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z100-geometry-grayscale": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z100-geometry-grayscale.png",
+      "sha256": "4293bffe928a068abc0671f7212229a4c9f0c6fd04d43821042d351351264adc",
+      "exportedFileName": "18B8E2EE-A72D-4E93-B972-FD0D8A441BD7.png",
+      "timestamp": 1794790267.18,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z100-geometry-half": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z100-geometry-half.png",
+      "sha256": "03fa64af41ec38224c943eef850cff6fba8ec134b784ead1b2e5ae0e09ace676",
+      "exportedFileName": "3BA02BBD-3DCD-4D0E-A15F-C2146844CEDD.png",
+      "timestamp": 1794790266.923,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z100-geometry-native": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z100-geometry-native.png",
+      "sha256": "dbcb3f609f9955b8450c42362d8e9d6639e15d50706e8ee23789fef40d8266e0",
+      "exportedFileName": "AD6530F6-75B5-4D4D-A0CB-0C8FE57CFDFE.png",
+      "timestamp": 1794790266.855,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z100-grayscale": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z100-grayscale.png",
+      "sha256": "8ebd9cd70401337b0739da868af6bf723ba586afd8328b3d04098292908c2177",
+      "exportedFileName": "F2EA4CA2-9718-445C-8A4A-842230009A73.png",
+      "timestamp": 1794790266.502,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z100-half": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z100-half.png",
+      "sha256": "5ad3c9ba1c8aacd7426f2a86820fb602bd866a3826401c8e2a107efe8f0749a2",
+      "exportedFileName": "C30DBC4E-AEA2-4314-A79B-88BB0BCAF9F6.png",
+      "timestamp": 1794790266.245,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    },
+    "BP001-trial-quiet-street-reference-fit-z100-native": {
+      "path": "plates/BP001-trial-quiet-street-reference-fit-z100-native.png",
+      "sha256": "79a7d8e7fa2b9ca00110dcc163f75b4350f09201f5d4eeb4072fd5ad1f64a2be",
+      "exportedFileName": "D6862F9C-050B-4468-B18A-52945A27D4B9.png",
+      "timestamp": 1794790266.177,
+      "deviceName": "iPhone 17 Pro",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3"
+    }
+  }
+}
