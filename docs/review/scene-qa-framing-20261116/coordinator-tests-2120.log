@@ -1,0 +1,42 @@
+test_actual_v5_not_admitted_as_v6 (test_native.FramingTests.test_actual_v5_not_admitted_as_v6) ... ok
+test_center_only_keeps_vertical_framing (test_native.FramingTests.test_center_only_keeps_vertical_framing) ... ok
+test_clipped_actor_even_with_consistent_measurement_rejected (test_native.FramingTests.test_clipped_actor_even_with_consistent_measurement_rejected) ... ok
+test_discovery_import_collisions_do_not_select_other_native (test_native.FramingTests.test_discovery_import_collisions_do_not_select_other_native) ... ok
+test_forged_control_bounds_or_activation_zone_rejected (test_native.FramingTests.test_forged_control_bounds_or_activation_zone_rejected) ... ok
+test_measured_canvas_must_equal_registered_canvas (test_native.FramingTests.test_measured_canvas_must_equal_registered_canvas) ... ok
+test_missing_or_duplicate_controls_and_actor_bounds_rejected (test_native.FramingTests.test_missing_or_duplicate_controls_and_actor_bounds_rejected) ... ok
+test_nonfinite_measured_bound_rejected (test_native.FramingTests.test_nonfinite_measured_bound_rejected) ... ok
+test_only_center_may_change_in_manifest (test_native.FramingTests.test_only_center_may_change_in_manifest) ... ok
+test_overlap_even_with_consistent_measured_rectangle_rejected (test_native.FramingTests.test_overlap_even_with_consistent_measured_rectangle_rejected) ... ok
+test_prepare_keeps_prior_outputs_and_exact_sources (test_native.FramingTests.test_prepare_keeps_prior_outputs_and_exact_sources) ... ok
+test_prior_v5_guards_still_enforced (test_native.FramingTests.test_prior_v5_guards_still_enforced) ... ok
+test_static_harness_contract (test_native.FramingTests.test_static_harness_contract) ... ok
+test_synthetic_all_six_captures (test_native.FramingTests.test_synthetic_all_six_captures) ... ok
+test_unauthorized_center_rejected (test_native.FramingTests.test_unauthorized_center_rejected) ... ok
+test_v5_known_camera_stick_overlap_red_witness (test_native.FramingTests.test_v5_known_camera_stick_overlap_red_witness) ... ok
+test_v6_test_identity_not_v5_and_no_skip (test_native.FramingTests.test_v6_test_identity_not_v5_and_no_skip) ... ok
+test_wrapper_does_not_mutate_callers_or_v5_globals (test_native.FramingTests.test_wrapper_does_not_mutate_callers_or_v5_globals) ... ok
+test_edited_bytes_rejected (test_retained.RetainedV6Tests.test_edited_bytes_rejected) ... ok
+test_executable_hash_disagreement (test_retained.RetainedV6Tests.test_executable_hash_disagreement) ... ok
+test_extra_file_rejected (test_retained.RetainedV6Tests.test_extra_file_rejected) ... ok
+test_historical_v5_not_current (test_retained.RetainedV6Tests.test_historical_v5_not_current) ... ok
+test_image_hash_disagreement_even_after_report_rehash (test_retained.RetainedV6Tests.test_image_hash_disagreement_even_after_report_rehash) ... ok
+test_import_collision_safe (test_retained.RetainedV6Tests.test_import_collision_safe) ... ok
+test_preparation_hash_disagreement (test_retained.RetainedV6Tests.test_preparation_hash_disagreement) ... ok
+test_rehashed_actor_canvas_forgery_rejected (test_retained.RetainedV6Tests.test_rehashed_actor_canvas_forgery_rejected) ... ok
+test_rehashed_footprint_forgery_rejected (test_retained.RetainedV6Tests.test_rehashed_footprint_forgery_rejected) ... ok
+test_rehashed_ground_forgery_rejected (test_retained.RetainedV6Tests.test_rehashed_ground_forgery_rejected) ... ok
+test_rehashed_ground_source_adapter_forgery_rejected (test_retained.RetainedV6Tests.test_rehashed_ground_source_adapter_forgery_rejected) ... ok
+test_rehashed_outline_forgery_rejected (test_retained.RetainedV6Tests.test_rehashed_outline_forgery_rejected) ... ok
+test_rehashed_projected_shadow_forgery_rejected (test_retained.RetainedV6Tests.test_rehashed_projected_shadow_forgery_rejected) ... ok
+test_rehashed_shadow_forgery_rejected (test_retained.RetainedV6Tests.test_rehashed_shadow_forgery_rejected) ... ok
+test_rehashed_visible_control_forgery_rejected (test_retained.RetainedV6Tests.test_rehashed_visible_control_forgery_rejected) ... ok
+test_source_read_provenance_disagreement (test_retained.RetainedV6Tests.test_source_read_provenance_disagreement) ... ok
+test_symlink_and_extra_file_rejected (test_retained.RetainedV6Tests.test_symlink_and_extra_file_rejected) ... ok
+test_synthetic_packet_contract_only (test_retained.RetainedV6Tests.test_synthetic_packet_contract_only) ... ok
+test_unearned_acceptance_rejected (test_retained.RetainedV6Tests.test_unearned_acceptance_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 3.289s
+
+OK

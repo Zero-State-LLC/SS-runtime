@@ -122,7 +122,10 @@ jobs:
           python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/scene-qa-repair-20261116 -p 'test_*.py'
           python3 -B -W error::ResourceWarning docs/review/scene-qa-repair-20261116/ground/test_ground.py
           python3 -B docs/review/scene-qa-repair-20261116/retained.py docs/review/scene-qa-repair-20261116/native-capture-v5
-          node docs/review/scene-qa-repair-20261116/gallery/test_evidence.js
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/scene-qa-framing-20261116 -p 'test_*.py'
+          python3 -B docs/review/scene-qa-framing-20261116/retained.py docs/review/scene-qa-framing-20261116/native-capture-v6
+          node docs/review/scene-qa-repair-20261116/gallery/test_evidence.js --require-v6
+          node docs/review/scene-qa-repair-20261116/gallery/test_loader.js
       - name: Test retained playback failure diagnosis without hiding the failure
         run: python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/playback237-diagnosis-20261116 -p 'test_trace_probe.py' -v
       - name: Byte-compare bundled contracts and fixtures against the pinned SS-specs

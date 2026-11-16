@@ -1,0 +1,26 @@
+{
+  "observedAtUTC": "2026-11-16T21:28:24Z",
+  "browser": "Brave",
+  "gallery": "scene-qa-repair-20261116/gallery/",
+  "versions": ["v4", "v5", "v6"],
+  "controlCombinations": 162,
+  "imageDisplaysChecked": 216,
+  "zooms": [1, 1.25, 1.4],
+  "arms": ["paired", "control", "candidate"],
+  "logicalSizes": [[704, 326], [352, 163]],
+  "grayscaleSequence": [false, true, false],
+  "capturedGrayscaleSelectionAndColorRestoration": true,
+  "referenceDimensions": [1672, 941],
+  "referenceGrayscaleRestoration": true,
+  "pageHorizontalOverflow": false,
+  "v6Label": "v6 isolated framing: hash-verified capture, not acceptance",
+  "preImportV6MissingEvidence": {"httpStatus": 404, "captureImages": 0, "controlsDisabled": true, "fallback": false},
+  "failedProbeNotes": [
+    "Decision-service handoff returned401, so checks used direct browser actions on the same tab.",
+    "Initial probe incorrectly expected CSS grayscale on captured images. Gallery correctly selects retained grayscale PNGs. Corrected probe checks evidence filename and original blob URL restoration.",
+    "A polling-based all-controls probe exceeded the30-second tool budget. Reload cleared it. Event-driven MutationObserver/image-load checks completed162combinations in the real page without changing gallery code."
+  ],
+  "ownerAcceptance": false,
+  "physicalDeviceEvidence": false,
+  "dynamicGameplayEvidence": false
+}

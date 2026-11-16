@@ -1,0 +1,27 @@
+[stderr] .......................................
+[stderr] ----------------------------------------------------------------------
+[stderr] Ran 39 tests in 2.103s
+[stderr] 
+[stderr] OK
+{
+  "status": "RETAINED_BYTES_AND_CONTRACT_VERIFIED_NOT_NEW_NATIVE_RUN",
+  "fixtureVersion": "source-scene-qa-006-control-framing",
+  "captures": 6,
+  "images": 18,
+  "ownerAcceptance": false,
+  "physicalDeviceEvidence": false,
+  "binaryCheck": "agreement of preserved original import records, not a fresh local binary comparison"
+}
+{
+  "status": "RETAINED_BYTES_AND_CONTRACT_VERIFIED_NOT_NEW_NATIVE_RUN",
+  "fixtureVersion": "source-scene-qa-005-footprint-ground",
+  "captures": 6,
+  "images": 18,
+  "ownerAcceptance": false,
+  "physicalDeviceEvidence": false,
+  "binaryCheck": "agreement of preserved original import records, not a fresh local binary comparison"
+}
+{"result":"PASS","actualCaptureVersions":3,"images":54,"selections":72,"rejectedMutations":22,"syntheticV6RejectedMutations":15,"v6NativeEvidence":true,"browserEvidence":false}
+{"result":"PASS","missingV6":true,"mismatchedCaptureRejected":true,"corruptedPNGRejected":true,"corruptedRecordRejected":true,"syntheticV6Only":true,"noFallback":true,"retainedV5Selections":36,"browserEvidence":false,"nativeRun":false}
+
+--- Command finished with exit code: 0 ---

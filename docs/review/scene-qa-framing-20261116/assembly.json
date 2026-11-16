@@ -1,0 +1,230 @@
+{
+  "schema": "scene-source-assembly-001",
+  "evidenceKind": "OFFLINE_REVIEW_ONLY",
+  "gameplayAuthority": "NONE_COLLISION_AND_FIELDS_UNCHANGED",
+  "projection": "D108_X_MINUS_Y_Y_PLUS_X_HALF",
+  "canvasPixels": [
+    704,
+    352
+  ],
+  "viewCenterWorld": [
+    684,
+    724
+  ],
+  "pixelsPerWorldUnit": 0.8,
+  "contextDependencies": [
+    {
+      "path": "docs/review/scene-source-assembly-20261116/authoritative-placement-1014.json",
+      "sha256": "b112b8685dd03c1cd1fd0214f7b010e33dbde3e714c5f21e4e48c4e342238e07"
+    },
+    {
+      "path": "docs/review/scene-source-assembly-20261116/authoritative-placement-1014-export-manifest.json",
+      "sha256": "fefd43866f4b753a88db4b8827e7bcee10d08863da4e4c8efd78e724458864e6"
+    },
+    {
+      "path": "docs/review/paving-corner-review-20261116/source.json",
+      "sha256": "3fabc473f8469241fb928c7dc7b8281c6e6e8e304d6789f7e9387eaf66ea6f1b"
+    },
+    {
+      "path": "docs/review/paving-corner-review-20261116/manifest.json",
+      "sha256": "d1aa4d017362038ece657d36719871fac6203810c6790bc96f4ffcb3ed786ba9"
+    },
+    {
+      "path": "docs/review/paving-corner-review-20261116/build.py",
+      "sha256": "a5dedc85a67ba91d85efccea6be7bb2d0e9d46e31da7be33659f92bd15f0c061"
+    },
+    {
+      "path": "docs/review/paving-repeat-repair-20261116/revision02/paving-muted-candidate.png",
+      "sha256": "7a1f29c7b0f1a0a96e12484de84da21e7ab4ebee10cab2e829ed19309ca17d35"
+    },
+    {
+      "path": "intent/2026-11-16-scene-qa-repair.md",
+      "sha256": "9a6fd7e917edec942f8f24b77f6e74e34d57361dc48161124e92e79ae457b7d4"
+    },
+    {
+      "path": "AppTests/SceneQAReviewDepth.swift",
+      "sha256": "c15b85a01ceb957e1567900b23126e2429febd9811e3d5c6d5dd1a225a89cea6"
+    },
+    {
+      "path": "docs/review/scene-qa-repair-20261116/ground/build.py",
+      "sha256": "cc149ddaaa23b62faf8286cf3be102afac6626cdda51626b5dc202995e3e48e5"
+    },
+    {
+      "path": "docs/review/scene-qa-repair-20261116/ground/manifest.json",
+      "sha256": "e357fd4f9cb874914ef5db079f4be1862297553df4b35932b98f27e5d32b1910"
+    }
+  ],
+  "sources": [
+    {
+      "role": "paving",
+      "status": "recommended",
+      "image": {
+        "path": "docs/review/scene-qa-repair-20261116/ground/ground-patch-square.png",
+        "sha256": "f4a3f542d8879b036c1a1979ab5fa03356b69350181fb526e190098982191dac"
+      },
+      "registration": {
+        "canvasPixels": [
+          4608,
+          4608
+        ],
+        "rootPixelsTopLeft": [
+          0,
+          4608
+        ],
+        "worldPosition": [
+          0,
+          0
+        ],
+        "drawSizeWorld": [
+          2304,
+          2304
+        ],
+        "kind": "ground",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": {
+        "reviewerRole": "coordinator",
+        "decision": "recommended",
+        "scope": "bounded-material-layout",
+        "sourceSHA256": "f4a3f542d8879b036c1a1979ab5fa03356b69350181fb526e190098982191dac",
+        "registrationSHA256": "55b1f6671633a2b8fad5077d369b82a558555dacd7ac097119f88c74d1787b2e",
+        "evidence": {
+          "path": "docs/review/scene-qa-repair-20261116/COORDINATOR-GROUND.md",
+          "sha256": "b49dddd5df386463e832f7f9d78b26393cf60011c26b61fedfaa0ecba6ead4ba"
+        },
+        "transcription": "Bounded continuous-ground seam repair only. Square source is uniformly sampled, clipped to authoritative arena[0,0,2304,1536]. No layout/authority/source admission or owner acceptance."
+      }
+    },
+    {
+      "role": "camera",
+      "status": "recommended",
+      "image": {
+        "path": "docs/review/camera-raster-material-20261116/painted-assembly/padded-final/final/camera-master.png",
+        "sha256": "1343507b7517cd2a4848810b14aca88644677f35266ec8299dcbbf8347ef5ab1"
+      },
+      "registration": {
+        "canvasPixels": [
+          204,
+          450
+        ],
+        "rootPixelsTopLeft": [
+          58,
+          427
+        ],
+        "worldPosition": [
+          496,
+          672
+        ],
+        "drawSizeWorld": [
+          46.85167464114833,
+          103.34928229665071
+        ],
+        "kind": "upright",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": {
+        "reviewerRole": "coordinator",
+        "decision": "recommended",
+        "scope": "isolated-ordinary-scene",
+        "sourceSHA256": "1343507b7517cd2a4848810b14aca88644677f35266ec8299dcbbf8347ef5ab1",
+        "registrationSHA256": "3678d519f914417b37ff1bc52cdba5fb176eac1bc87554c0f21c4ee6f14aeefd",
+        "evidence": {
+          "path": "docs/review/camera-raster-material-20261116/painted-assembly/COORDINATOR-REVIEW.md",
+          "sha256": "0ae470a74ea0010be3a5de0c78bf5cc42ed2fff194045fca9ba337f47af7eb8f"
+        },
+        "transcription": "Bounded source recommendation only, not fidelity or owner acceptance. Uniform96/418 scale. Actual seed1 Camera id3 [496,672], visible integrity3, from placement probe1014. Field origin and all authoritative solids unchanged. No rejected fallback."
+      }
+    },
+    {
+      "role": "player",
+      "status": "recommended",
+      "image": {
+        "path": "docs/review/player-garment-correspondence-20261116/canonical-identity-02/south-neutral.png",
+        "sha256": "b32bfcba5ac7cee383715d5f0b918e53b2e7be56634886754ab82357431d6ed4"
+      },
+      "registration": {
+        "canvasPixels": [
+          384,
+          416
+        ],
+        "rootPixelsTopLeft": [
+          192,
+          336
+        ],
+        "worldPosition": [
+          736,
+          654
+        ],
+        "drawSizeWorld": [
+          64,
+          69.33333333333333
+        ],
+        "kind": "upright",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": {
+        "reviewerRole": "coordinator",
+        "decision": "recommended",
+        "scope": "isolated-ordinary-scene",
+        "sourceSHA256": "b32bfcba5ac7cee383715d5f0b918e53b2e7be56634886754ab82357431d6ed4",
+        "registrationSHA256": "57c225f922a45b449b2b3f8b521555585cfba45826bb0e679f319b6850e7f27c",
+        "evidence": {
+          "path": "docs/review/player-garment-correspondence-20261116/COORDINATOR-REVIEW.md",
+          "sha256": "ae070c6a4296738c6f1ab30acc7e96734564472ab549344371bb1b28526875e7"
+        },
+        "transcription": "Quiet south-neutral only, uniform1/6 scale and coordinator-directed presentation-only root[736,654]. This is not the seed1 simulation spawn[160,192]. No other facing, motion family, old rejected pilot or owner acceptance."
+      }
+    },
+    {
+      "role": "stone",
+      "status": "recommended",
+      "image": {
+        "path": "docs/review/stone-painted-facade-20261116/output/preview-alpha.png",
+        "sha256": "5b5751602fb5299777a134fcb1dbedf4de1822a8e1375d86505c88056a240539"
+      },
+      "registration": {
+        "canvasPixels": [
+          1000,
+          1200
+        ],
+        "rootPixelsTopLeft": [
+          500,
+          1160
+        ],
+        "worldPosition": [
+          512,
+          640
+        ],
+        "drawSizeWorld": [
+          200,
+          240
+        ],
+        "kind": "upright",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": {
+        "reviewerRole": "coordinator",
+        "decision": "recommended",
+        "scope": "isolated-ordinary-scene",
+        "sourceSHA256": "5b5751602fb5299777a134fcb1dbedf4de1822a8e1375d86505c88056a240539",
+        "registrationSHA256": "605c2f01bfb3bca6a8966669370ba6b5be63368c06d879df8a429c6d12814dd2",
+        "evidence": {
+          "path": "docs/review/stone-painted-facade-20261116/COORDINATOR-REVIEW.md",
+          "sha256": "3d779404e838c6428e22ba3627de02d673fcdbafa6d115d26603a4cf2790ac2a"
+        },
+        "transcription": "Bounded source recommendation only. Explicit mesh root, uniform0.2 scale, unchanged solid-03-transit-kiosk[512,640]..[640,768] verified in placement probe1014. Painted stairs and roof prop do not alter collision. Not fidelity or owner acceptance."
+      }
+    }
+  ],
+  "qaRepair": {
+    "issue": 249,
+    "groundBoundsWorld": [
+      0,
+      0,
+      2304,
+      1536
+    ],
+    "sourceUprightsUnchanged": true,
+    "ownerAcceptance": false
+  }
+}
