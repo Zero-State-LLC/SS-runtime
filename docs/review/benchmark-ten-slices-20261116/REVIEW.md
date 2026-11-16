@@ -28,6 +28,16 @@ No complete coherent-scene correction is available yet. Do not relabel a scene a
 
 Read-only `xcrun devicectl list devices` at06:08:49UTC reported one paired available iPhone17Pro. This is hardware availability only, not an installed exact-head build, completed run, physical performance measurement or human acceptance. Do not claim missing hardware as the blocker. No physical app launch or install was performed in this checkpoint.
 
+## Existing-art slices8–10, November16 07:16UTC
+
+| Slice | Independent diagnostic | Still not established |
+|---|---|---|
+| 8: motion/occlusion | Actual0659 focused native1/1,52 captures,824 callback rows,51 selected-texture images.22 portable regressions and156 actual Brave image/size checks passed. | Coherent repaired source scene, all16 poses, complete visible-pixel occlusion, device/performance acceptance. |
+| 9: legal encounters | Actual0710 focused native1/1, independently verified v2 ledger with9 captures and1073 resource records. Dense tick459 visually includes Player, two enemies and a projectile. | Player damage and telegraphs not observed. Static snapshot framing is not live camera-follow. Complete family and visual acceptance remain gated. |
+| 10: viewport/accessibility | Actual0653 focused native1/1,10 captures,7 portable regressions. Actual Brave all10 native and half-size image checks passed. | Physical run, VoiceOver/focus and scrolling reachability. Device is available but project has no configured team/provisioning profile. |
+
+The07:01 encounter pass was rejected because actual runner diagnostics identify a retired v1 test bundle. One non-erasing dedicated-simulator restart produced the valid0710 capture using the corrected binary. Historical attempts and strict rejection remain preserved. #239, #240 and #241 track separate review-harness defects. See `../existing-art-traversal-20261116/COORDINATOR-REVIEW.md` for evidence and limits. This independent progress does not complete blocked source slices3/5/6/7 or grant detailed expansion.
+
 ## Separate outcomes
 
 Technical verification remains scoped to each retained packet and exact run. Coordinator visual review is **NOT MET** overall. Owner acceptance is **NOT GRANTED**. Production admission and merges remain **BLOCKED**. Preserve the independent #237 live-playback and #238 fixed-time-harness issues, original release5/13,0.375s settle, shipping pin, gameplay, collision and Camera field truth.

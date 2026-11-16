@@ -1,0 +1,24 @@
+23:12:22.561 xcodebuild[37580:11397144] Sim SS QA SE 20261115: Unregistering for sim device notification with token 3
+23:12:22.567 xcodebuild[37580:11397144] Calling -[SimDevice getenv:error:] for TESTMANAGERD_SIM_SOCK
+23:12:22.572 xcodebuild[37580:11397144] Sim SS QA SE 20261115 has testmanagerd socket at /private/var/tmp/com.apple.launchd.QKFoPHd5T1/com.apple.testmanagerd.unix-domain.socket
+23:12:22.572 xcodebuild[37580:11397144] Validating test connection socket path (/private/var/tmp/com.apple.launchd.QKFoPHd5T1/com.apple.testmanagerd.unix-domain.socket)
+23:12:22.572 xcodebuild[37580:11397144] Constructing transport for test connection socket
+23:12:22.572 xcodebuild[37580:11397144] Connected socket 35 to testmanagerd for Sim SS QA SE 20261115
+23:12:22.577 xcodebuild[37580:11397144] Initiating control session with IDE capabilities: <XCTCapabilities: 0x7e1798250>: {
+}
+23:12:23.955 xcodebuild[37580:11399487] Got reply to control session initiation request (result:error): <XCTCapabilities: 0x7e17982f0>: {
+    "authorize test session capability" = 1;
+    "automation mode" = 1;
+    "daemon container sandbox extension" = 1;
+    "initiate daemon control session capability" = 4;
+    "initiate test runner session capability" = 2;
+    "record UI interaction capability" = 2;
+    "recording events as source code" = 1;
+    "report crashes capability" = 1;
+    "request log archive capability" = 1;
+    "supports delayed attachment transfers" = 1;
+}: (null)
+23:12:23.956 xcodebuild[37580:11399487] Requesting crash report collection for process names: SSRuntimeTests, testmanagerd, debugserver, backboardd, SpringBoard, FrontBoard, xctest, DTServiceHub, runningboardd, assertiond, SSRuntime
+23:12:24.714 xcodebuild[37580:11400361] Got reply to crash report collection request (error: (null))
+23:12:57.572 xcodebuild[37580:11397144] Requesting authorization for pid 40785
+23:12:57.573 xcodebuild[37580:11405360] Got reply to authorization request for pid 40785 (result:error): 1: (null)

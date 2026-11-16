@@ -1,0 +1,63 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "84297C74-033E-408F-9622-D36BFF32F74E",
+        "deviceName" : "SS QA SE 20261115",
+        "modelName" : "iPhone SE (3rd generation)",
+        "osBuildNumber" : "23F77",
+        "osVersion" : "26.5",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 1,
+      "passedTests" : 0,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "SSRuntime · Built with macOS 26.3.1",
+  "expectedFailures" : 0,
+  "failedTests" : 1,
+  "finishTime" : 1794812129.411,
+  "passedTests" : 0,
+  "result" : "Failed",
+  "skippedTests" : 0,
+  "startTime" : 1794812028.515,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+    {
+      "failureText" : "XCTAssertEqualWithAccuracy failed: (\"735.0\") is not equal to (\"735.53125\") +/- (\"1e-06\")",
+      "targetName" : "SSRuntimeTests",
+      "testIdentifier" : 1,
+      "testIdentifierString" : "ExistingArtTraversalTests/testExistingArtLiveTraversalReversalCollisionPauseAndReducedMotion()",
+      "testIdentifierURL" : "test://com.apple.xcode/SSRuntime/SSRuntimeTests/ExistingArtTraversalTests/testExistingArtLiveTraversalReversalCollisionPauseAndReducedMotion",
+      "testName" : "testExistingArtLiveTraversalReversalCollisionPauseAndReducedMotion()"
+    }
+  ],
+  "title" : "Test - SSRuntime",
+  "topInsights" : [
+    {
+      "category" : "Common Failures",
+      "impact" : "100% of failures",
+      "text" : "154 runs of 1 test failed with XCTAssertEqualWithAccuracy failed: (\"787.0\") is not equal to (\"787.40625\") +/- (\"1e-06\")"
+    },
+    {
+      "category" : "Common Failures",
+      "impact" : "100% of failures",
+      "text" : "128 runs of 1 test failed with XCTAssertEqualWithAccuracy failed: (\"713.0\") is not equal to (\"713.859375\") +/- (\"1e-06\")"
+    },
+    {
+      "category" : "Common Failures",
+      "impact" : "100% of failures",
+      "text" : "124 runs of 1 test failed with XCTAssertEqualWithAccuracy failed: (\"547.0\") is not equal to (\"547.40625\") +/- (\"1e-06\")"
+    }
+  ],
+  "totalTestCount" : 1
+}

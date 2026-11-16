@@ -1,0 +1,478 @@
+Xcode version: 26.5 (17F42)
+23:01:38.513 xcodebuild[75175:11250901] Beginning test session SSRuntimeTests-30392600-BA4A-4414-B4C7-12915AEA4FF2 at 2026-11-15 23:01:38.513 on target <DVTiPhoneSimulator: 0x951bfcf00> {
+		SimDevice: SS QA SE 20261115 (84297C74-033E-408F-9622-D36BFF32F74E, iOS 26.5, Booted)
+} (26.5 (23F77))
+23:01:38.514 xcodebuild[75175:11250901] 	/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
+-project
+SSRuntime.xcodeproj
+-scheme
+SSRuntime
+-sdk
+iphonesimulator
+-destination
+platform=iOS Simulator,id=84297C74-033E-408F-9622-D36BFF32F74E
+-configuration
+Debug
+CODE_SIGNING_ALLOWED=NO
+ENABLE_TESTABILITY=YES
+SS_RENDERER_TEST_CONDITIONS=SS_RENDERER_TEST_SUPPORT
+-derivedDataPath
+/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116
+-resultBundlePath
+/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-encounters-20261116-0701.xcresult
+-parallel-testing-enabled
+NO
+-only-testing:SSRuntimeTests/ExistingArtEncounterTests/testLegalPilotExistingArtEncounterEvidence
+test
+23:01:38.516 xcodebuild[75175:11250901] Test standard output and standard error is at /Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-encounters-20261116-0701.xcresult/Staging/1_Test/Diagnostics/SSRuntimeTests-528B81E1-906B-4F64-8F87-118488267155-Configuration-Test Scheme Action-Iteration-1/SSRuntimeTests-78A1DBD0-F3AA-4A22-81FA-3E4E6A140F41/StandardOutputAndStandardError.txt
+23:01:38.522 xcodebuild[75175:11251337] 📱<DVTiPhoneSimulator (0x951bfcf00), SS QA SE 20261115, unknown class, 26.5 (23F77), 84297C74-033E-408F-9622-D36BFF32F74E> claim LaunchSessionClaim_0x953cb3000 on simulator was issued, 2 claims exist.
+23:01:38.523 xcodebuild[75175:11250901] Setting up test runner session
+23:01:38.523 xcodebuild[75175:11251348] Sim SS QA SE 20261115: Unregistering for sim device notification with token 5
+23:01:38.523 xcodebuild[75175:11251348] Calling -[SimDevice getenv:error:] for TESTMANAGERD_SIM_SOCK
+23:01:38.524 xcodebuild[75175:11250901] Registering/updating daemon-based crash report observer for process names (
+    xctest,
+    debugserver,
+    FrontBoard,
+    assertiond,
+    runningboardd,
+    SpringBoard,
+    testmanagerd,
+    backboardd,
+    DTServiceHub,
+    SSRuntime,
+    SSRuntimeTests
+)
+23:01:38.524 xcodebuild[75175:11251348] Sim SS QA SE 20261115 has testmanagerd socket at /private/var/tmp/com.apple.launchd.Svy79ken8h/com.apple.testmanagerd.unix-domain.socket
+23:01:38.524 xcodebuild[75175:11251348] Validating test connection socket path (/private/var/tmp/com.apple.launchd.Svy79ken8h/com.apple.testmanagerd.unix-domain.socket)
+23:01:38.524 xcodebuild[75175:11251348] Constructing transport for test connection socket
+23:01:38.524 xcodebuild[75175:11251348] Connected socket 38 to testmanagerd for Sim SS QA SE 20261115
+23:01:38.525 xcodebuild[75175:11251348] Received connection for test runner session
+23:01:38.525 xcodebuild[75175:11251348] Listening for proxy connection request from the test bundle
+23:01:38.525 xcodebuild[75175:11250901] Test runner session acquired connection.
+23:01:38.526 xcodebuild[75175:11251348] Initiating session with identifier: 30392600-BA4A-4414-B4C7-12915AEA4FF2
+23:01:38.760 xcodebuild[75175:11250901] Finished requesting crash reports. Continuing with testing.
+23:01:38.760 xcodebuild[75175:11251378] Got reply to session initiation request with identifier 30392600-BA4A-4414-B4C7-12915AEA4FF2 (error: (null))
+23:01:38.793 xcodebuild[75175:11250901] Launch session started.
+23:01:38.812 xcodebuild[75175:11251378] 📱<DVTiPhoneSimulator (0x951bfcf00), SS QA SE 20261115, unknown class, 26.5 (23F77), 84297C74-033E-408F-9622-D36BFF32F74E> claim LaunchSessionClaim_0x953cb3000 on simulator was issued, 2 claims exist.
+23:01:38.827 xcodebuild[75175:11251340] 📱<DVTiPhoneSimulator (0x951bfcf00), SS QA SE 20261115, unknown class, 26.5 (23F77), 84297C74-033E-408F-9622-D36BFF32F74E> claim LaunchSessionClaim_0x953cb3000 on simulator was issued, 2 claims exist.
+23:01:38.827 xcodebuild[75175:11251340] 84297C74-033E-408F-9622-D36BFF32F74E: Registered for sim device notification, got token 8
+23:01:38.827 xcodebuild[75175:11251378] 84297C74-033E-408F-9622-D36BFF32F74E: Unregistering for sim device notification with token 8
+23:01:38.833 xcodebuild[75175:11251340] 84297C74-033E-408F-9622-D36BFF32F74E: Installing app at path: /Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator/SSRuntime.app and options: {
+    SkipWatchAppInstall = 1;
+}
+23:01:44.364 xcodebuild[75175:11251340] 84297C74-033E-408F-9622-D36BFF32F74E: Installed app at path: /Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator/SSRuntime.app and options: {
+    SkipWatchAppInstall = 1;
+}
+23:01:44.371 xcodebuild[75175:11251340] 84297C74-033E-408F-9622-D36BFF32F74E: Launching app with identifier: com.zer0state.surveillancesurvivor and options: {
+    "activate_suspended" = 0;
+    arguments =     (
+    );
+    environment =     {
+        "APP_DISTRIBUTOR_ID_OVERRIDE" = "com.apple.AppStore";
+        "CA_ASSERT_MAIN_THREAD_TRANSACTIONS" = 0;
+        "CA_DEBUG_TRANSACTIONS" = 0;
+        "DYLD_FRAMEWORK_PATH" = "/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator:/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator/PackageFrameworks:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks:/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator:/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator/PackageFrameworks:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks";
+        "DYLD_INSERT_LIBRARIES" = "/usr/lib/libRPAC.dylib:/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator/SSRuntime.app/Frameworks/libXCTestBundleInject.dylib:/Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/usr/lib/libMainThreadChecker.dylib:/usr/lib/libRPAC.dylib:/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator/SSRuntime.app/Frameworks/libXCTestBundleInject.dylib:/Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/usr/lib/libMainThreadChecker.dylib:/usr/lib/libRPAC.dylib";
+        "DYLD_LIBRARY_PATH" = "/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib:/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib";
+        "LLVM_PROFILE_FILE" = "/dev/null";
+        NSUnbufferedIO = YES;
+        "OS_ACTIVITY_DT_MODE" = YES;
+        "PERFC_ENABLE_EXTENDED_DIAGNOSTIC_FORMAT" = 1;
+        "PERFC_ENABLE_PROFILE_MODE" = 1;
+        "PERFC_RESET_INSERT_LIBRARIES" = 1;
+        "PERFC_SUPPRESS_SYSTEM_REPORTS" = 1;
+        "RUN_DESTINATION_DEVICE_NAME" = "SS QA SE 20261115";
+        "RUN_DESTINATION_DEVICE_PLATFORM_IDENTIFIER" = "com.apple.platform.iphonesimulator";
+        "RUN_DESTINATION_DEVICE_UDID" = "84297C74-033E-408F-9622-D36BFF32F74E";
+        "SQLITE_ENABLE_THREAD_ASSERTIONS" = 1;
+        "SWIFT_BACKTRACE" = "enable=no";
+        TERM = dumb;
+        XCInjectBundleInto = unused;
+        "XCODE_SCHEME_NAME" = SSRuntime;
+        XCTestBundleInjectPath = "/usr/lib/libRPAC.dylib:/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator/SSRuntime.app/Frameworks/libXCTestBundleInject.dylib:/Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/usr/lib/libMainThreadChecker.dylib:/usr/lib/libRPAC.dylib:/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator/SSRuntime.app/Frameworks/libXCTestBundleInject.dylib:/Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/usr/lib/libMainThreadChecker.dylib:/usr/lib/libRPAC.dylib";
+        XCTestBundlePath = "PlugIns/SSRuntimeTests.xctest";
+        XCTestConfigurationFilePath = "";
+        XCTestSessionIdentifier = "30392600-BA4A-4414-B4C7-12915AEA4FF2";
+        "__XCODE_BUILT_PRODUCTS_DIR_PATHS" = "/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator";
+        "__XPC_DYLD_FRAMEWORK_PATH" = "/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator:/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator";
+        "__XPC_DYLD_LIBRARY_PATH" = "/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator:/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator";
+        "__XPC_LLVM_PROFILE_FILE" = "/dev/null";
+    };
+    stderr = "/dev/ttys004";
+    stdout = "/dev/ttys004";
+    "terminate_running_process" = 1;
+    "wait_for_debugger" = 1;
+}
+23:01:44.616 xcodebuild[75175:11251337] 84297C74-033E-408F-9622-D36BFF32F74E: Launched app with identifier: com.zer0state.surveillancesurvivor (pid = 76371)
+23:01:44.616 xcodebuild[75175:11251337] 📱<DVTiPhoneSimulator (0x951bfcf00), SS QA SE 20261115, unknown class, 26.5 (23F77), 84297C74-033E-408F-9622-D36BFF32F74E> tracking pid 76371
+23:01:44.617 xcodebuild[75175:11251337] 📱<DVTiPhoneSimulator (0x951bfcf00), SS QA SE 20261115, unknown class, 26.5 (23F77), 84297C74-033E-408F-9622-D36BFF32F74E> checking to see if pid 76371 is valid: kill(pid, 0) = 0 (YES, it's still running)
+23:01:44.618 xcodebuild[75175:11251340] 84297C74-033E-408F-9622-D36BFF32F74E: Registered for sim device notification, got token 10
+23:01:44.618 xcodebuild[75175:11251378] 84297C74-033E-408F-9622-D36BFF32F74E: Unregistering for sim device notification with token 10
+23:01:45.200 xcodebuild[75175:11250901] Test process runnable PID is 76371.
+23:01:45.200 xcodebuild[75175:11251371] XCTHTestOperationStateMachine: Transitioning from state Initial to AcquiredPID
+2026-11-15 23:01:48.450589-0800 SSRuntime[76371:11254081] [plugin] AddInstanceForFactory: No factory registered for id <CFUUID 0x10bde08e0> F8BB1C28-BAE8-11D6-9C31-00039315CD46
+2026-11-15 23:01:48.654101-0800 SSRuntime[76371:11254458] [AudioConverter]     AudioConverterOOP.cpp:1084  Failed to prepare AudioConverterService: -302
+2026-11-15 23:01:48.677441-0800 SSRuntime[76371:11254081] [UIFocus] _TtC18_SpriteKit_SwiftUIP33_4A29C38A751B2448A1E2FA85CDDEAA5324SpriteKitViewCoordinator implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+23:01:49.409 xcodebuild[75175:11250945] Handling proxy channel request from test runner
+23:01:49.409 SSRuntime[76371:11254081] Creating future for 'requesting test configuration' with timeout 600.00
+23:01:49.409 SSRuntime[76371:11254081] Notifying test runner ready
+23:01:49.409 xcodebuild[75175:11250945] Test runner is ready with capabilities: <XCTCapabilities: 0x9510b0180>: {
+    "delayed attachment transfer" = 1;
+    "fetch all test identifiers" = 2;
+    "ubiquitous test identifiers" = 1;
+}
+23:01:49.411 xcodebuild[75175:11250901] Test runner session successfully initiated.
+23:01:49.411 xcodebuild[75175:11250901] Authorizing test process ID 76371
+23:01:49.409 SSRuntime[76371:11254081] <XCTWaiter: 0x10cf7a010> entering wait loop for 600.00s with expectations: `requesting test configuration`
+23:01:49.411 xcodebuild[75175:11250945] XCTHTestOperationStateMachine: Transitioning from state AcquiredPID to ReportedReady
+23:01:49.412 xcodebuild[75175:11250901] Got authorization response from test daemon: Success
+23:01:49.412 xcodebuild[75175:11250901] Registering/updating daemon-based crash report observer for process names (
+    xctest,
+    debugserver,
+    FrontBoard,
+    assertiond,
+    runningboardd,
+    SpringBoard,
+    testmanagerd,
+    backboardd,
+    DTServiceHub,
+    SSRuntime,
+    SSRuntimeTests
+)
+23:01:49.412 xcodebuild[75175:11250901] Telling test runner to start executing tests.
+23:01:49.415 SSRuntime[76371:11254456] Received test runner ready reply. Waiting for request to start running tests.
+23:01:49.415 SSRuntime[76371:11254456] _IDE_startExecutingTestPlanWithProtocolVersion:36
+23:01:49.564 SSRuntime[76371:11254081] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x10cf7a010>
+23:01:49.565 SSRuntime[76371:11254081] Wait <XCTWaiterWait: 0x117da0300> completed after 0.156s
+23:01:49.565 SSRuntime[76371:11254081] cleaning up requesting test configuration
+23:01:49.565 SSRuntime[76371:11254081] Loading test bundle at: file:///Users/appliedalchemylabs/Library/Developer/CoreSimulator/Devices/84297C74-033E-408F-9622-D36BFF32F74E/data/Library/Caches/com.apple.containermanagerd/Dead/temp.2xAkmi/C472D75F-5D11-48A5-8CAF-B2D2FE8BEE79/SSRuntime.app/PlugIns/SSRuntimeTests.xctest/
+23:01:49.565 SSRuntime[76371:11254081] Finished loading test bundle
+23:01:49.566 SSRuntime[76371:11254081] Interop: not enabled, so skipping install
+23:01:49.567 SSRuntime[76371:11254081] Registering in-process symbolication service with image names: SSRuntime, SSRuntimeTests
+23:01:49.567 SSRuntime[76371:11254081] Running tests with active test configuration: <XCTestConfiguration: 0x10770fd80>
+	                  testBundleURL:file:///Users/appliedalchemylabs/Library/Developer/CoreSimulator/Devices/84297C74-033E-408F-9622-D36BFF32F74E/data/Library/Caches/com.apple.containermanagerd/Dead/temp.2xAkmi/C472D75F-5D11-48A5-8CAF-B2D2FE8BEE79/SSRuntime.app/PlugIns/SSRuntimeTests.xctest/
+	         testBundleRelativePath:PlugIns/SSRuntimeTests.xctest
+	              productModuleName:SSRuntimeTests
+	                  testSelection:<XCTTestSelection: 0x10cf7a610>
+	            identifiersToRun:<XCTTestIdentifier leaf, method ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]>, <XCTTestIdentifier container ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]>
+	            identifiersToSkip:
+	            tagsToRun:(null)
+	            tagsToSkip:<XCTTagSelection: 0x10cf9cdc0>
+	            mode:and
+	            tags:{(
+)}
+	  includeXCTests:NO
+
+
+	             reportResultsToIDE:YES
+	               testsDrivenByIDE:NO
+	inProcessParallelizationEnabled:NO
+	              sessionIdentifier:30392600-BA4A-4414-B4C7-12915AEA4FF2
+	      disablePerformanceMetrics:NO
+	treatMissingBaselinesAsFailures:NO
+	                baselineFileURL:(null)
+	       baselineFileRelativePath:(null)
+	          targetApplicationPath:(null)
+	      targetApplicationBundleID:(null)
+	 testApplicationDependencies:
+{
+    "com.zer0state.surveillancesurvivor" = "/Users/appliedalchemylabs/.jcode/scratch/ss-existing-art-native-derived-20261116/Build/Products/Debug-iphonesimulator/SSRuntime.app";
+}
+	 bundleIDsForCrashReportEmphasis:
+{(
+    "com.zer0state.SSRuntimeTests",
+    "com.zer0state.surveillancesurvivor"
+)}
+	 testApplicationUserOverrides:(null)
+	     targetApplicationArguments:
+	   targetApplicationEnvironment:(null)
+	                  reportActivities:YES
+	          testsMustRunOnMainThread:NO
+	            initializeForUITesting:NO
+	            traceCollectionEnabled:(null)
+	 enablePerformanceTestsDiagnostics:(null)
+	 aggregateStatisticsBeforeCrash:
+{
+    XCSuiteRecordsKey =     {
+    };
+}
+	        automationFrameworkPath:/Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework
+	                     emitOSLogs:NO
+	       systemAttachmentLifetime:deleteOnSuccess
+	         userAttachmentLifetime:deleteOnSuccess
+	   preferredScreenCaptureFormat:screenRecording
+	   gatherLocalizableStringsData:NO
+	          testExecutionOrdering:alphabetical
+	    randomExecutionOrderingSeed:(null)
+	               repetitionPolicy:<XCTRepetitionPolicy: 0x10cf9d8c0>
+	            mode:None
+	            maximumIterations:1
+	            repeatInNewRunnerProcess:NO
+
+	       runtimeDiagnosticsPolicy:<XCTRuntimeDiagnosticsPolicy: 0x10cf7a850>
+	            otherRuntimeIssuesDetectionPolicy:<XCTRuntimeIssueDetectionPolicy: 0x10cf9cf40>
+	            detectionEnabled:YES
+	            severity:warning
+
+	            threadPerformanceCheckerRuntimeIssueDetectionPolicy:<XCTRuntimeIssueDetectionPolicy: 0x10cf9cf40>
+	            detectionEnabled:YES
+	            severity:warning
+
+	            mainThreadCheckerDetectionPolicy:<XCTRuntimeIssueDetectionPolicy: 0x10cf9cf40>
+	            detectionEnabled:YES
+	            severity:warning
+
+	            checkedAllocations:disabled
+
+	            testTimeoutsEnabled:NO
+	              leaksCheckingMode:off
+	 defaultTestExecutionTimeAllowance:600
+	 maximumTestExecutionTimeAllowance:0
+	                IDECapabilities:<XCTCapabilities: 0x1076a4190>: {
+    "XCTIssue capability" = 1;
+    "daemon container sandbox extension" = 1;
+    "delayed attachment transfer" = 1;
+    "expected failure test capability" = 1;
+    "in-process test parallelization capability" = 1;
+    "request diagnostics for specific devices" = 1;
+    "runner plan" = 1;
+    "skipped suite capability" = 1;
+    "skipped test capability" = 1;
+    "test case run configurations" = 1;
+    "test iterations" = 2;
+    "test timeout capability" = 1;
+    traits = 1;
+    "ubiquitous test identifiers" = 1;
+    "unified issue recorded" = 1;
+}
+	        symbolicationImageNames:SSRuntime, SSRuntimeTests
+	         applicationBundleInfos:(null)
+
+23:01:49.568 SSRuntime[76371:11254081] <XCTWaiter: 0x10cf79620> entering wait loop for 600.00s with expectations: `requesting ready for testing`
+23:01:49.569 SSRuntime[76371:11254081] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x10cf79620>
+23:01:49.569 SSRuntime[76371:11254081] Wait <XCTWaiterWait: 0x117da14c0> completed after 0.000s
+23:01:49.569 SSRuntime[76371:11254081] cleaning up requesting ready for testing
+23:01:49.569 SSRuntime[76371:11254081] <XCTWaiter: 0x10cf7ac10> entering wait loop for 600.00s with expectations: `IDE proxy`
+23:01:49.569 SSRuntime[76371:11254081] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x10cf7ac10>
+23:01:49.569 SSRuntime[76371:11254081] Wait <XCTWaiterWait: 0x117da1380> completed after 0.000s
+23:01:49.569 SSRuntime[76371:11254081] cleaning up IDE proxy
+23:01:49.569 SSRuntime[76371:11254081] Bypassing UI testing initialization because the test configuration does not request it.
+23:01:49.570 SSRuntime[76371:11254081] Loading test suite...
+23:01:49.573 SSRuntime[76371:11254081] Finished loading test suite, took 0.003s
+23:01:49.574 SSRuntime[76371:11254081] <XCTWaiter: 0x10cf783c0> entering wait loop for 599.82s with expectations: `preparing execution worker`
+23:01:49.726 SSRuntime[76371:11254081] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x10cf783c0>
+23:01:49.726 SSRuntime[76371:11254081] Wait <XCTWaiterWait: 0x117da0dc0> completed after 0.152s
+23:01:49.726 SSRuntime[76371:11254081] cleaning up preparing execution worker
+23:01:49.737 xcodebuild[75175:11250901] Test runner started executing tests.
+23:01:49.727 SSRuntime[76371:11254081] Entering test execution event loop
+23:01:49.737 xcodebuild[75175:11251371] XCTHTestOperationStateMachine: Transitioning from state ReportedReady to ExecutingTests
+23:01:49.765 SSRuntime[76371:11254081] Setting a new interop record handler: Optional(XCTestCore.XCTestInteropRecordHandler())
+23:01:49.766 SSRuntime[76371:11254081] -[XCTRunnerIDESession(_XCTestObservationInternal) testBundleWillStart:]
+23:01:49.766 SSRuntime[76371:11254081] Running suite...
+Test Suite 'Selected tests' started at 2026-11-15 23:01:49.766.
+Test Suite 'SSRuntimeTests.xctest' started at 2026-11-15 23:01:49.767.
+Test Suite 'ExistingArtEncounterTests' started at 2026-11-15 23:01:49.767.
+23:01:49.766 SSRuntime[76371:11254081] -[XCTRunnerIDESession(_XCTestObservationInternal) testSuiteWillStart:]
+23:01:49.768 xcodebuild[75175:11250901] _XCT_testSuiteWithIdentifier:<XCTTestIdentifier container ["Selected tests"]> didStartAt:2026-11-16 07:01:49 +0000 traits:(null)
+23:01:49.773 xcodebuild[75175:11250901] Nothing to delete
+23:01:49.767 SSRuntime[76371:11254081] -[XCTRunnerIDESession(_XCTestObservationInternal) testSuiteWillStart:]
+23:01:49.773 xcodebuild[75175:11250901] _XCT_testSuiteWithIdentifier:<XCTTestIdentifier container []> didStartAt:2026-11-16 07:01:49 +0000 traits:(null)
+23:01:49.773 xcodebuild[75175:11250901] Nothing to delete
+23:01:49.767 SSRuntime[76371:11254081] -[XCTRunnerIDESession(_XCTestObservationInternal) testSuiteWillStart:]
+23:01:49.773 xcodebuild[75175:11250901] _XCT_testSuiteWithIdentifier:<XCTTestIdentifier container, class ["ExistingArtEncounterTests"]> didStartAt:2026-11-16 07:01:49 +0000 traits:(null)
+23:01:49.773 xcodebuild[75175:11250901] Nothing to delete
+23:01:49.778 xcodebuild[75175:11250901] Nothing to delete
+23:01:49.779 xcodebuild[75175:11250901] Nothing to delete
+23:01:49.768 SSRuntime[76371:11254081] -[XCTRuntimeIssueDetectionManager runtimeIssueDetectionEnabled] runtimeIssueDetectionEnabled based on XCTDisableRuntimeIssues and runtime diagnostics policies: YES
+23:01:49.779 xcodebuild[75175:11250901] Nothing to delete
+23:01:49.779 xcodebuild[75175:11250901] Nothing to delete
+23:01:49.780 SSRuntime[76371:11254081] -[XCTRunnerIDESession(_XCTestObservationInternal) testCaseWillStart:] SSRuntimeTests.ExistingArtEncounterTests testLegalPilotExistingArtEncounterEvidence
+Test Case '-[SSRuntimeTests.ExistingArtEncounterTests testLegalPilotExistingArtEncounterEvidence]' started.
+23:01:49.784 xcodebuild[75175:11250901] Nothing to delete
+23:01:49.784 xcodebuild[75175:11250901] _XCT_testCaseDidStartWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]>testCaseRunConfiguration:<XCTestCaseRunConfiguration: 0x953985e40>traits:(null)
+23:01:49.784 xcodebuild[75175:11250901] Test case did start: <XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]>
+23:01:49.784 xcodebuild[75175:11250901] Nothing to delete
+23:01:49.782 SSRuntime[76371:11254081] <XCTWaiter: 0x10b982490> entering indefinite wait loop for expectations: `failable invocation block completion`
+23:01:49.782 SSRuntime[76371:11254081] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x10b982490>
+23:01:49.782 SSRuntime[76371:11254081] Wait <XCTWaiterWait: 0x117da2480> completed after 0.000s
+23:01:49.782 SSRuntime[76371:11254081] cleaning up failable invocation block completion
+23:01:49.889 xcodebuild[75175:11250901] Nothing to delete
+2026-11-15 23:01:50.518754-0800 SSRuntime[76371:11254081] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+objc[76371]: Class UIAccessibilityLoaderWebShared is implemented in both /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x1173dc398) and /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x11a284310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+23:01:52.215 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> started activity <XCActivityRecord: 0x10b9652d0> 2026-11-16 07:01:52 +0000: Added attachment named 'existing-art-tick-1'
+23:01:52.217 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> willStartActivity:<XCActivityRecord: 0x94eeacfc0> 2026-11-16 07:01:52 +0000: Added attachment named 'existing-art-tick-1'
+23:01:52.218 xcodebuild[75175:11250901] Nothing to delete
+23:01:52.216 SSRuntime[76371:11254081] Activity A40928DD-1F0D-48B2-90E3-8E656097DA8C added attachment with name 'existing-art-tick-1', Uniform Type Identifier 'public.png', lifetime 'keepAlways', hasPayload: YES, size (in bytes): 902262.
+23:01:52.216 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> finished activity <XCActivityRecord: 0x10b9652d0> 2026-11-16 07:01:52 +0000: Added attachment named 'existing-art-tick-1' (0.00108504s)
+23:01:52.222 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> didFinishActivity:<XCActivityRecord: 0x950d32b50> 2026-11-16 07:01:52 +0000: Added attachment named 'existing-art-tick-1' (0.00108504s)
+23:01:52.222 xcodebuild[75175:11250901] Nothing to delete
+23:01:53.178 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> started activity <XCActivityRecord: 0x10b9650a0> 2026-11-16 07:01:53 +0000: Added attachment named 'existing-art-tick-57'
+23:01:53.180 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> willStartActivity:<XCActivityRecord: 0x94eeacfc0> 2026-11-16 07:01:53 +0000: Added attachment named 'existing-art-tick-57'
+23:01:53.181 xcodebuild[75175:11250901] Nothing to delete
+23:01:53.179 SSRuntime[76371:11254081] Activity 5670529E-6B0C-41EF-90B5-2151CC8360FC added attachment with name 'existing-art-tick-57', Uniform Type Identifier 'public.png', lifetime 'keepAlways', hasPayload: YES, size (in bytes): 992518.
+23:01:53.179 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> finished activity <XCActivityRecord: 0x10b9650a0> 2026-11-16 07:01:53 +0000: Added attachment named 'existing-art-tick-57' (0.000823021s)
+23:01:53.184 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> didFinishActivity:<XCActivityRecord: 0x94eead030> 2026-11-16 07:01:53 +0000: Added attachment named 'existing-art-tick-57' (0.000823021s)
+23:01:53.184 xcodebuild[75175:11250901] Nothing to delete
+23:01:54.013 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> started activity <XCActivityRecord: 0x10b964f50> 2026-11-16 07:01:54 +0000: Added attachment named 'existing-art-tick-120'
+23:01:54.015 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> willStartActivity:<XCActivityRecord: 0x950d32ae0> 2026-11-16 07:01:54 +0000: Added attachment named 'existing-art-tick-120'
+23:01:54.015 xcodebuild[75175:11250901] Nothing to delete
+23:01:54.014 SSRuntime[76371:11254081] Activity FBD88784-6DBE-45B6-AE65-FE433ADCDD78 added attachment with name 'existing-art-tick-120', Uniform Type Identifier 'public.png', lifetime 'keepAlways', hasPayload: YES, size (in bytes): 906618.
+23:01:54.014 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> finished activity <XCActivityRecord: 0x10b964f50> 2026-11-16 07:01:54 +0000: Added attachment named 'existing-art-tick-120' (0.000923038s)
+23:01:54.020 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> didFinishActivity:<XCActivityRecord: 0x950d32bc0> 2026-11-16 07:01:54 +0000: Added attachment named 'existing-art-tick-120' (0.000923038s)
+23:01:54.021 xcodebuild[75175:11250901] Nothing to delete
+2026-11-15 23:01:54.455845-0800 SSRuntime[76371:11254081] [autopilot] vfx tick=161 recipe=enemyHit language=compactSpark hitStopMs=50 shake=false
+2026-11-15 23:01:54.456118-0800 SSRuntime[76371:11254081] [autopilot] vfx tick=161 recipe=enemyDefeat language=fourToEightParticles hitStopMs=50 shake=false
+23:01:54.739 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> started activity <XCActivityRecord: 0x10b964d20> 2026-11-16 07:01:54 +0000: Added attachment named 'existing-art-tick-161'
+23:01:54.740 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> willStartActivity:<XCActivityRecord: 0x950d32ae0> 2026-11-16 07:01:54 +0000: Added attachment named 'existing-art-tick-161'
+23:01:54.741 xcodebuild[75175:11250901] Nothing to delete
+23:01:54.739 SSRuntime[76371:11254081] Activity C08EAB46-A912-46C8-8FBF-F46A17D084D3 added attachment with name 'existing-art-tick-161', Uniform Type Identifier 'public.png', lifetime 'keepAlways', hasPayload: YES, size (in bytes): 1051847.
+23:01:54.739 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> finished activity <XCActivityRecord: 0x10b964d20> 2026-11-16 07:01:54 +0000: Added attachment named 'existing-art-tick-161' (0.00067699s)
+23:01:54.744 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> didFinishActivity:<XCActivityRecord: 0x950d32c30> 2026-11-16 07:01:54 +0000: Added attachment named 'existing-art-tick-161' (0.00067699s)
+23:01:54.745 xcodebuild[75175:11250901] Nothing to delete
+23:01:55.783 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> started activity <XCActivityRecord: 0x10b964bd0> 2026-11-16 07:01:55 +0000: Added attachment named 'existing-art-tick-321'
+23:01:55.784 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> willStartActivity:<XCActivityRecord: 0x94eeacfc0> 2026-11-16 07:01:55 +0000: Added attachment named 'existing-art-tick-321'
+23:01:55.785 xcodebuild[75175:11250901] Nothing to delete
+23:01:55.784 SSRuntime[76371:11254081] Activity 74AC23E9-A5B9-4AFC-A490-37E080A38827 added attachment with name 'existing-art-tick-321', Uniform Type Identifier 'public.png', lifetime 'keepAlways', hasPayload: YES, size (in bytes): 923476.
+23:01:55.784 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> finished activity <XCActivityRecord: 0x10b964bd0> 2026-11-16 07:01:55 +0000: Added attachment named 'existing-art-tick-321' (0.00107408s)
+23:01:55.790 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> didFinishActivity:<XCActivityRecord: 0x950d32ae0> 2026-11-16 07:01:55 +0000: Added attachment named 'existing-art-tick-321' (0.00107408s)
+23:01:55.790 xcodebuild[75175:11250901] Nothing to delete
+23:01:56.747 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> started activity <XCActivityRecord: 0x10b964bd0> 2026-11-16 07:01:56 +0000: Added attachment named 'existing-art-tick-459'
+23:01:56.748 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> willStartActivity:<XCActivityRecord: 0x950d32ca0> 2026-11-16 07:01:56 +0000: Added attachment named 'existing-art-tick-459'
+23:01:56.748 xcodebuild[75175:11250901] Nothing to delete
+23:01:56.748 SSRuntime[76371:11254081] Activity BAACBDA2-D6CB-4CF3-AFB5-760616FB6659 added attachment with name 'existing-art-tick-459', Uniform Type Identifier 'public.png', lifetime 'keepAlways', hasPayload: YES, size (in bytes): 1110334.
+23:01:56.748 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> finished activity <XCActivityRecord: 0x10b964bd0> 2026-11-16 07:01:56 +0000: Added attachment named 'existing-art-tick-459' (0.000993013s)
+23:01:56.755 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> didFinishActivity:<XCActivityRecord: 0x950d32d10> 2026-11-16 07:01:56 +0000: Added attachment named 'existing-art-tick-459' (0.000993013s)
+23:01:56.755 xcodebuild[75175:11250901] Nothing to delete
+2026-11-15 23:01:57.996727-0800 SSRuntime[76371:11254081] [autopilot] vfx tick=844 recipe=cameraDestroyed language=lensShatterAndSparkBurst hitStopMs=50 shake=true
+23:01:58.274 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> started activity <XCActivityRecord: 0x10b9649a0> 2026-11-16 07:01:58 +0000: Added attachment named 'existing-art-tick-844'
+23:01:58.275 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> willStartActivity:<XCActivityRecord: 0x950d32ca0> 2026-11-16 07:01:58 +0000: Added attachment named 'existing-art-tick-844'
+23:01:58.276 xcodebuild[75175:11250901] Nothing to delete
+23:01:58.275 SSRuntime[76371:11254081] Activity 49839097-2392-4541-B4FF-FD9DCF616992 added attachment with name 'existing-art-tick-844', Uniform Type Identifier 'public.png', lifetime 'keepAlways', hasPayload: YES, size (in bytes): 1169997.
+23:01:58.275 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> finished activity <XCActivityRecord: 0x10b9649a0> 2026-11-16 07:01:58 +0000: Added attachment named 'existing-art-tick-844' (0.00135803s)
+23:01:58.283 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> didFinishActivity:<XCActivityRecord: 0x950d32d80> 2026-11-16 07:01:58 +0000: Added attachment named 'existing-art-tick-844' (0.00135803s)
+23:01:58.283 xcodebuild[75175:11250901] Nothing to delete
+23:02:03.223 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> started activity <XCActivityRecord: 0x10b9649a0> 2026-11-16 07:02:03 +0000: Added attachment named 'existing-art-tick-2224'
+23:02:03.224 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> willStartActivity:<XCActivityRecord: 0x950d32ca0> 2026-11-16 07:02:03 +0000: Added attachment named 'existing-art-tick-2224'
+23:02:03.225 xcodebuild[75175:11250901] Nothing to delete
+23:02:03.224 SSRuntime[76371:11254081] Activity 632848E5-4C18-4FD5-AAC4-80769D359C53 added attachment with name 'existing-art-tick-2224', Uniform Type Identifier 'public.png', lifetime 'keepAlways', hasPayload: YES, size (in bytes): 1032604.
+23:02:03.224 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> finished activity <XCActivityRecord: 0x10b9649a0> 2026-11-16 07:02:03 +0000: Added attachment named 'existing-art-tick-2224' (0.000715017s)
+23:02:03.230 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> didFinishActivity:<XCActivityRecord: 0x950d32df0> 2026-11-16 07:02:03 +0000: Added attachment named 'existing-art-tick-2224' (0.000715017s)
+23:02:03.230 xcodebuild[75175:11250901] Nothing to delete
+23:02:08.997 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> started activity <XCActivityRecord: 0x10b9645b0> 2026-11-16 07:02:08 +0000: Added attachment named 'existing-art-tick-3625'
+23:02:08.998 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> willStartActivity:<XCActivityRecord: 0x950d32ca0> 2026-11-16 07:02:08 +0000: Added attachment named 'existing-art-tick-3625'
+23:02:08.998 xcodebuild[75175:11250901] Nothing to delete
+23:02:08.998 SSRuntime[76371:11254081] Activity D2EF30D1-A81B-49FD-A6B8-766F147AA3D5 added attachment with name 'existing-art-tick-3625', Uniform Type Identifier 'public.png', lifetime 'keepAlways', hasPayload: YES, size (in bytes): 1266166.
+23:02:08.998 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> finished activity <XCActivityRecord: 0x10b9645b0> 2026-11-16 07:02:08 +0000: Added attachment named 'existing-art-tick-3625' (0.00104606s)
+23:02:09.004 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> didFinishActivity:<XCActivityRecord: 0x950d32e60> 2026-11-16 07:02:08 +0000: Added attachment named 'existing-art-tick-3625' (0.00104606s)
+23:02:09.005 xcodebuild[75175:11250901] Nothing to delete
+23:02:18.626 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> started activity <XCActivityRecord: 0x10b9645b0> 2026-11-16 07:02:18 +0000: Added attachment named 'existing-art-legal-commands'
+23:02:18.626 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> willStartActivity:<XCActivityRecord: 0x950d32ca0> 2026-11-16 07:02:18 +0000: Added attachment named 'existing-art-legal-commands'
+23:02:18.627 xcodebuild[75175:11250901] Nothing to delete
+23:02:18.626 SSRuntime[76371:11254081] Activity E9CE0A21-1B97-471F-9E38-E9B7A4AA06E3 added attachment with name 'existing-art-legal-commands', Uniform Type Identifier 'public.json', lifetime 'keepAlways', hasPayload: YES, size (in bytes): 241688.
+23:02:18.626 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> finished activity <XCActivityRecord: 0x10b9645b0> 2026-11-16 07:02:18 +0000: Added attachment named 'existing-art-legal-commands' (0.000540018s)
+23:02:18.627 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> didFinishActivity:<XCActivityRecord: 0x950d32f40> 2026-11-16 07:02:18 +0000: Added attachment named 'existing-art-legal-commands' (0.000540018s)
+23:02:18.628 xcodebuild[75175:11250901] Nothing to delete
+23:02:49.695 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> started activity <XCActivityRecord: 0x10b9645b0> 2026-11-16 07:02:49 +0000: Added attachment named 'existing-art-encounter-records'
+23:02:49.697 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> willStartActivity:<XCActivityRecord: 0x950d33090> 2026-11-16 07:02:49 +0000: Added attachment named 'existing-art-encounter-records'
+23:02:49.698 xcodebuild[75175:11250901] Nothing to delete
+23:02:49.697 SSRuntime[76371:11254081] Activity B5806B24-95B8-4225-BB45-C98BFBD68CE1 added attachment with name 'existing-art-encounter-records', Uniform Type Identifier 'public.json', lifetime 'keepAlways', hasPayload: YES, size (in bytes): 291516.
+23:02:49.697 SSRuntime[76371:11254081] <XCTContext: 0x117f63f20> finished activity <XCActivityRecord: 0x10b9645b0> 2026-11-16 07:02:49 +0000: Added attachment named 'existing-art-encounter-records' (0.00159502s)
+23:02:49.699 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> didFinishActivity:<XCActivityRecord: 0x950d33100> 2026-11-16 07:02:49 +0000: Added attachment named 'existing-art-encounter-records' (0.00159502s)
+23:02:49.700 xcodebuild[75175:11250901] Nothing to delete
+23:02:49.724 SSRuntime[76371:11254081] <XCTWaiter: 0x10767b8a0> entering indefinite wait loop for expectations: `failable invocation block completion`
+23:02:49.724 SSRuntime[76371:11254081] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x10767b8a0>
+23:02:49.724 SSRuntime[76371:11254081] Wait <XCTWaiterWait: 0x11b46cdc0> completed after 0.000s
+23:02:49.724 SSRuntime[76371:11254081] cleaning up failable invocation block completion
+Test Case '-[SSRuntimeTests.ExistingArtEncounterTests testLegalPilotExistingArtEncounterEvidence]' passed (59.945 seconds).
+23:02:49.724 SSRuntime[76371:11254081] -[XCTRunnerIDESession(_XCTestObservationInternal) testCaseDidFinish:]
+23:02:49.725 xcodebuild[75175:11250901] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]> didFinishWithStatus:passed duration:59.94474303722382
+23:02:49.726 xcodebuild[75175:11250901] Test case (<XCTTestIdentifier leaf, method, swift ["ExistingArtEncounterTests", "testLegalPilotExistingArtEncounterEvidence"]>) finished - enqueuing console chunks to delegate.
+23:02:49.726 xcodebuild[75175:11250901] Nothing to delete
+23:02:49.725 SSRuntime[76371:11254081] -[XCTRunnerIDESession(_XCTestObservationInternal) testSuiteDidFinish:]
+Test Suite 'ExistingArtEncounterTests' passed at 2026-11-15 23:02:49.725.
+	 Executed 1 test, with 0 failures (0 unexpected) in 59.945 (59.957) seconds
+Test Suite 'SSRuntimeTests.xctest' passed at 2026-11-15 23:02:49.725.
+	 Executed 1 test, with 0 failures (0 unexpected) in 59.945 (59.959) seconds
+Test Suite 'Selected tests' passed at 2026-11-15 23:02:49.726.
+	 Executed 1 test, with 0 failures (0 unexpected) in 59.945 (59.960) seconds
+23:02:49.726 xcodebuild[75175:11250901] _XCT_testSuiteWithIdentifier:<XCTTestIdentifier container, class ["ExistingArtEncounterTests"]> didFinishAt:2026-11-16 07:02:49 +0000 runCount:1 skipCount:0 failureCount:0 expectedFailureCount:0 uncaughtExceptionCount:0 testDuration:59.94474303722382 totalDuration:59.95747196674347
+23:02:49.726 xcodebuild[75175:11250901] Nothing to delete
+23:02:49.731 xcodebuild[75175:11250901] Nothing to delete
+23:02:49.725 SSRuntime[76371:11254081] Activity statistics for ExistingArtEncounterTests:
+23:02:49.725 SSRuntime[76371:11254081] 0.01s : Other
+23:02:49.725 SSRuntime[76371:11254081] Total time in activities: 0.01s
+23:02:49.725 SSRuntime[76371:11254081] -[XCTRunnerIDESession(_XCTestObservationInternal) testSuiteDidFinish:]
+23:02:49.731 xcodebuild[75175:11250901] _XCT_testSuiteWithIdentifier:<XCTTestIdentifier container []> didFinishAt:2026-11-16 07:02:49 +0000 runCount:1 skipCount:0 failureCount:0 expectedFailureCount:0 uncaughtExceptionCount:0 testDuration:59.94474303722382 totalDuration:59.95850610733032
+23:02:49.731 xcodebuild[75175:11250901] Nothing to delete
+23:02:49.731 xcodebuild[75175:11250901] Nothing to delete
+23:02:49.726 SSRuntime[76371:11254081] Activity statistics for SSRuntimeTests.xctest:
+23:02:49.726 SSRuntime[76371:11254081] 0.01s : Other
+23:02:49.726 SSRuntime[76371:11254081] Total time in activities: 0.01s
+23:02:49.732 xcodebuild[75175:11250901] Finishing test with new console chunk 2026-11-15 23:01:50.518754-0800 SSRuntime[76371:11254081] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+objc[76371]: Class UIAccessibilityLoaderWebShared is implemented in both /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x1173dc398) and /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x11a284310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+2026-11-15 23:01:54.455845-0800 SSRuntime[76371:11254081] [autopilot] vfx tick=161 recipe=enemyHit language=compactSpark hitStopMs=50 shake=false
+2026-11-15 23:01:54.456118-0800 SSRuntime[76371:11254081] [autopilot] vfx tick=161 recipe=enemyDefeat language=fourToEightParticles hitStopMs=50 shake=false
+2026-11-15 23:01:57.996727-0800 SSRuntime[76371:11254081] [autopilot] vfx tick=844 recipe=cameraDestroyed language=lensShatterAndSparkBurst hitStopMs=50 shake=true
+Test Case '-[SSRuntimeTests.ExistingArtEncounterTests testLegalPilotExistingArtEncounterEvidence]' passed (59.945 seconds).
+
+23:02:49.842 xcodebuild[75175:11250901] Nothing to delete
+23:02:49.726 SSRuntime[76371:11254081] -[XCTRunnerIDESession(_XCTestObservationInternal) testSuiteDidFinish:]
+23:02:49.845 xcodebuild[75175:11250901] Nothing to delete
+23:02:49.845 xcodebuild[75175:11250901] Nothing to delete
+23:02:49.845 xcodebuild[75175:11250901] _XCT_testSuiteWithIdentifier:<XCTTestIdentifier container ["Selected tests"]> didFinishAt:2026-11-16 07:02:49 +0000 runCount:1 skipCount:0 failureCount:0 expectedFailureCount:0 uncaughtExceptionCount:0 testDuration:59.94474303722382 totalDuration:59.95995199680328
+23:02:49.845 xcodebuild[75175:11250901] Nothing to delete
+23:02:49.845 xcodebuild[75175:11250901] Nothing to delete
+23:02:49.726 SSRuntime[76371:11254081] Activity statistics for Selected tests:
+23:02:49.726 SSRuntime[76371:11254081] 0.01s : Other
+23:02:49.726 SSRuntime[76371:11254081] Total time in activities: 0.01s
+23:02:49.726 SSRuntime[76371:11254081] Finished running suite.
+23:02:49.726 SSRuntime[76371:11254081] Setting a new interop record handler: nil
+23:02:49.726 SSRuntime[76371:11254081] <XCTWaiter: 0x10b981620> entering indefinite wait loop for expectations: `XCTAsyncEnumerateWithWaiter(<XCTest.SwiftTestingExecutionExtension: 0x117ecb480>)`
+23:02:49.727 SSRuntime[76371:11261227] -[XCTRuntimeIssueDetectionManager runtimeIssueDetectionEnabled] runtimeIssueDetectionEnabled based on XCTDisableRuntimeIssues and runtime diagnostics policies: YES
+23:02:49.728 SSRuntime[76371:11261227] -[XCTRuntimeIssueDetectionManager runtimeIssueDetectionEnabled] runtimeIssueDetectionEnabled based on XCTDisableRuntimeIssues and runtime diagnostics policies: YES
+23:02:49.750 SSRuntime[76371:11261227] Setting a new interop record handler: Optional(XCTest.SwiftTestingInteropRecordHandler())
+23:02:49.846 xcodebuild[75175:11250901] Nothing to delete
+23:02:49.846 xcodebuild[75175:11250901] Nothing to delete
+23:02:49.846 xcodebuild[75175:11250901] Nothing to delete
+23:02:49.904 SSRuntime[76371:11261227] Setting a new interop record handler: nil
+23:02:49.931 SSRuntime[76371:11254081] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x10b981620>
+23:02:49.931 SSRuntime[76371:11254081] Wait <XCTWaiterWait: 0x11b46cb00> completed after 0.205s
+23:02:49.931 SSRuntime[76371:11254081] cleaning up XCTAsyncEnumerateWithWaiter(<XCTest.SwiftTestingExecutionExtension: 0x117ecb480>)
+23:02:49.931 SSRuntime[76371:11254081] <XCTWaiter: 0x10b981620> entering indefinite wait loop for expectations: `XCTAsyncEnumerateWithWaiter(<XCTTestRunSession: 0x117ecc1e0>)`
+23:02:49.931 SSRuntime[76371:11254081] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x10b981620>
+23:02:49.931 SSRuntime[76371:11254081] Wait <XCTWaiterWait: 0x11b46c680> completed after 0.000s
+23:02:49.932 SSRuntime[76371:11254081] cleaning up XCTAsyncEnumerateWithWaiter(<XCTTestRunSession: 0x117ecc1e0>)
+23:02:49.932 SSRuntime[76371:11254081] -[XCTRunnerIDESession(_XCTestObservationInternal) testBundleDidFinish:], Flushing connection to IDE...
+23:02:49.932 SSRuntime[76371:11254081] Exited test execution event loop
+23:02:49.932 SSRuntime[76371:11254081] Creating future for 'flushing telemetry' with timeout 10.00
+23:02:49.932 SSRuntime[76371:11254081] <XCTWaiter: 0x11965c270> entering wait loop for 10.00s with expectations: `flushing telemetry`
+23:02:49.932 SSRuntime[76371:11254081] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x11965c270>
+23:02:49.932 SSRuntime[76371:11254081] Wait <XCTWaiterWait: 0x11b46c540> completed after 0.000s
+23:02:49.932 SSRuntime[76371:11254081] cleaning up flushing telemetry
+23:02:49.933 SSRuntime[76371:11254081] Creating future for 'confirming end of session with the harness' with timeout 1800.00
+23:02:49.933 xcodebuild[75175:11250901] -[XCTTestRunnerSession _XCT_didFinishExecutingTestPlan]_block_invoke
+23:02:49.933 SSRuntime[76371:11254081] <XCTWaiter: 0x11965c780> entering wait loop for 1800.00s with expectations: `confirming end of session with the harness`
+23:02:49.933 xcodebuild[75175:11250901] Nothing to delete
+23:02:49.933 SSRuntime[76371:11267536] Creating future for 'flushing telemetry' with timeout 10.00
+23:02:49.933 SSRuntime[76371:11267536] <XCTWaiter: 0x11965ca80> entering wait loop for 10.00s with expectations: `flushing telemetry`
+23:02:49.934 SSRuntime[76371:11267536] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x11965ca80>
+23:02:49.934 SSRuntime[76371:11267536] Wait <XCTWaiterWait: 0x11b46c340> completed after 0.000s
+23:02:49.934 SSRuntime[76371:11267536] cleaning up flushing telemetry
+23:02:49.934 SSRuntime[76371:11254081] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x11965c780>
+23:02:49.934 SSRuntime[76371:11254081] Wait <XCTWaiterWait: 0x11b46c400> completed after 0.001s
+23:02:49.934 SSRuntime[76371:11254081] cleaning up confirming end of session with the harness
+23:02:49.966 xcodebuild[75175:11263336] Closing socket 38 to testmanagerd for Sim SS QA SE 20261115
+23:02:49.966 xcodebuild[75175:11267538] <XCTTestRunnerSession: 0x951a57160> lost its connection.
+23:02:49.966 xcodebuild[75175:11250901] 📱<DVTiPhoneSimulator (0x951bfcf00), SS QA SE 20261115, unknown class, 26.5 (23F77), 84297C74-033E-408F-9622-D36BFF32F74E> got death notice for pid 76371 (exit code: 0, signal: (null)), removing from SimulatorSessionMap
+23:02:49.969 xcodebuild[75175:11250901] 📱<DVTiPhoneSimulator (0x951bfcf00), SS QA SE 20261115, unknown class, 26.5 (23F77), 84297C74-033E-408F-9622-D36BFF32F74E> claim LaunchSessionClaim_0x953cb3000 on simulator was relinquished, 1 claims remain.
+23:02:49.970 xcodebuild[75175:11250901] 📱<DVTiPhoneSimulator (0x951bfcf00), SS QA SE 20261115, unknown class, 26.5 (23F77), 84297C74-033E-408F-9622-D36BFF32F74E> claim LaunchSessionClaim_0x953cb3000 on simulator was relinquished, 1 claims remain.
+23:02:49.970 xcodebuild[75175:11250901] 📱<DVTiPhoneSimulator (0x951bfcf00), SS QA SE 20261115, unknown class, 26.5 (23F77), 84297C74-033E-408F-9622-D36BFF32F74E> claim LaunchSessionClaim_0x953cb3000 on simulator was relinquished, 1 claims remain.
+23:02:49.970 xcodebuild[75175:11250901] Launch session expired.
+23:02:49.971 xcodebuild[75175:11250901] Lost connection to test process
+23:02:50.224 xcodebuild[75175:11250901] <XCTHTestOperationCoordinator: 0x953cb3480> finished receiving data from testing launch session
+23:02:50.224 xcodebuild[75175:11250901] <XCTHTestOperationCoordinator: 0x953cb3480>: _considerFlushingDelegateBlockQueue - nothing to flush
+23:02:50.224 xcodebuild[75175:11250901] Nothing to delete
+23:02:50.224 xcodebuild[75175:11250901] Can finish test, forceToNotWaitForAsynchronousDiagnostics is NO. Finishing...
+23:02:50.224 xcodebuild[75175:11250901] _finishWithError:(null)
+23:02:50.224 xcodebuild[75175:11250901] Current state: testRunnerLaunchSessionHasFinishedReceivingData: YES, delegateBlockQueue.count: 0
+23:02:50.224 xcodebuild[75175:11250901] <XCTHTestOperationCoordinator: 0x953cb3480>: _considerFlushingDelegateBlockQueue - nothing to flush

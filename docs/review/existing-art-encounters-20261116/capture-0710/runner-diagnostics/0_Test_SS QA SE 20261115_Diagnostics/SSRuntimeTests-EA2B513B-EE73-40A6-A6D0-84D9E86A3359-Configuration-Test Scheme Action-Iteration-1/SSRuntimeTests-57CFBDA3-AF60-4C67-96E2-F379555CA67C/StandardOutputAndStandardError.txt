@@ -1,0 +1,21 @@
+2026-11-15 23:12:55.381604-0800 SSRuntime[40785:11405356] [plugin] AddInstanceForFactory: No factory registered for id <CFUUID 0x1079fc500> F8BB1C28-BAE8-11D6-9C31-00039315CD46
+2026-11-15 23:12:55.608517-0800 SSRuntime[40785:11405930] [AudioConverter]     AudioConverterOOP.cpp:1084  Failed to prepare AudioConverterService: -302
+2026-11-15 23:12:55.775874-0800 SSRuntime[40785:11405356] [UIFocus] _TtC18_SpriteKit_SwiftUIP33_4A29C38A751B2448A1E2FA85CDDEAA5324SpriteKitViewCoordinator implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+2026-11-15 23:12:57.174449-0800 SSRuntime[40785:11405356] SKView: no drawables available for rendering. Skipping this frame.
+Test Suite 'Selected tests' started at 2026-11-15 23:12:57.851.
+Test Suite 'SSRuntimeTests.xctest' started at 2026-11-15 23:12:57.852.
+Test Suite 'ExistingArtEncounterTests' started at 2026-11-15 23:12:57.853.
+Test Case '-[SSRuntimeTests.ExistingArtEncounterTests testLegalPilotExistingArtEncounterEvidence]' started.
+2026-11-15 23:12:58.741891-0800 SSRuntime[40785:11405356] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+objc[40785]: Class UIAccessibilityLoaderWebShared is implemented in both /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x113df0398) and /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x115610310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+2026-11-15 23:13:03.235831-0800 SSRuntime[40785:11405356] [autopilot] vfx tick=161 recipe=enemyHit language=compactSpark hitStopMs=50 shake=false
+2026-11-15 23:13:03.236110-0800 SSRuntime[40785:11405356] [autopilot] vfx tick=161 recipe=enemyDefeat language=fourToEightParticles hitStopMs=50 shake=false
+2026-11-15 23:13:07.703192-0800 SSRuntime[40785:11405356] [autopilot] vfx tick=844 recipe=cameraDestroyed language=lensShatterAndSparkBurst hitStopMs=50 shake=true
+Test Case '-[SSRuntimeTests.ExistingArtEncounterTests testLegalPilotExistingArtEncounterEvidence]' passed (71.885 seconds).
+Test Suite 'ExistingArtEncounterTests' passed at 2026-11-15 23:14:09.758.
+	 Executed 1 test, with 0 failures (0 unexpected) in 71.885 (71.905) seconds
+Test Suite 'SSRuntimeTests.xctest' passed at 2026-11-15 23:14:09.758.
+	 Executed 1 test, with 0 failures (0 unexpected) in 71.885 (71.906) seconds
+Test Suite 'Selected tests' passed at 2026-11-15 23:14:09.759.
+	 Executed 1 test, with 0 failures (0 unexpected) in 71.885 (71.908) seconds
+2026-11-15 23:14:09.808890-0800 SSRuntime[40785:11405356] SKView: no drawables available for rendering. Skipping this frame.
