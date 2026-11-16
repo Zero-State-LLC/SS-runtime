@@ -1,5 +1,13 @@
 # Next work order
 
+## Baseline provenance verified, November 16 06:20 UTC
+
+Fresh revision02 `WholeSceneBoundInputsTests/testBoundInputsRevision02` actual0601 xcresult has1passed/0failed/0skipped. Coordinator independently re-export-verified54plates/18records,2runtime ground assets,16Camera frame hashes and6upright/paving inputs. All54images reproduce revision01 pixels exactly, without retroactively attesting revision01's unbound inputs. Original baseline14tests, paving7tests and revision02's10evidence/color plus3gallery checks pass independently. Actual Brave exercised all54new selections at704x326 or352x163, correct reference aspect/grayscale, no overflow. Original fixtures/plates remain unchanged. CI now runs the portable evidence guards.
+
+A60-second verifier-test budget expired before the original full-frame color-sort finished. Replacing the sort with exact Pillow getcolors(maxcolors=64) preserves the >64-color requirement, including64/65/last-pixel regressions. The bounded retry passed10tests in16.357s. This changes verification cost, not acceptance thresholds or captured pixels. New captured resource hashes attest input bytes, not executed-source/configuration hashes or art quality.
+
+`docs/review/benchmark-ten-slices-20261116/REVIEW.md` records the coordinator's six-dimension review of the actual ordinary muted-paving scene: overall NOT MET. Building/Player/Camera source gates prevent claiming a coherent slice7. No state/clip expansion or production changes. A paired available iPhone17Pro was listed read-only, but no physical run is claimed.
+
 ## Camera source repair checkpoint, November 16 06:06 UTC
 
 `docs/review/camera-first-sample-20261116/` retains two new provider-native source edits, original reference, metadata and equal-height diagnostic comparisons. Both are coordinator-rejected: first too slender/tall, second over-enlarged head/bracket/finial/base. Both actual1024x1536 outputs are RGB with opaque near-white backgrounds and no editable hidden underpaint. Five source/preview guards pass. Actual Brave loaded all three plates at750x510,375x255,750x510 without page overflow. These technical results do not make the sources usable. No third retry of the same approach, no native substitution or state/clip expansion. Slice6 and dependent coherent-source integration remain blocked, while independent baseline, paving, registration and existing-art diagnostic work continues. Earlier owner rejections remain unchanged. No owner acceptance or production admission.

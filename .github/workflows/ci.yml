@@ -86,6 +86,12 @@ jobs:
           node docs/review/player-ground-contact-20261116/test_native_gallery.js
       - name: Test unregistered stone-building source provenance
         run: python3 -B -W error::ResourceWarning docs/review/stone-corner-source-20261116/test_source.py
+      - name: Test whole-scene diagnostic evidence without visual admission
+        run: |
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/whole-scene-benchmark-20261116 -p 'test_*.py'
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/whole-scene-paving-20261116 -p 'test_*.py'
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/whole-scene-benchmark-20261116/revision-02-bound-inputs -p 'test_*.py'
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/camera-first-sample-20261116 -p 'test_*.py'
       - name: Byte-compare bundled contracts and fixtures against the pinned SS-specs
         run: bash scripts/spec_parity.sh
 
