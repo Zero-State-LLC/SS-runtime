@@ -1,5 +1,11 @@
 # Next work order
 
+## Corrected contact evidence, November16 04:39UTC
+
+Slice2 packet `docs/review/player-ground-contact-20261116/` now retains the corrected0428-looped native run and preserves the invalid0348 clamped run plus the failed0425 heuristic attempt. Direct xcresult verification:1passed/0failed/0skipped,24 runtime-bundled resource hashes,2,400 samples,116 independently reconstructed planted segments,76 byte-matched captures,33 changed/5 unchanged pairs. All14 portable mutation tests and13 full-source checks passed independently, plus the Node38-pair loader/race harness. Actual Brave passed228 fresh native pair/size/grayscale checks. Existing core replay independently passed1/1 and reproduced12traces. CI now includes portable evidence regressions.
+
+The fixed-time selector explicitly wraps its30-tick authored cycle, checks all16frames and repeat wraps, and preserves exact pause holds. No production policy changes: contact spans are projected source landmarks, not measured display-contact pixels or cadence. Current source/configuration hashes are retained observations, not embedded source attestation. Runtime#238 remains open pending publication/integration checks, and unrelated playback#237 remains OPEN with its16-pose assertion unchanged. No unfiltered Swift retry, production asset/input/collision/pin change, merge or admission. Camera and Player source-fidelity gates still block detailed expansion.
+
 ## Side-source review checkpoint, November16 04:36UTC
 
 `docs/review/player-side-source-20261116/` contains distinct generated east/west neutral proposals, not a coherent finished four-facing family. Independently passed10 source checks including optional external-original audit, and9 portable checks in a relocated copy with only the external audit explicitly skipped. Actual Brave loaded8 images, preserved native/half dimensions and verified local wide-plate scrolling without page overflow. Original south in the strip is labelled historical and is not the separate baggy-south proposal. Satchel front/rear placement, coat/material and elevation differences block native family expansion and animation. No source approval or admission follows. Enemy preparation remains paused while Camera first-sample review is unresolved.

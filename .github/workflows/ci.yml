@@ -79,6 +79,11 @@ jobs:
           cmp docs/review/camera-midpoint-source-20261116/source/clip-metadata-001.json Sources/SurveillanceCore/Resources/contracts/clip-metadata-001.json
       - name: Test portable side-source proposals
         run: python3 -B -W error::ResourceWarning docs/review/player-side-source-20261116/test_source.py
+      - name: Test portable ground-contact evidence
+        run: |
+          python3 -B -W error::ResourceWarning docs/review/player-ground-contact-20261116/test_packet.py
+          python3 -B -W error::ResourceWarning docs/review/player-ground-contact-20261116/test_native_evidence.py
+          node docs/review/player-ground-contact-20261116/test_native_gallery.js
       - name: Byte-compare bundled contracts and fixtures against the pinned SS-specs
         run: bash scripts/spec_parity.sh
 

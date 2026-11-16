@@ -1,0 +1,24 @@
+[0/1] Planning build
+Building for debugging...
+[0/4] Write sources
+[1/4] Write swift-version--58304C5D6DBC2206.txt
+[3/6] Compiling SurveillanceCoreTests PlayerGroundContactTraceTests.swift
+[4/6] Emitting module SurveillanceCoreTests
+[4/6] Write Objects.LinkFileList
+[5/6] Linking SSRuntimePackageTests
+Build complete! (174.31s)
+Test Suite 'Selected tests' started at 2026-11-15 19:18:11.142.
+Test Suite 'SSRuntimePackageTests.xctest' started at 2026-11-15 19:18:11.147.
+Test Suite 'PlayerGroundContactTraceTests' started at 2026-11-15 19:18:11.147.
+Test Case '-[SurveillanceCoreTests.PlayerGroundContactTraceTests testAuthoritativeMovementMatrix]' started.
+Test Case '-[SurveillanceCoreTests.PlayerGroundContactTraceTests testAuthoritativeMovementMatrix]' passed (49.392 seconds).
+Test Suite 'PlayerGroundContactTraceTests' passed at 2026-11-15 19:19:00.539.
+	 Executed 1 test, with 0 failures (0 unexpected) in 49.392 (49.393) seconds
+Test Suite 'SSRuntimePackageTests.xctest' passed at 2026-11-15 19:19:00.539.
+	 Executed 1 test, with 0 failures (0 unexpected) in 49.392 (49.393) seconds
+Test Suite 'Selected tests' passed at 2026-11-15 19:19:00.539.
+	 Executed 1 test, with 0 failures (0 unexpected) in 49.392 (49.397) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

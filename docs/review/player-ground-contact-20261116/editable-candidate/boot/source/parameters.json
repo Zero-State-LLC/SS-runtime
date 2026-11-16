@@ -1,0 +1,27 @@
+{
+  "status": "PROPOSED_SOURCE_GEOMETRY_NOT_ACCEPTED_ART",
+  "coordinateConvention": "x anatomical lateral (right is negative on front image), y forward toward viewer, z up; model lengths in candidate world-scale units",
+  "cycleSeconds": 0.5,
+  "nominalTravelUnitsPerSecond": 240,
+  "supportSeconds": 0.1,
+  "segmentLengths": [
+    13.5,
+    13.5
+  ],
+  "halfHipWidth": 2.1,
+  "hipHeight": 25.6,
+  "supportCompression": 2,
+  "flightRise": 1.5,
+  "toeLandingForward": 15,
+  "ankleBehindToe": 7.5,
+  "ankleAboveSole": 3,
+  "footLength": 10,
+  "footWidth": 4,
+  "pushOffDegrees": 45,
+  "recoveryLift": 9,
+  "cameraElevationDegrees": 30,
+  "parameterAuthority": "Only duration and full-input speed come from BP-003/BP-008. All other values are explicit authored experiment parameters, not measurements inferred from neutral art or prescribed by research.",
+  "velocityBlendPower": 8,
+  "halfAnkleWidth": 5.0,
+  "fitNotes": "Proposed rearward ankle placement from visible side-source silhouette comparison. Exact candidate poses come from candidate-samples.json; hidden ankle anatomy remains unmeasured."
+}
