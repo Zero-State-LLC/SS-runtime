@@ -1,0 +1,37 @@
+[stderr] F
+[stderr] ======================================================================
+[stderr] FAIL: test_export_path_missing_duplicate_and_escape (__main__.EvidenceGuardTests.test_export_path_missing_duplicate_and_escape)
+[stderr] ----------------------------------------------------------------------
+[stderr] Traceback (most recent call last):
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/traversal-before-alias-fix.py", line 31, in test_export_path_missing_duplicate_and_escape
+[stderr]     self.assertEqual(v.attachments(self.temp),{'eat-records':path})
+[stderr]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[stderr] AssertionError: {'eat[45 chars]bs/.jcode/scratch/tmp8d9m97nd/record.json')} != {'eat[45 chars]bs/.jcode/scratch/ci-temp-alias-0840/tmp8d9m97nd/record.json')}
+[stderr] - {'eat-records': PosixPath('/Users/appliedalchemylabs/.jcode/scratch/tmp8d9m97nd/record.json')}
+[stderr] + {'eat-records': PosixPath('/Users/appliedalchemylabs/.jcode/scratch/ci-temp-alias-0840/tmp8d9m97nd/record.json')}
+[stderr] ?                                                                     +++++++++++++++++++
+[stderr] 
+[stderr] 
+[stderr] ----------------------------------------------------------------------
+[stderr] Ran 1 test in 0.005s
+[stderr] 
+[stderr] FAILED (failures=1)
+docs/review/existing-art-encounters-20261116
+docs/review/field-encounter
+docs/review/player-contrast-encounter
+Built gallery from 52 actual captures;13 keypoints x2 mappings x3 display modes
+[stderr] .......................
+[stderr] ----------------------------------------------------------------------
+[stderr] Ran 23 tests in 10.312s
+[stderr] 
+[stderr] OK
+{
+  "status": "VERIFIED_EXISTING_ART_DIAGNOSTIC_NOT_ACCEPTANCE",
+  "arms": 2,
+  "captures": 52,
+  "resources": 1073,
+  "rows": 824,
+  "textures": 51
+}
+
+--- Command finished with exit code: 0 ---

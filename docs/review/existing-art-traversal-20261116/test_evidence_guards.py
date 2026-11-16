@@ -13,7 +13,7 @@ from PIL import Image
 import verify_capture as v
 
 class EvidenceGuardTests(unittest.TestCase):
-    def setUp(self): self.temp=Path(tempfile.mkdtemp(dir=os.environ.get('JCODE_SCRATCH_DIR')))
+    def setUp(self): self.temp=Path(tempfile.mkdtemp(dir=os.environ.get('JCODE_SCRATCH_DIR'))).resolve()
     def tearDown(self): shutil.rmtree(self.temp)
     def test_exact_nonzero_result_and_identity(self):
         summary={'result':'Passed','totalTestCount':1,'passedTests':1,'failedTests':0,'skippedTests':0,'expectedFailures':0}
@@ -32,6 +32,22 @@ class EvidenceGuardTests(unittest.TestCase):
         for items in ([item,item],[dict(item,exportedFileName='missing')],[dict(item,exportedFileName='../escape')]):
             (self.temp/'manifest.json').write_text(json.dumps([{'testIdentifier':v.TEST,'attachments':items}]))
             with self.assertRaises(ValueError): v.attachments(self.temp)
+    def test_symlink_root_alias_and_real_symlink_escape(self):
+        root=self.temp/'exports'; root.mkdir()
+        alias=self.temp/'alias'; alias.symlink_to(root, target_is_directory=True)
+        path=root/'record.json'; path.write_text('{}')
+        item={'suggestedHumanReadableName':'eat-records_uuid','exportedFileName':'record.json','isAssociatedWithFailure':False}
+        manifest=[{'testIdentifier':v.TEST,'attachments':[item]}]
+        (root/'manifest.json').write_text(json.dumps(manifest))
+        self.assertEqual(v.attachments(alias),{'eat-records':path})
+        outside=self.temp/'outside.json'; outside.write_text('{}')
+        (root/'escape.json').symlink_to(outside)
+        for exported in ('escape.json','../outside.json'):
+            item['exportedFileName']=exported
+            (root/'manifest.json').write_text(json.dumps(manifest))
+            with self.subTest(exported=exported),self.assertRaises(ValueError):
+                v.attachments(alias)
+
     def test_bound_resource_hash_bytes_and_escape(self):
         path=self.temp/'source.png'; path.write_bytes(b'synthetic resource, not native evidence')
         resource={'assetId':'test','path':path.name,'sha256':v.sha(path),'bytes':path.stat().st_size}

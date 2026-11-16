@@ -1,5 +1,11 @@
 # Next work order
 
+## CI alias follow-through, November16 08:41UTC
+
+Exact d2a9fe0 CI43828925099 confirms the #242 gallery publication repair passes its step, but exposes separate #244 traversal temp-root alias comparisons. Canonicalized temporary roots, retained escape assertions, and added valid-root-alias/real-outward-symlink regressions. Old test fails under an explicit alias; corrected23traversal tests and retained52capture verifier pass under it. Seven viewport,28encounter,7playback tests also pass. See traversal/CI-ALIAS-REPAIR.md and raw logs. Full original CI remains uncertified: Debug running at08:40, Release/Swift/device-sitting successful, parity failed. Publish narrow repair and verify its exact head separately. #237/#239/#240/#241 and all source/device/visual/merge gates remain unchanged.
+
+Approved08:19 ten-slice execution continues in isolated review packets. Player south repair is technically reproducible but visually NOT RECOMMENDED after two bounded previews, so family and dependent scene remain blocked. Paving corner is bounded material/layout input only. Camera/stone changed-method source work remains under independent review. Three isolated production-view XCUI interactions passed, but no full-game resume, physical-device or VoiceOver claim. No merge or source admission.
+
 ## Spec-parity publication repair, November 16 08:08 UTC
 
 Owner requested diagnosis and repair of spec-parity. Issue #242 records the shared failure in runs43823194651/d152e6d and43823296806/e64ccd2: the whole-scene gallery claimed an enemy-source directory that was untracked locally and absent from the published tree. Reproduced the exact missing-directory assertion in a `git archive HEAD` export. Corrected the coverage row to explicitly unpublished/NOT CAPTURED, without importing local source work or changing the existing missing-evidence assertion. Added a regression and regenerated the matrix.

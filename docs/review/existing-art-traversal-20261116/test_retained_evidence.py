@@ -17,7 +17,7 @@ class RetainedEvidenceTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         v.need((CAPTURE/'eat-records.json').is_file(),'Actual native evidence has not been captured/imported')
-        cls.temp=Path(tempfile.mkdtemp(dir=os.environ.get('JCODE_SCRATCH_DIR')))
+        cls.temp=Path(tempfile.mkdtemp(dir=os.environ.get('JCODE_SCRATCH_DIR'))).resolve()
         cls.exports=cls.temp/'exports'; cls.exports.mkdir()
         manifest=v.load(CAPTURE/'attachment-manifest.json')
         for case in manifest:

@@ -15,7 +15,7 @@ def verify_retained(capture):
     v.need((capture/'eat-records.json').is_file(),'Native capture pending: no retained actual evidence')
     manifest=v.load(capture/'attachment-manifest.json')
     with tempfile.TemporaryDirectory(dir=os.environ.get('JCODE_SCRATCH_DIR')) as directory:
-        exports=Path(directory)
+        exports=Path(directory).resolve()
         for case in manifest:
             for item in case['attachments']:
                 name=item['suggestedHumanReadableName'].split('_')[0]
