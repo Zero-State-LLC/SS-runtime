@@ -1,0 +1,35 @@
+{
+  "status": "PROPOSED_SOURCE_UNREGISTERED",
+  "source": "source/generated-stone-corner.png",
+  "sourceSHA256": "1226f74865aceafc0835501465e0be6aa94c8bbdad7f3b3e61af00a4af2ee475",
+  "provenance": "source/generation.json",
+  "benchmarkSHA256": "49aa35447230187e3eabe948cdc8eba6d6d465b2605d624e2cf7443f6cb69ffb",
+  "actualCanvas": [1254, 1254],
+  "requestedCanvas": [1024, 1024],
+  "coordinateConvention": "source pixels, origin top-left, x right, y down",
+  "requestedOnlyFootprint": {
+    "back": [512, 450],
+    "left": [112, 650],
+    "frontVirtual": [512, 850],
+    "right": [912, 650],
+    "chamferLeft": [452, 820],
+    "chamferRight": [572, 820]
+  },
+  "observedWallContactLandmarks": null,
+  "hiddenWallContactLandmarks": null,
+  "stairsAndApronLandmarks": null,
+  "groundContactAnchor": null,
+  "worldFootprintCorrespondence": null,
+  "uniformDrawScale": null,
+  "registrationResiduals": null,
+  "readyForNative": false,
+  "ownerAccepted": false,
+  "productionAdmitted": false,
+  "observations": [
+    "Generated single-storey stone architecture replaces the prior source's turquoise and orange-brick material direction, but is not an accepted reconstruction.",
+    "Actual dimensions differ from the prompt. Requested footprint points are not measured geometry and must not be reused as actual coordinates.",
+    "The source has real alpha but remote low-alpha pixels exist. Alpha bounds do not define wall contact.",
+    "The chamfered entrance and stairs must be separated from the solid wall footprint. Hidden vertices are unknown, not reconstructed from the roof.",
+    "Visible source proportions and edge angles still need measured review before this source can enter the native fixture."
+  ]
+}

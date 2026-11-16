@@ -84,6 +84,8 @@ jobs:
           python3 -B -W error::ResourceWarning docs/review/player-ground-contact-20261116/test_packet.py
           python3 -B -W error::ResourceWarning docs/review/player-ground-contact-20261116/test_native_evidence.py
           node docs/review/player-ground-contact-20261116/test_native_gallery.js
+      - name: Test unregistered stone-building source provenance
+        run: python3 -B -W error::ResourceWarning docs/review/stone-corner-source-20261116/test_source.py
       - name: Byte-compare bundled contracts and fixtures against the pinned SS-specs
         run: bash scripts/spec_parity.sh
 

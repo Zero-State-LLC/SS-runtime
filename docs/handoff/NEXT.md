@@ -1,5 +1,15 @@
 # Next work order
 
+## Whole-game gate and environment first sample, November16 05:22UTC
+
+`docs/review/visual-acceptance-20261116/CONTRACT.md` translates the unchanged benchmark into scene-wide review requirements and separate technical, coordinator-visual, owner-acceptance and production-admission statuses. It is an implementation checklist, not new gameplay authority.
+
+The quiet whole-scene diagnostic was independently checked against the actual0458 xcresult:1passing test,36retained plates, exact z125 control pixels and7offline mutation tests. Actual Brave loaded all36 control/diagnostic image selections. Gallery native-size review initially found the nominal native plate displayed379pixels wide instead of704logical points. Blowfish is fixing explicit704/352 CSS sizes, both-arm staging checks, exact deficit/census guards and resource-hash scope disclosure before publication. A hidden-tab decode wait timed out in the coordinator's browser harness; load-event/complete readiness successfully exercised all selections without claiming that timeout was a game defect.
+
+New `docs/review/stone-corner-source-20261116/` preserves the generated first sample and provider provenance, SHA1226f74865aceafc0835501465e0be6aa94c8bbdad7f3b3e61af00a4af2ee475. Actual1254-square RGBA differs from requested1024. Six portable guards pass. It remains UNREGISTERED: requested coordinates are not measurements, hidden wall corners/root/scale remain unknown, stairs are not silently treated as wall contact. Do not integrate this image using the old building's anchor or inferred alpha bounds.
+
+A separate muted-paving candidate has been supplied to blowfish for an ordinary-view focused material trial, preserving the first fixture and36plates. It is not assumed seamless: measured opposite-edge RGB differences average approximately13-14/255. Worker owns the new test-only fixture/assets/review packet. No building substitution, production, collision, HUD, field geometry, shadows or outlines changes. All visual acceptance and merge gates remain closed.
+
 ## Whole-scene scope and fixture decisions, November16 04:56UTC
 
 Recovered owner clarification at04:51:26UTC: rejection concerns the overall scene. This supersedes the scope question below, not the existing visual rejection or admission gates. The unchanged approved benchmark remains authority.
