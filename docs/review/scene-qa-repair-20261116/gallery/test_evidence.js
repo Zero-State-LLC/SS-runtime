@@ -47,12 +47,12 @@ for (const id of actualIDs) {
   rejected++;
 }
 assert.throws(() => gallery.captureConfig('1040'));
-assert.equal(gallery.DEFAULT_CAPTURE, 'v5');
+assert.equal(gallery.DEFAULT_CAPTURE, 'v6');
 assert.deepEqual(Object.keys(gallery.CAPTURES).sort(), ['v4', 'v5', 'v6']);
 assert.equal(gallery.captureConfig('v6').root, '../../scene-qa-framing-20261116/native-capture-v6/');
 const html = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
-assert.match(html, /<option value="v6">[^<]*pending evidence verification<\/option>/);
-assert.match(html, /<option value="v5" selected>/);
+assert.match(html, /<option value="v6" selected>[^<]*pending evidence verification<\/option>/);
+assert.doesNotMatch(html, /<option value="v[45]" selected>/, 'Earlier captures must not be selected by default');
 
 // In-memory protocol fixture only, NOT new native evidence or a v6 capture claim.
 const v5Root = path.resolve(__dirname, gallery.captureConfig('v5').root);

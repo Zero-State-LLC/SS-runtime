@@ -1,6 +1,6 @@
 'use strict';
 
-const DEFAULT_CAPTURE = 'v5';
+const DEFAULT_CAPTURE = 'v6';
 const CAPTURES = Object.freeze({
   'v5': Object.freeze({ root: '../native-capture-v5/', version: 'source-scene-qa-005-footprint-ground', label: 'footprint, Player contrast and continuous ground repair; owner acceptance not granted' }),
   'v4': Object.freeze({ root: '../../scene-source-assembly-20261116/native-capture-1040/', version: 'source-scene-continuation-004-depth-order', label: 'before repair: Camera occlusion, Player halo and finite ground seam' }),

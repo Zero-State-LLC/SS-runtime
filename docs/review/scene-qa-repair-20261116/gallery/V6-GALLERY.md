@@ -1,6 +1,6 @@
 # Explicit v6 gallery support
 
-This gallery retains v5 as its default and preserves the v4/v5 paths and checks. The third, explicit selection `v6` uses only `../../scene-qa-framing-20261116/native-capture-v6/` relative to this gallery. It never falls back to v5 or v4.
+After real v6 evidence was imported and published in `6be13ed7f5fb557c215e7783ae1cb118818ca87b`, the gallery's default was changed to v6. V4/v5 remain explicit historical choices with their paths and checks preserved. The final selection `v6` uses only `../../scene-qa-framing-20261116/native-capture-v6/` relative to this gallery. It never falls back to v5 or v4.
 
 The contract is bound to the new `AppTests/SceneQAFramingTests.swift` record literals:
 
