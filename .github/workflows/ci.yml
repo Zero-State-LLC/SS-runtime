@@ -71,6 +71,10 @@ jobs:
           python3 -B scripts/prepare_release_variation_native.py --verify
           python3 -B scripts/import_release_variation_native.py --verify docs/review/player-release-variation-native-20261116/capture
           python3 -B scripts/test_release_variation_native.py
+      - name: Verify proposed neutral source comparisons
+        run: |
+          python3 -B docs/review/player-north-source-20261116/test_source.py
+          python3 -B docs/review/player-baggy-south-source-20261116/test_source.py
       - name: Byte-compare bundled contracts and fixtures against the pinned SS-specs
         run: bash scripts/spec_parity.sh
 

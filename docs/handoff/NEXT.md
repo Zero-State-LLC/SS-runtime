@@ -1,5 +1,13 @@
 # Next work order
 
+## Independent continuation checkpoint, November16 04:16UTC
+
+North and baggy-south neutral proposals are ready for source review, not family admission. Each passes9 portable source guards. North actual Brave gallery loads17 images and all13 layer toggles hide/restore correctly. Baggy south preserves original upper-body and boot pixels, but its shins remain narrower than north and its knee-pad placement differs. North bag size, coat, material and elevation fidelity remain unresolved. Do not expand these neutrals into animation before review. Original south and5/13 stay unchanged. Separate east/west first samples are in progress.
+
+Slice2 independent focused core test passed1/1 in14.973s and reproduced all12 trace exports byte-for-byte. Source13checks passed, including1,012 original hashes. Source normal/quarter galleries each passed120 selections. However, independent native verification found the fixed-time control clamps at its final frame rather than looping. Runtime defect#238 records this passing-but-invalid harness result. Preserve the first native attempt as invalid fixed-time evidence and rerun the corrected focused test before publishing a native policy comparison. Distance-phase data and source-model analysis remain separately scoped. Runtime#237 is unrelated and remains open.
+
+Municipal Camera first-sample preparation continues in parallel, with detailed state/clip expansion gated by first-sample fidelity. No production assets, input, collision, pin, merge or admission changed. Native-slice head9a4b7a7 CI43799888314 was fetched04:09UTC: Swift,parity,sitting,Release passed; Debug still running. A ten-minute bounded check is scheduled. That earlier result does not certify these new source packets.
+
 ## Current checkpoint, November16 03:41UTC
 
 Owner prefers the baggy leg silhouette after identifying inconsistent north/south legs at03:41:04UTC. Do not slim north to the older south. Develop a separate consistent baggy-leg south proposal while preserving originals and5/13. This is not acceptance of the generated bag/coat/material/camera or the complete family. Prior native/contact results remain evidence only for their exact artwork.

@@ -1,0 +1,508 @@
+{
+ "status": "PROPOSED_SOURCE_NOT_ADMISSION",
+ "facing": "south",
+ "canvas": [
+  384,
+  416
+ ],
+ "groundRoot": [
+  192,
+  336
+ ],
+ "bootTopRow": 318,
+ "method": "crop, per-part uniform Lanczos scale, translation; original boot/upper pixels copied exactly; no repainting, warping, mirroring or stretching of the old south bitmap",
+ "anatomical": "south view: anatomical right on screen left; cloth patch on anatomical-left thigh (screen right)",
+ "provenance": {
+  "sheet": "/Users/appliedalchemylabs/.jcode/generated-images/1794800681673-ig_07cd661172aa2162016afa7bf93ed087d0b1e945335a18112a.png",
+  "sheetSHA256": "2dbf992c05054655fb7312c0f48f98ce60c9442336d91b115718771c4d073d5b",
+  "metadataSHA256": "ab5314c7b68b7cbb94f3b06f0ff5a26f456eaba05f4d0408be99c999a71906c4",
+  "generator": "native image_generation (openai), see source/metadata.json",
+  "south": "/Users/appliedalchemylabs/Documents/Codex/2026-10-13/can/outputs/SS-player-bounded-neutral/frames/00.png",
+  "southSHA256": "2076f61c8d3b92a49d842f16eb6a043662dda84953f549a77884344cc3f1cb8e",
+  "northReference": "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/player-north-source-20261116/attempts/01-uniform-0.4/north-neutral.png",
+  "northReferenceSHA256": "0a6e15bd2aa8cc486dd14521b60680bed6a2dd0833707972850e65d7991f4fbb",
+  "originalUpperLayers": {
+   "torso_coat_equipment": "6fc702c5b5c4f1ad123d3862da795d539190dad9d609d49923f2bf3c9d952baf",
+   "left_coat_tail": "932a93161bd638df053f33b58d82a57e722eaa60cbadc95a71274f8a42d948f4",
+   "right_coat_tail": "585f21888a103ec52d494d1de1c992cba654936215f097a7ae7ddc95e870339b",
+   "left_shoulder_hidden": "635f66fb1d4198ea9b3d8ac719e1df8aacedd1cdc2b9e44c4c3c219b653fc1e5",
+   "left_upper_arm": "47fd20562122a6358a1b0528fc12818a53c4868499d684cf6e7fdfe7b6680d24",
+   "left_elbow_hidden": "c9485b2817b2c307daf55bbb9773d72ffa67abb6316716caf420d0d9852d93ac",
+   "left_forearm_hand": "168ac896495617d0d076c40c0d297affd8bbf6e2c645b18b28d3362d37bd51a4",
+   "right_shoulder_hidden": "bc570fe28204d21d1924c8f416a5a2b5f058db9d3ac14ae452d59a27c170da7a",
+   "right_upper_arm": "c033da2620b7cf8fab8d06c34a344005bfed86f8967004a5be0a33306c0c8690",
+   "right_elbow_hidden": "5cb6ff740907774a1ff3977a3c0ffa246589d6f69a38412f8fc69c912477f9a4",
+   "right_forearm_hand": "64eeb0b1ce4c40176b84b4c9153e42f2bc2d341b4aa480fc879f9e1ebb6cffbe",
+   "hood": "061546675424a684d3470974a611d886bdde8192b41d09c5eaf6604cd4bfd183"
+  },
+  "originalBootLayers": {
+   "right": "60dcc3ad256d696f721470e6742cfbbb2882c2de0af9c4f868d4870d25764f95",
+   "left": "02df752399c3a0b0f5991fd92496e2b09cc56eff70cc3981c98d0279ecb8af26"
+  }
+ },
+ "tool": {
+  "name": "Pillow",
+  "version": "12.3.0"
+ },
+ "layerOrderBottomToTop": [
+  "right_thigh",
+  "left_thigh",
+  "right_shin_kneepad",
+  "left_shin_kneepad",
+  "original_boots",
+  "original_upper"
+ ],
+ "parts": [
+  {
+   "name": "right_thigh",
+   "anatomicalSide": "right",
+   "sheetRegion": [
+    208,
+    67,
+    529,
+    683
+   ],
+   "uniformScale": 0.15,
+   "translation": [
+    146,
+    200
+   ],
+   "resampledSize": [
+    48,
+    92
+   ],
+   "alphaBounds": [
+    146,
+    200,
+    194,
+    292
+   ],
+   "componentSHA256": "47f984955866a7c4331e341a0d8bf1c023e708f71648951fa0a41843ff3934fc",
+   "layerSHA256": "56bc4d2c0d228ef0b925959e9abf0863cf5da6f43d6806068fcec692cdcd5c84"
+  },
+  {
+   "name": "left_thigh",
+   "anatomicalSide": "left",
+   "sheetRegion": [
+    614,
+    69,
+    943,
+    685
+   ],
+   "uniformScale": 0.15,
+   "translation": [
+    189,
+    200
+   ],
+   "resampledSize": [
+    49,
+    92
+   ],
+   "alphaBounds": [
+    189,
+    200,
+    238,
+    292
+   ],
+   "componentSHA256": "996ea22a78099110d3967fc9086418c5d10b75e17b9aba9179ab818615e6c29d",
+   "layerSHA256": "48f14cf86236482c4ba9ec989f801f9e7ce98ba48bc8a1b89eba666633af317b"
+  },
+  {
+   "name": "right_shin_kneepad",
+   "anatomicalSide": "right",
+   "sheetRegion": [
+    221,
+    747,
+    487,
+    1295
+   ],
+   "uniformScale": 0.135,
+   "translation": [
+    150,
+    252
+   ],
+   "resampledSize": [
+    36,
+    74
+   ],
+   "alphaBounds": [
+    150,
+    252,
+    186,
+    326
+   ],
+   "componentSHA256": "a797a6d7e060e5ae484e6b56588b59482391affc223a7d6825beee02dd0c2879",
+   "layerSHA256": "977ec7454357b2794ae782298778ee98f100c684dff545987fbf5ec7a00d4585"
+  },
+  {
+   "name": "left_shin_kneepad",
+   "anatomicalSide": "left",
+   "sheetRegion": [
+    646,
+    747,
+    919,
+    1293
+   ],
+   "uniformScale": 0.135,
+   "translation": [
+    194,
+    252
+   ],
+   "resampledSize": [
+    37,
+    74
+   ],
+   "alphaBounds": [
+    194,
+    252,
+    231,
+    326
+   ],
+   "componentSHA256": "dd0bf5e5b9a191da720728c9e040a2634fd8a252f4bf0c8792b55dc7b0f004c4",
+   "layerSHA256": "387eff2555034a9d0bb6c73b44acef3b6dcc4d633ae55d17f28e6f27abaefc78"
+  }
+ ],
+ "retained": {
+  "bootPixels": 1636,
+  "upperOpaquePixels": 21590
+ },
+ "outputSHA256": "a4ff7035ec256c613bc96eaf65b59a64e837c81adc895bcd4e5cd42e6f18a2a3",
+ "measurements": {
+  "originalSouth": {
+   "row215": [
+    [
+     140,
+     221,
+     82
+    ],
+    [
+     223,
+     244,
+     22
+    ]
+   ],
+   "row235": [
+    [
+     140,
+     153,
+     14
+    ],
+    [
+     161,
+     222,
+     62
+    ],
+    [
+     229,
+     244,
+     16
+    ]
+   ],
+   "row255": [
+    [
+     143,
+     146,
+     4
+    ],
+    [
+     162,
+     189,
+     28
+    ],
+    [
+     194,
+     221,
+     28
+    ],
+    [
+     237,
+     240,
+     4
+    ]
+   ],
+   "row275": [
+    [
+     158,
+     190,
+     33
+    ],
+    [
+     193,
+     225,
+     33
+    ]
+   ],
+   "row295": [
+    [
+     157,
+     185,
+     29
+    ],
+    [
+     198,
+     226,
+     29
+    ]
+   ],
+   "row310": [
+    [
+     159,
+     180,
+     22
+    ],
+    [
+     203,
+     224,
+     22
+    ]
+   ],
+   "alphaYRange": [
+    39,
+    358
+   ]
+  },
+  "proposedBaggySouth": {
+   "row215": [
+    [
+     140,
+     244,
+     105
+    ]
+   ],
+   "row235": [
+    [
+     140,
+     188,
+     49
+    ],
+    [
+     190,
+     191,
+     2
+    ],
+    [
+     193,
+     244,
+     52
+    ]
+   ],
+   "row255": [
+    [
+     143,
+     187,
+     45
+    ],
+    [
+     189,
+     189,
+     1
+    ],
+    [
+     192,
+     192,
+     1
+    ],
+    [
+     194,
+     240,
+     47
+    ]
+   ],
+   "row275": [
+    [
+     148,
+     148,
+     1
+    ],
+    [
+     150,
+     185,
+     36
+    ],
+    [
+     187,
+     187,
+     1
+    ],
+    [
+     194,
+     234,
+     41
+    ]
+   ],
+   "row295": [
+    [
+     150,
+     184,
+     35
+    ],
+    [
+     194,
+     194,
+     1
+    ],
+    [
+     196,
+     230,
+     35
+    ]
+   ],
+   "row310": [
+    [
+     152,
+     183,
+     32
+    ],
+    [
+     196,
+     227,
+     32
+    ],
+    [
+     229,
+     229,
+     1
+    ]
+   ],
+   "alphaYRange": [
+    39,
+    358
+   ]
+  },
+  "preferredBaggyNorth": {
+   "row215": [
+    [
+     140,
+     244,
+     105
+    ]
+   ],
+   "row235": [
+    [
+     140,
+     145,
+     6
+    ],
+    [
+     147,
+     195,
+     49
+    ],
+    [
+     197,
+     244,
+     48
+    ]
+   ],
+   "row255": [
+    [
+     142,
+     143,
+     2
+    ],
+    [
+     145,
+     193,
+     49
+    ],
+    [
+     195,
+     196,
+     2
+    ],
+    [
+     198,
+     244,
+     47
+    ]
+   ],
+   "row275": [
+    [
+     148,
+     192,
+     45
+    ],
+    [
+     194,
+     195,
+     2
+    ],
+    [
+     197,
+     241,
+     45
+    ],
+    [
+     243,
+     243,
+     1
+    ]
+   ],
+   "row295": [
+    [
+     148,
+     189,
+     42
+    ],
+    [
+     191,
+     191,
+     1
+    ],
+    [
+     197,
+     197,
+     1
+    ],
+    [
+     199,
+     240,
+     42
+    ]
+   ],
+   "row310": [
+    [
+     151,
+     152,
+     2
+    ],
+    [
+     154,
+     182,
+     29
+    ],
+    [
+     184,
+     184,
+     1
+    ],
+    [
+     200,
+     200,
+     1
+    ],
+    [
+     202,
+     231,
+     30
+    ],
+    [
+     233,
+     233,
+     1
+    ]
+   ],
+   "alphaYRange": [
+    39,
+    359
+   ]
+  }
+ },
+ "limits": [
+  "Neutral only, no animation",
+  "Trouser paint is generated, not original master paint",
+  "North reference is an unaccepted generated sample; only its trouser silhouette is the stated preference",
+  "No native, simulator, device or acceptance claim",
+  "Hip/knee/ankle pivots are 2D annotations"
+ ]
+}
