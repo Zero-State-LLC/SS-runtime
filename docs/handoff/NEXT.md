@@ -1,5 +1,9 @@
 # Next work order
 
+## Side-source review checkpoint, November16 04:36UTC
+
+`docs/review/player-side-source-20261116/` contains distinct generated east/west neutral proposals, not a coherent finished four-facing family. Independently passed10 source checks including optional external-original audit, and9 portable checks in a relocated copy with only the external audit explicitly skipped. Actual Brave loaded8 images, preserved native/half dimensions and verified local wide-plate scrolling without page overflow. Original south in the strip is labelled historical and is not the separate baggy-south proposal. Satchel front/rear placement, coat/material and elevation differences block native family expansion and animation. No source approval or admission follows. Enemy preparation remains paused while Camera first-sample review is unresolved.
+
 ## Camera correction verification, November16 04:29UTC
 
 Attempt03 is a review-only extraction from the original approved benchmark, not a finished editable master. Open `docs/review/camera-midpoint-source-20261116/index.html` for the same-scale original/proposal/contamination comparison. Independently byte-compared its copied reference with the existing approved concept and its full contract with the bundled contract. All17 portable guards pass with ResourceWarnings treated as errors. Actual Brave loaded all9 gallery images, verified64x96 and32x48 device views and grayscale on/off restoration with no horizontal overflow. Visible base debris, baked light, contour downsampling and absent underpaint/layers remain unresolved. Attempts01/02 are explicitly rejected in records and gallery. No owner acceptance, states or clip expansion follows.

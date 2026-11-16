@@ -77,6 +77,8 @@ jobs:
           python3 -B docs/review/player-baggy-south-source-20261116/test_source.py
           python3 -B -W error::ResourceWarning docs/review/camera-midpoint-source-20261116/test_source.py
           cmp docs/review/camera-midpoint-source-20261116/source/clip-metadata-001.json Sources/SurveillanceCore/Resources/contracts/clip-metadata-001.json
+      - name: Test portable side-source proposals
+        run: python3 -B -W error::ResourceWarning docs/review/player-side-source-20261116/test_source.py
       - name: Byte-compare bundled contracts and fixtures against the pinned SS-specs
         run: bash scripts/spec_parity.sh
 
