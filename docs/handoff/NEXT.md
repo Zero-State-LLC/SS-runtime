@@ -1,5 +1,26 @@
 # Next work order
 
+## Bounded source and UI publication, November16 08:48UTC
+
+Approved continuation intent is retained as `intent/2026-11-16-source-to-scene-continuation.md`. Three independently verified review packets are ready for publication, with only their portable guard commands added to CI:
+
+| Slice | Current outcome | Remaining gate |
+| --- | --- | --- |
+| 1 CI | #244 repair published be7db0d8cbdf95c84f94456389bb22433a86d59d, exact run43833371384 queued at08:42 | Exact-head remote completion, not certified green |
+| 2 Camera | First authored source NOT RECOMMENDED; final bounded surface pass underway | Independent visual recommendation, portable inputs |
+| 3 south Player | Knees restored and material sampling fixed, but thigh patch/folds still mismatched. Two previews exhausted, NOT RECOMMENDED | Changed garment surface/UV method decision |
+| 4 family | Not started | South recommendation |
+| 5 stone | Two direct-source attempts still model-like, NOT RECOMMENDED | Changed-method decision; finish portable rejected record |
+| 6 paving | Bounded material/layout recommendation only | Whole-scene review, not finished environment |
+| 7 scene | Not started | Recommended Player/Camera/stone sources |
+| 8 motion | Not started | Owner scene approval |
+| 9 encounter | Not started | Owner scene approval |
+| 10 interface | Actual isolated production-view scrolling/selection verified by3native tests and6portable guards | Full-game resume, physical signing and VoiceOver remain unverified |
+
+Coordinator reran10south,7paving and6UI tests. Clean sparse export of only tracked dependencies plus the new packets also passed all23checks. South separately tests rebuild with original external paths unavailable; external original audit is explicitly unavailable/skipped on machines lacking those sources, never falsely unchanged. See each packet README. Actual browser verified paving5images, south9images, and UI9images with original aspect/native-half sizing and grayscale restoration. The first UI window screenshots were rejected despite passing interactions; full-screen retry fixes the crop without weakening assertions. Both attempts retained under upgrade-interaction, #243 stays open.
+
+No production files, accepted art, pin, input, collision, device certification or merge changes. Prior untracked editable-master/family/enemy/context packets remain untouched and outside publication. New Camera/stone packets must not depend on those unpublished directories. #237/#239/#240/#241 remain preserved. Native slot is free. Do not start an automatic CI polling chain or another unfiltered local Swift run.
+
 ## CI alias follow-through, November16 08:41UTC
 
 Exact d2a9fe0 CI43828925099 confirms the #242 gallery publication repair passes its step, but exposes separate #244 traversal temp-root alias comparisons. Canonicalized temporary roots, retained escape assertions, and added valid-root-alias/real-outward-symlink regressions. Old test fails under an explicit alias; corrected23traversal tests and retained52capture verifier pass under it. Seven viewport,28encounter,7playback tests also pass. See traversal/CI-ALIAS-REPAIR.md and raw logs. Full original CI remains uncertified: Debug running at08:40, Release/Swift/device-sitting successful, parity failed. Publish narrow repair and verify its exact head separately. #237/#239/#240/#241 and all source/device/visual/merge gates remain unchanged.
