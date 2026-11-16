@@ -1,5 +1,19 @@
 # Next work order
 
+## Current checkpoint, November16 03:41UTC
+
+Owner prefers the baggy leg silhouette after identifying inconsistent north/south legs at03:41:04UTC. Do not slim north to the older south. Develop a separate consistent baggy-leg south proposal while preserving originals and5/13. This is not acceptance of the generated bag/coat/material/camera or the complete family. Prior native/contact results remain evidence only for their exact artwork.
+
+Slice1 native baseline/variation comparison is independently verified: actual focused xcresult3/3 passed,476 static SpriteKit captures,442 source/configuration hashes,28 exact endpoint pairs,182 changed intermediate native poses. All29 evidence regressions passed independently. Actual Brave verified56 paired key-pose selections. Packet: `docs/review/player-release-variation-native-20261116/capture/index.html`, with coordinator review and explicit static/live limits. No production changes or art admission. Movement/contact native comparison continues separately.
+
+Exact source-variation head `e664c93057514891ca102f45938c17b7bed28782` CI43795379225 completed successfully, all five jobs passed, fetched03:41:04UTC. This supersedes its running checkpoints below. Baseline15be131 CI43792417606 also passed. New native-slice publication will have a separate head and CI; neither result closes issue237.
+
+## Approved ten-slice continuation, November16 03:10:28UTC
+
+Owner answered yes to all three open design questions: grounded weight transfer and subtle phase differences, not bounce/jog; conservative hidden costume surfaces with unchanged equipment sides/materials and no new accessories; later-family first samples may continue while earlier visual reviews await the owner, with detailed expansion still behind fidelity gates. Canonical sequence: sibling SS-specs `intent/2026-11-16-grounded-motion-ten-slices.md`. Native variation comparison and authoritative movement/contact comparison are in progress in separate review-only files. No production, art admission or merge permission follows.
+
+CI fetched03:10:28UTC: baseline15be1316d3817604e751664d5167f1649db2fc6b run43792417606 passed all five jobs, Debug finished03:04:05UTC. Final variatione664c93057514891ca102f45938c17b7bed28782 run43795379225 has parity/variation provenance passed, Debug/Swift/Release running and sitting queued. A bounded follow-up is scheduled. Preserve issue237 and all historical evidence below.
+
 Updated November 16, 2026 after 01:39:04 UTC owner decision: "midpoint is good. continue".
 
 ## Phase-variation refinement requested at 02:36:26 UTC
