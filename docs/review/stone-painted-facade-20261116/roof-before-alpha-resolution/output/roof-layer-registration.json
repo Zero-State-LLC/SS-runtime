@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "id": "roof-vent-painted-2.5d",
+  "image": "inputs/roof-vent.png",
+  "sourceCanvas": [
+    1254,
+    1254
+  ],
+  "sourceRoot": [
+    684,
+    1110
+  ],
+  "sourceRootProvenance": "Explicit visually authored front-foot contact point, not alpha-bounds-derived or a measured 3D footprint",
+  "localWorldAnchor": [
+    78,
+    85,
+    132
+  ],
+  "uniformSourceToBuildingPixels": 0.17,
+  "uniformSourcePixelsToWorldUnits": 0.034,
+  "layerOrder": "over building mesh, for fixed front source projection only",
+  "kind": "independent transparent 2.5D painted prop, NOT a 3D vent",
+  "gameplayAuthority": false,
+  "includedInOBJ": false,
+  "hiddenSurfaces": "Not authored. Reverse mesh diagnostic intentionally excludes this view-dependent painted prop.",
+  "alphaPolicy": "Original supplied RGBA including faint fractional-alpha edge speckles retained unchanged. No keying, threshold, crop or inferred geometry.",
+  "projectedBuildingRoot": [
+    475.25126265847086,
+    211.8539866664819
+  ],
+  "buildingPixelOrigin": [
+    358.97126265847083,
+    23.15398666648187
+  ],
+  "worldAnchor": [
+    590,
+    725,
+    132
+  ],
+  "buildingCanvas": [
+    1000,
+    1200
+  ],
+  "sourceSHA256": "b99f0b536306bf317e897bda133640bd1e3ee14eeddcdb1871ec60209bea90f2"
+}

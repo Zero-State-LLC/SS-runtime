@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "rectConvention": "Pillow half-open [left,top,right,bottom], explicitly authored, no inferred bounds",
+  "atlas": "inputs/atlas.png",
+  "rects": {
+    "facade": [
+      29,
+      120,
+      552,
+      894
+    ],
+    "door": [
+      594,
+      120,
+      914,
+      894
+    ],
+    "roof": [
+      956,
+      248,
+      1508,
+      796
+    ]
+  },
+  "reuse": "Facade is copied upright onto south/west and hidden east/north, never silently mirrored. Hidden walls stretch the same full panel over 128 units.",
+  "relief": "All pilasters, cornice, lamp, door trim and stairs are baked paint on flat faces. No extruded trim or tread geometry is claimed."
+}

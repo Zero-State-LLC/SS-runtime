@@ -1,0 +1,78 @@
+{
+  "status": "FIRST_PILOT_REVIEW_ONLY",
+  "ownerAccepted": false,
+  "productionAdmitted": false,
+  "nativeCapture": false,
+  "visualAttempt": 1,
+  "python": "3.14.5",
+  "pillow": "12.3.0",
+  "modelSHA256": "8ed0c13e7f15d1910b00a8457ae5b07bc5ac9b59450a617e7ee293a476e16731",
+  "rendererSHA256": "312681a9d5cc93162f24fd3e8d037401ef8524769e47cee4aac05446913863e6",
+  "sizes": {
+    "native": [
+      42,
+      104
+    ],
+    "half": [
+      21,
+      52
+    ],
+    "source": [
+      180,
+      450
+    ],
+    "context": [
+      352,
+      200
+    ]
+  },
+  "inputs": {
+    "iron-generation.json": "2a149b3e0a1eb746821c7813ed185f8078a5b862e6d19bbee4cf50bbc724d52a",
+    "iron.png": "e20e61ca4ac3016b34e316f4d40f9222033fa7435a5400bc5451b104ed5b08bd",
+    "paving.png": "c0decdab226512a790ddecf49cf703c9fc736f7943f11bc364b76b111b7c3125",
+    "prior-build.py": "b1cfe68b91e9cdb968f38871ae83214e7c39eb11404300af5290afe1080ac247",
+    "prior-geometry.json": "2746d816dbd94d8a8ce435d019b253ef30629d112e489d14d3b2df90b8d00326",
+    "reference.png": "49aa35447230187e3eabe948cdc8eba6d6d465b2605d624e2cf7443f6cb69ffb",
+    "rejected-master.png": "98198bc76b8b9a26e36255ba972f694c498a369b9b2332c0a8e9d89d73ab0d65"
+  },
+  "exports": {
+    "camera-half.png": "c01cd3455f6962444982d52b69bb4135b067a1037f3fabeae6fab2513f8b584a",
+    "camera-master.png": "497bed94bff59a80e363182a0d9b92ef670d2974e1c09fe1b425980d435e7297",
+    "camera-native.png": "8021b0a35b634ee6a90b58b0b88edc3090b037ad483a68197123730f64383a47",
+    "comparison-grayscale.png": "5ce9e9496ee92c4332e74ee53369fa6fa69b261e6247b25c971dd298690f474e",
+    "comparison.png": "321ccaa37cde27e7116977d9cfcdbca2e7f15a0a000b3b8639c0eedb7b7bf6b4",
+    "components/ankle_ring.png": "86e8ed4d04ac6635cbcc8bd21cc666a3b91a81407716b0c45a5b26bf9d27c8e2",
+    "components/bracket.png": "03725244cb54b094d81eb148adf16c287b45e5f5497b3046316b49d6316ed6ef",
+    "components/bracket_neck.png": "af7d0260851d42b041ff6596607468002273b9a6dc92d5893d9f7b4fc4aa480e",
+    "components/cyan_lens.png": "bf23422635b974f99dd67d7f916f5a5a617ae931fc40d22323ed1c31e3af2ea9",
+    "components/dome.png": "44f873247fbc89c55b9dc6fdb0a74dbd00d91d13c8e3d666e7fe87bdcbeec326",
+    "components/finial.png": "0ae22929248acb22c9becba78daab05cce5ad853f4d157eaf1ca005cb94429f3",
+    "components/finial_seat.png": "b0fe25c6ba15c8df1f05a641e430ba95872b21b7c1b24dca69cda06479644c5a",
+    "components/foot.png": "1cdbc9f2b442d6567ac7982590134a8ace9f0f43e12d192c14ef42e4909ee5e3",
+    "components/hood.png": "860d9a4d7256392a8c3b7f7e90bdef4284bbac4172015c044ba6c23b9bf14a08",
+    "components/middle_ring.png": "b25b8c79614c2001268d19eccb728abc96a15cd7c35ddcf0b07d8f11a596cc48",
+    "components/plinth.png": "eda55f281d855f03e48851c73f2c4f28ea703af6978976a0b83e94419d8e5b5d",
+    "components/pole.png": "d703e70ea1f9ff2635392de071c254b7d11f0b769ac989b2a8dbd248621db479",
+    "components/service_box.png": "c4e1a221478aa3495c3845602e41a6c4dbe1b3ff32e6c23d3e7c93f54b7bba05",
+    "components/socket.png": "9d193b1909136cb138964e3063df998b5c860e0158dcbf92fd65d4b36727ab4c",
+    "components/top_collar.png": "594b5142bac9bf9660c6793d25d23dd217b8d80092ce8eafe45f824875402fae",
+    "components/upper_ring.png": "54fa75b2c3049bf987a13e669400c87516b41a44c69afcf5fdf9a5f0a7ede2fe",
+    "ordinary-background-context.png": "14b667f72ddb60b6cd42b29d5332993584471ac0144ba1ed58e85c87a03766d2",
+    "uv-samples/ankle_ring.png": "1a30e028025ae2c6ff2a8d97eb2ed4be716cb887770cc951c49248b43eda1d9c",
+    "uv-samples/bracket.png": "08f21664c6c7290ced980e7709c34252d14e7c7dbf5057e2920fbe965c44a1a9",
+    "uv-samples/bracket_neck.png": "179d7446ad53a58a2f8a53210b156f41534c426409a4b77843b5da344b7525b3",
+    "uv-samples/cyan_lens.png": "aa1b6218bb33530044826573974e788d6666774aeef96dcff6ff1b404e1ffc00",
+    "uv-samples/dome.png": "81f0df59c55999470c0b05403c8ae4436bebca8e861a782e93dece08b310fe36",
+    "uv-samples/finial.png": "742d4cf0912d2dffff7b36bfc716ccb4b5d49f713627afdd5820a5c4debf9d4b",
+    "uv-samples/finial_seat.png": "b38fe8036c4d5928f2133643bfbbc0b1b8c9ec6ccae461c858c764dfee5eaf91",
+    "uv-samples/foot.png": "499a0ac2af6adda836d79965b2e199af92e7bc3694e08fe020d69e0453e8770c",
+    "uv-samples/hood.png": "6a096692c8dc53cf0a61e8c0e8bdbcea4ed9a800c585384fc38063f9cb01b6f4",
+    "uv-samples/middle_ring.png": "a2d0b984cf167eff6a26c559da5e5e2eb7ed33757d5f96f5f800cd43bdb20518",
+    "uv-samples/plinth.png": "1b7264b3bc0a89d434c67e5633dc3d2daa72001f3f6f72d2833d7394af4ff941",
+    "uv-samples/pole.png": "90e64ccb85de5b4921b89e17217747863e98b1022828821837e2f2a104c875a4",
+    "uv-samples/service_box.png": "dba373c7ebc5e9a6ae910633b1981b93914b143ddbac740b9a03a2d61626cb90",
+    "uv-samples/socket.png": "6dc8bfbc34cd3ab7d0be8c7eb992760b2a6d4e9d69c5e5eac49b761777ed3b6e",
+    "uv-samples/top_collar.png": "b1d70de170915cb93dca2862814db7c69caed01894dea9b152ca0819a254e2bc",
+    "uv-samples/upper_ring.png": "1c7296f89f69e3c5f878f0900fbeeae07a7b9e08cdebded03684b362495cff76"
+  }
+}

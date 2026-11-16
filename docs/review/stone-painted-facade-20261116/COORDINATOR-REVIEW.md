@@ -1,0 +1,9 @@
+# Coordinator final-image review, November 16 10:15 UTC
+
+**RECOMMENDED for isolated ordinary-scene comparison only.** This decision selects a changed-method source for a bounded scene experiment. It does not assert benchmark fidelity, owner acceptance, full geometric relief, production admission or completed native evidence. Independent technical checks remain a prerequisite to capture.
+
+Inspected actual `output/comparison.png`: full immutable reference alongside final native/half building with independent roof prop. The masonry value/color family, corner-door organization and painted facade read substantially closer than the prior polygon-only proposals. Visible deficits remain: repetitive facade treatment, baked stairs and relief, a thin planar roof with no modeled parapet, a small view-dependent vent, and a compact standalone mass rather than the reference's continuing street facade. These are real fidelity differences, not erased by editability or passing tests. No further aesthetic pass is authorized here.
+
+Use the final `output/preview-alpha.png` composite, with canvas1000x1200, source root[500,1160], uniform draw scale0.2, size[200,240], world root[512,640]. Bind its exact manifest/export hash, assembly registration and this decision separately. Ground registration comes from explicit mesh/projection, not alpha bounds. Verify the seed-1 solid retains its128x128 bounds. Collision and fields are unchanged; painted steps do not create walkable geometry.
+
+The raw roof material, provider metadata and earlier red attempts remain immutable. The separately documented issue246 derivative changes exactly three authorized RGBA residues, and its repaired sampler must pass the unchanged strict no-magenta check. The source OBJ remains building-only. The roof prop is a2.5D painted layer, not hidden3D mesh. Historical source metadata continues to describe its earlier review stage, not a retroactively granted acceptance.

@@ -1,0 +1,240 @@
+{
+  "solidID": "solid-03-transit-kiosk",
+  "authoritativeBounds": [
+    512,
+    640,
+    640,
+    768
+  ],
+  "worldRoot": [
+    512,
+    640,
+    0
+  ],
+  "sourceRoot": [
+    500,
+    1160
+  ],
+  "sourceCanvas": [
+    1000,
+    1200
+  ],
+  "sourcePixelsPerWorldUnit": 5,
+  "uniformDrawScale": 0.2,
+  "spriteSizeScenePoints": [
+    200.0,
+    240.0
+  ],
+  "spriteAnchorBottomLeft": [
+    0.5,
+    0.033333333333333326
+  ],
+  "screenProjection": "u=rootU+5*(x-y)/sqrt(2), v=rootV-5*((x+y)/(2*sqrt(2))+z)",
+  "landmarks": [
+    {
+      "id": "virtual-origin",
+      "local": [
+        0,
+        0,
+        0
+      ],
+      "world": [
+        512,
+        640,
+        0
+      ],
+      "source": [
+        500.0,
+        1160.0
+      ],
+      "provenance": "collision-only virtual corner"
+    },
+    {
+      "id": "vertex-0",
+      "local": [
+        39,
+        0,
+        0
+      ],
+      "world": [
+        551,
+        640,
+        0
+      ],
+      "source": [
+        637.8858223313767,
+        1091.0570888343116
+      ],
+      "provenance": "explicit authored mesh vertex"
+    },
+    {
+      "id": "vertex-1",
+      "local": [
+        128,
+        0,
+        0
+      ],
+      "world": [
+        640,
+        640,
+        0
+      ],
+      "source": [
+        952.5483399593904,
+        933.7258300203048
+      ],
+      "provenance": "explicit authored mesh vertex"
+    },
+    {
+      "id": "vertex-2",
+      "local": [
+        128,
+        128,
+        0
+      ],
+      "world": [
+        640,
+        768,
+        0
+      ],
+      "source": [
+        500.0,
+        707.4516600406096
+      ],
+      "provenance": "explicit authored mesh vertex"
+    },
+    {
+      "id": "vertex-3",
+      "local": [
+        0,
+        128,
+        0
+      ],
+      "world": [
+        512,
+        768,
+        0
+      ],
+      "source": [
+        47.45166004060957,
+        933.7258300203048
+      ],
+      "provenance": "explicit authored mesh vertex"
+    },
+    {
+      "id": "vertex-4",
+      "local": [
+        0,
+        39,
+        0
+      ],
+      "world": [
+        512,
+        679,
+        0
+      ],
+      "source": [
+        362.11417766862326,
+        1091.0570888343116
+      ],
+      "provenance": "explicit authored mesh vertex"
+    },
+    {
+      "id": "vertex-5",
+      "local": [
+        39,
+        0,
+        132
+      ],
+      "world": [
+        551,
+        640,
+        132
+      ],
+      "source": [
+        637.8858223313767,
+        431.05708883431157
+      ],
+      "provenance": "explicit authored mesh vertex"
+    },
+    {
+      "id": "vertex-6",
+      "local": [
+        128,
+        0,
+        132
+      ],
+      "world": [
+        640,
+        640,
+        132
+      ],
+      "source": [
+        952.5483399593904,
+        273.7258300203048
+      ],
+      "provenance": "explicit authored mesh vertex"
+    },
+    {
+      "id": "vertex-7",
+      "local": [
+        128,
+        128,
+        132
+      ],
+      "world": [
+        640,
+        768,
+        132
+      ],
+      "source": [
+        500.0,
+        47.45166004060957
+      ],
+      "provenance": "explicit authored mesh vertex"
+    },
+    {
+      "id": "vertex-8",
+      "local": [
+        0,
+        128,
+        132
+      ],
+      "world": [
+        512,
+        768,
+        132
+      ],
+      "source": [
+        47.45166004060957,
+        273.7258300203048
+      ],
+      "provenance": "explicit authored mesh vertex"
+    },
+    {
+      "id": "vertex-9",
+      "local": [
+        0,
+        39,
+        132
+      ],
+      "world": [
+        512,
+        679,
+        132
+      ],
+      "source": [
+        362.11417766862326,
+        431.05708883431157
+      ],
+      "provenance": "explicit authored mesh vertex"
+    }
+  ],
+  "collision": "UNCHANGED original 128x128 blocked rectangle. Chamfer and painted stairs remain blocked.",
+  "contactZ": 0,
+  "ownerAccepted": false,
+  "productionAdmitted": false,
+  "readyForNative": false,
+  "status": "FIRST_SAMPLE_COORDINATOR_REVIEW",
+  "referenceSHA256": "49aa35447230187e3eabe948cdc8eba6d6d465b2605d624e2cf7443f6cb69ffb"
+}

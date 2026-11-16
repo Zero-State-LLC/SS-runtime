@@ -1,0 +1,17 @@
+test_exact_composition_layer_bounds_and_no_magenta (test_roof_layer.RoofLayerTests.test_exact_composition_layer_bounds_and_no_magenta) ... /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/stone-painted-facade-20261116/test_roof_layer.py:87: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  for r,g,b,a in composite.getdata():
+FAIL
+
+======================================================================
+FAIL: test_exact_composition_layer_bounds_and_no_magenta (test_roof_layer.RoofLayerTests.test_exact_composition_layer_bounds_and_no_magenta)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/stone-painted-facade-20261116/test_roof_layer.py", line 88, in test_exact_composition_layer_bounds_and_no_magenta
+    self.assertFalse(a>0 and r>180 and b>180 and g<100)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 1 test in 0.129s
+
+FAILED (failures=1)

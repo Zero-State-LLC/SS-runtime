@@ -1,0 +1,57 @@
+CLEAN COPY: test_source.py
+
+test_actual_proportions_contact_and_collision (__main__.SourceTests.test_actual_proportions_contact_and_collision) ... ok
+test_alpha_bounds_and_no_interior_holes (__main__.SourceTests.test_alpha_bounds_and_no_interior_holes) ... ok
+test_closed_oriented_mesh (__main__.SourceTests.test_closed_oriented_mesh) ... ok
+test_each_material_mutation_changes_visible_pixels (__main__.SourceTests.test_each_material_mutation_changes_visible_pixels) ... ok
+test_exact_inputs_and_explicit_crops (__main__.SourceTests.test_exact_inputs_and_explicit_crops) ... ok
+test_hidden_surface_mutation_visible_in_reverse_only (__main__.SourceTests.test_hidden_surface_mutation_visible_in_reverse_only) ... ok
+test_mesh_mutation_changes_render_and_registration (__main__.SourceTests.test_mesh_mutation_changes_render_and_registration) ... ok
+test_no_magenta_contamination (__main__.SourceTests.test_no_magenta_contamination) ... /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/stone-painted-facade-20261116/clean-all-tests-qsw8pzhs/test_source.py:110: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  colors=image.getdata()
+ok
+test_output_hashes_native_half_obj (__main__.SourceTests.test_output_hashes_native_half_obj) ... ok
+test_registration_independently_projected (__main__.SourceTests.test_registration_independently_projected) ... ok
+test_standalone_replay_without_repository_or_siblings (__main__.SourceTests.test_standalone_replay_without_repository_or_siblings) ... ok
+test_uv_is_explicit_upright_unmirrored_reuse (__main__.SourceTests.test_uv_is_explicit_upright_unmirrored_reuse) ... ok
+test_uv_mutation_changes_pixels_not_geometry (__main__.SourceTests.test_uv_mutation_changes_pixels_not_geometry) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 4.778s
+
+OK
+
+CLEAN COPY: test_roof_layer.py
+
+test_exact_composition_layer_bounds_and_no_magenta (__main__.RoofLayerTests.test_exact_composition_layer_bounds_and_no_magenta) ... /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/stone-painted-facade-20261116/clean-all-tests-qsw8pzhs/test_roof_layer.py:87: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  for r,g,b,a in composite.getdata():
+FAIL
+test_exact_roof_z_and_independent_projection (__main__.RoofLayerTests.test_exact_roof_z_and_independent_projection) ... ok
+test_material_mutation_and_layer_removal (__main__.RoofLayerTests.test_material_mutation_and_layer_removal) ... ok
+test_original_building_geometry_registration_and_pixels_unchanged (__main__.RoofLayerTests.test_original_building_geometry_registration_and_pixels_unchanged) ... ok
+test_raw_unchanged_true_alpha_not_opaque_background (__main__.RoofLayerTests.test_raw_unchanged_true_alpha_not_opaque_background) ... FAIL
+test_root_anchor_z_and_scale_mutations_are_live (__main__.RoofLayerTests.test_root_anchor_z_and_scale_mutations_are_live) ... ok
+
+======================================================================
+FAIL: test_exact_composition_layer_bounds_and_no_magenta (__main__.RoofLayerTests.test_exact_composition_layer_bounds_and_no_magenta)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/stone-painted-facade-20261116/clean-all-tests-qsw8pzhs/test_roof_layer.py", line 88, in test_exact_composition_layer_bounds_and_no_magenta
+    self.assertFalse(a>0 and r>180 and b>180 and g<100)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_raw_unchanged_true_alpha_not_opaque_background (__main__.RoofLayerTests.test_raw_unchanged_true_alpha_not_opaque_background)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/stone-painted-facade-20261116/clean-all-tests-qsw8pzhs/test_roof_layer.py", line 27, in test_raw_unchanged_true_alpha_not_opaque_background
+    self.assertGreater(hist[255],1254*1254*.1)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 256 not greater than 157251.6
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.300s
+
+FAILED (failures=2)
+

@@ -1,0 +1,20 @@
+test_01_exact_authorized_changes_only (__main__.PaddingTests.test_01_exact_authorized_changes_only) ... ok
+test_02_archived_margin_failure_remains (__main__.PaddingTests.test_02_archived_margin_failure_remains) ... ok
+test_03_actual_final_border_passes_all_sizes_and_layers (__main__.PaddingTests.test_03_actual_final_border_passes_all_sizes_and_layers) ... ok
+test_04_unclipped_pixels_identical_and_fringe_restored (__main__.PaddingTests.test_04_unclipped_pixels_identical_and_fringe_restored) ... ok
+test_05_pasting_old_clipped_image_is_rejected (__main__.PaddingTests.test_05_pasting_old_clipped_image_is_rejected) ... ok
+test_06_source_pixels_crops_and_raw_files_unchanged (__main__.PaddingTests.test_06_source_pixels_crops_and_raw_files_unchanged) ... ok
+test_07_root_relative_mapping_identical (__main__.PaddingTests.test_07_root_relative_mapping_identical) ... ok
+test_08_registration_matches_source_and_uniform_scale (__main__.PaddingTests.test_08_registration_matches_source_and_uniform_scale) ... ok
+test_09_archive_original_twelve_checks_still_pass (__main__.PaddingTests.test_09_archive_original_twelve_checks_still_pass) ... ok
+test_10_standalone_all_outputs_and_manifest_identical (__main__.PaddingTests.test_10_standalone_all_outputs_and_manifest_identical) ... ok
+test_11_any_new_geometry_or_scale_change_rejected (__main__.PaddingTests.test_11_any_new_geometry_or_scale_change_rejected) ... ok
+test_12_final_manifest_hashes_current_inputs_and_exports (__main__.PaddingTests.test_12_final_manifest_hashes_current_inputs_and_exports) ... ok
+test_13_manifest_comparator_accepts_only_actual_interpreter (__main__.PaddingTests.test_13_manifest_comparator_accepts_only_actual_interpreter) ... ok
+test_14_manifest_comparator_rejects_all_noninterpreter_changes (__main__.PaddingTests.test_14_manifest_comparator_rejects_all_noninterpreter_changes) ... ok
+test_15_retained_author_manifest_bytes_are_separately_pinned (__main__.PaddingTests.test_15_retained_author_manifest_bytes_are_separately_pinned) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 2.533s
+
+OK

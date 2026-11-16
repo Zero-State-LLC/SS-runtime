@@ -1,0 +1,2 @@
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/stone-painted-facade-20261116/inspect_alpha.py:19: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  for i,(a,b) in enumerate(zip(raw.getdata(),material.getdata())) if a!=b]
