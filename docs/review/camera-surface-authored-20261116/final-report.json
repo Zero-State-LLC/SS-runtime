@@ -1,0 +1,19 @@
+{
+  "status": "TECHNICALLY_REPRODUCIBLE_VISUALLY_NOT_RECOMMENDED",
+  "currentPreview": "attempt-02/comparison-color.png",
+  "coordinatorReview": "COORDINATOR-REVIEW.md",
+  "finalReport": "FINAL.md",
+  "supportedTests": "test_final.py",
+  "visualAttempts": 2,
+  "remainingSameMethodAttempts": 0,
+  "parts": 16,
+  "paintSurfaces": 100,
+  "tests": {"count": 16, "python3147": "passed", "python31115": "passed", "standaloneWithoutRepository": "passed"},
+  "originalAuthorManifestSHA256": "12fa45195617a7423d7402c80e57c6490c17ce14822757f49d879464ed6c7826",
+  "replayEnvironmentRule": "actual Python version must equal running interpreter; every other manifest field exact; all non-manifest exports byte-exact",
+  "coordinatorRecommended": false,
+  "ownerAccepted": false,
+  "nativeExecuted": false,
+  "productionAdmitted": false,
+  "nextGate": "Changed source-authoring method decision, not a third pass or scene integration"
+}

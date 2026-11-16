@@ -1,5 +1,13 @@
 # Next work order
 
+## Source-method gate, November16 09:03UTC
+
+The approved ten-slice pass reached its bounded stop: Player, Camera and stone are still NOT RECOMMENDED after their allowed repairs. Camera final surface preview was independently rejected at08:54. Sixteen final-source tests now pass on Python3.14.7 and3.11.15, and a standalone packet without any repository/siblings passes all16. Original interpreter-metadata failure is retained; regenerated manifests must truthfully name the running interpreter while every other field and all export bytes remain exact. Author manifest is separately SHA256-pinned. Camera has100editable surfaces across16parts, but editability does not establish visual fidelity. Actual browser controls and limitations are recorded in its COORDINATOR-REVIEW.md. No third same-method visual pass.
+
+Published completed slices so far: be7db0d CI alias repair,1752e22 south/paving/actual UI evidence,e1876b0 portable stone record. Exact be7db0d spec-parity job succeeded, including23traversal tests and final contract/fixture byte parity against unchanged pin. Raw success log retained. At09:01,1752e22 run43834306239 had Swift successful, parity/Debug/Release running and device-sitting queued; e1876b0 run43835079480 queued. Neither is certified fully green. Final Camera publication has its own head/run to inspect separately. Do not start another automatic polling chain.
+
+**Owner decision needed:** authorize a materially different source-authoring workflow for garment surface/UV correspondence and painterly Camera/stone surfaces, or supply matching editable masters. Do not lower the benchmark or integrate these rejected proposals to unblock the plan. Family and coherent scene remain blocked; motion/encounter still require owner scene approval. Paving is only a bounded layout/material input. Actual isolated upgrade touch/scroll checks do not replace full-game, physical-device, signing or VoiceOver gates. Preserve #237/#239/#240/#241 and do not merge. No production source/HUD/input/collision/pin changes were made by this pass. Original source/attempt bytes and unrelated untracked work remain untouched.
+
 ## Bounded source and UI publication, November16 08:48UTC
 
 Approved continuation intent is retained as `intent/2026-11-16-source-to-scene-continuation.md`. Three independently verified review packets are ready for publication, with only their portable guard commands added to CI:
@@ -7,7 +15,7 @@ Approved continuation intent is retained as `intent/2026-11-16-source-to-scene-c
 | Slice | Current outcome | Remaining gate |
 | --- | --- | --- |
 | 1 CI | #244 repair be7db0d8cbdf95c84f94456389bb22433a86d59d: exact run43833371384 spec-parity SUCCESS at08:50 | Swift/Debug/Release still running; newer1752e22 run43834306239 queued |
-| 2 Camera | First authored source NOT RECOMMENDED; final bounded surface pass underway | Independent visual recommendation, portable inputs |
+| 2 Camera | Both authored previews NOT RECOMMENDED. Final16tests pass on two interpreters and standalone copy | Changed source-authoring method decision; no third pass |
 | 3 south Player | Knees restored and material sampling fixed, but thigh patch/folds still mismatched. Two previews exhausted, NOT RECOMMENDED | Changed garment surface/UV method decision |
 | 4 family | Not started | South recommendation |
 | 5 stone | Two direct-source attempts still model-like, NOT RECOMMENDED. Coordinator clean-copy replay passed at08:53:144mesh components,112exports byte-identical,9tests passed | Changed-method decision; no third visual attempt |

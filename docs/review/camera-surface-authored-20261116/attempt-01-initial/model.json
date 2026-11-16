@@ -1,0 +1,823 @@
+{
+  "canvas": [
+    180,
+    450
+  ],
+  "root": [
+    46,
+    427
+  ],
+  "scale": 0.22966507177033493,
+  "landmarks": {
+    "ground_root": [
+      46,
+      427
+    ],
+    "pole_axis_top": [
+      46,
+      44
+    ],
+    "pole_axis_foot": [
+      46,
+      380
+    ],
+    "bracket_attachment": [
+      59,
+      92
+    ],
+    "dome_center": [
+      116,
+      139
+    ],
+    "finial_tip": [
+      45,
+      12
+    ]
+  },
+  "parts": [
+    {
+      "name": "foot",
+      "contour": "M 12 390 C 17 381 69 379 80 390 L 84 414 C 80 426 64 432 46 432 C 28 432 13 425 10 416 Z",
+      "underpaint": "#242726",
+      "surfaces": [
+        {
+          "name": "left_cast_face",
+          "color": "#373b38",
+          "path": "M 12 394 L 23 402 L 25 424 L 17 420 L 12 413 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "front_cast_face",
+          "color": "#303331",
+          "path": "M 24 401 C 37 407 57 407 67 402 L 68 425 C 54 432 38 431 26 426 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "right_cast_face",
+          "color": "#171d1e",
+          "path": "M 67 401 L 80 393 L 82 412 L 77 420 L 68 425 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "rim_wear",
+          "color": "#7b7b6b",
+          "path": "M 14 414 L 17 419 L 24 422 M 27 425 L 34 427 M 46 430 L 54 429 M 73 422 L 78 416",
+          "width": 1.0,
+          "opacity": 255
+        },
+        {
+          "name": "cast_pits",
+          "color": "#161d1e",
+          "path": "M 29 410 L 30 419 M 47 411 L 46 426 M 66 409 L 65 419",
+          "width": 1.4,
+          "opacity": 255
+        },
+        {
+          "name": "left_chip",
+          "color": "#666a60",
+          "path": "M 18 403 L 21 405 L 22 411 L 20 410 L 20 406 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "front_chip",
+          "color": "#5a6059",
+          "path": "M 35 412 L 38 411 L 39 415 L 36 416 Z M 54 422 L 57 420 L 58 423 L 55 425 Z",
+          "width": 0,
+          "opacity": 255
+        }
+      ]
+    },
+    {
+      "name": "plinth",
+      "contour": "M 16 379 C 25 369 64 369 76 380 L 80 395 C 76 405 61 411 44 411 C 29 410 17 405 13 397 Z",
+      "underpaint": "#303433",
+      "surfaces": [
+        {
+          "name": "sloping_crown",
+          "color": "#666a62",
+          "path": "M 17 380 C 27 369 64 370 75 381 L 72 389 C 61 401 31 400 19 390 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "crown_left_light",
+          "color": "#929084",
+          "path": "M 20 380 L 25 375 L 29 376 L 25 383 L 26 389 L 32 393 L 29 394 L 22 390 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "crown_right_turn",
+          "color": "#444944",
+          "path": "M 61 374 L 71 378 L 75 383 L 72 390 L 60 397 L 51 398 L 63 391 L 67 384 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "front_vertical_lip",
+          "color": "#292e2e",
+          "path": "M 15 393 C 30 406 62 407 78 393 L 78 398 C 62 414 31 412 16 401 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "thin_front_bevel",
+          "color": "#a09c88",
+          "path": "M 17 392 C 31 405 61 405 75 394",
+          "width": 1.4,
+          "opacity": 255
+        },
+        {
+          "name": "bevel_gaps",
+          "color": "#343a37",
+          "path": "M 31 400 L 35 402 M 57 402 L 60 401",
+          "width": 1.5,
+          "opacity": 255
+        },
+        {
+          "name": "cast_scar",
+          "color": "#939083",
+          "path": "M 23 387 L 26 385 L 27 389 L 25 391 Z M 61 390 L 63 388 L 63 392 L 60 394 Z",
+          "width": 0,
+          "opacity": 255
+        }
+      ]
+    },
+    {
+      "name": "socket",
+      "contour": "M 26 354 C 35 349 56 349 64 355 L 69 378 C 66 389 32 394 23 380 Z",
+      "underpaint": "#333735",
+      "surfaces": [
+        {
+          "name": "left_curved_face",
+          "color": "#595d55",
+          "path": "M 27 358 L 34 361 L 34 382 L 30 385 L 26 381 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "front_curved_face",
+          "color": "#434842",
+          "path": "M 35 362 C 43 366 52 365 58 360 L 60 385 C 52 389 41 389 34 385 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "right_return",
+          "color": "#1e2526",
+          "path": "M 58 359 L 64 355 L 67 378 L 61 384 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "left_worn_edge",
+          "color": "#999482",
+          "path": "M 27 359 L 28 366 M 28 370 L 29 376 L 31 379",
+          "width": 1,
+          "opacity": 255
+        },
+        {
+          "name": "socket_front_marks",
+          "color": "#666a5d",
+          "path": "M 39 371 L 41 370 L 41 378 L 39 380 Z M 53 382 L 56 380 L 56 383 L 53 385 Z",
+          "width": 0,
+          "opacity": 255
+        }
+      ]
+    },
+    {
+      "name": "pole",
+      "contour": "M 29 43 C 37 41 53 41 61 45 L 62 97 L 61 160 L 62 224 L 61 289 L 62 355 C 60 366 35 369 27 359 L 28 285 L 27 219 L 28 146 Z",
+      "underpaint": "#282d2d",
+      "surfaces": [
+        {
+          "name": "left_cylinder_turn",
+          "color": "#474e49",
+          "path": "M 29 46 L 34 48 L 34 104 L 33 159 L 34 218 L 32 282 L 34 352 L 32 360 L 29 356 L 30 284 L 29 220 L 30 148 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "left_broken_light",
+          "color": "#62695e",
+          "path": "M 30 53 L 32 54 L 32 111 L 31 123 Z M 30 170 L 32 170 L 32 226 L 31 235 Z M 30 248 L 32 247 L 32 275 L 31 281 Z M 31 313 L 33 312 L 33 351 L 31 357 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "front_broad_cast",
+          "color": "#343a37",
+          "path": "M 35 47 L 46 47 L 45 120 L 46 184 L 44 245 L 46 300 L 45 364 L 36 362 L 35 290 L 36 219 L 35 159 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "front_plane_turn",
+          "color": "#414740",
+          "path": "M 37 53 L 40 52 L 40 98 L 38 104 Z M 38 125 L 41 126 L 40 177 L 38 180 Z M 37 202 L 40 198 L 41 235 L 39 249 L 37 246 Z M 37 263 L 40 266 L 40 287 L 38 286 Z M 39 319 L 42 314 L 42 356 L 39 359 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "right_round_shadow",
+          "color": "#161e20",
+          "path": "M 49 46 L 60 46 L 59 160 L 60 224 L 59 289 L 60 354 L 53 362 L 51 296 L 52 231 L 50 161 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "right_reflected_edge",
+          "color": "#444b46",
+          "path": "M 58 100 L 59 101 L 59 143 L 57 146 Z M 58 185 L 59 180 L 59 219 L 58 226 Z M 58 257 L 59 258 L 58 282 L 56 285 Z M 58 332 L 59 329 L 59 353 L 57 356 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "cast_damage_dark",
+          "color": "#1a2222",
+          "path": "M 35 115 L 38 114 L 37 127 L 35 129 Z M 42 184 L 45 181 L 44 189 L 42 190 Z M 35 298 L 38 297 L 37 305 L 35 304 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "sparse_wear",
+          "color": "#777b6c",
+          "path": "M 31 84 L 32 83 L 32 89 M 37 151 L 38 154 M 32 205 L 33 208 M 41 241 L 42 238 M 30 270 L 31 271 M 39 345 L 40 347",
+          "width": 0.7,
+          "opacity": 255
+        }
+      ]
+    },
+    {
+      "name": "ankle_ring",
+      "contour": "M 25 351 C 32 360 54 363 64 351 L 65 361 C 62 372 31 374 24 362 Z",
+      "underpaint": "#252b2b",
+      "surfaces": [
+        {
+          "name": "top_worn_roll",
+          "color": "#777a6d",
+          "path": "M 26 351 C 34 361 55 362 64 351 L 63 355 C 52 366 33 364 26 356 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "front_return",
+          "color": "#454c45",
+          "path": "M 27 358 C 35 366 53 366 62 358 L 62 362 C 51 371 35 370 27 363 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "broken_left_rim",
+          "color": "#aaa38d",
+          "path": "M 27 352 L 30 356 L 35 359 M 37 360 L 43 362",
+          "width": 0.85,
+          "opacity": 255
+        },
+        {
+          "name": "right_dark",
+          "color": "#192222",
+          "path": "M 59 360 L 64 355 L 63 362 L 58 367 Z",
+          "width": 0,
+          "opacity": 255
+        }
+      ]
+    },
+    {
+      "name": "middle_ring",
+      "contour": "M 25 285 C 32 294 56 297 65 284 L 66 294 C 61 307 31 309 24 296 Z",
+      "underpaint": "#252d2d",
+      "surfaces": [
+        {
+          "name": "rolled_upper_rim",
+          "color": "#686e62",
+          "path": "M 26 285 C 34 295 57 295 64 285 L 64 289 C 56 300 33 300 26 291 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "face_left",
+          "color": "#4d564c",
+          "path": "M 25 291 L 33 297 L 35 304 L 28 301 L 25 296 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "face_front",
+          "color": "#394139",
+          "path": "M 34 298 C 43 302 53 299 60 295 L 61 300 C 53 306 42 308 35 304 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "rim_glints",
+          "color": "#b1ab92",
+          "path": "M 27 286 L 30 290 L 35 293 M 39 295 L 45 296 M 57 293 L 61 290",
+          "width": 1,
+          "opacity": 255
+        },
+        {
+          "name": "notch",
+          "color": "#252b28",
+          "path": "M 35 292 L 38 295 L 38 298 L 35 296 Z",
+          "width": 0,
+          "opacity": 255
+        }
+      ]
+    },
+    {
+      "name": "upper_ring",
+      "contour": "M 25 140 C 32 149 55 150 65 138 L 66 149 C 61 163 31 163 24 152 Z",
+      "underpaint": "#242d2c",
+      "surfaces": [
+        {
+          "name": "top_roll",
+          "color": "#74796a",
+          "path": "M 26 140 C 35 151 56 150 64 140 L 64 145 C 56 155 33 156 25 146 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "front_metal",
+          "color": "#444d42",
+          "path": "M 26 147 C 34 156 53 157 63 148 L 63 153 C 55 161 35 162 27 154 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "contact_shadow",
+          "color": "#151e20",
+          "path": "M 33 157 C 43 161 55 158 62 152 L 62 156 C 51 164 36 162 31 159 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "left_rim",
+          "color": "#b2ab93",
+          "path": "M 26 142 L 29 146 L 34 149 M 38 151 L 44 152",
+          "width": 0.9,
+          "opacity": 255
+        }
+      ]
+    },
+    {
+      "name": "top_collar",
+      "contour": "M 27 59 C 34 67 54 67 63 59 L 64 72 C 57 82 32 81 26 72 Z",
+      "underpaint": "#293130",
+      "surfaces": [
+        {
+          "name": "left_roll",
+          "color": "#707669",
+          "path": "M 28 60 L 34 65 L 36 73 L 31 72 L 28 68 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "front_cast",
+          "color": "#444d43",
+          "path": "M 35 66 C 44 70 54 68 61 63 L 61 72 C 54 78 43 79 35 74 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "right_return",
+          "color": "#192323",
+          "path": "M 57 68 L 63 62 L 62 73 L 57 77 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "upper_edge",
+          "color": "#9b9c88",
+          "path": "M 28 61 L 32 65 L 37 68 M 40 69 L 45 70",
+          "width": 0.85,
+          "opacity": 255
+        }
+      ]
+    },
+    {
+      "name": "finial_seat",
+      "contour": "M 23 35 C 31 29 60 29 67 36 L 67 46 C 61 59 29 59 23 47 Z",
+      "underpaint": "#282e2e",
+      "surfaces": [
+        {
+          "name": "turned_top",
+          "color": "#63695f",
+          "path": "M 24 36 C 33 29 59 30 66 37 L 63 42 C 50 50 32 46 25 41 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "front_roll",
+          "color": "#444d45",
+          "path": "M 24 40 C 34 50 56 52 65 41 L 65 47 C 54 57 33 55 25 47 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "rim_highlight",
+          "color": "#9ca18b",
+          "path": "M 25 40 C 29 46 37 49 44 49 M 47 49 L 55 47",
+          "width": 1.1,
+          "opacity": 255
+        },
+        {
+          "name": "right_undercut",
+          "color": "#172022",
+          "path": "M 60 43 L 66 39 L 65 47 L 60 51 L 56 52 Z",
+          "width": 0,
+          "opacity": 255
+        }
+      ]
+    },
+    {
+      "name": "finial",
+      "contour": "M 29 26 C 28 19 34 12 43 12 C 52 11 59 16 62 24 C 66 35 58 42 46 43 C 34 42 27 37 29 26 Z",
+      "underpaint": "#303936",
+      "surfaces": [
+        {
+          "name": "shadow_turn",
+          "color": "#1d2829",
+          "path": "M 52 14 C 61 19 65 28 61 35 C 55 44 39 44 32 36 C 40 40 50 36 55 31 C 59 25 56 19 52 14 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "broad_lit_dome",
+          "color": "#515e52",
+          "path": "M 33 23 C 35 15 45 12 52 18 C 59 23 55 31 49 35 C 40 39 31 34 31 29 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "middle_bounce",
+          "color": "#677364",
+          "path": "M 35 20 L 39 16 L 47 16 L 53 20 L 53 26 L 49 31 L 42 32 L 36 29 L 34 25 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "upper_lit_patch",
+          "color": "#8d9782",
+          "path": "M 37 19 L 42 16 L 47 17 L 49 20 L 47 24 L 43 25 L 38 23 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "small_specular",
+          "color": "#c5c4a7",
+          "path": "M 41 17 L 44 17 L 45 19 L 43 21 L 40 20 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "scuffed_edge",
+          "color": "#75806d",
+          "path": "M 31 26 L 32 30 M 33 33 L 36 35 M 54 20 L 56 23",
+          "width": 0.7,
+          "opacity": 255
+        }
+      ]
+    },
+    {
+      "name": "service_box",
+      "contour": "M 55 165 L 68 158 L 76 163 L 76 193 L 65 202 L 55 197 Z",
+      "underpaint": "#aaa28c",
+      "surfaces": [
+        {
+          "name": "top",
+          "color": "#e2d6b9",
+          "path": "M 56 165 L 68 160 L 74 163 L 63 168 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "left",
+          "color": "#c8bea3",
+          "path": "M 56 166 L 62 169 L 62 198 L 57 195 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "front",
+          "color": "#b3ab92",
+          "path": "M 64 170 L 74 165 L 74 191 L 65 199 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "side_shadow",
+          "color": "#777e6a",
+          "path": "M 72 166 L 75 164 L 75 193 L 65 201 L 65 198 L 72 192 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "edge_wear",
+          "color": "#eee2c2",
+          "path": "M 57 168 L 58 184 M 58 187 L 58 193 M 65 171 L 65 179",
+          "width": 0.9,
+          "opacity": 255
+        }
+      ]
+    },
+    {
+      "name": "bracket",
+      "contour": "M 52 64 L 64 57 L 73 62 L 73 77 L 102 68 C 107 61 122 58 130 64 C 134 67 133 78 132 84 C 130 94 116 97 104 91 L 84 97 C 76 101 74 109 74 127 L 63 134 L 52 129 Z",
+      "underpaint": "#b9b19a",
+      "surfaces": [
+        {
+          "name": "left_thickness",
+          "color": "#d4c9ac",
+          "path": "M 53 65 L 61 69 L 61 130 L 54 127 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "mount_top",
+          "color": "#e5d9bc",
+          "path": "M 53 64 L 64 59 L 71 62 L 61 68 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "mount_front",
+          "color": "#aaa48d",
+          "path": "M 63 69 L 71 64 L 71 81 L 104 71 L 108 88 L 84 95 C 75 101 71 109 71 126 L 64 131 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "curved_arm_front",
+          "color": "#cec2a6",
+          "path": "M 64 82 L 104 70 C 111 66 120 66 128 69 L 127 83 C 123 88 115 89 105 85 L 82 92 C 75 96 70 103 68 114 L 65 118 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "arm_underside",
+          "color": "#777b68",
+          "path": "M 69 112 C 71 100 76 94 84 91 L 104 84 L 108 88 L 84 97 C 77 100 74 110 73 125 L 70 128 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "long_upper_bevel",
+          "color": "#f0e3c4",
+          "path": "M 64 79 L 103 67 L 106 69 L 104 72 L 65 84 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "left_edge_wear",
+          "color": "#eee2c4",
+          "path": "M 54 69 L 55 89 M 55 94 L 55 121 M 57 125 L 60 127",
+          "width": 1,
+          "opacity": 255
+        },
+        {
+          "name": "front_age",
+          "color": "#b2aa91",
+          "path": "M 76 83 L 80 81 L 82 82 L 80 85 L 76 86 Z M 89 79 L 93 77 L 95 78 L 92 81 Z",
+          "width": 0,
+          "opacity": 255
+        }
+      ]
+    },
+    {
+      "name": "dome",
+      "contour": "M 85 118 C 94 108 137 108 148 120 C 148 142 134 159 117 160 C 101 160 88 147 85 130 Z",
+      "underpaint": "#0b1519",
+      "surfaces": [
+        {
+          "name": "left_glass_curve",
+          "color": "#293c3b",
+          "path": "M 87 123 L 92 128 C 94 141 104 151 114 156 C 104 156 92 146 89 137 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "upper_reflected_rim",
+          "color": "#3d4c47",
+          "path": "M 89 122 C 105 132 132 133 145 123 L 143 129 C 127 139 103 136 91 130 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "left_soft_turn",
+          "color": "#1c2c2f",
+          "path": "M 95 132 C 100 141 107 147 118 152 L 120 158 C 108 156 99 148 95 142 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "right_deep_glass",
+          "color": "#050e13",
+          "path": "M 132 132 L 144 126 C 141 143 132 151 123 155 L 123 147 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "small_reflection",
+          "color": "#516059",
+          "path": "M 91 132 L 94 135 L 95 139 L 93 138 Z",
+          "width": 0,
+          "opacity": 255
+        }
+      ]
+    },
+    {
+      "name": "hood",
+      "contour": "M 109 89 C 117 86 129 89 136 96 C 143 102 148 114 148 121 C 147 129 136 135 121 136 C 103 137 87 131 82 124 C 80 119 84 107 90 100 C 95 94 101 91 109 89 Z",
+      "underpaint": "#bbb29a",
+      "surfaces": [
+        {
+          "name": "back_shoulder",
+          "color": "#d4c7aa",
+          "path": "M 88 108 C 92 98 102 92 113 91 C 125 88 136 96 141 105 L 139 113 C 129 119 109 119 91 115 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "upper_round_light",
+          "color": "#e6d6b6",
+          "path": "M 91 105 C 97 97 107 95 117 96 C 127 95 134 100 137 106 L 134 115 C 121 121 105 118 94 113 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "front_cream_bowl",
+          "color": "#c8bda2",
+          "path": "M 85 112 C 98 124 124 127 142 116 L 145 121 C 137 133 108 136 91 127 L 85 122 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "right_round_return",
+          "color": "#8f927a",
+          "path": "M 133 96 C 143 104 148 115 146 122 L 139 128 L 132 130 L 136 123 L 140 117 L 139 109 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "left_round_return",
+          "color": "#a6a68b",
+          "path": "M 89 103 L 86 112 L 87 122 L 94 128 L 94 132 L 85 127 L 82 121 L 84 111 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "rim_front",
+          "color": "#e6dab8",
+          "path": "M 86 125 C 100 137 131 140 145 125 L 143 130 C 127 142 100 137 87 130 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "rim_under_shadow",
+          "color": "#4b5149",
+          "path": "M 86 131 C 104 141 130 142 145 129 L 143 134 C 128 146 100 141 87 135 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "broad_soft_glint",
+          "color": "#f1e2c0",
+          "path": "M 98 106 L 102 102 L 108 102 L 112 104 L 119 102 L 123 105 L 122 110 L 116 113 L 108 112 L 103 115 L 99 113 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "small_hot_glint",
+          "color": "#fff0cf",
+          "path": "M 103 105 L 107 104 L 110 106 L 109 109 L 104 111 L 101 109 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "paint_weathering",
+          "color": "#a2a088",
+          "path": "M 92 115 L 95 113 L 97 115 L 96 118 L 93 119 Z M 124 120 L 128 118 L 129 121 L 126 124 L 124 123 Z M 137 111 L 139 112 L 139 115 L 137 116 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "small_edge_chips",
+          "color": "#f2e6c6",
+          "path": "M 89 126 L 92 128 M 97 131 L 101 132 M 113 135 L 119 135 M 132 133 L 136 131",
+          "width": 1,
+          "opacity": 255
+        }
+      ]
+    },
+    {
+      "name": "bracket_neck",
+      "contour": "M 104 67 C 111 61 124 60 130 65 L 132 69 L 131 84 C 127 93 113 95 104 88 Z",
+      "underpaint": "#b9af94",
+      "surfaces": [
+        {
+          "name": "curved_front",
+          "color": "#c6b99d",
+          "path": "M 106 73 C 114 78 126 75 131 70 L 130 83 C 126 91 114 93 106 87 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "right_cylinder_turn",
+          "color": "#8f927a",
+          "path": "M 125 75 L 130 71 L 130 83 L 126 88 L 123 90 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "top_lid",
+          "color": "#e4d8b8",
+          "path": "M 105 68 C 111 61 124 61 130 66 C 132 70 125 75 117 76 C 111 76 105 73 105 68 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "top_lid_light",
+          "color": "#f1e5c6",
+          "path": "M 108 67 L 113 64 L 122 64 L 128 67 L 127 70 L 121 73 L 115 73 L 109 71 Z",
+          "width": 0,
+          "opacity": 255
+        },
+        {
+          "name": "front_bevel",
+          "color": "#f0e1c0",
+          "path": "M 106 73 C 113 78 124 77 130 72",
+          "width": 1,
+          "opacity": 255
+        },
+        {
+          "name": "front_scuff",
+          "color": "#dbcfaf",
+          "path": "M 110 80 L 112 81 L 112 86 M 117 88 L 121 88",
+          "width": 0.8,
+          "opacity": 255
+        }
+      ]
+    },
+    {
+      "name": "cyan_lens",
+      "contour": "M 116 142 L 120 146 L 116 150 L 112 146 Z",
+      "underpaint": "#30d4d0",
+      "surfaces": [
+        {
+          "name": "inner_glint",
+          "color": "#a2ffe4",
+          "path": "M 116 143 L 117 146 L 116 148 L 115 146 Z",
+          "width": 0,
+          "opacity": 255
+        }
+      ]
+    }
+  ],
+  "hidden": [
+    {
+      "under": "pole",
+      "over": "middle_ring",
+      "point": [
+        45,
+        300
+      ]
+    },
+    {
+      "under": "pole",
+      "over": "bracket",
+      "point": [
+        56,
+        100
+      ]
+    },
+    {
+      "under": "dome",
+      "over": "hood",
+      "point": [
+        115,
+        122
+      ]
+    },
+    {
+      "under": "foot",
+      "over": "plinth",
+      "point": [
+        45,
+        399
+      ]
+    },
+    {
+      "under": "hood",
+      "over": "bracket_neck",
+      "point": [
+        116,
+        90
+      ]
+    }
+  ]
+}
