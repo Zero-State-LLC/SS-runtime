@@ -1,0 +1,23 @@
+test_independent_roof_interior_pixels_cover_all_five (arch_tests.SourceComparisonTests.test_independent_roof_interior_pixels_cover_all_five) ... FAIL
+
+======================================================================
+FAIL: test_independent_roof_interior_pixels_cover_all_five (arch_tests.SourceComparisonTests.test_independent_roof_interior_pixels_cover_all_five)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/architectural-scale-20261117/source/test_source.py", line 270, in test_independent_roof_interior_pixels_cover_all_five
+    self.assertEqual(im.getpixel((x,y)),(161,164,163,255),(arm,role,(x,y)))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (141, 141, 136, 255) != (161, 164, 163, 255)
+
+First differing element 0:
+141
+161
+
+- (141, 141, 136, 255)
++ (161, 164, 163, 255) : ('current', 'solid-01-residential-west', (691, 398))
+
+----------------------------------------------------------------------
+Ran 1 test in 0.131s
+
+FAILED (failures=1)
+EXPECTED FAILURE confirmed on preserved intermediate

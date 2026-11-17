@@ -1,5 +1,15 @@
 # Next work order
 
+## Architectural comparison validated, November17 01:40UTC
+
+Approved single proposal complete in `docs/review/architectural-scale-20261117/`. Actual three-zoom current/proposed untextured sheets inspected, hash-bound verdict `REVIEW.md`: recommend owner review of lower kiosk roof/cornice, taller residential story spacing, reduced civic glazing. **Not accepted art; overall benchmark NOT MET.** No aesthetic retry or native execution. Full source dimensions/massing in `source/DIMENSIONS.md`; source manifestcfa00dd646449a95a20153626c453e005e43de4c2db548c6a1ae6f7066f5a629.
+
+Independent18source+8audit+7gallery tests passed. Focused Swift8tests passed. Staged-only11618file export passed all5commands and reproduced all47render outputs byte-for-byte. All11432prior tracked files unchanged. Actual Brave loaded8images,6source hashes matched,4linksHTTP200, no overflow. Gallery at localhost8769/docs/review/architectural-scale-20261117/gallery/index.html, dedicated tab827533036. Source proxy explicitly omits native HUD/controls/shadow/raster roof vent; no native equivalence claim.
+
+Technical ground-UV and explicit-normal adapter failures retained under source/attempt-01-ground-uv and attempt-02-face-normals. Geometry/proposal unchanged across corrections. Incorrect dais test probe retained and replaced only after analytic rail-occlusion proof, with both old occluded and clear pixels now asserted. Issue255 records validator gaps and remains open. Jev401/direct-browser fallback and hidden-tab decode timeout are documented. No old artifacts or unrelated untracked packets changed.
+
+Remaining authorized work is commit/push/remote-head verification and publication to existingPR236, then **STOP for owner proportion review before any texture/detail or final native work**. No production admission, merge, issue closure, motion/encounter or physical certification. No unfiltered Swift retry or automatic CI polling chain.
+
 ## Architectural-scale comparison approved, November17 01:18UTC
 
 Owner explicitly approved `intent/2026-11-17-architectural-scale-review.md` at01:18:40Z. One untextured current/proposed geometry comparison across visible frontage, at existing three zooms, with unchanged Player/Camera references and full benchmark. New packet `docs/review/architectural-scale-20261117/`. Elephant owns only new `source/` implementation/tests/output. Coordinator owns preservation audit, gallery/docs, independent validation and publication. Initial audit protects11432tracked files at basec8dceac, excluding only approved intent and live handoff.

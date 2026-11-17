@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architectural proportions · one source comparison</title>
+<style>
+:root{color-scheme:dark;font:16px/1.5 system-ui,sans-serif;background:#171b1e;color:#e8e6e1}
+*{box-sizing:border-box}body{margin:0}main{max-width:1480px;margin:auto;padding:24px}h1{font-size:30px;margin:0 0 8px}h2{font-size:21px;margin:30px 0 12px}h3{font-size:16px;margin:0 0 8px}p{max-width:1000px}a{color:#a7d5e1}.tag{color:#ebc78f;font-weight:700;letter-spacing:.05em;font-size:12px}.notice{border-left:3px solid #ebc78f;padding:12px 16px;background:#242a2e}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.frame{margin:0;background:#22282c;padding:12px;min-width:0}.frame img{display:block;width:100%;height:auto;object-fit:contain;background:#15191b}.frame figcaption{font-size:13px;color:#bdc6ca;padding-top:8px}.reference img{max-height:500px}.scene img{aspect-ratio:704/326}.links{display:flex;gap:20px;flex-wrap:wrap}.footer{border-top:1px solid #485258;margin-top:28px;padding-top:16px;font-size:14px;color:#bdc6ca}@media(max-width:850px){main{padding:16px}.grid{grid-template-columns:1fr}h1{font-size:26px}}
+</style>
+</head>
+<body><main>
+<div class="tag">BP-001 / 007 / 012 · T1045 · NOVEMBER 17, 2026</div>
+<h1>Architecture before surface detail</h1>
+<p class="notice"><strong>One proposed massing study. Owner review required.</strong> The six gray-building views below are a synthetic source-scene reconstruction, not native captures, accepted art, or a production change. Player, Camera, ground plan, roots, framing and depth authority are retained. No automatic aesthetic retry.</p>
+<p>Compare doorway clearance, window and story heights, roof/cornice mass, facade height and depth against the unchanged Player and Camera. Current and proposed use the same source-view renderer. Real-world dimensions are not asserted.</p>
+<p><strong>Source-view limits:</strong> the raster roof vent, native shadows and HUD/controls are not drawn in these gray-building views. Runtime controls remain unchanged. Ground and field use source reconstruction, not native pixels. Context doorways absent from the original geometry cannot be certified.</p>
+<nav class="links" aria-label="Evidence"><a href="../README.md">Scope and dimension report</a><a href="../REVIEW.md">Coordinator visual review</a><a href="../VALIDATION.md">Validation and limits</a><a href="../CONTRACT.md">Approved boundaries</a></nav>
+<h2>Reference, kept whole</h2>
+<div class="grid">
+<figure class="frame reference"><h3>Original benchmark · full image</h3><img id="benchmark" src="../../building-perspective-detail-20261116/kiosk/inputs/benchmark.png" alt="Original full uncropped visual benchmark"><figcaption>Uniformly fit, not cropped or stretched. Visual target, not the retained scene layout.</figcaption></figure>
+<figure class="frame reference"><h3>V9 · retained native context</h3><img id="retained" src="../../blocked-base-curb-relief-20261116/scene/native-capture-v9/source-scene-candidate-ordinary-z100-native.png" alt="Unchanged previous V9 native scene at zoom one"><figcaption>Previous actual native capture. V9 remains unaccepted. This is not the output of the new massing study.</figcaption></figure>
+</div>
+<h2>Zoom 1.00 · same retained framing</h2>
+<p><strong>Proposed source dimensions:</strong> kiosk top 132 → 104, roof parapet 7 → 4, entry clearance 65.66 → 62. Residential story pitch 46 → 66. Civic facade 142 → 120. Player visual reference: 49.5 units from root to alpha top. XY dimensions and depth remain unchanged.</p>
+<div class="grid">
+<figure class="frame scene"><h3>Current proportions · untextured</h3><img src="../source/output/current-z100.png" alt="Current untextured source geometry at zoom 1.00"><figcaption>Source reconstruction, not a native baseline.</figcaption></figure>
+<figure class="frame scene"><h3>Proposed proportions · untextured</h3><img src="../source/output/proposed-z100.png" alt="Single proposed untextured source geometry at zoom 1.00"><figcaption>One geometry proposal, not an accepted correction.</figcaption></figure>
+</div>
+<h2>Zoom 1.25 · same retained framing</h2>
+<div class="grid">
+<figure class="frame scene"><h3>Current proportions · untextured</h3><img src="../source/output/current-z125.png" alt="Current untextured source geometry at zoom 1.25"><figcaption>Player and Camera source registrations unchanged.</figcaption></figure>
+<figure class="frame scene"><h3>Proposed proportions · untextured</h3><img src="../source/output/proposed-z125.png" alt="Single proposed untextured source geometry at zoom 1.25"><figcaption>Footprints and actor/prop authority unchanged.</figcaption></figure>
+</div>
+<h2>Zoom 1.40 · same retained framing</h2>
+<div class="grid">
+<figure class="frame scene"><h3>Current proportions · untextured</h3><img src="../source/output/current-z140.png" alt="Current untextured source geometry at zoom 1.40"><figcaption>Evaluate the whole frontage, not only the kiosk.</figcaption></figure>
+<figure class="frame scene"><h3>Proposed proportions · untextured</h3><img src="../source/output/proposed-z140.png" alt="Single proposed untextured source geometry at zoom 1.40"><figcaption>No image-space building resize to force a match.</figcaption></figure>
+</div>
+<p class="footer"><strong>Next gate:</strong> owner proportion review before materials or a final textured native pass. No merge, issue closure, production admission, motion/encounter expansion or physical-device certification. Image loading and byte integrity are independently checked in the validation packet. This static page does not certify them at runtime.</p>
+</main></body></html>

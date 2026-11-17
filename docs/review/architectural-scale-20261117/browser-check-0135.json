@@ -1,0 +1,35 @@
+{
+  "observedAt": "2026-11-17T01:35:34.897Z",
+  "browser": "Brave",
+  "tabId": 827533036,
+  "url": "http://127.0.0.1:8769/docs/review/architectural-scale-20261117/gallery/index.html?final=20261117-0134",
+  "viewport": [1200, 823],
+  "allEightLoaded": true,
+  "sixSourceHashesMatch": true,
+  "noHorizontalOverflow": true,
+  "ownerGate": true,
+  "proxyNotice": true,
+  "sourceNaturalDimensions": [2112, 978],
+  "sourceDisplayedDimensions": [542, 250.9765625],
+  "benchmarkNaturalDimensions": [1672, 941],
+  "benchmarkDisplayedDimensions": [542, 305.03125],
+  "objectFitAll": "contain",
+  "documentLinks": {"README.md": 200, "REVIEW.md": 200, "VALIDATION.md": 200, "CONTRACT.md": 200},
+  "fetchedSHA256": {
+    "benchmark.png": "49aa35447230187e3eabe948cdc8eba6d6d465b2605d624e2cf7443f6cb69ffb",
+    "retained-v9-z100.png": "807ad6d5c015c92f217e30a831d9627864efc9d9dea1f44d511eeea784985ab7",
+    "current-z100.png": "946c610efac717e950b061132a4ae68f59f8c5184b71a5c34ed7f5b5797532ce",
+    "proposed-z100.png": "18b810034f7fad74d1ec8814b913ff0ef85b4a20c0aa4fb1b80f4b2b436e5882",
+    "current-z125.png": "f57b3a09dfba749a73c709970823982336f9f6343912bcd5d23b4ecb59e13316",
+    "proposed-z125.png": "4819e955189578bbdfe9da7b4de7b59eeee57c5757a03a13b95b65d051529448",
+    "current-z140.png": "3c8835f7bd7c5f29c8dce68b0bd69ea3d6b3453c1e2c4044a41ec8037b4d8252",
+    "proposed-z140.png": "6975188e0deffc67ac1c835f652fca2459eabe79bdd4887c130785fb8376268f"
+  },
+  "method": "Fresh final page navigation, actual DOM dimensions/completion, no-store fetch and WebCrypto SHA256 comparison with source manifest, actual screenshot at zoom1.40 row",
+  "limitations": [
+    "Jev handoff HTTP401 required direct browser fallback, not user login",
+    "Initial eval lacked explicit return and yielded undefined",
+    "First async decode check timed out in hidden tab. Inspection confirmed images complete but decode unresolved. Final check selected tab and avoided decode wait, used completed images and fetch hashes",
+    "This is review-gallery validation, not native or aesthetic acceptance"
+  ]
+}
