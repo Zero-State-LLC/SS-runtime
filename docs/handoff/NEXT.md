@@ -1,5 +1,13 @@
 # Next work order
 
+## Owner flags architectural scale, November17 00:54UTC
+
+Owner says the building with the Camera in front is awkwardly sized, as an example. Correction recorded in `FACTS.md`. Actual V9 zoom1.4half inspected. This is a broader architectural-proportion concern, not another base/curb-detail request. Do not infer a resize percentage, claim a measured real-world scale, or uniformly shrink a sprite whose ground registration is fixed.
+
+Recommended next work order: `intent/2026-11-17-architectural-scale-review.md`, **DRAFT awaiting explicit approval**. Review simple untextured massing across visible frontage using retained Player/Camera references, then doorway/window/story dimensions, roof/cornice mass and facade height together. Owner reviews the proportion comparison before texture/detail work. Preserve footprints and all other authority. If those constraints prevent a credible result, identify the necessary spec decision rather than silently changing collision or actors.
+
+No new source, render, native run or accepted-art change has begun. V9 remains rejected/unaccepted and immutable. **Needed from owner:** approve the proposed architectural-scale comparison. All production, merge, issue-closure, motion/encounter and physical-device gates remain unchanged.
+
 ## V9 published, STOP for owner review, November17 00:34UTC
 
 Evidence commit `6c3be49c0322874a7c037d4e0b29495e311a6c3a` was pushed and independently matched localHEAD, remote branch and openPR236 head at00:34. PR review comment6933874140 and issue254 comment6933874542 record the exact results and unchanged gates. Source checkpoint e144549 is included. This handoff checkpoint is documentation-only follow-through, not another source or native attempt.
