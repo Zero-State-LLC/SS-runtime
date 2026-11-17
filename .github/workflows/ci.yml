@@ -149,7 +149,8 @@ jobs:
           python3 -B -W error::ResourceWarning docs/review/blocked-base-curb-relief-20261116/test_audit.py
           python3 -B -W error::ResourceWarning docs/review/blocked-base-curb-relief-20261116/source/test_source.py
           python3 -B -W error::ResourceWarning docs/review/blocked-base-curb-relief-20261116/source/attempt-02/test_source.py
-          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/blocked-base-curb-relief-20261116/scene -p 'test_*.py'
+          python3 -B scripts/test_review_test_runner.py
+          python3 scripts/run_review_tests.py -B -W error::ResourceWarning -m unittest discover -s docs/review/blocked-base-curb-relief-20261116/scene -p 'test_*.py'
           python3 -B docs/review/blocked-base-curb-relief-20261116/scene/retained.py docs/review/blocked-base-curb-relief-20261116/scene/native-capture-v9
           python3 -B docs/review/blocked-base-curb-relief-20261116/audit.py verify
           python3 -B docs/review/blocked-base-curb-relief-20261116/audit.py pixels
