@@ -1,5 +1,9 @@
 # Corrected project facts
 
+## November 17, 2026, 01:55UTC: Production execution authorized
+
+The later ASTRA execution directive authorizes reversible Level1 engineering, QA, asset correction and actual simulator evaluation. Historical no-new-render/native stop language below describes the earlier bounded work orders, not a blanket stop under this new directive. The one-building correction remains binding: preserve neighboring buildings as references. Art acceptance, changed gameplay contracts, merge/release/deployment and paid external generation remain separately gated.
+
 ## November 17, 2026, 01:51UTC: Only the Camera-adjacent building stands out
 
 Owner clarified that only the single building beside the Camera post stands out for odd geometry and spacing compared with the other buildings. This supersedes the earlier scene-wide interpretation below. Treat the surrounding buildings as unchanged visual references, not additional redesign targets. The published comparison's residential and civic changes are not requested corrections or accepted changes. Do not reduce the concern to scale alone or invent a resizing percentage: geometry and spacing are the reported symptoms, not an established cause. Preserve published evidence. This clarification does not authorize another render attempt, footprint/collision changes, relocation of the Camera/Player, or native execution.
