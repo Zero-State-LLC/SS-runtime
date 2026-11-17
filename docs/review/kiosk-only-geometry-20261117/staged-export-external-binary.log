@@ -1,0 +1,40 @@
+{
+  "status": "NATIVE_FLAT_KIOSK_COMPARISON_NOT_ACCEPTANCE",
+  "captures": 6,
+  "images": 18,
+  "unchangedOutsideKioskCanvasPairs": 3,
+  "inputSHA256": "861901fd95e626f8b4b5f4784255294b2247bbb7256131641cac9567f75e4edb",
+  "testExecutable": {
+    "loadedPath": "/Users/appliedalchemylabs/Library/Developer/CoreSimulator/Devices/CACB3927-A76E-43A5-9ACA-C389EB38C0C3/data/Containers/Bundle/Application/3899AEB8-D5AD-4F88-93A8-2035A479B20E/SSRuntime.app/PlugIns/SSRuntimeTests.xctest/SSRuntimeTests",
+    "loadedSHA256": "45d02db24f86d132536e2bd46ff2b9b63d82bcd8817a21e9f90b77135ac8efff",
+    "expectedBuildPath": "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/kiosk-only-geometry-20261117/native/derived/Build/Products/Debug-iphonesimulator/SSRuntime.app/PlugIns/SSRuntimeTests.xctest/SSRuntimeTests",
+    "expectedBuildSHA256": "45d02db24f86d132536e2bd46ff2b9b63d82bcd8817a21e9f90b77135ac8efff"
+  },
+  "ownerAcceptance": false,
+  "physicalDeviceEvidence": false
+}
+[stderr] test_all_three_current_layers_reproduce_v9 (__main__.TexturedKioskTests.test_all_three_current_layers_reproduce_v9) ... ok
+[stderr] test_alpha_is_real_and_not_clipped_to_canvas (__main__.TexturedKioskTests.test_alpha_is_real_and_not_clipped_to_canvas) ... ok
+[stderr] test_bindings_match_actual_new_sources (__main__.TexturedKioskTests.test_bindings_match_actual_new_sources) ... ok
+[stderr] test_candidate_exact_rerender_and_composition (__main__.TexturedKioskTests.test_candidate_exact_rerender_and_composition) ... /Users/appliedalchemylabs/.jcode/scratch/ss-kiosk-staged-export-20261117-0303/docs/review/building-perspective-detail-20261116/kiosk/baseline_renderer.py:104: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+[stderr]   found={(i%source.width,i//source.width) for i,(r,g,b,a) in enumerate(source.getdata())
+[stderr] /Users/appliedalchemylabs/.jcode/scratch/ss-kiosk-staged-export-20261117-0303/docs/review/building-perspective-detail-20261116/kiosk/baseline_renderer.py:133: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+[stderr]   plane.putdata([p[3] if c==3 else p[c]*p[3]/255 for p in source.getdata()])
+[stderr] /Users/appliedalchemylabs/.jcode/scratch/ss-kiosk-staged-export-20261117-0303/docs/review/building-perspective-detail-20261116/kiosk/baseline_renderer.py:136: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+[stderr]   for r,g,b,a in zip(*(channel.getdata() for channel in channels)):
+[stderr] ok
+[stderr] test_exact_manifest_closure_and_no_acceptance (__main__.TexturedKioskTests.test_exact_manifest_closure_and_no_acceptance) ... ok
+[stderr] test_existing_output_is_never_overwritten (__main__.TexturedKioskTests.test_existing_output_is_never_overwritten) ... ok
+[stderr] test_ground_correspondence_and_virtual_corner_disclosure (__main__.TexturedKioskTests.test_ground_correspondence_and_virtual_corner_disclosure) ... ok
+[stderr] test_registrations_derive_only_from_authored_mesh (__main__.TexturedKioskTests.test_registrations_derive_only_from_authored_mesh) ... ok
+[stderr] test_topology_material_uv_xy_and_z_are_exact (__main__.TexturedKioskTests.test_topology_material_uv_xy_and_z_are_exact) ... ok
+[stderr] test_uv_material_and_z_mutations_rejected (__main__.TexturedKioskTests.test_uv_material_and_z_mutations_rejected) ... ok
+[stderr] test_vent_only_follows_roof_z (__main__.TexturedKioskTests.test_vent_only_follows_roof_z) ... ok
+[stderr] test_xy_mutation_rejected (__main__.TexturedKioskTests.test_xy_mutation_rejected) ... ok
+[stderr] 
+[stderr] ----------------------------------------------------------------------
+[stderr] Ran 12 tests in 6.760s
+[stderr] 
+[stderr] OK
+
+--- Command finished with exit code: 0 ---
