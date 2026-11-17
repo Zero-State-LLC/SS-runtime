@@ -42,6 +42,14 @@ class ScopeGuardTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "existing.swift"):
             verify(self.root, self.base)
 
+    def test_staged_change_cannot_hide_behind_restored_worktree(self):
+        path = self.root / "Sources/frozen.swift"
+        path.write_text("staged authority change\n")
+        self.git("add", "Sources/frozen.swift")
+        path.write_bytes(b"frozen bytes\n")
+        with self.assertRaisesRegex(ValueError, "frozen.swift"):
+            verify(self.root, self.base)
+
     def test_removed_asset_rejected(self):
         (self.root / "RuntimeAssets/existing.png").unlink()
         with self.assertRaisesRegex(ValueError, "existing.png"):

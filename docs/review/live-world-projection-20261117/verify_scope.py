@@ -24,10 +24,14 @@ def verify(root=ROOT, base=BASE):
     if not tracked:
         raise ValueError("No frozen files found")
     # --diff-filter excludes additions: a new test is allowed, editing/removing an old test is not.
-    changed = git("diff", "--no-ext-diff", "--name-only", "--diff-filter=CDMRTUXB", "-z", base, "--", *PATHS)
-    paths = [p.decode() for p in changed.split(b"\0") if p]
-    added = git("diff", "--no-ext-diff", "--name-only", "--diff-filter=A", "-z", base, "--", *PATHS)
-    paths += [p.decode() for p in added.split(b"\0") if p and not p.startswith(b"AppTests/")]
+    paths = []
+    # Check both views: a restored worktree must not conceal a staged violation.
+    for view in ([], ["--cached"]):
+        changed = git("diff", "--no-ext-diff", *view, "--name-only", "--diff-filter=CDMRTUXB", "-z", base, "--", *PATHS)
+        paths += [p.decode() for p in changed.split(b"\0") if p]
+        added = git("diff", "--no-ext-diff", *view, "--name-only", "--diff-filter=A", "-z", base, "--", *PATHS)
+        paths += [p.decode() for p in added.split(b"\0") if p and not p.startswith(b"AppTests/")]
+    paths = sorted(set(paths))
     if paths:
         raise ValueError("Frozen authority/art/test bytes or modes changed: " + ", ".join(paths))
     return {"status": "FROZEN_AUTHORITY_ART_TESTS_UNCHANGED_NOT_VISUAL_ACCEPTANCE",

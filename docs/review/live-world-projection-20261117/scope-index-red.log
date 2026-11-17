@@ -1,0 +1,20 @@
+test_mode_change_rejected (__main__.ScopeGuardTests.test_mode_change_rejected) ... ok
+test_modified_existing_test_rejected_before_and_after_staging (__main__.ScopeGuardTests.test_modified_existing_test_rejected_before_and_after_staging) ... ok
+test_new_authority_file_rejected (__main__.ScopeGuardTests.test_new_authority_file_rejected) ... ok
+test_removed_asset_rejected (__main__.ScopeGuardTests.test_removed_asset_rejected) ... ok
+test_staged_change_cannot_hide_behind_restored_worktree (__main__.ScopeGuardTests.test_staged_change_cannot_hide_behind_restored_worktree) ... FAIL
+test_unchanged_and_new_test_pass (__main__.ScopeGuardTests.test_unchanged_and_new_test_pass) ... ok
+
+======================================================================
+FAIL: test_staged_change_cannot_hide_behind_restored_worktree (__main__.ScopeGuardTests.test_staged_change_cannot_hide_behind_restored_worktree)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/live-world-projection-20261117/test_scope.py", line 50, in test_staged_change_cannot_hide_behind_restored_worktree
+    with self.assertRaisesRegex(ValueError, "frozen.swift"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.426s
+
+FAILED (failures=1)
