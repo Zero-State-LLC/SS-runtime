@@ -1,5 +1,11 @@
 # Next work order
 
+## Broader presentation projection approved, November17 03:40UTC
+
+Owner approved at2026-11-17T03:40:46.895Z in response to the prior explicit gate. Scope and acceptance: `intent/2026-11-17-live-world-projection.md`. Implement reversible Debug-only live midpoint projection across ground and registered upright roots, with consistent camera/manual input and fixed HUD. Neighbor asset designs and all authoritative geometry/commands remain unchanged. This supersedes the prior no-broader-reprojection work stop, not art acceptance, canonical admission, merge/release or physical/human gates.
+
+Rhino owns App implementation, new LiveWorldProjectionTests and implementation logs under new `docs/review/live-world-projection-20261117/`, with serialized simulator slot for validation. Coordinator owns scope/docs, independent review, actual app inspection and publication. Preserve all prior packets and six unrelated untracked art/work-order paths. No worker commits. Do not call static transformed screenshots continuous live projection proof.
+
 ## Final integration checkpoint, November17 03:33UTC
 
 Socket-ordering fix fed8a3d is pushed and independently matched remote branch/openPR236 head. All remaining standalone post-hash host partitions completed exit0:781/119,20/2,9/2(with2optional probes skipped),57/4. They ran the pre-socket-fix host binary. Final socket/hash/reinforcement21tests pass independently. Both600second aggregate timeouts remain retained and are not called passes. See HASH-PERFORMANCE.md for exact applicability.

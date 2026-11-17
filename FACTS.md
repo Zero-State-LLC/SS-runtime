@@ -1,5 +1,9 @@
 # Corrected project facts
 
+## November 17, 2026, 03:40UTC: Broader presentation projection authorized
+
+Owner's approval at03:40:46.895Z responds to the explicit request for a broader presentation-projection correction after actual playable kiosk review exposed a projection/foundation mismatch. Necessary presentation transforms across the live scene are now authorized. Neighboring asset designs, source bytes and all simulation/collision authority remain unchanged. Implement and verify a reversible Debug review route before any production adoption. This is not acceptance of kiosk art, canonical admission, changed gameplay, merge/release/deployment or physical certification. Scope: `intent/2026-11-17-live-world-projection.md`.
+
 ## November 17, 2026, 01:55UTC: Production execution authorized
 
 The later ASTRA execution directive authorizes reversible Level1 engineering, QA, asset correction and actual simulator evaluation. Historical no-new-render/native stop language below describes the earlier bounded work orders, not a blanket stop under this new directive. The one-building correction remains binding: preserve neighboring buildings as references. Art acceptance, changed gameplay contracts, merge/release/deployment and paid external generation remain separately gated.
