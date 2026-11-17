@@ -1,0 +1,9 @@
+# Final correction source API
+
+Final manifest is `source/attempt-02/manifest.json`, schema `blocked-base-curb-source-009`, attempt2, maximumAttempts2, status `FINAL_CORRECTION_PENDING_COORDINATOR`. Do not replace or reinterpret `source/manifest.json`, which remains first-attempt evidence. `files` paths resolve from attempt02. `baselineFiles` and `firstAttemptFiles` are repository-relative SHA256 maps. `sourceRecommendation` remains null, separate coordinator recommendation required.
+
+`sprites` is the same53element array and all non-image fields are exactly identical to first registration. PNG paths now resolve to `source/attempt-02/output/sprites/<id>.png` and have new material hashes. `output/registration.json` matches that array exactly. `registration` retains canvasPixels/rootPixelsTopLeft/worldPosition/drawSizeWorld. Contacts, heightWorld18/3, worldBoundsXYZ, geometryLandmarks, geometryID and geometryFile remain unchanged. `geometryFile: geometry.json` resolves locally to a byte-identical copy of original source geometry. Each PNG alpha array is also identical to its attempt01 source.
+
+Import `attempt-02/test_source.py` via file path, then `verify_manifest(path=.../manifest.json,replay=True)` or `validate(geometry,registrations=None)`. Run with `PYTHONDONTWRITEBYTECODE=1`. The validator reuses all first geometry/semantic checks, plus exact frozen first hashes, material-boundary, registration/alpha equality, final source hashes and byte-identical replay. It never recommends source.
+
+Preview is `output/preview/`, three zooms1/1.25/1.4 with full/half/grayscale, `base-curb-detail.png`, `full-benchmark-comparison.png`, `preview-metadata.json`. Synthetic only. The same retained footprint-depth algorithm ranks all18+53nodes. Registered known actor silhouettes mask only when geometry order puts the actor ahead. Native ordering must still be independently checked.

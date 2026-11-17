@@ -1,0 +1,22 @@
+test_contact_height_mutations (__main__.CorrectionTests.test_contact_height_mutations) ... ok
+test_frozen_source_manifest_and_replay (__main__.CorrectionTests.test_frozen_source_manifest_and_replay) ... /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/blocked-base-curb-relief-20261116/source/attempt-02/replay.py:19: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  out=Image.new('RGBA',sample.size);out.putdata([tuple(max(0,min(255,round(c+(v-mean)*s['textureContrast']))) for c in rgb)+(255,) for v in sample.getdata()]);return out
+ok
+test_geometry_and_registration (__main__.CorrectionTests.test_geometry_and_registration) ... ok
+test_geometry_mutation (__main__.CorrectionTests.test_geometry_mutation) ... ok
+test_no_third_attempt_or_self_recommendation (__main__.CorrectionTests.test_no_third_attempt_or_self_recommendation) ... ok
+test_overwrite_refused (__main__.CorrectionTests.test_overwrite_refused) ... ok
+test_preview_depth_order_mutation (__main__.CorrectionTests.test_preview_depth_order_mutation) ... ok
+test_preview_native_claim_mutation (__main__.CorrectionTests.test_preview_native_claim_mutation) ... ok
+test_preview_rear_mask_mutation (__main__.CorrectionTests.test_preview_rear_mask_mutation) ... ok
+test_preview_replay (__main__.CorrectionTests.test_preview_replay) ... ok
+test_preview_source_mutation (__main__.CorrectionTests.test_preview_source_mutation) ... ok
+test_preview_unknown_mask_mutation (__main__.CorrectionTests.test_preview_unknown_mask_mutation) ... ok
+test_registration_mutations (__main__.CorrectionTests.test_registration_mutations) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 12.664s
+
+OK
+{"sprites": 53, "output": "/Users/appliedalchemylabs/.jcode/scratch/v9-final-replay-cwtuizhl", "geometryChanged": false}
+Final preview generated, geometry-ranked silhouettes: 9
