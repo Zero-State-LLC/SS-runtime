@@ -1,5 +1,15 @@
 # Next work order
 
+## Publication verified, November17 04:16UTC
+
+Runtimebb874117fc53fabbc66c7925ee4eb519c2afbcef is pushed and independently matches both remote branch and openPR236 head. It publishes the Debug-only adapter, native red/green evidence, real-app inspection and docs/board/PR reconciliation. Exact staged exportcJxIrf passed6scope tests and all5source hashes, independent of unrelated untracked art. Coordinator matched all8source/product hashes and final Release exclusion. Actual screenshots show explicit NOT ACCEPTED and remaining foundation/contact/scale/occlusion defects; ordinary title restored. See `../review/live-world-projection-20261117/COORDINATOR-REVIEW.md`. No art, physical, full-suite or release acceptance.
+
+Specs docs6ae68dbe4cbf1d59d186cc80925c8a8a1d46054f pass exact remote Validate44015636599. Audio review repairc226085 passes44015043483; both threads resolved. Project27 overview matches `BOARD-20261117.md` byte-for-byte and all14card statuses read back. Runtime234/235/167 and specs115/92/63 have verified maintenance comments; PR236 description/title now reflect current evidence. Legacy24/25 are archived read-only, confirmed by GitHub after comment rejection, so their dispositions are recorded locally/canonically without claiming remote edits.
+
+Runtimebb87411 CI44015970766 was QUEUED for all5jobs at04:16UTC, not passing. This docs-only follow-up will have its own head/checks. Monitor the final current PR head without blind reruns, and record any failure before repair. Preserve independent237/259 failure history and original261red evidence. No merge/auto-merge, issue closure, release, billing change or new acceptance. Tracked worktree was clean afterbb87411 publication, with6unrelated untracked art/work-order paths untouched.
+
+Next owner gates: explicit merge decisions (receipt specification115 before runtime235), D-122 semantic/plate decision before conflicting specs92, frozen legacy disposition, and visual/device/human acceptance. Runtime167 old stack needs isolated current-main reconciliation, not blind retargeting. No new source art attempt is authorized by this documentation request.
+
 ## Docs, board and all-PR reconciliation, November17 04:09UTC
 
 Owner requested documentation, board and all-PR handling at04:04UTC. Inventory covers nine open PRs across SS-runtime, SS-specs and frozen legacy Surveillance-Survivor. See `PR-RECONCILIATION-20261117.md` for exact heads, checks, dependencies and dispositions. No merge/auto-merge, closure, release, billing change or acceptance is implied. Specs63's two review findings are fixed and resolved atc226085 with local validation; its fresh CI is separate from historical green. Specs92 conflicts with main; runtime167 still targets its already-merged stack parent and must not be blindly retargeted. Legacy25 failures are historical billing-not-started annotations, not compiler failures.
