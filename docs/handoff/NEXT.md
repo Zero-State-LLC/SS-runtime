@@ -1,5 +1,15 @@
 # Next work order
 
+## Final integration checkpoint, November17 03:33UTC
+
+Socket-ordering fix fed8a3d is pushed and independently matched remote branch/openPR236 head. All remaining standalone post-hash host partitions completed exit0:781/119,20/2,9/2(with2optional probes skipped),57/4. They ran the pre-socket-fix host binary. Final socket/hash/reinforcement21tests pass independently. Both600second aggregate timeouts remain retained and are not called passes. See HASH-PERFORMANCE.md for exact applicability.
+
+Fresh final Debug review8tests pass unchanged after fixing implementation order. Native existing-art traversal1test passes, with unchanged strict importer verifying52scene images,824rows,50texture images and1073resource bindings. Final Release build passes; actual executableed6edcaa... excludes review symbols/flags/schema and all3review image hashes across1032PNGs. This is not a final Release test-suite, FPS, physical or art-acceptance result. Issue237/259 historical intermittent failures remain open, issue260 has repair evidence but is not merged/closed.
+
+Actual ordinary-start legal-pilot current/candidate review frames show explicit NOT ACCEPTED badges and reveal the disclosed live-projection/foundation mismatch. Default app restored to settled title screen0331. Early black0327restore capture retained as unusable transition evidence. See `docs/review/kiosk-only-geometry-20261117/native/playable/ACTUAL-PLAYABLE-REVIEW.md` for verdict and exact artifacts. No broader reprojection or neighbor edits performed. Finish publishing this validated Debug-only plumbing/evidence, then stop at owner projection/art decision, merge/release authorization, and physical/human gates.
+
+**Needed from owner:** decide whether to authorize a broader presentation-projection correction after reviewing the live mismatch; kiosk art remains unaccepted. No merge, release, deployment, issue closure or production catalog admission is authorized.
+
 ## Socket-ordering repair and live review, November17 03:28UTC
 
 Issue260 is confirmed implementation nondeterminism, not GameScene lifecycle:24spawn socket members were identical but dictionary iteration changed presentation array order. Rhino repaired only PresentationSnapshot key traversal using existing UTF8 ordering, preserving authored arrays and elite/boss suffix. Four strict regressions failed33expectations then passed. Unchanged eight native tests passed after fresh Debug build. Coordinator independently reviewed the diff and reran21socket/hash/reinforcement tests successfully. Native slot is now coordinator-owned for unchanged ExistingArtTraversalTests task075480alrt. Final Release rebuild0448997t8j runs independently.

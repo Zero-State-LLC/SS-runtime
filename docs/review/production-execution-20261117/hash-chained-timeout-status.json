@@ -1,0 +1,89 @@
+{
+  "task_id": "010820ghp6",
+  "tool_name": "bash",
+  "display_name": "Run every excluded suite in ",
+  "session_id": "session_stallion_1794709315536_281a751d3ce8ffe4",
+  "status": "failed",
+  "exit_code": 124,
+  "error": "Command timed out after 600000ms (600.0s)",
+  "started_at": "2026-11-17T03:10:10.820944+00:00",
+  "completed_at": "2026-11-17T03:20:10.867284+00:00",
+  "duration_secs": 600.044191208,
+  "pid": null,
+  "owner_pid": 36374,
+  "owner_instance": "933bc05c3350484697128a46d1c6ad36",
+  "detached": false,
+  "notify": true,
+  "wake": true,
+  "progress": {
+    "kind": "determinate",
+    "percent": null,
+    "message": "Running disjoint host partition camera-feel",
+    "current": null,
+    "total": null,
+    "unit": null,
+    "eta_seconds": null,
+    "updated_at": "2026-11-17T03:18:38.003975+00:00",
+    "source": "reported"
+  },
+  "event_history": [
+    {
+      "kind": "progress",
+      "timestamp": "2026-11-17T03:10:10.878400+00:00",
+      "message": "Running disjoint host partition feel",
+      "status": "running",
+      "progress": {
+        "kind": "determinate",
+        "percent": null,
+        "message": "Running disjoint host partition feel",
+        "current": null,
+        "total": null,
+        "unit": null,
+        "eta_seconds": null,
+        "updated_at": "2026-11-17T03:10:10.878184+00:00",
+        "source": "reported"
+      }
+    },
+    {
+      "kind": "progress",
+      "timestamp": "2026-11-17T03:14:22.831822+00:00",
+      "message": "Running disjoint host partition pacing",
+      "status": "running",
+      "progress": {
+        "kind": "determinate",
+        "percent": null,
+        "message": "Running disjoint host partition pacing",
+        "current": null,
+        "total": null,
+        "unit": null,
+        "eta_seconds": null,
+        "updated_at": "2026-11-17T03:14:22.831600+00:00",
+        "source": "reported"
+      }
+    },
+    {
+      "kind": "progress",
+      "timestamp": "2026-11-17T03:18:38.004190+00:00",
+      "message": "Running disjoint host partition camera-feel",
+      "status": "running",
+      "progress": {
+        "kind": "determinate",
+        "percent": null,
+        "message": "Running disjoint host partition camera-feel",
+        "current": null,
+        "total": null,
+        "unit": null,
+        "eta_seconds": null,
+        "updated_at": "2026-11-17T03:18:38.003975+00:00",
+        "source": "reported"
+      }
+    },
+    {
+      "kind": "failed",
+      "timestamp": "2026-11-17T03:20:10.867297+00:00",
+      "message": "Command timed out after 600000ms (600.0s)",
+      "status": "failed",
+      "exit_code": 124
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+Another instance of SwiftPM (PID: 23549) is already running using '/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/.build', waiting until that process has finished execution...◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite FeelPassPresentationOnlyTests started.
+◇ Suite MedalTests started.
+◇ Test wanderingRunDigestAndReceiptAreUnchanged() started.
+◇ Test rs018BelowTrackedUntilMobCEarnsGhost() started.
+✔ Test rs018BelowTrackedUntilMobCEarnsGhost() passed after 0.517 seconds.
+◇ Test trackedBeforeMobCLosesGhost() started.
+✔ Test trackedBeforeMobCLosesGhost() passed after 0.001 seconds.
+◇ Test shadowIsEarnedFromARealRunThatSlipsThePatrol() started.
+✔ Test shadowIsEarnedFromARealRunThatSlipsThePatrol() passed after 0.017 seconds.
+◇ Test rs019PatrolAlertedBeforeMobALosesShadow() started.
+✔ Test rs019PatrolAlertedBeforeMobALosesShadow() passed after 0.001 seconds.
+◇ Test patrolAlertedAfterMobAKeepsShadow() started.
+✔ Test patrolAlertedAfterMobAKeepsShadow() passed after 0.001 seconds.
+◇ Test aNonPatrolAlertKeepsShadow() started.
+✔ Test aNonPatrolAlertKeepsShadow() passed after 0.001 seconds.
+◇ Test rs020SurgicalNeedsHalfIntegrity() started.
+✔ Test rs020SurgicalNeedsHalfIntegrity() passed after 0.001 seconds.
+◇ Test blackoutNeedsNetworkBlackout() started.
+✔ Test blackoutNeedsNetworkBlackout() passed after 0.001 seconds.
+◇ Test swiftIsUnderFiveThirty() started.
+✔ Test swiftIsUnderFiveThirty() passed after 0.001 seconds.
+◇ Test rs021AFailedRunEarnsNothing() started.
+✔ Test rs021AFailedRunEarnsNothing() passed after 0.001 seconds.
+◇ Test aSuccessWithNoMedalsShowsNoRow() started.
+✔ Test aSuccessWithNoMedalsShowsNoRow() passed after 0.001 seconds.
+◇ Test rs022AReplayEarnsTheSameMedals() started.
+✔ Test wanderingRunDigestAndReceiptAreUnchanged() passed after 4.712 seconds.
+◇ Test reducedMotionIntroChangesNothingEither() started.
+✔ Test reducedMotionIntroChangesNothingEither() passed after 2.088 seconds.
+◇ Test pilotedSuccessDigestAndReceiptAreUnchanged() started.
+FEELPASS-PROOF seed=5 ticks=17440 digest=4475d153be980fe9bd3d617f71b4e2bfd4bb7b1ad7908cc981dcc4b905a5cb40 medals=["BLACKOUT", "SWIFT"] takedowns=6 maxStreak=4
+✔ Test pilotedSuccessDigestAndReceiptAreUnchanged() passed after 153.066 seconds.
+✔ Suite FeelPassPresentationOnlyTests passed after 159.868 seconds.
+✔ Test rs022AReplayEarnsTheSameMedals() passed after 211.376 seconds.
+◇ Test rs023ASecondGhostTodayIsNotNew() started.
+✔ Test rs023ASecondGhostTodayIsNotNew() passed after 0.001 seconds.
+◇ Test aNewDayOrAnotherIdentityStartsEmpty() started.
+✔ Test aNewDayOrAnotherIdentityStartsEmpty() passed after 0.001 seconds.
+◇ Test recordRoundTripsThroughJSON() started.
+✔ Test recordRoundTripsThroughJSON() passed after 0.001 seconds.
+◇ Test titleGoalsShowAllFiveByShape() started.
+✔ Test titleGoalsShowAllFiveByShape() passed after 0.001 seconds.
+◇ Test shareAppendsMedalNamesWithoutNewMarks() started.
+✔ Test shareAppendsMedalNamesWithoutNewMarks() passed after 0.001 seconds.
+✔ Suite MedalTests passed after 211.916 seconds.
+✔ Test run with 20 tests in 2 suites passed after 211.916 seconds.

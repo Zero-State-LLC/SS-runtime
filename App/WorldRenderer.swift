@@ -59,6 +59,17 @@ final class WorldRenderer {
 
     let root = SKNode()
     private var reviewArt: BenchmarkReviewArt?
+#if DEBUG
+    private var kioskPlayableReview: KioskPlayableReview?
+
+    /// Narrow reversible override. Does not reset animations, ground, props or fog.
+    func installKioskPlayableReview(_ review: KioskPlayableReview?, snapshot: PresentationSnapshot) throws {
+        guard reviewArt == nil else { throw KioskPlayableReview.Invalid.arguments }
+        try review?.validateAuthority(snapshot)
+        kioskPlayableReview = review
+        solidSignature = nil
+    }
+#endif
     private var benchmarkCompleteCamera = false
 #if DEBUG || SS_RENDERER_TEST_SUPPORT
     // BP-007/008 candidate registration is installed before contrast resources.
@@ -762,6 +773,14 @@ final class WorldRenderer {
             foundation.lineWidth = 2
             foundation.zPosition = -0.1
             layer?.addChild(foundation)
+#if DEBUG
+            if let review = kioskPlayableReview, id == KioskPlayableReview.solidID {
+                // Keep the authoritative footprint visible in the ordinary live projection.
+                // Only this solid's decorative texture is substituted.
+                layer?.addChild(review.makeNode())
+                continue
+            }
+#endif
             if let id, let texture = environment.solidTexture(solidId: id) {
                 let node = SKSpriteNode(texture: texture, size: size)
                 node.name = "environment-upright-\(EnvironmentLibrary.solidAssetId(forSolidId: id))"

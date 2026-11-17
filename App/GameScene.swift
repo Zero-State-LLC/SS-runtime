@@ -349,6 +349,43 @@ final class GameScene: SKScene {
     private var terminalEvidenceStored = false
     private let renderer = WorldRenderer()
 #if DEBUG
+    private(set) var kioskPlayableReviewState = "disabled"
+
+    /// Explicit review-only plumbing. Does not seed, reposition or step the session.
+    func installKioskPlayableReview(_ review: KioskPlayableReview?) throws {
+        try renderer.installKioskPlayableReview(review, snapshot: session.snapshot)
+        kioskPlayableReviewState = review.map { "\($0.arm.rawValue):not-accepted:live-projection" } ?? "disabled"
+        showKioskReviewStatus(review.map { "KIOSK REVIEW \($0.arm.rawValue) / NOT ACCEPTED" })
+        redraw()
+    }
+
+    private func showKioskReviewStatus(_ text: String?) {
+        cameraNode.childNode(withName: "kiosk-review-status")?.removeFromParent()
+        guard let text else { return }
+        let label = SKLabelNode(fontNamed: "Menlo")
+        label.name = "kiosk-review-status"
+        label.text = text
+        label.fontSize = 9
+        label.fontColor = .yellow
+        label.position = CGPoint(x: 0, y: -size.height / 2 + 12)
+        label.zPosition = 1100
+        cameraNode.addChild(label)
+    }
+
+    private func configureKioskPlayableReview(_ arguments: [String]) {
+        do {
+            guard let request = try KioskPlayableReview.request(arguments: arguments) else { return }
+            let review = try KioskPlayableReview.load(request)
+            try renderer.installKioskPlayableReview(review, snapshot: session.snapshot)
+            kioskPlayableReviewState = "\(review.arm.rawValue):not-accepted:live-projection"
+            showKioskReviewStatus("KIOSK REVIEW \(review.arm.rawValue) / NOT ACCEPTED")
+        } catch {
+            kioskPlayableReviewState = "rejected"
+            showKioskReviewStatus("KIOSK REVIEW REJECTED / DEFAULT ART")
+            Self.autopilotLog.error("kiosk review rejected: \(String(describing: error), privacy: .public)")
+        }
+    }
+
     /// Optional evidence sink; no recording or allocation in ordinary play.
     var benchmarkPlaybackObserver: ((TimeInterval, PresentationSnapshot, VecQ8,
         WorldRenderer.PlayerPlaybackObservation, CGPoint) -> Void)?
@@ -539,6 +576,7 @@ final class GameScene: SKScene {
             let seeded = session.seedScenario(scenario)
             Self.autopilotLog.notice("seed \(scenario, privacy: .public) -> \(seeded, privacy: .public)")
         }
+        configureKioskPlayableReview(arguments)
 #endif
         configureHUD(for: view)
         redraw()

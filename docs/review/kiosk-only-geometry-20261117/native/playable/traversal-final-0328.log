@@ -1,0 +1,81 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project SSRuntime.xcodeproj -scheme SSRuntime -sdk iphonesimulator -configuration Debug -destination "platform=iOS Simulator,id=CACB3927-A76E-43A5-9ACA-C389EB38C0C3" CODE_SIGNING_ALLOWED=NO ENABLE_TESTABILITY=YES -derivedDataPath docs/review/kiosk-only-geometry-20261117/native/playable/derived -resultBundlePath docs/review/kiosk-only-geometry-20261117/native/playable/traversal-final-0328.xcresult "-only-testing:SSRuntimeTests/ExistingArtTraversalTests" test-without-building
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+    ENABLE_TESTABILITY = YES
+    SDKROOT = iphonesimulator26.5
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  SSRuntime: /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114
+
+Writing result bundle at path:
+	/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/kiosk-only-geometry-20261117/native/playable/traversal-final-0328.xcresult
+
+Resolve Package Graph
+
+Resolve Package Graph
+
+2026-11-16 19:28:26.965349-0800 SSRuntime[9620:18896864] [plugin] AddInstanceForFactory: No factory registered for id <CFUUID 0x10a1a0740> F8BB1C28-BAE8-11D6-9C31-00039315CD46
+2026-11-16 19:28:27.153881-0800 SSRuntime[9620:18896864] [UIFocus] _TtC18_SpriteKit_SwiftUIP33_4A29C38A751B2448A1E2FA85CDDEAA5324SpriteKitViewCoordinator implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+2026-11-16 19:28:27.157283-0800 SSRuntime[9620:18897269] [AudioConverter]     AudioConverterOOP.cpp:1084  Failed to prepare AudioConverterService: -302
+Test Suite 'Selected tests' started at 2026-11-16 19:28:28.448.
+Test Suite 'SSRuntimeTests.xctest' started at 2026-11-16 19:28:28.450.
+Test Suite 'ExistingArtTraversalTests' started at 2026-11-16 19:28:28.450.
+Test Case '-[SSRuntimeTests.ExistingArtTraversalTests testExistingArtLiveTraversalReversalCollisionPauseAndReducedMotion]' started.
+2026-11-16 19:28:29.199819-0800 SSRuntime[9620:18896864] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+objc[9620]: Class UIAccessibilityLoaderWebShared is implemented in both /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x116a14398) and /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x119a00310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+2026-11-16 19:28:30.166176-0800 SSRuntime[9620:18896864] SKView: no drawables available for rendering. Skipping this frame.
+2026-11-16 19:28:33.401610-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=47 recipe=enemyAlerted language=exclamationPopAboveActor hitStopMs=0 shake=false
+2026-11-16 19:28:35.298458-0800 SSRuntime[9620:18896864] SKView: no drawables available for rendering. Skipping this frame.
+2026-11-16 19:28:35.968349-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=62 recipe=enemyHit language=compactSpark hitStopMs=50 shake=false
+2026-11-16 19:28:37.537077-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=94 recipe=enemyHit language=compactSpark hitStopMs=50 shake=false
+2026-11-16 19:28:39.084972-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=126 recipe=enemyHit language=compactSpark hitStopMs=50 shake=false
+2026-11-16 19:28:40.581820-0800 SSRuntime[9620:18896864] SKView: no drawables available for rendering. Skipping this frame.
+2026-11-16 19:28:40.636733-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=159 recipe=enemyHit language=compactSpark hitStopMs=50 shake=false
+2026-11-16 19:28:43.986107-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=249 recipe=enemyHit language=compactSpark hitStopMs=50 shake=false
+2026-11-16 19:28:45.053496-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=272 recipe=enemyHit language=compactSpark hitStopMs=50 shake=false
+2026-11-16 19:28:45.053892-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=272 recipe=enemyDefeat language=fourToEightParticles hitStopMs=50 shake=false
+2026-11-16 19:28:45.666315-0800 SSRuntime[9620:18896864] SKView: no drawables available for rendering. Skipping this frame.
+2026-11-16 19:28:46.284324-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=315 recipe=enemyAlerted language=exclamationPopAboveActor hitStopMs=0 shake=false
+2026-11-16 19:28:47.267701-0800 SSRuntime[9620:18896864] [autopilot] near miss tick=333 ids=11
+2026-11-16 19:28:47.385906-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=340 recipe=enemyHit language=compactSpark hitStopMs=50 shake=false
+2026-11-16 19:28:48.684569-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=375 recipe=enemyHit language=compactSpark hitStopMs=50 shake=false
+2026-11-16 19:28:50.111123-0800 SSRuntime[9620:18896864] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+2026-11-16 19:28:51.038124-0800 SSRuntime[9620:18896864] SKView: no drawables available for rendering. Skipping this frame.
+2026-11-16 19:28:54.135681-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=47 recipe=enemyAlerted language=staticExclamationAboveActor hitStopMs=0 shake=false
+2026-11-16 19:28:56.215312-0800 SSRuntime[9620:18896864] SKView: no drawables available for rendering. Skipping this frame.
+2026-11-16 19:28:56.635007-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=62 recipe=enemyHit language=outlineChange hitStopMs=50 shake=false
+2026-11-16 19:28:58.035154-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=94 recipe=enemyHit language=outlineChange hitStopMs=50 shake=false
+2026-11-16 19:28:59.435967-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=126 recipe=enemyHit language=outlineChange hitStopMs=50 shake=false
+2026-11-16 19:29:00.852826-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=159 recipe=enemyHit language=outlineChange hitStopMs=50 shake=false
+2026-11-16 19:29:01.300051-0800 SSRuntime[9620:18896864] SKView: no drawables available for rendering. Skipping this frame.
+2026-11-16 19:29:04.168446-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=249 recipe=enemyHit language=outlineChange hitStopMs=50 shake=false
+2026-11-16 19:29:05.218601-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=272 recipe=enemyHit language=outlineChange hitStopMs=50 shake=false
+2026-11-16 19:29:05.218929-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=272 recipe=enemyDefeat language=dissolveOrTwoParticleCue hitStopMs=50 shake=false
+2026-11-16 19:29:06.383643-0800 SSRuntime[9620:18896864] SKView: no drawables available for rendering. Skipping this frame.
+2026-11-16 19:29:06.450476-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=315 recipe=enemyAlerted language=staticExclamationAboveActor hitStopMs=0 shake=false
+2026-11-16 19:29:07.402043-0800 SSRuntime[9620:18896864] [autopilot] near miss tick=333 ids=11
+2026-11-16 19:29:07.518921-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=340 recipe=enemyHit language=outlineChange hitStopMs=50 shake=false
+2026-11-16 19:29:08.784370-0800 SSRuntime[9620:18896864] [autopilot] vfx tick=375 recipe=enemyHit language=outlineChange hitStopMs=50 shake=false
+Test Case '-[SSRuntimeTests.ExistingArtTraversalTests testExistingArtLiveTraversalReversalCollisionPauseAndReducedMotion]' passed (41.819 seconds).
+Test Suite 'ExistingArtTraversalTests' passed at 2026-11-16 19:29:10.279.
+	 Executed 1 test, with 0 failures (0 unexpected) in 41.819 (41.830) seconds
+Test Suite 'SSRuntimeTests.xctest' passed at 2026-11-16 19:29:10.280.
+	 Executed 1 test, with 0 failures (0 unexpected) in 41.819 (41.831) seconds
+Test Suite 'Selected tests' passed at 2026-11-16 19:29:10.281.
+	 Executed 1 test, with 0 failures (0 unexpected) in 41.819 (41.833) seconds
+2026-11-16 19:29:11.368 xcodebuild[8264:18893448] [MT] IDETestOperationsObserverDebug: 59.526 elapsed -- Testing started completed.
+2026-11-16 19:29:11.368 xcodebuild[8264:18893448] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-11-16 19:29:11.368 xcodebuild[8264:18893448] [MT] IDETestOperationsObserverDebug: 59.526 sec, +59.526 sec -- end
+Resolve Package Graph
+
+Test session results, code coverage, and logs:
+	/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/kiosk-only-geometry-20261117/native/playable/traversal-final-0328.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

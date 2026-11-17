@@ -1,0 +1,26 @@
+[0/1] Planning build
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite PacingSegmentsTests started.
+◇ Suite PacingProbeTests started.
+◇ Test windowsAreContiguousAndEndInsideTheRunTarget() started.
+◇ Test replayT901PilotedRunReproducesDigestThreeTimes() started.
+✔ Test windowsAreContiguousAndEndInsideTheRunTarget() passed after 0.001 seconds.
+◇ Test windowsMatchTheD090Table() started.
+✔ Test windowsMatchTheD090Table() passed after 0.001 seconds.
+◇ Test everyBoundaryNamesSomethingTheContractsDefine() started.
+✔ Test everyBoundaryNamesSomethingTheContractsDefine() passed after 0.011 seconds.
+◇ Test onlyTheFirstStartCountsAndWavesAreKeyedByEncounter() started.
+✔ Test onlyTheFirstStartCountsAndWavesAreKeyedByEncounter() passed after 0.001 seconds.
+◇ Test aPilotedRunProducesTheBoundariesInOrder() started.
+✔ Test aPilotedRunProducesTheBoundariesInOrder() passed after 60.944 seconds.
+✔ Suite PacingSegmentsTests passed after 60.957 seconds.
+T901-PILOTED-RUN seed=1 upgrade=ricochetPulse ticks=17776 outcome=success digest=ffee0be3951455e4f9afb66f034dfd32e9147dbf7ed50805db58018d44b6d4e0
+✔ Test replayT901PilotedRunReproducesDigestThreeTimes() passed after 192.399 seconds.
+◇ Test replayT901PilotedRunRoundTripsThroughEnvelopeJSON() started.
+✔ Test replayT901PilotedRunRoundTripsThroughEnvelopeJSON() passed after 39.686 seconds.
+➜ Test pacingT305ProbeMatrix() skipped.
+➜ Test heatD083StyleSweep() skipped.
+✔ Suite PacingProbeTests passed after 232.086 seconds.
+✔ Test run with 9 tests in 2 suites passed after 232.086 seconds.
