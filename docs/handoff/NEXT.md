@@ -1,5 +1,11 @@
 # Next work order
 
+## Architectural-scale comparison approved, November17 01:18UTC
+
+Owner explicitly approved `intent/2026-11-17-architectural-scale-review.md` at01:18:40Z. One untextured current/proposed geometry comparison across visible frontage, at existing three zooms, with unchanged Player/Camera references and full benchmark. New packet `docs/review/architectural-scale-20261117/`. Elephant owns only new `source/` implementation/tests/output. Coordinator owns preservation audit, gallery/docs, independent validation and publication. Initial audit protects11432tracked files at basec8dceac, excluding only approved intent and live handoff.
+
+No aesthetic retries, detailed materials or native execution. Preserve footprints, ground plan, actors/props/fields, framing, controls and depth rules. Do not treat source reconstruction as native evidence. Stop for owner proportion review after publication. All production, merge, issue-closure, motion/encounter and physical-device gates remain. Unrelated untracked packets remain untouched.
+
 ## Owner flags architectural scale, November17 00:54UTC
 
 Owner says the building with the Camera in front is awkwardly sized, as an example. Correction recorded in `FACTS.md`. Actual V9 zoom1.4half inspected. This is a broader architectural-proportion concern, not another base/curb-detail request. Do not infer a resize percentage, claim a measured real-world scale, or uniformly shrink a sprite whose ground registration is fixed.

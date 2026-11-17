@@ -1,6 +1,6 @@
-# Draft intent: architectural scale and proportion review
+# Approved intent: architectural scale and proportion review
 
-Date: November17,2026. Status: **DRAFT, awaiting owner approval.** BP-001/007/012, T1045.
+Date: November17,2026. Status: **APPROVED by owner at 2026-11-17T01:18:40Z (go ahead).** BP-001/007/012, T1045.
 
 ## Owner correction
 
@@ -17,4 +17,4 @@ Review architectural proportions across the visible frontage, starting with the 
 
 ## Budget and gate
 
-One initial proportion comparison, no automatic aesthetic retry. Do not start until this work order is explicitly approved. Existing V9 and all earlier source/capture/failure bytes remain immutable. No production changes, merge, issue closure, motion/encounter expansion, physical certification, unfiltered Swift retry or automatic CI polling chain.
+One initial proportion comparison, no automatic aesthetic retry. Owner approval authorizes this comparison only, not detailed materials or native execution. Existing V9 and all earlier source/capture/failure bytes remain immutable. No production changes, merge, issue closure, motion/encounter expansion, physical certification, unfiltered Swift retry or automatic CI polling chain.
