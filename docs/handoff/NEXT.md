@@ -1,5 +1,11 @@
 # Next work order
 
+## Production ownership resumed, November17 01:55UTC directive
+
+Current owner directive authorizes continuous reversible engineering, QA and art-production work within accepted Level1 requirements. It supersedes the prior stop-only-for-proportion-review instruction as a general work stop, but does not grant art acceptance, merges, releases, deployment, paid asset generation or changed gameplay. Only the Camera-adjacent building is the identified geometry/spacing outlier; keep neighboring buildings unchanged as references.
+
+Live backlog/evidence matrix: `docs/review/production-execution-20261117/README.md`. Scope: `intent/2026-11-17-production-qualification.md`. Runtime256 CI temporary-root alias repaired and pushed asf302727:5regressions,46scene tests, retained6capture/18image/9baseline checks and1766protected files pass. Runtime257 gate census now includes all120accepted gates;25release-evidence tests pass after4red tests/18assertions. Runtime258 uses isolated parity checkouts;2lifecycle regressions and actual pinned byte-parity pass. Host CI partitions and focused native Debug qualification are running. Runtime259 records a separate35s traversal timeout at314/290of380samples, not a compiler error; do not reduce sample requirements. Do not overwrite unrelated untracked art packets or separate receiptPR235/specsPR115 work. No physical-device result or RC qualification claimed. Continue unblocked implementation after each slice.
+
 ## Owner narrows concern to one building, November17 01:51UTC
 
 Only the building beside the Camera post stands out for odd geometry and spacing relative to the others. Earlier scene-wide interpretation is superseded. Keep surrounding buildings unchanged as comparison references. Do not carry the published proposal's residential/civic alterations forward as requested changes. Geometry and spacing need diagnosis, not an assumed uniform resize. `FACTS.md` records the correction. Published evidence remains immutable. No new render, texture/detail, native execution or authority change is authorized by this clarification. Await a bounded kiosk-only work order rather than continuing the broader proposal.

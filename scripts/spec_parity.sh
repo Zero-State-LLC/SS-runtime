@@ -54,16 +54,20 @@ if got != pin:
 PY
 
 # 2 + 3. Byte parity against SS-specs at the pin (both directions).
-rm -rf /tmp/spec-parity-check
-git init -q /tmp/spec-parity-check
-git -C /tmp/spec-parity-check remote add origin https://github.com/scrimshawlife-ctrl/SS-specs.git
-git -C /tmp/spec-parity-check fetch -q --depth 1 origin "$PIN"
-git -C /tmp/spec-parity-check checkout -q FETCH_HEAD
+# Each invocation owns its checkout. Never delete a shared path: concurrent
+# qualification jobs must not erase one another's evidence (#258).
+scratch_root="${JCODE_SCRATCH_DIR:-${TMPDIR:-/tmp}}"
+checkout="$(mktemp -d "$scratch_root/ss-spec-parity.XXXXXX")"
+trap 'rm -rf -- "$checkout"' EXIT
+git init -q "$checkout"
+git -C "$checkout" remote add origin https://github.com/Zero-State-LLC/SS-specs.git
+git -C "$checkout" fetch -q --depth 1 origin "$PIN"
+git -C "$checkout" checkout -q FETCH_HEAD
 
 while IFS= read -r bundled; do
   rel="${bundled#Sources/SurveillanceCore/Resources/}"
-  spec="spec-parity-check/$rel"
-  if [ ! -f "/tmp/$spec" ]; then
+  spec="$checkout/$rel"
+  if [ ! -f "$spec" ]; then
     echo "parity: bundled $rel is absent at the pinned spec commit $PIN"
     status=1
     continue
@@ -79,11 +83,11 @@ d['specificationCommit'] = '*'
 sys.stdout.write(json.dumps(d, sort_keys=True, separators=(',', ':')))
 " "$1"
     }
-    if [ "$(blank "$bundled")" != "$(blank "/tmp/$spec")" ]; then
+    if [ "$(blank "$bundled")" != "$(blank "$spec")" ]; then
       echo "parity: $rel differs from the spec copy beyond the documented specificationCommit exception"
       status=1
     fi
-  elif ! cmp -s "$bundled" "/tmp/$spec"; then
+  elif ! cmp -s "$bundled" "$spec"; then
     echo "parity: bundled $rel differs from SS-specs@$PIN (one-byte drift fails by design)"
     status=1
   fi
@@ -94,7 +98,7 @@ while IFS= read -r specfile; do
     echo "parity: spec $specfile exists at the pin but is not bundled"
     status=1
   fi
-done < <(cd /tmp/spec-parity-check && find contracts fixtures -type f -name '*.json' | sort)
+done < <(cd "$checkout" && find contracts fixtures -type f -name '*.json' | sort)
 
 if [ "$status" -eq 0 ]; then
   echo "parity: OK — every bundled contract and fixture byte-matches SS-specs@$PIN"

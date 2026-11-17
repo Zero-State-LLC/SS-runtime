@@ -16,8 +16,8 @@ Authority: owner execution directive at01:55:50Z. No merge, release, deployment,
 | Priority | Repo / item | Required implementation and acceptance | Verification / evidence | Dependency / status |
 |---|---|---|---|---|
 | P1 | runtime256 | Canonical isolated temp root for frozen tests; retain real symlink rejection and child failures | `scripts/test_review_test_runner.py`, actual46-test scene suite and retained capture verifier | Implemented, locally verified |
-| P1 | runtime257, T902/T908 | Include all120 accepted gates, missing gates block expansion | Swift negative cases for A-013A/D-022/D-023/D-024/E-021; exact census | Implementing |
-| P1 | runtime/spec parity | Verify exact pinned bundled contract bytes, identify accepted-main differences without overwriting open receipt stream | `scripts/spec_parity.sh`, current host suite | In progress |
+| P1 | runtime257, T902/T908 | Include all120 accepted gates, missing gates block expansion | Swift negative cases for A-013A/D-022/D-023/D-024/E-021; exact census | Implemented;25tests pass after4red tests/18assertions |
+| P1 | runtime/spec parity258 | Verify exact pinned bundled contract bytes using isolated checkout | `scripts/spec_parity.sh`,2lifecycle regressions | Actual pinned parity passes; latest-main adoption remains separate |
 | P1 | runtime237 | Explain and fix intermittent15/16 live-pose observation without weakening assertion or changing authored timing | Preserved trace diagnosis, focused native reproduction | Existing diagnostic evidence must be read before any fix |
 | P1 | runtime133 / T1045 | Correct only Camera-adjacent kiosk geometry/spacing; keep neighbors as reference | Actual runtime three-zoom comparison, authoritatively fixed footprints/actors | Proportion cause not yet established; owner acceptance remains required |
 | P1 | runtime134 / specs65 | Complete coherent reviewed asset families before admission | Existing canonical catalog, source/provenance and native playback evidence | Partial/rejected family evidence, not production-ready |
@@ -43,6 +43,12 @@ This is a status index into existing acceptance.md and runtime collectors, not a
 | G Playtest | Existing PlaytestEvidence collector; T903/T904 | NOT_RUN per accepted task table; at least5 external participants required |
 
 D-013 decision is ACCEPTED: immutable legacy freeze at3b20d88. This is distinct from visual acceptance gate D-013 (Civic Seam recognition). D-020 and D-021 decisions remain DECISION_PENDING, distinct from similarly numbered visual gates. T903/T904/T905 are NOT_RUN in live accepted tasks. Expansion remains NOT_COMPUTABLE, not passed by the existence of evidence collectors.
+
+## Implemented slices:257 and258
+
+Pinned acceptance.md has120gates. The old registry omitted A-013A,D-022,D-023,D-024,E-021 and the expansion evaluator inherited that omission. Four new tests produced18failed assertions before correction, including false PASS for every missing/failed omitted gate. Corrected registry and old count test now match the accepted census. All25tests across6release-evidence/gate suites pass, including ten complete-run simulations. Newly enumerated gates remain unmapped/pending, not automatically passed. No authoritative simulation identity changed.
+
+Parity258 now uses an invocation-owned mktemp checkout and EXIT cleanup rather than deleting `/tmp/spec-parity-check`. Two subprocess regression checks prove distinct roots for overlapping fetch failures, exit23 preservation, cleanup, paths with spaces and untouched neighboring files. These mocked lifecycle tests are not byte-parity evidence. Separately, the actual script fetched pinnedb1ed874 and reported every bundled contract/fixture byte-matches. The bidirectional comparison and single catalog-pin exception remain unchanged.
 
 ## Implemented slice:256
 

@@ -1,0 +1,88 @@
+[0/1] Planning build
+Building for debugging...
+[0/4] Write sources
+[2/4] Write swift-version--58304C5D6DBC2206.txt
+[4/6] Emitting module SurveillanceCore
+[5/6] Compiling SurveillanceCore GateRegistry.swift
+[6/8] Compiling SurveillanceCore ReleaseCandidateEvidence.swift
+[7/8] Compiling SurveillanceCore ExpansionGateDecision.swift
+[8/13] Compiling SurveillanceCoreTests GateVerificationTests.swift
+[9/13] Compiling SurveillanceCoreTests ReleaseCandidateEvidenceTests.swift
+[10/13] Compiling SurveillanceCoreTests AcceptedGateCensusTests.swift
+[11/13] Compiling SurveillanceCoreTests ExpansionGateReportTests.swift
+[12/13] Emitting module SurveillanceCoreTests
+[12/14] Write Objects.LinkFileList
+[13/14] Linking SSRuntimePackageTests
+Build complete! (19.15s)
+Test Suite 'Selected tests' started at 2026-11-16 18:05:29.903.
+Test Suite 'SSRuntimePackageTests.xctest' started at 2026-11-16 18:05:29.905.
+Test Suite 'SSRuntimePackageTests.xctest' passed at 2026-11-16 18:05:29.905.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-11-16 18:05:29.905.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite ExpansionGateReportTests started.
+◇ Suite GateVerificationTests started.
+◇ Suite ReceiptArchiveTests started.
+◇ Suite ExpansionGateDecisionTests started.
+◇ Suite AcceptedGateCensusTests started.
+◇ Suite ReleaseCandidateEvidenceTests started.
+◇ Test gateT908DefaultReportIsNotComputable() started.
+◇ Test gateT902RegistryCoversPhaseNineAutomatedGates() started.
+◇ Test eachPreviouslyOmittedGateFailsExpansionWhenFailed() started.
+◇ Test receiptER006AtomicWriteAndRetention() started.
+◇ Test gateT908OpenDefectsFailExpansion() started.
+◇ Test evidenceT907CollectsReplayAndCompleteRunDigests() started.
+◇ Test registryExactlyMatchesAcceptedCensusWithoutDuplicates() started.
+◇ Test eachPreviouslyOmittedGateBlocksExpansionWhenMissing() started.
+◇ Test completeSyntheticCensusIsOnlyAnEvaluatorUnitTest() started.
+✔ Test gateT908OpenDefectsFailExpansion() passed after 0.001 seconds.
+✔ Test gateT902RegistryCoversPhaseNineAutomatedGates() passed after 0.001 seconds.
+◇ Test gateT908PendingDecisionsBlockComputation() started.
+◇ Test gateT902AllGateFamiliesEnumerated() started.
+✔ Test gateT908PendingDecisionsBlockComputation() passed after 0.001 seconds.
+✔ Test gateT902AllGateFamiliesEnumerated() passed after 0.001 seconds.
+◇ Test gateT908AllRequiredGatesPassWhenFullyEvidenceLinked() started.
+◇ Test gateT902DeviceGatesRequirePhysicalEvidence() started.
+✔ Test gateT908AllRequiredGatesPassWhenFullyEvidenceLinked() passed after 0.001 seconds.
+✔ Test gateT902DeviceGatesRequirePhysicalEvidence() passed after 0.001 seconds.
+✔ Suite ExpansionGateDecisionTests passed after 0.003 seconds.
+◇ Test gateT902PlaytestGatesMapToT903T904() started.
+✔ Test gateT902PlaytestGatesMapToT903T904() passed after 0.001 seconds.
+◇ Test gateT902UnmappedGatesTrackedForT907() started.
+✔ Test registryExactlyMatchesAcceptedCensusWithoutDuplicates() passed after 0.005 seconds.
+✔ Test eachPreviouslyOmittedGateFailsExpansionWhenFailed() passed after 0.006 seconds.
+✔ Test gateT902UnmappedGatesTrackedForT907() passed after 0.003 seconds.
+◇ Test gateC009TenConsecutiveCompleteRunsPass() started.
+✔ Test eachPreviouslyOmittedGateBlocksExpansionWhenMissing() passed after 0.010 seconds.
+✔ Test completeSyntheticCensusIsOnlyAnEvaluatorUnitTest() passed after 0.016 seconds.
+✔ Suite AcceptedGateCensusTests passed after 0.017 seconds.
+✔ Test receiptER006AtomicWriteAndRetention() passed after 1.064 seconds.
+◇ Test receiptER006FilenameUsesDigestPrefix() started.
+✔ Test receiptER006FilenameUsesDigestPrefix() passed after 1.032 seconds.
+✔ Suite ReceiptArchiveTests passed after 2.097 seconds.
+✔ Test gateT908DefaultReportIsNotComputable() passed after 7.697 seconds.
+◇ Test gateT908OpenDefectsFailReport() started.
+✔ Test evidenceT907CollectsReplayAndCompleteRunDigests() passed after 8.073 seconds.
+◇ Test evidenceT907DefaultExpansionGateIsNotComputable() started.
+✔ Test gateT908OpenDefectsFailReport() passed after 7.512 seconds.
+◇ Test gateT908SettledD021StillNotComputableWithoutFullGates() started.
+✔ Test evidenceT907DefaultExpansionGateIsNotComputable() passed after 7.299 seconds.
+◇ Test evidenceT907DeviceEvidenceCanAdvanceGateC() started.
+✔ Test evidenceT907DeviceEvidenceCanAdvanceGateC() passed after 7.739 seconds.
+◇ Test evidenceT907SettlesD021WhenDeviceProfilingProvided() started.
+✔ Test gateT908SettledD021StillNotComputableWithoutFullGates() passed after 12.674 seconds.
+✔ Suite ExpansionGateReportTests passed after 27.884 seconds.
+✔ Test evidenceT907SettlesD021WhenDeviceProfilingProvided() passed after 11.271 seconds.
+◇ Test evidenceT907PlaytestEvidenceEvaluatesGates() started.
+✔ Test evidenceT907PlaytestEvidenceEvaluatesGates() passed after 0.001 seconds.
+✔ Suite ReleaseCandidateEvidenceTests passed after 34.386 seconds.
+✔ Test gateC009TenConsecutiveCompleteRunsPass() passed after 34.651 seconds.
+◇ Test gateB003RestartRestoresInitialAuthoritativeState() started.
+✔ Test gateB003RestartRestoresInitialAuthoritativeState() passed after 0.010 seconds.
+◇ Test gateF017ReceiptCanonicalRoundTrip() started.
+✔ Test gateF017ReceiptCanonicalRoundTrip() passed after 0.990 seconds.
+✔ Suite GateVerificationTests passed after 35.661 seconds.
+✔ Test run with 25 tests in 6 suites passed after 35.661 seconds.
