@@ -1,5 +1,9 @@
 # Next work order
 
+## Owner narrows concern to one building, November17 01:51UTC
+
+Only the building beside the Camera post stands out for odd geometry and spacing relative to the others. Earlier scene-wide interpretation is superseded. Keep surrounding buildings unchanged as comparison references. Do not carry the published proposal's residential/civic alterations forward as requested changes. Geometry and spacing need diagnosis, not an assumed uniform resize. `FACTS.md` records the correction. Published evidence remains immutable. No new render, texture/detail, native execution or authority change is authorized by this clarification. Await a bounded kiosk-only work order rather than continuing the broader proposal.
+
 ## Architectural comparison published, STOP for owner review, November17 01:47UTC
 
 Evidence commit `61fc3d58197828a2958eb335d5d947d47c7bcb55` pushed and verified against remote branch and openPR236 head. PR comment6935321212 records review paths, validation and limits. Fresh independent rerun passed8audit+18source+7gallery tests and verified11432protected prior files. Exact-head CI query returned no runs at01:46UTC, not a passing-CI claim. Fully staged Trail check reported two lexical handoff conflicts, dispositioned in `architectural-scale-20261117/TRAIL-CHECK.md` and the commit message. No source/image changes during publication.
