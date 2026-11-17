@@ -1,0 +1,12 @@
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Source bytes differ/. Input:
+
+'Supplemental bytes differ: docs/review/blocked-base-curb-relief-20261116/source/attempt-02/manifest.json Import the real capture packet, then reload. Serve this gallery over localhost/HTTPS, not file://.'
+
+    at main (/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/blocked-base-curb-relief-20261116/gallery/test_loader.js:164:49) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'Supplemental bytes differ: docs/review/blocked-base-curb-relief-20261116/source/attempt-02/manifest.json Import the real capture packet, then reload. Serve this gallery over localhost/HTTPS, not file://.',
+  expected: /Source bytes differ/,
+  operator: 'match',
+  diff: 'simple'
+}

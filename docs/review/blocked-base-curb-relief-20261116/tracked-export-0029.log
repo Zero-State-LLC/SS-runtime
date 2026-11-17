@@ -1,0 +1,239 @@
+Export: /Users/appliedalchemylabs/.jcode/scratch/base-curb-v9-tracked-export-ycrhf0nx tracked files: 11428
+COMMAND python3 -B -W error::ResourceWarning docs/review/blocked-base-curb-relief-20261116/test_audit.py
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.982s
+
+OK
+COMMAND python3 -B -W error::ResourceWarning docs/review/blocked-base-curb-relief-20261116/source/test_source.py
+test_anchor_mutation (__main__.SourceTests.test_anchor_mutation) ... ok
+test_base_contact_missing (__main__.SourceTests.test_base_contact_missing) ... ok
+test_base_envelope_widened (__main__.SourceTests.test_base_envelope_widened) ... ok
+test_base_flattened (__main__.SourceTests.test_base_flattened) ... ok
+test_base_height_flattened_in_mesh (__main__.SourceTests.test_base_height_flattened_in_mesh) ... ok
+test_base_root_moved (__main__.SourceTests.test_base_root_moved) ... ok
+test_base_vertical_face_missing (__main__.SourceTests.test_base_vertical_face_missing) ... ok
+test_curb_duplicates (__main__.SourceTests.test_curb_duplicates) ... ok
+test_curb_height_lost (__main__.SourceTests.test_curb_height_lost) ... ok
+test_curb_missing (__main__.SourceTests.test_curb_missing) ... ok
+test_curb_off_strip (__main__.SourceTests.test_curb_off_strip) ... ok
+test_draw_size_mutation (__main__.SourceTests.test_draw_size_mutation) ... ok
+test_geometry_bounds_mutation (__main__.SourceTests.test_geometry_bounds_mutation) ... ok
+test_height_witness_mutation (__main__.SourceTests.test_height_witness_mutation) ... ok
+test_invalid_uv (__main__.SourceTests.test_invalid_uv) ... ok
+test_manifest_and_replay (__main__.SourceTests.test_manifest_and_replay) ... ok
+test_manifest_mutations (__main__.SourceTests.test_manifest_mutations) ... ok
+test_output_overwrite_refused (__main__.SourceTests.test_output_overwrite_refused) ... ok
+test_projection_mutation (__main__.SourceTests.test_projection_mutation) ... ok
+test_prop_clearance_shrunk (__main__.SourceTests.test_prop_clearance_shrunk) ... ok
+test_prop_moved (__main__.SourceTests.test_prop_moved) ... ok
+test_safe_path (__main__.SourceTests.test_safe_path) ... ok
+test_valid_geometry (__main__.SourceTests.test_valid_geometry) ... ok
+test_wrong_image (__main__.SourceTests.test_wrong_image) ... ok
+test_wrong_normal (__main__.SourceTests.test_wrong_normal) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 1.746s
+
+OK
+{"sprites": 53, "output": "/Users/appliedalchemylabs/.jcode/scratch/v9-source-replay-jj1irap9"}
+COMMAND python3 -B -W error::ResourceWarning docs/review/blocked-base-curb-relief-20261116/source/attempt-02/test_source.py
+test_contact_height_mutations (__main__.CorrectionTests.test_contact_height_mutations) ... ok
+test_frozen_source_manifest_and_replay (__main__.CorrectionTests.test_frozen_source_manifest_and_replay) ... ok
+test_geometry_and_registration (__main__.CorrectionTests.test_geometry_and_registration) ... ok
+test_geometry_mutation (__main__.CorrectionTests.test_geometry_mutation) ... ok
+test_no_third_attempt_or_self_recommendation (__main__.CorrectionTests.test_no_third_attempt_or_self_recommendation) ... ok
+test_overwrite_refused (__main__.CorrectionTests.test_overwrite_refused) ... ok
+test_preview_depth_order_mutation (__main__.CorrectionTests.test_preview_depth_order_mutation) ... ok
+test_preview_native_claim_mutation (__main__.CorrectionTests.test_preview_native_claim_mutation) ... ok
+test_preview_rear_mask_mutation (__main__.CorrectionTests.test_preview_rear_mask_mutation) ... ok
+test_preview_replay (__main__.CorrectionTests.test_preview_replay) ... ok
+test_preview_source_mutation (__main__.CorrectionTests.test_preview_source_mutation) ... ok
+test_preview_unknown_mask_mutation (__main__.CorrectionTests.test_preview_unknown_mask_mutation) ... ok
+test_registration_mutations (__main__.CorrectionTests.test_registration_mutations) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 12.345s
+
+OK
+{"sprites": 53, "output": "/Users/appliedalchemylabs/.jcode/scratch/v9-final-replay-5xcmw9z5", "geometryChanged": false}
+Final preview generated, geometry-ranked silhouettes: 9
+COMMAND python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/blocked-base-curb-relief-20261116/scene -p test_*.py -v
+test_dependency_missing_or_rehashed (test_binding.Bindings.test_dependency_missing_or_rehashed) ... ok
+test_final_dependency_bytes_rehashed_even_if_replay_cached (test_binding.Bindings.test_final_dependency_bytes_rehashed_even_if_replay_cached) ... ok
+test_first_attempt_dependency_bytes_remain_immutable (test_binding.Bindings.test_first_attempt_dependency_bytes_remain_immutable) ... ok
+test_first_attempt_manifest_cannot_substitute_final (test_binding.Bindings.test_first_attempt_manifest_cannot_substitute_final) ... ok
+test_first_source_image_cannot_substitute_final_image (test_binding.Bindings.test_first_source_image_cannot_substitute_final_image) ... ok
+test_pending_rejected_worker_and_wrong_scope_fail (test_binding.Bindings.test_pending_rejected_worker_and_wrong_scope_fail) ... ok
+test_rehashed_final_manifest_cannot_change_pin (test_binding.Bindings.test_rehashed_final_manifest_cannot_change_pin) ... ok
+test_semantic_forgery_with_rehashed_manifest_rejected (test_binding.Bindings.test_semantic_forgery_with_rehashed_manifest_rejected) ... ok
+test_source_cannot_supply_own_evidence (test_binding.Bindings.test_source_cannot_supply_own_evidence) ... ok
+test_source_replay_and_independent_semantics_in_memory_only (test_binding.Bindings.test_source_replay_and_independent_semantics_in_memory_only) ... ok
+test_stale_final_manifest_recommendation (test_binding.Bindings.test_stale_final_manifest_recommendation) ... ok
+test_unknown_envelope_fields_rejected (test_binding.Bindings.test_unknown_envelope_fields_rejected) ... ok
+test_current_v8_source_harness_float_guard_retained (test_native.Evidence.test_current_v8_source_harness_float_guard_retained) ... ok
+test_each_unchanged_v8_assembly_key_rejects (test_native.Evidence.test_each_unchanged_v8_assembly_key_rejects) ... ok
+test_nine_complete_rgba_baselines (test_native.Evidence.test_nine_complete_rgba_baselines) ... ok
+test_old_native_packet_not_v9_evidence (test_native.Evidence.test_old_native_packet_not_v9_evidence) ... ok
+test_pending_no_outputs (test_native.Evidence.test_pending_no_outputs) ... ok
+test_prepared_old_and_new_source_symlinks_rejected (test_native.Evidence.test_prepared_old_and_new_source_symlinks_rejected) ... ok
+test_curb_semantic_boundary_change (test_native.Geometry.test_curb_semantic_boundary_change) ... ok
+test_escape_blocked_corner (test_native.Geometry.test_escape_blocked_corner) ... ok
+test_flat_ground_patch_rejected (test_native.Geometry.test_flat_ground_patch_rejected) ... ok
+test_no_missing_or_duplicate_supplement (test_native.Geometry.test_no_missing_or_duplicate_supplement) ... ok
+test_no_third_attempt (test_native.Geometry.test_no_third_attempt) ... ok
+test_paths_and_symlinks (test_native.Geometry.test_paths_and_symlinks) ... ok
+test_prop_contact_region_protected (test_native.Geometry.test_prop_contact_region_protected) ... ok
+test_real_source_geometry_without_recommendation (test_native.Geometry.test_real_source_geometry_without_recommendation) ... ok
+test_unauthorized_extra_mesh_vertex (test_native.Geometry.test_unauthorized_extra_mesh_vertex) ... ok
+test_unbound_height_and_landmark_rejected (test_native.Geometry.test_unbound_height_and_landmark_rejected) ... ok
+test_actual_executable_bytes_required (test_native.Records.test_actual_executable_bytes_required) ... ok
+test_depth_constraint_tamper (test_native.Records.test_depth_constraint_tamper) ... ok
+test_each_frozen_v8_field_rejects (test_native.Records.test_each_frozen_v8_field_rejects) ... ok
+test_each_xyz_witness_field_rejects (test_native.Records.test_each_xyz_witness_field_rejects) ... ok
+test_every_old_actor_field_rejects (test_native.Records.test_every_old_actor_field_rejects) ... ok
+test_every_supplement_registration_field_rejects (test_native.Records.test_every_supplement_registration_field_rejects) ... ok
+test_exact_float_ground_oracle (test_native.Records.test_exact_float_ground_oracle) ... ok
+test_forged_supplement_geometry (test_native.Records.test_forged_supplement_geometry) ... ok
+test_no_baseline_supplement (test_native.Records.test_no_baseline_supplement) ... ok
+test_no_rank_boost (test_native.Records.test_no_rank_boost) ... ok
+test_old_binary_fails (test_native.Records.test_old_binary_fails) ... ok
+test_old_plan_source_and_authority_preserved (test_native.Records.test_old_plan_source_and_authority_preserved) ... ok
+test_one_passed_test_required (test_native.Records.test_one_passed_test_required) ... ok
+test_stale_sources_or_input (test_native.Records.test_stale_sources_or_input) ... ok
+test_supplement_not_old_actor (test_native.Records.test_supplement_not_old_actor) ... ok
+test_synthetic_claim_rejected (test_native.Records.test_synthetic_claim_rejected) ... ok
+test_synthetic_protocol_only (test_native.Records.test_synthetic_protocol_only) ... ok
+test_wrong_capture_count_or_arm (test_native.Records.test_wrong_capture_count_or_arm) ... ok
+
+----------------------------------------------------------------------
+Ran 46 tests in 19.275s
+
+OK
+{"sprites": 53, "output": "/Users/appliedalchemylabs/.jcode/scratch/v9-final-replay-gnc1xxvi", "geometryChanged": false}
+COMMAND python3 -B docs/review/blocked-base-curb-relief-20261116/scene/retained.py docs/review/blocked-base-curb-relief-20261116/scene/native-capture-v9
+Final correction preview generated. ground.png 4608x4608. One correction; no third art pass.
+{"sprites": 53, "output": "/Users/appliedalchemylabs/.jcode/scratch/v9-final-replay-7h3phmx1", "geometryChanged": false}
+{
+  "status": "RETAINED_BYTES_AND_CONTRACT_VERIFIED_NOT_NEW_NATIVE_RUN",
+  "fixtureVersion": "source-scene-base-curb-009-relief",
+  "captures": 6,
+  "images": 18,
+  "ownerAcceptance": false,
+  "physicalDeviceEvidence": false,
+  "binaryCheck": "agreement of preserved original import records, not a fresh local binary comparison",
+  "baselinePixelComparisons": 9
+}
+COMMAND python3 -B docs/review/blocked-base-curb-relief-20261116/audit.py verify
+{
+  "status": "PROTECTED_BYTES_UNCHANGED",
+  "files": 1766,
+  "referenceCommit": "404d6b2bac5beeceeab4068d33c24dd5a001430c",
+  "limitation": "Portable unkeyed receipt establishes consistency, not independently authenticated origin"
+}
+COMMAND python3 -B docs/review/blocked-base-curb-relief-20261116/audit.py pixels
+[
+  {
+    "zoom": 1.0,
+    "suffix": "native",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "f3320843618c890f706cf1d9d8295bb966c0e94ff068503d2f63919a9d888d11"
+  },
+  {
+    "zoom": 1.0,
+    "suffix": "half",
+    "size": [
+      1056,
+      489
+    ],
+    "rgbaSHA256": "7e256e5a78c257eafa55312445b65a500f0b9be9a109df37b6a85842c42baeb8"
+  },
+  {
+    "zoom": 1.0,
+    "suffix": "grayscale",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "d76bdb698a8d322b620656f668e9c7582920b19424ec72a8faa3372eb22758d5"
+  },
+  {
+    "zoom": 1.25,
+    "suffix": "native",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "1c35357f92eee9024a570c17d3ea1866eb275658f602047a010cf9854ead45e4"
+  },
+  {
+    "zoom": 1.25,
+    "suffix": "half",
+    "size": [
+      1056,
+      489
+    ],
+    "rgbaSHA256": "1c540cadaad269757b10d54dc8b0081463d34817a7a0130a20ba93c38a3fb403"
+  },
+  {
+    "zoom": 1.25,
+    "suffix": "grayscale",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "d26f39c14b72a772f82e71bab7f48c07238d9f8baab18d42814ba6118e9fdedd"
+  },
+  {
+    "zoom": 1.4,
+    "suffix": "native",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "c5d30f530d9fa41dcd5776406e185065f380a8fc7d66f1c28068f1e951c1a571"
+  },
+  {
+    "zoom": 1.4,
+    "suffix": "half",
+    "size": [
+      1056,
+      489
+    ],
+    "rgbaSHA256": "9ad368f0b560bf3fe8217394c425c9791513ed4ec81f0d6cb6b4895d10824a40"
+  },
+  {
+    "zoom": 1.4,
+    "suffix": "grayscale",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "de4de065c71241c268d4c8604a8f232905f17a0b5663b5694d5088f4bc10a8ac"
+  }
+]
+COMMAND node docs/review/blocked-base-curb-relief-20261116/gallery/test_evidence.js --require-v9
+{"result":"PASS","actualVersions":3,"actualImages":54,"selections":96,"rejectedMutations":238,"syntheticV9Protocol":true,"v9NativeEvidence":true,"browserEvidence":false}
+COMMAND node docs/review/blocked-base-curb-relief-20261116/gallery/test_loader.js --require-v9
+JCODE_PROGRESS {"current":50,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":100,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":150,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":200,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":250,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":300,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":350,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":400,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":450,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":500,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":550,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":600,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":650,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":700,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":750,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":800,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":850,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+{"result":"PASS","missingV9":true,"mismatchedCaptureRejected":true,"corruptedPNGRejected":true,"corruptedRecordRejected":true,"missingDependenciesRejected":true,"missingDependencyCases":869,"sourceForgeryRejected":true,"binaryForgeryRejected":true,"noFallback":true,"actualVersions":3,"syntheticV9Loader":true,"selections":144,"browserEvidence":false,"nativeRun":false}
+{"status": "TRACKED_EXPORT_VALIDATED", "export": "/Users/appliedalchemylabs/.jcode/scratch/base-curb-v9-tracked-export-ycrhf0nx", "trackedFiles": 11428, "commandCount": 9, "newNativeExecution": false, "ownerAcceptance": false}

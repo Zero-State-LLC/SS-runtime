@@ -1,5 +1,21 @@
 # Next work order
 
+## V9 final native comparison verified, November17 00:29UTC
+
+Actual native0022 passed exactly1test and strict import/independent retained checker passed6captures18images9complete V8baseline RGBA matches. Fresh/loaded SHAba5766b6803ce2019a52561dea4322df7bc48c41f5c2b39b4c7680ebe037296b, fixturea0dbdc1d..., input2c4c3f6a.... No simulator restart or second capture. Native slot free. Coordinator inspected botharms at3zooms ordinary/half/grayscale via hash-bound inspection sheets. Final verdict `blocked-base-curb-relief-20261116/REVIEW-FINAL.md`: **benchmark NOT MET**, base still can read as stair landing. No third art attempt.
+
+Issue254 opened for gallery synthetic/native schema mismatch. New gallery now validates actual supplementalManifestSHA256 plus exact assembly/input/final source dependency closure, preserving native records. Actual Brave passed72selections96image displays at00:26 and again after final V9default at00:28. Cache-busted final navigation confirmsV9default, explicit NOT MET copy, full hash validation and704x326candidate. See browser-check-0026/0028.json. Worker finishing final-default Node tests/docs. Source slice committed ase144549; not yet pushed.
+
+Remaining authorized follow-through: staged-only export all9commands, final code/docs/log inspection, commit/push existingPR236, independently confirm remote head and query exact-head CI once. Then STOP for owner scene review. No automatic CI polling, unfiltered Swift retry, production admission, merge, issue closure, motion/encounter or physical certification. All source attempts, prior failure logs and unrelated untracked packets remain intact.
+
+## V9 resumed after compaction, November17 00:15UTC
+
+Owner said continue at00:11:43UTC. Recovered current repository and final source from files. Coordinator actually inspected attempt02 detail and z100/z140half previews and wrote `blocked-base-curb-relief-20261116/SOURCE-REVIEW-FINAL.md` plus exact-hash `recommendations.json`. Final manifest5b0943d029eadaf00d4e2d039dbeeda3e3353241c7881f28dd370c3295ab1891 is recommended ONLY for isolated native comparison, not acceptance. Plain gray wedge/possible stair-landing reading remains unresolved, benchmark NOT MET. No third aesthetic correction.
+
+Independent13final-source+41scene+7audit tests passed at00:13, raw `coordinator-checks-0013.log`. Those scene checks still bound attempt01. Orangutan is integrating exact attempt02 binding and strict substitution/path regressions in scene/ only. Await its report, independently verify, then bind/prepare and fresh serialized build/capture. No native job active or V9 capture yet. Both Node suites passed against historical/synthetic evidence. Actual Brave tab827533035 showed V8 loaded at704x326, selecting missingV9 displayed explicit pending/invalid status with0capture images. Jev401 forced direct browser fallback, not user login. Gallery URL is localhost8769/docs/review/blocked-base-curb-relief-20261116/gallery/index.html.
+
+Preserve all source attempts and unrelated untracked packets. Native slot free. No unfiltered Swift retry or automatic CI polling chain. Remaining authorized work: exact final binding, one final native comparison, actual image/gallery review, tracked-export checks and publication to existingPR236, then STOP for owner review. No merge, issue closure, production admission, motion/encounter or physical certification.
+
 ## V9 bounded relief approved, November16 23:48UTC
 
 Owner explicitly approved `intent/2026-11-16-blocked-base-curb-relief.md` at23:48:25UTC. New isolated packet `docs/review/blocked-base-curb-relief-20261116/`, implementation contract `CONTRACT.md`. Gorilla owns `source/` editable supplemental blocked-kiosk masonry base and existing-boundary curb relief. Orangutan owns `scene/` and `AppTests/BlockedBaseCurbSceneTests.swift`. Coordinator owns gallery, source/scene visual review, protected-state audit, serialized native capture, export and publication. Lower-cost gallery worker could not start because its API route lacked credentials, so coordinator performs that lane without model escalation.

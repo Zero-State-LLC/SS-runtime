@@ -1,0 +1,24 @@
+:root { color-scheme: dark; font: 16px/1.5 system-ui, sans-serif; background: #24282b; color: #edf0ee; }
+* { box-sizing: border-box; }
+body { margin: 0 auto; padding: 24px; max-width: 1504px; }
+h1, h2 { line-height: 1.2; }
+section { margin: 28px 0; }
+a { color: #a6dbea; }
+.scope { border-left: 4px solid #c0ae79; padding-left: 16px; }
+fieldset { display: flex; flex-wrap: wrap; gap: 20px; border: 1px solid #747d80; }
+label { display: flex; gap: 8px; align-items: center; }
+button, select { font: inherit; padding: 6px 10px; }
+input[type=checkbox] { width: 20px; height: 20px; }
+button:focus-visible, select:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid #d2b77c; outline-offset: 3px; }
+#error, #reference-error { color: #ffd1bd; border: 1px solid #d59479; padding: 12px; }
+#captures { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px; margin-top: 20px; }
+.capture { margin: 0; min-width: 0; width: var(--logical-width); max-width: 100%; }
+.viewport { width: 100%; overflow: auto; background: #151719; }
+.capture-image { display: block; width: var(--logical-width); height: var(--logical-height); max-width: none; object-fit: contain; }
+#captures[data-size="native"] { --logical-width: 704px; --logical-height: 326px; }
+#captures[data-size="half"] { --logical-width: 352px; --logical-height: 163px; }
+figcaption { overflow-wrap: anywhere; padding-top: 8px; }
+#benchmark { display: block; width: 704px; max-width: 100%; height: auto; object-fit: contain; }
+#benchmark.grayscale { filter: grayscale(1); }
+[hidden] { display: none !important; }
+@media (max-width: 600px) { body { padding: 12px; } fieldset { gap: 12px; } }
