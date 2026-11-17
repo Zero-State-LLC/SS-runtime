@@ -1,5 +1,13 @@
 # Next work order
 
+## Docs, board and all-PR reconciliation, November17 04:09UTC
+
+Owner requested documentation, board and all-PR handling at04:04UTC. Inventory covers nine open PRs across SS-runtime, SS-specs and frozen legacy Surveillance-Survivor. See `PR-RECONCILIATION-20261117.md` for exact heads, checks, dependencies and dispositions. No merge/auto-merge, closure, release, billing change or acceptance is implied. Specs63's two review findings are fixed and resolved atc226085 with local validation; its fresh CI is separate from historical green. Specs92 conflicts with main; runtime167 still targets its already-merged stack parent and must not be blindly retargeted. Legacy25 failures are historical billing-not-started annotations, not compiler failures.
+
+Live-projection retry0407 is independently read back:18passed,0failed,0skipped, including8unchanged kiosk tests. All8source/product SHA256 entries match. Only probe ownership changed from Player root to its child, with every prior strict assertion intact and one extra retained-parent assertion. Original0350red17/18 evidence remains frozen; issue261 tracks the instrumentation defect. Final Release build succeeded and marker absence was rechecked by worker. Coordinator now owns simulator and actual app inspection. Do not equate native geometry/lifecycle success with art or physical acceptance.
+
+Preservation checkpointa00b184 has6isolated Git guard tests and11876unchanged protected files. Docs/board reconciliation must preserve unrelated untracked art packets, historical closures and all owner gates. Current implementation remains unpublished until final coordinator validation. Broader presentation correction is authorized by03:40approval; old sections below asking for that approval are historical, not current blockers.
+
 ## Broader presentation projection approved, November17 03:40UTC
 
 Owner approved at2026-11-17T03:40:46.895Z in response to the prior explicit gate. Scope and acceptance: `intent/2026-11-17-live-world-projection.md`. Implement reversible Debug-only live midpoint projection across ground and registered upright roots, with consistent camera/manual input and fixed HUD. Neighbor asset designs and all authoritative geometry/commands remain unchanged. This supersedes the prior no-broader-reprojection work stop, not art acceptance, canonical admission, merge/release or physical/human gates.

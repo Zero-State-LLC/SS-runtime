@@ -350,12 +350,44 @@ final class GameScene: SKScene {
     private let renderer = WorldRenderer()
 #if DEBUG
     private(set) var kioskPlayableReviewState = "disabled"
+    private var kioskReviewArm: KioskPlayableReview.Arm?
+    private var liveProjection: LiveWorldProjection?
+    private var insideWorldUpdate = false
+    var liveProjectionEnabled: Bool { liveProjection != nil }
+    /// Test/evidence observer runs after actual SpriteKit actions and projection.
+    var liveProjectionObserver: (() -> Void)?
+
+    func installLiveWorldProjection(_ enabled: Bool) throws {
+        guard !enabled || kioskReviewArm != nil else { throw KioskPlayableReview.Invalid.arguments }
+        liveProjection?.remove()
+        liveProjection = enabled ? LiveWorldProjection(scene: self, camera: cameraNode,
+            worldRoots: [renderer.root, vfx.worldLayer]) : nil
+        if let arm = kioskReviewArm {
+            showKioskReviewStatus("KIOSK REVIEW \(arm.rawValue) / \(enabled ? "MIDPOINT / " : "")NOT ACCEPTED")
+        }
+        redraw()
+    }
+
+    private func applyLiveProjection() {
+        liveProjection?.apply(uprights: renderer.liveProjectionUprights(session.snapshot))
+    }
+
+    func configureAutopilot(arguments: [String]) {
+        autopilot = DebugAutopilot.fromLaunchArguments(arguments, arena: session.simulation.state.arena)
+    }
 
     /// Explicit review-only plumbing. Does not seed, reposition or step the session.
     func installKioskPlayableReview(_ review: KioskPlayableReview?) throws {
+        liveProjection?.restore()
+        defer { if !insideWorldUpdate { applyLiveProjection() } }
         try renderer.installKioskPlayableReview(review, snapshot: session.snapshot)
+        kioskReviewArm = review?.arm
+        if review == nil {
+            liveProjection?.remove()
+            liveProjection = nil
+        }
         kioskPlayableReviewState = review.map { "\($0.arm.rawValue):not-accepted:live-projection" } ?? "disabled"
-        showKioskReviewStatus(review.map { "KIOSK REVIEW \($0.arm.rawValue) / NOT ACCEPTED" })
+        showKioskReviewStatus(review.map { "KIOSK REVIEW \($0.arm.rawValue) / \(liveProjectionEnabled ? "MIDPOINT / " : "")NOT ACCEPTED" })
         redraw()
     }
 
@@ -374,11 +406,18 @@ final class GameScene: SKScene {
 
     private func configureKioskPlayableReview(_ arguments: [String]) {
         do {
-            guard let request = try KioskPlayableReview.request(arguments: arguments) else { return }
+            let request = try KioskPlayableReview.request(arguments: arguments)
+            let projected = try LiveWorldProjection.requested(arguments: arguments, hasReview: request != nil)
+            guard let request else { return }
             let review = try KioskPlayableReview.load(request)
             try renderer.installKioskPlayableReview(review, snapshot: session.snapshot)
+            kioskReviewArm = review.arm
+            if projected {
+                liveProjection = LiveWorldProjection(scene: self, camera: cameraNode,
+                    worldRoots: [renderer.root, vfx.worldLayer])
+            }
             kioskPlayableReviewState = "\(review.arm.rawValue):not-accepted:live-projection"
-            showKioskReviewStatus("KIOSK REVIEW \(review.arm.rawValue) / NOT ACCEPTED")
+            showKioskReviewStatus("KIOSK REVIEW \(review.arm.rawValue) / \(projected ? "MIDPOINT / " : "")NOT ACCEPTED")
         } catch {
             kioskPlayableReviewState = "rejected"
             showKioskReviewStatus("KIOSK REVIEW REJECTED / DEFAULT ART")
@@ -415,7 +454,9 @@ final class GameScene: SKScene {
 
     /// Re-present the same authoritative snapshot for a paused visual comparison.
     func refreshBenchmarkPresentation(reducedMotion: Bool) {
+        liveProjection?.restore()
         renderer.render(session.snapshot, reducedMotion: reducedMotion)
+        if !insideWorldUpdate { applyLiveProjection() }
     }
 
     /// Install a complete review family once; use the same camera playback policy.
@@ -564,7 +605,7 @@ final class GameScene: SKScene {
         if arguments.contains("-SSDaily"), let run = try? DailyRun(day: DailyRun.Day(utc: Date())) {
             beginDailyRun(run)
         }
-        autopilot = DebugAutopilot.fromLaunchArguments(arguments, arena: session.simulation.state.arena)
+        configureAutopilot(arguments: arguments)
         configureVFXEvidence(arguments)
         // `-SSSeed <scenario>` puts the simulation into a named legal late-game
         // state so the renderer can be observed there. Presentation evidence
@@ -586,6 +627,15 @@ final class GameScene: SKScene {
         super.didChangeSize(oldSize)
         if let view { configureHUD(for: view) }
     }
+
+#if DEBUG
+    override func willMove(from view: SKView) {
+        liveProjection?.remove()
+        liveProjection = nil
+        liveProjectionObserver = nil
+        super.willMove(from: view)
+    }
+#endif
 
     /// Rebuilds the HUD projection whenever the safe rectangle can have changed.
     private func configureHUD(for view: SKView) {
@@ -618,6 +668,10 @@ final class GameScene: SKScene {
     /// ER-007 requires the digest and receipt to be unchanged by a settings
     /// change, and none of these values is a simulation input.
     func apply(settings: PresentationSettings) {
+#if DEBUG
+        liveProjection?.restore()
+        defer { if !insideWorldUpdate { applyLiveProjection() } }
+#endif
         let wasGhostEnabled = self.settings.ghostEnabled
         self.settings = settings
         session.audioSettings = settings.audio
@@ -654,6 +708,10 @@ final class GameScene: SKScene {
     }
 
     func setPaused(_ paused: Bool) {
+#if DEBUG
+        liveProjection?.restore()
+        defer { if !insideWorldUpdate { applyLiveProjection() } }
+#endif
         runPaused = paused
         vfx.setRunPaused(paused)
         soundEngine.setSuspended(paused)
@@ -671,6 +729,11 @@ final class GameScene: SKScene {
     }
 
     override func update(_ currentTime: TimeInterval) {
+#if DEBUG
+        liveProjection?.restore()
+        insideWorldUpdate = true
+        defer { insideWorldUpdate = false }
+#endif
         displayDelta = lastDisplayTime.map { max(0, currentTime - $0) } ?? 1.0 / 60
         lastDisplayTime = currentTime
         instrumentation.frameTimes.recordFrame(timestamp: currentTime)
@@ -785,6 +848,8 @@ final class GameScene: SKScene {
             observer(lastDisplayTime ?? 0, session.snapshot,
                 session.simulation.state.player.position, observed, cameraNode.position)
         }
+        applyLiveProjection()
+        liveProjectionObserver?()
 #endif
     }
 
@@ -792,6 +857,14 @@ final class GameScene: SKScene {
         let command = controller.takeCommand()
         session.moveX = command.moveX
         session.moveY = command.moveY
+#if DEBUG
+        if liveProjectionEnabled {
+            let world = LiveWorldProjection.analogWorld(CGPoint(x: Int(command.moveX), y: Int(command.moveY)))
+            let limit = Double(PlayerCommand.axisMaximum)
+            session.moveX = Int16(max(-limit, min(limit, Double(world.x.rounded()))))
+            session.moveY = Int16(max(-limit, min(limit, Double(world.y.rounded()))))
+        }
+#endif
         session.dodgePressed = command.dodgePressed
     }
 
@@ -1018,6 +1091,9 @@ final class GameScene: SKScene {
 
     /// Presentation state shared by Restart and Rehearse Court.
     private func resetForNewSimulation() {
+#if DEBUG
+        liveProjection?.restore()
+#endif
         spokenHUD.reset()
         runCard = nil
         hud.runCard = nil
@@ -1248,6 +1324,10 @@ final class GameScene: SKScene {
 #endif
 
     private func redraw() {
+#if DEBUG
+        liveProjection?.restore()
+        defer { if !insideWorldUpdate { applyLiveProjection() } }
+#endif
         presentationFrame &+= 1
         var snap = session.snapshot
         if snap.upgradePending && !upgradeSelection.isPresented { clearGameplayInput() }

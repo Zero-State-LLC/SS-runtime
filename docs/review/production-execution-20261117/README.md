@@ -1,6 +1,8 @@
 # Production execution, November 17, 2026
 
-Authority: owner execution directive at01:55:50Z. No merge, release, deployment, paid asset generation or new gameplay contract authorized. This packet records implementation and qualification, not release acceptance.
+Authority: owner execution directive at01:55:50Z, broader presentation correction approval at03:40:46Z, and docs/board/all-PR maintenance request at04:04UTC. No merge, release, deployment, paid asset generation or new gameplay contract authorized. This packet records implementation and qualification, not release acceptance.
+
+Latest reconciliation: `../../handoff/PR-RECONCILIATION-20261117.md` inventories all nine open runtime/specs/legacy PRs. Project27 now tracks259/260/261 as well as prior cards. Implemented-but-unmerged repairs remain In Progress, not Done. Specs63's two documentation review findings are repaired atc226085; all acceptance and merge gates remain.
 
 ## Live reconnaissance
 
@@ -21,7 +23,7 @@ Authority: owner execution directive at01:55:50Z. No merge, release, deployment,
 | P1 | Canonical hash CPU cost | Preserve all digest bytes while removing measured portable-hash/formatting overhead on Apple platforms |23focused hash/determinism/replay tests pass; host Release isolated hash-to-hex14.38x–37.61x faster in five-round measurement, not an FPS claim | Implemented; bounded host partitions and native traversal passed, final Release built. Physical/FPS acceptance remains missing; see HASH-PERFORMANCE.md |
 | P1 | runtime260 | Stable presentation socket identity independent of Dictionary traversal |4red/green regressions,21independent affected tests, unchanged8native review tests | Fixed and pushed fed8a3d; no simulation/spawn-selection change, issue remains open pending merge |
 | P1 | runtime237 | Explain and fix intermittent15/16 live-pose observation without weakening assertion or changing authored timing | Preserved trace diagnosis, focused native reproduction | Actual focused rerun1test passed with all16poses in retained trace; intermittent historical defect remains unresolved. See UI-PLAYBACK-ADDENDUM.md |
-| P1 | runtime133 / T1045 | Correct only Camera-adjacent kiosk geometry/spacing; keep neighbors as reference | Actual runtime three-zoom comparison, authoritatively fixed footprints/actors | Z-only flat native comparison verified:6captures/18images. Opt-in Debug playable review implemented,8native tests pass. Actual live projection/foundation mismatch remains, benchmark NOT MET. Owner projection/art decision required |
+| P1 | runtime133 / T1045 | Correct only Camera-adjacent kiosk geometry/spacing; keep neighbors as reference | Actual runtime three-zoom comparison, authoritatively fixed footprints/actors | Z-only flat native comparison verified:6captures/18images. Broader Debug-only live midpoint correction approved03:40UTC. Native0407 passes18/18 including8unchanged kiosk tests after documented probe-owner repair261. Actual current/candidate app inspected04:09-04:10UTC: MIDPOINT/NOT ACCEPTED visible, foundation/contact/scale deficiencies remain. Benchmark NOT MET, no owner art acceptance |
 | P1 | runtime134 / specs65 | Complete coherent reviewed asset families before admission | Existing canonical catalog, source/provenance and native playback evidence | Partial/rejected family evidence, not production-ready |
 | P1 | T901/T905/T406 | Device replay and three consecutive complete iPhone12 runs; measured ceilings | Actual device captures and performance telemetry | iPhone12 and D-020/D-021 decisions missing |
 | P1 | T903/T904 | Onboarding and voluntary replay with at least5 external participants | Named participant records, comprehension/replay outcomes | External participants required |

@@ -1,0 +1,17 @@
+--- docs/review/live-world-projection-20261117/LiveWorldProjectionTests.executed-0350.swift	2026-11-16 19:52:36
++++ AppTests/LiveWorldProjectionTests.swift	2026-11-16 20:06:45
+@@ -307,9 +307,13 @@
+             worldPosition = observed.position
+             worldCamera = camera
+         }
+-        player.run(.repeatForever(.sequence([.run {
++        let actionProbe = SKNode()
++        actionProbe.name = "projection-action-probe-owner"
++        player.addChild(actionProbe)
++        actionProbe.run(.repeatForever(.sequence([.run {
+             MainActor.assumeIsolated {
+                 actionCalls += 1
++                XCTAssertTrue(actionProbe.parent === player)
+                 XCTAssertNotEqual(player.parent?.name, "live-midpoint-uprights")
+                 XCTAssertEqual(scene.childNode(withName: "//live-midpoint-ground")?.yScale, 1)
+             }
