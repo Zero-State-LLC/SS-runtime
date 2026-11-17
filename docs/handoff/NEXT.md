@@ -1,5 +1,15 @@
 # Next work order
 
+## V9 published, STOP for owner review, November17 00:34UTC
+
+Evidence commit `6c3be49c0322874a7c037d4e0b29495e311a6c3a` was pushed and independently matched localHEAD, remote branch and openPR236 head at00:34. PR review comment6933874140 and issue254 comment6933874542 record the exact results and unchanged gates. Source checkpoint e144549 is included. This handoff checkpoint is documentation-only follow-through, not another source or native attempt.
+
+All authorized implementation/publication work is complete. Staged-only11428file export passed all9commands:91portable source/scene/audit tests, retained native checker,1766protected bytes,9full baseline pixels and both gallery suites against actualV9. Actual Brave finaldefaultV9 passed72selections96image displays. Exported and working gallery bytes matched at00:32. See `blocked-base-curb-relief-20261116/VALIDATION.md`, `REVIEW-FINAL.md` and browser-check-0028.json. Native0022 passed exactly1test6captures18images, fresh/loaded SHAba5766b6803ce2019a52561dea4322df7bc48c41f5c2b39b4c7680ebe037296b. Native slot free.
+
+**Overall benchmark NOT MET.** Curb relief improves, but the gray base can still read as a raised stair landing. The blocked-reading criterion is not satisfied. Both source attempts are exhausted and immutable. Owner must review publishedV9 before any new aesthetic work. No production admission, merge, issue closure, motion/encounter expansion or physical certification. Issues252/253/254 remain open. Preserve all earlier failed evidence and unrelated untracked packets. No unfiltered Swift retry or automatic CI polling chain. Remote CI is not certified passing by local checks.
+
+**Needed from owner:** review V9 and explicitly authorize any next bounded visual work order.
+
 ## V9 final native comparison verified, November17 00:29UTC
 
 Actual native0022 passed exactly1test and strict import/independent retained checker passed6captures18images9complete V8baseline RGBA matches. Fresh/loaded SHAba5766b6803ce2019a52561dea4322df7bc48c41f5c2b39b4c7680ebe037296b, fixturea0dbdc1d..., input2c4c3f6a.... No simulator restart or second capture. Native slot free. Coordinator inspected botharms at3zooms ordinary/half/grayscale via hash-bound inspection sheets. Final verdict `blocked-base-curb-relief-20261116/REVIEW-FINAL.md`: **benchmark NOT MET**, base still can read as stair landing. No third art attempt.
