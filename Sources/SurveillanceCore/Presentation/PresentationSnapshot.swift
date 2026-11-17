@@ -330,8 +330,10 @@ public struct PresentationSnapshot: Equatable, Sendable {
         captainHousings = state.arena.captainCameraEmitters.map {
             CaptainHousing(id: $0.id, x: $0.x, y: $0.y, active: $0.id == liveEmitter)
         }
-        spawnSockets = state.arena.enemySpawnSockets.values.flatMap { sockets in
-            sockets.map { VecI(x: $0.x, y: $0.y) }
+        // Runtime #260: stable presentation identities across dictionary histories.
+        // Preserve each encounter's authored socket order and the elite/boss suffix.
+        spawnSockets = state.arena.enemySpawnSockets.keys.sorted { $0.utf8LessThan($1) }.flatMap { key in
+            state.arena.enemySpawnSockets[key, default: []].map { VecI(x: $0.x, y: $0.y) }
         } + [
             VecI(x: state.arena.eliteSpawn.x, y: state.arena.eliteSpawn.y),
             VecI(x: state.arena.bossSpawn.x, y: state.arena.bossSpawn.y)
