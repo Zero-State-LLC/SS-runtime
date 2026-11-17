@@ -10,6 +10,8 @@ Implement routine, reversible engineering repairs under existing accepted requir
 1. Runtime #256: reproduce the macOS temporary-root alias failure; execute the frozen review suite under an isolated canonical scratch root. Keep strict assembly/supplement symlink rejection, missing-file assertions, all captured bytes and failure history intact. Prove child failures remain failures.
 2. Runtime #257: enumerate all120 gates in pinned SS-specs acceptance.md, including A-013A, D-022 through D-024 and E-021. A missing gate must prevent expansion, and a failed gate must fail expansion. Do not mark newly enumerated gates passed or replace missing device/human evidence.
 
+3. Measured hashing cost: the retained actual Debug process sample at02:39UTC attributes215samples to canonical SHA256 hex generation. Use the system SHA256 implementation where available, retain the portable algorithm and exact lowercase output, and test both against fixed vectors and padding/binary/UTF8 boundaries. No simulation serialization, digest identity, timing, replay schema or acceptance threshold changes. Isolated host microbenchmarks do not establish an FPS improvement or resolve playback237/traversal259.
+
 No gameplay, ruleset, arena, content, replay schema, artwork or contract payload changes. The canonical asset catalog remains authoritative. Owner's camera-adjacent-building-only correction remains in force. Latest accepted specification must be checked before any later gameplay change. Existing separate receipt-adoption PRs retain specification-first order.
 
 ## Verification

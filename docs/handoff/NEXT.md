@@ -1,5 +1,11 @@
 # Next work order
 
+## Hashing optimization and kiosk integration, November17 02:59UTC
+
+Canonical SHA256 now uses CryptoKit when available with unchanged portable fallback and direct lowercase hex encoding.23focused digest/determinism/replay tests passed exit0, including the million-a vector and live replay/medal checks. Retained sampled hotspot and five-round host Release microbenchmark are in `production-execution-20261117/HASH-PERFORMANCE.md`:14.38x–37.61x isolated hash-to-hex speedup, not app FPS or a fix for237/259. Full non-camera partition task293772eb5q and Debug microbenchmark267120s2h2 are running. No assertions or timing thresholds weakened. Publish this bounded engineering slice and continue native integration verification.
+
+Rhino completed flat kiosk native capture6frames/18PNGs and preserved-material textured source. Coordinator independently inspected all six half captures and source-comparison image, and reran12textured+7retained tests successfully. Recommendation in `kiosk-only-geometry-20261117/COORDINATOR-REVIEW.md` is only for opt-in Debug playable review. Rhino now owns that reversible integration/helper/tests, preserving shipping/Release defaults, neighbors and gameplay. Simulator use must remain serialized. No art acceptance, canonical catalog admission, merge, release or deployment. Keep unrelated untracked art packets untouched.
+
 ## Production ownership resumed, November17 01:55UTC directive
 
 Current owner directive authorizes continuous reversible engineering, QA and art-production work within accepted Level1 requirements. It supersedes the prior stop-only-for-proportion-review instruction as a general work stop, but does not grant art acceptance, merges, releases, deployment, paid asset generation or changed gameplay. Only the Camera-adjacent building is the identified geometry/spacing outlier; keep neighboring buildings unchanged as references.

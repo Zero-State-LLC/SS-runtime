@@ -1,10 +1,22 @@
 import Foundation
+#if canImport(CryptoKit)
+import CryptoKit
+#endif
 
 /// SHA-256 producing lowercase hex digests for canonical state hashing.
 public enum SHA256 {
     public static let emptyDigest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
     public static func hash(_ data: [UInt8]) -> [UInt8] {
+        #if canImport(CryptoKit)
+        return Array(CryptoKit.SHA256.hash(data: Data(data)))
+        #else
+        return portableHash(data)
+        #endif
+    }
+
+    /// Retained portable implementation, also exercised as the parity oracle on Apple hosts.
+    static func portableHash(_ data: [UInt8]) -> [UInt8] {
         var h: [UInt32] = [
             0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a,
             0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19
@@ -81,7 +93,14 @@ public enum SHA256 {
     }
 
     public static func hex(_ data: [UInt8]) -> String {
-        hash(data).map { String(format: "%02x", $0) }.joined()
+        let digits = Array("0123456789abcdef".utf8)
+        var bytes: [UInt8] = []
+        bytes.reserveCapacity(64)
+        for byte in hash(data) {
+            bytes.append(digits[Int(byte >> 4)])
+            bytes.append(digits[Int(byte & 0x0f)])
+        }
+        return String(decoding: bytes, as: UTF8.self)
     }
 
     public static func hex(_ string: String) -> String {
