@@ -1,5 +1,11 @@
 # Next work order
 
+## Architectural comparison published, STOP for owner review, November17 01:47UTC
+
+Evidence commit `61fc3d58197828a2958eb335d5d947d47c7bcb55` pushed and verified against remote branch and openPR236 head. PR comment6935321212 records review paths, validation and limits. Fresh independent rerun passed8audit+18source+7gallery tests and verified11432protected prior files. Exact-head CI query returned no runs at01:46UTC, not a passing-CI claim. Fully staged Trail check reported two lexical handoff conflicts, dispositioned in `architectural-scale-20261117/TRAIL-CHECK.md` and the commit message. No source/image changes during publication.
+
+**Needed from owner:** review the current/proposed proportions in `docs/review/architectural-scale-20261117/gallery/index.html` and explicitly authorize any next bounded work order. **Overall benchmark NOT MET.** Stop before texture/detail or native work. No production admission, merge, issue closure, motion/encounter expansion or physical certification. All prior failed evidence and unrelated untracked packets remain untouched. This checkpoint is documentation-only follow-through.
+
 ## Architectural comparison validated, November17 01:40UTC
 
 Approved single proposal complete in `docs/review/architectural-scale-20261117/`. Actual three-zoom current/proposed untextured sheets inspected, hash-bound verdict `REVIEW.md`: recommend owner review of lower kiosk roof/cornice, taller residential story spacing, reduced civic glazing. **Not accepted art; overall benchmark NOT MET.** No aesthetic retry or native execution. Full source dimensions/massing in `source/DIMENSIONS.md`; source manifestcfa00dd646449a95a20153626c453e005e43de4c2db548c6a1ae6f7066f5a629.
