@@ -1,0 +1,181 @@
+test_anchor_mutation (__main__.SourceTests.test_anchor_mutation) ... ok
+test_base_contact_missing (__main__.SourceTests.test_base_contact_missing) ... ok
+test_base_envelope_widened (__main__.SourceTests.test_base_envelope_widened) ... ok
+test_base_flattened (__main__.SourceTests.test_base_flattened) ... ok
+test_base_height_flattened_in_mesh (__main__.SourceTests.test_base_height_flattened_in_mesh) ... ok
+test_base_root_moved (__main__.SourceTests.test_base_root_moved) ... ok
+test_base_vertical_face_missing (__main__.SourceTests.test_base_vertical_face_missing) ... ok
+test_curb_duplicates (__main__.SourceTests.test_curb_duplicates) ... ok
+test_curb_height_lost (__main__.SourceTests.test_curb_height_lost) ... ok
+test_curb_missing (__main__.SourceTests.test_curb_missing) ... ok
+test_curb_off_strip (__main__.SourceTests.test_curb_off_strip) ... ok
+test_draw_size_mutation (__main__.SourceTests.test_draw_size_mutation) ... ok
+test_geometry_bounds_mutation (__main__.SourceTests.test_geometry_bounds_mutation) ... ok
+test_height_witness_mutation (__main__.SourceTests.test_height_witness_mutation) ... ok
+test_invalid_uv (__main__.SourceTests.test_invalid_uv) ... ok
+test_manifest_and_replay (__main__.SourceTests.test_manifest_and_replay) ... ok
+test_manifest_mutations (__main__.SourceTests.test_manifest_mutations) ... ok
+test_output_overwrite_refused (__main__.SourceTests.test_output_overwrite_refused) ... ok
+test_projection_mutation (__main__.SourceTests.test_projection_mutation) ... ok
+test_prop_clearance_shrunk (__main__.SourceTests.test_prop_clearance_shrunk) ... ok
+test_prop_moved (__main__.SourceTests.test_prop_moved) ... ok
+test_safe_path (__main__.SourceTests.test_safe_path) ... ok
+test_valid_geometry (__main__.SourceTests.test_valid_geometry) ... ok
+test_wrong_image (__main__.SourceTests.test_wrong_image) ... ok
+test_wrong_normal (__main__.SourceTests.test_wrong_normal) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 3.902s
+
+OK
+{"sprites": 53, "output": "/Users/appliedalchemylabs/.jcode/scratch/v9-source-replay-yxn_7nwm"}
+test_contact_height_mutations (__main__.CorrectionTests.test_contact_height_mutations) ... ok
+test_frozen_source_manifest_and_replay (__main__.CorrectionTests.test_frozen_source_manifest_and_replay) ... ok
+test_geometry_and_registration (__main__.CorrectionTests.test_geometry_and_registration) ... ok
+test_geometry_mutation (__main__.CorrectionTests.test_geometry_mutation) ... ok
+test_no_third_attempt_or_self_recommendation (__main__.CorrectionTests.test_no_third_attempt_or_self_recommendation) ... ok
+test_overwrite_refused (__main__.CorrectionTests.test_overwrite_refused) ... ok
+test_preview_depth_order_mutation (__main__.CorrectionTests.test_preview_depth_order_mutation) ... ok
+test_preview_native_claim_mutation (__main__.CorrectionTests.test_preview_native_claim_mutation) ... ok
+test_preview_rear_mask_mutation (__main__.CorrectionTests.test_preview_rear_mask_mutation) ... ok
+test_preview_replay (__main__.CorrectionTests.test_preview_replay) ... ok
+test_preview_source_mutation (__main__.CorrectionTests.test_preview_source_mutation) ... ok
+test_preview_unknown_mask_mutation (__main__.CorrectionTests.test_preview_unknown_mask_mutation) ... ok
+test_registration_mutations (__main__.CorrectionTests.test_registration_mutations) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 19.479s
+
+OK
+{"sprites": 53, "output": "/Users/appliedalchemylabs/.jcode/scratch/v9-final-replay-xmsj_k29", "geometryChanged": false}
+Final preview generated, geometry-ranked silhouettes: 9
+test_actual_assembly_symlink_remains_forbidden (__main__.CanonicalReviewTests.test_actual_assembly_symlink_remains_forbidden) ... ok
+test_all_temp_variables_are_canonical_and_isolated (__main__.CanonicalReviewTests.test_all_temp_variables_are_canonical_and_isolated) ... ok
+test_child_failure_status_is_preserved (__main__.CanonicalReviewTests.test_child_failure_status_is_preserved) ... ok
+test_ci_uses_runner_without_ignoring_status (__main__.CanonicalReviewTests.test_ci_uses_runner_without_ignoring_status) ... ok
+test_real_missing_input_assertion_fails_under_alias_then_passes (__main__.CanonicalReviewTests.test_real_missing_input_assertion_fails_under_alias_then_passes) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 2.018s
+
+OK
+..............................................
+----------------------------------------------------------------------
+Ran 46 tests in 30.235s
+
+OK
+{"sprites": 53, "output": "/Users/appliedalchemylabs/.jcode/scratch/ss-review-6hkxkk1y/v9-final-replay-96bti7ej", "geometryChanged": false}
+Final correction preview generated. ground.png 4608x4608. One correction; no third art pass.
+{"sprites": 53, "output": "/Users/appliedalchemylabs/.jcode/scratch/v9-final-replay-une602ls", "geometryChanged": false}
+{
+  "status": "RETAINED_BYTES_AND_CONTRACT_VERIFIED_NOT_NEW_NATIVE_RUN",
+  "fixtureVersion": "source-scene-base-curb-009-relief",
+  "captures": 6,
+  "images": 18,
+  "ownerAcceptance": false,
+  "physicalDeviceEvidence": false,
+  "binaryCheck": "agreement of preserved original import records, not a fresh local binary comparison",
+  "baselinePixelComparisons": 9
+}
+[
+  {
+    "zoom": 1.0,
+    "suffix": "native",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "f3320843618c890f706cf1d9d8295bb966c0e94ff068503d2f63919a9d888d11"
+  },
+  {
+    "zoom": 1.0,
+    "suffix": "half",
+    "size": [
+      1056,
+      489
+    ],
+    "rgbaSHA256": "7e256e5a78c257eafa55312445b65a500f0b9be9a109df37b6a85842c42baeb8"
+  },
+  {
+    "zoom": 1.0,
+    "suffix": "grayscale",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "d76bdb698a8d322b620656f668e9c7582920b19424ec72a8faa3372eb22758d5"
+  },
+  {
+    "zoom": 1.25,
+    "suffix": "native",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "1c35357f92eee9024a570c17d3ea1866eb275658f602047a010cf9854ead45e4"
+  },
+  {
+    "zoom": 1.25,
+    "suffix": "half",
+    "size": [
+      1056,
+      489
+    ],
+    "rgbaSHA256": "1c540cadaad269757b10d54dc8b0081463d34817a7a0130a20ba93c38a3fb403"
+  },
+  {
+    "zoom": 1.25,
+    "suffix": "grayscale",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "d26f39c14b72a772f82e71bab7f48c07238d9f8baab18d42814ba6118e9fdedd"
+  },
+  {
+    "zoom": 1.4,
+    "suffix": "native",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "c5d30f530d9fa41dcd5776406e185065f380a8fc7d66f1c28068f1e951c1a571"
+  },
+  {
+    "zoom": 1.4,
+    "suffix": "half",
+    "size": [
+      1056,
+      489
+    ],
+    "rgbaSHA256": "9ad368f0b560bf3fe8217394c425c9791513ed4ec81f0d6cb6b4895d10824a40"
+  },
+  {
+    "zoom": 1.4,
+    "suffix": "grayscale",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "de4de065c71241c268d4c8604a8f232905f17a0b5663b5694d5088f4bc10a8ac"
+  }
+]
+{"result":"PASS","actualVersions":3,"actualImages":54,"selections":96,"rejectedMutations":238,"syntheticV9Protocol":true,"v9NativeEvidence":true,"browserEvidence":false}
+JCODE_PROGRESS {"current":50,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":100,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":150,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":200,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":250,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":300,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":350,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":400,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":450,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":500,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":550,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":600,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":650,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":700,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":750,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":800,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":850,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+{"result":"PASS","missingV9":true,"mismatchedCaptureRejected":true,"corruptedPNGRejected":true,"corruptedRecordRejected":true,"missingDependenciesRejected":true,"missingDependencyCases":869,"sourceForgeryRejected":true,"binaryForgeryRejected":true,"noFallback":true,"actualVersions":3,"syntheticV9Loader":true,"selections":144,"browserEvidence":false,"nativeRun":false}

@@ -1,0 +1,353 @@
+BASE=1e8cbfef9a39d10277a19026d2a6debe4446cd4d
+TREE=3adb30fc965982da8c77a4dc4faf0d5cceef16f9
+SNAPSHOT=8c757f1b321d2909afbc978b2d3c8aae73075f1e
+EXPORT=/Users/appliedalchemylabs/.jcode/scratch/ss-preservation-export.yeNt3X
+JCODE_PROGRESS {"message":"Tracked-only snapshot ready; starting exact affected CI step"}
++ python3 -B scripts/test_v9_preservation.py
+test_archive_rejects_unsafe_types_names_aliases_and_duplicates (__main__.PathAndArchiveTests.test_archive_rejects_unsafe_types_names_aliases_and_duplicates) ... ok
+test_archive_requires_complete_unmodified_git_tree (__main__.PathAndArchiveTests.test_archive_requires_complete_unmodified_git_tree) ... ok
+test_bytes_changed_missing_and_aliases (__main__.PathAndArchiveTests.test_bytes_changed_missing_and_aliases) ... ok
+test_exact_archive (__main__.PathAndArchiveTests.test_exact_archive) ... ok
+test_git_environment_disables_redirect_replace_and_lazy_fetch (__main__.PathAndArchiveTests.test_git_environment_disables_redirect_replace_and_lazy_fetch) ... ok
+test_head_and_index_cannot_be_hidden_by_restored_worktree (__main__.PathAndArchiveTests.test_head_and_index_cannot_be_hidden_by_restored_worktree) ... ok
+test_historical_commands_are_full_unchanged_entrypoints (__main__.PathAndArchiveTests.test_historical_commands_are_full_unchanged_entrypoints) ... ok
+test_parent_alias_and_unsafe_names (__main__.PathAndArchiveTests.test_parent_alias_and_unsafe_names) ... ok
+test_added_policy_and_approval_commit_are_pinned (__main__.RepositoryGuardTests.test_added_policy_and_approval_commit_are_pinned) ... ok
+test_added_source_at_authorization_and_approved_commit_must_match (__main__.RepositoryGuardTests.test_added_source_at_authorization_and_approved_commit_must_match) ... ok
+test_approved_additions_reject_changed_missing_and_aliased_bytes (__main__.RepositoryGuardTests.test_approved_additions_reject_changed_missing_and_aliased_bytes) ... ok
+test_approved_census_cannot_admit_another_path (__main__.RepositoryGuardTests.test_approved_census_cannot_admit_another_path) ... ok
+test_authorization_parent_and_result_source_mismatch_rejected (__main__.RepositoryGuardTests.test_authorization_parent_and_result_source_mismatch_rejected) ... ok
+test_cli_returns_nonzero_for_current_drift (__main__.RepositoryGuardTests.test_cli_returns_nonzero_for_current_drift) ... ok
+test_current_transition_cannot_roll_back_to_historical_bytes (__main__.RepositoryGuardTests.test_current_transition_cannot_roll_back_to_historical_bytes) ... ok
+test_equal_byte_file_and_parent_symlinks_rejected (__main__.RepositoryGuardTests.test_equal_byte_file_and_parent_symlinks_rejected) ... ok
+test_every_authorized_path_still_rejects_arbitrary_bytes (__main__.RepositoryGuardTests.test_every_authorized_path_still_rejects_arbitrary_bytes) ... ok
+test_head_census_rejects_extra_or_removed_tracked_protected_file (__main__.RepositoryGuardTests.test_head_census_rejects_extra_or_removed_tracked_protected_file) ... ok
+test_historical_child_failure_is_failure_and_export_is_cleaned (__main__.RepositoryGuardTests.test_historical_child_failure_is_failure_and_export_is_cleaned) ... HISTORICAL_COMMAND ["/opt/homebrew/opt/python@3.14/bin/python3.14", "-c", "raise SystemExit(23)"]
+ok
+test_historical_export_inside_caller_checkout_rejected (__main__.RepositoryGuardTests.test_historical_export_inside_caller_checkout_rejected) ... ok
+test_matching_head_index_worktree_mode_drift_is_not_authorized (__main__.RepositoryGuardTests.test_matching_head_index_worktree_mode_drift_is_not_authorized) ... ok
+test_missing_commit_and_severed_ancestry_fail_with_fetch_guidance (__main__.RepositoryGuardTests.test_missing_commit_and_severed_ancestry_fail_with_fetch_guidance) ... ok
+test_original_and_added_worktree_executable_drift_rejected (__main__.RepositoryGuardTests.test_original_and_added_worktree_executable_drift_rejected) ... ok
+test_original_protected_path_rejects_change_and_missing_file (__main__.RepositoryGuardTests.test_original_protected_path_rejects_change_and_missing_file) ... ok
+test_partial_clone_rejected_without_fetch (__main__.RepositoryGuardTests.test_partial_clone_rejected_without_fetch) ... ok
+test_policy_mutations_are_not_new_authorization (__main__.RepositoryGuardTests.test_policy_mutations_are_not_new_authorization) ... ok
+test_real_current_head_all_1766_paths (__main__.RepositoryGuardTests.test_real_current_head_all_1766_paths) ... ok
+test_receipt_audit_and_test_audit_drift_rejected (__main__.RepositoryGuardTests.test_receipt_audit_and_test_audit_drift_rejected) ... ok
+test_staged_bad_bytes_cannot_hide_behind_clean_worktree (__main__.RepositoryGuardTests.test_staged_bad_bytes_cannot_hide_behind_clean_worktree) ... ok
+test_staged_mode_drift_hidden_by_restored_worktree_rejected (__main__.RepositoryGuardTests.test_staged_mode_drift_hidden_by_restored_worktree_rejected) ... ok
+test_untracked_and_staged_protected_additions_rejected (__main__.RepositoryGuardTests.test_untracked_and_staged_protected_additions_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 116.792s
+
+OK
++ python3 -B scripts/verify_v9_preservation.py all --scratch-dir /Users/appliedalchemylabs/.jcode/scratch
+HISTORICAL_COMMAND ["/opt/homebrew/opt/python@3.14/bin/python3.14", "-B", "-W", "error::ResourceWarning", "/Users/appliedalchemylabs/.jcode/scratch/v9-preservation-p7kyli9z/docs/review/blocked-base-curb-relief-20261116/test_audit.py"]
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 1.274s
+
+OK
+HISTORICAL_COMMAND ["/opt/homebrew/opt/python@3.14/bin/python3.14", "-B", "-W", "error::ResourceWarning", "/Users/appliedalchemylabs/.jcode/scratch/v9-preservation-p7kyli9z/docs/review/blocked-base-curb-relief-20261116/audit.py", "verify"]
+{
+  "status": "PROTECTED_BYTES_UNCHANGED",
+  "files": 1766,
+  "referenceCommit": "404d6b2bac5beeceeab4068d33c24dd5a001430c",
+  "limitation": "Portable unkeyed receipt establishes consistency, not independently authenticated origin"
+}
+{
+  "status": "VERIFIED",
+  "scopes": [
+    {
+      "scope": "CURRENT_HEAD",
+      "head": "8c757f1b321d2909afbc978b2d3c8aae73075f1e",
+      "approvedCommit": "0c20990c8a6334b6c93d42db0336fc4cf2ab62f9",
+      "protectedFiles": 1766,
+      "currentProtectedFiles": 1768,
+      "approvedAddedFiles": 2,
+      "unchangedOriginalFiles": 1761,
+      "explicitTransitionFiles": 5,
+      "authorizationEvidence": [
+        {
+          "commit": "8449f6d09932e5c977f495c66135a12b18554232",
+          "path": "intent/2026-11-17-production-qualification.md",
+          "sha256": "335d2366a604b120f05a85955c9014f7c66b02376d337df4ca937b68adac214b"
+        },
+        {
+          "commit": "8449f6d09932e5c977f495c66135a12b18554232",
+          "path": "docs/review/kiosk-only-geometry-20261117/COORDINATOR-REVIEW.md",
+          "sha256": "b9ed41b8ade65cdd267872947202b4fba95c76bd1df3a87c8ae7c868e21bd48d"
+        },
+        {
+          "commit": "8449f6d09932e5c977f495c66135a12b18554232",
+          "path": "docs/review/kiosk-only-geometry-20261117/native/playable/ACTUAL-PLAYABLE-REVIEW.md",
+          "sha256": "11d82a66dc3e00f16e63e3b058edf233ad4123048feb8ee80b7efe11a067918b"
+        },
+        {
+          "commit": "bb874117fc53fabbc66c7925ee4eb519c2afbcef",
+          "path": "intent/2026-11-17-live-world-projection.md",
+          "sha256": "9ce5dae14c38c353d218c15e51155d876cc0d7c4a07a4777d2a968e3fe0121a6"
+        },
+        {
+          "commit": "bb874117fc53fabbc66c7925ee4eb519c2afbcef",
+          "path": "docs/review/live-world-projection-20261117/COORDINATOR-REVIEW.md",
+          "sha256": "062511e8069fdc9180c9296f3907bf41e5ce5efcc40d147a20502ddae3c62d33"
+        },
+        {
+          "commit": "0aa395145de56852722256590f8b74cf7fd17118",
+          "path": "intent/2026-11-17-production-qualification.md",
+          "sha256": "7b10ba96c0325efb02cfe90ab9461d1955ec8dcadafd1a6249f81556a94165ae"
+        },
+        {
+          "commit": "0aa395145de56852722256590f8b74cf7fd17118",
+          "path": "docs/review/production-execution-20261117/README.md",
+          "sha256": "51ce99d1ec7c8051e908967ee3e51abfa7a74fe357e397e92ae9d0e300002000"
+        },
+        {
+          "commit": "4294f737e20ff50900faa572768902c51fdca94e",
+          "path": "intent/2026-11-17-production-qualification.md",
+          "sha256": "335d2366a604b120f05a85955c9014f7c66b02376d337df4ca937b68adac214b"
+        },
+        {
+          "commit": "4294f737e20ff50900faa572768902c51fdca94e",
+          "path": "docs/review/production-execution-20261117/HASH-PERFORMANCE.md",
+          "sha256": "d7af962dd98ad42a62f77e228c844075cc8a435d70d157f3bbaef5bd99a80deb"
+        },
+        {
+          "commit": "fed8a3d18067c226376d9779f42bbc194dffcdab",
+          "path": "intent/2026-11-17-production-qualification.md",
+          "sha256": "335d2366a604b120f05a85955c9014f7c66b02376d337df4ca937b68adac214b"
+        },
+        {
+          "commit": "fed8a3d18067c226376d9779f42bbc194dffcdab",
+          "path": "docs/review/kiosk-only-geometry-20261117/native/playable/SOCKET-ORDERING-REPAIR.md",
+          "sha256": "5b4664bc1f8ccd77c38a46e55312930f13a609d7b61e077912e5822dc91ef4e1"
+        }
+      ]
+    },
+    {
+      "scope": "HISTORICAL_ONLY",
+      "commit": "6c3be49c0322874a7c037d4e0b29495e311a6c3a",
+      "exactExportFiles": 11432,
+      "commandsPassed": 2,
+      "currentHeadClaim": false
+    }
+  ]
+}
++ python3 -B -W error::ResourceWarning docs/review/blocked-base-curb-relief-20261116/source/test_source.py
+test_anchor_mutation (__main__.SourceTests.test_anchor_mutation) ... ok
+test_base_contact_missing (__main__.SourceTests.test_base_contact_missing) ... ok
+test_base_envelope_widened (__main__.SourceTests.test_base_envelope_widened) ... ok
+test_base_flattened (__main__.SourceTests.test_base_flattened) ... ok
+test_base_height_flattened_in_mesh (__main__.SourceTests.test_base_height_flattened_in_mesh) ... ok
+test_base_root_moved (__main__.SourceTests.test_base_root_moved) ... ok
+test_base_vertical_face_missing (__main__.SourceTests.test_base_vertical_face_missing) ... ok
+test_curb_duplicates (__main__.SourceTests.test_curb_duplicates) ... ok
+test_curb_height_lost (__main__.SourceTests.test_curb_height_lost) ... ok
+test_curb_missing (__main__.SourceTests.test_curb_missing) ... ok
+test_curb_off_strip (__main__.SourceTests.test_curb_off_strip) ... ok
+test_draw_size_mutation (__main__.SourceTests.test_draw_size_mutation) ... ok
+test_geometry_bounds_mutation (__main__.SourceTests.test_geometry_bounds_mutation) ... ok
+test_height_witness_mutation (__main__.SourceTests.test_height_witness_mutation) ... ok
+test_invalid_uv (__main__.SourceTests.test_invalid_uv) ... ok
+test_manifest_and_replay (__main__.SourceTests.test_manifest_and_replay) ... ok
+test_manifest_mutations (__main__.SourceTests.test_manifest_mutations) ... ok
+test_output_overwrite_refused (__main__.SourceTests.test_output_overwrite_refused) ... ok
+test_projection_mutation (__main__.SourceTests.test_projection_mutation) ... ok
+test_prop_clearance_shrunk (__main__.SourceTests.test_prop_clearance_shrunk) ... ok
+test_prop_moved (__main__.SourceTests.test_prop_moved) ... ok
+test_safe_path (__main__.SourceTests.test_safe_path) ... ok
+test_valid_geometry (__main__.SourceTests.test_valid_geometry) ... ok
+test_wrong_image (__main__.SourceTests.test_wrong_image) ... ok
+test_wrong_normal (__main__.SourceTests.test_wrong_normal) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 3.277s
+
+OK
+{"sprites": 53, "output": "/Users/appliedalchemylabs/.jcode/scratch/v9-source-replay-wew4lls4"}
++ python3 -B -W error::ResourceWarning docs/review/blocked-base-curb-relief-20261116/source/attempt-02/test_source.py
+test_contact_height_mutations (__main__.CorrectionTests.test_contact_height_mutations) ... ok
+test_frozen_source_manifest_and_replay (__main__.CorrectionTests.test_frozen_source_manifest_and_replay) ... ok
+test_geometry_and_registration (__main__.CorrectionTests.test_geometry_and_registration) ... ok
+test_geometry_mutation (__main__.CorrectionTests.test_geometry_mutation) ... ok
+test_no_third_attempt_or_self_recommendation (__main__.CorrectionTests.test_no_third_attempt_or_self_recommendation) ... ok
+test_overwrite_refused (__main__.CorrectionTests.test_overwrite_refused) ... ok
+test_preview_depth_order_mutation (__main__.CorrectionTests.test_preview_depth_order_mutation) ... ok
+test_preview_native_claim_mutation (__main__.CorrectionTests.test_preview_native_claim_mutation) ... ok
+test_preview_rear_mask_mutation (__main__.CorrectionTests.test_preview_rear_mask_mutation) ... ok
+test_preview_replay (__main__.CorrectionTests.test_preview_replay) ... ok
+test_preview_source_mutation (__main__.CorrectionTests.test_preview_source_mutation) ... ok
+test_preview_unknown_mask_mutation (__main__.CorrectionTests.test_preview_unknown_mask_mutation) ... ok
+test_registration_mutations (__main__.CorrectionTests.test_registration_mutations) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 12.218s
+
+OK
+{"sprites": 53, "output": "/Users/appliedalchemylabs/.jcode/scratch/v9-final-replay-dqv4qvug", "geometryChanged": false}
+Final preview generated, geometry-ranked silhouettes: 9
++ python3 -B scripts/test_review_test_runner.py
+test_actual_assembly_symlink_remains_forbidden (__main__.CanonicalReviewTests.test_actual_assembly_symlink_remains_forbidden) ... ok
+test_all_temp_variables_are_canonical_and_isolated (__main__.CanonicalReviewTests.test_all_temp_variables_are_canonical_and_isolated) ... ok
+test_child_failure_status_is_preserved (__main__.CanonicalReviewTests.test_child_failure_status_is_preserved) ... ok
+test_ci_uses_runner_without_ignoring_status (__main__.CanonicalReviewTests.test_ci_uses_runner_without_ignoring_status) ... ok
+test_real_missing_input_assertion_fails_under_alias_then_passes (__main__.CanonicalReviewTests.test_real_missing_input_assertion_fails_under_alias_then_passes) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.083s
+
+OK
++ python3 scripts/run_review_tests.py -B -W error::ResourceWarning -m unittest discover -s docs/review/blocked-base-curb-relief-20261116/scene -p 'test_*.py'
+..............................................
+----------------------------------------------------------------------
+Ran 46 tests in 22.572s
+
+OK
+{"sprites": 53, "output": "/Users/appliedalchemylabs/.jcode/scratch/ss-review-ls0py7wr/v9-final-replay-1gtdkkye", "geometryChanged": false}
++ python3 -B docs/review/blocked-base-curb-relief-20261116/scene/retained.py docs/review/blocked-base-curb-relief-20261116/scene/native-capture-v9
+Final correction preview generated. ground.png 4608x4608. One correction; no third art pass.
+{"sprites": 53, "output": "/Users/appliedalchemylabs/.jcode/scratch/v9-final-replay-vaenumbr", "geometryChanged": false}
+{
+  "status": "RETAINED_BYTES_AND_CONTRACT_VERIFIED_NOT_NEW_NATIVE_RUN",
+  "fixtureVersion": "source-scene-base-curb-009-relief",
+  "captures": 6,
+  "images": 18,
+  "ownerAcceptance": false,
+  "physicalDeviceEvidence": false,
+  "binaryCheck": "agreement of preserved original import records, not a fresh local binary comparison",
+  "baselinePixelComparisons": 9
+}
++ python3 -B docs/review/blocked-base-curb-relief-20261116/audit.py pixels
+[
+  {
+    "zoom": 1.0,
+    "suffix": "native",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "f3320843618c890f706cf1d9d8295bb966c0e94ff068503d2f63919a9d888d11"
+  },
+  {
+    "zoom": 1.0,
+    "suffix": "half",
+    "size": [
+      1056,
+      489
+    ],
+    "rgbaSHA256": "7e256e5a78c257eafa55312445b65a500f0b9be9a109df37b6a85842c42baeb8"
+  },
+  {
+    "zoom": 1.0,
+    "suffix": "grayscale",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "d76bdb698a8d322b620656f668e9c7582920b19424ec72a8faa3372eb22758d5"
+  },
+  {
+    "zoom": 1.25,
+    "suffix": "native",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "1c35357f92eee9024a570c17d3ea1866eb275658f602047a010cf9854ead45e4"
+  },
+  {
+    "zoom": 1.25,
+    "suffix": "half",
+    "size": [
+      1056,
+      489
+    ],
+    "rgbaSHA256": "1c540cadaad269757b10d54dc8b0081463d34817a7a0130a20ba93c38a3fb403"
+  },
+  {
+    "zoom": 1.25,
+    "suffix": "grayscale",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "d26f39c14b72a772f82e71bab7f48c07238d9f8baab18d42814ba6118e9fdedd"
+  },
+  {
+    "zoom": 1.4,
+    "suffix": "native",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "c5d30f530d9fa41dcd5776406e185065f380a8fc7d66f1c28068f1e951c1a571"
+  },
+  {
+    "zoom": 1.4,
+    "suffix": "half",
+    "size": [
+      1056,
+      489
+    ],
+    "rgbaSHA256": "9ad368f0b560bf3fe8217394c425c9791513ed4ec81f0d6cb6b4895d10824a40"
+  },
+  {
+    "zoom": 1.4,
+    "suffix": "grayscale",
+    "size": [
+      2112,
+      978
+    ],
+    "rgbaSHA256": "de4de065c71241c268d4c8604a8f232905f17a0b5663b5694d5088f4bc10a8ac"
+  }
+]
++ node docs/review/blocked-base-curb-relief-20261116/gallery/test_evidence.js --require-v9
+{"result":"PASS","actualVersions":3,"actualImages":54,"selections":96,"rejectedMutations":238,"syntheticV9Protocol":true,"v9NativeEvidence":true,"browserEvidence":false}
++ node docs/review/blocked-base-curb-relief-20261116/gallery/test_loader.js --require-v9
+JCODE_PROGRESS {"current":50,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":100,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":150,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":200,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":250,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":300,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":350,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":400,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":450,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":500,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":550,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":600,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":650,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":700,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":750,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":800,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+JCODE_PROGRESS {"current":850,"unit":"dependency deletions","message":"Every removed evidence dependency fails closed"}
+{"result":"PASS","missingV9":true,"mismatchedCaptureRejected":true,"corruptedPNGRejected":true,"corruptedRecordRejected":true,"missingDependenciesRejected":true,"missingDependencyCases":869,"sourceForgeryRejected":true,"binaryForgeryRejected":true,"noFallback":true,"actualVersions":3,"syntheticV9Loader":true,"selections":144,"browserEvidence":false,"nativeRun":false}
+JCODE_PROGRESS {"message":"Exact affected CI step passed; checking downstream steps"}
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.005s
+
+OK
+test_actual_gaps_and_unattributed_time (test_trace_probe.RetainedPlaybackRegression.test_actual_gaps_and_unattributed_time) ... ok
+test_deleted_observation_is_not_reconstructed (test_trace_probe.RetainedPlaybackRegression.test_deleted_observation_is_not_reconstructed) ... ok
+test_exact_failed_case_and_five_controls (test_trace_probe.RetainedPlaybackRegression.test_exact_failed_case_and_five_controls) ... ok
+test_fail_closed_on_empty_invalid_or_reversed_trace (test_trace_probe.RetainedPlaybackRegression.test_fail_closed_on_empty_invalid_or_reversed_trace) ... ok
+test_regular_retained_control_is_green (test_trace_probe.RetainedPlaybackRegression.test_regular_retained_control_is_green) ... ok
+test_retained_provenance_hashes (test_trace_probe.RetainedPlaybackRegression.test_retained_provenance_hashes) ... ok
+test_strict_cli_remains_red_on_real_failure (test_trace_probe.RetainedPlaybackRegression.test_strict_cli_remains_red_on_real_failure) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.307s
+
+OK
+test_parallel_fetch_failures_have_unique_roots_and_preserve_neighbors (__main__.SpecParityIsolationTests.test_parallel_fetch_failures_have_unique_roots_and_preserve_neighbors) ... ok
+test_shared_checkout_and_global_delete_are_absent (__main__.SpecParityIsolationTests.test_shared_checkout_and_global_delete_are_absent) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.170s
+
+OK
+parity: pin is b1ed874e1e8eb0e61b2174b9093201e9a61e1a4b
+parity: OK — every bundled contract and fixture byte-matches SS-specs@b1ed874e1e8eb0e61b2174b9093201e9a61e1a4b
+TRACKED_EXPORT_VALIDATION_PASSED snapshot=8c757f1b321d2909afbc978b2d3c8aae73075f1e

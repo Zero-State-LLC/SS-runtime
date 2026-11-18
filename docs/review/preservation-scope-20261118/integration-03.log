@@ -1,0 +1,92 @@
+HISTORICAL_COMMAND ["/opt/homebrew/opt/python@3.14/bin/python3.14", "-B", "-W", "error::ResourceWarning", "/Users/appliedalchemylabs/.jcode/scratch/v9-preservation-gbemm4ga/docs/review/blocked-base-curb-relief-20261116/test_audit.py"]
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 1.309s
+
+OK
+HISTORICAL_COMMAND ["/opt/homebrew/opt/python@3.14/bin/python3.14", "-B", "-W", "error::ResourceWarning", "/Users/appliedalchemylabs/.jcode/scratch/v9-preservation-gbemm4ga/docs/review/blocked-base-curb-relief-20261116/audit.py", "verify"]
+{
+  "status": "PROTECTED_BYTES_UNCHANGED",
+  "files": 1766,
+  "referenceCommit": "404d6b2bac5beeceeab4068d33c24dd5a001430c",
+  "limitation": "Portable unkeyed receipt establishes consistency, not independently authenticated origin"
+}
+{
+  "status": "VERIFIED",
+  "scopes": [
+    {
+      "scope": "CURRENT_HEAD",
+      "head": "1e8cbfef9a39d10277a19026d2a6debe4446cd4d",
+      "approvedCommit": "0c20990c8a6334b6c93d42db0336fc4cf2ab62f9",
+      "protectedFiles": 1766,
+      "currentProtectedFiles": 1768,
+      "approvedAddedFiles": 2,
+      "unchangedOriginalFiles": 1761,
+      "explicitTransitionFiles": 5,
+      "authorizationEvidence": [
+        {
+          "commit": "8449f6d09932e5c977f495c66135a12b18554232",
+          "path": "intent/2026-11-17-production-qualification.md",
+          "sha256": "335d2366a604b120f05a85955c9014f7c66b02376d337df4ca937b68adac214b"
+        },
+        {
+          "commit": "8449f6d09932e5c977f495c66135a12b18554232",
+          "path": "docs/review/kiosk-only-geometry-20261117/COORDINATOR-REVIEW.md",
+          "sha256": "b9ed41b8ade65cdd267872947202b4fba95c76bd1df3a87c8ae7c868e21bd48d"
+        },
+        {
+          "commit": "8449f6d09932e5c977f495c66135a12b18554232",
+          "path": "docs/review/kiosk-only-geometry-20261117/native/playable/ACTUAL-PLAYABLE-REVIEW.md",
+          "sha256": "11d82a66dc3e00f16e63e3b058edf233ad4123048feb8ee80b7efe11a067918b"
+        },
+        {
+          "commit": "bb874117fc53fabbc66c7925ee4eb519c2afbcef",
+          "path": "intent/2026-11-17-live-world-projection.md",
+          "sha256": "9ce5dae14c38c353d218c15e51155d876cc0d7c4a07a4777d2a968e3fe0121a6"
+        },
+        {
+          "commit": "bb874117fc53fabbc66c7925ee4eb519c2afbcef",
+          "path": "docs/review/live-world-projection-20261117/COORDINATOR-REVIEW.md",
+          "sha256": "062511e8069fdc9180c9296f3907bf41e5ce5efcc40d147a20502ddae3c62d33"
+        },
+        {
+          "commit": "0aa395145de56852722256590f8b74cf7fd17118",
+          "path": "intent/2026-11-17-production-qualification.md",
+          "sha256": "7b10ba96c0325efb02cfe90ab9461d1955ec8dcadafd1a6249f81556a94165ae"
+        },
+        {
+          "commit": "0aa395145de56852722256590f8b74cf7fd17118",
+          "path": "docs/review/production-execution-20261117/README.md",
+          "sha256": "51ce99d1ec7c8051e908967ee3e51abfa7a74fe357e397e92ae9d0e300002000"
+        },
+        {
+          "commit": "4294f737e20ff50900faa572768902c51fdca94e",
+          "path": "intent/2026-11-17-production-qualification.md",
+          "sha256": "335d2366a604b120f05a85955c9014f7c66b02376d337df4ca937b68adac214b"
+        },
+        {
+          "commit": "4294f737e20ff50900faa572768902c51fdca94e",
+          "path": "docs/review/production-execution-20261117/HASH-PERFORMANCE.md",
+          "sha256": "d7af962dd98ad42a62f77e228c844075cc8a435d70d157f3bbaef5bd99a80deb"
+        },
+        {
+          "commit": "fed8a3d18067c226376d9779f42bbc194dffcdab",
+          "path": "intent/2026-11-17-production-qualification.md",
+          "sha256": "335d2366a604b120f05a85955c9014f7c66b02376d337df4ca937b68adac214b"
+        },
+        {
+          "commit": "fed8a3d18067c226376d9779f42bbc194dffcdab",
+          "path": "docs/review/kiosk-only-geometry-20261117/native/playable/SOCKET-ORDERING-REPAIR.md",
+          "sha256": "5b4664bc1f8ccd77c38a46e55312930f13a609d7b61e077912e5822dc91ef4e1"
+        }
+      ]
+    },
+    {
+      "scope": "HISTORICAL_ONLY",
+      "commit": "6c3be49c0322874a7c037d4e0b29495e311a6c3a",
+      "exactExportFiles": 11432,
+      "commandsPassed": 2,
+      "currentHeadClaim": false
+    }
+  ]
+}

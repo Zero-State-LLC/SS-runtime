@@ -1,5 +1,13 @@
 # Next work order
 
+## Issue262 repair qualified for publication, November18 22:21UTC
+
+User continued at22:02:58UTC, authorizing the bounded next engineering slice in `intent/2026-11-18-preservation-verification-scope.md`. Exhaustive V9 receipt inventory found1761unchanged paths and5authorized transitions among1766files, with2later App additions. Original audit/test/receipt and failed evidence remain immutable. New verifier separates historical6c3be49 execution from strict current protected-byte/provenance/census/mode verification. Worker owns only two new scripts and implementation evidence. Coordinator owns CI wiring, independent review, board/handoff and publication. No worker commit.
+
+Independent unchanged V9 checks passed89Python tests,6retained captures/18images,9full RGBA baselines and gallery mutation/missing-dependency checks. Focused Swift19tests/4suites pass. Final new guard passes31tests, including protected-file census and executable-mode rejection. Independent staged-only export8c757f1b passed the literal affected CI step plus downstream checks, exit0:141Python tests total, original historical7tests/audit unchanged, exact11432-file historical export, current1768-file protection and actual pinned specification byte parity. Both new scripts and CI YAML match recorded SHA256 after execution. See `../review/preservation-scope-20261118/VALIDATION.md`. Original CI44016077111 remains failed. Publication must independently match remote branch/PR head and query that exact head once, never substitute local or old-head results for its CI. If pending, use at most one bounded final follow-up, not a polling chain.
+
+Project27 issue262 is verified In Progress. No other card/issue lifecycle changed. Preserve all6unrelated untracked art/work-order paths and237/259/261failure history. No new art, gameplay, merge, release, closure, physical/human acceptance or polling chain. Visual benchmark remains NOT MET. After strict repair qualification/publication, owner visual/contact/depth and merge decisions remain separate gates.
+
 ## Continuation analysis, November18 21:50UTC
 
 User requested analysis for continuation, not merge or art acceptance. Remote PR236 is still OPEN at `0c20990c8a6334b6c93d42db0336fc4cf2ab62f9`. Exact run `44016077111` has now completed **FAILURE**: app (Debug), app (Release), swift and device-sitting SUCCESS; spec-parity FAILURE. These are actual CI job conclusions, not physical-device certification or visual acceptance. The November17 queued observations remain historically accurate but are no longer current.

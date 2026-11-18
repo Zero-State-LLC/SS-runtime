@@ -39,6 +39,10 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
+        with:
+          # #262: historical V9 and later authorized transitions are verified
+          # from exact local Git objects, never fetched by the verifier.
+          fetch-depth: 0
       - name: Verify pinned specification
         run: grep -q "b1ed874e1e8eb0e61b2174b9093201e9a61e1a4b" SPEC_BASELINE.md
       - name: Test runtime audit wiring guards
@@ -146,13 +150,15 @@ jobs:
           node docs/review/footprint-ground-repair-20261116/gallery/test_loader.js --require-v8
       - name: Verify bounded base and curb comparison without admission
         run: |
-          python3 -B -W error::ResourceWarning docs/review/blocked-base-curb-relief-20261116/test_audit.py
+          # Original V9 tests/audit run unchanged in their exact historical export.
+          # A separate current-tree check permits only provenance-bound changes.
+          python3 -B scripts/test_v9_preservation.py
+          python3 -B scripts/verify_v9_preservation.py all --scratch-dir "$RUNNER_TEMP"
           python3 -B -W error::ResourceWarning docs/review/blocked-base-curb-relief-20261116/source/test_source.py
           python3 -B -W error::ResourceWarning docs/review/blocked-base-curb-relief-20261116/source/attempt-02/test_source.py
           python3 -B scripts/test_review_test_runner.py
           python3 scripts/run_review_tests.py -B -W error::ResourceWarning -m unittest discover -s docs/review/blocked-base-curb-relief-20261116/scene -p 'test_*.py'
           python3 -B docs/review/blocked-base-curb-relief-20261116/scene/retained.py docs/review/blocked-base-curb-relief-20261116/scene/native-capture-v9
-          python3 -B docs/review/blocked-base-curb-relief-20261116/audit.py verify
           python3 -B docs/review/blocked-base-curb-relief-20261116/audit.py pixels
           node docs/review/blocked-base-curb-relief-20261116/gallery/test_evidence.js --require-v9
           node docs/review/blocked-base-curb-relief-20261116/gallery/test_loader.js --require-v9

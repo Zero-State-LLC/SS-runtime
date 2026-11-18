@@ -1,0 +1,21 @@
+test_actual_gaps_and_unattributed_time (test_trace_probe.RetainedPlaybackRegression.test_actual_gaps_and_unattributed_time) ... ok
+test_deleted_observation_is_not_reconstructed (test_trace_probe.RetainedPlaybackRegression.test_deleted_observation_is_not_reconstructed) ... ok
+test_exact_failed_case_and_five_controls (test_trace_probe.RetainedPlaybackRegression.test_exact_failed_case_and_five_controls) ... ok
+test_fail_closed_on_empty_invalid_or_reversed_trace (test_trace_probe.RetainedPlaybackRegression.test_fail_closed_on_empty_invalid_or_reversed_trace) ... ok
+test_regular_retained_control_is_green (test_trace_probe.RetainedPlaybackRegression.test_regular_retained_control_is_green) ... ok
+test_retained_provenance_hashes (test_trace_probe.RetainedPlaybackRegression.test_retained_provenance_hashes) ... ok
+test_strict_cli_remains_red_on_real_failure (test_trace_probe.RetainedPlaybackRegression.test_strict_cli_remains_red_on_real_failure) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.148s
+
+OK
+test_parallel_fetch_failures_have_unique_roots_and_preserve_neighbors (__main__.SpecParityIsolationTests.test_parallel_fetch_failures_have_unique_roots_and_preserve_neighbors) ... ok
+test_shared_checkout_and_global_delete_are_absent (__main__.SpecParityIsolationTests.test_shared_checkout_and_global_delete_are_absent) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.553s
+
+OK
+parity: pin is b1ed874e1e8eb0e61b2174b9093201e9a61e1a4b
+parity: OK — every bundled contract and fixture byte-matches SS-specs@b1ed874e1e8eb0e61b2174b9093201e9a61e1a4b

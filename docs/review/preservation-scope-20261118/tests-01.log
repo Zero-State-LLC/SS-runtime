@@ -1,0 +1,28 @@
+test_archive_rejects_unsafe_types_names_aliases_and_duplicates (__main__.PathAndArchiveTests.test_archive_rejects_unsafe_types_names_aliases_and_duplicates) ... ok
+test_archive_requires_complete_unmodified_git_tree (__main__.PathAndArchiveTests.test_archive_requires_complete_unmodified_git_tree) ... ok
+test_bytes_changed_missing_and_aliases (__main__.PathAndArchiveTests.test_bytes_changed_missing_and_aliases) ... ok
+test_exact_archive (__main__.PathAndArchiveTests.test_exact_archive) ... ok
+test_git_environment_disables_redirect_replace_and_lazy_fetch (__main__.PathAndArchiveTests.test_git_environment_disables_redirect_replace_and_lazy_fetch) ... ok
+test_head_and_index_cannot_be_hidden_by_restored_worktree (__main__.PathAndArchiveTests.test_head_and_index_cannot_be_hidden_by_restored_worktree) ... ok
+test_historical_commands_are_full_unchanged_entrypoints (__main__.PathAndArchiveTests.test_historical_commands_are_full_unchanged_entrypoints) ... ok
+test_parent_alias_and_unsafe_names (__main__.PathAndArchiveTests.test_parent_alias_and_unsafe_names) ... ok
+test_authorization_parent_and_result_source_mismatch_rejected (__main__.RepositoryGuardTests.test_authorization_parent_and_result_source_mismatch_rejected) ... ok
+test_cli_returns_nonzero_for_current_drift (__main__.RepositoryGuardTests.test_cli_returns_nonzero_for_current_drift) ... ok
+test_current_transition_cannot_roll_back_to_historical_bytes (__main__.RepositoryGuardTests.test_current_transition_cannot_roll_back_to_historical_bytes) ... ok
+test_equal_byte_file_and_parent_symlinks_rejected (__main__.RepositoryGuardTests.test_equal_byte_file_and_parent_symlinks_rejected) ... ok
+test_every_authorized_path_still_rejects_arbitrary_bytes (__main__.RepositoryGuardTests.test_every_authorized_path_still_rejects_arbitrary_bytes) ... ok
+test_historical_child_failure_is_failure_and_export_is_cleaned (__main__.RepositoryGuardTests.test_historical_child_failure_is_failure_and_export_is_cleaned) ... HISTORICAL_COMMAND ["/opt/homebrew/opt/python@3.14/bin/python3.14", "-c", "raise SystemExit(23)"]
+ok
+test_historical_export_inside_caller_checkout_rejected (__main__.RepositoryGuardTests.test_historical_export_inside_caller_checkout_rejected) ... ok
+test_missing_commit_and_severed_ancestry_fail_with_fetch_guidance (__main__.RepositoryGuardTests.test_missing_commit_and_severed_ancestry_fail_with_fetch_guidance) ... ok
+test_original_protected_path_rejects_change_and_missing_file (__main__.RepositoryGuardTests.test_original_protected_path_rejects_change_and_missing_file) ... ok
+test_partial_clone_rejected_without_fetch (__main__.RepositoryGuardTests.test_partial_clone_rejected_without_fetch) ... ok
+test_policy_mutations_are_not_new_authorization (__main__.RepositoryGuardTests.test_policy_mutations_are_not_new_authorization) ... ok
+test_real_current_head_all_1766_paths (__main__.RepositoryGuardTests.test_real_current_head_all_1766_paths) ... ok
+test_receipt_audit_and_test_audit_drift_rejected (__main__.RepositoryGuardTests.test_receipt_audit_and_test_audit_drift_rejected) ... ok
+test_staged_bad_bytes_cannot_hide_behind_clean_worktree (__main__.RepositoryGuardTests.test_staged_bad_bytes_cannot_hide_behind_clean_worktree) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 59.419s
+
+OK

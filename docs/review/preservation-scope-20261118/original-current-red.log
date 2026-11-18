@@ -1,0 +1,19 @@
+E......
+======================================================================
+ERROR: test_actual_protected_bytes (__main__.PreservationTests.test_actual_protected_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/blocked-base-curb-relief-20261116/test_audit.py", line 15, in test_actual_protected_bytes
+    self.assertEqual(audit.verify()['files'], 1766)
+                     ~~~~~~~~~~~~^^
+  File "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/blocked-base-curb-relief-20261116/audit.py", line 85, in verify
+    require(digest(safe_file(root, name)) == expected, 'Protected bytes changed: ' + name)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/blocked-base-curb-relief-20261116/audit.py", line 33, in require
+    raise ValueError(message)
+ValueError: Protected bytes changed: App/GameScene.swift
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.115s
+
+FAILED (errors=1)
