@@ -1,0 +1,65 @@
+[0/1] Planning build
+Building for debugging...
+[0/2] Write swift-version--58304C5D6DBC2206.txt
+Build complete! (0.71s)
+Test Suite 'Selected tests' started at 2026-11-16 19:26:27.050.
+Test Suite 'SSRuntimePackageTests.xctest' started at 2026-11-16 19:26:27.053.
+Test Suite 'SSRuntimePackageTests.xctest' passed at 2026-11-16 19:26:27.053.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-11-16 19:26:27.053.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.003) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite SHA256ParityTests started.
+◇ Suite HeatReinforcementTests started.
+◇ Suite PresentationSocketOrderingTests started.
+◇ Test stringOverloadPreservesUTF8AndLowercaseHex() started.
+◇ Test publishedVectorsMatchBothImplementations() started.
+◇ Test paddingBoundariesAndBinaryInputsPreserveExactBytes() started.
+◇ Test encounterEN011HuntedAppendsTwoInformantsAfterTheAuthoredMembers() started.
+◇ Test canonicalEncounterOrderPreservesAuthoredSocketsAndSuffix() started.
+◇ Test utf8KeyOrderAndAuthoredArrayOrderAreIndependent() started.
+◇ Test insertionHistoriesHaveIdenticalFullSnapshotsAndDigests() started.
+◇ Test independentSessionsProduceEqualFullSnapshots() started.
+✔ Test stringOverloadPreservesUTF8AndLowercaseHex() passed after 0.005 seconds.
+✔ Test encounterEN011HuntedAppendsTwoInformantsAfterTheAuthoredMembers() passed after 0.025 seconds.
+◇ Test encounterEN012TrackedAppendsOneInformant() started.
+✔ Test utf8KeyOrderAndAuthoredArrayOrderAreIndependent() passed after 0.025 seconds.
+✔ Test canonicalEncounterOrderPreservesAuthoredSocketsAndSuffix() passed after 0.029 seconds.
+✔ Test encounterEN012TrackedAppendsOneInformant() passed after 0.009 seconds.
+◇ Test encounterEN013MobCNeverAppends() started.
+✔ Test encounterEN013MobCNeverAppends() passed after 0.006 seconds.
+◇ Test encounterHeatReadsThePreviousTicksDetectionState() started.
+✔ Test encounterHeatReadsThePreviousTicksDetectionState() passed after 0.004 seconds.
+◇ Test encounterHeatAppliesToEveryMobAWave() started.
+✔ Test encounterHeatAppliesToEveryMobAWave() passed after 0.005 seconds.
+◇ Test encounterEN015EarlyLockdownAppendsTwoInformants() started.
+✔ Test insertionHistoriesHaveIdenticalFullSnapshotsAndDigests() passed after 0.058 seconds.
+✔ Test encounterEN015EarlyLockdownAppendsTwoInformants() passed after 0.006 seconds.
+◇ Test encounterEN014AppendedInformantAliveKeepsTheWaveOpen() started.
+✔ Test independentSessionsProduceEqualFullSnapshots() passed after 0.069 seconds.
+✔ Suite PresentationSocketOrderingTests passed after 0.070 seconds.
+✔ Test paddingBoundariesAndBinaryInputsPreserveExactBytes() passed after 0.307 seconds.
+✔ Test encounterEN014AppendedInformantAliveKeepsTheWaveOpen() passed after 1.006 seconds.
+◇ Test encounterEN001HiddenRunSpawnsTheAuthoredTotals(encounter:total:) started.
+◇ Test case passing 2 arguments encounter → "M-A", total → 14 to encounterEN001HiddenRunSpawnsTheAuthoredTotals(encounter:total:) started.
+✔ Test publishedVectorsMatchBothImplementations() passed after 1.668 seconds.
+✔ Suite SHA256ParityTests passed after 1.669 seconds.
+◇ Test case passing 2 arguments encounter → "M-B", total → 17 to encounterEN001HiddenRunSpawnsTheAuthoredTotals(encounter:total:) started.
+◇ Test case passing 2 arguments encounter → "M-C", total → 25 to encounterEN001HiddenRunSpawnsTheAuthoredTotals(encounter:total:) started.
+✔ Test encounterEN001HiddenRunSpawnsTheAuthoredTotals(encounter:total:) with 3 test cases passed after 6.738 seconds.
+◇ Test heatBlockDecodesFromTheBundledContract() started.
+✔ Test heatBlockDecodesFromTheBundledContract() passed after 0.001 seconds.
+◇ Test heatBlockFailsClosed() started.
+✔ Test heatBlockFailsClosed() passed after 0.003 seconds.
+◇ Test captionNamesTheCountAndTheStateTheDirectorRead() started.
+✔ Test captionNamesTheCountAndTheStateTheDirectorRead() passed after 0.005 seconds.
+◇ Test vfxReinforcementCountMatchesTheCaption() started.
+✔ Test vfxReinforcementCountMatchesTheCaption() passed after 0.001 seconds.
+◇ Test captionUsesTheStateBeforeThisTicksChange() started.
+✔ Test captionUsesTheStateBeforeThisTicksChange() passed after 0.001 seconds.
+◇ Test captionIsAbsentForHiddenObservedAndMobC() started.
+✔ Test captionIsAbsentForHiddenObservedAndMobC() passed after 0.001 seconds.
+✔ Suite HeatReinforcementTests passed after 7.820 seconds.
+✔ Test run with 21 tests in 3 suites passed after 7.820 seconds.

@@ -1,0 +1,46 @@
+test_actual_built_executable_comparison (test_native.Records.test_actual_built_executable_comparison) ... ok
+test_baseline_is_v6_candidate_not_old_control (test_native.Records.test_baseline_is_v6_candidate_not_old_control) ... ok
+test_baseline_registration_cannot_change (test_native.Records.test_baseline_registration_cannot_change) ... ok
+test_bind_does_not_invent_recommendations (test_native.Records.test_bind_does_not_invent_recommendations) ... ok
+test_candidate_registration_must_match_binding (test_native.Records.test_candidate_registration_must_match_binding) ... ok
+test_each_immutable_field_rejects_mutation (test_native.Records.test_each_immutable_field_rejects_mutation) ... ok
+test_every_actor_immutable_field_rejects (test_native.Records.test_every_actor_immutable_field_rejects) ... ok
+test_exact_one_test_identity (test_native.Records.test_exact_one_test_identity) ... ok
+test_explicit_synthetic_claim_rejected_as_native (test_native.Records.test_explicit_synthetic_claim_rejected_as_native) ... ok
+test_hidden_or_omitted_full_census (test_native.Records.test_hidden_or_omitted_full_census) ... ok
+test_historical_native_records_rejected_unchanged (test_native.Records.test_historical_native_records_rejected_unchanged) ... ok
+test_historical_retained_capture_rejected (test_native.Records.test_historical_retained_capture_rejected) ... ok
+test_missing_actual_executable (test_native.Records.test_missing_actual_executable) ... ok
+test_missing_preparation_fails_without_creating_output (test_native.Records.test_missing_preparation_fails_without_creating_output) ... ok
+test_missing_retained_capture_rejected (test_native.Records.test_missing_retained_capture_rejected) ... ok
+test_missing_vertex_and_building_hash (test_native.Records.test_missing_vertex_and_building_hash) ... ok
+test_non_target_size_anchor_immutable (test_native.Records.test_non_target_size_anchor_immutable) ... ok
+test_per_vertex_projection_mutations (test_native.Records.test_per_vertex_projection_mutations) ... ok
+test_rehashed_source_drift (test_native.Records.test_rehashed_source_drift) ... ok
+test_synthetic_contract_is_not_native_run (test_native.Records.test_synthetic_contract_is_not_native_run) ... ok
+test_unknown_versions (test_native.Records.test_unknown_versions) ... ok
+test_v6_executable_is_not_v7_evidence (test_native.Records.test_v6_executable_is_not_v7_evidence) ... ok
+test_actual_optional_binary_recheck (test_retained.RetainedMutations.test_actual_optional_binary_recheck) ... ok
+test_extra_retained_file (test_retained.RetainedMutations.test_extra_retained_file) ... ok
+test_missing_image_even_with_rehashed_manifest (test_retained.RetainedMutations.test_missing_image_even_with_rehashed_manifest) ... ok
+test_mock_importer_rejects_actual_binary_mismatch_before_output (test_retained.RetainedMutations.test_mock_importer_rejects_actual_binary_mismatch_before_output) ... ok
+test_mock_importer_rejects_retired_test_identity (test_retained.RetainedMutations.test_mock_importer_rejects_retired_test_identity) ... ok
+test_mock_importer_v7_integration_not_native_run (test_retained.RetainedMutations.test_mock_importer_v7_integration_not_native_run) ... ok
+test_mock_retained_not_new_native (test_retained.RetainedMutations.test_mock_retained_not_new_native) ... ok
+test_prepared_source_rehash_cannot_change_bound_bytes (test_retained.RetainedMutations.test_prepared_source_rehash_cannot_change_bound_bytes) ... ok
+test_rehashed_duplicate_attachment_manifest_rejected (test_retained.RetainedMutations.test_rehashed_duplicate_attachment_manifest_rejected) ... ok
+test_rehashed_empty_attachment_manifest_rejected (test_retained.RetainedMutations.test_rehashed_empty_attachment_manifest_rejected) ... ok
+test_rehashed_forged_actor (test_retained.RetainedMutations.test_rehashed_forged_actor) ... ok
+test_rehashed_forged_authority (test_retained.RetainedMutations.test_rehashed_forged_authority) ... ok
+test_rehashed_forged_baseline (test_retained.RetainedMutations.test_rehashed_forged_baseline) ... ok
+test_rehashed_forged_ground_vertex (test_retained.RetainedMutations.test_rehashed_forged_ground_vertex) ... ok
+test_rehashed_forged_provenance_disagreement (test_retained.RetainedMutations.test_rehashed_forged_provenance_disagreement) ... ok
+test_rehashed_missing_actual_binary (test_retained.RetainedMutations.test_rehashed_missing_actual_binary) ... ok
+test_rehashed_old_test_attachment_manifest_rejected (test_retained.RetainedMutations.test_rehashed_old_test_attachment_manifest_rejected) ... ok
+test_rehashed_zero_test_summary (test_retained.RetainedMutations.test_rehashed_zero_test_summary) ... ok
+test_unknown_retained_version (test_retained.RetainedMutations.test_unknown_retained_version) ... ok
+
+----------------------------------------------------------------------
+Ran 41 tests in 31.339s
+
+OK

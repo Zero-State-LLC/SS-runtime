@@ -1,0 +1,153 @@
+test_mode_change_rejected (__main__.ScopeGuardTests.test_mode_change_rejected) ... ok
+test_modified_existing_test_rejected_before_and_after_staging (__main__.ScopeGuardTests.test_modified_existing_test_rejected_before_and_after_staging) ... ok
+test_new_authority_file_rejected (__main__.ScopeGuardTests.test_new_authority_file_rejected) ... ok
+test_removed_asset_rejected (__main__.ScopeGuardTests.test_removed_asset_rejected) ... ok
+test_unchanged_and_new_test_pass (__main__.ScopeGuardTests.test_unchanged_and_new_test_pass) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.730s
+
+OK
+{
+  "status": "FROZEN_AUTHORITY_ART_TESTS_UNCHANGED_NOT_VISUAL_ACCEPTANCE",
+  "base": "2baaeb1765c1df0618b79c1af826f40139d4d793",
+  "trackedProtectedFiles": 11876,
+  "paths": [
+    "Sources/",
+    "Tests/",
+    "RuntimeAssets/",
+    "AppTests/",
+    "docs/review/"
+  ],
+  "excluded": [
+    "docs/review/live-world-projection-20261117/",
+    "docs/review/production-execution-20261117/README.md"
+  ]
+}
+checking 9 changed files against 9 learnings and 0 skills
+
+✗ docs/handoff/NEXT.md:5
+  brings back actual unchanged geometry, which Daniel's learning ruled out
+  Daniel · Nov 17: The actual Swift producer emits
+  supplementalManifestSHA256 and leaves the ordinary source census
+  unchanged, with supplementary geometry and images bound through
+  assembly.supplementalBinding and assembly.supplements.
+● App/GameScene.swift:353
+  brings back review scene kiosk, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16:
+  docs/review/building-perspective-detail-20261116/scene/native.py
+  validates registered corners, including a virtual omitted kiosk
+  chamfer corner.
+● FACTS.md:5
+  brings back actual source unchanged, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 17: The actual Swift producer emits
+  supplementalManifestSHA256 and leaves the ordinary source census
+  unchanged, with supplementary geometry and images bound through
+  assembly.supplementalBinding and assembly.supplements.
+● FACTS.md:5
+  brings back review scene kiosk, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16:
+  docs/review/building-perspective-detail-20261116/scene/native.py
+  validates registered corners, including a virtual omitted kiosk
+  chamfer corner.
+● docs/handoff/NEXT.md:5
+  brings back doc review registered, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16:
+  docs/review/building-perspective-detail-20261116/scene/native.py
+  validates registered corners, including a virtual omitted kiosk
+  chamfer corner.
+● docs/handoff/NEXT.md:5
+  brings back app test ground, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16: Unwrapped frameIndex in
+  AppTests/PlayerGroundContactNativeTests.swift froze900 of1200
+  fixed-time records in the first native run.
+● docs/handoff/NEXT.md:7
+  brings back test app screenshot, which Jcode's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Jcode · Nov 16: Upgrade interaction tests passed while
+  app.screenshot() produced cropped/misoriented landscape screenshots.
+● docs/review/live-world-projection-20261117/scope-baseline.json:2
+  brings back source test visual, which Jcode's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Jcode · Nov 16: Technical Camera/stone source tests passed despite
+  coordinator visual rejection.
+● docs/review/live-world-projection-20261117/scope-baseline.json:2
+  brings back apptest app test, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16: Unwrapped frameIndex in
+  AppTests/PlayerGroundContactNativeTests.swift froze900 of1200
+  fixed-time records in the first native run.
+● docs/review/live-world-projection-20261117/scope-baseline.json:3
+  brings back base doc review, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16: Treating that algebra as coherent visible bases
+  missed the road overlap and interior tree demonstrated by
+  docs/review/footprint-consistency-20261116/diagnose.py.
+● docs/review/live-world-projection-20261117/test_scope.py:2
+  brings back fixture temporary root, which Jcode's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Jcode · Nov 16: Traversal fixtures mixed unresolved temporary roots
+  with resolved paths on macOS (#244).
+● docs/review/live-world-projection-20261117/test_scope.py:10
+  brings back index apptest app, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16: Unwrapped frameIndex in
+  AppTests/PlayerGroundContactNativeTests.swift froze900 of1200
+  fixed-time records in the first native run.
+● docs/review/live-world-projection-20261117/test_scope.py:17
+  brings back swift source unchanged, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 17: The actual Swift producer emits
+  supplementalManifestSHA256 and leaves the ordinary source census
+  unchanged, with supplementary geometry and images bound through
+  assembly.supplementalBinding and assembly.supplements.
+● docs/review/live-world-projection-20261117/verify_scope.py:2
+  brings back leave source unchanged, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 17: The actual Swift producer emits
+  supplementalManifestSHA256 and leaves the ordinary source census
+  unchanged, with supplementary geometry and images bound through
+  assembly.supplementalBinding and assembly.supplements.
+● docs/review/live-world-projection-20261117/verify_scope.py:2
+  brings back source test visual, which Jcode's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Jcode · Nov 16: Technical Camera/stone source tests passed despite
+  coordinator visual rejection.
+● docs/review/live-world-projection-20261117/verify_scope.py:2
+  brings back apptest app test, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16: Unwrapped frameIndex in
+  AppTests/PlayerGroundContactNativeTests.swift froze900 of1200
+  fixed-time records in the first native run.
+● docs/review/live-world-projection-20261117/verify_scope.py:11
+  brings back base tree doc, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16: Treating that algebra as coherent visible bases
+  missed the road overlap and interior tree demonstrated by
+  docs/review/footprint-consistency-20261116/diagnose.py.
+● intent/2026-11-17-live-world-projection.md:3
+  brings back doc review build, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16:
+  docs/review/building-perspective-detail-20261116/scene/native.py
+  validates registered corners, including a virtual omitted kiosk
+  chamfer corner.
+● intent/2026-11-17-live-world-projection.md:7
+  brings back record source ordinary, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 17: The V9 gallery expected record.supplementalSource and
+  invented extra ordinary source roles in its synthetic fixture.
+● intent/2026-11-17-live-world-projection.md:7
+  brings back scene source failed, which Jcode's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Jcode · Nov 16: A whole-scene coverage row referenced an unpublished
+  enemy-source directory and failed clean CI (#242).
+
+· 1 conflict · fix it, or say why in the commit message or PR description
+
+--- Command finished with exit code: 1 ---

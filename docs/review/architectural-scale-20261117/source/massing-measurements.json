@@ -1,0 +1,217 @@
+{
+  "sourceGeometrySHA256": {
+    "current-geometry.json": "b412eb583bc10bbe2c1e3bcb412a29ee41293258b7016faa1459726228848760",
+    "proposed-geometry.json": "d57defea3e194051916b2bbaf0f00bc968e3db4b2c6e9d506c0b6dfe762ad220"
+  },
+  "buildings": [
+    {
+      "solidID": "solid-03-transit-kiosk",
+      "current": {
+        "meshBoundsLocalXYZ": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            128.0,
+            128.0,
+            132.0
+          ]
+        ],
+        "meshWidth": 128.0,
+        "meshDepth": 128.0,
+        "roofPlanArea": 14097.409241173238,
+        "roofDeckZ": 125,
+        "parapetRise": 7,
+        "copingPlanArea": 1526.0907588267623,
+        "parapetPrismEquivalentVolume": 10682.635311787337,
+        "qualification": "Prism-equivalent cap area times inner parapet rise, not solid-union or material mass. Exterior facade relief remains nonuniform. Roof deck is a face, not an authored slab thickness."
+      },
+      "proposed": {
+        "meshBoundsLocalXYZ": [
+          [
+            0.0,
+            0.0,
+            0
+          ],
+          [
+            128.0,
+            128.0,
+            104
+          ]
+        ],
+        "meshWidth": 128.0,
+        "meshDepth": 128.0,
+        "roofPlanArea": 14097.409241173238,
+        "roofDeckZ": 100,
+        "parapetRise": 4,
+        "copingPlanArea": 1526.0907588267623,
+        "parapetPrismEquivalentVolume": 6104.363035307049,
+        "qualification": "Prism-equivalent cap area times inner parapet rise, not solid-union or material mass. Exterior facade relief remains nonuniform. Roof deck is a face, not an authored slab thickness."
+      }
+    },
+    {
+      "solidID": "solid-01-residential-west",
+      "current": {
+        "meshBoundsLocalXYZ": [
+          [
+            -64.0,
+            -256.0,
+            0
+          ],
+          [
+            64.0,
+            256.0,
+            136
+          ]
+        ],
+        "meshWidth": 128.0,
+        "meshDepth": 512.0,
+        "roofPlanArea": 61732.0,
+        "cornicePrismVolumeSum": 33184.0,
+        "qualification": "Sum of original eaves/parapet/coping box volumes. Corner intersections are counted per box, not a boolean-union or physical mass. Roof deck face has no separate slab-thickness claim."
+      },
+      "proposed": {
+        "meshBoundsLocalXYZ": [
+          [
+            -64.0,
+            -256.0,
+            0
+          ],
+          [
+            64.0,
+            256.0,
+            172
+          ]
+        ],
+        "meshWidth": 128.0,
+        "meshDepth": 512.0,
+        "roofPlanArea": 61732.0,
+        "cornicePrismVolumeSum": 28096.0,
+        "qualification": "Sum of original eaves/parapet/coping box volumes. Corner intersections are counted per box, not a boolean-union or physical mass. Roof deck face has no separate slab-thickness claim."
+      }
+    },
+    {
+      "solidID": "solid-02-residential-north",
+      "current": {
+        "meshBoundsLocalXYZ": [
+          [
+            -192.0,
+            -96.0,
+            0
+          ],
+          [
+            192.0,
+            96.0,
+            136
+          ]
+        ],
+        "meshWidth": 384.0,
+        "meshDepth": 192.0,
+        "roofPlanArea": 70308.0,
+        "cornicePrismVolumeSum": 29856.0,
+        "qualification": "Sum of original eaves/parapet/coping box volumes. Corner intersections are counted per box, not a boolean-union or physical mass. Roof deck face has no separate slab-thickness claim."
+      },
+      "proposed": {
+        "meshBoundsLocalXYZ": [
+          [
+            -192.0,
+            -96.0,
+            0
+          ],
+          [
+            192.0,
+            96.0,
+            172
+          ]
+        ],
+        "meshWidth": 384.0,
+        "meshDepth": 192.0,
+        "roofPlanArea": 70308.0,
+        "cornicePrismVolumeSum": 25280.0,
+        "qualification": "Sum of original eaves/parapet/coping box volumes. Corner intersections are counted per box, not a boolean-union or physical mass. Roof deck face has no separate slab-thickness claim."
+      }
+    },
+    {
+      "solidID": "solid-04-civic-west",
+      "current": {
+        "meshBoundsLocalXYZ": [
+          [
+            -96.0,
+            -192.0,
+            0
+          ],
+          [
+            96.0,
+            192.0,
+            156
+          ]
+        ],
+        "meshWidth": 192.0,
+        "meshDepth": 384.0,
+        "roofPlanArea": 70308.0,
+        "cornicePrismVolumeSum": 29856.0,
+        "qualification": "Sum of original eaves/parapet/coping box volumes. Corner intersections are counted per box, not a boolean-union or physical mass. Roof deck face has no separate slab-thickness claim."
+      },
+      "proposed": {
+        "meshBoundsLocalXYZ": [
+          [
+            -96.0,
+            -192.0,
+            0
+          ],
+          [
+            96.0,
+            192.0,
+            134
+          ]
+        ],
+        "meshWidth": 192.0,
+        "meshDepth": 384.0,
+        "roofPlanArea": 70308.0,
+        "cornicePrismVolumeSum": 25280.0,
+        "qualification": "Sum of original eaves/parapet/coping box volumes. Corner intersections are counted per box, not a boolean-union or physical mass. Roof deck face has no separate slab-thickness claim."
+      }
+    },
+    {
+      "solidID": "solid-05-civic-dais",
+      "current": {
+        "meshBoundsLocalXYZ": [
+          [
+            -80.0,
+            -48.0,
+            0
+          ],
+          [
+            80.0,
+            48.0,
+            34
+          ]
+        ],
+        "meshWidth": 160.0,
+        "meshDepth": 96.0,
+        "platformPlanArea": 11520.0,
+        "qualification": "Open raised platform. No roof slab, cornice or enclosed volume implied."
+      },
+      "proposed": {
+        "meshBoundsLocalXYZ": [
+          [
+            -80.0,
+            -48.0,
+            0
+          ],
+          [
+            80.0,
+            48.0,
+            35
+          ]
+        ],
+        "meshWidth": 160.0,
+        "meshDepth": 96.0,
+        "platformPlanArea": 11520.0,
+        "qualification": "Open raised platform. No roof slab, cornice or enclosed volume implied."
+      }
+    }
+  ]
+}

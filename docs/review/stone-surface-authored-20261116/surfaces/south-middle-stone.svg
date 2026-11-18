@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<title>south-middle-stone: authored surface paint</title>
+<rect width="512" height="512" fill="rgb(163, 156, 140)"/>
+<polygon id="paint-0" points="0,0 511,0 511,66 409,51 373,92 317,56 179,82 102,51 0,92" fill="rgb(117, 114, 104)"/>
+<polygon id="paint-1" points="51,92 179,66 204,118 153,204 184,250 112,322 61,296" fill="rgb(178, 170, 151)"/>
+<polygon id="paint-2" points="378,143 465,107 450,368 399,409 383,332 327,317" fill="rgb(145, 140, 126)"/>
+<polygon id="paint-3" points="0,480 123,445 158,470 215,439 322,485 511,460 511,511 0,511" fill="rgb(109, 108, 99)"/>
+<polygon id="paint-4" points="164,291 245,261 291,281 250,317 276,368 220,404 158,368" fill="rgb(127, 126, 114)"/>
+<path id="edge-0" d="M 41 92 L 41 419" stroke="rgb(191, 182, 160)" stroke-width="9"/>
+<path id="edge-1" d="M 465 92 L 465 414" stroke="rgb(119, 118, 107)" stroke-width="7"/>
+<defs><filter id="soft-0"><feGaussianBlur stdDeviation="1.7"/></filter></defs>
+<polyline id="brush-0" points="138,92 128,189 148,245" fill="none" stroke="rgb(190, 180, 155)" stroke-opacity="0.28" stroke-width="26" filter="url(#soft-0)"/>
+<defs><filter id="soft-1"><feGaussianBlur stdDeviation="0.6"/></filter></defs>
+<polyline id="brush-1" points="194,358 235,347 266,373" fill="none" stroke="rgb(110, 110, 99)" stroke-opacity="0.37" stroke-width="11" filter="url(#soft-1)"/>
+</svg>

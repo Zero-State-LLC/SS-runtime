@@ -1,0 +1,127 @@
+T1  Input source images unchanged
+  PASS  T1a south_exists
+  PASS  T1b north_sha
+  PASS  T1c east_prefix
+  PASS  T1d west_prefix
+T2  Output images exist and correct dimensions
+  PASS  T2  four-facing-source.png exists
+  PASS  T2  four-facing-source.png dimensions
+  PASS  T2  four-facing-native.png exists
+  PASS  T2  four-facing-native.png dimensions
+  PASS  T2  four-facing-half.png exists
+  PASS  T2  four-facing-half.png dimensions
+  PASS  T2  four-facing-grayscale.png exists
+  PASS  T2  four-facing-grayscale.png dimensions
+T3  Strips reproducible (re-run assemble.py)
+  PASS  T3  assemble exit 0
+  PASS  T3  four-facing-source.png reproducible
+  PASS  T3  four-facing-native.png reproducible
+  PASS  T3  four-facing-half.png reproducible
+  PASS  T3  four-facing-grayscale.png reproducible
+  PASS  T3  family.json reproducible
+T4  Native strip dimensions
+  PASS  T4  native width
+  PASS  T4  native height
+T5  Half strip dimensions
+  PASS  T5  half width
+  PASS  T5  half height
+T6  Grayscale strip has no saturation
+  PASS  T6  all opaque pixels are gray
+T7  Role mask files exist and correct size
+  PASS  T7  south-lower_body exists
+  PASS  T7  south-lower_body size
+  PASS  T7  south-upper_body exists
+  PASS  T7  south-upper_body size
+  PASS  T7  south-equipment exists
+  PASS  T7  south-equipment size
+  PASS  T7  south-head exists
+  PASS  T7  south-head size
+  PASS  T7  east-lower_body exists
+  PASS  T7  east-lower_body size
+  PASS  T7  east-upper_body exists
+  PASS  T7  east-upper_body size
+  PASS  T7  east-equipment exists
+  PASS  T7  east-equipment size
+  PASS  T7  east-head exists
+  PASS  T7  east-head size
+  PASS  T7  north-lower_body exists
+  PASS  T7  north-lower_body size
+  PASS  T7  north-upper_body exists
+  PASS  T7  north-upper_body size
+  PASS  T7  north-equipment exists
+  PASS  T7  north-equipment size
+  PASS  T7  north-head exists
+  PASS  T7  north-head size
+  PASS  T7  west-lower_body exists
+  PASS  T7  west-lower_body size
+  PASS  T7  west-upper_body exists
+  PASS  T7  west-upper_body size
+  PASS  T7  west-equipment exists
+  PASS  T7  west-equipment size
+  PASS  T7  west-head exists
+  PASS  T7  west-head size
+T8  Role masks non-empty (have opaque pixels)
+  PASS  T8  south-lower_body opaque_pixels >= 1
+  PASS  T8  south-upper_body opaque_pixels >= 1
+  SKIP  T8  south-equipment: merged into original_upper (disclosed blocker)
+  SKIP  T8  south-head: merged into original_upper (disclosed blocker)
+  PASS  T8  east-lower_body opaque_pixels >= 1
+  PASS  T8  east-upper_body opaque_pixels >= 1
+  PASS  T8  east-equipment opaque_pixels >= 1
+  PASS  T8  east-head opaque_pixels >= 1
+  PASS  T8  north-lower_body opaque_pixels >= 1
+  PASS  T8  north-upper_body opaque_pixels >= 1
+  PASS  T8  north-equipment opaque_pixels >= 1
+  PASS  T8  north-head opaque_pixels >= 1
+  PASS  T8  west-lower_body opaque_pixels >= 1
+  PASS  T8  west-upper_body opaque_pixels >= 1
+  PASS  T8  west-equipment opaque_pixels >= 1
+  PASS  T8  west-head opaque_pixels >= 1
+T9  family.json structure
+  PASS  T9  status BLOCKED_UNRECONCILED_FAMILY
+  PASS  T9  four facings in anatomy
+  PASS  T9  sourcePackets present
+  PASS  T9  openBlockers non-empty
+  PASS  T9  partVocabulary present
+  PASS  T9  equipment mapping present
+  PASS  T9  limits field present
+T10  index.html content
+  PASS  T10  index.html non-empty
+  PASS  T10  index contains south
+  PASS  T10  index contains east
+  PASS  T10  index contains north
+  PASS  T10  index contains west
+  PASS  T10  blocked status in h1
+  PASS  T10  blocked status banner
+  PASS  T10  two inline absent role labels
+  PASS  T10  rounding disclosed
+  PASS  T10  no unexplained absent mask images
+T11  Layer files exist for each facing
+  PASS  T11  south has >=1 layer
+  PASS  T11  north has >=1 layer
+  PASS  T11  east has >=1 layer
+  PASS  T11  west has >=1 layer
+T12  North SHA matches attempt-01
+  PASS  T12  north sha exact
+T13  South/east/west SHA prefixes
+  PASS  T13  east prefix
+  PASS  T13  west prefix
+  PASS  T13  south sha matches family.json
+T14  output-hashes.json round-trips
+  PASS  T14  four-facing-source.png
+  PASS  T14  four-facing-native.png
+  PASS  T14  four-facing-half.png
+  PASS  T14  four-facing-grayscale.png
+  PASS  T14  family.json
+T15  Reject coherence/readiness/acceptance; document absent layers
+  PASS  T15  status is BLOCKED_UNRECONCILED_FAMILY
+  PASS  T15  coherent is explicitly False
+  PASS  T15  ready is explicitly False
+  PASS  T15  accepted is explicitly False
+  PASS  T15  south-equipment absent layer documented
+  PASS  T15  south-head absent layer documented
+  PASS  T15  south-equipment entry mentions original_upper
+  PASS  T15  south-head entry mentions original_upper
+
+PASS: 107  FAIL: 0
+All tests passed.

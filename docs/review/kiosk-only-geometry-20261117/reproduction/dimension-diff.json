@@ -1,0 +1,209 @@
+{
+  "dimensions": {
+    "top": {
+      "current": 132.0,
+      "proposed": 104,
+      "delta": -28.0,
+      "currentPlayerRatio": 2.6666666666666665,
+      "proposedPlayerRatio": 2.101010101010101
+    },
+    "roofDeck": {
+      "current": 125,
+      "proposed": 100,
+      "delta": -25,
+      "currentPlayerRatio": 2.525252525252525,
+      "proposedPlayerRatio": 2.0202020202020203
+    },
+    "parapet": {
+      "current": 7.0,
+      "proposed": 4,
+      "delta": -3.0,
+      "currentPlayerRatio": 0.1414141414141414,
+      "proposedPlayerRatio": 0.08080808080808081
+    },
+    "cornice": {
+      "current": 24.2170542635659,
+      "proposed": 10,
+      "delta": -14.217054263565899,
+      "currentPlayerRatio": 0.48923341946597776,
+      "proposedPlayerRatio": 0.20202020202020202
+    },
+    "doorThreshold": {
+      "current": 27.116279069767447,
+      "proposed": 18,
+      "delta": -9.116279069767447,
+      "currentPlayerRatio": 0.5478036175710596,
+      "proposedPlayerRatio": 0.36363636363636365
+    },
+    "doorHead": {
+      "current": 92.77519379844962,
+      "proposed": 80,
+      "delta": -12.77519379844962,
+      "currentPlayerRatio": 1.8742463393626185,
+      "proposedPlayerRatio": 1.6161616161616161
+    },
+    "doorClearance": {
+      "current": 65.65891472868218,
+      "proposed": 62,
+      "delta": -3.658914728682177,
+      "currentPlayerRatio": 1.326442721791559,
+      "proposedPlayerRatio": 1.2525252525252526
+    },
+    "windowSill": {
+      "current": 43.65891472868216,
+      "proposed": 32,
+      "delta": -11.658914728682163,
+      "currentPlayerRatio": 0.8819982773471144,
+      "proposedPlayerRatio": 0.6464646464646465
+    },
+    "windowHead": {
+      "current": 92.77519379844962,
+      "proposed": 80,
+      "delta": -12.77519379844962,
+      "currentPlayerRatio": 1.8742463393626185,
+      "proposedPlayerRatio": 1.6161616161616161
+    },
+    "windowHeight": {
+      "current": 49.11627906976746,
+      "proposed": 48,
+      "delta": -1.116279069767458,
+      "currentPlayerRatio": 0.9922480620155042,
+      "proposedPlayerRatio": 0.9696969696969697
+    },
+    "width": {
+      "current": 128,
+      "proposed": 128,
+      "delta": 0,
+      "currentPlayerRatio": 2.585858585858586,
+      "proposedPlayerRatio": 2.585858585858586
+    },
+    "depth": {
+      "current": 128,
+      "proposed": 128,
+      "delta": 0,
+      "currentPlayerRatio": 2.585858585858586,
+      "proposedPlayerRatio": 2.585858585858586
+    }
+  },
+  "playerVisualReference": 49.5,
+  "spacing": {
+    "cameraRoot": [
+      496,
+      672
+    ],
+    "playerRoot": [
+      736,
+      654
+    ],
+    "cameraRootToEnvelope": 16.0,
+    "playerRootToEnvelope": 96.0,
+    "neighbors": {
+      "solid-01-residential-west": {
+        "axisGaps": [
+          384,
+          0
+        ],
+        "envelopeDistance": 384.0,
+        "authoredHeight": 112
+      },
+      "solid-02-residential-north": {
+        "axisGaps": [
+          0,
+          0
+        ],
+        "envelopeDistance": 0.0,
+        "authoredHeight": 112
+      },
+      "solid-04-civic-west": {
+        "axisGaps": [
+          96,
+          0
+        ],
+        "envelopeDistance": 96.0,
+        "authoredHeight": 142
+      },
+      "solid-05-civic-dais": {
+        "axisGaps": [
+          368,
+          0
+        ],
+        "envelopeDistance": 368.0,
+        "authoredHeight": 34
+      }
+    },
+    "qualification": "Plan distances to authority envelope, not rendered contours or traversable clearance. Identical in both arms."
+  },
+  "zMap": {
+    "schema": "kiosk-only-z-map-001",
+    "solidID": "solid-03-transit-kiosk",
+    "reuse": "architectural-scale-20261117/source/output/proposed-geometry.json kiosk ONLY",
+    "anchors": [
+      [
+        0.0,
+        0
+      ],
+      [
+        7.674418604651162,
+        5
+      ],
+      [
+        17.736434108527128,
+        10
+      ],
+      [
+        27.116279069767447,
+        18
+      ],
+      [
+        31.379844961240313,
+        21
+      ],
+      [
+        38.542635658914726,
+        25
+      ],
+      [
+        43.65891472868216,
+        32
+      ],
+      [
+        72.31007751937985,
+        60
+      ],
+      [
+        92.77519379844962,
+        80
+      ],
+      [
+        95.33333333333333,
+        82
+      ],
+      [
+        102.32558139534885,
+        88
+      ],
+      [
+        107.7829457364341,
+        94
+      ],
+      [
+        122.79069767441861,
+        99
+      ],
+      [
+        125,
+        100
+      ],
+      [
+        126.88372093023257,
+        101
+      ],
+      [
+        132.0,
+        104
+      ]
+    ]
+  },
+  "neighborsUnchanged": true,
+  "units": "Authored world units, not meters"
+}

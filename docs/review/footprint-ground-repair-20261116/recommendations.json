@@ -1,0 +1,26 @@
+{
+  "schema": "footprint-ground-recommendations-008",
+  "plan": {
+    "path": "docs/review/footprint-ground-repair-20261116/plan/plan.json",
+    "sha256": "3b145fc228ac73367b1d6c5d60ee48e1578ebdbc972493afa9ba5a91018d880b"
+  },
+  "manifest": {
+    "path": "docs/review/footprint-ground-repair-20261116/plan/manifest.json",
+    "sha256": "e25b2ba9e5b52171a5fd97902557707c3cf05938ccc9371809bd7d1a5483d3d9"
+  },
+  "validator": {
+    "path": "docs/review/footprint-ground-repair-20261116/plan/test_plan.py",
+    "sha256": "a926e1739008e7541f0d4cf36d65d62f60ad0bc1152e4079c17533a77ab8abcf"
+  },
+  "recommendation": {
+    "reviewerRole": "coordinator",
+    "decision": "recommended",
+    "scope": "isolated-ordinary-scene",
+    "planSHA256": "3b145fc228ac73367b1d6c5d60ee48e1578ebdbc972493afa9ba5a91018d880b",
+    "sourceSHA256": "97ae5825c57c9e21b48a3d863bfd3e93b940e3eb5c5134b9c51172cc6656b7c7",
+    "evidence": {
+      "path": "docs/review/footprint-ground-repair-20261116/SOURCE-REVIEW-FINAL.md",
+      "sha256": "a633d036627b0b7da7ea09faa370b0d1a5fb00615d117f5c0760d7c4b5d2ac9e"
+    }
+  }
+}

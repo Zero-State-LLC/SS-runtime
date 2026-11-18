@@ -1,0 +1,79 @@
+{
+  "status": "CONSERVATIVE_RASTER_BASE_CLEARANCE_VERIFIED",
+  "method": "Manual visual base-region identification, full-region sampling with independent inverse D108",
+  "limits": "Not mesh-derived contacts, exact alpha contour, canopy clearance, native visibility or owner acceptance. Registered front vertex differs from physical trunk center.",
+  "props": [
+    {
+      "name": "benchmark-prop-0",
+      "source": "AppTests/BenchmarkAssets/newsbox.png",
+      "sourceSHA256": "a05de0ea875e599ebbf6d2ca29a657d17b01795e6670ab1594896827d8c6f0da",
+      "registeredFrontRoot": [
+        691,
+        639
+      ],
+      "sourceBaseConservativeRect": [
+        45,
+        595,
+        356,
+        767
+      ],
+      "transformedRegionWorld": [
+        [
+          698.3551732150207,
+          657.1301336902444
+        ],
+        [
+          685.6861767187618,
+          644.4611371939853
+        ],
+        [
+          709.990634005974,
+          645.4946728992911
+        ],
+        [
+          697.3216375097151,
+          632.8256764030322
+        ]
+      ],
+      "testedSourceSamples": 53976,
+      "minimumSolidClearanceWorld": 45.68617671876177,
+      "entireRegionOnSidewalk": true
+    },
+    {
+      "name": "benchmark-prop-1",
+      "source": "AppTests/BenchmarkAssets/tree.png",
+      "sourceSHA256": "f002a45f3d30f669d410f6fbcc1785284fce22368b834dc261821e31ad4426b6",
+      "registeredFrontRoot": [
+        858,
+        716
+      ],
+      "sourceBaseConservativeRect": [
+        65,
+        540,
+        372,
+        767
+      ],
+      "transformedRegionWorld": [
+        [
+          881.0710135841297,
+          764.3025771418875
+        ],
+        [
+          845.5407392534149,
+          728.7723028111728
+        ],
+        [
+          904.9786988070668,
+          740.3948919189503
+        ],
+        [
+          869.4484244763522,
+          704.8646175882355
+        ]
+      ],
+      "testedSourceSamples": 70224,
+      "minimumSolidClearanceWorld": 3.6974228581125317,
+      "entireRegionOnSidewalk": true
+    }
+  ]
+}

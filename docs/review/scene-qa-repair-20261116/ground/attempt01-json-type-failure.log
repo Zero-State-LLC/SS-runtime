@@ -1,0 +1,24 @@
+test_01_authoritative_bounds_and_registration (__main__.GroundTests.test_01_authoritative_bounds_and_registration) ... ok
+test_02_red_capable_real_v4_crop_coverage (__main__.GroundTests.test_02_red_capable_real_v4_crop_coverage) ... ok
+test_03_fixed_crop_coverage_and_inverse_roundtrip (__main__.GroundTests.test_03_fixed_crop_coverage_and_inverse_roundtrip) ... ok
+test_04_entire_original_interior_exact (__main__.GroundTests.test_04_entire_original_interior_exact) ... ok
+test_05_no_artificial_old_patch_boundary (__main__.GroundTests.test_05_no_artificial_old_patch_boundary) ... ok
+test_06_opaque_complete_arena_and_no_repeated_motif (__main__.GroundTests.test_06_opaque_complete_arena_and_no_repeated_motif) ... ok
+test_07_square_groundpatch_uv_adapter (__main__.GroundTests.test_07_square_groundpatch_uv_adapter) ... ok
+test_08_immutable_sources_fail_closed (__main__.GroundTests.test_08_immutable_sources_fail_closed) ... ok
+test_09_deterministic_rebuild_and_output_hashes (__main__.GroundTests.test_09_deterministic_rebuild_and_output_hashes) ... FAIL
+
+======================================================================
+FAIL: test_09_deterministic_rebuild_and_output_hashes (__main__.GroundTests.test_09_deterministic_rebuild_and_output_hashes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/scene-qa-repair-20261116/ground/test_ground.py", line 107, in test_09_deterministic_rebuild_and_output_hashes
+    self.assertEqual(rebuilt,self.manifest)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'sta[2070 chars]d': [(256.58160235552083, 690.3847763108503), [2486 chars]d.']} != {'sta[2070 chars]d': [[256.58160235552083, 690.3847763108503], [2486 chars]d.']}
+Diff is 19769 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 9 tests in 19.352s
+
+FAILED (failures=1)

@@ -1,0 +1,39 @@
+Building for debugging...
+[0/2] Write swift-version--58304C5D6DBC2206.txt
+Build complete! (0.72s)
+Test Suite 'Selected tests' started at 2026-11-16 20:07:29.522.
+Test Suite 'SSRuntimePackageTests.xctest' started at 2026-11-16 20:07:29.524.
+Test Suite 'SSRuntimePackageTests.xctest' passed at 2026-11-16 20:07:29.525.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-11-16 20:07:29.525.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.003) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite PresentationSocketOrderingTests started.
+◇ Suite CameraHousingArtTests started.
+◇ Suite EnvironmentContractTests started.
+◇ Test independentSessionsProduceEqualFullSnapshots() started.
+◇ Test insertionHistoriesHaveIdenticalFullSnapshotsAndDigests() started.
+◇ Test utf8KeyOrderAndAuthoredArrayOrderAreIndependent() started.
+◇ Test canonicalEncounterOrderPreservesAuthoredSocketsAndSuffix() started.
+◇ Test theContractNamesEveryArenaSolid() started.
+◇ Test everyHousingFamilyNamesADeclaredAsset() started.
+✔ Test everyHousingFamilyNamesADeclaredAsset() passed after 0.011 seconds.
+◇ Test familiesMapToDistinctAssets() started.
+✔ Test familiesMapToDistinctAssets() passed after 0.001 seconds.
+◇ Test noDeclaredHousingIsUnreachable() started.
+✔ Test canonicalEncounterOrderPreservesAuthoredSocketsAndSuffix() passed after 0.034 seconds.
+✔ Test insertionHistoriesHaveIdenticalFullSnapshotsAndDigests() passed after 0.059 seconds.
+✔ Test utf8KeyOrderAndAuthoredArrayOrderAreIndependent() passed after 0.098 seconds.
+✔ Test independentSessionsProduceEqualFullSnapshots() passed after 0.135 seconds.
+✔ Suite PresentationSocketOrderingTests passed after 0.137 seconds.
+✔ Test noDeclaredHousingIsUnreachable() passed after 1.520 seconds.
+✔ Suite CameraHousingArtTests passed after 1.533 seconds.
+✔ Test theContractNamesEveryArenaSolid() passed after 1.623 seconds.
+◇ Test environmentIdsAreRuntimeReachable() started.
+✔ Test environmentIdsAreRuntimeReachable() passed after 1.510 seconds.
+◇ Test fogIDsResolveThroughThePresentationContract() started.
+✔ Test fogIDsResolveThroughThePresentationContract() passed after 1.028 seconds.
+✔ Suite EnvironmentContractTests passed after 4.163 seconds.
+✔ Test run with 10 tests in 3 suites passed after 4.165 seconds.

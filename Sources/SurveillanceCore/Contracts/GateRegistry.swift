@@ -28,11 +28,15 @@ public struct GateEvidence: Equatable, Sendable {
 public enum GateRegistry {
     public static let allGateIds: [String] = functional + determinism + stability + visual + arena + accessibility + playtest
 
-    public static let functional: [String] = (1...22).map { String(format: "A-%03d", $0) }
+    // acceptance.md includes the explicit A-013A Camera-integrity gate.
+    public static let functional: [String] = (1...22).flatMap { index -> [String] in
+        let id = String(format: "A-%03d", index)
+        return index == 13 ? [id, "A-013A"] : [id]
+    }
     public static let determinism: [String] = (1...17).map { String(format: "B-%03d", $0) }
     public static let stability: [String] = (1...11).map { String(format: "C-%03d", $0) }
-    public static let visual: [String] = (1...21).map { String(format: "D-%03d", $0) }
-    public static let arena: [String] = (1...20).map { String(format: "E-%03d", $0) }
+    public static let visual: [String] = (1...24).map { String(format: "D-%03d", $0) }
+    public static let arena: [String] = (1...21).map { String(format: "E-%03d", $0) }
     public static let accessibility: [String] = (1...17).map { String(format: "F-%03d", $0) }
     public static let playtest: [String] = (1...7).map { String(format: "G-%03d", $0) }
 

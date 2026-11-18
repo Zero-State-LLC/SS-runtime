@@ -1,0 +1,20 @@
+{
+  "retainedAtUTC": "2026-11-16T08:48:15Z",
+  "purpose": "Exact immutable authored inputs for the second surface-authored sample. Prior packet is unpublished and is not a runtime dependency.",
+  "inputs": [
+    {
+      "file": "inherited-mesh.json",
+      "originalPath": "docs/review/stone-editable-master-20261116/mesh.json",
+      "sha256": "376396df6878baf67bf8b691e451da55779052e139a0340740ca8af52b07c2b0",
+      "use": "author_mesh.py retains authored foundation and stair source geometry only. Full original bytes preserved for exact provenance. Not measured reference geometry."
+    },
+    {
+      "file": "inherited-registration.json",
+      "originalPath": "docs/review/stone-editable-master-20261116/registration.json",
+      "sha256": "2d5cc4470fcf2e6f6983ccd3907154cb3e88308b4f5dd349ec1a9bba333310f1",
+      "use": "replay.py copies explicit registration fields. Historical source hashes are provenance only, not dependencies or acceptance."
+    }
+  ],
+  "ownerAccepted": false,
+  "productionAdmitted": false
+}

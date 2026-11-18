@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: normal: cached readiness without RAF/decode
+ok 1 - normal: cached readiness without RAF/decode
+  ---
+  duration_ms: 22.4255
+  type: 'test'
+  ...
+# Subtest: normal: delayed readiness without RAF/decode
+ok 2 - normal: delayed readiness without RAF/decode
+  ---
+  duration_ms: 14.433959
+  type: 'test'
+  ...
+# Subtest: normal: broken-cached readiness without RAF/decode
+ok 3 - normal: broken-cached readiness without RAF/decode
+  ---
+  duration_ms: 22.464833
+  type: 'test'
+  ...
+# Subtest: normal: error-event readiness without RAF/decode
+ok 4 - normal: error-event readiness without RAF/decode
+  ---
+  duration_ms: 15.316833
+  type: 'test'
+  ...
+# Subtest: quarter: cached readiness without RAF/decode
+ok 5 - quarter: cached readiness without RAF/decode
+  ---
+  duration_ms: 13.44075
+  type: 'test'
+  ...
+# Subtest: quarter: delayed readiness without RAF/decode
+ok 6 - quarter: delayed readiness without RAF/decode
+  ---
+  duration_ms: 12.788125
+  type: 'test'
+  ...
+# Subtest: quarter: broken-cached readiness without RAF/decode
+ok 7 - quarter: broken-cached readiness without RAF/decode
+  ---
+  duration_ms: 19.901417
+  type: 'test'
+  ...
+# Subtest: quarter: error-event readiness without RAF/decode
+ok 8 - quarter: error-event readiness without RAF/decode
+  ---
+  duration_ms: 6.114375
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 138.96775

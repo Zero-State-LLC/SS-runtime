@@ -1,0 +1,402 @@
+<!doctype html><meta charset="utf-8"><title>Existing-art viewport diagnostic</title>
+<style>body{font:16px sans-serif;background:#24282b;color:#eee;margin:24px}section{border-top:1px solid #aaa;padding:16px 0}pre{white-space:pre-wrap}.scroll{overflow:auto;max-width:100%}img{display:block;width:var(--w);height:var(--h);max-width:none}body.half img{width:calc(var(--w) / 2);height:calc(var(--h) / 2)}button{padding:12px}</style>
+<h1>Existing-art viewport diagnostic, actual0653 simulator capture</h1>
+<p>Technical export verified, visual acceptance UNREVIEWED. No physical device, VoiceOver, live cadence or coherent-source acceptance.</p>
+<p>Native means one captured pixel per CSS pixel, NOT hardware size. Scene images are offscreen aspect-fit node renders. Hosted images use requested-size output canvases; actual UIKit bounds below can differ, causing clipping/unused canvas. Do not equate requested844 canvas with an observed844 host.</p>
+<button onclick="document.body.classList.toggle('half')">Toggle native / half size</button>
+<section><h2>viewport-se-standard</h2><pre>{
+  &quot;dodgeRect&quot;: [
+    557,
+    215,
+    88,
+    88
+  ],
+  &quot;fixture&quot;: &quot;se&quot;,
+  &quot;hudChildCount&quot;: 20,
+  &quot;hudScale&quot;: 1000,
+  &quot;kind&quot;: &quot;GameScene-offscreen-aspectFit&quot;,
+  &quot;logicalSize&quot;: [
+    667,
+    375
+  ],
+  &quot;pauseRect&quot;: [
+    615,
+    40,
+    44,
+    44
+  ],
+  &quot;pixels&quot;: [
+    667,
+    375
+  ],
+  &quot;playerTexturePixels&quot;: [
+    64,
+    64
+  ],
+  &quot;reducedMotion&quot;: false,
+  &quot;safeSize&quot;: [
+    667,
+    375
+  ],
+  &quot;syntheticInsetsTLBR&quot;: [
+    0,
+    0,
+    0,
+    0
+  ],
+  &quot;tick&quot;: 1
+}</pre><div class="scroll"><img src="exports/91926D90-3222-4557-8E29-99EF7AAB10F3.png" width="667" height="375" style="--w:667px;--h:375px" alt="viewport-se-standard"></div></section>
+<section><h2>viewport-se-xl-reduced</h2><pre>{
+  &quot;dodgeRect&quot;: [
+    557,
+    215,
+    88,
+    88
+  ],
+  &quot;fixture&quot;: &quot;se&quot;,
+  &quot;hudChildCount&quot;: 20,
+  &quot;hudScale&quot;: 1300,
+  &quot;kind&quot;: &quot;GameScene-offscreen-aspectFit&quot;,
+  &quot;logicalSize&quot;: [
+    667,
+    375
+  ],
+  &quot;pauseRect&quot;: [
+    615,
+    40,
+    44,
+    44
+  ],
+  &quot;pixels&quot;: [
+    667,
+    375
+  ],
+  &quot;playerTexturePixels&quot;: [
+    64,
+    64
+  ],
+  &quot;reducedMotion&quot;: true,
+  &quot;safeSize&quot;: [
+    667,
+    375
+  ],
+  &quot;syntheticInsetsTLBR&quot;: [
+    0,
+    0,
+    0,
+    0
+  ],
+  &quot;tick&quot;: 1
+}</pre><div class="scroll"><img src="exports/825DD920-B2E8-4FF4-89A7-F7FCB555F42F.png" width="667" height="375" style="--w:667px;--h:375px" alt="viewport-se-xl-reduced"></div></section>
+<section><h2>viewport-reference-standard</h2><pre>{
+  &quot;dodgeRect&quot;: [
+    716,
+    242,
+    88,
+    88
+  ],
+  &quot;fixture&quot;: &quot;reference&quot;,
+  &quot;hudChildCount&quot;: 20,
+  &quot;hudScale&quot;: 1000,
+  &quot;kind&quot;: &quot;GameScene-offscreen-aspectFit&quot;,
+  &quot;logicalSize&quot;: [
+    844,
+    390
+  ],
+  &quot;pauseRect&quot;: [
+    784,
+    14,
+    44,
+    44
+  ],
+  &quot;pixels&quot;: [
+    844,
+    390
+  ],
+  &quot;playerTexturePixels&quot;: [
+    64,
+    64
+  ],
+  &quot;reducedMotion&quot;: false,
+  &quot;safeSize&quot;: [
+    844,
+    390
+  ],
+  &quot;syntheticInsetsTLBR&quot;: [
+    0,
+    0,
+    0,
+    0
+  ],
+  &quot;tick&quot;: 1
+}</pre><div class="scroll"><img src="exports/C743AC1A-DC41-45C0-8DF7-DE8F0D630371.png" width="844" height="390" style="--w:844px;--h:390px" alt="viewport-reference-standard"></div></section>
+<section><h2>viewport-reference-xl-reduced</h2><pre>{
+  &quot;dodgeRect&quot;: [
+    716,
+    242,
+    88,
+    88
+  ],
+  &quot;fixture&quot;: &quot;reference&quot;,
+  &quot;hudChildCount&quot;: 20,
+  &quot;hudScale&quot;: 1300,
+  &quot;kind&quot;: &quot;GameScene-offscreen-aspectFit&quot;,
+  &quot;logicalSize&quot;: [
+    844,
+    390
+  ],
+  &quot;pauseRect&quot;: [
+    784,
+    14,
+    44,
+    44
+  ],
+  &quot;pixels&quot;: [
+    844,
+    390
+  ],
+  &quot;playerTexturePixels&quot;: [
+    64,
+    64
+  ],
+  &quot;reducedMotion&quot;: true,
+  &quot;safeSize&quot;: [
+    844,
+    390
+  ],
+  &quot;syntheticInsetsTLBR&quot;: [
+    0,
+    0,
+    0,
+    0
+  ],
+  &quot;tick&quot;: 1
+}</pre><div class="scroll"><img src="exports/EA6B1276-23E6-4177-AF63-C175984A2189.png" width="844" height="390" style="--w:844px;--h:390px" alt="viewport-reference-xl-reduced"></div></section>
+<section><h2>viewport-inset-standard</h2><pre>{
+  &quot;dodgeRect&quot;: [
+    632,
+    227,
+    88,
+    88
+  ],
+  &quot;fixture&quot;: &quot;inset&quot;,
+  &quot;hudChildCount&quot;: 20,
+  &quot;hudScale&quot;: 1000,
+  &quot;kind&quot;: &quot;GameScene-offscreen-aspectFit&quot;,
+  &quot;logicalSize&quot;: [
+    844,
+    390
+  ],
+  &quot;pauseRect&quot;: [
+    695,
+    27,
+    44,
+    44
+  ],
+  &quot;pixels&quot;: [
+    844,
+    390
+  ],
+  &quot;playerTexturePixels&quot;: [
+    64,
+    64
+  ],
+  &quot;reducedMotion&quot;: false,
+  &quot;safeSize&quot;: [
+    750,
+    382
+  ],
+  &quot;syntheticInsetsTLBR&quot;: [
+    0,
+    47,
+    8,
+    47
+  ],
+  &quot;tick&quot;: 1
+}</pre><div class="scroll"><img src="exports/778DBDDF-967B-4E0C-A041-3B8810CB2773.png" width="844" height="390" style="--w:844px;--h:390px" alt="viewport-inset-standard"></div></section>
+<section><h2>viewport-inset-xl-reduced</h2><pre>{
+  &quot;dodgeRect&quot;: [
+    632,
+    227,
+    88,
+    88
+  ],
+  &quot;fixture&quot;: &quot;inset&quot;,
+  &quot;hudChildCount&quot;: 20,
+  &quot;hudScale&quot;: 1300,
+  &quot;kind&quot;: &quot;GameScene-offscreen-aspectFit&quot;,
+  &quot;logicalSize&quot;: [
+    844,
+    390
+  ],
+  &quot;pauseRect&quot;: [
+    695,
+    27,
+    44,
+    44
+  ],
+  &quot;pixels&quot;: [
+    844,
+    390
+  ],
+  &quot;playerTexturePixels&quot;: [
+    64,
+    64
+  ],
+  &quot;reducedMotion&quot;: true,
+  &quot;safeSize&quot;: [
+    750,
+    382
+  ],
+  &quot;syntheticInsetsTLBR&quot;: [
+    0,
+    47,
+    8,
+    47
+  ],
+  &quot;tick&quot;: 1
+}</pre><div class="scroll"><img src="exports/5B6428E4-34D8-4575-90B0-E0114D9C2161.png" width="844" height="390" style="--w:844px;--h:390px" alt="viewport-inset-xl-reduced"></div></section>
+<section><h2>upgrade-se-large</h2><pre>{
+  &quot;captureMapping&quot;: &quot;drawHierarchy at host bounds into requested-size canvas, clipped if larger, no resize&quot;,
+  &quot;dynamicType&quot;: &quot;large&quot;,
+  &quot;hostViewBounds&quot;: [
+    0,
+    0,
+    667,
+    375
+  ],
+  &quot;kind&quot;: &quot;hosted-production-UpgradeSelectionView&quot;,
+  &quot;logicalSize&quot;: [
+    667,
+    375
+  ],
+  &quot;logicalSizeRole&quot;: &quot;requested-output-canvas-not-host&quot;,
+  &quot;observedInsetsTLBR&quot;: [
+    0,
+    0,
+    0,
+    0
+  ],
+  &quot;pixels&quot;: [
+    667,
+    375
+  ],
+  &quot;requestedSize&quot;: [
+    667,
+    375
+  ],
+  &quot;windowBounds&quot;: [
+    0,
+    0,
+    667,
+    375
+  ]
+}</pre><div class="scroll"><img src="exports/B64012DC-382B-4EC7-9EFF-0A423A12CAF2.png" width="667" height="375" style="--w:667px;--h:375px" alt="upgrade-se-large"></div></section>
+<section><h2>upgrade-se-ax3</h2><pre>{
+  &quot;captureMapping&quot;: &quot;drawHierarchy at host bounds into requested-size canvas, clipped if larger, no resize&quot;,
+  &quot;dynamicType&quot;: &quot;accessibility3&quot;,
+  &quot;hostViewBounds&quot;: [
+    0,
+    0,
+    667,
+    375
+  ],
+  &quot;kind&quot;: &quot;hosted-production-UpgradeSelectionView&quot;,
+  &quot;logicalSize&quot;: [
+    667,
+    375
+  ],
+  &quot;logicalSizeRole&quot;: &quot;requested-output-canvas-not-host&quot;,
+  &quot;observedInsetsTLBR&quot;: [
+    0,
+    0,
+    0,
+    0
+  ],
+  &quot;pixels&quot;: [
+    667,
+    375
+  ],
+  &quot;requestedSize&quot;: [
+    667,
+    375
+  ],
+  &quot;windowBounds&quot;: [
+    0,
+    0,
+    667,
+    375
+  ]
+}</pre><div class="scroll"><img src="exports/95CB8213-FA8F-4FD4-9532-AD73BC9E0E36.png" width="667" height="375" style="--w:667px;--h:375px" alt="upgrade-se-ax3"></div></section>
+<section><h2>upgrade-reference-large</h2><pre>{
+  &quot;captureMapping&quot;: &quot;drawHierarchy at host bounds into requested-size canvas, clipped if larger, no resize&quot;,
+  &quot;dynamicType&quot;: &quot;large&quot;,
+  &quot;hostViewBounds&quot;: [
+    0,
+    0,
+    844,
+    390
+  ],
+  &quot;kind&quot;: &quot;hosted-production-UpgradeSelectionView&quot;,
+  &quot;logicalSize&quot;: [
+    844,
+    390
+  ],
+  &quot;logicalSizeRole&quot;: &quot;requested-output-canvas-not-host&quot;,
+  &quot;observedInsetsTLBR&quot;: [
+    0,
+    0,
+    0,
+    0
+  ],
+  &quot;pixels&quot;: [
+    844,
+    390
+  ],
+  &quot;requestedSize&quot;: [
+    844,
+    390
+  ],
+  &quot;windowBounds&quot;: [
+    0,
+    0,
+    844,
+    390
+  ]
+}</pre><div class="scroll"><img src="exports/CB914D5E-DA33-469F-990F-C02E7BB8A78B.png" width="844" height="390" style="--w:844px;--h:390px" alt="upgrade-reference-large"></div></section>
+<section><h2>upgrade-reference-ax3</h2><pre>{
+  &quot;captureMapping&quot;: &quot;drawHierarchy at host bounds into requested-size canvas, clipped if larger, no resize&quot;,
+  &quot;dynamicType&quot;: &quot;accessibility3&quot;,
+  &quot;hostViewBounds&quot;: [
+    0,
+    0,
+    844,
+    390
+  ],
+  &quot;kind&quot;: &quot;hosted-production-UpgradeSelectionView&quot;,
+  &quot;logicalSize&quot;: [
+    844,
+    390
+  ],
+  &quot;logicalSizeRole&quot;: &quot;requested-output-canvas-not-host&quot;,
+  &quot;observedInsetsTLBR&quot;: [
+    0,
+    0,
+    0,
+    0
+  ],
+  &quot;pixels&quot;: [
+    844,
+    390
+  ],
+  &quot;requestedSize&quot;: [
+    844,
+    390
+  ],
+  &quot;windowBounds&quot;: [
+    0,
+    0,
+    844,
+    390
+  ]
+}</pre><div class="scroll"><img src="exports/1C819704-DC02-43D4-9665-8D3CF57F9129.png" width="844" height="390" style="--w:844px;--h:390px" alt="upgrade-reference-ax3"></div></section>

@@ -1,0 +1,18 @@
+{
+  "observedAtUTC": "2026-11-16T10:37:32Z",
+  "result": "1040 failed before capture, stale installed test bundle confirmed",
+  "issue": 241,
+  "actualLoadedBundlePath": "data/Library/Caches/com.apple.containermanagerd/Dead/temp.KOqI9j/25FF58AB-5F2C-4BC8-BB69-75F2D43E5838/SSRuntime.app/PlugIns/SSRuntimeTests.xctest/",
+  "actualLoadedExecutableSHA256": "194909226444a609ee84c761cba8148b2ebf03e69f90068c3e312664ac96d7d9",
+  "actualLoadedVersionIdentifiedByPriorCapture": "source-scene-continuation-002-three-zooms",
+  "freshBuiltExecutableSHA256": "f61ad09650b403b926caf38937f925cb773107a7f8d8baece3f2e1c8e39b4af2",
+  "currentSourceAndPreparedSourceSHA256": "4d3d75665af922014f6643a5b5d8f9f676f303043fc85fae1a5aefbbec2a6854",
+  "method": "xcresult export diagnostics, actual Session Loading test bundle at line, direct shasum of that still-existing retired executable and fresh build product",
+  "passedTests": 0,
+  "failedTests": 1,
+  "skippedTests": 0,
+  "retry": "unchanged v4 sources and inputs, one non-erasing restart of dedicated simulator, fresh xcresult1041",
+  "underlyingPathRetentionMechanism": "UNPROVEN",
+  "originalRawDiagnosticsRetainedLocally": "ss-source-scene-1040-diagnostics",
+  "note": "Public packet retains only task-specific actual loading-path excerpt, not unrelated simulator diagnostics. Final capture directory1040 names the v4 review iteration; its verification must name the actual successful xcresult, never the failed1040 result."
+}

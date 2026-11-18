@@ -1,0 +1,67 @@
+[0/1] Planning build
+Building for debugging...
+[0/5] Write sources
+[2/5] Write swift-version--58304C5D6DBC2206.txt
+[4/7] Compiling SurveillanceCore PresentationSnapshot.swift
+[5/7] Emitting module SurveillanceCore
+[6/9] Emitting module SurveillanceCoreTests
+[7/9] Compiling SurveillanceCoreTests PresentationSocketOrderingTests.swift
+[7/9] Write Objects.LinkFileList
+[8/9] Linking SSRuntimePackageTests
+Build complete! (27.21s)
+Test Suite 'Selected tests' started at 2026-11-18 14:05:38.612.
+Test Suite 'SSRuntimePackageTests.xctest' started at 2026-11-18 14:05:38.622.
+Test Suite 'SSRuntimePackageTests.xctest' passed at 2026-11-18 14:05:38.624.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds
+Test Suite 'Selected tests' passed at 2026-11-18 14:05:38.625.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.013) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite PresentationSocketOrderingTests started.
+◇ Suite GateVerificationTests started.
+◇ Suite AcceptedGateCensusTests started.
+◇ Test utf8KeyOrderAndAuthoredArrayOrderAreIndependent() started.
+◇ Test insertionHistoriesHaveIdenticalFullSnapshotsAndDigests() started.
+◇ Test independentSessionsProduceEqualFullSnapshots() started.
+◇ Test canonicalEncounterOrderPreservesAuthoredSocketsAndSuffix() started.
+◇ Suite SHA256ParityTests started.
+◇ Test eachPreviouslyOmittedGateBlocksExpansionWhenMissing() started.
+◇ Test completeSyntheticCensusIsOnlyAnEvaluatorUnitTest() started.
+◇ Test registryExactlyMatchesAcceptedCensusWithoutDuplicates() started.
+◇ Test eachPreviouslyOmittedGateFailsExpansionWhenFailed() started.
+◇ Test gateT902RegistryCoversPhaseNineAutomatedGates() started.
+◇ Test stringOverloadPreservesUTF8AndLowercaseHex() started.
+◇ Test publishedVectorsMatchBothImplementations() started.
+◇ Test paddingBoundariesAndBinaryInputsPreserveExactBytes() started.
+✔ Test gateT902RegistryCoversPhaseNineAutomatedGates() passed after 0.007 seconds.
+✔ Test registryExactlyMatchesAcceptedCensusWithoutDuplicates() passed after 0.007 seconds.
+✔ Test eachPreviouslyOmittedGateFailsExpansionWhenFailed() passed after 0.007 seconds.
+✔ Test eachPreviouslyOmittedGateBlocksExpansionWhenMissing() passed after 0.007 seconds.
+◇ Test gateT902AllGateFamiliesEnumerated() started.
+✔ Test gateT902AllGateFamiliesEnumerated() passed after 0.001 seconds.
+◇ Test gateT902DeviceGatesRequirePhysicalEvidence() started.
+✔ Test gateT902DeviceGatesRequirePhysicalEvidence() passed after 0.001 seconds.
+◇ Test gateT902PlaytestGatesMapToT903T904() started.
+✔ Test gateT902PlaytestGatesMapToT903T904() passed after 0.001 seconds.
+◇ Test gateT902UnmappedGatesTrackedForT907() started.
+✔ Test gateT902UnmappedGatesTrackedForT907() passed after 0.007 seconds.
+◇ Test gateC009TenConsecutiveCompleteRunsPass() started.
+✔ Test stringOverloadPreservesUTF8AndLowercaseHex() passed after 0.016 seconds.
+✔ Test completeSyntheticCensusIsOnlyAnEvaluatorUnitTest() passed after 0.025 seconds.
+✔ Suite AcceptedGateCensusTests passed after 0.026 seconds.
+✔ Test utf8KeyOrderAndAuthoredArrayOrderAreIndependent() passed after 0.055 seconds.
+✔ Test canonicalEncounterOrderPreservesAuthoredSocketsAndSuffix() passed after 0.063 seconds.
+✔ Test insertionHistoriesHaveIdenticalFullSnapshotsAndDigests() passed after 0.103 seconds.
+✔ Test independentSessionsProduceEqualFullSnapshots() passed after 0.141 seconds.
+✔ Suite PresentationSocketOrderingTests passed after 0.141 seconds.
+✔ Test paddingBoundariesAndBinaryInputsPreserveExactBytes() passed after 0.432 seconds.
+✔ Test publishedVectorsMatchBothImplementations() passed after 3.153 seconds.
+✔ Suite SHA256ParityTests passed after 3.154 seconds.
+✔ Test gateC009TenConsecutiveCompleteRunsPass() passed after 20.140 seconds.
+◇ Test gateB003RestartRestoresInitialAuthoritativeState() started.
+✔ Test gateB003RestartRestoresInitialAuthoritativeState() passed after 0.009 seconds.
+◇ Test gateF017ReceiptCanonicalRoundTrip() started.
+✔ Test gateF017ReceiptCanonicalRoundTrip() passed after 0.598 seconds.
+✔ Suite GateVerificationTests passed after 20.765 seconds.
+✔ Test run with 19 tests in 4 suites passed after 20.766 seconds.

@@ -1,0 +1,120 @@
+⬆ trail 0.29.0 → 0.30.5 available: run `trail upgrade` (restart your agent after).
+checking 26 changed files against 10 learnings and 0 skills
+
+✗ docs/handoff/NEXT.md:5
+  brings back actual sha256 censu, which Daniel's learning ruled out
+  Daniel · Nov 17: The actual Swift producer emits
+  supplementalManifestSHA256 and leaves the ordinary source census
+  unchanged, with supplementary geometry and images bound through
+  assembly.supplementalBinding and assembly.supplements.
+● docs/handoff/BOARD-20261118.md:3
+  brings back runtime live head, which Daniel's learning ruled out
+  worth a look, can't fail the check: not on the base branch yet
+  Daniel · Nov 18: Running the frozen V9 no-runtime-change audit against
+  the later live-projection head fails honestly on
+  App/GameScene.swift.
+● docs/handoff/BOARD-20261118.md:7
+  brings back repair exact head, which Jcode's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Jcode · Nov 16: The repair retained escape rejection and passed the
+  exact repair-head spec-parity job.
+● docs/review/preservation-scope-20261118/IMPLEMENTATION.md:3
+  brings back frozen audit later, which Daniel's learning ruled out
+  worth a look, can't fail the check: not on the base branch yet
+  Daniel · Nov 18: Running the frozen V9 no-runtime-change audit against
+  the later live-projection head fails honestly on
+  App/GameScene.swift.
+● docs/review/preservation-scope-20261118/IMPLEMENTATION.md:3
+  brings back index app test, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16: Unwrapped frameIndex in
+  AppTests/PlayerGroundContactNativeTests.swift froze900 of1200
+  fixed-time records in the first native run.
+● docs/review/preservation-scope-20261118/IMPLEMENTATION.md:3
+  brings back scene coverage source, which Jcode's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Jcode · Nov 16: A whole-scene coverage row referenced an unpublished
+  enemy-source directory and failed clean CI (#242).
+● docs/review/preservation-scope-20261118/IMPLEMENTATION.md:3
+  brings back doc review build, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16:
+  docs/review/building-perspective-detail-20261116/scene/native.py
+  validates registered corners, including a virtual omitted kiosk
+  chamfer corner.
+● docs/review/preservation-scope-20261118/IMPLEMENTATION.md:7
+  brings back exact regression protect, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16: Three exact-storage/sourceguard regressions protect
+  the narrow correction.
+● docs/review/preservation-scope-20261118/IMPLEMENTATION.md:7
+  brings back test passed app, which Jcode's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Jcode · Nov 16: Upgrade interaction tests passed while
+  app.screenshot() produced cropped/misoriented landscape screenshots.
+● docs/review/preservation-scope-20261118/IMPLEMENTATION.md:7
+  brings back every even explicitly, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 17: Recomputing every face normal from winding also
+  culled context roof faces even though context geometry explicitly
+  declares upward normals.
+● docs/review/preservation-scope-20261118/IMPLEMENTATION.md:10
+  brings back gallery record source, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 17: The V9 gallery expected record.supplementalSource and
+  invented extra ordinary source roles in its synthetic fixture.
+● docs/review/preservation-scope-20261118/README.md:5
+  brings back frozen runtime audit, which Daniel's learning ruled out
+  worth a look, can't fail the check: not on the base branch yet
+  Daniel · Nov 18: Running the frozen V9 no-runtime-change audit against
+  the later live-projection head fails honestly on
+  App/GameScene.swift.
+● docs/review/preservation-scope-20261118/README.md:5
+  brings back capture without production, which Jcode's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Jcode · Nov 16: XCUIScreen.main.screenshot() corrected capture without
+  changing production UI or interaction assertions.
+● docs/review/preservation-scope-20261118/README.md:5
+  brings back review scene native, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16:
+  docs/review/building-perspective-detail-20261116/scene/native.py
+  validates registered corners, including a virtual omitted kiosk
+  chamfer corner.
+● docs/review/preservation-scope-20261118/README.md:19
+  brings back every geometry explicitly, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 17: Recomputing every face normal from winding also
+  culled context roof faces even though context geometry explicitly
+  declares upward normals.
+● docs/review/preservation-scope-20261118/TRAIL-CHECK.md:3
+  brings back gallery record supplemental, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 17: The V9 gallery expected record.supplementalSource and
+  invented extra ordinary source roles in its synthetic fixture.
+● docs/review/preservation-scope-20261118/TRAIL-CHECK.md:5
+  brings back runn app swift, which Daniel's learning ruled out
+  worth a look, can't fail the check: not on the base branch yet
+  Daniel · Nov 18: Running the frozen V9 no-runtime-change audit against
+  the later live-projection head fails honestly on
+  App/GameScene.swift.
+● docs/review/preservation-scope-20261118/TRAIL-CHECK.md:5
+  brings back app test native, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16: Unwrapped frameIndex in
+  AppTests/PlayerGroundContactNativeTests.swift froze900 of1200
+  fixed-time records in the first native run.
+● docs/review/preservation-scope-20261118/VALIDATION.md:5
+  brings back runn frozen runtime, which Daniel's learning ruled out
+  worth a look, can't fail the check: not on the base branch yet
+  Daniel · Nov 18: Running the frozen V9 no-runtime-change audit against
+  the later live-projection head fails honestly on
+  App/GameScene.swift.
+● docs/review/preservation-scope-20261118/VALIDATION.md:5
+  brings back index apptest app, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16: Unwrapped frameIndex in
+  AppTests/PlayerGroundContactNativeTests.swift froze900 of1200
+  fixed-time records in the first native run.
+
+· 1 conflict · fix it, or say why in the commit message or PR description

@@ -1,0 +1,1809 @@
+spec-parity	UNKNOWN STEP	﻿2026-11-17T05:29:35.6421610Z Current runner version: '2.338.2'
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6450140Z ##[group]Runner Image Provisioner
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6452780Z Hosted Compute Agent
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6453800Z Version: 20261103.629
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6455090Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6456640Z Build Date: 2026-11-03T17:26:59Z
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6457920Z Worker ID: {ca186778-155c-4813-bffc-a0a55b85a76c}
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6459220Z Region: westus
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6460450Z Cloud: MacCloud
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6461610Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6464580Z ##[group]Operating System
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6465740Z macOS
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6474250Z 15.8.2
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6475130Z 24H232
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6475540Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6476050Z ##[group]Runner Image
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6477080Z Image: macos-15-arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6477490Z Version: 20261104.0514.1
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6478460Z Included Software: https://github.com/actions/runner-images/blob/macos-15-arm64/20261104.0514/images/macos/macos-15-arm64-Readme.md
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6479590Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-15-arm64%2F20261104.0514
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6480340Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6481310Z ##[group]GITHUB_TOKEN Permissions
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6483870Z Contents: read
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6484290Z Metadata: read
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6484760Z Packages: read
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6485270Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6487710Z Secret source: Actions
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6488450Z Cache mode: write
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6489040Z Prepare workflow directory
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6868810Z Prepare all required actions
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.6909880Z Getting action download info
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:35.8455760Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.1297160Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.3339880Z Complete job name: spec-parity
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.4063230Z ##[group]Run actions/checkout@v4
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.4063800Z with:
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.4064140Z   repository: Zero-State-LLC/SS-runtime
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.4066780Z   token: ***
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.4067080Z   ssh-strict: true
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.4067400Z   ssh-user: git
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.4067720Z   persist-credentials: true
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.4068060Z   clean: true
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.4068390Z   sparse-checkout-cone-mode: true
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.4068770Z   fetch-depth: 1
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.4069080Z   fetch-tags: false
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.4069400Z   show-progress: true
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.4069720Z   lfs: false
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.4070020Z   submodules: false
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.4070340Z   set-safe-directory: true
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.4070710Z   allow-unsafe-pr-checkout: false
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.4071260Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.9358670Z Syncing repository: Zero-State-LLC/SS-runtime
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.9361360Z ##[group]Getting Git version info
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.9362110Z Working directory is '/Users/runner/work/SS-runtime/SS-runtime'
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.9362870Z [command]/opt/homebrew/bin/git version
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.9708330Z git version 2.56.0
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.9740590Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.9755240Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/bb638292-d342-4a59-92a7-c9135d72f405/.gitconfig'
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.9763020Z Temporarily overriding HOME='/Users/runner/work/_temp/bb638292-d342-4a59-92a7-c9135d72f405' before making global git config changes
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.9765900Z Adding repository directory to the temporary git global config as a safe directory
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.9768310Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/SS-runtime/SS-runtime
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.9900330Z Deleting the contents of '/Users/runner/work/SS-runtime/SS-runtime'
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.9906460Z ##[group]Initializing the repository
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:36.9910630Z [command]/opt/homebrew/bin/git init /Users/runner/work/SS-runtime/SS-runtime
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0299440Z hint: Using 'master' as the name for the initial branch. This default branch name
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0302360Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0304400Z hint: to use in all of your new repositories, which will suppress this warning,
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0306400Z hint: call:
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0307120Z hint:
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0307600Z hint: 	git config --global init.defaultBranch <name>
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0308070Z hint:
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0308530Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0309470Z hint: 'development'. The just-created branch can be renamed via this command:
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0310190Z hint:
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0310540Z hint: 	git branch -m <name>
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0310930Z hint:
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0311420Z hint: Disable this message with "git config set advice.defaultBranchName false"
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0323420Z Initialized empty Git repository in /Users/runner/work/SS-runtime/SS-runtime/.git/
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0339180Z [command]/opt/homebrew/bin/git remote add origin https://github.com/Zero-State-LLC/SS-runtime
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0496030Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0497700Z ##[group]Disabling automatic garbage collection
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0500130Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0604670Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0605270Z ##[group]Setting up auth
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0609760Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.0678300Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.2507840Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.2632800Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.4065340Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.4200390Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.5419640Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.5468250Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.5469000Z ##[group]Fetching the repository
+spec-parity	UNKNOWN STEP	2026-11-17T05:29:37.5471110Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f6cd79f7d9eb5b50e0377db64a171c0360ae2f84:refs/remotes/pull/236/merge
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:44.0326000Z From https://github.com/Zero-State-LLC/SS-runtime
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:44.0330120Z  * [new ref]         f6cd79f7d9eb5b50e0377db64a171c0360ae2f84 -> pull/236/merge
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:44.0378120Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:44.0379600Z ##[group]Determining the checkout info
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:44.0432300Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:44.0494410Z [command]/opt/homebrew/bin/git sparse-checkout disable
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:44.0638220Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:44.0730180Z ##[group]Checking out the ref
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:44.0732200Z [command]/opt/homebrew/bin/git checkout --progress --force refs/remotes/pull/236/merge
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:45.2008850Z Updating files:  11% (1540/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:45.3014820Z Updating files:  12% (1618/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:45.4172080Z Updating files:  13% (1753/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:45.5138310Z Updating files:  14% (1888/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:45.5872890Z Updating files:  15% (2023/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:45.7444380Z Updating files:  16% (2158/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:45.7937180Z Updating files:  17% (2292/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:46.1447660Z Updating files:  18% (2427/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:46.1992240Z Updating files:  18% (2555/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:46.6001850Z Updating files:  19% (2562/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:47.1194320Z Updating files:  20% (2697/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:47.1610690Z Updating files:  20% (2771/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:47.4220560Z Updating files:  21% (2832/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:47.7757190Z Updating files:  22% (2967/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:48.1173390Z Updating files:  23% (3101/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:49.1224680Z Updating files:  23% (3126/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:49.8819340Z Updating files:  23% (3166/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:50.1123970Z Updating files:  24% (3236/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:50.1718010Z Updating files:  24% (3334/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:50.9402450Z Updating files:  25% (3371/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:51.1149520Z Updating files:  26% (3506/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:51.2566960Z Updating files:  26% (3587/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:51.3788680Z Updating files:  27% (3641/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:51.5071410Z Updating files:  28% (3775/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:51.5363990Z Updating files:  29% (3910/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:51.5537570Z Updating files:  30% (4045/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:51.6882830Z Updating files:  31% (4180/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:51.7588320Z Updating files:  32% (4315/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:51.7799150Z Updating files:  33% (4450/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:51.9661340Z Updating files:  34% (4584/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:52.1194850Z Updating files:  35% (4719/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:52.5800450Z Updating files:  35% (4724/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:53.0434860Z Updating files:  36% (4854/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:53.1091600Z Updating files:  37% (4989/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:53.2688060Z Updating files:  37% (5046/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:53.5872280Z Updating files:  38% (5124/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:54.1255670Z Updating files:  39% (5258/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:54.3235680Z Updating files:  39% (5347/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:55.0265200Z Updating files:  40% (5393/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:55.1149490Z Updating files:  41% (5528/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:55.7407770Z Updating files:  41% (5563/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:55.9928510Z Updating files:  42% (5663/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:56.0220190Z Updating files:  43% (5798/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:56.0539990Z Updating files:  44% (5933/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:56.1598490Z Updating files:  45% (6067/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:56.1881000Z Updating files:  45% (6147/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:56.2419540Z Updating files:  46% (6202/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:56.2592070Z Updating files:  47% (6337/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:56.2791830Z Updating files:  48% (6472/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:56.2958800Z Updating files:  49% (6607/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:56.3137650Z Updating files:  50% (6741/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:56.3307170Z Updating files:  51% (6876/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:56.3560820Z Updating files:  52% (7011/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:56.5187780Z Updating files:  53% (7146/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:57.1123950Z Updating files:  54% (7281/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:57.1163930Z Updating files:  54% (7413/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:57.2664000Z Updating files:  55% (7416/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:57.3780880Z Updating files:  56% (7550/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:57.5164440Z Updating files:  57% (7685/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:57.5704870Z Updating files:  58% (7820/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:57.6828200Z Updating files:  59% (7955/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:57.7804130Z Updating files:  60% (8090/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:58.0311280Z Updating files:  61% (8225/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:58.1113790Z Updating files:  62% (8359/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:58.1678300Z Updating files:  62% (8415/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:58.2557930Z Updating files:  63% (8494/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:58.3246890Z Updating files:  64% (8629/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:58.4242040Z Updating files:  65% (8764/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:58.5438620Z Updating files:  66% (8899/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:58.6156770Z Updating files:  67% (9033/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:58.6851150Z Updating files:  68% (9168/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:58.7466980Z Updating files:  69% (9303/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:58.8383750Z Updating files:  70% (9438/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:58.9494540Z Updating files:  71% (9573/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:59.0679500Z Updating files:  72% (9708/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:59.1120210Z Updating files:  73% (9842/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:59.1716960Z Updating files:  73% (9889/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:59.2445230Z Updating files:  74% (9977/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:59.3372910Z Updating files:  75% (10112/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:59.6240270Z Updating files:  76% (10247/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:31:59.9293400Z Updating files:  77% (10382/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:00.1123040Z Updating files:  78% (10516/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:00.1871270Z Updating files:  78% (10613/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:00.3954940Z Updating files:  79% (10651/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:00.5505320Z Updating files:  80% (10786/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:00.6637890Z Updating files:  81% (10921/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:00.8106160Z Updating files:  82% (11056/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:01.0241090Z Updating files:  83% (11191/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:01.1132080Z Updating files:  84% (11325/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:01.1896550Z Updating files:  84% (11404/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:01.3697860Z Updating files:  85% (11460/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:01.4646250Z Updating files:  86% (11595/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:01.6039540Z Updating files:  87% (11730/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:01.6796210Z Updating files:  88% (11865/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:01.7557480Z Updating files:  89% (11999/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:01.8433980Z Updating files:  90% (12134/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:02.0645450Z Updating files:  91% (12269/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:02.1279770Z Updating files:  92% (12404/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:02.6958580Z Updating files:  92% (12411/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:03.1169720Z Updating files:  93% (12539/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:03.4698200Z Updating files:  93% (12586/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:04.1797130Z Updating files:  94% (12674/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:04.2189100Z Updating files:  94% (12774/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:04.4428900Z Updating files:  95% (12808/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:04.6401760Z Updating files:  96% (12943/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:04.7173950Z Updating files:  97% (13078/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:05.1236400Z Updating files:  98% (13213/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:06.1269300Z Updating files:  98% (13292/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:06.4196660Z Updating files:  98% (13330/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:06.9397010Z Updating files:  99% (13348/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:06.9401520Z Updating files: 100% (13482/13482)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:06.9402630Z Updating files: 100% (13482/13482), done.
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:06.9690250Z HEAD is now at f6cd79f Merge 0c20990c8a6334b6c93d42db0336fc4cf2ab62f9 into df8473713a3d37aeca05d4e1110f979f197b9ceb
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:06.9817370Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:07.0354430Z [command]/opt/homebrew/bin/git log -1 --format=%H
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:07.0611130Z f6cd79f7d9eb5b50e0377db64a171c0360ae2f84
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:07.1877770Z ##[group]Run grep -q "b1ed874e1e8eb0e61b2174b9093201e9a61e1a4b" SPEC_BASELINE.md
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:07.1879530Z ^[[36;1mgrep -q "b1ed874e1e8eb0e61b2174b9093201e9a61e1a4b" SPEC_BASELINE.md^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:07.2284360Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:07.2284750Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:07.6716960Z ##[group]Run python3 -B scripts/test_runtime_audit_guards.py
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:07.6718830Z ^[[36;1mpython3 -B scripts/test_runtime_audit_guards.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:07.6789590Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:07.6789950Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.1949250Z .....
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.1964490Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.2352970Z Ran 5 tests in 0.013s
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.2452880Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.2629260Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.3041920Z ##[group]Run actions/setup-python@v5
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.3042150Z with:
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.3042330Z   python-version: 3.12
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.3042550Z   check-latest: false
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.3044450Z   token: ***
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.3044610Z   update-environment: true
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.3051050Z   allow-prereleases: false
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.3051260Z   freethreaded: false
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.3051430Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.5541400Z ##[group]Installed versions
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.5649130Z (node:4278) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.5651250Z (Use `node --trace-deprecation ...` to show where the warning was created)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.5652180Z Successfully set up CPython (3.12.10)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.5655210Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.5824450Z ##[group]Run python3 -m pip install numpy==2.4.6 Pillow==12.3.0 scipy==1.17.1
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.5824920Z ^[[36;1mpython3 -m pip install numpy==2.4.6 Pillow==12.3.0 scipy==1.17.1^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.5951210Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.5951410Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.5951660Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.5952090Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.5952540Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.5952920Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.5953260Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:08.5953530Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:10.8208320Z Collecting numpy==2.4.6
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:10.8878850Z   Downloading numpy-2.4.6-cp312-cp312-macosx_14_0_arm64.whl.metadata (6.6 kB)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:11.0402570Z Collecting Pillow==12.3.0
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:11.0544980Z   Downloading pillow-12.3.0-cp312-cp312-macosx_11_0_arm64.whl.metadata (9.1 kB)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:11.1919930Z Collecting scipy==1.17.1
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:11.2053160Z   Downloading scipy-1.17.1-cp312-cp312-macosx_14_0_arm64.whl.metadata (62 kB)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:11.2597150Z Downloading numpy-2.4.6-cp312-cp312-macosx_14_0_arm64.whl (5.2 MB)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:11.3319400Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 86.3 MB/s  0:00:00
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:11.3446470Z Downloading pillow-12.3.0-cp312-cp312-macosx_11_0_arm64.whl (4.8 MB)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:11.4022480Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 84.7 MB/s  0:00:00
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:11.4145900Z Downloading scipy-1.17.1-cp312-cp312-macosx_14_0_arm64.whl (20.3 MB)
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:11.6149110Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 20.3/20.3 MB 103.0 MB/s  0:00:00
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:11.7486420Z Installing collected packages: Pillow, numpy, scipy
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:17.9477190Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:17.9505490Z Successfully installed Pillow-12.3.0 numpy-2.4.6 scipy-1.17.1
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.0631370Z ##[group]Run python3 -B docs/review/player-all-release-source-20261116/test_source.py --source-root docs/review/player-all-release-source-20261116/fixtures
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.0632590Z ^[[36;1mpython3 -B docs/review/player-all-release-source-20261116/test_source.py --source-root docs/review/player-all-release-source-20261116/fixtures^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.0683820Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.0684120Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.0684530Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.0685020Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.0685540Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.0686030Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.0686490Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.0686810Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.5066320Z test_actual_support_selection_not_half_cycle (__main__.SourceTests.test_actual_support_selection_not_half_cycle) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.5366490Z test_all_fourteen_geometry_and_contact_paths (__main__.SourceTests.test_all_fourteen_geometry_and_contact_paths) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.5469680Z test_ambiguous_airborne_rejected (__main__.SourceTests.test_ambiguous_airborne_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.5572560Z test_assembly_recipe_drift_rejected (__main__.SourceTests.test_assembly_recipe_drift_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.5607820Z test_bad_limb_rejected (__main__.SourceTests.test_bad_limb_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.5611420Z test_checkpoint_sample_change_rejected_before_reuse (__main__.SourceTests.test_checkpoint_sample_change_rejected_before_reuse) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.5618320Z test_contact_schedule_rejected (__main__.SourceTests.test_contact_schedule_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.5855730Z test_endpoint_pixel_mutation_rejected (__main__.SourceTests.test_endpoint_pixel_mutation_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6083670Z test_entry_geometry_exact (__main__.SourceTests.test_entry_geometry_exact) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6155040Z test_exact_timing_neutral_boundary_not_total_duration (__main__.SourceTests.test_exact_timing_neutral_boundary_not_total_duration) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6597700Z test_export_timeline_exact_order_and_holds (__main__.SourceTests.test_export_timeline_exact_order_and_holds) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6733640Z test_generator_leaves_inputs_unchanged (__main__.SourceTests.test_generator_leaves_inputs_unchanged) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6740340Z test_ground_penetration_rejected (__main__.SourceTests.test_ground_penetration_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6751620Z test_incomplete_checkpoint_never_reused (__main__.SourceTests.test_incomplete_checkpoint_never_reused) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6845710Z test_independent_segment_and_knee_measurements (__main__.SourceTests.test_independent_segment_and_knee_measurements) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6852020Z test_knee_above_hip_rejected_even_with_exact_lengths (__main__.SourceTests.test_knee_above_hip_rejected_even_with_exact_lengths) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6865150Z test_neutral_geometry_mutation_rejected (__main__.SourceTests.test_neutral_geometry_mutation_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6872960Z test_nonfinite_geometry_rejected (__main__.SourceTests.test_nonfinite_geometry_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6874960Z test_planted_metadata_precedes_height_tie (__main__.SourceTests.test_planted_metadata_precedes_height_tie) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6909650Z test_preserved_extremes_validate_without_rewriting (__main__.SourceTests.test_preserved_extremes_validate_without_rewriting) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6910910Z test_reach_boundaries_fail_closed (__main__.SourceTests.test_reach_boundaries_fail_closed) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6922010Z test_sample_order_rejected (__main__.SourceTests.test_sample_order_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6935970Z test_side_identity_not_array_zip (__main__.SourceTests.test_side_identity_not_array_zip) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6938860Z test_source_output_overlap_rejected_before_write (__main__.SourceTests.test_source_output_overlap_rejected_before_write) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6957700Z test_toe_contact_drift_rejected_with_lengths_preserved (__main__.SourceTests.test_toe_contact_drift_rejected_with_lengths_preserved) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6975500Z test_world_contact_drift_rejected (__main__.SourceTests.test_world_contact_drift_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6976240Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6976750Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6977280Z Ran 26 tests in 0.196s
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6983980Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.6984340Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.7200630Z ##[group]Run python3 -B docs/review/player-all-release-source-20261116/test_artifact_verifier.py
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.7201330Z ^[[36;1mpython3 -B docs/review/player-all-release-source-20261116/test_artifact_verifier.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.7201830Z ^[[36;1mnode docs/review/player-all-release-source-20261116/test_readiness.js^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.7252040Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.7252250Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.7252570Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.7272380Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.7273920Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.7274430Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.7274840Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:18.7275270Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:19.3748440Z test_acceptance_lift_rejected (__main__.ArtifactVerifierTests.test_acceptance_lift_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:20.3574130Z test_complete_portable_artifacts (__main__.ArtifactVerifierTests.test_complete_portable_artifacts) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:20.5327100Z test_extra_frame_rejected (__main__.ArtifactVerifierTests.test_extra_frame_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:20.6840840Z test_file_hash_mutation_rejected (__main__.ArtifactVerifierTests.test_file_hash_mutation_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:20.9534370Z test_fixture_hash_mutation_rejected (__main__.ArtifactVerifierTests.test_fixture_hash_mutation_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:21.0955010Z test_frame_reorder_rejected (__main__.ArtifactVerifierTests.test_frame_reorder_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:21.2621310Z test_missing_frame_rejected (__main__.ArtifactVerifierTests.test_missing_frame_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:22.6242010Z test_native_changed_bytes_fail (__main__.ArtifactVerifierTests.test_native_changed_bytes_fail) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:23.8277210Z test_native_complete_exact (__main__.ArtifactVerifierTests.test_native_complete_exact) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:25.1041470Z test_native_endpoint_metadata_allowed_when_pixels_exact (__main__.ArtifactVerifierTests.test_native_endpoint_metadata_allowed_when_pixels_exact) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:26.3324970Z test_native_endpoint_pixels_fail (__main__.ArtifactVerifierTests.test_native_endpoint_pixels_fail) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:27.6584360Z test_native_extra_intermediate_fails (__main__.ArtifactVerifierTests.test_native_extra_intermediate_fails) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:28.7282120Z test_native_missing_directory_fails_not_skips (__main__.ArtifactVerifierTests.test_native_missing_directory_fails_not_skips) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:29.8224570Z test_native_missing_intermediate_fails (__main__.ArtifactVerifierTests.test_native_missing_intermediate_fails) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:29.9797710Z test_noncanonical_frame_path_rejected (__main__.ArtifactVerifierTests.test_noncanonical_frame_path_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:30.2857600Z test_original_endpoint_provenance_rejected (__main__.ArtifactVerifierTests.test_original_endpoint_provenance_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:30.4164630Z test_phase_reorder_rejected (__main__.ArtifactVerifierTests.test_phase_reorder_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:30.7712120Z test_preserved_frame_provenance_rejected (__main__.ArtifactVerifierTests.test_preserved_frame_provenance_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:30.9908000Z test_rgba_mutation_even_with_updated_file_hash_rejected (__main__.ArtifactVerifierTests.test_rgba_mutation_even_with_updated_file_hash_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.1588620Z test_timing_mutation_rejected (__main__.ArtifactVerifierTests.test_timing_mutation_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.1595220Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.1608980Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.1656330Z Ran 20 tests in 12.273s
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.1656700Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.1658360Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.5958100Z PASS normal-speed.html cached
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.5984730Z PASS normal-speed.html delayed
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.6028260Z PASS normal-speed.html cached-broken
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.6057510Z PASS normal-speed.html load-error
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.6088670Z PASS quarter-speed.html cached
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.6115270Z PASS quarter-speed.html delayed
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.6151330Z PASS quarter-speed.html cached-broken
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.6171910Z PASS quarter-speed.html load-error
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.6172430Z 8 readiness regressions passed, no skips
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.6341860Z ##[group]Run python3 -B docs/review/player-all-release-source-20261116/verify_artifacts.py --native-assets AppTests/BenchmarkAssets
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.6353290Z ^[[36;1mpython3 -B docs/review/player-all-release-source-20261116/verify_artifacts.py --native-assets AppTests/BenchmarkAssets^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.6458250Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.6458530Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.6458890Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.6459360Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.6459930Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.6460410Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.6460850Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:31.6461260Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7970130Z {
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7972010Z   "status": "PASS_REMAINS_PROPOSED",
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7972810Z   "orderedFrames": 272,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7973660Z   "sourceSamples": 272,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7974510Z   "endpointProvenanceChecks": 32,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7975410Z   "archivedInputHashRecords": 1012,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7976090Z   "fixtureHashes": 5,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7976920Z   "preservedFrameHashes": 34,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7977790Z   "neutralBoundarySeconds": 0.375,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7978540Z   "originalMastersReopened": false,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7979330Z   "nativeAssets": {
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7979950Z     "exactIntermediateFiles": 210,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7980770Z     "exactEndpointRGBAComparisons": 28,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7981440Z     "phases": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7982090Z       1,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7982610Z       2,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7983180Z       3,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7983680Z       4,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7984300Z       6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7984770Z       7,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7985380Z       8,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7986010Z       9,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7986570Z       10,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7987260Z       11,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7987770Z       12,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7988410Z       14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7988920Z       15,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7989490Z       16
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7989940Z     ]
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7990530Z   }
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.7990990Z }
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.8171240Z ##[group]Run python3 -B scripts/test_allrelease_native.py
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.8171630Z ^[[36;1mpython3 -B scripts/test_allrelease_native.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.8206740Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.8206990Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.8207370Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.8207850Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.8208310Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.8208740Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.8209090Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:32.8209370Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.0444190Z ...........
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.0444950Z {"status": "STATIC_NATIVE_SOURCE_CHECK_NOT_ADMISSION", "verifiedPoses": 238, "verifiedSources": 227}
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.0445920Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.0446370Z Ran 11 tests in 0.041s
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.0446550Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.0446700Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.0624780Z ##[group]Run python3 -B scripts/import_allrelease_native.py --verify docs/review/player-all-release-native-20261116
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.0625490Z ^[[36;1mpython3 -B scripts/import_allrelease_native.py --verify docs/review/player-all-release-native-20261116^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.0664120Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.0664340Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.0664600Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.0665040Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.0665860Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.0666280Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.0666660Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.0666980Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.3063520Z {"status": "STATIC_NATIVE_SOURCE_CHECK_NOT_ADMISSION", "verifiedPoses": 238, "verifiedSources": 227}
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.3166920Z ##[group]Run python3 -B docs/review/player-release-variation-20261116/test_variation.py
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.3168720Z ^[[36;1mpython3 -B docs/review/player-release-variation-20261116/test_variation.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.3170080Z ^[[36;1mpython3 -B docs/review/player-release-variation-20261116/test_artifacts.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.3171300Z ^[[36;1mnode docs/review/player-release-variation-20261116/test_comparison.js^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.3262140Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.3262640Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.3263380Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.3264510Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.3264950Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.3265340Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.3265790Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.3266070Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.6751590Z test_all_geometry_and_contacts (__main__.SourceVariationTests.test_all_geometry_and_contacts) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.6753370Z test_batch_rejects_unbounded_or_preserved (__main__.SourceVariationTests.test_batch_rejects_unbounded_or_preserved) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.7030670Z test_contact_intervals_identical_to_baseline (__main__.SourceVariationTests.test_contact_intervals_identical_to_baseline) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.7207080Z test_continuous_easing_monotonic_and_bounded (__main__.SourceVariationTests.test_continuous_easing_monotonic_and_bounded) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.7409800Z test_each_phase_has_changed_intermediate_geometry (__main__.SourceVariationTests.test_each_phase_has_changed_intermediate_geometry) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.7513180Z test_exact_entry_and_neutral_geometry (__main__.SourceVariationTests.test_exact_entry_and_neutral_geometry) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.7629850Z test_exact_timing_order (__main__.SourceVariationTests.test_exact_timing_order) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.7744860Z test_incomplete_checkpoint_fails_closed (__main__.SourceVariationTests.test_incomplete_checkpoint_fails_closed) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.7846670Z test_locked_baseline (__main__.SourceVariationTests.test_locked_baseline) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.7956180Z test_phase_specific_not_same_trajectory (__main__.SourceVariationTests.test_phase_specific_not_same_trajectory) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.8062700Z test_preserved_samples_exact (__main__.SourceVariationTests.test_preserved_samples_exact) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.8210830Z test_profile_limits_are_proposal_domain (__main__.SourceVariationTests.test_profile_limits_are_proposal_domain) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.8353770Z test_profile_uses_actual_source_stance (__main__.SourceVariationTests.test_profile_uses_actual_source_stance) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.8476330Z test_reject_contact_schedule_tamper (__main__.SourceVariationTests.test_reject_contact_schedule_tamper) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.8578940Z test_reject_contact_slide (__main__.SourceVariationTests.test_reject_contact_slide) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.8703050Z test_reject_limb_tamper (__main__.SourceVariationTests.test_reject_limb_tamper) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.8804920Z test_reject_order_tamper (__main__.SourceVariationTests.test_reject_order_tamper) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.8818160Z test_repeatable_without_input_mutation (__main__.SourceVariationTests.test_repeatable_without_input_mutation) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.8821360Z test_zero_variation_exact_baseline (__main__.SourceVariationTests.test_zero_variation_exact_baseline) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.8823010Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.8823710Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.8824890Z Ran 19 tests in 0.243s
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.8825410Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:33.8826040Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:36.9971480Z test_all272_frames32_endpoints_and34_preserved (__main__.VariationArtifactTests.test_all272_frames32_endpoints_and34_preserved) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:37.1439750Z test_baseline_dependency_tamper_rejected (__main__.VariationArtifactTests.test_baseline_dependency_tamper_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:38.7752470Z test_baseline_pixels_substituted_for_variation_rejected (__main__.VariationArtifactTests.test_baseline_pixels_substituted_for_variation_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:39.9926150Z test_baseline_sample_hash_tamper_rejected (__main__.VariationArtifactTests.test_baseline_sample_hash_tamper_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:42.3186890Z test_complete_inventory_drift_rejected (__main__.VariationArtifactTests.test_complete_inventory_drift_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:42.5153180Z test_endpoint_origin_rejected (__main__.VariationArtifactTests.test_endpoint_origin_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:42.6572160Z test_extra_frame_rejected (__main__.VariationArtifactTests.test_extra_frame_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:42.8154150Z test_frame_bytes_rejected (__main__.VariationArtifactTests.test_frame_bytes_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:43.7177040Z test_geometry_fact_tamper_rejected (__main__.VariationArtifactTests.test_geometry_fact_tamper_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:43.8274010Z test_implementation_tamper_rejected (__main__.VariationArtifactTests.test_implementation_tamper_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:43.9346540Z test_lifted_acceptance_rejected (__main__.VariationArtifactTests.test_lifted_acceptance_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:44.0821350Z test_missing_frame_rejected (__main__.VariationArtifactTests.test_missing_frame_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:45.7876870Z test_native_claim_lift_rejected (__main__.VariationArtifactTests.test_native_claim_lift_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:47.2231810Z test_owner_provenance_rejected (__main__.VariationArtifactTests.test_owner_provenance_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:47.3422350Z test_phase_order_rejected (__main__.VariationArtifactTests.test_phase_order_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:47.4766950Z test_pose_order_rejected (__main__.VariationArtifactTests.test_pose_order_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:47.7599450Z test_preserved_original_hash_rejected (__main__.VariationArtifactTests.test_preserved_original_hash_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:48.4448370Z test_profile_tamper_rejected (__main__.VariationArtifactTests.test_profile_tamper_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:48.5319920Z test_timing_rejected (__main__.VariationArtifactTests.test_timing_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:49.2694030Z test_trajectory_tamper_even_updated_sample_hash (__main__.VariationArtifactTests.test_trajectory_tamper_even_updated_sample_hash) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:49.3961110Z test_updated_file_hash_still_checks_rgba (__main__.VariationArtifactTests.test_updated_file_hash_still_checks_rgba) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:50.9359260Z test_variation_identity_rejected (__main__.VariationArtifactTests.test_variation_identity_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:50.9360920Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:50.9361380Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:50.9362300Z Ran 22 tests in 16.841s
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:50.9362770Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:50.9363130Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.0756880Z TAP version 13
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.0978420Z # Subtest: normal: cached readiness without RAF/decode
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.0986240Z ok 1 - normal: cached readiness without RAF/decode
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.0987570Z   ---
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.0988360Z   duration_ms: 19.92225
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.0990910Z   type: 'test'
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.0991950Z   ...
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1094280Z # Subtest: normal: delayed readiness without RAF/decode
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1101220Z ok 2 - normal: delayed readiness without RAF/decode
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1101600Z   ---
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1101900Z   duration_ms: 9.320333
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1102140Z   type: 'test'
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1102440Z   ...
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1106820Z # Subtest: normal: broken-cached readiness without RAF/decode
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1111550Z ok 3 - normal: broken-cached readiness without RAF/decode
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1118110Z   ---
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1118460Z   duration_ms: 6.76275
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1118780Z   type: 'test'
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1119010Z   ...
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1148980Z # Subtest: normal: error-event readiness without RAF/decode
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1150010Z ok 4 - normal: error-event readiness without RAF/decode
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1150410Z   ---
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1150620Z   duration_ms: 3.835375
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1150920Z   type: 'test'
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1151110Z   ...
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1264030Z # Subtest: quarter: cached readiness without RAF/decode
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1272820Z ok 5 - quarter: cached readiness without RAF/decode
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1276130Z   ---
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1280960Z   duration_ms: 5.442625
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1282760Z   type: 'test'
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1284550Z   ...
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1347960Z # Subtest: quarter: delayed readiness without RAF/decode
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1348470Z ok 6 - quarter: delayed readiness without RAF/decode
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1348840Z   ---
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1349150Z   duration_ms: 10.449042
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1349450Z   type: 'test'
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1349620Z   ...
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1396610Z # Subtest: quarter: broken-cached readiness without RAF/decode
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1397720Z ok 7 - quarter: broken-cached readiness without RAF/decode
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1398120Z   ---
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1398720Z   duration_ms: 9.867708
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1399550Z   type: 'test'
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1399770Z   ...
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1437850Z # Subtest: quarter: error-event readiness without RAF/decode
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1442830Z ok 8 - quarter: error-event readiness without RAF/decode
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1452580Z   ---
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1455480Z   duration_ms: 2.921041
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1459410Z   type: 'test'
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1466080Z   ...
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1557450Z 1..8
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1558600Z # tests 8
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1559150Z # suites 0
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1564130Z # pass 8
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1565460Z # fail 0
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1566940Z # cancelled 0
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1572360Z # skipped 0
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1573270Z # todo 0
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1574300Z # duration_ms 86.879916
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1799240Z ##[group]Run python3 -B docs/review/player-release-variation-20261116/verify_packet.py
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1799970Z ^[[36;1mpython3 -B docs/review/player-release-variation-20261116/verify_packet.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1892550Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1893310Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1894010Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1895380Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1896490Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1898320Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1900150Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:51.1901020Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9166450Z {
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9265460Z   "status": "PASS_REMAINS_PROPOSED",
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9290950Z   "orderedFrames": 272,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9293710Z   "sourceSamples": 272,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9304380Z   "endpointProvenanceChecks": 32,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9334260Z   "archivedInputHashRecords": 1012,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9341280Z   "fixtureHashes": 5,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9345680Z   "preservedFrameHashes": 34,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9396110Z   "neutralBoundarySeconds": 0.375,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9414180Z   "originalMastersReopened": false,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9463210Z   "nativeAssets": null,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9506100Z   "variationChangedGeometryPoses": {
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9523250Z     "1": 14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9559870Z     "2": 14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9560330Z     "3": 14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9560530Z     "4": 14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9560820Z     "5": 0,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9561060Z     "6": 14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9561260Z     "7": 14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9561580Z     "8": 14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9561750Z     "9": 14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9561980Z     "10": 14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9562180Z     "11": 14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9562470Z     "12": 14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9562750Z     "13": 0,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9562930Z     "14": 14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9563200Z     "15": 14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9563370Z     "16": 14
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9563490Z   },
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9563620Z   "geometryRows": 544,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9563870Z   "variationNativeVerified": false,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9564260Z   "changedRGBAPosesFromBaseline": {
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9564650Z     "1": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9564850Z       2,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9565070Z       3,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9565450Z       4,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9565630Z       5,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9565880Z       6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9566020Z       7,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9566380Z       9,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9566550Z       10,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9566730Z       11,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9566930Z       12,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9567130Z       13,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9567370Z       14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9567580Z       15
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9567840Z     ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9568010Z     "2": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9568280Z       2,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9568460Z       3,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9568620Z       4,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9568790Z       5,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9569040Z       6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9569330Z       7,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9569530Z       9,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9569760Z       10,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9569930Z       11,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9570210Z       12,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9570410Z       13,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9570660Z       14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9570850Z       15
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9571110Z     ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9571320Z     "3": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9571800Z       2,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9572070Z       3,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9572270Z       4,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9572480Z       5,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9572670Z       6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9572850Z       7,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9573040Z       9,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9573270Z       10,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9573460Z       11,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9573690Z       12,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9573870Z       13,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9575040Z       14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9575260Z       15
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9575470Z     ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9575710Z     "4": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9575890Z       2,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9576070Z       3,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9576220Z       4,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9576350Z       5,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9576470Z       6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9576600Z       7,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9576710Z       9,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9576850Z       10,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9576970Z       11,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9577100Z       12,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9577220Z       13,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9577350Z       14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9577490Z       15
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9577620Z     ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9577760Z     "5": [],
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9577900Z     "6": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9578060Z       2,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9578180Z       3,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9578350Z       4,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9578490Z       5,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9578610Z       6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9578740Z       7,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9578870Z       9,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9579010Z       10,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9579230Z       11,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9579360Z       12,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9579520Z       13,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9579640Z       14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9579780Z       15
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9579900Z     ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9580030Z     "7": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9580160Z       2,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9580290Z       3,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9581230Z       4,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9581440Z       5,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9581570Z       6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9581720Z       7,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9581870Z       9,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9581990Z       10,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9582140Z       11,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9582270Z       12,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9582410Z       13,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9582540Z       14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9582670Z       15
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9582800Z     ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9582950Z     "8": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9583100Z       2,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9583270Z       3,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9583390Z       4,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9583530Z       5,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9583670Z       6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9583850Z       7,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9584000Z       9,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9584120Z       10,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9584260Z       11,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9584400Z       12,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9584530Z       13,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9584800Z       14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9584930Z       15
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9585070Z     ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9585190Z     "9": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9585330Z       2,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9585470Z       3,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9585650Z       4,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9585760Z       5,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9585880Z       6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9586000Z       7,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9586110Z       9,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9586220Z       10,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9586360Z       11,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9586490Z       12,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9586610Z       13,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9586720Z       14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9586830Z       15
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9586950Z     ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9587080Z     "10": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9587210Z       2,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9587340Z       3,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9587480Z       4,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9587610Z       5,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9587740Z       6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9587870Z       7,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9587990Z       9,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9588110Z       10,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9588230Z       11,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9588370Z       12,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9588490Z       13,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9588630Z       14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9588820Z       15
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9589120Z     ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9589250Z     "11": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9589390Z       2,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9589510Z       3,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9589640Z       4,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9589770Z       5,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9589890Z       6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9590030Z       7,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9590150Z       9,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9590270Z       10,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9590400Z       11,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9590540Z       12,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9590650Z       13,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9590760Z       14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9591130Z       15
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9591260Z     ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9591370Z     "12": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9591520Z       2,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9591710Z       3,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9591890Z       4,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9592040Z       5,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9592210Z       6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9592360Z       7,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9592500Z       9,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9592620Z       10,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9592760Z       11,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9592890Z       12,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9593020Z       13,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9593130Z       14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9593270Z       15
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9593420Z     ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9593550Z     "13": [],
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9593700Z     "14": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9593830Z       2,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9593970Z       3,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9594090Z       4,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9594210Z       5,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9594330Z       6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9594460Z       7,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9594580Z       9,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9594690Z       10,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9594810Z       11,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9594950Z       12,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9595080Z       13,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9595180Z       14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9595290Z       15
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9595400Z     ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9595540Z     "15": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9595680Z       2,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9595840Z       3,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9595990Z       4,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9599240Z       5,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9599590Z       6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9600040Z       7,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9600380Z       9,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9600730Z       10,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9601070Z       11,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9601560Z       12,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9601910Z       13,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9602260Z       14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9603010Z       15
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9603260Z     ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9603380Z     "16": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9603500Z       2,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9603620Z       3,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9603740Z       4,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9603840Z       5,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9603970Z       6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9604080Z       7,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9604190Z       9,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9604310Z       10,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9604420Z       11,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9604530Z       12,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9604640Z       13,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9604750Z       14,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9604860Z       15
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9604970Z     ]
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9605090Z   },
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9605390Z   "fullArchivedInventoryMatchesBaseline": true
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9605710Z }
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9664420Z ##[group]Run python3 -B scripts/prepare_release_variation_native.py --verify
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9664950Z ^[[36;1mpython3 -B scripts/prepare_release_variation_native.py --verify^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9665580Z ^[[36;1mpython3 -B scripts/import_release_variation_native.py --verify docs/review/player-release-variation-native-20261116/capture^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9666160Z ^[[36;1mpython3 -B scripts/test_release_variation_native.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9748510Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9748800Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9749050Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9749850Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9750300Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9750660Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9751160Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:52.9751430Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:54.8466510Z {"status": "TEST_RESOURCES_VERIFIED", "isolatedVariationPNGs": 210, "uniqueBaselineAndVariationResources": 435}
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:59.3261110Z {
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:59.3262940Z   "status": "STATIC_NATIVE_VARIATION_COMPARISON_NOT_ADMISSION",
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:59.3264100Z   "verifiedPoses": 476,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:59.3265140Z   "verifiedSourceFiles": 442,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:59.3266810Z   "nativeEndpointEqualities": 28,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:59.3267820Z   "passedActualTests": 3,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:59.3268170Z   "changedNativePoses": 182,
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:59.3270160Z   "liveCadenceVerified": false
+spec-parity	UNKNOWN STEP	2026-11-17T05:32:59.3270650Z }
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:04.5190430Z test_actual476_captures_and28_endpoints (__main__.ActualCaptureGuards.test_actual476_captures_and28_endpoints) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:06.8630580Z test_actual_bundle_digest_rejected_even_with_updated_record_hash (__main__.ActualCaptureGuards.test_actual_bundle_digest_rejected_even_with_updated_record_hash) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:07.1710820Z test_capture_hash_tamper_rejected (__main__.ActualCaptureGuards.test_capture_hash_tamper_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:12.8948410Z test_changed_native_facts_rejected (__main__.ActualCaptureGuards.test_changed_native_facts_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:13.4812870Z test_extra_capture_rejected (__main__.ActualCaptureGuards.test_extra_capture_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:13.6821840Z test_lifted_art_claim_rejected (__main__.ActualCaptureGuards.test_lifted_art_claim_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:13.9530420Z test_lifted_live_claim_rejected (__main__.ActualCaptureGuards.test_lifted_live_claim_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:14.1724040Z test_missing_attachment_hash_rejected (__main__.ActualCaptureGuards.test_missing_attachment_hash_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:18.0691320Z test_native_dimensions_rejected_even_with_updated_file_hash (__main__.ActualCaptureGuards.test_native_dimensions_rejected_even_with_updated_file_hash) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:23.2624820Z test_native_endpoint_pixels_rejected_even_with_updated_file_hash (__main__.ActualCaptureGuards.test_native_endpoint_pixels_rejected_even_with_updated_file_hash) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:25.9697540Z test_source_configuration_drift_rejected (__main__.ActualCaptureGuards.test_source_configuration_drift_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.1900090Z test_timing_declaration_tamper_rejected (__main__.ActualCaptureGuards.test_timing_declaration_tamper_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.2337540Z test_complete_parser_census (__main__.ImportGuards.test_complete_parser_census) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.2843000Z test_duplicate_image_rejected (__main__.ImportGuards.test_duplicate_image_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.2977770Z test_exact_result_identities (__main__.ImportGuards.test_exact_result_identities) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3080260Z test_failed_case_despite_green_summary_rejected (__main__.ImportGuards.test_failed_case_despite_green_summary_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3186050Z test_failure_skip_expected_failure_rejected (__main__.ImportGuards.test_failure_skip_expected_failure_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3189070Z test_invalid_actual_sha_rejected (__main__.ImportGuards.test_invalid_actual_sha_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3351110Z test_missing_image_rejected (__main__.ImportGuards.test_missing_image_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3753160Z test_missing_record_rejected (__main__.ImportGuards.test_missing_record_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3762030Z test_other_test_names_rejected (__main__.ImportGuards.test_other_test_names_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3797110Z test_path_escape_rejected (__main__.ImportGuards.test_path_escape_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3808640Z test_png_preservation_test_only (__main__.ImportGuards.test_png_preservation_test_only) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3818750Z test_records_must_preserve_phase_family_pose_order (__main__.ImportGuards.test_records_must_preserve_phase_family_pose_order) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3829200Z test_wrong_capture_name_rejected (__main__.ImportGuards.test_wrong_capture_name_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3838140Z test_wrong_family_rejected (__main__.ImportGuards.test_wrong_family_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3851820Z test_wrong_texture_rejected (__main__.ImportGuards.test_wrong_texture_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3861530Z test_wrong_tick_rejected (__main__.ImportGuards.test_wrong_tick_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3871260Z test_zero_test_exit_zero_rejected (__main__.ImportGuards.test_zero_test_exit_zero_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3872850Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3873970Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3874950Z Ran 29 tests in 26.815s
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3875400Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.3875750Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.4227400Z ##[group]Run python3 -B docs/review/player-north-source-20261116/test_source.py
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.4228680Z ^[[36;1mpython3 -B docs/review/player-north-source-20261116/test_source.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.4229460Z ^[[36;1mpython3 -B docs/review/player-baggy-south-source-20261116/test_source.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.4230220Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/camera-midpoint-source-20261116/test_source.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.4231400Z ^[[36;1mcmp docs/review/camera-midpoint-source-20261116/source/clip-metadata-001.json Sources/SurveillanceCore/Resources/contracts/clip-metadata-001.json^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.4585160Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.4585480Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.4585940Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.4586460Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.4587210Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.4587680Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.4596000Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.4596340Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.6218680Z test_asymmetric_binding (__main__.NorthSourceGuards.test_asymmetric_binding) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.6487040Z test_complete_unique_layer_composite (__main__.NorthSourceGuards.test_complete_unique_layer_composite) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.7134710Z test_exact_rgba_component_identity (__main__.NorthSourceGuards.test_exact_rgba_component_identity) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.7146000Z test_layer_hashes (__main__.NorthSourceGuards.test_layer_hashes) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.7201040Z test_proposal_not_original_paint_or_admission (__main__.NorthSourceGuards.test_proposal_not_original_paint_or_admission) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.7309440Z test_registration_and_unchanged_south_comparison (__main__.NorthSourceGuards.test_registration_and_unchanged_south_comparison) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.7328400Z test_source_hashes_and_readonly_originals (__main__.NorthSourceGuards.test_source_hashes_and_readonly_originals) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.7679180Z test_transparent_gap_samples_not_rgb (__main__.NorthSourceGuards.test_transparent_gap_samples_not_rgb) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.8085490Z test_uniform_scale_translation_only (__main__.NorthSourceGuards.test_uniform_scale_translation_only) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.8087630Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.8088480Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.8089650Z Ran 9 tests in 0.187s
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.8090420Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.8090870Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.9894900Z test_anatomical_sides_and_patch (__main__.Guards.test_anatomical_sides_and_patch) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:26.9911380Z test_canvas_and_output (__main__.Guards.test_canvas_and_output) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.0004740Z test_exact_layer_composition (__main__.Guards.test_exact_layer_composition) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.0069950Z test_ground_root_and_bottom (__main__.Guards.test_ground_root_and_bottom) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.0152210Z test_no_old_leg_pixels (__main__.Guards.test_no_old_leg_pixels) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.0424800Z test_original_layer_reconstruction (__main__.Guards.test_original_layer_reconstruction) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.0881570Z test_parts_are_exact_crops_with_uniform_scale (__main__.Guards.test_parts_are_exact_crops_with_uniform_scale) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.0903440Z test_provenance_hashes (__main__.Guards.test_provenance_hashes) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.0996390Z test_retained_upper_and_boot_pixels_exact (__main__.Guards.test_retained_upper_and_boot_pixels_exact) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.0997700Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.0998650Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.1000250Z Ran 9 tests in 0.139s
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.1000800Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.1000950Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.2126210Z test_complete_device_layers_nonempty (__main__.Attempt01.test_complete_device_layers_nonempty) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.2258270Z test_copied_inputs_match_record (__main__.Attempt01.test_copied_inputs_match_record) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.2259780Z test_honest_label (__main__.Attempt01.test_honest_label) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.2271530Z test_integrity_contract_matches_copied_contract (__main__.Attempt01.test_integrity_contract_matches_copied_contract) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.2485430Z test_layers_partition_and_reconstruct_exactly (__main__.Attempt01.test_layers_partition_and_reconstruct_exactly) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.2486800Z test_registration (__main__.Attempt01.test_registration) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.6095120Z test_cutout_is_exact_concept_rgb (__main__.Attempt02.test_cutout_is_exact_concept_rgb) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.6233770Z test_layers_partition (__main__.Attempt02.test_layers_partition) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.6258590Z test_source_and_control_hashes (__main__.Attempt02.test_source_and_control_hashes) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.6340750Z test_uniform_scale_and_registration (__main__.Attempt02.test_uniform_scale_and_registration) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.6424890Z test_authority_is_approved_concept_only (__main__.Attempt03.test_authority_is_approved_concept_only) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.6429340Z test_contamination_is_reported (__main__.Attempt03.test_contamination_is_reported) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.6967690Z test_cutout_is_exact_approved_rgb (__main__.Attempt03.test_cutout_is_exact_approved_rgb) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7034420Z test_output_is_uniform_transform_of_cutout (__main__.Attempt03.test_output_is_uniform_transform_of_cutout) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7053250Z test_pinned_approved_original (__main__.Attempt03.test_pinned_approved_original) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7113910Z test_recomputed_contamination_and_rows (__main__.Attempt03.test_recomputed_contamination_and_rows) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7116060Z test_rejections_recorded (__main__.Statuses.test_rejections_recorded) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7117690Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7118600Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7119390Z Ran 17 tests in 0.499s
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7119670Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7120030Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7588230Z ##[group]Run python3 -B -W error::ResourceWarning docs/review/player-side-source-20261116/test_source.py
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7589070Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/player-side-source-20261116/test_source.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7627550Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7627800Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7628120Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7628610Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7629160Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7629580Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7630090Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.7630560Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.8689530Z test_anatomical_side_binding (__main__.SideSourceGuards.test_anatomical_side_binding) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.9077870Z test_complete_composite_no_duplicate_parts (__main__.SideSourceGuards.test_complete_composite_no_duplicate_parts) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:27.9125460Z test_distinct_facings_not_mirrors (__main__.SideSourceGuards.test_distinct_facings_not_mirrors) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.0880980Z test_exact_component_identity_and_uniform_transform (__main__.SideSourceGuards.test_exact_component_identity_and_uniform_transform) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.0884530Z test_external_originals_match_pins (__main__.SideSourceGuards.test_external_originals_match_pins) ... skipped 'optional external-original audit'
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.1099460Z test_gallery_strip_uses_unchanged_inputs (__main__.SideSourceGuards.test_gallery_strip_uses_unchanged_inputs) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.1144710Z test_inputs_and_originals_unchanged (__main__.SideSourceGuards.test_inputs_and_originals_unchanged) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.1146500Z test_proposal_labels (__main__.SideSourceGuards.test_proposal_labels) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.1147810Z test_registration (__main__.SideSourceGuards.test_registration) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.4837530Z test_reproducible_build (__main__.SideSourceGuards.test_reproducible_build) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.4838590Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.4839540Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.4840030Z Ran 10 tests in 0.616s
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.4840140Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.4840230Z OK (skipped=1)
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.5024020Z ##[group]Run python3 -B -W error::ResourceWarning docs/review/player-ground-contact-20261116/test_packet.py
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.5025820Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/player-ground-contact-20261116/test_packet.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.5027560Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/player-ground-contact-20261116/test_native_evidence.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.5030480Z ^[[36;1mnode docs/review/player-ground-contact-20261116/test_native_gallery.js^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.5109370Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.5109640Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.5109980Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.5110500Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.5111000Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.5111450Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.5111980Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.5112290Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.6274910Z testArchivedInventoryMatchesPublishedBaseline (__main__.GroundContactPacketTests.testArchivedInventoryMatchesPublishedBaseline) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.6285900Z testCoreMatrixCoversActualStopSlideAndPause (__main__.GroundContactPacketTests.testCoreMatrixCoversActualStopSlideAndPause) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.6467950Z testCostumeAndAssemblyRetained (__main__.GroundContactPacketTests.testCostumeAndAssemblyRetained) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.6808640Z testExactBaselineAndReviewedKeys (__main__.GroundContactPacketTests.testExactBaselineAndReviewedKeys) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.7599960Z testExactlySixChangedRecoveryKeys (__main__.GroundContactPacketTests.testExactlySixChangedRecoveryKeys) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.7810480Z testExportedPagesContainAllMatrixRowsAndSeparateSpeed (__main__.GroundContactPacketTests.testExportedPagesContainAllMatrixRowsAndSeparateSpeed) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.7845060Z testFixedLimbLengthsAndFiniteCoordinates (__main__.GroundContactPacketTests.testFixedLimbLengthsAndFiniteCoordinates) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.7846340Z testFootTargetsContactTimingAndNoAddedBounce (__main__.GroundContactPacketTests.testFootTargetsContactTimingAndNoAddedBounce) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.7847620Z testOriginalInputsUnchanged (__main__.GroundContactPacketTests.testOriginalInputsUnchanged) ... skipped 'External original masters unavailable. Portable copied-byte checks run separately.'
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.7848940Z testProjectionInverseAndRejectedFalseContact (__main__.GroundContactPacketTests.testProjectionInverseAndRejectedFalseContact) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.8186800Z testSamplingNeverClaimsNativeAndBothVariantsSameContacts (__main__.GroundContactPacketTests.testSamplingNeverClaimsNativeAndBothVariantsSameContacts) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.9755120Z testSourceManifestHasNoDrift (__main__.GroundContactPacketTests.testSourceManifestHasNoDrift) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.9795420Z testStationaryAndDodgeDoNotFabricateWalkContacts (__main__.GroundContactPacketTests.testStationaryAndDodgeDoNotFabricateWalkContacts) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.9797220Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.9797560Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.9798410Z Ran 13 tests in 0.360s
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.9798710Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:28.9798920Z OK (skipped=1)
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:37.1594820Z testActualEvidenceVerifies (__main__.NativeEvidenceTests.testActualEvidenceVerifies) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:44.3369250Z testOfflineQueryUsesRetainedResultNoXcrun (__main__.NativeEvidenceTests.testOfflineQueryUsesRetainedResultNoXcrun) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:44.3537250Z testOldClampedRunRejectedBySelectionNotOnlyCount (__main__.NativeEvidenceTests.testOldClampedRunRejectedBySelectionNotOnlyCount) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:44.4858920Z testRejectsAttachmentEvidenceMutation (__main__.NativeEvidenceTests.testRejectsAttachmentEvidenceMutation) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:59.2571830Z testRejectsChangedUnchangedPairMutation (__main__.NativeEvidenceTests.testRejectsChangedUnchangedPairMutation) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:59.4003250Z testRejectsCountAndCensusMutation (__main__.NativeEvidenceTests.testRejectsCountAndCensusMutation) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:59.5406440Z testRejectsFrozenFixedTimeAndMissingLoop (__main__.NativeEvidenceTests.testRejectsFrozenFixedTimeAndMissingLoop) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:59.7192980Z testRejectsMissingOrDuplicateCapture (__main__.NativeEvidenceTests.testRejectsMissingOrDuplicateCapture) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:59.7650880Z testRejectsPathEscape (__main__.NativeEvidenceTests.testRejectsPathEscape) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:33:59.8928490Z testRejectsRetainedSummaryTreeAndRuntimeByteMutation (__main__.NativeEvidenceTests.testRejectsRetainedSummaryTreeAndRuntimeByteMutation) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.2240360Z testRejectsRootContactAndSegmentNumericMutation (__main__.NativeEvidenceTests.testRejectsRootContactAndSegmentNumericMutation) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.5033610Z testRejectsSelectionAndIdentityMutation (__main__.NativeEvidenceTests.testRejectsSelectionAndIdentityMutation) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.5072140Z testRejectsSourceHashMutation (__main__.NativeEvidenceTests.testRejectsSourceHashMutation) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.5077570Z testRejectsZeroFailedSkippedAndWrongIdentity (__main__.NativeEvidenceTests.testRejectsZeroFailedSkippedAndWrongIdentity) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.5164800Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.5172020Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.5173090Z Ran 14 tests in 31.400s
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.5174110Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.5174790Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.7194810Z PASS: 38 paired selections; missing/empty images fail closed; stale success/error cannot replace newer pair; size/grayscale control state.
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.7407600Z ##[group]Run python3 -B -W error::ResourceWarning docs/review/stone-corner-source-20261116/test_source.py
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.7408320Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/stone-corner-source-20261116/test_source.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.7797470Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.7797900Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.7798190Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.7798790Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.7799310Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.7799830Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.7800360Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.7800710Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.9873620Z test_generation_provenance (__main__.SourceGuards.test_generation_provenance) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.9875840Z test_manifest_preserves_unknown_geometry (__main__.SourceGuards.test_manifest_preserves_unknown_geometry) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.9878390Z test_rejects_dimension_and_identity_substitution (__main__.SourceGuards.test_rejects_dimension_and_identity_substitution) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.9880530Z test_rejects_prompt_coordinates_as_measured_landmarks (__main__.SourceGuards.test_rejects_prompt_coordinates_as_measured_landmarks) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:00.9882420Z test_rejects_unearned_admission (__main__.SourceGuards.test_rejects_unearned_admission) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0293830Z test_source_bytes_and_actual_dimensions (__main__.SourceGuards.test_source_bytes_and_actual_dimensions) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0294940Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0295360Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0296210Z Ran 6 tests in 0.044s
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0296590Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0296890Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0411090Z ##[group]Run python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/whole-scene-benchmark-20261116 -p 'test_*.py'
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0412010Z ^[[36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/whole-scene-benchmark-20261116 -p 'test_*.py'^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0412720Z ^[[36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/whole-scene-paving-20261116 -p 'test_*.py'^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0413590Z ^[[36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/whole-scene-benchmark-20261116/revision-02-bound-inputs -p 'test_*.py'^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0414760Z ^[[36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/camera-first-sample-20261116 -p 'test_*.py'^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0446730Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0447080Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0447380Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0448070Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0448630Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0449040Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0449510Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:01.0449850Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:36.6381140Z ...............
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:36.6383000Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:36.6384090Z Ran 15 tests in 35.306s
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:36.6385170Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:36.6385540Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:36.6386640Z Wrote index.html and coverage.md: 17 rows
+spec-parity	UNKNOWN STEP	2026-11-17T05:34:36.6387660Z Wrote index.html and coverage.md: 17 rows
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:34.7720990Z .......
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:34.7723150Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:34.7724690Z Ran 7 tests in 57.875s
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:34.7726020Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:34.7726780Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:44.9133560Z .............
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:44.9135880Z Gallery: 18 capture selections x 3 sheets, native 704x326, half 352x163
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:44.9139440Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:44.9141820Z Ran 13 tests in 9.933s
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:44.9143930Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:44.9146100Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.2581540Z .....
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.2582500Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.2583290Z Ran 5 tests in 0.110s
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.2583570Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.2584260Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.2963440Z ##[group]Run python3 -B -W error::ResourceWarning docs/review/stone-corner-registration-20261116/test_registration.py
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.2965610Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/stone-corner-registration-20261116/test_registration.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.2967610Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/player-neutral-family-20261116/test_family.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.2969270Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/paving-repeat-repair-20261116/verify-packet.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.2971180Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/paving-repeat-repair-20261116/revision02/generate-and-check.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.3491470Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.3491760Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.3492220Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.3492740Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.3493480Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.3494000Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.3494530Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.3494970Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.5157580Z test_contour_is_provisional (__main__.RegistrationRecordTests.test_contour_is_provisional) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.5162410Z test_corrected_preview_and_withdrawal (__main__.RegistrationRecordTests.test_corrected_preview_and_withdrawal) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.5164110Z test_gates_closed (__main__.RegistrationRecordTests.test_gates_closed) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.5165730Z test_no_verified_registration (__main__.RegistrationRecordTests.test_no_verified_registration) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.5219210Z test_original_unchanged (__main__.RegistrationRecordTests.test_original_unchanged) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.5220250Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.5236320Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.5240610Z Ran 5 tests in 0.007s
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.5241620Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:45.5241830Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0516570Z T1  Input source images unchanged
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0517990Z   PASS  T1a south_exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0519160Z   PASS  T1b north_sha
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0520190Z   PASS  T1c east_prefix
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0521270Z   PASS  T1d west_prefix
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0522220Z T2  Output images exist and correct dimensions
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0523540Z   PASS  T2  four-facing-source.png exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0524790Z   PASS  T2  four-facing-source.png dimensions
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0526030Z   PASS  T2  four-facing-native.png exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0527040Z   PASS  T2  four-facing-native.png dimensions
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0528290Z   PASS  T2  four-facing-half.png exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0529260Z   PASS  T2  four-facing-half.png dimensions
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0530570Z   PASS  T2  four-facing-grayscale.png exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0531690Z   PASS  T2  four-facing-grayscale.png dimensions
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0533080Z T3  Strips reproducible (re-run assemble.py)
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0534390Z   PASS  T3  assemble exit 0
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0535340Z   PASS  T3  four-facing-source.png reproducible
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0536590Z   PASS  T3  four-facing-native.png reproducible
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0537620Z   PASS  T3  four-facing-half.png reproducible
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0538790Z   PASS  T3  four-facing-grayscale.png reproducible
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0539780Z   PASS  T3  family.json reproducible
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0540810Z T4  Native strip dimensions
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0541780Z   PASS  T4  native width
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0542600Z   PASS  T4  native height
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0543640Z T5  Half strip dimensions
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0544450Z   PASS  T5  half width
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0545380Z   PASS  T5  half height
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0546200Z T6  Grayscale strip has no saturation
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0549620Z   PASS  T6  all opaque pixels are gray
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0555820Z T7  Role mask files exist and correct size
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0556350Z   PASS  T7  south-lower_body exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0556820Z   PASS  T7  south-lower_body size
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0557190Z   PASS  T7  south-upper_body exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0557630Z   PASS  T7  south-upper_body size
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0558000Z   PASS  T7  south-equipment exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0558440Z   PASS  T7  south-equipment size
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0558810Z   PASS  T7  south-head exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0559310Z   PASS  T7  south-head size
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0559770Z   PASS  T7  east-lower_body exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0560120Z   PASS  T7  east-lower_body size
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0560540Z   PASS  T7  east-upper_body exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0560900Z   PASS  T7  east-upper_body size
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0561320Z   PASS  T7  east-equipment exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0561690Z   PASS  T7  east-equipment size
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0562130Z   PASS  T7  east-head exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0562540Z   PASS  T7  east-head size
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0562870Z   PASS  T7  north-lower_body exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0563290Z   PASS  T7  north-lower_body size
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0563670Z   PASS  T7  north-upper_body exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0564100Z   PASS  T7  north-upper_body size
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0564440Z   PASS  T7  north-equipment exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0564910Z   PASS  T7  north-equipment size
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0565330Z   PASS  T7  north-head exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0589160Z   PASS  T7  north-head size
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0600830Z   PASS  T7  west-lower_body exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0601240Z   PASS  T7  west-lower_body size
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0601570Z   PASS  T7  west-upper_body exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0601860Z   PASS  T7  west-upper_body size
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0602220Z   PASS  T7  west-equipment exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0602730Z   PASS  T7  west-equipment size
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0603160Z   PASS  T7  west-head exists
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0604060Z   PASS  T7  west-head size
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0604500Z T8  Role masks non-empty (have opaque pixels)
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0604920Z   PASS  T8  south-lower_body opaque_pixels >= 1
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0605330Z   PASS  T8  south-upper_body opaque_pixels >= 1
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0605800Z   SKIP  T8  south-equipment: merged into original_upper (disclosed blocker)
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0606350Z   SKIP  T8  south-head: merged into original_upper (disclosed blocker)
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0607020Z   PASS  T8  east-lower_body opaque_pixels >= 1
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0607460Z   PASS  T8  east-upper_body opaque_pixels >= 1
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0607960Z   PASS  T8  east-equipment opaque_pixels >= 1
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0609940Z   PASS  T8  east-head opaque_pixels >= 1
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0611030Z   PASS  T8  north-lower_body opaque_pixels >= 1
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0613030Z   PASS  T8  north-upper_body opaque_pixels >= 1
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0614090Z   PASS  T8  north-equipment opaque_pixels >= 1
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0614950Z   PASS  T8  north-head opaque_pixels >= 1
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0615730Z   PASS  T8  west-lower_body opaque_pixels >= 1
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0616770Z   PASS  T8  west-upper_body opaque_pixels >= 1
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0617770Z   PASS  T8  west-equipment opaque_pixels >= 1
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0618530Z   PASS  T8  west-head opaque_pixels >= 1
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0619350Z T9  family.json structure
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0620000Z   PASS  T9  status BLOCKED_UNRECONCILED_FAMILY
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0620640Z   PASS  T9  four facings in anatomy
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0621190Z   PASS  T9  sourcePackets present
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0621730Z   PASS  T9  openBlockers non-empty
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0622560Z   PASS  T9  partVocabulary present
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0623290Z   PASS  T9  equipment mapping present
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0623980Z   PASS  T9  limits field present
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0624630Z T10  index.html content
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0625300Z   PASS  T10  index.html non-empty
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0627020Z   PASS  T10  index contains south
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0627830Z   PASS  T10  index contains east
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0628630Z   PASS  T10  index contains north
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0629270Z   PASS  T10  index contains west
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0630010Z   PASS  T10  blocked status in h1
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0630640Z   PASS  T10  blocked status banner
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0631330Z   PASS  T10  two inline absent role labels
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0632360Z   PASS  T10  rounding disclosed
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0632920Z   PASS  T10  no unexplained absent mask images
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0633820Z T11  Layer files exist for each facing
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0634450Z   PASS  T11  south has >=1 layer
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0635360Z   PASS  T11  north has >=1 layer
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0635990Z   PASS  T11  east has >=1 layer
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0636880Z   PASS  T11  west has >=1 layer
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0637540Z T12  North SHA matches attempt-01
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0638330Z   PASS  T12  north sha exact
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0639170Z T13  South/east/west SHA prefixes
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0639820Z   PASS  T13  east prefix
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0640620Z   PASS  T13  west prefix
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0641240Z   PASS  T13  south sha matches family.json
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0641890Z T14  output-hashes.json round-trips
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0642700Z   PASS  T14  four-facing-source.png
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0643830Z   PASS  T14  four-facing-native.png
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0644480Z   PASS  T14  four-facing-half.png
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0645220Z   PASS  T14  four-facing-grayscale.png
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0645940Z   PASS  T14  family.json
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0646820Z T15  Reject coherence/readiness/acceptance; document absent layers
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0647900Z   PASS  T15  status is BLOCKED_UNRECONCILED_FAMILY
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0648810Z   PASS  T15  coherent is explicitly False
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0649560Z   PASS  T15  ready is explicitly False
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0650280Z   PASS  T15  accepted is explicitly False
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0651220Z   PASS  T15  south-equipment absent layer documented
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0653480Z   PASS  T15  south-head absent layer documented
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0654660Z   PASS  T15  south-equipment entry mentions original_upper
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0655190Z   PASS  T15  south-head entry mentions original_upper
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0655420Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0655510Z PASS: 107  FAIL: 0
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:46.0655780Z All tests passed.
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:47.0937430Z PASS: source, dimensions, exhaustive interior/orientation, exact boundaries, six attachment hashes/sizes, full 3x3 placement; five mutation rejection cases
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:49.7961070Z PASS: paired bounds both passes, pair-mean preservation within 1 RGB unit, unchanged interior, exact edges, dark-edge nonwidening sentinel, nonconvex mutation rejection, source hash
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:49.8058920Z Candidate SHA256: 7a1f29c7b0f1a0a96e12484de84da21e7ab4ebee10cab2e829ed19309ca17d35
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:49.8458540Z ##[group]Run python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/existing-art-traversal-20261116 -p 'test_*.py' -v
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:49.8459800Z ^[[36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/existing-art-traversal-20261116 -p 'test_*.py' -v^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:49.8460660Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/existing-art-viewports-20261116/test_verify.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:49.8461470Z ^[[36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/existing-art-encounters-20261116 -p 'test_*.py' -v^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:49.8553450Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:49.8554110Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:49.8554970Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:49.8556230Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:49.8557630Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:49.8558850Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:49.8560010Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:49.8561040Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:50.2266480Z test_actual_png_hash_dimensions_and_blankness (test_evidence_guards.EvidenceGuardTests.test_actual_png_hash_dimensions_and_blankness) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:50.2283260Z test_bound_resource_hash_bytes_and_escape (test_evidence_guards.EvidenceGuardTests.test_bound_resource_hash_bytes_and_escape) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:50.2293580Z test_exact_coordinated_three_and_wrong_case_attachments (test_evidence_guards.EvidenceGuardTests.test_exact_coordinated_three_and_wrong_case_attachments) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:50.2299220Z test_exact_nonzero_result_and_identity (test_evidence_guards.EvidenceGuardTests.test_exact_nonzero_result_and_identity) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:50.2321030Z test_export_path_missing_duplicate_and_escape (test_evidence_guards.EvidenceGuardTests.test_export_path_missing_duplicate_and_escape) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:50.2325760Z test_negative_fractional_and_one_unit_mapping_guards (test_evidence_guards.EvidenceGuardTests.test_negative_fractional_and_one_unit_mapping_guards) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:50.2329330Z test_one_based_phase_boundaries (test_evidence_guards.EvidenceGuardTests.test_one_based_phase_boundaries) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:50.2334430Z test_pause_count_digest_position_and_texture_mutations (test_evidence_guards.EvidenceGuardTests.test_pause_count_digest_position_and_texture_mutations) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:50.2337310Z test_q8_root_and_delta_reconstruction (test_evidence_guards.EvidenceGuardTests.test_q8_root_and_delta_reconstruction) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:50.2350490Z test_scope_and_zero_capture_packet_rejected (test_evidence_guards.EvidenceGuardTests.test_scope_and_zero_capture_packet_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:50.2372800Z test_symlink_root_alias_and_real_symlink_escape (test_evidence_guards.EvidenceGuardTests.test_symlink_root_alias_and_real_symlink_escape) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:50.4696180Z test_actual_capture_census_and_hashes (test_gallery.GalleryTests.test_actual_capture_census_and_hashes) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:50.4881630Z test_links_and_all_keypoint_mapping_combinations (test_gallery.GalleryTests.test_links_and_all_keypoint_mapping_combinations) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:50.4882840Z test_truthful_controls_and_logical_sizes (test_gallery.GalleryTests.test_truthful_controls_and_logical_sizes) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:52.1571940Z test_actual_retained_evidence_without_xcrun (test_retained_evidence.RetainedEvidenceTests.test_actual_retained_evidence_without_xcrun) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:52.7842990Z test_attachment_hash_and_missing_capture_mutations (test_retained_evidence.RetainedEvidenceTests.test_attachment_hash_and_missing_capture_mutations) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:53.3154570Z test_bound_input_and_selection_mutations (test_retained_evidence.RetainedEvidenceTests.test_bound_input_and_selection_mutations) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:53.6575050Z test_capture_phase_and_scope_mutations (test_retained_evidence.RetainedEvidenceTests.test_capture_phase_and_scope_mutations) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:54.9712590Z test_independent_position_and_delta_mutations (test_retained_evidence.RetainedEvidenceTests.test_independent_position_and_delta_mutations) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:55.4687180Z test_pause_and_frozen_selection_mutations (test_retained_evidence.RetainedEvidenceTests.test_pause_and_frozen_selection_mutations) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:55.9673550Z test_projection_and_dimensions_mutations (test_retained_evidence.RetainedEvidenceTests.test_projection_and_dimensions_mutations) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.4339750Z test_replay_and_per_tick_authority_mutations (test_retained_evidence.RetainedEvidenceTests.test_replay_and_per_tick_authority_mutations) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.4380030Z test_zero_test_and_wrong_identity_mutations (test_retained_evidence.RetainedEvidenceTests.test_zero_test_and_wrong_identity_mutations) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.4441770Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.4447830Z Built gallery from 52 actual captures;13 keypoints x2 mappings x3 display modes
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.4550420Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.4608360Z Ran 23 tests in 6.291s
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.4666010Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.4737550Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.6126480Z test_host_bounds_required_and_normalization_reported (__main__.VerifierTests.test_host_bounds_required_and_normalization_reported) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.6992960Z test_missing_duplicate_hash_dimension_settings (__main__.VerifierTests.test_missing_duplicate_hash_dimension_settings) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.7295240Z test_real_export_suffix_and_wrong_manifest_identity (__main__.VerifierTests.test_real_export_suffix_and_wrong_manifest_identity) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.7899080Z test_retained_actual0653_and_gallery (__main__.VerifierTests.test_retained_actual0653_and_gallery) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.8050750Z test_truncated_png_rejected_even_with_updated_hash (__main__.VerifierTests.test_truncated_png_rejected_even_with_updated_hash) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.8257870Z test_valid_metadata (__main__.VerifierTests.test_valid_metadata) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.8260010Z test_zero_failed_skipped_wrong_identity (__main__.VerifierTests.test_zero_failed_skipped_wrong_identity) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.8261180Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.8261610Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.8262400Z Ran 7 tests in 0.271s
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.8262780Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.8263010Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.9417280Z test_actual_dense_cannot_regress_to_stale_or_hidden_framing (test_actual_0710.Actual0710Tests.test_actual_dense_cannot_regress_to_stale_or_hidden_framing) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.9419840Z test_actual_dense_has_player_two_nearby_enemies_and_projectile (test_actual_0710.Actual0710Tests.test_actual_dense_has_player_two_nearby_enemies_and_projectile) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:56.9433560Z test_actual_runner_session_loads_current_container (test_actual_0710.Actual0710Tests.test_actual_runner_session_loads_current_container) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.1362780Z test_exact_native_result_and_actual_packet (test_actual_0710.Actual0710Tests.test_exact_native_result_and_actual_packet) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.2178520Z test_retained_gallery_rebuild_exact_and_scope_disclosed (test_actual_0710.Actual0710Tests.test_retained_gallery_rebuild_exact_and_scope_disclosed) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.2215470Z test_changed_image_and_invalid_dimensions_are_red (test_gallery.GalleryTests.test_changed_image_and_invalid_dimensions_are_red) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.2245220Z test_labels_are_escaped (test_gallery.GalleryTests.test_labels_are_escaped) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.2292520Z test_loader_checks_native_result_before_loading_files (test_gallery.GalleryTests.test_loader_checks_native_result_before_loading_files) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.2331380Z test_loader_runs_full_packet_validation (test_gallery.GalleryTests.test_loader_runs_full_packet_validation) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.2360300Z test_output_uses_only_ledger_images_and_actual_labels (test_gallery.GalleryTests.test_output_uses_only_ledger_images_and_actual_labels) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.2660530Z test_actual_0701_is_rejected_old_schema_not_corrected_evidence (test_validator.EvidenceReaderTests.test_actual_0701_is_rejected_old_schema_not_corrected_evidence) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.2908750Z test_actual_stale_attempt_rejected_and_preserved_bytes_match (test_validator.EvidenceReaderTests.test_actual_stale_attempt_rejected_and_preserved_bytes_match) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.2935920Z test_native_result_identity_zero_and_skips_fail_closed (test_validator.EvidenceReaderTests.test_native_result_identity_zero_and_skips_fail_closed) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.3840640Z test_real_resource_census_is_nonempty_and_paths_exist (test_validator.EvidenceReaderTests.test_real_resource_census_is_nonempty_and_paths_exist) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.3843610Z test_reject_acceptance_or_scope_claim (test_validator.EvidenceReaderTests.test_reject_acceptance_or_scope_claim) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.3883980Z test_reject_capture_bytes_and_dimension_mutation (test_validator.EvidenceReaderTests.test_reject_capture_bytes_and_dimension_mutation) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.3927500Z test_reject_command_bytes_mutation (test_validator.EvidenceReaderTests.test_reject_command_bytes_mutation) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.3962530Z test_reject_contract_hash_mutation (test_validator.EvidenceReaderTests.test_reject_contract_hash_mutation) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4020490Z test_reject_duplicate_or_missing_capture (test_validator.EvidenceReaderTests.test_reject_duplicate_or_missing_capture) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4107620Z test_reject_field_off_cone_and_undisclosed_missing_states (test_validator.EvidenceReaderTests.test_reject_field_off_cone_and_undisclosed_missing_states) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4179740Z test_reject_invented_dense_or_camera_state (test_validator.EvidenceReaderTests.test_reject_invented_dense_or_camera_state) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4282230Z test_reject_missing_hidden_or_false_dense_node_intersections (test_validator.EvidenceReaderTests.test_reject_missing_hidden_or_false_dense_node_intersections) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4332390Z test_reject_resource_mutation_and_missing_census (test_validator.EvidenceReaderTests.test_reject_resource_mutation_and_missing_census) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4364390Z test_reject_resource_path_escape (test_validator.EvidenceReaderTests.test_reject_resource_path_escape) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4413960Z test_reject_seeded_replay_or_digest_mismatch (test_validator.EvidenceReaderTests.test_reject_seeded_replay_or_digest_mismatch) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4501750Z test_reject_stale_camera_and_offscreen_crop (test_validator.EvidenceReaderTests.test_reject_stale_camera_and_offscreen_crop) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4540760Z test_source_has_no_state_manufacturing_or_candidate_art (test_validator.EvidenceReaderTests.test_source_has_no_state_manufacturing_or_candidate_art) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4578520Z test_synthetic_reader_control (test_validator.EvidenceReaderTests.test_synthetic_reader_control) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4580080Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4580480Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4581370Z Ran 28 tests in 0.521s
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4581760Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4582030Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4851000Z ##[group]Run python3 -B -W error::ResourceWarning docs/review/player-south-repair-20261116/test_south.py
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4854070Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/player-south-repair-20261116/test_south.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4854880Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/paving-corner-review-20261116/test_source.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4855960Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/stone-surface-authored-20261116/test_source.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4856630Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/camera-surface-authored-20261116/test_final.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4857480Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/camera-raster-material-20261116/painted-assembly/padded-final/test_padding.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4859800Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/stone-painted-facade-20261116/test_source.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4861610Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/stone-painted-facade-20261116/test_roof_layer.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4864390Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/stone-painted-facade-20261116/verify_exports.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4865140Z ^[[36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/scene-source-assembly-20261116 -p 'test_*.py'^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4865860Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/upgrade-interaction-20261116/test_evidence.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4942480Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4942840Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4943090Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4943580Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4944090Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4944520Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4945020Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:35:57.4945410Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:04.3762350Z 2 material leg renders exported; laced source restricted to one forward tongue face per boot.
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:05.0449990Z One separately authored neutral pose exported.
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:05.0912910Z South sample ready: /Users/runner/work/SS-runtime/SS-runtime/docs/review/player-south-repair-20261116/south-neutral.png
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:12.2671510Z 2 material leg renders exported; laced source restricted to one forward tongue face per boot.
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:12.8906750Z One separately authored neutral pose exported.
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:19.6263230Z 2 material leg renders exported; laced source restricted to one forward tongue face per boot.
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:20.2364850Z One separately authored neutral pose exported.
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:20.2901450Z ....s.....
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:20.2903130Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:20.2904510Z Ran 10 tests in 22.542s
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:20.2906060Z South sample ready: /Users/runner/work/SS-runtime/SS-runtime/docs/review/player-south-repair-20261116/south-neutral.png
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:20.2907350Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:20.2908420Z South sample ready: /Users/runner/work/SS-runtime/SS-runtime/docs/review/player-south-repair-20261116/south-neutral.png
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:20.2910230Z OK (skipped=1)
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:20.8246950Z test_all_64_material_cells_distinct_not_four_slab_repeat (__main__.PavingTests.test_all_64_material_cells_distinct_not_four_slab_repeat) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:20.8302330Z test_authored_curb_join_and_decorative_side_placement (__main__.PavingTests.test_authored_curb_join_and_decorative_side_placement) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:23.4929820Z test_exact_deterministic_export_rebuild (__main__.PavingTests.test_exact_deterministic_export_rebuild) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:23.4941310Z test_exact_opposite_edges_and_no_widened_joint (__main__.PavingTests.test_exact_opposite_edges_and_no_widened_joint) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:23.5029520Z test_grayscale_and_transparency_preserved (__main__.PavingTests.test_grayscale_and_transparency_preserved) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:23.5088250Z test_input_and_parameter_hashes_bound (__main__.PavingTests.test_input_and_parameter_hashes_bound) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:23.5091240Z test_no_native_or_collision_acceptance_claim (__main__.PavingTests.test_no_native_or_collision_acceptance_claim) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:23.5099470Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:23.5100620Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:23.5102090Z Built 64 material mixtures and authored corner; NOT native or accepted
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:23.5103680Z Ran 7 tests in 3.085s
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:23.5104630Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:23.5105340Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:25.6388560Z test_alpha_native_half_and_original_unchanged (__main__.AuthoredStoneTests.test_alpha_native_half_and_original_unchanged) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:25.6432540Z test_authored_surface_sources_and_common_lighting (__main__.AuthoredStoneTests.test_authored_surface_sources_and_common_lighting) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:25.6487020Z test_closed_surfaces_outward_normals_and_nonzero_volume (__main__.AuthoredStoneTests.test_closed_surfaces_outward_normals_and_nonzero_volume) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:28.5441170Z test_direct_edits_change_actual_render (__main__.AuthoredStoneTests.test_direct_edits_change_actual_render) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:45.1290830Z FIRST SAMPLE READY /Users/runner/work/SS-runtime/SS-runtime/docs/review/stone-surface-authored-20261116/replay-test-8uzee8f4/comparison.png
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:45.2089500Z test_direct_source_replay_is_byte_identical (__main__.AuthoredStoneTests.test_direct_source_replay_is_byte_identical) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:45.2128980Z test_foundation_registered_to_unchanged_original_solid (__main__.AuthoredStoneTests.test_foundation_registered_to_unchanged_original_solid) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:45.2133660Z test_projection_and_uprights_have_not_changed (__main__.AuthoredStoneTests.test_projection_and_uprights_have_not_changed) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:45.2145800Z test_stairs_separate_and_within_collision_rectangle (__main__.AuthoredStoneTests.test_stairs_separate_and_within_collision_rectangle) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:45.2150550Z test_windows_are_recessed_not_painted_over_filled_shell (__main__.AuthoredStoneTests.test_windows_are_recessed_not_painted_over_filled_shell) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:45.2152560Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:45.2155900Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:45.2159270Z Ran 9 tests in 21.561s
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:45.2159460Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:45.2160140Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:48.6140590Z test_01_archived_cli_exact_rebuild_all_outputs (__main__.SurfaceSourceTests.test_01_archived_cli_exact_rebuild_all_outputs) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:48.6229810Z test_02_manifest_and_benchmark_pinned_hash (__main__.SurfaceSourceTests.test_02_manifest_and_benchmark_pinned_hash) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:48.6254160Z test_03_bundled_comparison_inputs_are_pinned (__main__.SurfaceSourceTests.test_03_bundled_comparison_inputs_are_pinned) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:49.5890550Z test_04_real_alpha_zero_transparent_rgb_all_outputs (__main__.SurfaceSourceTests.test_04_real_alpha_zero_transparent_rgb_all_outputs) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:49.5989680Z test_05_actual_hidden_underpaint (__main__.SurfaceSourceTests.test_05_actual_hidden_underpaint) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:49.6092300Z test_06_missing_underpaint_detected (__main__.SurfaceSourceTests.test_06_missing_underpaint_detected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:52.5031340Z test_07_remove_collar_reveals_painted_pole (__main__.SurfaceSourceTests.test_07_remove_collar_reveals_painted_pole) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:55.4050790Z test_08_individually_editable_paint_changes_no_geometry (__main__.SurfaceSourceTests.test_08_individually_editable_paint_changes_no_geometry) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:58.3862180Z test_09_source_render_never_reads_any_raster (__main__.SurfaceSourceTests.test_09_source_render_never_reads_any_raster) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:58.3891740Z test_10_authored_anchor_exact_uniform_native_half (__main__.SurfaceSourceTests.test_10_authored_anchor_exact_uniform_native_half) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:58.4292760Z test_11_individual_surface_census_no_raster_svg (__main__.SurfaceSourceTests.test_11_individual_surface_census_no_raster_svg) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:58.4878960Z test_12_unretouched_comparison_and_exact_grayscale (__main__.SurfaceSourceTests.test_12_unretouched_comparison_and_exact_grayscale) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:36:58.4898400Z test_13_surface_only_no_contour_anchor_or_alpha_changes (__main__.SurfaceSourceTests.test_13_surface_only_no_contour_anchor_or_alpha_changes) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:01.6353990Z test_14_detached_source_replay_forbids_external_packet_reads (__main__.SurfaceSourceTests.test_14_detached_source_replay_forbids_external_packet_reads) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:01.6366160Z test_15_manifest_runtime_version_must_be_truthful (__main__.SurfaceSourceTests.test_15_manifest_runtime_version_must_be_truthful) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:01.6464070Z test_16_only_interpreter_metadata_may_differ (__main__.SurfaceSourceTests.test_16_only_interpreter_metadata_may_differ) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:01.6465650Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:01.6471020Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:01.6472370Z Ran 16 tests in 16.232s
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:01.6472890Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:01.6473400Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:01.9199420Z test_01_exact_authorized_changes_only (__main__.PaddingTests.test_01_exact_authorized_changes_only) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:01.9268770Z test_02_archived_margin_failure_remains (__main__.PaddingTests.test_02_archived_margin_failure_remains) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:01.9362520Z test_03_actual_final_border_passes_all_sizes_and_layers (__main__.PaddingTests.test_03_actual_final_border_passes_all_sizes_and_layers) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:01.9641590Z test_04_unclipped_pixels_identical_and_fringe_restored (__main__.PaddingTests.test_04_unclipped_pixels_identical_and_fringe_restored) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:01.9687920Z test_05_pasting_old_clipped_image_is_rejected (__main__.PaddingTests.test_05_pasting_old_clipped_image_is_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:02.1657100Z test_06_source_pixels_crops_and_raw_files_unchanged (__main__.PaddingTests.test_06_source_pixels_crops_and_raw_files_unchanged) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:02.1659200Z test_07_root_relative_mapping_identical (__main__.PaddingTests.test_07_root_relative_mapping_identical) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:02.1661360Z test_08_registration_matches_source_and_uniform_scale (__main__.PaddingTests.test_08_registration_matches_source_and_uniform_scale) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:03.7526130Z test_09_archive_original_twelve_checks_still_pass (__main__.PaddingTests.test_09_archive_original_twelve_checks_still_pass) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:04.3463920Z test_10_standalone_all_outputs_and_manifest_identical (__main__.PaddingTests.test_10_standalone_all_outputs_and_manifest_identical) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:04.3482580Z test_11_any_new_geometry_or_scale_change_rejected (__main__.PaddingTests.test_11_any_new_geometry_or_scale_change_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:04.3687630Z test_12_final_manifest_hashes_current_inputs_and_exports (__main__.PaddingTests.test_12_final_manifest_hashes_current_inputs_and_exports) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:04.3708300Z test_13_manifest_comparator_accepts_only_actual_interpreter (__main__.PaddingTests.test_13_manifest_comparator_accepts_only_actual_interpreter) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:04.3762320Z test_14_manifest_comparator_rejects_all_noninterpreter_changes (__main__.PaddingTests.test_14_manifest_comparator_rejects_all_noninterpreter_changes) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:04.3773150Z test_15_retained_author_manifest_bytes_are_separately_pinned (__main__.PaddingTests.test_15_retained_author_manifest_bytes_are_separately_pinned) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:04.3775910Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:04.3776230Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:04.3777240Z Ran 15 tests in 2.613s
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:04.3777700Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:04.3779020Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:04.8416960Z test_actual_proportions_contact_and_collision (__main__.SourceTests.test_actual_proportions_contact_and_collision) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:04.9423860Z test_alpha_bounds_and_no_interior_holes (__main__.SourceTests.test_alpha_bounds_and_no_interior_holes) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:04.9523000Z test_closed_oriented_mesh (__main__.SourceTests.test_closed_oriented_mesh) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:05.7342290Z test_each_material_mutation_changes_visible_pixels (__main__.SourceTests.test_each_material_mutation_changes_visible_pixels) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:05.8006010Z test_exact_inputs_and_explicit_crops (__main__.SourceTests.test_exact_inputs_and_explicit_crops) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:06.5783650Z test_hidden_surface_mutation_visible_in_reverse_only (__main__.SourceTests.test_hidden_surface_mutation_visible_in_reverse_only) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:07.1263350Z test_mesh_mutation_changes_render_and_registration (__main__.SourceTests.test_mesh_mutation_changes_render_and_registration) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:07.1265040Z test_no_magenta_contamination (__main__.SourceTests.test_no_magenta_contamination) ... /Users/runner/work/SS-runtime/SS-runtime/docs/review/stone-painted-facade-20261116/test_source.py:110: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:07.1292130Z   colors=image.getdata()
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:07.3935140Z ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:07.4152270Z test_output_hashes_native_half_obj (__main__.SourceTests.test_output_hashes_native_half_obj) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:07.4154490Z test_registration_independently_projected (__main__.SourceTests.test_registration_independently_projected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:09.8277480Z test_standalone_replay_without_repository_or_siblings (__main__.SourceTests.test_standalone_replay_without_repository_or_siblings) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:09.8278780Z test_uv_is_explicit_upright_unmirrored_reuse (__main__.SourceTests.test_uv_is_explicit_upright_unmirrored_reuse) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:10.0760010Z test_uv_mutation_changes_pixels_not_geometry (__main__.SourceTests.test_uv_mutation_changes_pixels_not_geometry) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:10.0859760Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:10.0962890Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:10.1063970Z Ran 13 tests in 5.578s
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:10.1163960Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:10.1258040Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:11.3065550Z test_exact_composition_layer_bounds_and_no_magenta (__main__.RoofLayerTests.test_exact_composition_layer_bounds_and_no_magenta) ... /Users/runner/work/SS-runtime/SS-runtime/docs/review/stone-painted-facade-20261116/test_roof_layer.py:120: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:11.3178490Z   for r,g,b,a in composite.getdata():
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:11.4302630Z ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:11.4403510Z test_exact_roof_z_and_independent_projection (__main__.RoofLayerTests.test_exact_roof_z_and_independent_projection) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:11.4593280Z test_false_alpha_sources_rejected (__main__.RoofLayerTests.test_false_alpha_sources_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:12.4914060Z test_material_mutation_and_layer_removal (__main__.RoofLayerTests.test_material_mutation_and_layer_removal) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:12.6590490Z test_only_three_source_texels_normalized (__main__.RoofLayerTests.test_only_three_source_texels_normalized) ... /Users/runner/work/SS-runtime/SS-runtime/docs/review/stone-painted-facade-20261116/test_roof_layer.py:50: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:12.6695060Z   diff={(i%1254,i//1254) for i,(a,b) in enumerate(zip(self.source.getdata(),derived.getdata())) if a!=b}
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:13.7353170Z ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:13.7467820Z test_original_building_geometry_registration_and_pixels_unchanged (__main__.RoofLayerTests.test_original_building_geometry_registration_and_pixels_unchanged) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:13.7673200Z test_raw_unchanged_true_alpha_not_opaque_background (__main__.RoofLayerTests.test_raw_unchanged_true_alpha_not_opaque_background) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:13.7781830Z test_reintroduced_output_residue_fails_strict_guard (__main__.RoofLayerTests.test_reintroduced_output_residue_fails_strict_guard) ... /Users/runner/work/SS-runtime/SS-runtime/docs/review/stone-painted-facade-20261116/test_roof_layer.py:127: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:13.7785710Z   for r,g,b,a in changed.getdata():
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:13.7861700Z ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:16.8760270Z test_root_anchor_z_and_scale_mutations_are_live (__main__.RoofLayerTests.test_root_anchor_z_and_scale_mutations_are_live) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:16.8861950Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:16.8964160Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:16.9066100Z Ran 9 tests in 6.673s
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:16.9175670Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:16.9276550Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:18.1368330Z {
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:18.1467870Z   "status": "PASS",
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:18.1569790Z   "objRoundtrip": "pixel-identical",
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:18.1674570Z   "uvMutation": "pixels change, geometry and alpha unchanged",
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:18.1775530Z   "mtlMutation": "material map changes actual pixels",
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:18.1887830Z   "objVertexMutation": "height changes derived canvas",
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:18.1993200Z   "sourceCanvas": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:18.2094590Z     1000,
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:18.2197500Z     1200
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:18.2277440Z   ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:18.2379300Z   "sourceRoot": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:18.2422010Z     500,
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:18.2493370Z     1160
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:18.2515150Z   ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:18.2530760Z   "uniformScale": 0.2
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:18.2540940Z }
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.0873620Z ...........................................................................
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.0875860Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.0877030Z Ran 75 tests in 4.792s
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.0877390Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.0878070Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.4064530Z ......
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.4065950Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.4067510Z Ran 6 tests in 0.214s
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.4070730Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.4071060Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.4516870Z ##[group]Run python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/scene-qa-repair-20261116 -p 'test_*.py'
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.4517940Z ^[[36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/scene-qa-repair-20261116 -p 'test_*.py'^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.4518910Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/scene-qa-repair-20261116/ground/test_ground.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.4519710Z ^[[36;1mpython3 -B docs/review/scene-qa-repair-20261116/retained.py docs/review/scene-qa-repair-20261116/native-capture-v5^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.4521850Z ^[[36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/scene-qa-framing-20261116 -p 'test_*.py'^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.4523180Z ^[[36;1mpython3 -B docs/review/scene-qa-framing-20261116/retained.py docs/review/scene-qa-framing-20261116/native-capture-v6^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.4525860Z ^[[36;1mnode docs/review/scene-qa-repair-20261116/gallery/test_evidence.js --require-v6^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.4526370Z ^[[36;1mnode docs/review/scene-qa-repair-20261116/gallery/test_loader.js^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.5089950Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.5091520Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.5097640Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.5137590Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.5142850Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.5144510Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.5145090Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:23.5146020Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:29.4412630Z .........................................
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:29.4414100Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:29.4415000Z Ran 41 tests in 5.658s
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:29.4415420Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:29.4415970Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:29.9901460Z test_01_authoritative_bounds_and_registration (__main__.GroundTests.test_01_authoritative_bounds_and_registration) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:30.0678750Z test_02_red_capable_real_v4_crop_coverage (__main__.GroundTests.test_02_red_capable_real_v4_crop_coverage) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:30.0738890Z test_03_fixed_crop_coverage_and_inverse_roundtrip (__main__.GroundTests.test_03_fixed_crop_coverage_and_inverse_roundtrip) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:30.1124710Z test_04_entire_original_interior_exact (__main__.GroundTests.test_04_entire_original_interior_exact) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:30.2010570Z test_05_no_artificial_old_patch_boundary (__main__.GroundTests.test_05_no_artificial_old_patch_boundary) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:30.3257700Z test_06_opaque_complete_arena_and_no_repeated_motif (__main__.GroundTests.test_06_opaque_complete_arena_and_no_repeated_motif) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:30.6013570Z test_07_square_groundpatch_uv_adapter (__main__.GroundTests.test_07_square_groundpatch_uv_adapter) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:30.6114330Z test_08_immutable_sources_fail_closed (__main__.GroundTests.test_08_immutable_sources_fail_closed) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:48.7590600Z test_09_deterministic_rebuild_and_output_hashes (__main__.GroundTests.test_09_deterministic_rebuild_and_output_hashes) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:48.7599200Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:48.7599490Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:48.7601830Z Ran 9 tests in 19.187s
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:48.7603240Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:48.7604800Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:49.1166480Z {
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:49.1167340Z   "status": "RETAINED_BYTES_AND_CONTRACT_VERIFIED_NOT_NEW_NATIVE_RUN",
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:49.1167880Z   "fixtureVersion": "source-scene-qa-005-footprint-ground",
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:49.1168220Z   "captures": 6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:49.1168530Z   "images": 18,
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:49.1168770Z   "ownerAcceptance": false,
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:49.1169390Z   "physicalDeviceEvidence": false,
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:49.1174910Z   "binaryCheck": "agreement of preserved original import records, not a fresh local binary comparison"
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:49.1176650Z }
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:51.3572570Z .......................................
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:51.3576660Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:51.3577990Z Ran 39 tests in 2.074s
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:51.3578830Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:51.3579460Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:51.6019130Z {
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:51.6024610Z   "status": "RETAINED_BYTES_AND_CONTRACT_VERIFIED_NOT_NEW_NATIVE_RUN",
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:51.6026350Z   "fixtureVersion": "source-scene-qa-006-control-framing",
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:51.6027680Z   "captures": 6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:51.6028530Z   "images": 18,
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:51.6029390Z   "ownerAcceptance": false,
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:51.6030510Z   "physicalDeviceEvidence": false,
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:51.6031790Z   "binaryCheck": "agreement of preserved original import records, not a fresh local binary comparison"
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:51.6033400Z }
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.0673030Z {"result":"PASS","actualCaptureVersions":3,"images":54,"selections":72,"rejectedMutations":22,"syntheticV6RejectedMutations":15,"v6NativeEvidence":true,"browserEvidence":false}
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.2653540Z {"result":"PASS","missingV6":true,"mismatchedCaptureRejected":true,"corruptedPNGRejected":true,"corruptedRecordRejected":true,"syntheticV6Only":true,"noFallback":true,"retainedV5Selections":36,"browserEvidence":false,"nativeRun":false}
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.2919500Z ##[group]Run python3 -B -W error::ResourceWarning docs/review/building-perspective-detail-20261116/kiosk/test_kiosk.py
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.2920370Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/building-perspective-detail-20261116/kiosk/test_kiosk.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.2921130Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/building-perspective-detail-20261116/context/test_context.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.2921890Z ^[[36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/building-perspective-detail-20261116/scene -p 'test_*.py'^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.2922860Z ^[[36;1mpython3 -B docs/review/building-perspective-detail-20261116/scene/retained.py docs/review/building-perspective-detail-20261116/scene/native-capture-v7^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.2923620Z ^[[36;1mpython3 -B docs/review/building-perspective-detail-20261116/verify_baseline.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.2924380Z ^[[36;1mnode docs/review/building-perspective-detail-20261116/gallery/test_evidence.js --require-v7^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.2925020Z ^[[36;1mnode docs/review/building-perspective-detail-20261116/gallery/test_loader.js --require-v7^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.2967910Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.2968240Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.2968540Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.2969010Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.2969480Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.2969950Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.2970370Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:52.2970760Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:54.9004550Z test_basis_vectors_and_upright (__main__.KioskTests.test_basis_vectors_and_upright) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:54.9036860Z test_canvas_rederived_uniform_scale (__main__.KioskTests.test_canvas_rederived_uniform_scale) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:54.9139890Z test_exact_landmarks (__main__.KioskTests.test_exact_landmarks) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:54.9140760Z test_explicit_ground_boundary (__main__.KioskTests.test_explicit_ground_boundary) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:57.1180700Z test_export_roundtrip_and_actual_obj_mutation (__main__.KioskTests.test_export_roundtrip_and_actual_obj_mutation) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:57.1199010Z test_footprint_height_and_chamfer (__main__.KioskTests.test_footprint_height_and_chamfer) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:37:59.2711750Z test_geometry_mutation_active (__main__.KioskTests.test_geometry_mutation_active) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:03.4608060Z test_isolated_replay (__main__.KioskTests.test_isolated_replay) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:03.5005610Z test_manifest_hashes (__main__.KioskTests.test_manifest_hashes) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:04.8299950Z test_material_mutation_active (__main__.KioskTests.test_material_mutation_active) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:04.8305750Z test_real_parapet_and_treads (__main__.KioskTests.test_real_parapet_and_treads) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:04.8870830Z test_uv_bounds_materials_and_output (__main__.KioskTests.test_uv_bounds_materials_and_output) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:07.1525830Z test_uv_mutation_active (__main__.KioskTests.test_uv_mutation_active) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:07.1541850Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:07.1542810Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:07.1543910Z Ran 13 tests in 14.680s
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:07.1546080Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:07.1546770Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:07.3365220Z test_all_geometric_landmarks_fit_registered_canvas (__main__.ContextTests.test_all_geometric_landmarks_fit_registered_canvas) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:07.5087660Z test_alpha_and_native_half_sizes (__main__.ContextTests.test_alpha_and_native_half_sizes) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:07.5136790Z test_every_vertex_is_inside_original_footprint (__main__.ContextTests.test_every_vertex_is_inside_original_footprint) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:07.5152250Z test_exact_role_roots_authority_and_inverse_alignment (__main__.ContextTests.test_exact_role_roots_authority_and_inverse_alignment) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:07.6572330Z test_nonaffine_uv_or_geometry_fails_closed (__main__.ContextTests.test_nonaffine_uv_or_geometry_fails_closed) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:07.6863400Z test_provenance_and_manifest (__main__.ContextTests.test_provenance_and_manifest) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:07.6870770Z test_registration_mutations_rejected (__main__.ContextTests.test_registration_mutations_rejected) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:07.6988250Z test_roof_density_rejects_original_rectangular_stretch (__main__.ContextTests.test_roof_density_rejects_original_rectangular_stretch) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:07.6990330Z test_roof_uv_density_is_world_consistent (__main__.ContextTests.test_roof_uv_density_is_world_consistent) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:26.4788140Z test_standalone_replay_is_byte_identical (__main__.ContextTests.test_standalone_replay_is_byte_identical) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:26.7710380Z test_uv_geometry_and_material_editability (__main__.ContextTests.test_uv_geometry_and_material_editability) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:26.7711030Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:26.7711400Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:26.7712090Z Ran 11 tests in 19.459s
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:26.7712410Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:26.7712740Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:57.9464480Z .........................................
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:57.9474620Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:57.9477240Z Ran 41 tests in 30.823s
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:57.9478010Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:57.9479040Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:58.8893250Z {
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:58.8996230Z   "status": "RETAINED_BYTES_AND_CONTRACT_VERIFIED_NOT_NEW_NATIVE_RUN",
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:58.9098910Z   "fixtureVersion": "source-scene-building-007-perspective-detail",
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:58.9199660Z   "captures": 6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:58.9241810Z   "images": 18,
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:58.9283400Z   "ownerAcceptance": false,
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:58.9288830Z   "physicalDeviceEvidence": false,
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:58.9331500Z   "binaryCheck": "agreement of preserved original import records, not a fresh local binary comparison"
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:58.9345360Z }
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.4700490Z {
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.4701450Z   "status": "EXACT_BASELINE_PIXELS_VERIFIED",
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.4702320Z   "comparisons": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.4702850Z     "100/native",
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.4703600Z     "100/half",
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.4704160Z     "100/grayscale",
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.4704800Z     "125/native",
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.4705340Z     "125/half",
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.4705980Z     "125/grayscale",
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.4706860Z     "140/native",
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.4707380Z     "140/half",
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.4708010Z     "140/grayscale"
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.4708550Z   ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.4709180Z   "count": 9,
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.4709690Z   "newNativeRun": false,
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.4710620Z   "visualAcceptance": false
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.4711200Z }
+spec-parity	UNKNOWN STEP	2026-11-17T05:38:59.9112970Z {"result":"PASS","actualCaptureVersions":2,"images":36,"selections":48,"rejectedMutations":53,"v7NativeEvidence":true,"browserEvidence":false}
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:00.2799750Z {"result":"PASS","missingV7":true,"mismatchedCaptureRejected":true,"corruptedPNGRejected":true,"corruptedRecordRejected":true,"noFallback":true,"retainedVersions":2,"selections":72,"browserEvidence":false,"nativeRun":false}
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:00.3255530Z ##[group]Run python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/footprint-ground-repair-20261116 -p 'test_*.py'
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:00.3256720Z ^[[36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/footprint-ground-repair-20261116 -p 'test_*.py'^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:00.3257770Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/footprint-ground-repair-20261116/plan/test_plan.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:00.3258690Z ^[[36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/footprint-ground-repair-20261116/scene -p 'test_*.py'^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:00.3262630Z ^[[36;1mpython3 -B docs/review/footprint-ground-repair-20261116/scene/retained.py docs/review/footprint-ground-repair-20261116/scene/native-capture-v8^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:00.3263600Z ^[[36;1mpython3 -B docs/review/footprint-ground-repair-20261116/verify_prop_bases.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:00.3300220Z ^[[36;1mnode docs/review/footprint-ground-repair-20261116/gallery/test_evidence.js --require-v8^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:00.3300820Z ^[[36;1mnode docs/review/footprint-ground-repair-20261116/gallery/test_loader.js --require-v8^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:00.4041880Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:00.4042250Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:00.4042560Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:00.4043120Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:00.4043710Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:00.4044210Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:00.4044610Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:00.4045030Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:04.2741360Z ..........
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:04.2743150Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:04.2744120Z Ran 10 tests in 3.622s
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:04.2744850Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:04.2745500Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:04.5701650Z test_all_v7_bytes_immutable (__main__.PlanTests.test_all_v7_bytes_immutable) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:04.5774020Z test_attempt01_all17_files_immutable (__main__.PlanTests.test_attempt01_all17_files_immutable) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:04.5779790Z test_ground_canvas (__main__.PlanTests.test_ground_canvas) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:04.5813140Z test_mutation_camera_root (__main__.PlanTests.test_mutation_camera_root) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:04.7140200Z test_mutation_crossing_on_foundation (__main__.PlanTests.test_mutation_crossing_on_foundation) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:04.7598730Z test_mutation_excess_shadow (__main__.PlanTests.test_mutation_excess_shadow) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:04.9108460Z test_mutation_extra_road_detail (__main__.PlanTests.test_mutation_extra_road_detail) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:04.9133610Z test_mutation_field (__main__.PlanTests.test_mutation_field) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:04.9269680Z test_mutation_foundation_hole (__main__.PlanTests.test_mutation_foundation_hole) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:04.9657660Z test_mutation_invented_neighbor_contact (__main__.PlanTests.test_mutation_invented_neighbor_contact) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:05.0461330Z test_mutation_missing_crossing (__main__.PlanTests.test_mutation_missing_crossing) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:05.0563470Z test_mutation_missing_neighbor (__main__.PlanTests.test_mutation_missing_neighbor) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:05.0836640Z test_mutation_painted_road_inside_solid (__main__.PlanTests.test_mutation_painted_road_inside_solid) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:05.0860260Z test_mutation_registration (__main__.PlanTests.test_mutation_registration) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:05.3569050Z test_mutation_rendered_ground_disagrees (__main__.PlanTests.test_mutation_rendered_ground_disagrees) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:05.3712840Z test_mutation_solid_change (__main__.PlanTests.test_mutation_solid_change) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:05.4011530Z test_mutation_source_landmark (__main__.PlanTests.test_mutation_source_landmark) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:05.4325600Z test_mutation_tree_old_interior (__main__.PlanTests.test_mutation_tree_old_interior) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:05.4741990Z test_mutation_tree_on_road (__main__.PlanTests.test_mutation_tree_on_road) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:05.5050340Z test_mutation_virtual_as_actual (__main__.PlanTests.test_mutation_virtual_as_actual) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:05.5354100Z test_mutation_zero_sidewalk (__main__.PlanTests.test_mutation_zero_sidewalk) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:05.5855860Z test_paving_tile_is_retained_source_resample (__main__.PlanTests.test_paving_tile_is_retained_source_resample) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:06.3644980Z test_rendered_ground_matches_semantics (__main__.PlanTests.test_rendered_ground_matches_semantics) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:06.3746790Z test_retained_paving_source_hashes (__main__.PlanTests.test_retained_paving_source_hashes) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:06.4759260Z test_road_details_semantically_clipped (__main__.PlanTests.test_road_details_semantically_clipped) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:07.2401470Z test_semantics_and_material_intersections (__main__.PlanTests.test_semantics_and_material_intersections) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:07.2416570Z test_shared_contract_and_material_ids_unchanged (__main__.PlanTests.test_shared_contract_and_material_ids_unchanged) ... ok
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:07.2417740Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:07.2418230Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:07.2418850Z Ran 27 tests in 2.874s
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:07.2418980Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:07.2419140Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:14.6920780Z ...........................................................
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:14.6922120Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:14.6923220Z Ran 59 tests in 7.271s
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:14.6923490Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:14.6923970Z OK
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:19.9607590Z Final correction preview generated. ground.png 4608x4608. One correction; no third art pass.
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:19.9619620Z {
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:19.9626620Z   "status": "RETAINED_BYTES_AND_CONTRACT_VERIFIED_NOT_NEW_NATIVE_RUN",
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:19.9628130Z   "fixtureVersion": "source-scene-footprint-008-ground-plan",
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:19.9629090Z   "captures": 6,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:19.9630800Z   "images": 18,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:19.9631530Z   "ownerAcceptance": false,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:19.9635910Z   "physicalDeviceEvidence": false,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:19.9637060Z   "binaryCheck": "agreement of preserved original import records, not a fresh local binary comparison",
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:19.9639920Z   "baselinePixelComparisons": 9
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:19.9640550Z }
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.6556170Z {
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.6660470Z   "status": "CONSERVATIVE_RASTER_BASE_CLEARANCE_VERIFIED",
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.6784770Z   "method": "Manual visual base-region identification, full-region sampling with independent inverse D108",
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.6886540Z   "limits": "Not mesh-derived contacts, exact alpha contour, canopy clearance, native visibility or owner acceptance. Registered front vertex differs from physical trunk center.",
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.6989240Z   "props": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7074660Z     {
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7100590Z       "name": "benchmark-prop-0",
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7115140Z       "source": "AppTests/BenchmarkAssets/newsbox.png",
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7138850Z       "sourceSHA256": "a05de0ea875e599ebbf6d2ca29a657d17b01795e6670ab1594896827d8c6f0da",
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7152570Z       "registeredFrontRoot": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7174300Z         691,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7196250Z         639
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7231800Z       ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7242690Z       "sourceBaseConservativeRect": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7250670Z         45,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7262160Z         595,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7275530Z         356,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7284040Z         767
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7284380Z       ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7284790Z       "transformedRegionWorld": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7285250Z         [
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7286580Z           698.3551732150207,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7289870Z           657.1301336902444
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7290210Z         ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7290390Z         [
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7290630Z           685.6861767187618,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7290860Z           644.4611371939853
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7291130Z         ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7291300Z         [
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7291570Z           709.990634005974,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7291860Z           645.4946728992911
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7292080Z         ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7292300Z         [
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7298760Z           697.3216375097151,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7299020Z           632.8256764030322
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7299220Z         ]
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7299460Z       ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7299650Z       "testedSourceSamples": 53976,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7300000Z       "minimumSolidClearanceWorld": 45.68617671876177,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7300310Z       "entireRegionOnSidewalk": true
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7300610Z     },
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7300780Z     {
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7301050Z       "name": "benchmark-prop-1",
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7301420Z       "source": "AppTests/BenchmarkAssets/tree.png",
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7301850Z       "sourceSHA256": "f002a45f3d30f669d410f6fbcc1785284fce22368b834dc261821e31ad4426b6",
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7302850Z       "registeredFrontRoot": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7303080Z         858,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7303350Z         716
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7303530Z       ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7303770Z       "sourceBaseConservativeRect": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7304080Z         65,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7304280Z         540,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7304540Z         372,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7304780Z         767
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7304950Z       ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7305190Z       "transformedRegionWorld": [
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7305420Z         [
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7305670Z           881.0710135841297,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7305900Z           764.3025771418875
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7306160Z         ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7306320Z         [
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7306580Z           845.5407392534149,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7306800Z           728.7723028111728
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7307050Z         ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7307290Z         [
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7307490Z           904.9786988070668,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7307780Z           740.3948919189503
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7307980Z         ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7308250Z         [
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7308430Z           869.4484244763522,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7308740Z           704.8646175882355
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7308970Z         ]
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7309190Z       ],
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7309390Z       "testedSourceSamples": 70224,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7309760Z       "minimumSolidClearanceWorld": 3.6974228581125317,
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7310110Z       "entireRegionOnSidewalk": true
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7310340Z     }
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7310590Z   ]
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:22.7310760Z }
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:23.3871950Z {"result":"PASS","actualCaptureVersions":2,"images":36,"selections":48,"rejectedMutations":79,"syntheticV8Contract":true,"v8NativeEvidence":true,"browserEvidence":false}
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.4334180Z {"result":"PASS","missingV8":true,"mismatchedCaptureRejected":true,"corruptedPNGRejected":true,"corruptedRecordRejected":true,"missingDependenciesRejected":true,"sourceForgeryRejected":true,"binaryForgeryRejected":true,"noFallback":true,"actualVersions":2,"syntheticV8Loader":true,"selections":108,"browserEvidence":false,"nativeRun":false}
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5209090Z ##[group]Run python3 -B -W error::ResourceWarning docs/review/blocked-base-curb-relief-20261116/test_audit.py
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5210120Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/blocked-base-curb-relief-20261116/test_audit.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5210720Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/blocked-base-curb-relief-20261116/source/test_source.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5211360Z ^[[36;1mpython3 -B -W error::ResourceWarning docs/review/blocked-base-curb-relief-20261116/source/attempt-02/test_source.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5211920Z ^[[36;1mpython3 -B scripts/test_review_test_runner.py^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5212560Z ^[[36;1mpython3 scripts/run_review_tests.py -B -W error::ResourceWarning -m unittest discover -s docs/review/blocked-base-curb-relief-20261116/scene -p 'test_*.py'^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5213460Z ^[[36;1mpython3 -B docs/review/blocked-base-curb-relief-20261116/scene/retained.py docs/review/blocked-base-curb-relief-20261116/scene/native-capture-v9^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5214100Z ^[[36;1mpython3 -B docs/review/blocked-base-curb-relief-20261116/audit.py verify^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5214840Z ^[[36;1mpython3 -B docs/review/blocked-base-curb-relief-20261116/audit.py pixels^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5215320Z ^[[36;1mnode docs/review/blocked-base-curb-relief-20261116/gallery/test_evidence.js --require-v9^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5215850Z ^[[36;1mnode docs/review/blocked-base-curb-relief-20261116/gallery/test_loader.js --require-v9^[[0m
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5489120Z shell: /bin/bash -e {0}
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5489750Z env:
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5490350Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5491680Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5492720Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5493650Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5494840Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.5495600Z ##[endgroup]
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.8966730Z E......
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9068570Z ======================================================================
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9170190Z ERROR: test_actual_protected_bytes (__main__.PreservationTests.test_actual_protected_bytes)
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9270620Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9273280Z Traceback (most recent call last):
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9281840Z   File "/Users/runner/work/SS-runtime/SS-runtime/docs/review/blocked-base-curb-relief-20261116/test_audit.py", line 15, in test_actual_protected_bytes
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9282620Z     self.assertEqual(audit.verify()['files'], 1766)
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9282920Z                      ^^^^^^^^^^^^^^
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9283420Z   File "/Users/runner/work/SS-runtime/SS-runtime/docs/review/blocked-base-curb-relief-20261116/audit.py", line 85, in verify
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9284120Z     require(digest(safe_file(root, name)) == expected, 'Protected bytes changed: ' + name)
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9284890Z   File "/Users/runner/work/SS-runtime/SS-runtime/docs/review/blocked-base-curb-relief-20261116/audit.py", line 33, in require
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9285500Z     raise ValueError(message)
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9285810Z ValueError: Protected bytes changed: App/GameScene.swift
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9286120Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9286270Z ----------------------------------------------------------------------
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9286570Z Ran 7 tests in 0.088s
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9286690Z 
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9286750Z FAILED (errors=1)
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9297940Z ##[error]Process completed with exit code 1.
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:26.9491580Z Post job cleanup.
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:27.5118340Z [command]/opt/homebrew/bin/git version
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:27.5262100Z git version 2.56.0
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:27.5288140Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/aa6d8d79-666e-4960-9977-9bb6ea75da1d/.gitconfig'
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:27.5307090Z Temporarily overriding HOME='/Users/runner/work/_temp/aa6d8d79-666e-4960-9977-9bb6ea75da1d' before making global git config changes
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:27.5308530Z Adding repository directory to the temporary git global config as a safe directory
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:27.5309260Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/SS-runtime/SS-runtime
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:27.5422660Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:27.5496820Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:27.6606180Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:27.6687620Z http.https://github.com/.extraheader
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:27.6694650Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:27.6769730Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:27.8248570Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:27.8554270Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:28.0141030Z Cleaning up orphan processes
+spec-parity	UNKNOWN STEP	2026-11-17T05:39:31.1496320Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

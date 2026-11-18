@@ -1,0 +1,29 @@
+test_actual_proportions_contact_and_collision (__main__.SourceTests.test_actual_proportions_contact_and_collision) ... ok
+test_alpha_bounds_and_no_interior_holes (__main__.SourceTests.test_alpha_bounds_and_no_interior_holes) ... FAIL
+test_closed_oriented_mesh (__main__.SourceTests.test_closed_oriented_mesh) ... ok
+test_each_material_mutation_changes_visible_pixels (__main__.SourceTests.test_each_material_mutation_changes_visible_pixels) ... ok
+test_exact_inputs_and_explicit_crops (__main__.SourceTests.test_exact_inputs_and_explicit_crops) ... ok
+test_hidden_surface_mutation_visible_in_reverse_only (__main__.SourceTests.test_hidden_surface_mutation_visible_in_reverse_only) ... ok
+test_mesh_mutation_changes_render_and_registration (__main__.SourceTests.test_mesh_mutation_changes_render_and_registration) ... ok
+test_no_magenta_contamination (__main__.SourceTests.test_no_magenta_contamination) ... /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/stone-painted-facade-20261116/test_source.py:110: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  colors=image.getdata()
+ok
+test_output_hashes_native_half_obj (__main__.SourceTests.test_output_hashes_native_half_obj) ... ok
+test_registration_independently_projected (__main__.SourceTests.test_registration_independently_projected) ... ok
+test_standalone_replay_without_repository_or_siblings (__main__.SourceTests.test_standalone_replay_without_repository_or_siblings) ... ok
+test_uv_is_explicit_upright_unmirrored_reuse (__main__.SourceTests.test_uv_is_explicit_upright_unmirrored_reuse) ... ok
+test_uv_mutation_changes_pixels_not_geometry (__main__.SourceTests.test_uv_mutation_changes_pixels_not_geometry) ... ok
+
+======================================================================
+FAIL: test_alpha_bounds_and_no_interior_holes (__main__.SourceTests.test_alpha_bounds_and_no_interior_holes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/stone-painted-facade-20261116/test_source.py", line 104, in test_alpha_bounds_and_no_interior_holes
+    self.assertIsNone(ImageChops.subtract(interior,alpha).getbbox())
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (51, 275, 949, 352) is not None
+
+----------------------------------------------------------------------
+Ran 13 tests in 3.557s
+
+FAILED (failures=1)

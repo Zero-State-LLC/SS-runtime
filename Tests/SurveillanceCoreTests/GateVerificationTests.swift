@@ -14,14 +14,14 @@ struct GateVerificationTests {
     }
 
     @Test func gateT902AllGateFamiliesEnumerated() {
-        #expect(GateRegistry.functional.count == 22)
+        #expect(GateRegistry.functional.count == 23)
         #expect(GateRegistry.determinism.count == 17)
         #expect(GateRegistry.stability.count == 11)
-        #expect(GateRegistry.visual.count == 21)
-        #expect(GateRegistry.arena.count == 20)
+        #expect(GateRegistry.visual.count == 24)
+        #expect(GateRegistry.arena.count == 21)
         #expect(GateRegistry.accessibility.count == 17)
         #expect(GateRegistry.playtest.count == 7)
-        #expect(GateRegistry.allGateIds.count == 115)
+        #expect(GateRegistry.allGateIds.count == 120)
     }
 
     @Test func gateT902DeviceGatesRequirePhysicalEvidence() {

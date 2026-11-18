@@ -1,0 +1,198 @@
+{
+  "status": "V7_FOOTPRINT_SEMANTIC_INCONSISTENCY_CONFIRMED_NOT_REPAIRED",
+  "scope": "Whole authoritative footprints, including offcrop portions, sampled at one-world-unit cell centers",
+  "groundLayout": {
+    "worldBounds": [
+      448,
+      384,
+      1024,
+      960
+    ],
+    "pixelsPerWorldUnit": 2,
+    "verticalEdgeX": 800,
+    "horizontalEdgeY": 600,
+    "radius": 48,
+    "curbWidth": 6,
+    "railX": [
+      860,
+      900
+    ],
+    "crossingY": [
+      470,
+      494,
+      518,
+      542,
+      566
+    ],
+    "crossingX": [
+      640,
+      730
+    ],
+    "drain": [
+      807,
+      662,
+      821,
+      690
+    ],
+    "tactile": [
+      704,
+      610,
+      740,
+      634
+    ],
+    "manhole": [
+      835,
+      760,
+      12
+    ]
+  },
+  "footprints": [
+    {
+      "id": "solid-01-residential-west",
+      "maxWorld": [
+        128,
+        896
+      ],
+      "minWorld": [
+        0,
+        384
+      ],
+      "sampledWorldArea": 65536,
+      "materialArea": {
+        "paving": 37888,
+        "curb": 768,
+        "road": 26880
+      },
+      "percent": {
+        "paving": 57.8125,
+        "curb": 1.171875,
+        "road": 41.015625
+      }
+    },
+    {
+      "id": "solid-02-residential-north",
+      "maxWorld": [
+        512,
+        960
+      ],
+      "minWorld": [
+        128,
+        768
+      ],
+      "sampledWorldArea": 73728,
+      "materialArea": {
+        "paving": 73728,
+        "curb": 0,
+        "road": 0
+      },
+      "percent": {
+        "paving": 100.0,
+        "curb": 0.0,
+        "road": 0.0
+      }
+    },
+    {
+      "id": "solid-03-transit-kiosk",
+      "maxWorld": [
+        640,
+        768
+      ],
+      "minWorld": [
+        512,
+        640
+      ],
+      "sampledWorldArea": 16384,
+      "materialArea": {
+        "paving": 16384,
+        "curb": 0,
+        "road": 0
+      },
+      "percent": {
+        "paving": 100.0,
+        "curb": 0.0,
+        "road": 0.0
+      }
+    },
+    {
+      "id": "solid-04-civic-west",
+      "maxWorld": [
+        928,
+        1152
+      ],
+      "minWorld": [
+        736,
+        768
+      ],
+      "sampledWorldArea": 73728,
+      "materialArea": {
+        "paving": 24576,
+        "curb": 2304,
+        "road": 46848
+      },
+      "percent": {
+        "paving": 33.333333333333336,
+        "curb": 3.125,
+        "road": 63.541666666666664
+      }
+    },
+    {
+      "id": "solid-05-civic-dais",
+      "maxWorld": [
+        1168,
+        752
+      ],
+      "minWorld": [
+        1008,
+        656
+      ],
+      "sampledWorldArea": 15360,
+      "materialArea": {
+        "paving": 0,
+        "curb": 0,
+        "road": 15360
+      },
+      "percent": {
+        "paving": 0.0,
+        "curb": 0.0,
+        "road": 100.0
+      }
+    }
+  ],
+  "props": [
+    {
+      "name": "benchmark-prop-0",
+      "worldRoot": [
+        691,
+        639
+      ],
+      "insideSolids": []
+    },
+    {
+      "name": "benchmark-prop-1",
+      "worldRoot": [
+        858,
+        780
+      ],
+      "insideSolids": [
+        "solid-04-civic-west"
+      ]
+    }
+  ],
+  "kioskGroundCornerProvenance": [
+    "virtual authoritative rectangle corner, omitted by visible chamfer39; not visible mesh contact",
+    "authored footprint corner",
+    "authored footprint corner",
+    "authored footprint corner"
+  ],
+  "inputSHA256": {
+    "docs/review/building-perspective-detail-20261116/scene/native-capture-v7/source-scene-records.json": "9728f0a030020dff0caad52e8d3791be092a3b6ada8b5ffd845ee9d370785889",
+    "docs/review/paving-corner-review-20261116/source.json": "3fabc473f8469241fb928c7dc7b8281c6e6e8e304d6789f7e9387eaf66ea6f1b",
+    "docs/review/scene-qa-repair-20261116/ground/ground-patch-square.png": "f4a3f542d8879b036c1a1979ab5fa03356b69350181fb526e190098982191dac"
+  },
+  "limits": [
+    "Ground material classification is not gameplay walkability.",
+    "Collision rectangles and visible architectural contact contours are different concepts.",
+    "V7 ground builder extends original world bounds only, retaining these curb semantics.",
+    "No source, capture, gameplay authority or historical validator was changed."
+  ]
+}

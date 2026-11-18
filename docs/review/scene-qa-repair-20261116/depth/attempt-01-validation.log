@@ -1,0 +1,56 @@
+test_empty_single_and_invalid (__main__.DepthTests.test_empty_single_and_invalid) ... ERROR
+test_equal_intersecting_and_contact (__main__.DepthTests.test_equal_intersecting_and_contact) ... ok
+test_explicit_synthetic_cycle_failure (__main__.DepthTests.test_explicit_synthetic_cycle_failure) ... ok
+test_near_far_mixed_quadrants (__main__.DepthTests.test_near_far_mixed_quadrants) ... ok
+test_old_root_regression_and_plane_explanation (__main__.DepthTests.test_old_root_regression_and_plane_explanation) ... ok
+test_ray_box_oracle_1089_positions (__main__.DepthTests.test_ray_box_oracle_1089_positions) ... ok
+test_ready_node_priority_not_global_resort (__main__.DepthTests.test_ready_node_priority_not_global_resort) ... ok
+test_review_gates_exclude_both_files (__main__.DepthTests.test_review_gates_exclude_both_files) ... ok
+test_same_projected_column_points_have_depth_edge (__main__.DepthTests.test_same_projected_column_points_have_depth_edge) ... ok
+test_solid_solid_and_disjoint_projected_spans (__main__.DepthTests.test_solid_solid_and_disjoint_projected_spans) ... ok
+test_stable_all_permutations (__main__.DepthTests.test_stable_all_permutations) ... ok
+test_swift_xctest_typechecks (__main__.DepthTests.test_swift_xctest_typechecks) ... /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift:2:8: error: no such module 'XCTest'
+ 1 | #if DEBUG && SS_SOURCE_SCENE_REVIEW
+ 2 | import XCTest
+   |        `- error: no such module 'XCTest'
+ 3 | 
+ 4 | final class SceneQAReviewDepthTests: XCTestCase {
+ERROR
+test_translation_and_positive_scale_preserve_relations (__main__.DepthTests.test_translation_and_positive_scale_preserve_relations) ... ok
+
+======================================================================
+ERROR: test_empty_single_and_invalid (__main__.DepthTests.test_empty_single_and_invalid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/scene-qa-repair-20261116/depth/test_depth.py", line 140, in test_empty_single_and_invalid
+    self.assertEqual(self.order([]), {"names": [], "edges": []})
+                     ~~~~~~~~~~^^^^
+  File "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/scene-qa-repair-20261116/depth/test_depth.py", line 55, in order
+    return self.probe([{"items": items}])[0]
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/scene-qa-repair-20261116/depth/test_depth.py", line 50, in probe
+    run = subprocess.run([self.executable], input=json.dumps(requests), text=True,
+                         capture_output=True, check=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/Users/appliedalchemylabs/.jcode/scratch/scene-depth-f4rr282o/depth-probe']' died with <Signals.SIGTERM: 15>.
+
+======================================================================
+ERROR: test_swift_xctest_typechecks (__main__.DepthTests.test_swift_xctest_typechecks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/scene-qa-repair-20261116/depth/test_depth.py", line 158, in test_swift_xctest_typechecks
+    subprocess.run([self.compiler, "-typecheck", "-D", "DEBUG", "-D", "SS_SOURCE_SCENE_REVIEW",
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    str(HELPER), str(XCTEST)], check=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/usr/bin/swiftc', '-typecheck', '-D', 'DEBUG', '-D', 'SS_SOURCE_SCENE_REVIEW', '/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepth.swift', '/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/AppTests/SceneQAReviewDepthTests.swift']' returned non-zero exit status 1.
+
+----------------------------------------------------------------------
+Ran 13 tests in 164.729s
+
+FAILED (errors=2)

@@ -1,0 +1,1287 @@
+{
+  "schema": "source-scene-native-008",
+  "fixtureVersion": "source-scene-footprint-008-ground-plan",
+  "assemblySHA256": "a7053a54f0dfa57deda6ee1d11e922d9ad93c18662f596e4a8a6597353ecf11f",
+  "harnessSourceSHA256": "3ab178cdbc141f51e3ee0ccfd5e30b6a2e29e6e562bf8d98ef0fe8cb797dcef5",
+  "baselineRecordSHA256": "9728f0a030020dff0caad52e8d3791be092a3b6ada8b5ffd845ee9d370785889",
+  "center": [
+    684,
+    724
+  ],
+  "buildings": [
+    {
+      "role": "kiosk",
+      "solidID": "solid-03-transit-kiosk",
+      "nodeName": "benchmark-building",
+      "groundPixelsTopLeft": [
+        [
+          500.0,
+          1160.0
+        ],
+        [
+          952.5483399593904,
+          933.7258300203048
+        ],
+        [
+          500.0,
+          707.4516600406096
+        ],
+        [
+          47.451660040609625,
+          933.7258300203048
+        ]
+      ]
+    },
+    {
+      "role": "context-01",
+      "solidID": "solid-01-residential-west",
+      "nodeName": "environment-upright-env_solid_01_residential_west",
+      "groundPixelsTopLeft": [
+        [
+          1473.0580079512683,
+          1439.5483399593904
+        ],
+        [
+          1835.0966799187809,
+          1258.5290039756342
+        ],
+        [
+          386.94199204873155,
+          534.4516600406096
+        ],
+        [
+          24.90332008121925,
+          715.4709960243658
+        ]
+      ]
+    },
+    {
+      "role": "context-02",
+      "solidID": "solid-02-residential-north",
+      "nodeName": "environment-upright-env_solid_02_residential_north",
+      "groundPixelsTopLeft": [
+        [
+          567.4709960243658,
+          1349.2935059634515
+        ],
+        [
+          1653.5870119269027,
+          806.2354980121829
+        ],
+        [
+          1110.5290039756342,
+          534.7064940365486
+        ],
+        [
+          24.412988073097267,
+          1077.764501987817
+        ]
+      ]
+    },
+    {
+      "role": "context-04",
+      "solidID": "solid-04-civic-west",
+      "nodeName": "environment-upright-env_solid_04_civic_west",
+      "groundPixelsTopLeft": [
+        [
+          1110.5290039756342,
+          1443.2935059634515
+        ],
+        [
+          1653.5870119269027,
+          1171.764501987817
+        ],
+        [
+          567.4709960243658,
+          628.7064940365486
+        ],
+        [
+          24.412988073097267,
+          900.2354980121829
+        ]
+      ]
+    },
+    {
+      "role": "context-05",
+      "solidID": "solid-05-civic-dais",
+      "nodeName": "environment-upright-env_solid_05_civic_dais",
+      "groundPixelsTopLeft": [
+        [
+          296.4903320081219,
+          497.01933598375615
+        ],
+        [
+          749.0386719675123,
+          270.74516600406093
+        ],
+        [
+          477.5096679918781,
+          134.98066401624385
+        ],
+        [
+          24.9613280324877,
+          361.25483399593907
+        ]
+      ]
+    }
+  ],
+  "scenePlan": {
+    "props": [
+      {
+        "name": "benchmark-prop-0",
+        "oldWorldRoot": [
+          691,
+          639
+        ],
+        "worldRoot": [
+          691,
+          639
+        ],
+        "contactRadiusWorld": 5,
+        "shadowRadiusWorld": 8,
+        "shadowAlphaMax": 0.22,
+        "sourceArt": "unchanged",
+        "groundMaterial": "sidewalk"
+      },
+      {
+        "name": "benchmark-prop-1",
+        "oldWorldRoot": [
+          858,
+          780
+        ],
+        "worldRoot": [
+          858,
+          716
+        ],
+        "contactRadiusWorld": 8,
+        "shadowRadiusWorld": 16,
+        "shadowAlphaMax": 0.22,
+        "sourceArt": "unchanged",
+        "groundMaterial": "sidewalk"
+      }
+    ],
+    "buildings": [
+      {
+        "id": "solid-01-residential-west",
+        "maxWorld": [
+          128,
+          896
+        ],
+        "minWorld": [
+          0,
+          384
+        ],
+        "foundationWorld": [
+          [
+            0,
+            384
+          ],
+          [
+            128,
+            384
+          ],
+          [
+            128,
+            896
+          ],
+          [
+            0,
+            896
+          ]
+        ],
+        "sidewalkOutsetWorld": 24,
+        "curbWidthWorld": 4,
+        "meshContactStatus": "actual-z0-face-vertices",
+        "actualContactWorld": [
+          [
+            0.0,
+            384.0
+          ],
+          [
+            128.0,
+            384.0
+          ],
+          [
+            128.0,
+            896.0
+          ],
+          [
+            0.0,
+            896.0
+          ]
+        ],
+        "contactLandmarks": [
+          {
+            "world": [
+              0.0,
+              384.0
+            ],
+            "sourcePixelsTopLeft": [
+              1473.0580079512683,
+              1439.5483399593904
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          },
+          {
+            "world": [
+              128.0,
+              384.0
+            ],
+            "sourcePixelsTopLeft": [
+              1835.0966799187809,
+              1258.5290039756342
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          },
+          {
+            "world": [
+              128.0,
+              896.0
+            ],
+            "sourcePixelsTopLeft": [
+              386.94199204873155,
+              534.4516600406096
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          },
+          {
+            "world": [
+              0.0,
+              896.0
+            ],
+            "sourcePixelsTopLeft": [
+              24.90332008121925,
+              715.4709960243658
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          }
+        ],
+        "virtualCorners": [],
+        "baseTreatment": "retain actual full rectangular contact plinth, add ground foundation collar only",
+        "meshEvidence": "context/geometry.json"
+      },
+      {
+        "id": "solid-02-residential-north",
+        "maxWorld": [
+          512,
+          960
+        ],
+        "minWorld": [
+          128,
+          768
+        ],
+        "foundationWorld": [
+          [
+            128,
+            768
+          ],
+          [
+            512,
+            768
+          ],
+          [
+            512,
+            960
+          ],
+          [
+            128,
+            960
+          ]
+        ],
+        "sidewalkOutsetWorld": 24,
+        "curbWidthWorld": 4,
+        "meshContactStatus": "actual-z0-face-vertices",
+        "actualContactWorld": [
+          [
+            128.0,
+            768.0
+          ],
+          [
+            512.0,
+            768.0
+          ],
+          [
+            512.0,
+            960.0
+          ],
+          [
+            128.0,
+            960.0
+          ]
+        ],
+        "contactLandmarks": [
+          {
+            "world": [
+              128.0,
+              768.0
+            ],
+            "sourcePixelsTopLeft": [
+              567.4709960243658,
+              1349.2935059634515
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          },
+          {
+            "world": [
+              512.0,
+              768.0
+            ],
+            "sourcePixelsTopLeft": [
+              1653.5870119269027,
+              806.2354980121829
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          },
+          {
+            "world": [
+              512.0,
+              960.0
+            ],
+            "sourcePixelsTopLeft": [
+              1110.5290039756342,
+              534.7064940365486
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          },
+          {
+            "world": [
+              128.0,
+              960.0
+            ],
+            "sourcePixelsTopLeft": [
+              24.412988073097267,
+              1077.764501987817
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          }
+        ],
+        "virtualCorners": [],
+        "baseTreatment": "retain actual full rectangular contact plinth, add ground foundation collar only",
+        "meshEvidence": "context/geometry.json"
+      },
+      {
+        "id": "solid-03-transit-kiosk",
+        "maxWorld": [
+          640,
+          768
+        ],
+        "minWorld": [
+          512,
+          640
+        ],
+        "foundationWorld": [
+          [
+            512,
+            640
+          ],
+          [
+            640,
+            640
+          ],
+          [
+            640,
+            768
+          ],
+          [
+            512,
+            768
+          ]
+        ],
+        "sidewalkOutsetWorld": 24,
+        "curbWidthWorld": 4,
+        "meshContactStatus": "actual-z0-face-vertices",
+        "actualContactWorld": [
+          [
+            512.0,
+            679.0
+          ],
+          [
+            551.0,
+            640.0
+          ],
+          [
+            640.0,
+            640.0
+          ],
+          [
+            640.0,
+            768.0
+          ],
+          [
+            512.0,
+            768.0
+          ]
+        ],
+        "contactLandmarks": [
+          {
+            "world": [
+              512.0,
+              679.0
+            ],
+            "sourcePixelsTopLeft": [
+              362.11417766862326,
+              1091.0570888343116
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          },
+          {
+            "world": [
+              551.0,
+              640.0
+            ],
+            "sourcePixelsTopLeft": [
+              637.8858223313767,
+              1091.0570888343116
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          },
+          {
+            "world": [
+              640.0,
+              640.0
+            ],
+            "sourcePixelsTopLeft": [
+              952.5483399593904,
+              933.7258300203048
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          },
+          {
+            "world": [
+              640.0,
+              768.0
+            ],
+            "sourcePixelsTopLeft": [
+              500.0,
+              707.4516600406096
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          },
+          {
+            "world": [
+              512.0,
+              768.0
+            ],
+            "sourcePixelsTopLeft": [
+              47.451660040609625,
+              933.7258300203048
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          }
+        ],
+        "virtualCorners": [
+          {
+            "world": [
+              512,
+              640
+            ],
+            "reason": "omitted by actual chamfer39; blocked authoritative corner, NOT mesh vertex"
+          }
+        ],
+        "baseTreatment": "new mineral foundation fills blocked chamfer triangle; dark actual-contact seam separates existing mesh from infill; no door/path marking",
+        "meshEvidence": "kiosk/output/mesh.json"
+      },
+      {
+        "id": "solid-04-civic-west",
+        "maxWorld": [
+          928,
+          1152
+        ],
+        "minWorld": [
+          736,
+          768
+        ],
+        "foundationWorld": [
+          [
+            736,
+            768
+          ],
+          [
+            928,
+            768
+          ],
+          [
+            928,
+            1152
+          ],
+          [
+            736,
+            1152
+          ]
+        ],
+        "sidewalkOutsetWorld": 24,
+        "curbWidthWorld": 4,
+        "meshContactStatus": "actual-z0-face-vertices",
+        "actualContactWorld": [
+          [
+            736.0,
+            768.0
+          ],
+          [
+            928.0,
+            768.0
+          ],
+          [
+            928.0,
+            1152.0
+          ],
+          [
+            736.0,
+            1152.0
+          ]
+        ],
+        "contactLandmarks": [
+          {
+            "world": [
+              736.0,
+              768.0
+            ],
+            "sourcePixelsTopLeft": [
+              1110.5290039756342,
+              1443.2935059634515
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          },
+          {
+            "world": [
+              928.0,
+              768.0
+            ],
+            "sourcePixelsTopLeft": [
+              1653.5870119269027,
+              1171.764501987817
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          },
+          {
+            "world": [
+              928.0,
+              1152.0
+            ],
+            "sourcePixelsTopLeft": [
+              567.4709960243658,
+              628.7064940365486
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          },
+          {
+            "world": [
+              736.0,
+              1152.0
+            ],
+            "sourcePixelsTopLeft": [
+              24.412988073097267,
+              900.2354980121829
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          }
+        ],
+        "virtualCorners": [],
+        "baseTreatment": "retain actual full rectangular contact plinth, add ground foundation collar only",
+        "meshEvidence": "context/geometry.json"
+      },
+      {
+        "id": "solid-05-civic-dais",
+        "maxWorld": [
+          1168,
+          752
+        ],
+        "minWorld": [
+          1008,
+          656
+        ],
+        "foundationWorld": [
+          [
+            1008,
+            656
+          ],
+          [
+            1168,
+            656
+          ],
+          [
+            1168,
+            752
+          ],
+          [
+            1008,
+            752
+          ]
+        ],
+        "sidewalkOutsetWorld": 24,
+        "curbWidthWorld": 4,
+        "meshContactStatus": "actual-z0-face-vertices",
+        "actualContactWorld": [
+          [
+            1008.0,
+            656.0
+          ],
+          [
+            1168.0,
+            656.0
+          ],
+          [
+            1168.0,
+            752.0
+          ],
+          [
+            1008.0,
+            752.0
+          ]
+        ],
+        "contactLandmarks": [
+          {
+            "world": [
+              1008.0,
+              656.0
+            ],
+            "sourcePixelsTopLeft": [
+              296.4903320081219,
+              497.01933598375615
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          },
+          {
+            "world": [
+              1168.0,
+              656.0
+            ],
+            "sourcePixelsTopLeft": [
+              749.0386719675123,
+              270.74516600406093
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          },
+          {
+            "world": [
+              1168.0,
+              752.0
+            ],
+            "sourcePixelsTopLeft": [
+              477.5096679918781,
+              134.98066401624385
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          },
+          {
+            "world": [
+              1008.0,
+              752.0
+            ],
+            "sourcePixelsTopLeft": [
+              24.9613280324877,
+              361.25483399593907
+            ],
+            "provenance": "actual-z0-mesh-vertex"
+          }
+        ],
+        "virtualCorners": [],
+        "baseTreatment": "retain actual full rectangular contact plinth, add ground foundation collar only",
+        "meshEvidence": "context/geometry.json"
+      },
+      {
+        "id": "solid-06-service-yard-a",
+        "maxWorld": [
+          1248,
+          1408
+        ],
+        "minWorld": [
+          1056,
+          1088
+        ],
+        "foundationWorld": [
+          [
+            1056,
+            1088
+          ],
+          [
+            1248,
+            1088
+          ],
+          [
+            1248,
+            1408
+          ],
+          [
+            1056,
+            1408
+          ]
+        ],
+        "sidewalkOutsetWorld": 24,
+        "curbWidthWorld": 4,
+        "meshContactStatus": "unavailable-retained-raster-no-mesh",
+        "actualContactWorld": [],
+        "contactLandmarks": [],
+        "virtualCorners": [],
+        "baseTreatment": "solid-envelope mineral foundation, not an assertion of legacy mesh contact"
+      },
+      {
+        "id": "solid-07-service-yard-b",
+        "maxWorld": [
+          1664,
+          1440
+        ],
+        "minWorld": [
+          1408,
+          1248
+        ],
+        "foundationWorld": [
+          [
+            1408,
+            1248
+          ],
+          [
+            1664,
+            1248
+          ],
+          [
+            1664,
+            1440
+          ],
+          [
+            1408,
+            1440
+          ]
+        ],
+        "sidewalkOutsetWorld": 24,
+        "curbWidthWorld": 4,
+        "meshContactStatus": "unavailable-retained-raster-no-mesh",
+        "actualContactWorld": [],
+        "contactLandmarks": [],
+        "virtualCorners": [],
+        "baseTreatment": "solid-envelope mineral foundation, not an assertion of legacy mesh contact"
+      },
+      {
+        "id": "solid-08-service-divider",
+        "maxWorld": [
+          1456,
+          1072
+        ],
+        "minWorld": [
+          1360,
+          848
+        ],
+        "foundationWorld": [
+          [
+            1360,
+            848
+          ],
+          [
+            1456,
+            848
+          ],
+          [
+            1456,
+            1072
+          ],
+          [
+            1360,
+            1072
+          ]
+        ],
+        "sidewalkOutsetWorld": 24,
+        "curbWidthWorld": 4,
+        "meshContactStatus": "unavailable-retained-raster-no-mesh",
+        "actualContactWorld": [],
+        "contactLandmarks": [],
+        "virtualCorners": [],
+        "baseTreatment": "solid-envelope mineral foundation, not an assertion of legacy mesh contact"
+      },
+      {
+        "id": "solid-09-grid-island-a",
+        "maxWorld": [
+          1664,
+          768
+        ],
+        "minWorld": [
+          1536,
+          640
+        ],
+        "foundationWorld": [
+          [
+            1536,
+            640
+          ],
+          [
+            1664,
+            640
+          ],
+          [
+            1664,
+            768
+          ],
+          [
+            1536,
+            768
+          ]
+        ],
+        "sidewalkOutsetWorld": 24,
+        "curbWidthWorld": 4,
+        "meshContactStatus": "unavailable-retained-raster-no-mesh",
+        "actualContactWorld": [],
+        "contactLandmarks": [],
+        "virtualCorners": [],
+        "baseTreatment": "solid-envelope mineral foundation, not an assertion of legacy mesh contact"
+      },
+      {
+        "id": "solid-10-grid-island-b",
+        "maxWorld": [
+          1856,
+          1024
+        ],
+        "minWorld": [
+          1728,
+          896
+        ],
+        "foundationWorld": [
+          [
+            1728,
+            896
+          ],
+          [
+            1856,
+            896
+          ],
+          [
+            1856,
+            1024
+          ],
+          [
+            1728,
+            1024
+          ]
+        ],
+        "sidewalkOutsetWorld": 24,
+        "curbWidthWorld": 4,
+        "meshContactStatus": "unavailable-retained-raster-no-mesh",
+        "actualContactWorld": [],
+        "contactLandmarks": [],
+        "virtualCorners": [],
+        "baseTreatment": "solid-envelope mineral foundation, not an assertion of legacy mesh contact"
+      },
+      {
+        "id": "solid-11-court-column-a",
+        "maxWorld": [
+          1952,
+          776
+        ],
+        "minWorld": [
+          1888,
+          632
+        ],
+        "foundationWorld": [
+          [
+            1888,
+            632
+          ],
+          [
+            1952,
+            632
+          ],
+          [
+            1952,
+            776
+          ],
+          [
+            1888,
+            776
+          ]
+        ],
+        "sidewalkOutsetWorld": 24,
+        "curbWidthWorld": 4,
+        "meshContactStatus": "unavailable-retained-raster-no-mesh",
+        "actualContactWorld": [],
+        "contactLandmarks": [],
+        "virtualCorners": [],
+        "baseTreatment": "solid-envelope mineral foundation, not an assertion of legacy mesh contact"
+      },
+      {
+        "id": "solid-12-court-column-b",
+        "maxWorld": [
+          2208,
+          776
+        ],
+        "minWorld": [
+          2144,
+          632
+        ],
+        "foundationWorld": [
+          [
+            2144,
+            632
+          ],
+          [
+            2208,
+            632
+          ],
+          [
+            2208,
+            776
+          ],
+          [
+            2144,
+            776
+          ]
+        ],
+        "sidewalkOutsetWorld": 24,
+        "curbWidthWorld": 4,
+        "meshContactStatus": "unavailable-retained-raster-no-mesh",
+        "actualContactWorld": [],
+        "contactLandmarks": [],
+        "virtualCorners": [],
+        "baseTreatment": "solid-envelope mineral foundation, not an assertion of legacy mesh contact"
+      },
+      {
+        "id": "solid-13-phoenix-west",
+        "maxWorld": [
+          1888,
+          320
+        ],
+        "minWorld": [
+          1824,
+          64
+        ],
+        "foundationWorld": [
+          [
+            1824,
+            64
+          ],
+          [
+            1888,
+            64
+          ],
+          [
+            1888,
+            320
+          ],
+          [
+            1824,
+            320
+          ]
+        ],
+        "sidewalkOutsetWorld": 24,
+        "curbWidthWorld": 4,
+        "meshContactStatus": "unavailable-retained-raster-no-mesh",
+        "actualContactWorld": [],
+        "contactLandmarks": [],
+        "virtualCorners": [],
+        "baseTreatment": "solid-envelope mineral foundation, not an assertion of legacy mesh contact"
+      },
+      {
+        "id": "solid-14-phoenix-east",
+        "maxWorld": [
+          2272,
+          320
+        ],
+        "minWorld": [
+          2208,
+          64
+        ],
+        "foundationWorld": [
+          [
+            2208,
+            64
+          ],
+          [
+            2272,
+            64
+          ],
+          [
+            2272,
+            320
+          ],
+          [
+            2208,
+            320
+          ]
+        ],
+        "sidewalkOutsetWorld": 24,
+        "curbWidthWorld": 4,
+        "meshContactStatus": "unavailable-retained-raster-no-mesh",
+        "actualContactWorld": [],
+        "contactLandmarks": [],
+        "virtualCorners": [],
+        "baseTreatment": "solid-envelope mineral foundation, not an assertion of legacy mesh contact"
+      }
+    ]
+  },
+  "planSHA256": "3b145fc228ac73367b1d6c5d60ee48e1578ebdbc972493afa9ba5a91018d880b",
+  "planBinding": {
+    "schema": "footprint-ground-recommendations-008",
+    "plan": {
+      "path": "docs/review/footprint-ground-repair-20261116/plan/plan.json",
+      "sha256": "3b145fc228ac73367b1d6c5d60ee48e1578ebdbc972493afa9ba5a91018d880b"
+    },
+    "manifest": {
+      "path": "docs/review/footprint-ground-repair-20261116/plan/manifest.json",
+      "sha256": "e25b2ba9e5b52171a5fd97902557707c3cf05938ccc9371809bd7d1a5483d3d9"
+    },
+    "validator": {
+      "path": "docs/review/footprint-ground-repair-20261116/plan/test_plan.py",
+      "sha256": "a926e1739008e7541f0d4cf36d65d62f60ad0bc1152e4079c17533a77ab8abcf"
+    },
+    "recommendation": {
+      "reviewerRole": "coordinator",
+      "decision": "recommended",
+      "scope": "isolated-ordinary-scene",
+      "planSHA256": "3b145fc228ac73367b1d6c5d60ee48e1578ebdbc972493afa9ba5a91018d880b",
+      "sourceSHA256": "97ae5825c57c9e21b48a3d863bfd3e93b940e3eb5c5134b9c51172cc6656b7c7",
+      "evidence": {
+        "path": "docs/review/footprint-ground-repair-20261116/SOURCE-REVIEW-FINAL.md",
+        "sha256": "a633d036627b0b7da7ea09faa370b0d1a5fb00615d117f5c0760d7c4b5d2ac9e"
+      }
+    }
+  },
+  "sources": [
+    {
+      "role": "paving",
+      "file": "paving.png",
+      "sha256": "f4a3f542d8879b036c1a1979ab5fa03356b69350181fb526e190098982191dac",
+      "registration": {
+        "canvasPixels": [
+          4608,
+          4608
+        ],
+        "rootPixelsTopLeft": [
+          0,
+          4608
+        ],
+        "worldPosition": [
+          0,
+          0
+        ],
+        "drawSizeWorld": [
+          2304,
+          2304
+        ],
+        "kind": "ground",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": "coordinator-recommended"
+    },
+    {
+      "role": "camera",
+      "file": "camera.png",
+      "sha256": "1343507b7517cd2a4848810b14aca88644677f35266ec8299dcbbf8347ef5ab1",
+      "registration": {
+        "canvasPixels": [
+          204,
+          450
+        ],
+        "rootPixelsTopLeft": [
+          58,
+          427
+        ],
+        "worldPosition": [
+          496,
+          672
+        ],
+        "drawSizeWorld": [
+          46.85167464114833,
+          103.34928229665071
+        ],
+        "kind": "upright",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": "coordinator-recommended"
+    },
+    {
+      "role": "player",
+      "file": "player.png",
+      "sha256": "b32bfcba5ac7cee383715d5f0b918e53b2e7be56634886754ab82357431d6ed4",
+      "registration": {
+        "canvasPixels": [
+          384,
+          416
+        ],
+        "rootPixelsTopLeft": [
+          192,
+          336
+        ],
+        "worldPosition": [
+          736,
+          654
+        ],
+        "drawSizeWorld": [
+          64,
+          69.33333333333333
+        ],
+        "kind": "upright",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": "coordinator-recommended"
+    },
+    {
+      "role": "stone",
+      "file": "stone.png",
+      "sha256": "5b5751602fb5299777a134fcb1dbedf4de1822a8e1375d86505c88056a240539",
+      "registration": {
+        "canvasPixels": [
+          1000,
+          1200
+        ],
+        "rootPixelsTopLeft": [
+          500,
+          1160
+        ],
+        "worldPosition": [
+          512,
+          640
+        ],
+        "drawSizeWorld": [
+          200,
+          240
+        ],
+        "kind": "upright",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": "coordinator-recommended"
+    },
+    {
+      "role": "kiosk",
+      "file": "kiosk.png",
+      "sha256": "c411e33b79e0ffc5b0eb86143cd8785a564e573b5819bc1d4c399ef5d3b60264",
+      "registration": {
+        "canvasPixels": [
+          1000,
+          1200
+        ],
+        "rootPixelsTopLeft": [
+          500,
+          1160
+        ],
+        "worldPosition": [
+          512,
+          640
+        ],
+        "drawSizeWorld": [
+          200.0,
+          240.0
+        ]
+      },
+      "recommendation": "coordinator-recommended"
+    },
+    {
+      "role": "context-01",
+      "file": "context-01.png",
+      "sha256": "edf9d79bb71337eb908ab654a11e6011e8b69354101f30dab2dffbd401073482",
+      "registration": {
+        "canvasPixels": [
+          1860,
+          1464
+        ],
+        "rootPixelsTopLeft": [
+          930,
+          987
+        ],
+        "worldPosition": [
+          64.0,
+          640.0
+        ],
+        "drawSizeWorld": [
+          465.0,
+          366.0
+        ]
+      },
+      "recommendation": "coordinator-recommended"
+    },
+    {
+      "role": "context-02",
+      "file": "context-02.png",
+      "sha256": "d1ed85e7a64965c9063db1533672ef07d8b4e9c81588f5c11f9a711f57a75355",
+      "registration": {
+        "canvasPixels": [
+          1678,
+          1374
+        ],
+        "rootPixelsTopLeft": [
+          839,
+          942
+        ],
+        "worldPosition": [
+          320.0,
+          864.0
+        ],
+        "drawSizeWorld": [
+          419.5,
+          343.5
+        ]
+      },
+      "recommendation": "coordinator-recommended"
+    },
+    {
+      "role": "context-04",
+      "file": "context-04.png",
+      "sha256": "26640bb8c2c92e08679643e028346f5c926a5d2fbd021f5996b03d6081a42948",
+      "registration": {
+        "canvasPixels": [
+          1678,
+          1468
+        ],
+        "rootPixelsTopLeft": [
+          839,
+          1036
+        ],
+        "worldPosition": [
+          832.0,
+          960.0
+        ],
+        "drawSizeWorld": [
+          419.5,
+          367.0
+        ]
+      },
+      "recommendation": "coordinator-recommended"
+    },
+    {
+      "role": "context-05",
+      "file": "context-05.png",
+      "sha256": "4cb22248df71f1a3ff956c52ab76bdcc3a8aac01ce598e13097db52b9615a204",
+      "registration": {
+        "canvasPixels": [
+          774,
+          522
+        ],
+        "rootPixelsTopLeft": [
+          387,
+          316
+        ],
+        "worldPosition": [
+          1088.0,
+          704.0
+        ],
+        "drawSizeWorld": [
+          193.5,
+          130.5
+        ]
+      },
+      "recommendation": "coordinator-recommended"
+    },
+    {
+      "role": "ground-plan",
+      "file": "ground-plan.png",
+      "sha256": "97ae5825c57c9e21b48a3d863bfd3e93b940e3eb5c5134b9c51172cc6656b7c7",
+      "registration": {
+        "canvasPixels": [
+          4608,
+          4608
+        ],
+        "rootPixelsTopLeft": [
+          0,
+          4608
+        ],
+        "worldPosition": [
+          0,
+          0
+        ],
+        "drawSizeWorld": [
+          2304,
+          2304
+        ],
+        "kind": "ground",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": "coordinator-recommended"
+    }
+  ]
+}

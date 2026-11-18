@@ -1,0 +1,101 @@
+test_actual_v5_not_admitted_as_v6 (test_native.FramingTests.test_actual_v5_not_admitted_as_v6) ... ok
+test_center_only_keeps_vertical_framing (test_native.FramingTests.test_center_only_keeps_vertical_framing) ... ok
+test_clipped_actor_even_with_consistent_measurement_rejected (test_native.FramingTests.test_clipped_actor_even_with_consistent_measurement_rejected) ... ok
+test_discovery_import_collisions_do_not_select_other_native (test_native.FramingTests.test_discovery_import_collisions_do_not_select_other_native) ... ok
+test_forged_control_bounds_or_activation_zone_rejected (test_native.FramingTests.test_forged_control_bounds_or_activation_zone_rejected) ... ok
+test_issue250_default_pause_stroke_matches_renderer (test_native.FramingTests.test_issue250_default_pause_stroke_matches_renderer) ... ok
+test_issue250_scaled_pause_stroke_rejected (test_native.FramingTests.test_issue250_scaled_pause_stroke_rejected) ... ok
+test_measured_canvas_must_equal_registered_canvas (test_native.FramingTests.test_measured_canvas_must_equal_registered_canvas) ... ok
+test_missing_or_duplicate_controls_and_actor_bounds_rejected (test_native.FramingTests.test_missing_or_duplicate_controls_and_actor_bounds_rejected) ... ok
+test_nonfinite_measured_bound_rejected (test_native.FramingTests.test_nonfinite_measured_bound_rejected) ... ok
+test_only_center_may_change_in_manifest (test_native.FramingTests.test_only_center_may_change_in_manifest) ... ok
+test_overlap_even_with_consistent_measured_rectangle_rejected (test_native.FramingTests.test_overlap_even_with_consistent_measured_rectangle_rejected) ... ok
+test_prepare_keeps_prior_outputs_and_exact_sources (test_native.FramingTests.test_prepare_keeps_prior_outputs_and_exact_sources) ... ok
+test_prior_v5_guards_still_enforced (test_native.FramingTests.test_prior_v5_guards_still_enforced) ... ok
+test_static_harness_contract (test_native.FramingTests.test_static_harness_contract) ... ok
+test_synthetic_all_six_captures (test_native.FramingTests.test_synthetic_all_six_captures) ... ok
+test_unauthorized_center_rejected (test_native.FramingTests.test_unauthorized_center_rejected) ... ok
+test_v5_known_camera_stick_overlap_red_witness (test_native.FramingTests.test_v5_known_camera_stick_overlap_red_witness) ... ok
+test_v6_test_identity_not_v5_and_no_skip (test_native.FramingTests.test_v6_test_identity_not_v5_and_no_skip) ... ok
+test_wrapper_does_not_mutate_callers_or_v5_globals (test_native.FramingTests.test_wrapper_does_not_mutate_callers_or_v5_globals) ... ok
+test_edited_bytes_rejected (test_retained.RetainedV6Tests.test_edited_bytes_rejected) ... ok
+test_executable_hash_disagreement (test_retained.RetainedV6Tests.test_executable_hash_disagreement) ... ok
+test_extra_file_rejected (test_retained.RetainedV6Tests.test_extra_file_rejected) ... ok
+test_historical_v5_not_current (test_retained.RetainedV6Tests.test_historical_v5_not_current) ... ok
+test_image_hash_disagreement_even_after_report_rehash (test_retained.RetainedV6Tests.test_image_hash_disagreement_even_after_report_rehash) ... ok
+test_import_collision_safe (test_retained.RetainedV6Tests.test_import_collision_safe) ... ok
+test_preparation_hash_disagreement (test_retained.RetainedV6Tests.test_preparation_hash_disagreement) ... ok
+test_rehashed_actor_canvas_forgery_rejected (test_retained.RetainedV6Tests.test_rehashed_actor_canvas_forgery_rejected) ... ok
+test_rehashed_footprint_forgery_rejected (test_retained.RetainedV6Tests.test_rehashed_footprint_forgery_rejected) ... ok
+test_rehashed_ground_forgery_rejected (test_retained.RetainedV6Tests.test_rehashed_ground_forgery_rejected) ... ok
+test_rehashed_ground_source_adapter_forgery_rejected (test_retained.RetainedV6Tests.test_rehashed_ground_source_adapter_forgery_rejected) ... ok
+test_rehashed_outline_forgery_rejected (test_retained.RetainedV6Tests.test_rehashed_outline_forgery_rejected) ... ok
+test_rehashed_projected_shadow_forgery_rejected (test_retained.RetainedV6Tests.test_rehashed_projected_shadow_forgery_rejected) ... ok
+test_rehashed_shadow_forgery_rejected (test_retained.RetainedV6Tests.test_rehashed_shadow_forgery_rejected) ... ok
+test_rehashed_visible_control_forgery_rejected (test_retained.RetainedV6Tests.test_rehashed_visible_control_forgery_rejected) ... ok
+test_source_read_provenance_disagreement (test_retained.RetainedV6Tests.test_source_read_provenance_disagreement) ... ok
+test_symlink_and_extra_file_rejected (test_retained.RetainedV6Tests.test_symlink_and_extra_file_rejected) ... ok
+test_synthetic_packet_contract_only (test_retained.RetainedV6Tests.test_synthetic_packet_contract_only) ... ok
+test_unearned_acceptance_rejected (test_retained.RetainedV6Tests.test_unearned_acceptance_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 39 tests in 2.698s
+
+OK
+{
+  "status": "RETAINED_BYTES_AND_CONTRACT_VERIFIED_NOT_NEW_NATIVE_RUN",
+  "fixtureVersion": "source-scene-qa-006-control-framing",
+  "captures": 6,
+  "images": 18,
+  "ownerAcceptance": false,
+  "physicalDeviceEvidence": false,
+  "binaryCheck": "agreement of preserved original import records, not a fresh local binary comparison"
+}
+test_actual_binary_hash_mismatch (test_native.NativeV5Tests.test_actual_binary_hash_mismatch) ... ok
+test_basis_inventory_and_alpha_guards_preserved (test_native.NativeV5Tests.test_basis_inventory_and_alpha_guards_preserved) ... ok
+test_control_outline_stays_old (test_native.NativeV5Tests.test_control_outline_stays_old) ... ok
+test_depth_geometry_not_self_reported (test_native.NativeV5Tests.test_depth_geometry_not_self_reported) ... ok
+test_depth_order_band_and_constraint_mutations (test_native.NativeV5Tests.test_depth_order_band_and_constraint_mutations) ... ok
+test_exact_solids_not_only_census (test_native.NativeV5Tests.test_exact_solids_not_only_census) ... ok
+test_forged_environment_root_in_inventory_and_depth_rejected (test_native.NativeV5Tests.test_forged_environment_root_in_inventory_and_depth_rejected) ... ok
+test_ground_adapter_rejects_displayed_padding_or_rectangular_source (test_native.NativeV5Tests.test_ground_adapter_rejects_displayed_padding_or_rectangular_source) ... ok
+test_hud_field_authority_and_census_preserved (test_native.NativeV5Tests.test_hud_field_authority_and_census_preserved) ... ok
+test_kiosk_camera_constraint_is_not_root_only_sort (test_native.NativeV5Tests.test_kiosk_camera_constraint_is_not_root_only_sort) ... ok
+test_outline_shadow_ground_mutations (test_native.NativeV5Tests.test_outline_shadow_ground_mutations) ... ok
+test_private_import_ignores_unrelated_module_names (test_native.NativeV5Tests.test_private_import_ignores_unrelated_module_names) ... ok
+test_projected_shadow_must_match_player_each_zoom (test_native.NativeV5Tests.test_projected_shadow_must_match_player_each_zoom) ... ok
+test_ray_box_oracle_1089_positions (test_native.NativeV5Tests.test_ray_box_oracle_1089_positions) ... ok
+test_real_v4_rejected_not_reinterpreted (test_native.NativeV5Tests.test_real_v4_rejected_not_reinterpreted) ... ok
+test_result_identity_and_skips (test_native.NativeV5Tests.test_result_identity_and_skips) ... ok
+test_self_consistent_forged_footprint_still_rejected (test_native.NativeV5Tests.test_self_consistent_forged_footprint_still_rejected) ... ok
+test_source_binary_and_schema_guards (test_native.NativeV5Tests.test_source_binary_and_schema_guards) ... ok
+test_synthetic_v5_contract (test_native.NativeV5Tests.test_synthetic_v5_contract) ... ok
+test_unconstrained_equal_priority_tie_is_lexical (test_native.NativeV5Tests.test_unconstrained_equal_priority_tie_is_lexical) ... ok
+test_unearned_claim_inside_record_rejected (test_native.NativeV5Tests.test_unearned_claim_inside_record_rejected) ... ok
+test_claimed_depth_fix_without_new_pixels_still_fails (test_qa.PixelProbeTests.test_claimed_depth_fix_without_new_pixels_still_fails) ... ok
+test_projected_root_is_not_zoomed_twice (test_qa.PixelProbeTests.test_projected_root_is_not_zoomed_twice) ... ok
+test_retained_v4_reproduces_both_defects (test_qa.PixelProbeTests.test_retained_v4_reproduces_both_defects) ... ok
+test_edited_bytes_rejected (test_retained.RetainedV5Tests.test_edited_bytes_rejected) ... ok
+test_executable_hash_disagreement (test_retained.RetainedV5Tests.test_executable_hash_disagreement) ... ok
+test_extra_file_rejected (test_retained.RetainedV5Tests.test_extra_file_rejected) ... ok
+test_historical_v4_not_current (test_retained.RetainedV5Tests.test_historical_v4_not_current) ... ok
+test_image_hash_disagreement_even_after_report_rehash (test_retained.RetainedV5Tests.test_image_hash_disagreement_even_after_report_rehash) ... ok
+test_import_collision_safe (test_retained.RetainedV5Tests.test_import_collision_safe) ... ok
+test_preparation_hash_disagreement (test_retained.RetainedV5Tests.test_preparation_hash_disagreement) ... ok
+test_rehashed_footprint_forgery_rejected (test_retained.RetainedV5Tests.test_rehashed_footprint_forgery_rejected) ... ok
+test_rehashed_ground_forgery_rejected (test_retained.RetainedV5Tests.test_rehashed_ground_forgery_rejected) ... ok
+test_rehashed_ground_source_adapter_forgery_rejected (test_retained.RetainedV5Tests.test_rehashed_ground_source_adapter_forgery_rejected) ... ok
+test_rehashed_outline_forgery_rejected (test_retained.RetainedV5Tests.test_rehashed_outline_forgery_rejected) ... ok
+test_rehashed_projected_shadow_forgery_rejected (test_retained.RetainedV5Tests.test_rehashed_projected_shadow_forgery_rejected) ... ok
+test_rehashed_shadow_forgery_rejected (test_retained.RetainedV5Tests.test_rehashed_shadow_forgery_rejected) ... ok
+test_source_read_provenance_disagreement (test_retained.RetainedV5Tests.test_source_read_provenance_disagreement) ... ok
+test_symlink_and_extra_file_rejected (test_retained.RetainedV5Tests.test_symlink_and_extra_file_rejected) ... ok
+test_synthetic_packet_contract_only (test_retained.RetainedV5Tests.test_synthetic_packet_contract_only) ... ok
+test_unearned_acceptance_rejected (test_retained.RetainedV5Tests.test_unearned_acceptance_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 41 tests in 6.937s
+
+OK
+{"result":"PASS","actualCaptureVersions":1,"images":18,"selections":24,"rejectedMutations":24,"v7NativeEvidence":false,"browserEvidence":false}
+{"result":"PASS","missingV7":true,"mismatchedCaptureRejected":true,"corruptedPNGRejected":true,"corruptedRecordRejected":true,"noFallback":true,"retainedVersions":1,"selections":36,"browserEvidence":false,"nativeRun":false}

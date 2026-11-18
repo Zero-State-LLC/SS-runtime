@@ -1,0 +1,176 @@
+{
+  "status": "DIRECTION_FIT_NOT_CAMERA_OR_ART_ACCEPTANCE",
+  "referenceSHA256": "49aa35447230187e3eabe948cdc8eba6d6d465b2605d624e2cf7443f6cb69ffb",
+  "landmarksSHA256": "4da2792b52b2ca13b61b950f26d30b2d3cdfbd8260474d146da588c2e153a484",
+  "sceneRotationDegrees": -29.755022433623864,
+  "groundYScale": 1.0180179537588112,
+  "sceneMatrix": [
+    [
+      0.8681553138057437,
+      0.49629260634312355
+    ],
+    [
+      -0.5052347835750538,
+      0.8837976961053619
+    ]
+  ],
+  "determinant": 1.0180179537588112,
+  "normalizedViewportWorldArea": 225441.99653120665,
+  "residuals": [
+    {
+      "id": "paving-shallow-1",
+      "use": "fit",
+      "observedImageAngleDegrees": 33.19756579221645,
+      "fittedImageAngleDegrees": 30.19784687036279,
+      "residualDegrees": 2.9997189218536633
+    },
+    {
+      "id": "paving-shallow-2",
+      "use": "fit",
+      "observedImageAngleDegrees": 27.19812794850912,
+      "fittedImageAngleDegrees": 30.19784687036279,
+      "residualDegrees": -2.9997189218536664
+    },
+    {
+      "id": "track-long-1",
+      "use": "fit",
+      "observedImageAngleDegrees": -60.261683297382056,
+      "fittedImageAngleDegrees": -60.68380806311571,
+      "residualDegrees": 0.42212476573365454
+    },
+    {
+      "id": "track-long-2",
+      "use": "fit",
+      "observedImageAngleDegrees": -61.10593282884937,
+      "fittedImageAngleDegrees": -60.68380806311571,
+      "residualDegrees": -0.42212476573365454
+    },
+    {
+      "id": "paving-shallow-holdout",
+      "use": "holdout",
+      "observedImageAngleDegrees": 30.38503096646576,
+      "fittedImageAngleDegrees": 30.19784687036279,
+      "residualDegrees": 0.1871840961029707
+    },
+    {
+      "id": "paving-long-holdout",
+      "use": "holdout",
+      "observedImageAngleDegrees": -58.83117712983388,
+      "fittedImageAngleDegrees": -60.68380806311571,
+      "residualDegrees": 1.852630933281831
+    }
+  ],
+  "directions": [
+    {
+      "worldDirection": "E",
+      "sceneVector": [
+        0.8681553138057437,
+        -0.5052347835750538
+      ],
+      "screenVector": [
+        0.8681553138057437,
+        0.5052347835750538
+      ]
+    },
+    {
+      "worldDirection": "NE",
+      "sceneVector": [
+        0.9648103769131449,
+        0.2676844025559107
+      ],
+      "screenVector": [
+        0.9648103769131449,
+        -0.2676844025559107
+      ]
+    },
+    {
+      "worldDirection": "N",
+      "sceneVector": [
+        0.49629260634312355,
+        0.8837976961053619
+      ],
+      "screenVector": [
+        0.49629260634312355,
+        -0.8837976961053619
+      ]
+    },
+    {
+      "worldDirection": "NW",
+      "sceneVector": [
+        -0.26294664211720814,
+        0.9821942856703871
+      ],
+      "screenVector": [
+        -0.26294664211720814,
+        -0.9821942856703871
+      ]
+    },
+    {
+      "worldDirection": "W",
+      "sceneVector": [
+        -0.8681553138057437,
+        0.5052347835750538
+      ],
+      "screenVector": [
+        -0.8681553138057437,
+        -0.5052347835750538
+      ]
+    },
+    {
+      "worldDirection": "SW",
+      "sceneVector": [
+        -0.9648103769131449,
+        -0.2676844025559107
+      ],
+      "screenVector": [
+        -0.9648103769131449,
+        0.2676844025559107
+      ]
+    },
+    {
+      "worldDirection": "S",
+      "sceneVector": [
+        -0.49629260634312355,
+        -0.8837976961053619
+      ],
+      "screenVector": [
+        -0.49629260634312355,
+        0.8837976961053619
+      ]
+    },
+    {
+      "worldDirection": "SE",
+      "sceneVector": [
+        0.26294664211720814,
+        -0.9821942856703871
+      ],
+      "screenVector": [
+        0.26294664211720814,
+        0.9821942856703871
+      ]
+    }
+  ],
+  "offlineRoundTrips": 32,
+  "sensitivity": {
+    "method": "4096 seeded uniform endpoint perturbations within +/-8px; sampled range, NOT statistical confidence or exhaustive bound",
+    "rotationDegrees": [
+      -30.949074183449266,
+      -28.418238875748568
+    ],
+    "yScale": [
+      0.9582043869883629,
+      1.0803426743938793
+    ]
+  },
+  "conventions": [
+    "ground x scale is fixed to1, not recovered world scale",
+    "scene translation and world-axis association are trial choices",
+    "upright source art is unchanged, not fitted to this view"
+  ],
+  "limitations": [
+    "Manual endpoint selection is approximate and independently reviewable, not an exact pixel edge fit.",
+    "Paving, rails and wall contacts can disagree in the illustration; report holdout residuals rather than force consistency.",
+    "Direction-only fit cannot recover absolute scale, camera elevation, camera intrinsics, translation or hidden footprints.",
+    "No upright art viewpoint is calibrated by this ground model."
+  ]
+}

@@ -1,0 +1,343 @@
+{
+  "schema": "blocked-base-curb-recommendations-009",
+  "manifest": {
+    "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/manifest.json",
+    "sha256": "5b0943d029eadaf00d4e2d039dbeeda3e3353241c7881f28dd370c3295ab1891"
+  },
+  "dependencies": [
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/ADAPT.md",
+      "sha256": "97606e5ffeacf67e95cf67d6e30794369feb23978121b0e8495177d9d416b1ec"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/API.md",
+      "sha256": "a88938b3e41ad36f62bbfe63079cdcb174d74a4a7b458c6573c7b3682abba7b9"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/README.md",
+      "sha256": "d2a30476b822678a0cf14c140fafe2a58a8cacf1f32ab90fc91c657f84b0a32e"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/attempt-01-frozen-sha256.json",
+      "sha256": "95e558419b99c04ff7cdfc2e8d93fc473faac91254ae7efc219c665df49120dd"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/author.py",
+      "sha256": "65bd46a17006b025b495a116557023d3369aa184e61e386dfcf96531352e23ea"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/freeze.py",
+      "sha256": "ff5baab3b5586d32cf7d8d22aab4bd069a4a171600eafdef16fbff9685f2399d"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/geometry.json",
+      "sha256": "26009d925b95ca40060e3fb4c4a83d23dd4974a61bec85a7d04520ef90de2845"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/materials.json",
+      "sha256": "546cf23fd9ed4d1fd3144145bd0ee006e0d0c31a8a1ba62a0c71861b16a0ddd5"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/preview/base-curb-detail.png",
+      "sha256": "1b796f578d6537f3508b520b498219574bce747ffa7e80a80b0b358219824945"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/preview/context-z100-grayscale.png",
+      "sha256": "41df669506e08347a5a4f89d04960182ec1e9117b43754fec02bab12350ae048"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/preview/context-z100-half.png",
+      "sha256": "547de98fb6435fcd1706435feecb472b9ca66e17ad493ce6b067e0aa58f5fde6"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/preview/context-z100.png",
+      "sha256": "1847d1520a9c53d0cafda6b06d4a2013013530bc2db78fd76ccb65d4818474c4"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/preview/context-z125-grayscale.png",
+      "sha256": "8702808228bcc7505da3a89af234bcbb2836d5cac9d0b0d52eb619b6f491d8da"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/preview/context-z125-half.png",
+      "sha256": "aa86f83d3151b6c8dc07a46c0f1113b88b67b83b7b51a42b67cd7d22ce9894df"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/preview/context-z125.png",
+      "sha256": "228b117037593a3fe590a282404903c744e8367cdcb57812253a6702527ccbd9"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/preview/context-z140-grayscale.png",
+      "sha256": "67f0e1f9ab21aa9c885a02d7fa059f4438ac952f2404912ed0ebfa39632568de"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/preview/context-z140-half.png",
+      "sha256": "cacca6b586f6dc1de0ddf8bc778e4bdcd4329e4b428ea75ad180e30871389c89"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/preview/context-z140.png",
+      "sha256": "2412d16638cb6285645057c47b69eae99402de93b544b07a599f4aa97c2cf4ee"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/preview/full-benchmark-comparison.png",
+      "sha256": "507810f005ddb449d26d0ffd0797d748a6484c6ca615d4c30733c6d35884915d"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/preview/preview-metadata.json",
+      "sha256": "61d65a933b2984580a494e2c933013962757f52266f5f2021989ad737346b61d"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/registration.json",
+      "sha256": "88f1da0f0dcd5e33f55fc3eb7045c2ccd97046195da646c7a137fa3ad3c48fd0"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-blocked-kiosk-base.png",
+      "sha256": "c3313e0475e6aac62f1ec66ff7db4e254ae95e4ef193c5079bf5921e1e90d63b"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-000.png",
+      "sha256": "02822d408de9a095094d7bcd21ae14f5593dfdebec845b82ff98620ca7baaceb"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-001.png",
+      "sha256": "c8c354ca1afa1f26e7433f2dd9c1cad0b511707a112397ccf9a02cc87ebc15ee"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-002.png",
+      "sha256": "0311b359585c86f1dfa06178926ab400e8e94c08e11f9a5140f787306d124edf"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-003.png",
+      "sha256": "974701ee0319c4f713ff62c8119221f375fae2c202fec305f7efb61ac7d26989"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-004.png",
+      "sha256": "3ffbca032b446aab53a2643205c361b66928f0a43b876edd1a8a09567410c2e4"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-005.png",
+      "sha256": "5a1b2b0c6f51aa7bcd25b4bd70575e1e909c8dddf5f67526d68dd0e1d418e15b"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-006.png",
+      "sha256": "bcca8563cd0d3a4b6c44400304a21b7ec564a32abe4fd7d9a17e9a01971777f8"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-007.png",
+      "sha256": "d5439da3e277cf519871254638353deefa5269dd122579cb653eaedff7542025"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-008.png",
+      "sha256": "b61bf23d3fc52a63d8a2057fea27aaabe92b129bef8b5ddbb311257d20feb0d6"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-009.png",
+      "sha256": "e1d4f9243fad45b3b132a9e2b16152a87c2cad03472343deb6eb9f420667f19e"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-010.png",
+      "sha256": "735e1b206b799c5ae2b47e9e58da3deb8762b39119b50a26a96c59e381bb426c"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-011.png",
+      "sha256": "4d37a1e8771577f5fb7321975829c633143ae8c0ffcd0ac8eac4bcd75b00b887"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-012.png",
+      "sha256": "12ae8ed8e33eff24b3ea9ed6d12f2256367a175880ab3ae4938c3aacac00455f"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-013.png",
+      "sha256": "02822d408de9a095094d7bcd21ae14f5593dfdebec845b82ff98620ca7baaceb"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-014.png",
+      "sha256": "c8c354ca1afa1f26e7433f2dd9c1cad0b511707a112397ccf9a02cc87ebc15ee"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-015.png",
+      "sha256": "0311b359585c86f1dfa06178926ab400e8e94c08e11f9a5140f787306d124edf"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-016.png",
+      "sha256": "974701ee0319c4f713ff62c8119221f375fae2c202fec305f7efb61ac7d26989"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-017.png",
+      "sha256": "3ffbca032b446aab53a2643205c361b66928f0a43b876edd1a8a09567410c2e4"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-018.png",
+      "sha256": "5a1b2b0c6f51aa7bcd25b4bd70575e1e909c8dddf5f67526d68dd0e1d418e15b"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-019.png",
+      "sha256": "bcca8563cd0d3a4b6c44400304a21b7ec564a32abe4fd7d9a17e9a01971777f8"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-020.png",
+      "sha256": "d5439da3e277cf519871254638353deefa5269dd122579cb653eaedff7542025"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-021.png",
+      "sha256": "b61bf23d3fc52a63d8a2057fea27aaabe92b129bef8b5ddbb311257d20feb0d6"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-022.png",
+      "sha256": "60d8cd930ea16147a89c37e23cde12b677bfa599e34bbb4bee25e66064f26418"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-023.png",
+      "sha256": "d7adaf263f7f1f57d21609a38a2ee42bf68dbfc2792dcc239cf844d9ada52066"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-024.png",
+      "sha256": "97114add7bb318d406b32189e42ae47bdeca4117502a9c950df6cf54df05e26f"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-025.png",
+      "sha256": "29ef083168ccbdacd27aa6db6b55b3ea238b0e6034166ca4e1a26bdd41a817fe"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-026.png",
+      "sha256": "18ca68a1916cae9df548c9005dbbb92f5fa3bfa04f560a8b4f63896887ae1e18"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-027.png",
+      "sha256": "90bf3765e43da6afee73955239ec35f631bbc4aa08df91d566820933c73ef8fd"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-028.png",
+      "sha256": "15e370d807abe53c62497e2d4e5fbc5acbae4e84aefca37f187a93e03d8f8606"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-029.png",
+      "sha256": "2ddd2fa715d273f4d1681a0d3ba039c0e81c7c4f9f50d4f1e8d80f47ec3ecf3a"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-030.png",
+      "sha256": "0cd2e59cbf885ae6d41409c8f15c3c1978b11616958a5b20f0d21b34a03ea569"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-031.png",
+      "sha256": "661d880c37f9ed7fc9398f2f18a2f3e58f563ca19df40ab5af32f48176e486af"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-032.png",
+      "sha256": "b342d45e25d46bdce766a05224a836eaf02eea0cbfccfec269867b133fd89d72"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-033.png",
+      "sha256": "3c8ab8c067141b531f580154cb16c5bc5f3fc0012fd34d9db193d12bb9c23892"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-034.png",
+      "sha256": "17342eedf247d60e6e105345f0d0e7dc8a68b0b786eb3cd828a7d5c358a0a01d"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-035.png",
+      "sha256": "bdd6d92f4247b052db4c598f9ca9dd59466771767b76d5372d28260dc336c6a1"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-036.png",
+      "sha256": "0cdfb2282728832885f89079f3c1abd57a95cb923481c4bb5976fb6eff4a6639"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-037.png",
+      "sha256": "cd879cbe118bf91528b482b3271d35d8082da166f4dbe8c74d0997c4d83e09f0"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-038.png",
+      "sha256": "0b1d8db9c69d12249f225cba31b26f58a4e3428b0d3bb28b4bff25aa920f1a9c"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-039.png",
+      "sha256": "9fe3f8784d88d8509dc6e12f4ac8f9372d28d23bc693bd2f4e1a534a809b5f04"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-040.png",
+      "sha256": "610856664660308c6550717f277698d5c3b39d23c7cf8a9fb734a9b666deece0"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-041.png",
+      "sha256": "24c5a3a88302c82380400cb3f9b0acdf081267cf18c330e6b0299c93022f0856"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-042.png",
+      "sha256": "630f41311fc6cab9ab6b039d6958d7464112f14bb01b76046fb79f7d1c511ef4"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-043.png",
+      "sha256": "8de651889bb8f4ed42f835cd814eeb07e147c5862ede8ad821b81d26a99dd80b"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-044.png",
+      "sha256": "c88b6fefe1392399f4facead25f23f63834fef3b6bceb152644b58e83f57a244"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-045.png",
+      "sha256": "9f04613f4b0ed900b8893ac7a9d75880e38eb3cc1157d52eb4aa04f25aba9232"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-046.png",
+      "sha256": "f2f9cb705c7a89cfbadbc753980015a3eafb9a87d360fed282eac85419d7fd85"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-047.png",
+      "sha256": "72bde32bd399a7e9c29efb300a55a7a45fb62e67d33269a131ba9aae9affc404"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-048.png",
+      "sha256": "926a4eddf15742c3056eb7b5bc9177120154f047037ae8328debae9eb26e6a62"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-049.png",
+      "sha256": "c9715105dd741ac6358e60010af992b1b5a12f5a44272b9cee8c098874b3d0b3"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-050.png",
+      "sha256": "946cbb90b734b6d213becb373910167bb8e03fad2238faea6a9f6625ce270aa3"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-051.png",
+      "sha256": "b852d25bbeb97be52047bec2d19fda327d6e46f14540bc660dc3918bfa6462f3"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/textures/cap.png",
+      "sha256": "6deabfec579cfcf3e59bfaf4b8cb69d67c321ae070666b778bcee7cb71415b75"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/textures/curb.png",
+      "sha256": "cfd9d7bd1348d8820c6301c721c435468b695234a6f54e9e38aca0cc82eda70e"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/textures/curbcap.png",
+      "sha256": "cfd9d7bd1348d8820c6301c721c435468b695234a6f54e9e38aca0cc82eda70e"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/textures/masonry.png",
+      "sha256": "e70cb98370f0b3f62005de168ed52671cf9259aad460f56bd37f3aef098dbf2b"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/preview.py",
+      "sha256": "3563356c487969c87fb0f6842266ebf2b361652193486bbf707489261af77228"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/replay.py",
+      "sha256": "70b08f4d5551c25150c6203d58a99641500baa836317dc205849806efc1d1f84"
+    },
+    {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/test_source.py",
+      "sha256": "91601c6f28343072aa8aabfdbfecbe7d865efeebe266486ebce05efea59f4086"
+    }
+  ],
+  "recommendation": {
+    "reviewerRole": "coordinator",
+    "decision": "recommended",
+    "scope": "isolated-ordinary-scene",
+    "manifestSHA256": "5b0943d029eadaf00d4e2d039dbeeda3e3353241c7881f28dd370c3295ab1891",
+    "evidence": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/SOURCE-REVIEW-FINAL.md",
+      "sha256": "f12f7aaa334bb077d6e062511c342f75affc82d0c99aa88e50039dc438d08a47"
+    }
+  }
+}

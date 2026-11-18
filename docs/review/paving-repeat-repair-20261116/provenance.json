@@ -1,0 +1,95 @@
+{
+  "generated": "2026-11-16T06:09:00Z",
+  "slice": "slice4",
+  "intent": "intent/2026-11-16-benchmark-faithful-ten-slices.md owner 05:56:35 UTC",
+  "contract": "d1bfd1c whole-scene",
+  "status": "PROPOSAL_NOT_ACCEPTANCE",
+  "original": {
+    "path": "AppTests/WholeSceneAssets/whole-scene-muted-paving.png",
+    "sha256": "c0decdab226512a790ddecf49cf703c9fc736f7943f11bc364b76b111b7c3125",
+    "pixels": [
+      1254,
+      1254
+    ],
+    "colortype": "RGB_8bit",
+    "filesize_bytes": 2689986,
+    "seam_diagnostics": {
+      "tb_mean_abs_diff_all_channels": 14.28,
+      "tb_max_diff": 73,
+      "lr_mean_abs_diff_all_channels": 12.9,
+      "lr_max_diff": 63
+    }
+  },
+  "candidate": {
+    "path": "docs/review/paving-repeat-repair-20261116/paving-muted-candidate.png",
+    "sha256": "01d3d1e2bb9793cf374929c50006ac54cdfcfcb863b894948599c39d435c3008",
+    "pixels": [
+      1254,
+      1254
+    ],
+    "filesize_bytes": 2461067,
+    "method": "3-pass cosine-ease edge-forced blend bw=20px, RGB per-channel averaging, interior byte-identical",
+    "seam_diagnostics": {
+      "tb_mean_abs_diff": 0.0,
+      "tb_max_diff": 0,
+      "lr_mean_abs_diff": 0.0,
+      "lr_max_diff": 0,
+      "note": "exact edge equality is a technical measurement only; does not establish visual invisibility"
+    },
+    "changed_pixels": 98611,
+    "total_pixels": 1572516,
+    "changed_pct": 6.3,
+    "interior_unchanged": {
+      "region": "[20,1234)x[20,1234)",
+      "changed_pixels": 0
+    }
+  },
+  "repeat_previews": {
+    "repeat-original-3x3-full.png": {
+      "dimensions": [
+        3762,
+        3762
+      ],
+      "sha256": "5b6fc76f7e0e3c464c4d06f4332f42604849c9838c0f5331c9f08be115478499"
+    },
+    "repeat-original-3x3-half.png": {
+      "dimensions": [
+        1881,
+        1881
+      ],
+      "sha256": "5be5c9259f0bff57e4c5b43321675b5112da2cbf08cab1a7cdbc7a6fedca5317"
+    },
+    "repeat-original-3x3-grayscale.png": {
+      "dimensions": [
+        3762,
+        3762
+      ],
+      "sha256": "d3fdbb63d3be73e7c2803c26edc653a715758ff90654863be955038629d09376"
+    },
+    "repeat-candidate-3x3-full.png": {
+      "dimensions": [
+        3762,
+        3762
+      ],
+      "sha256": "c544affb7a0bda941c92327154c96673af89c5be654877a23a981ee75aa96bff"
+    },
+    "repeat-candidate-3x3-half.png": {
+      "dimensions": [
+        1881,
+        1881
+      ],
+      "sha256": "1a74cd42f67534f3eae2b5482a380761e7ed93728101be12532fa4ea57370fc0"
+    },
+    "repeat-candidate-3x3-grayscale.png": {
+      "dimensions": [
+        3762,
+        3762
+      ],
+      "sha256": "c2343bf755a46932ea92e9c38d170636978b66848f456140ec4842757df6e826"
+    }
+  },
+  "preserved_original": {
+    "bundle_sha256_verified": "c0decdab226512a790ddecf49cf703c9fc736f7943f11bc364b76b111b7c3125",
+    "note": "AppTests/WholeSceneAssets/whole-scene-muted-paving.png byte-for-byte unchanged"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "status": "CANDIDATE_STATES_ONLY",
+  "sourceSha256": "1177d7a6f75d7913016f94f6c3b99662a551ae2660b31584e70b9eea52815854",
+  "states": [
+    {
+      "state": "intact",
+      "sourceCell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "sourceBaseAnchor": [
+        235.5,
+        692
+      ],
+      "scale": 0.47416413373860183,
+      "canvasPixels": [
+        256,
+        384
+      ],
+      "logicalCanvas": [
+        64,
+        96
+      ],
+      "logicalAnchor": [
+        32,
+        88
+      ],
+      "alphaRemap": "<=32 zero, >=240 opaque, linear between",
+      "sha256": "aa437f0eac9593fab43e0f2b7317a856fd99c1294821e06f1c95dda09dbedb1f",
+      "lowerPoleBaseDifferentMaskPixels": 0
+    },
+    {
+      "state": "damaged",
+      "sourceCell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "sourceBaseAnchor": [
+        214.5,
+        692
+      ],
+      "scale": 0.47416413373860183,
+      "canvasPixels": [
+        256,
+        384
+      ],
+      "logicalCanvas": [
+        64,
+        96
+      ],
+      "logicalAnchor": [
+        32,
+        88
+      ],
+      "alphaRemap": "<=32 zero, >=240 opaque, linear between",
+      "sha256": "dfc4f40eec4303c1836ffce056ab8aaa979bf1d385b65816a7087e63e149ad96",
+      "lowerPoleBaseDifferentMaskPixels": 67
+    },
+    {
+      "state": "critical",
+      "sourceCell": [
+        1024,
+        0,
+        1536,
+        768
+      ],
+      "sourceBaseAnchor": [
+        193.0,
+        692
+      ],
+      "scale": 0.47416413373860183,
+      "canvasPixels": [
+        256,
+        384
+      ],
+      "logicalCanvas": [
+        64,
+        96
+      ],
+      "logicalAnchor": [
+        32,
+        88
+      ],
+      "alphaRemap": "<=32 zero, >=240 opaque, linear between",
+      "sha256": "b24234d6a58659700539415e5b0e4b930a928ff6f491e082110d19d1ca96a962",
+      "lowerPoleBaseDifferentMaskPixels": 29
+    },
+    {
+      "state": "destroyed",
+      "sourceCell": [
+        1536,
+        0,
+        2048,
+        768
+      ],
+      "sourceBaseAnchor": [
+        172.0,
+        692
+      ],
+      "scale": 0.47416413373860183,
+      "canvasPixels": [
+        256,
+        384
+      ],
+      "logicalCanvas": [
+        64,
+        96
+      ],
+      "logicalAnchor": [
+        32,
+        88
+      ],
+      "alphaRemap": "<=32 zero, >=240 opaque, linear between",
+      "sha256": "b9e56b70624e7714f11c417b453d51fe4f57bce073e920b5392ab879999d9af9",
+      "lowerPoleBaseDifferentMaskPixels": 27
+    }
+  ]
+}

@@ -59,6 +59,49 @@ final class WorldRenderer {
 
     let root = SKNode()
     private var reviewArt: BenchmarkReviewArt?
+#if DEBUG
+    private var kioskPlayableReview: KioskPlayableReview?
+
+    /// Narrow reversible override. Does not reset animations, ground, props or fog.
+    func installKioskPlayableReview(_ review: KioskPlayableReview?, snapshot: PresentationSnapshot) throws {
+        guard reviewArt == nil else { throw KioskPlayableReview.Invalid.arguments }
+        try review?.validateAuthority(snapshot)
+        kioskPlayableReview = review
+        solidSignature = nil
+    }
+
+    /// Explicit presentation cohorts. Ground shapes, shadows, fields, projectiles,
+    /// gate strips and world VFX remain in the shared ground transform.
+    func liveProjectionUprights(_ snapshot: PresentationSnapshot) -> [LiveWorldProjection.Upright] {
+        var result: [LiveWorldProjection.Upright] = []
+        for node in layers[.actors]?.children ?? [] {
+            var attachment: CGPoint?
+            if let camera = snapshot.cameras.first(where: { node.name == "camera-damage-\($0.id.raw)" }) {
+                attachment = CGPoint(x: camera.x, y: camera.y)
+            }
+            result.append(.init(node: node, root: attachment))
+        }
+        result += (layers[.cameraHousings]?.children ?? []).map { .init(node: $0) }
+        for node in layers[.decorations]?.children ?? [] where node.name?.hasPrefix("environment-upright-") == true {
+            result.append(.init(node: node))
+        }
+        for node in layers[.solids]?.children ?? [] {
+            if node.name == "kiosk-playable-review" || node.name?.hasPrefix("environment-upright-") == true {
+                result.append(.init(node: node))
+            } else if node.name?.hasPrefix(Self.gateBarrierPrefix) == true {
+                for tile in node.children where tile.name == Self.gateTileName {
+                    result.append(.init(node: tile))
+                }
+            }
+        }
+        for enemy in snapshot.enemies where enemy.unaware {
+            if let marker = nodes[.markers]?["unaware-\(enemy.id.raw)"] {
+                result.append(.init(node: marker, root: CGPoint(x: enemy.x, y: enemy.y)))
+            }
+        }
+        return result
+    }
+#endif
     private var benchmarkCompleteCamera = false
 #if DEBUG || SS_RENDERER_TEST_SUPPORT
     // BP-007/008 candidate registration is installed before contrast resources.
@@ -762,6 +805,14 @@ final class WorldRenderer {
             foundation.lineWidth = 2
             foundation.zPosition = -0.1
             layer?.addChild(foundation)
+#if DEBUG
+            if let review = kioskPlayableReview, id == KioskPlayableReview.solidID {
+                // Keep the authoritative footprint visible in the ordinary live projection.
+                // Only this solid's decorative texture is substituted.
+                layer?.addChild(review.makeNode())
+                continue
+            }
+#endif
             if let id, let texture = environment.solidTexture(solidId: id) {
                 let node = SKSpriteNode(texture: texture, size: size)
                 node.name = "environment-upright-\(EnvironmentLibrary.solidAssetId(forSolidId: id))"

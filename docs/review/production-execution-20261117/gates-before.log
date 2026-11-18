@@ -1,0 +1,508 @@
+Building for debugging...
+[0/11] /Users/appliedalchemylabs/.jcode/scratch/ss-gate-build-20261117/arm64-apple-macosx/debug/SSRuntimePackageTests.derived/runner.swift
+[1/11] Write sources
+[1/11] Copying SPEC_PIN.txt
+[4/11] Write sources
+[5/11] Copying fixtures
+[6/11] Copying contracts
+[7/11] Write swift-version--58304C5D6DBC2206.txt
+[8/11] Copying RuntimeAssets
+[10/105] Emitting module SurveillanceCore
+[11/115] Compiling SurveillanceCore AuthoritativeEvent.swift
+[12/115] Compiling SurveillanceCore CameraDestructionReceipt.swift
+[13/115] Compiling SurveillanceCore RunReceipt.swift
+[14/115] Compiling SurveillanceCore ExposureState.swift
+[15/115] Compiling SurveillanceCore Collision.swift
+[16/115] Compiling SurveillanceCore Movement.swift
+[17/115] Compiling SurveillanceCore PlayerCommand.swift
+[18/115] Compiling SurveillanceCore ActorClipProjection.swift
+[19/115] Compiling SurveillanceCore ActorSilhouette.swift
+[20/115] Compiling SurveillanceCore AmbientMotion.swift
+[21/115] Compiling SurveillanceCore CombatFeedbackFrame.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Sources/SurveillanceCore/Presentation/EnvironmentLibrary.swift:109:28: warning: no calls to throwing functions occur within 'try' expression
+107 | 
+108 |     public static func bundled() throws -> EnvironmentLibrary {
+109 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+110 |         guard let root = try? JSONSerialization.jsonObject(with: presentation) as? [String: Any] else {
+111 |             throw AssetCatalogError.invalidJSON
+[22/115] Compiling SurveillanceCore CourtPresentation.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Sources/SurveillanceCore/Presentation/EnvironmentLibrary.swift:109:28: warning: no calls to throwing functions occur within 'try' expression
+107 | 
+108 |     public static func bundled() throws -> EnvironmentLibrary {
+109 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+110 |         guard let root = try? JSONSerialization.jsonObject(with: presentation) as? [String: Any] else {
+111 |             throw AssetCatalogError.invalidJSON
+[23/115] Compiling SurveillanceCore DailyFlavour.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Sources/SurveillanceCore/Presentation/EnvironmentLibrary.swift:109:28: warning: no calls to throwing functions occur within 'try' expression
+107 | 
+108 |     public static func bundled() throws -> EnvironmentLibrary {
+109 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+110 |         guard let root = try? JSONSerialization.jsonObject(with: presentation) as? [String: Any] else {
+111 |             throw AssetCatalogError.invalidJSON
+[24/115] Compiling SurveillanceCore DailyRun.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Sources/SurveillanceCore/Presentation/EnvironmentLibrary.swift:109:28: warning: no calls to throwing functions occur within 'try' expression
+107 | 
+108 |     public static func bundled() throws -> EnvironmentLibrary {
+109 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+110 |         guard let root = try? JSONSerialization.jsonObject(with: presentation) as? [String: Any] else {
+111 |             throw AssetCatalogError.invalidJSON
+[25/115] Compiling SurveillanceCore DetectionPresentation.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Sources/SurveillanceCore/Presentation/EnvironmentLibrary.swift:109:28: warning: no calls to throwing functions occur within 'try' expression
+107 | 
+108 |     public static func bundled() throws -> EnvironmentLibrary {
+109 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+110 |         guard let root = try? JSONSerialization.jsonObject(with: presentation) as? [String: Any] else {
+111 |             throw AssetCatalogError.invalidJSON
+[26/115] Compiling SurveillanceCore EnvironmentLibrary.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Sources/SurveillanceCore/Presentation/EnvironmentLibrary.swift:109:28: warning: no calls to throwing functions occur within 'try' expression
+107 | 
+108 |     public static func bundled() throws -> EnvironmentLibrary {
+109 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+110 |         guard let root = try? JSONSerialization.jsonObject(with: presentation) as? [String: Any] else {
+111 |             throw AssetCatalogError.invalidJSON
+[27/115] Compiling SurveillanceCore FeelPassPresenter.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Sources/SurveillanceCore/Presentation/EnvironmentLibrary.swift:109:28: warning: no calls to throwing functions occur within 'try' expression
+107 | 
+108 |     public static func bundled() throws -> EnvironmentLibrary {
+109 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+110 |         guard let root = try? JSONSerialization.jsonObject(with: presentation) as? [String: Any] else {
+111 |             throw AssetCatalogError.invalidJSON
+[28/115] Compiling SurveillanceCore GameFeel.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Sources/SurveillanceCore/Presentation/EnvironmentLibrary.swift:109:28: warning: no calls to throwing functions occur within 'try' expression
+107 | 
+108 |     public static func bundled() throws -> EnvironmentLibrary {
+109 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+110 |         guard let root = try? JSONSerialization.jsonObject(with: presentation) as? [String: Any] else {
+111 |             throw AssetCatalogError.invalidJSON
+[29/115] Compiling SurveillanceCore GhostRun.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Sources/SurveillanceCore/Presentation/EnvironmentLibrary.swift:109:28: warning: no calls to throwing functions occur within 'try' expression
+107 | 
+108 |     public static func bundled() throws -> EnvironmentLibrary {
+109 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+110 |         guard let root = try? JSONSerialization.jsonObject(with: presentation) as? [String: Any] else {
+111 |             throw AssetCatalogError.invalidJSON
+[30/115] Compiling SurveillanceCore HUDLayout.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Sources/SurveillanceCore/Presentation/EnvironmentLibrary.swift:109:28: warning: no calls to throwing functions occur within 'try' expression
+107 | 
+108 |     public static func bundled() throws -> EnvironmentLibrary {
+109 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+110 |         guard let root = try? JSONSerialization.jsonObject(with: presentation) as? [String: Any] else {
+111 |             throw AssetCatalogError.invalidJSON
+[31/115] Compiling SurveillanceCore DefectRegistry.swift
+[32/115] Compiling SurveillanceCore ExpansionGateDecision.swift
+[33/115] Compiling SurveillanceCore ExpansionGateReport.swift
+[34/115] Compiling SurveillanceCore ExternalEvidence.swift
+[35/115] Compiling SurveillanceCore PacingSegments.swift
+[36/115] Compiling SurveillanceCore PlaytestEvidenceLoader.swift
+[37/115] Compiling SurveillanceCore ReceiptArchive.swift
+[38/115] Compiling SurveillanceCore ReleaseCandidateEvidence.swift
+[39/115] Compiling SurveillanceCore ArenaManifest.swift
+[40/115] Compiling SurveillanceCore ArenaReachability.swift
+[41/115] Compiling SurveillanceCore CivicSeamIdentity.swift
+[42/115] Compiling SurveillanceCore GateRegistry.swift
+[43/115] Compiling SurveillanceCore JSONScalar.swift
+[44/115] Compiling SurveillanceCore ReplayEnvelope.swift
+[45/115] Compiling SurveillanceCore ReplayMatrix.swift
+[46/115] Compiling SurveillanceCore RuntimeBundleFilter.swift
+[47/115] Compiling SurveillanceCore CanonicalJSON.swift
+[48/115] Compiling SurveillanceCore Cordic.swift
+[49/115] Compiling SurveillanceCore EntityID.swift
+[50/115] Compiling SurveillanceCore IntMath.swift
+[51/115] Compiling SurveillanceCore Q8.swift
+[52/115] Compiling SurveillanceCore SHA256.swift
+[53/115] Compiling SurveillanceCore AudioProjector.swift
+[54/115] Compiling SurveillanceCore AwarenessHint.swift
+[55/115] Compiling SurveillanceCore CameraFollow.swift
+[56/115] Compiling SurveillanceCore CameraHUD.swift
+[57/115] Compiling SurveillanceCore CameraPresentation.swift
+[58/115] Compiling SurveillanceCore CaptainCaptions.swift
+[59/115] Compiling SurveillanceCore ClipAlignment.swift
+[60/115] Compiling SurveillanceCore ClipFrameLibrary.swift
+[61/115] Compiling SurveillanceCore ClipMetadata.swift
+[62/115] Compiling SurveillanceCore ClipTiming.swift
+[63/115] Compiling SurveillanceCore SplitMix64.swift
+[64/115] Compiling SurveillanceCore Xoshiro256StarStar.swift
+[65/115] Compiling SurveillanceCore Awareness.swift
+[66/115] Compiling SurveillanceCore BossSystem.swift
+[67/115] Compiling SurveillanceCore CaptainPath.swift
+[68/115] Compiling SurveillanceCore CornerPursuit.swift
+[69/115] Compiling SurveillanceCore EnemySystem.swift
+[70/115] Compiling SurveillanceCore EnemyTypes.swift
+[71/115] Compiling SurveillanceCore Patrol.swift
+[72/115] Compiling SurveillanceCore SpawnFairness.swift
+[73/115] Compiling SurveillanceCore HeatCaption.swift
+[74/115] Compiling SurveillanceCore LethalWarning.swift
+[75/115] Compiling SurveillanceCore Medals.swift
+[76/115] Compiling SurveillanceCore Opening.swift
+[77/115] Compiling SurveillanceCore PatrolConeProjection.swift
+[78/115] Compiling SurveillanceCore PresentationAssetRegistry.swift
+[79/115] Compiling SurveillanceCore PresentationSettings.swift
+[80/115] Compiling SurveillanceCore PresentationSnapshot.swift
+[81/115] Compiling SurveillanceCore ProceduralVFX.swift
+[82/115] Compiling SurveillanceCore QuietApproach.swift
+[83/115] Compiling SurveillanceCore ReactionClipTracker.swift
+[84/115] Compiling SurveillanceCore Readability.swift
+[85/115] Compiling SurveillanceCore RunCard.swift
+[86/115] Compiling SurveillanceCore SpokenHUD.swift
+[87/115] Compiling SurveillanceCore StealthTexture.swift
+[88/115] Compiling SurveillanceCore TelegraphProjection.swift
+[89/115] Compiling SurveillanceCore TerminalSpeech.swift
+[90/115] Compiling SurveillanceCore UpgradePresentation.swift
+[91/115] Compiling SurveillanceCore VisualLanguage.swift
+[92/115] Compiling SurveillanceCore SimulationClock.swift
+[93/115] Compiling SurveillanceCore PatrolFairness.swift
+[94/115] Compiling SurveillanceCore CameraFairness.swift
+[95/115] Compiling SurveillanceCore CameraPlacement.swift
+[96/115] Compiling SurveillanceCore DamageOrdering.swift
+[97/115] Compiling SurveillanceCore ProjectilePool.swift
+[98/115] Compiling SurveillanceCore Targeting.swift
+[99/115] Compiling SurveillanceCore ContractVersions.swift
+[100/115] Compiling SurveillanceCore AssetCatalog.swift
+[101/115] Compiling SurveillanceCore AssetIntake.swift
+[102/115] Compiling SurveillanceCore BundledResource.swift
+[103/115] Compiling SurveillanceCore CombatContent.swift
+[104/115] Compiling SurveillanceCore D021Ceilings.swift
+[105/115] Compiling SurveillanceCore PeakDensityProfiler.swift
+[106/115] Compiling SurveillanceCore PerformanceThresholds.swift
+[107/115] Compiling SurveillanceCore RunTelemetrySnapshot.swift
+[108/115] Compiling SurveillanceCore CombatAuthority.swift
+[109/115] Compiling SurveillanceCore IsolatedKernel.swift
+[110/115] Compiling SurveillanceCore Simulation.swift
+[111/115] Compiling SurveillanceCore WorldState.swift
+[112/115] Compiling SurveillanceCore WorldTypes.swift
+[113/115] Compiling SurveillanceCore resource_bundle_accessor.swift
+[114/212] Compiling SurveillanceCoreTests RunTelemetryTests.swift
+[115/212] Compiling SurveillanceCoreTests RuntimeBundleTests.swift
+[116/212] Compiling SurveillanceCoreTests ShellCopyTests.swift
+[117/212] Compiling SurveillanceCoreTests SilhouetteTests.swift
+[118/212] Compiling SurveillanceCoreTests SimulationClockTests.swift
+[119/212] Compiling SurveillanceCoreTests SpawnFairnessTests.swift
+[120/212] Compiling SurveillanceCoreTests SpokenHUDTests.swift
+[121/212] Compiling SurveillanceCoreTests StandardEnemyClipProjectionTests.swift
+[122/212] Compiling SurveillanceCoreTests TamperFloorHUDTests.swift
+[123/212] Compiling SurveillanceCoreTests TamperFloorTests.swift
+[124/222] Compiling SurveillanceCoreTests CameraDestructionReceiptTests.swift
+[125/222] Compiling SurveillanceCoreTests CameraFairnessTests.swift
+[126/222] Compiling SurveillanceCoreTests CameraFollowTests.swift
+[127/222] Compiling SurveillanceCoreTests CameraHUDTests.swift
+[128/222] Compiling SurveillanceCoreTests CameraPlacementTests.swift
+[129/222] Compiling SurveillanceCoreTests CameraPresentationTests.swift
+[130/222] Compiling SurveillanceCoreTests CanonicalArenaZonesTests.swift
+[131/222] Compiling SurveillanceCoreTests CaptainCaptionsTests.swift
+[132/222] Compiling SurveillanceCoreTests CaptainPathTests.swift
+[133/222] Compiling SurveillanceCoreTests CivicSeamIdentityTests.swift
+[134/222] Compiling SurveillanceCoreTests ClipAlignmentTests.swift
+[135/222] Compiling SurveillanceCoreTests DeviceSittingQA.swift
+[136/222] Compiling SurveillanceCoreTests PacingProbe.swift
+[137/222] Compiling SurveillanceCoreTests PacingProbeTests.swift
+[138/222] Compiling SurveillanceCoreTests PacingSegmentsTests.swift
+[139/222] Compiling SurveillanceCoreTests PatrolSlipSearch.swift
+[140/222] Compiling SurveillanceCoreTests ProbePilot.swift
+[141/222] Compiling SurveillanceCoreTests PeakDensityProfilerTests.swift
+[142/222] Compiling SurveillanceCoreTests PlayerGroundContactTraceTests.swift
+[143/222] Compiling SurveillanceCoreTests PlaytestEvidenceLoaderTests.swift
+[144/222] Compiling SurveillanceCoreTests PresentationSettingsTests.swift
+[145/222] Compiling SurveillanceCoreTests ClipMetadataTests.swift
+[146/222] Compiling SurveillanceCoreTests ClipMetadataV2Tests.swift
+[147/222] Compiling SurveillanceCoreTests ClipTimingTests.swift
+[148/222] Compiling SurveillanceCoreTests CombatAuthorityReceiptTests.swift
+[149/222] Compiling SurveillanceCoreTests CombatCausalityTests.swift
+[150/222] Compiling SurveillanceCoreTests CombatContentFailClosedTests.swift
+[151/222] Compiling SurveillanceCoreTests CombatFeedbackTests.swift
+[152/222] Compiling SurveillanceCoreTests CombatVisibilityTests.swift
+[153/222] Compiling SurveillanceCoreTests CommitClipTests.swift
+[154/222] Compiling SurveillanceCoreTests CompleteRunVectorTests.swift
+[155/222] Compiling SurveillanceCoreTests ConeOrientationTests.swift
+[156/222] Compiling SurveillanceCoreTests HUDMappingTests.swift
+[157/222] Compiling SurveillanceCoreTests HUDPresentationTests.swift
+[158/222] Compiling SurveillanceCoreTests HeatReinforcementTests.swift
+[159/222] Compiling SurveillanceCoreTests IncidentReportShareTests.swift
+[160/222] Compiling SurveillanceCoreTests JSONScalarTests.swift
+[161/222] Compiling SurveillanceCoreTests KernelVectorTests.swift
+[162/222] Compiling SurveillanceCoreTests LegacyAdmissionTests.swift
+[163/222] Compiling SurveillanceCoreTests LethalWarningTests.swift
+[164/222] Compiling SurveillanceCoreTests MedalTests.swift
+[165/222] Compiling SurveillanceCoreTests ObjectiveGraphTests.swift
+[166/222] Compiling SurveillanceCoreTests OriginalArtTests.swift
+[167/222] Compiling SurveillanceCoreTests ProceduralVFXTests.swift
+[168/222] Compiling SurveillanceCoreTests ProtectedUpgradeSelectionTests.swift
+[169/222] Compiling SurveillanceCoreTests QuietApproachPresentationTests.swift
+[170/222] Compiling SurveillanceCoreTests QuietApproachTests.swift
+[171/222] Compiling SurveillanceCoreTests ReactionClipTrackerTests.swift
+[172/222] Compiling SurveillanceCoreTests ReadabilityFinishTests.swift
+[173/222] Compiling SurveillanceCoreTests ReleaseCandidateEvidenceTests.swift
+[174/222] Compiling SurveillanceCoreTests ReplayMatrixTests.swift
+[175/222] Compiling SurveillanceCoreTests ReplayTests.swift
+[176/222] Compiling SurveillanceCoreTests RunOutcomeTerminalTests.swift
+[177/222] Compiling SurveillanceCoreTests ContractVectorTests.swift
+[178/222] Compiling SurveillanceCoreTests ContractVersionsTests.swift
+[179/222] Compiling SurveillanceCoreTests CornerPursuitTests.swift
+[180/222] Compiling SurveillanceCoreTests CourtClimaxTests.swift
+[181/222] Compiling SurveillanceCoreTests CourtRehearsalPresentationTests.swift
+[182/222] Compiling SurveillanceCoreTests CourtReleaseTests.swift
+[183/222] Compiling SurveillanceCoreTests DaemonClipTests.swift
+[184/222] Compiling SurveillanceCoreTests DailyRunGhostTests.swift
+[185/222] Compiling SurveillanceCoreTests DamageOrderingTests.swift
+[186/222] Compiling SurveillanceCoreTests DeterminismTests.swift
+[187/222] Compiling SurveillanceCoreTests DeviceRunEvidenceTests.swift
+[188/222] Emitting module SurveillanceCoreTests
+[189/222] Compiling SurveillanceCoreTests AcceptedGateCensusTests.swift
+[190/222] Compiling SurveillanceCoreTests AmbientMotionTests.swift
+[191/222] Compiling SurveillanceCoreTests ArenaAndSimulationTests.swift
+[192/222] Compiling SurveillanceCoreTests ArenaReachabilityTests.swift
+[193/222] Compiling SurveillanceCoreTests AssetCatalogTests.swift
+[194/222] Compiling SurveillanceCoreTests AssetIntakeTests.swift
+[195/222] Compiling SurveillanceCoreTests AudioDeliveryTests.swift
+[196/222] Compiling SurveillanceCoreTests AudioProjectorSmokeTests.swift
+[197/222] Compiling SurveillanceCoreTests AudioProjectorTests.swift
+[198/222] Compiling SurveillanceCoreTests AwarenessTests.swift
+[199/222] Compiling SurveillanceCoreTests CameraDestructionOrderTests.swift
+[200/222] Compiling SurveillanceCoreTests TargetingPriorityTests.swift
+[201/222] Compiling SurveillanceCoreTests TerminalPrecedenceTests.swift
+[202/222] Compiling SurveillanceCoreTests TerminalSpeechTests.swift
+[203/222] Compiling SurveillanceCoreTests TestWorld.swift
+[204/222] Compiling SurveillanceCoreTests TransitPatrolTests.swift
+[205/222] Compiling SurveillanceCoreTests TutorialConformanceTests.swift
+[206/222] Compiling SurveillanceCoreTests UpgradeParityD113Tests.swift
+[207/222] Compiling SurveillanceCoreTests UpgradesContractParityTests.swift
+[208/222] Compiling SurveillanceCoreTests VisualLanguageTests.swift
+[209/222] Compiling SurveillanceCoreTests WeaponUpgradeFeedbackTests.swift
+[210/222] Compiling SurveillanceCoreTests EnemyBehaviourTests.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:126:28: warning: no calls to throwing functions occur within 'try' expression
+124 |     /// the contract so a regression fails here rather than as missing fog.
+125 |     @Test func fogIDsResolveThroughThePresentationContract() throws {
+126 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+127 |         let root = try #require(
+128 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:156:28: warning: no calls to throwing functions occur within 'try' expression
+154 |     /// which is exactly the failure this asserts against.
+155 |     @Test func everyHousingFamilyNamesADeclaredAsset() throws {
+156 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+157 |         let root = try #require(
+158 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+[211/222] Compiling SurveillanceCoreTests EnvironmentLibraryTests.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:126:28: warning: no calls to throwing functions occur within 'try' expression
+124 |     /// the contract so a regression fails here rather than as missing fog.
+125 |     @Test func fogIDsResolveThroughThePresentationContract() throws {
+126 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+127 |         let root = try #require(
+128 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:156:28: warning: no calls to throwing functions occur within 'try' expression
+154 |     /// which is exactly the failure this asserts against.
+155 |     @Test func everyHousingFamilyNamesADeclaredAsset() throws {
+156 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+157 |         let root = try #require(
+158 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+[212/222] Compiling SurveillanceCoreTests EventCatalogTests.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:126:28: warning: no calls to throwing functions occur within 'try' expression
+124 |     /// the contract so a regression fails here rather than as missing fog.
+125 |     @Test func fogIDsResolveThroughThePresentationContract() throws {
+126 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+127 |         let root = try #require(
+128 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:156:28: warning: no calls to throwing functions occur within 'try' expression
+154 |     /// which is exactly the failure this asserts against.
+155 |     @Test func everyHousingFamilyNamesADeclaredAsset() throws {
+156 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+157 |         let root = try #require(
+158 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+[213/222] Compiling SurveillanceCoreTests ExpansionGateReportTests.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:126:28: warning: no calls to throwing functions occur within 'try' expression
+124 |     /// the contract so a regression fails here rather than as missing fog.
+125 |     @Test func fogIDsResolveThroughThePresentationContract() throws {
+126 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+127 |         let root = try #require(
+128 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:156:28: warning: no calls to throwing functions occur within 'try' expression
+154 |     /// which is exactly the failure this asserts against.
+155 |     @Test func everyHousingFamilyNamesADeclaredAsset() throws {
+156 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+157 |         let root = try #require(
+158 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+[214/222] Compiling SurveillanceCoreTests ExposureFinalizationTests.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:126:28: warning: no calls to throwing functions occur within 'try' expression
+124 |     /// the contract so a regression fails here rather than as missing fog.
+125 |     @Test func fogIDsResolveThroughThePresentationContract() throws {
+126 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+127 |         let root = try #require(
+128 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:156:28: warning: no calls to throwing functions occur within 'try' expression
+154 |     /// which is exactly the failure this asserts against.
+155 |     @Test func everyHousingFamilyNamesADeclaredAsset() throws {
+156 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+157 |         let root = try #require(
+158 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+[215/222] Compiling SurveillanceCoreTests ExtractionCountdownTests.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:126:28: warning: no calls to throwing functions occur within 'try' expression
+124 |     /// the contract so a regression fails here rather than as missing fog.
+125 |     @Test func fogIDsResolveThroughThePresentationContract() throws {
+126 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+127 |         let root = try #require(
+128 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:156:28: warning: no calls to throwing functions occur within 'try' expression
+154 |     /// which is exactly the failure this asserts against.
+155 |     @Test func everyHousingFamilyNamesADeclaredAsset() throws {
+156 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+157 |         let root = try #require(
+158 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+[216/222] Compiling SurveillanceCoreTests FeelPassTests.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:126:28: warning: no calls to throwing functions occur within 'try' expression
+124 |     /// the contract so a regression fails here rather than as missing fog.
+125 |     @Test func fogIDsResolveThroughThePresentationContract() throws {
+126 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+127 |         let root = try #require(
+128 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:156:28: warning: no calls to throwing functions occur within 'try' expression
+154 |     /// which is exactly the failure this asserts against.
+155 |     @Test func everyHousingFamilyNamesADeclaredAsset() throws {
+156 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+157 |         let root = try #require(
+158 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+[217/222] Compiling SurveillanceCoreTests FeelProjectionParityTests.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:126:28: warning: no calls to throwing functions occur within 'try' expression
+124 |     /// the contract so a regression fails here rather than as missing fog.
+125 |     @Test func fogIDsResolveThroughThePresentationContract() throws {
+126 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+127 |         let root = try #require(
+128 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:156:28: warning: no calls to throwing functions occur within 'try' expression
+154 |     /// which is exactly the failure this asserts against.
+155 |     @Test func everyHousingFamilyNamesADeclaredAsset() throws {
+156 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+157 |         let root = try #require(
+158 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+[218/222] Compiling SurveillanceCoreTests GameFeelTests.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:126:28: warning: no calls to throwing functions occur within 'try' expression
+124 |     /// the contract so a regression fails here rather than as missing fog.
+125 |     @Test func fogIDsResolveThroughThePresentationContract() throws {
+126 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+127 |         let root = try #require(
+128 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:156:28: warning: no calls to throwing functions occur within 'try' expression
+154 |     /// which is exactly the failure this asserts against.
+155 |     @Test func everyHousingFamilyNamesADeclaredAsset() throws {
+156 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+157 |         let root = try #require(
+158 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+[219/222] Compiling SurveillanceCoreTests GateVerificationTests.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:126:28: warning: no calls to throwing functions occur within 'try' expression
+124 |     /// the contract so a regression fails here rather than as missing fog.
+125 |     @Test func fogIDsResolveThroughThePresentationContract() throws {
+126 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+127 |         let root = try #require(
+128 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:156:28: warning: no calls to throwing functions occur within 'try' expression
+154 |     /// which is exactly the failure this asserts against.
+155 |     @Test func everyHousingFamilyNamesADeclaredAsset() throws {
+156 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+157 |         let root = try #require(
+158 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+[220/222] Compiling SurveillanceCoreTests GrayscaleSystemsTests.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:126:28: warning: no calls to throwing functions occur within 'try' expression
+124 |     /// the contract so a regression fails here rather than as missing fog.
+125 |     @Test func fogIDsResolveThroughThePresentationContract() throws {
+126 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+127 |         let root = try #require(
+128 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/EnvironmentLibraryTests.swift:156:28: warning: no calls to throwing functions occur within 'try' expression
+154 |     /// which is exactly the failure this asserts against.
+155 |     @Test func everyHousingFamilyNamesADeclaredAsset() throws {
+156 |         let presentation = try SpecBundle.contract("presentation-assets-003")
+    |                            `- warning: no calls to throwing functions occur within 'try' expression
+157 |         let root = try #require(
+158 |             try JSONSerialization.jsonObject(with: presentation) as? [String: Any]
+[221/224] Compiling SSRuntimePackageTests runner.swift
+[222/224] Emitting module SSRuntimePackageTests
+[222/224] Write Objects.LinkFileList
+[223/224] Linking SSRuntimePackageTests
+Build complete! (117.03s)
+Test Suite 'Selected tests' started at 2026-11-16 18:04:32.330.
+Test Suite 'SSRuntimePackageTests.xctest' started at 2026-11-16 18:04:32.333.
+Test Suite 'SSRuntimePackageTests.xctest' passed at 2026-11-16 18:04:32.333.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-11-16 18:04:32.334.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.003) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite AcceptedGateCensusTests started.
+◇ Test eachPreviouslyOmittedGateFailsExpansionWhenFailed() started.
+◇ Test completeSyntheticCensusIsOnlyAnEvaluatorUnitTest() started.
+◇ Test eachPreviouslyOmittedGateBlocksExpansionWhenMissing() started.
+◇ Test registryExactlyMatchesAcceptedCensusWithoutDuplicates() started.
+✘ Test registryExactlyMatchesAcceptedCensusWithoutDuplicates() recorded an issue at AcceptedGateCensusTests.swift:27:9: Expectation failed: (Set(GateRegistry.allGateIds) → ["E-012", "B-002", "F-007", "C-011", "A-010", "B-006", "D-003", "A-009", "C-004", "D-004", "D-019", "E-004", "E-013", "A-003", "F-015", "E-018", "B-005", "E-006", "D-008", "A-018", "E-011", "C-009", "D-002", "C-006", "B-011", "A-004", "C-010", "E-015", "B-014", "E-001", "F-005", "A-020", "D-011", "D-016", "C-002", "G-006", "F-006", "A-011", "D-001", "D-021", "F-010", "C-007", "D-012", "A-002", "A-007", "D-020", "C-008", "D-018", "A-001", "C-001", "G-007", "F-002", "C-005", "A-016", "D-017", "E-010", "A-012", "D-013", "G-003", "B-008", "B-016", "F-014", "E-014", "A-017", "G-005", "F-011", "B-007", "E-005", "G-002", "B-009", "D-006", "D-014", "E-003", "A-006", "E-002", "F-009", "F-001", "B-004", "E-017", "B-017", "D-007", "B-010", "E-016", "F-017", "A-015", "B-013", "B-001", "A-019", "A-022", "B-003", "A-008", "G-001", "F-004", "A-013", "A-014", "A-021", "F-008", "A-005", "F-012", "D-010", "F-013", "D-005", "B-012", "G-004", "F-003", "B-015", "D-015", "E-009", "E-020", "F-016", "D-009", "C-003", "E-007", "E-008", "E-019"]) == (Set(acceptedIDs) → ["A-008", "D-023", "D-005", "B-005", "A-002", "A-012", "C-005", "D-007", "D-003", "D-021", "D-016", "A-014", "G-001", "F-017", "B-016", "B-008", "A-010", "C-010", "C-006", "E-009", "D-010", "D-020", "C-003", "D-014", "E-018", "E-012", "B-017", "A-017", "E-010", "B-015", "D-006", "A-005", "B-014", "E-021", "F-006", "E-017", "A-001", "E-004", "G-003", "D-024", "B-007", "C-007", "D-013", "G-004", "A-015", "F-004", "A-007", "A-013A", "F-011", "A-022", "D-011", "D-002", "B-010", "C-011", "E-007", "C-001", "G-002", "A-016", "D-019", "D-004", "A-003", "E-019", "G-006", "B-001", "D-008", "C-002", "A-013", "A-009", "F-005", "F-001", "D-009", "B-013", "E-003", "B-002", "D-001", "B-012", "E-011", "B-003", "C-008", "F-014", "A-011", "F-013", "G-005", "B-006", "C-009", "D-017", "A-018", "E-006", "E-013", "E-001", "E-015", "E-020", "E-002", "F-007", "G-007", "B-011", "D-012", "E-008", "E-005", "F-012", "D-018", "A-020", "F-002", "A-004", "A-006", "B-009", "D-022", "B-004", "F-008", "F-010", "F-015", "A-019", "F-016", "F-003", "C-004", "E-014", "F-009", "A-021", "D-015", "E-016"])
+✘ Test eachPreviouslyOmittedGateBlocksExpansionWhenMissing() recorded an issue at AcceptedGateCensusTests.swift:35:13: Expectation failed: (ExpansionGateEvaluator.evaluate(inputs(omitting: id)) → .passed) == .notComputable
+↳ Missing accepted gate A-013A must block expansion
+✘ Test eachPreviouslyOmittedGateFailsExpansionWhenFailed() recorded an issue at AcceptedGateCensusTests.swift:42:13: Expectation failed: (ExpansionGateEvaluator.evaluate(inputs(failing: id)) → .passed) == .failed
+↳ Failed accepted gate A-013A must fail expansion
+✘ Test completeSyntheticCensusIsOnlyAnEvaluatorUnitTest() recorded an issue at AcceptedGateCensusTests.swift:52:13: Expectation failed: (GateRegistry.unmappedGateIds() → ["A-001", "A-002", "A-003", "A-004", "A-005", "A-006", "A-007", "A-009", "A-010", "A-014", "A-015", "A-016", "A-017", "A-018", "B-004", "B-006", "B-007", "B-008", "B-010", "B-011", "B-013", "D-001", "D-002", "D-003", "D-004", "D-005", "D-006", "D-007", "D-008", "D-009", "D-012", "D-014", "D-016", "D-017", "D-018", "D-019", "D-020", "D-021", "E-001", "E-002", "E-003", "E-004", "E-005", "E-006", "E-007", "E-008", "E-009", "E-010", "E-011", "E-012", "E-013", "E-014", "E-015", "E-016", "F-001", "F-002", "F-003", "F-004", "F-005", "F-006", "F-007", "F-008", "F-009", "F-010", "F-011", "F-012", "F-013", "F-014", "G-002", "G-003", "G-005", "G-006", "G-007"]).contains(id → "A-013A")
+✘ Test eachPreviouslyOmittedGateFailsExpansionWhenFailed() recorded an issue at AcceptedGateCensusTests.swift:42:13: Expectation failed: (ExpansionGateEvaluator.evaluate(inputs(failing: id)) → .passed) == .failed
+↳ Failed accepted gate D-022 must fail expansion
+✘ Test registryExactlyMatchesAcceptedCensusWithoutDuplicates() recorded an issue at AcceptedGateCensusTests.swift:28:9: Expectation failed: (GateRegistry.allGateIds.count → 115) == (acceptedIDs.count → 120)
+✘ Test eachPreviouslyOmittedGateBlocksExpansionWhenMissing() recorded an issue at AcceptedGateCensusTests.swift:35:13: Expectation failed: (ExpansionGateEvaluator.evaluate(inputs(omitting: id)) → .passed) == .notComputable
+↳ Missing accepted gate D-022 must block expansion
+✘ Test eachPreviouslyOmittedGateFailsExpansionWhenFailed() recorded an issue at AcceptedGateCensusTests.swift:42:13: Expectation failed: (ExpansionGateEvaluator.evaluate(inputs(failing: id)) → .passed) == .failed
+↳ Failed accepted gate D-023 must fail expansion
+✘ Test eachPreviouslyOmittedGateBlocksExpansionWhenMissing() recorded an issue at AcceptedGateCensusTests.swift:35:13: Expectation failed: (ExpansionGateEvaluator.evaluate(inputs(omitting: id)) → .passed) == .notComputable
+↳ Missing accepted gate D-023 must block expansion
+✘ Test eachPreviouslyOmittedGateFailsExpansionWhenFailed() recorded an issue at AcceptedGateCensusTests.swift:42:13: Expectation failed: (ExpansionGateEvaluator.evaluate(inputs(failing: id)) → .passed) == .failed
+↳ Failed accepted gate D-024 must fail expansion
+✘ Test eachPreviouslyOmittedGateBlocksExpansionWhenMissing() recorded an issue at AcceptedGateCensusTests.swift:35:13: Expectation failed: (ExpansionGateEvaluator.evaluate(inputs(omitting: id)) → .passed) == .notComputable
+↳ Missing accepted gate D-024 must block expansion
+✘ Test completeSyntheticCensusIsOnlyAnEvaluatorUnitTest() recorded an issue at AcceptedGateCensusTests.swift:52:13: Expectation failed: (GateRegistry.unmappedGateIds() → ["A-001", "A-002", "A-003", "A-004", "A-005", "A-006", "A-007", "A-009", "A-010", "A-014", "A-015", "A-016", "A-017", "A-018", "B-004", "B-006", "B-007", "B-008", "B-010", "B-011", "B-013", "D-001", "D-002", "D-003", "D-004", "D-005", "D-006", "D-007", "D-008", "D-009", "D-012", "D-014", "D-016", "D-017", "D-018", "D-019", "D-020", "D-021", "E-001", "E-002", "E-003", "E-004", "E-005", "E-006", "E-007", "E-008", "E-009", "E-010", "E-011", "E-012", "E-013", "E-014", "E-015", "E-016", "F-001", "F-002", "F-003", "F-004", "F-005", "F-006", "F-007", "F-008", "F-009", "F-010", "F-011", "F-012", "F-013", "F-014", "G-002", "G-003", "G-005", "G-006", "G-007"]).contains(id → "D-022")
+✘ Test eachPreviouslyOmittedGateBlocksExpansionWhenMissing() recorded an issue at AcceptedGateCensusTests.swift:35:13: Expectation failed: (ExpansionGateEvaluator.evaluate(inputs(omitting: id)) → .passed) == .notComputable
+↳ Missing accepted gate E-021 must block expansion
+✘ Test eachPreviouslyOmittedGateBlocksExpansionWhenMissing() failed after 0.009 seconds with 5 issues.
+✘ Test eachPreviouslyOmittedGateFailsExpansionWhenFailed() recorded an issue at AcceptedGateCensusTests.swift:42:13: Expectation failed: (ExpansionGateEvaluator.evaluate(inputs(failing: id)) → .passed) == .failed
+↳ Failed accepted gate E-021 must fail expansion
+✘ Test registryExactlyMatchesAcceptedCensusWithoutDuplicates() recorded an issue at AcceptedGateCensusTests.swift:30:9: Expectation failed: (Set(ExpansionGateEvaluator.requiredGateFamilies.joined()) → ["A-008", "D-005", "B-005", "A-012", "A-002", "D-007", "C-005", "D-003", "D-021", "D-016", "A-014", "G-001", "F-017", "B-016", "B-008", "A-010", "C-010", "C-006", "E-009", "D-010", "D-020", "C-003", "D-014", "E-018", "E-012", "B-017", "A-017", "E-010", "D-006", "B-015", "A-005", "B-014", "F-006", "E-017", "A-001", "E-004", "G-003", "B-007", "C-007", "D-013", "G-004", "A-015", "F-004", "A-007", "F-011", "A-022", "D-011", "D-002", "C-011", "B-010", "E-007", "C-001", "G-002", "E-019", "A-016", "D-004", "A-003", "D-019", "G-006", "B-001", "D-008", "C-002", "A-013", "A-009", "F-005", "F-001", "E-003", "B-013", "D-009", "B-002", "D-001", "B-012", "E-011", "C-008", "B-003", "F-014", "A-011", "F-013", "G-005", "B-006", "C-009", "D-017", "A-018", "E-020", "E-015", "E-001", "E-013", "E-006", "E-002", "F-007", "G-007", "B-011", "D-012", "E-008", "E-005", "F-012", "D-018", "A-020", "F-002", "A-004", "A-006", "B-009", "F-008", "B-004", "F-010", "F-015", "A-019", "F-016", "F-003", "C-004", "E-014", "F-009", "A-021", "D-015", "E-016"]) == (Set(acceptedIDs) → ["A-001", "B-012", "E-015", "C-010", "D-001", "E-007", "B-006", "B-014", "D-004", "B-007", "D-006", "C-008", "A-011", "F-012", "F-005", "A-013", "A-013A", "D-009", "B-004", "F-013", "A-018", "C-011", "D-019", "G-006", "B-008", "A-022", "C-001", "B-001", "B-017", "C-005", "D-003", "E-002", "A-020", "A-015", "D-020", "D-016", "E-005", "D-022", "E-014", "E-021", "D-010", "F-003", "B-013", "A-003", "E-011", "F-011", "A-010", "A-005", "B-015", "E-003", "A-009", "B-005", "C-004", "F-006", "F-017", "D-024", "B-002", "D-007", "A-021", "F-010", "D-002", "E-019", "A-017", "E-010", "C-006", "F-004", "D-021", "E-013", "E-004", "D-017", "D-012", "D-005", "G-003", "A-006", "A-002", "E-008", "B-016", "E-017", "G-001", "B-009", "D-023", "D-014", "E-020", "E-018", "F-009", "D-011", "F-014", "F-015", "E-016", "F-016", "F-001", "E-001", "G-002", "F-007", "G-007", "C-002", "B-003", "D-013", "A-008", "D-008", "B-010", "A-016", "B-011", "D-015", "E-009", "A-019", "D-018", "C-009", "F-002", "G-004", "C-003", "A-004", "E-012", "A-007", "C-007", "F-008", "G-005", "A-014", "A-012", "E-006"])
+✘ Test registryExactlyMatchesAcceptedCensusWithoutDuplicates() failed after 0.010 seconds with 3 issues.
+✘ Test eachPreviouslyOmittedGateFailsExpansionWhenFailed() failed after 0.010 seconds with 5 issues.
+✘ Test completeSyntheticCensusIsOnlyAnEvaluatorUnitTest() recorded an issue at AcceptedGateCensusTests.swift:52:13: Expectation failed: (GateRegistry.unmappedGateIds() → ["A-001", "A-002", "A-003", "A-004", "A-005", "A-006", "A-007", "A-009", "A-010", "A-014", "A-015", "A-016", "A-017", "A-018", "B-004", "B-006", "B-007", "B-008", "B-010", "B-011", "B-013", "D-001", "D-002", "D-003", "D-004", "D-005", "D-006", "D-007", "D-008", "D-009", "D-012", "D-014", "D-016", "D-017", "D-018", "D-019", "D-020", "D-021", "E-001", "E-002", "E-003", "E-004", "E-005", "E-006", "E-007", "E-008", "E-009", "E-010", "E-011", "E-012", "E-013", "E-014", "E-015", "E-016", "F-001", "F-002", "F-003", "F-004", "F-005", "F-006", "F-007", "F-008", "F-009", "F-010", "F-011", "F-012", "F-013", "F-014", "G-002", "G-003", "G-005", "G-006", "G-007"]).contains(id → "D-023")
+✘ Test completeSyntheticCensusIsOnlyAnEvaluatorUnitTest() recorded an issue at AcceptedGateCensusTests.swift:52:13: Expectation failed: (GateRegistry.unmappedGateIds() → ["A-001", "A-002", "A-003", "A-004", "A-005", "A-006", "A-007", "A-009", "A-010", "A-014", "A-015", "A-016", "A-017", "A-018", "B-004", "B-006", "B-007", "B-008", "B-010", "B-011", "B-013", "D-001", "D-002", "D-003", "D-004", "D-005", "D-006", "D-007", "D-008", "D-009", "D-012", "D-014", "D-016", "D-017", "D-018", "D-019", "D-020", "D-021", "E-001", "E-002", "E-003", "E-004", "E-005", "E-006", "E-007", "E-008", "E-009", "E-010", "E-011", "E-012", "E-013", "E-014", "E-015", "E-016", "F-001", "F-002", "F-003", "F-004", "F-005", "F-006", "F-007", "F-008", "F-009", "F-010", "F-011", "F-012", "F-013", "F-014", "G-002", "G-003", "G-005", "G-006", "G-007"]).contains(id → "D-024")
+✘ Test completeSyntheticCensusIsOnlyAnEvaluatorUnitTest() recorded an issue at AcceptedGateCensusTests.swift:52:13: Expectation failed: (GateRegistry.unmappedGateIds() → ["A-001", "A-002", "A-003", "A-004", "A-005", "A-006", "A-007", "A-009", "A-010", "A-014", "A-015", "A-016", "A-017", "A-018", "B-004", "B-006", "B-007", "B-008", "B-010", "B-011", "B-013", "D-001", "D-002", "D-003", "D-004", "D-005", "D-006", "D-007", "D-008", "D-009", "D-012", "D-014", "D-016", "D-017", "D-018", "D-019", "D-020", "D-021", "E-001", "E-002", "E-003", "E-004", "E-005", "E-006", "E-007", "E-008", "E-009", "E-010", "E-011", "E-012", "E-013", "E-014", "E-015", "E-016", "F-001", "F-002", "F-003", "F-004", "F-005", "F-006", "F-007", "F-008", "F-009", "F-010", "F-011", "F-012", "F-013", "F-014", "G-002", "G-003", "G-005", "G-006", "G-007"]).contains(id → "E-021")
+✘ Test completeSyntheticCensusIsOnlyAnEvaluatorUnitTest() failed after 0.018 seconds with 5 issues.
+✘ Suite AcceptedGateCensusTests failed after 0.018 seconds with 18 issues.
+✘ Test run with 4 tests in 1 suite failed after 0.018 seconds with 18 issues.

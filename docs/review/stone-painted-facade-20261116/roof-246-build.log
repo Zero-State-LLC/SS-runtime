@@ -1,0 +1,7 @@
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/stone-painted-facade-20261116/replay.py:104: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  found={(i%source.width,i//source.width) for i,(r,g,b,a) in enumerate(source.getdata())
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/stone-painted-facade-20261116/replay.py:133: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  plane.putdata([p[3] if c==3 else p[c]*p[3]/255 for p in source.getdata()])
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/stone-painted-facade-20261116/replay.py:136: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  for r,g,b,a in zip(*(channel.getdata() for channel in channels)):
+Final source completeness sample written: /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/stone-painted-facade-20261116/output

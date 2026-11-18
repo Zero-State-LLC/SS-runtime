@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<title>west-near-stone: authored surface paint</title>
+<rect width="512" height="512" fill="rgb(163, 156, 140)"/>
+<polygon id="paint-0" points="0,0 511,0 511,66 409,51 373,92 317,56 179,82 102,51 0,92" fill="rgb(117, 114, 104)"/>
+<polygon id="paint-1" points="51,92 179,66 204,118 153,204 184,250 112,322 61,296" fill="rgb(178, 170, 151)"/>
+<polygon id="paint-2" points="378,143 465,107 450,368 399,409 383,332 327,317" fill="rgb(145, 140, 126)"/>
+<polygon id="paint-3" points="0,480 123,445 158,470 215,439 322,485 511,460 511,511 0,511" fill="rgb(109, 108, 99)"/>
+<polygon id="paint-4" points="112,82 204,102 189,184 235,215 179,250 97,210" fill="rgb(132, 129, 115)"/>
+<path id="edge-0" d="M 41 92 L 41 419" stroke="rgb(191, 182, 160)" stroke-width="9"/>
+<path id="edge-1" d="M 465 92 L 465 414" stroke="rgb(119, 118, 107)" stroke-width="7"/>
+<defs><filter id="soft-0"><feGaussianBlur stdDeviation="1.8"/></filter></defs>
+<polyline id="brush-0" points="164,82 153,184 179,276" fill="none" stroke="rgb(190, 180, 154)" stroke-opacity="0.24" stroke-width="31" filter="url(#soft-0)"/>
+<defs><filter id="soft-1"><feGaussianBlur stdDeviation="0.5"/></filter></defs>
+<polyline id="brush-1" points="296,378 327,373 368,393" fill="none" stroke="rgb(108, 107, 98)" stroke-opacity="0.33" stroke-width="12" filter="url(#soft-1)"/>
+</svg>

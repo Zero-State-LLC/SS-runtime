@@ -1,0 +1,32 @@
+Analysis of sampling depth-probe (pid 4662) every 1 millisecond
+Process:         depth-probe [4662]
+Path:            /Users/USER/*/depth-probe
+Load Address:    0x104e70000
+Identifier:      depth-probe
+Version:         ???
+Code Type:       ARM64
+Parent Process:  Python [4641]
+Target Type:     live task
+
+Date/Time:       2026-11-16 12:54:00.334 -0800
+Launch Time:     2026-11-16 12:51:51.962 -0800
+OS Version:      macOS 26.3.1 (25D2128)
+Report Version:  7
+Analysis Tool:   /usr/bin/sample
+
+Physical footprint:         96K
+Physical footprint (peak):  96K
+Idle exit:                  untracked
+----
+
+Call graph:
+    886 Thread_13795902: Main Thread   DispatchQueue_<multiple>
+      886 _dyld_start  (in dyld) + 0  [0x104f489c0]
+
+Total number in stack (recursive counted multiple, when >=5):
+
+Sort by top of stack, same collapsed (when >= 5):
+        _dyld_start  (in dyld)        886
+
+Binary images description not available
+

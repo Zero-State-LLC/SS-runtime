@@ -1,0 +1,185 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project SSRuntime.xcodeproj -scheme SSRuntime -sdk iphonesimulator -configuration Debug -destination "platform=iOS Simulator,id=CACB3927-A76E-43A5-9ACA-C389EB38C0C3" CODE_SIGNING_ALLOWED=NO ENABLE_TESTABILITY=YES -derivedDataPath docs/review/kiosk-only-geometry-20261117/native/playable/derived -resultBundlePath docs/review/live-world-projection-20261117/tests-0407.xcresult "-only-testing:SSRuntimeTests/LiveWorldProjectionTests" "-only-testing:SSRuntimeTests/KioskPlayableReviewTests" test-without-building
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+    ENABLE_TESTABILITY = YES
+    SDKROOT = iphonesimulator26.5
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  SSRuntime: /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114
+
+Writing result bundle at path:
+	/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/live-world-projection-20261117/tests-0407.xcresult
+
+Resolve Package Graph
+
+Resolve Package Graph
+
+2026-11-16 20:08:17.090441-0800 SSRuntime[39952:19417312] [plugin] AddInstanceForFactory: No factory registered for id <CFUUID 0x10c19c740> F8BB1C28-BAE8-11D6-9C31-00039315CD46
+2026-11-16 20:08:17.352045-0800 SSRuntime[39952:19417938] [AudioConverter]     AudioConverterOOP.cpp:1084  Failed to prepare AudioConverterService: -302
+2026-11-16 20:08:17.382483-0800 SSRuntime[39952:19417312] [UIFocus] _TtC18_SpriteKit_SwiftUIP33_4A29C38A751B2448A1E2FA85CDDEAA5324SpriteKitViewCoordinator implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+2026-11-16 20:08:18.729711-0800 SSRuntime[39952:19417312] SKView: no drawables available for rendering. Skipping this frame.
+Test Suite 'Selected tests' started at 2026-11-16 20:08:18.769.
+Test Suite 'SSRuntimeTests.xctest' started at 2026-11-16 20:08:18.771.
+Test Suite 'KioskPlayableReviewTests' started at 2026-11-16 20:08:18.771.
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testAliasedSourceAndMissingFileRejected]' started.
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testAliasedSourceAndMissingFileRejected]' passed (0.117 seconds).
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testAuthorityMismatchCannotInstall]' started.
+Resolve Package Graph
+
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testAuthorityMismatchCannotInstall]' passed (0.837 seconds).
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testBothExactSourceArmsAndV9BaseLoad]' started.
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testBothExactSourceArmsAndV9BaseLoad]' passed (0.153 seconds).
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testExplicitOptInAndMalformedArgumentsFailClosed]' started.
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testExplicitOptInAndMalformedArgumentsFailClosed]' passed (0.002 seconds).
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testLiveSceneToggleAndLegalMovementKeepSimulationParity]' started.
+2026-11-16 20:08:19.960391-0800 SSRuntime[39952:19417312] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+objc[39952]: Class UIAccessibilityLoaderWebShared is implemented in both /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x11b790398) and /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x11affc310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+Resolve Package Graph
+
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testLiveSceneToggleAndLegalMovementKeepSimulationParity]' passed (2.124 seconds).
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testModifiedManifestAndRegistrationRejected]' started.
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testModifiedManifestAndRegistrationRejected]' passed (0.006 seconds).
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testModifiedSourceBytesRejected]' started.
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testModifiedSourceBytesRejected]' passed (0.044 seconds).
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testRendererOverrideIsReversibleAndPreservesNeighborsAndActorNodes]' started.
+Resolve Package Graph
+
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testRendererOverrideIsReversibleAndPreservesNeighborsAndActorNodes]' passed (3.924 seconds).
+Test Suite 'KioskPlayableReviewTests' passed at 2026-11-16 20:08:25.985.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 7.208 (7.214) seconds
+Test Suite 'LiveWorldProjectionTests' started at 2026-11-16 20:08:25.985.
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testActualSKViewCallbacksRestoreBeforeActionsAndProjectAfterward]' started.
+2026-11-16 20:08:26.033920-0800 SSRuntime[39952:19417312] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+Resolve Package Graph
+
+2026-11-16 20:08:27.043977-0800 SSRuntime[39952:19417312] SKView: no drawables available for rendering. Skipping this frame.
+2026-11-16 20:08:27.118392-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1755  ReadPListFile: unable to open stream for LoudnessManager plist
+2026-11-16 20:08:27.118606-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1261  GetHardwarePlatformKey: cannot get acoustic ID
+2026-11-16 20:08:27.118758-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:27.118889-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:27.131331-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:27.131501-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:27.138904-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:27.139296-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:27.139571-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:27.139677-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:27.172320-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:27.172481-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:27.181736-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:27.181924-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:27.188446-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:27.188595-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:27.188974-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:27.189118-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testActualSKViewCallbacksRestoreBeforeActionsAndProjectAfterward]' passed (3.184 seconds).
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testEqualLegalWorldCommandsKeepFullSnapshotsAndDigests]' started.
+2026-11-16 20:08:29.170772-0800 SSRuntime[39952:19417312] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+Resolve Package Graph
+
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testEqualLegalWorldCommandsKeepFullSnapshotsAndDigests]' passed (2.501 seconds).
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testExplicitFlagRequiresValidatedReviewAndRejectsPartialOrDuplicate]' started.
+2026-11-16 20:08:31.675397-0800 SSRuntime[39952:19417312] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+Resolve Package Graph
+
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testExplicitFlagRequiresValidatedReviewAndRejectsPartialOrDuplicate]' passed (0.850 seconds).
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testInverseEightDirectionsPreservesMagnitudeAndScreenHeading]' started.
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testInverseEightDirectionsPreservesMagnitudeAndScreenHeading]' passed (0.003 seconds).
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testLegalAutopilotCommandsBypassManualInverseMapping]' started.
+2026-11-16 20:08:32.526202-0800 SSRuntime[39952:19417312] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+Resolve Package Graph
+
+2026-11-16 20:08:33.567719-0800 SSRuntime[39952:19417312] [autopilot] tick=0 player=160,192 hp=150 exposure=0 detection=hidden enemies=0 shots=0 telegraphs=0 boss=-1 node=M-A upgrade=- armed=false outcome=playing music=explore sprites=956/956 gates=gate-elite-forward,gate-boss-extraction pilot=[probe node=M-A cmd=32767,0 dodge=false]
+2026-11-16 20:08:33.580315-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:33.580479-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:33.587499-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:33.587697-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:33.593784-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:33.594206-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:33.594507-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:33.594733-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:33.617077-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:33.617239-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:33.624041-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:33.624413-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:33.630611-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:33.630741-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:33.631082-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:33.631265-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:34.755809-0800 SSRuntime[39952:19417312] [autopilot] tick=60 player=378,251 hp=150 exposure=0 detection=hidden enemies=3 shots=1 telegraphs=0 boss=-1 node=M-A upgrade=- armed=false outcome=playing music=explore sprites=956/956 gates=gate-elite-forward,gate-boss-extraction pilot=[probe node=M-A cmd=25172,20977 dodge=false]
+2026-11-16 20:08:35.126017-0800 SSRuntime[39952:19417312] [autopilot] vfx tick=79 recipe=enemyHit language=compactSpark hitStopMs=50 shake=false
+2026-11-16 20:08:35.190185-0800 SSRuntime[39952:19417312] [autopilot] vfx tick=80 recipe=enemyAlerted language=exclamationPopAboveActor hitStopMs=0 shake=false
+2026-11-16 20:08:35.190505-0800 SSRuntime[39952:19417312] [autopilot] vfx tick=80 recipe=enemyAlerted language=exclamationPopAboveActor hitStopMs=0 shake=false
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testLegalAutopilotCommandsBypassManualInverseMapping]' passed (2.949 seconds).
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testManualInputIsMappedOnceAndDodgeLayoutPauseRemainIntact]' started.
+2026-11-16 20:08:35.476926-0800 SSRuntime[39952:19417312] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+Resolve Package Graph
+
+2026-11-16 20:08:36.430413-0800 SSRuntime[39952:19417312] [autopilot] vfx tick=1 recipe=ghostStep language=afterimageTrail hitStopMs=0 shake=false
+2026-11-16 20:08:36.439593-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.439740-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.445838-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.446019-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.451232-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.451344-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.451532-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.451664-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.474009-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.474156-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.480142-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.480299-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.485653-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.485774-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.485989-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.486080-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.639696-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.639851-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.645943-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.646088-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.651715-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.651825-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.652019-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.652136-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.675241-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.675366-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.681591-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.681730-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.687161-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.687281-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.687476-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-16 20:08:36.687569-0800 SSRuntime[39952:19417312] [AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testManualInputIsMappedOnceAndDodgeLayoutPauseRemainIntact]' passed (1.360 seconds).
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testPausedRedrawToggleRestartAndRemovalNeverDuplicateOrResurrectNodes]' started.
+2026-11-16 20:08:36.837133-0800 SSRuntime[39952:19417312] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+Resolve Package Graph
+
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testPausedRedrawToggleRestartAndRemovalNeverDuplicateOrResurrectNodes]' passed (1.419 seconds).
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testRemovedUprightStaysRemovedAndNewNodeProjectsWithoutDrift]' started.
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testRemovedUprightStaysRemovedAndNewNodeProjectsWithoutDrift]' passed (0.002 seconds).
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testRendererGroundGeometryUprightsAndRestorationUseOneMapping]' started.
+Resolve Package Graph
+
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testRendererGroundGeometryUprightsAndRestorationUseOneMapping]' passed (0.783 seconds).
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testWorldEffectsAndGroundVectorsProjectWhileHUDDoesNot]' started.
+Test Case '-[SSRuntimeTests.LiveWorldProjectionTests testWorldEffectsAndGroundVectorsProjectWhileHUDDoesNot]' passed (0.002 seconds).
+Test Suite 'LiveWorldProjectionTests' passed at 2026-11-16 20:08:39.044.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 13.053 (13.059) seconds
+Test Suite 'SSRuntimeTests.xctest' passed at 2026-11-16 20:08:39.045.
+	 Executed 18 tests, with 0 failures (0 unexpected) in 20.261 (20.274) seconds
+Test Suite 'Selected tests' passed at 2026-11-16 20:08:39.045.
+	 Executed 18 tests, with 0 failures (0 unexpected) in 20.261 (20.276) seconds
+2026-11-16 20:08:39.049303-0800 SSRuntime[39952:19417312] SKView: no drawables available for rendering. Skipping this frame.
+2026-11-16 20:08:39.418 xcodebuild[38654:19413863] [MT] IDETestOperationsObserverDebug: 34.468 elapsed -- Testing started completed.
+2026-11-16 20:08:39.418 xcodebuild[38654:19413863] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-11-16 20:08:39.418 xcodebuild[38654:19413863] [MT] IDETestOperationsObserverDebug: 34.468 sec, +34.468 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/live-world-projection-20261117/tests-0407.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

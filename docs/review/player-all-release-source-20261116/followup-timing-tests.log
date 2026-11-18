@@ -1,0 +1,23 @@
+[0/1] Planning build
+Test Suite 'Selected tests' started at 2026-11-15 18:23:45.646.
+Test Suite 'SSRuntimePackageTests.xctest' started at 2026-11-15 18:23:45.650.
+Test Suite 'SSRuntimePackageTests.xctest' passed at 2026-11-15 18:23:45.650.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-11-15 18:23:45.650.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.004) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite ClipTimingTests started.
+◇ Test selectionKeepsDirectionHoldsAndOrder() started.
+◇ Test allDeliveredV1DirectionsKeepTheirCadence() started.
+◇ Test elapsedTicksSelectExactFrameBoundariesWithoutOverflow() started.
+✔ Test selectionKeepsDirectionHoldsAndOrder() passed after 0.001 seconds.
+✔ Test elapsedTicksSelectExactFrameBoundariesWithoutOverflow() passed after 0.001 seconds.
+◇ Test malformedAndOverflowFailClosed() started.
+◇ Test exactMigrationVectors() started.
+✔ Test malformedAndOverflowFailClosed() passed after 0.002 seconds.
+✔ Test exactMigrationVectors() passed after 0.001 seconds.
+✔ Test allDeliveredV1DirectionsKeepTheirCadence() passed after 0.546 seconds.
+✔ Suite ClipTimingTests passed after 0.547 seconds.
+✔ Test run with 5 tests in 1 suite passed after 0.548 seconds.

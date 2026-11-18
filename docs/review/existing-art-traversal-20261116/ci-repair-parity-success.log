@@ -1,0 +1,1329 @@
+﻿2026-11-16T08:42:16.1827360Z Current runner version: '2.338.2'
+2026-11-16T08:42:16.1854910Z ##[group]Runner Image Provisioner
+2026-11-16T08:42:16.1855910Z Hosted Compute Agent
+2026-11-16T08:42:16.1856400Z Version: 20261103.629
+2026-11-16T08:42:16.1857010Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+2026-11-16T08:42:16.1857560Z Build Date: 2026-11-03T17:26:59Z
+2026-11-16T08:42:16.1858190Z Worker ID: {8a41a02f-9a03-42e0-b1be-a59a4798f57e}
+2026-11-16T08:42:16.1858840Z Region: westus
+2026-11-16T08:42:16.1859240Z Cloud: MacCloud
+2026-11-16T08:42:16.1859720Z ##[endgroup]
+2026-11-16T08:42:16.1861020Z ##[group]Operating System
+2026-11-16T08:42:16.1861430Z macOS
+2026-11-16T08:42:16.1863540Z 15.8.2
+2026-11-16T08:42:16.1865940Z 24H232
+2026-11-16T08:42:16.1866890Z ##[endgroup]
+2026-11-16T08:42:16.1867370Z ##[group]Runner Image
+2026-11-16T08:42:16.1867790Z Image: macos-15-arm64
+2026-11-16T08:42:16.1868250Z Version: 20261104.0514.1
+2026-11-16T08:42:16.1869480Z Included Software: https://github.com/actions/runner-images/blob/macos-15-arm64/20261104.0514/images/macos/macos-15-arm64-Readme.md
+2026-11-16T08:42:16.1872200Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-15-arm64%2F20261104.0514
+2026-11-16T08:42:16.1873020Z ##[endgroup]
+2026-11-16T08:42:16.1874120Z ##[group]GITHUB_TOKEN Permissions
+2026-11-16T08:42:16.1876910Z Contents: read
+2026-11-16T08:42:16.1877390Z Metadata: read
+2026-11-16T08:42:16.1877820Z Packages: read
+2026-11-16T08:42:16.1878340Z ##[endgroup]
+2026-11-16T08:42:16.1880710Z Secret source: Actions
+2026-11-16T08:42:16.1881340Z Cache mode: write
+2026-11-16T08:42:16.1882040Z Prepare workflow directory
+2026-11-16T08:42:16.2266980Z Prepare all required actions
+2026-11-16T08:42:16.2319870Z Getting action download info
+2026-11-16T08:42:16.4424340Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-16T08:42:16.7600040Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-16T08:42:17.0636290Z Complete job name: spec-parity
+2026-11-16T08:42:17.1721660Z ##[group]Run actions/checkout@v4
+2026-11-16T08:42:17.1725210Z with:
+2026-11-16T08:42:17.1726260Z   repository: Zero-State-LLC/SS-runtime
+2026-11-16T08:42:17.1731230Z   token: ***
+2026-11-16T08:42:17.1732320Z   ssh-strict: true
+2026-11-16T08:42:17.1732790Z   ssh-user: git
+2026-11-16T08:42:17.1733120Z   persist-credentials: true
+2026-11-16T08:42:17.1733480Z   clean: true
+2026-11-16T08:42:17.1733800Z   sparse-checkout-cone-mode: true
+2026-11-16T08:42:17.1734180Z   fetch-depth: 1
+2026-11-16T08:42:17.1734490Z   fetch-tags: false
+2026-11-16T08:42:17.1734820Z   show-progress: true
+2026-11-16T08:42:17.1735660Z   lfs: false
+2026-11-16T08:42:17.1735980Z   submodules: false
+2026-11-16T08:42:17.1736310Z   set-safe-directory: true
+2026-11-16T08:42:17.1736690Z   allow-unsafe-pr-checkout: false
+2026-11-16T08:42:17.1737740Z ##[endgroup]
+2026-11-16T08:42:17.6315200Z Syncing repository: Zero-State-LLC/SS-runtime
+2026-11-16T08:42:17.6317390Z ##[group]Getting Git version info
+2026-11-16T08:42:17.6318190Z Working directory is '/Users/runner/work/SS-runtime/SS-runtime'
+2026-11-16T08:42:17.6319210Z [command]/opt/homebrew/bin/git version
+2026-11-16T08:42:17.6672120Z git version 2.56.0
+2026-11-16T08:42:17.6696200Z ##[endgroup]
+2026-11-16T08:42:17.6708870Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/2dd3c6d6-c9df-4696-9e26-1784bb73b54c/.gitconfig'
+2026-11-16T08:42:17.6714050Z Temporarily overriding HOME='/Users/runner/work/_temp/2dd3c6d6-c9df-4696-9e26-1784bb73b54c' before making global git config changes
+2026-11-16T08:42:17.6715690Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-16T08:42:17.6722740Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/SS-runtime/SS-runtime
+2026-11-16T08:42:17.6866150Z Deleting the contents of '/Users/runner/work/SS-runtime/SS-runtime'
+2026-11-16T08:42:17.6872870Z ##[group]Initializing the repository
+2026-11-16T08:42:17.6880770Z [command]/opt/homebrew/bin/git init /Users/runner/work/SS-runtime/SS-runtime
+2026-11-16T08:42:17.7236140Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-16T08:42:17.7239290Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-16T08:42:17.7242670Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-16T08:42:17.7245630Z hint: call:
+2026-11-16T08:42:17.7313680Z hint:
+2026-11-16T08:42:17.7314780Z hint: 	git config --global init.defaultBranch <name>
+2026-11-16T08:42:17.7316540Z hint:
+2026-11-16T08:42:17.7317070Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-16T08:42:17.7317850Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-16T08:42:17.7318550Z hint:
+2026-11-16T08:42:17.7319390Z hint: 	git branch -m <name>
+2026-11-16T08:42:17.7320810Z hint:
+2026-11-16T08:42:17.7321380Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-16T08:42:17.7322430Z Initialized empty Git repository in /Users/runner/work/SS-runtime/SS-runtime/.git/
+2026-11-16T08:42:17.7325200Z [command]/opt/homebrew/bin/git remote add origin https://github.com/Zero-State-LLC/SS-runtime
+2026-11-16T08:42:17.7379870Z ##[endgroup]
+2026-11-16T08:42:17.7380580Z ##[group]Disabling automatic garbage collection
+2026-11-16T08:42:17.7386290Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2026-11-16T08:42:17.7467790Z ##[endgroup]
+2026-11-16T08:42:17.7469780Z ##[group]Setting up auth
+2026-11-16T08:42:17.7470580Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-16T08:42:17.7560280Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-16T08:42:17.9123030Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-16T08:42:17.9197150Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-16T08:42:18.0345860Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-16T08:42:18.0348580Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-16T08:42:18.1072720Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-16T08:42:18.1141010Z ##[endgroup]
+2026-11-16T08:42:18.1142180Z ##[group]Fetching the repository
+2026-11-16T08:42:18.1147060Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c2c07d3e53790520c1b778dd67a218fdc41a4b5c:refs/remotes/pull/236/merge
+2026-11-16T08:43:04.0599440Z From https://github.com/Zero-State-LLC/SS-runtime
+2026-11-16T08:43:04.0602580Z  * [new ref]         c2c07d3e53790520c1b778dd67a218fdc41a4b5c -> pull/236/merge
+2026-11-16T08:43:04.0623740Z ##[endgroup]
+2026-11-16T08:43:04.0625930Z ##[group]Determining the checkout info
+2026-11-16T08:43:04.0633760Z ##[endgroup]
+2026-11-16T08:43:04.0706430Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2026-11-16T08:43:04.0897170Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-16T08:43:04.0991870Z ##[group]Checking out the ref
+2026-11-16T08:43:04.0993130Z [command]/opt/homebrew/bin/git checkout --progress --force refs/remotes/pull/236/merge
+2026-11-16T08:43:05.3290700Z Updating files:  21% (1949/9213)
+2026-11-16T08:43:05.3669800Z Updating files:  22% (2027/9213)
+2026-11-16T08:43:05.4627460Z Updating files:  23% (2119/9213)
+2026-11-16T08:43:05.5264380Z Updating files:  24% (2212/9213)
+2026-11-16T08:43:05.5684100Z Updating files:  25% (2304/9213)
+2026-11-16T08:43:05.7379170Z Updating files:  26% (2396/9213)
+2026-11-16T08:43:06.1307520Z Updating files:  27% (2488/9213)
+2026-11-16T08:43:06.3735680Z Updating files:  27% (2563/9213)
+2026-11-16T08:43:07.1348430Z Updating files:  28% (2580/9213)
+2026-11-16T08:43:07.4042420Z Updating files:  28% (2625/9213)
+2026-11-16T08:43:07.4541570Z Updating files:  29% (2672/9213)
+2026-11-16T08:43:07.6820240Z Updating files:  30% (2764/9213)
+2026-11-16T08:43:07.8687410Z Updating files:  31% (2857/9213)
+2026-11-16T08:43:07.9386720Z Updating files:  32% (2949/9213)
+2026-11-16T08:43:07.9578120Z Updating files:  33% (3041/9213)
+2026-11-16T08:43:07.9779170Z Updating files:  34% (3133/9213)
+2026-11-16T08:43:08.0068830Z Updating files:  35% (3225/9213)
+2026-11-16T08:43:08.1244780Z Updating files:  36% (3317/9213)
+2026-11-16T08:43:08.7980010Z Updating files:  36% (3330/9213)
+2026-11-16T08:43:09.1277760Z Updating files:  37% (3409/9213)
+2026-11-16T08:43:09.5172750Z Updating files:  37% (3449/9213)
+2026-11-16T08:43:09.9599750Z Updating files:  38% (3501/9213)
+2026-11-16T08:43:10.1298640Z Updating files:  39% (3594/9213)
+2026-11-16T08:43:10.1300740Z Updating files:  39% (3685/9213)
+2026-11-16T08:43:10.6255880Z Updating files:  40% (3686/9213)
+2026-11-16T08:43:10.6761040Z Updating files:  41% (3778/9213)
+2026-11-16T08:43:11.1367640Z Updating files:  42% (3870/9213)
+2026-11-16T08:43:11.5147000Z Updating files:  42% (3951/9213)
+2026-11-16T08:43:11.6402230Z Updating files:  43% (3962/9213)
+2026-11-16T08:43:11.7530120Z Updating files:  44% (4054/9213)
+2026-11-16T08:43:11.8651980Z Updating files:  45% (4146/9213)
+2026-11-16T08:43:11.9324200Z Updating files:  46% (4238/9213)
+2026-11-16T08:43:12.0098840Z Updating files:  47% (4331/9213)
+2026-11-16T08:43:12.0700790Z Updating files:  48% (4423/9213)
+2026-11-16T08:43:12.1229830Z Updating files:  49% (4515/9213)
+2026-11-16T08:43:12.1411180Z Updating files:  49% (4596/9213)
+2026-11-16T08:43:12.2625680Z Updating files:  50% (4607/9213)
+2026-11-16T08:43:12.3104080Z Updating files:  51% (4699/9213)
+2026-11-16T08:43:12.4679930Z Updating files:  52% (4791/9213)
+2026-11-16T08:43:12.5636090Z Updating files:  53% (4883/9213)
+2026-11-16T08:43:12.6126070Z Updating files:  54% (4976/9213)
+2026-11-16T08:43:12.6558930Z Updating files:  55% (5068/9213)
+2026-11-16T08:43:12.7378700Z Updating files:  56% (5160/9213)
+2026-11-16T08:43:12.8248710Z Updating files:  57% (5252/9213)
+2026-11-16T08:43:12.8593170Z Updating files:  58% (5344/9213)
+2026-11-16T08:43:12.9517520Z Updating files:  59% (5436/9213)
+2026-11-16T08:43:12.9900910Z Updating files:  60% (5528/9213)
+2026-11-16T08:43:13.0521420Z Updating files:  61% (5620/9213)
+2026-11-16T08:43:13.0892030Z Updating files:  62% (5713/9213)
+2026-11-16T08:43:13.1269800Z Updating files:  63% (5805/9213)
+2026-11-16T08:43:13.1270510Z Updating files:  63% (5891/9213)
+2026-11-16T08:43:13.1548210Z Updating files:  64% (5897/9213)
+2026-11-16T08:43:13.2037000Z Updating files:  65% (5989/9213)
+2026-11-16T08:43:13.2574150Z Updating files:  66% (6081/9213)
+2026-11-16T08:43:13.3216000Z Updating files:  67% (6173/9213)
+2026-11-16T08:43:13.4121890Z Updating files:  68% (6265/9213)
+2026-11-16T08:43:13.5540440Z Updating files:  69% (6357/9213)
+2026-11-16T08:43:13.6388450Z Updating files:  70% (6450/9213)
+2026-11-16T08:43:13.7236570Z Updating files:  71% (6542/9213)
+2026-11-16T08:43:13.8013940Z Updating files:  72% (6634/9213)
+2026-11-16T08:43:13.9058140Z Updating files:  73% (6726/9213)
+2026-11-16T08:43:14.1236200Z Updating files:  74% (6818/9213)
+2026-11-16T08:43:14.1728420Z Updating files:  74% (6887/9213)
+2026-11-16T08:43:14.4742130Z Updating files:  75% (6910/9213)
+2026-11-16T08:43:14.7346050Z Updating files:  76% (7002/9213)
+2026-11-16T08:43:14.8467660Z Updating files:  77% (7095/9213)
+2026-11-16T08:43:14.9732410Z Updating files:  78% (7187/9213)
+2026-11-16T08:43:15.0582550Z Updating files:  79% (7279/9213)
+2026-11-16T08:43:15.1227450Z Updating files:  80% (7371/9213)
+2026-11-16T08:43:15.1608520Z Updating files:  80% (7416/9213)
+2026-11-16T08:43:15.2200450Z Updating files:  81% (7463/9213)
+2026-11-16T08:43:15.2979170Z Updating files:  82% (7555/9213)
+2026-11-16T08:43:15.3752950Z Updating files:  83% (7647/9213)
+2026-11-16T08:43:15.5227410Z Updating files:  84% (7739/9213)
+2026-11-16T08:43:15.6791270Z Updating files:  85% (7832/9213)
+2026-11-16T08:43:15.8505460Z Updating files:  86% (7924/9213)
+2026-11-16T08:43:15.9575130Z Updating files:  87% (8016/9213)
+2026-11-16T08:43:16.0485270Z Updating files:  88% (8108/9213)
+2026-11-16T08:43:16.1136220Z Updating files:  89% (8200/9213)
+2026-11-16T08:43:16.1227280Z Updating files:  90% (8292/9213)
+2026-11-16T08:43:16.1459540Z Updating files:  90% (8314/9213)
+2026-11-16T08:43:16.2881080Z Updating files:  91% (8384/9213)
+2026-11-16T08:43:16.3328510Z Updating files:  92% (8476/9213)
+2026-11-16T08:43:16.3866900Z Updating files:  93% (8569/9213)
+2026-11-16T08:43:16.5170610Z Updating files:  94% (8661/9213)
+2026-11-16T08:43:17.1247720Z Updating files:  95% (8753/9213)
+2026-11-16T08:43:17.1269940Z Updating files:  95% (8827/9213)
+2026-11-16T08:43:17.2337110Z Updating files:  96% (8845/9213)
+2026-11-16T08:43:17.5924450Z Updating files:  97% (8937/9213)
+2026-11-16T08:43:18.1402290Z Updating files:  98% (9029/9213)
+2026-11-16T08:43:18.3499230Z Updating files:  98% (9085/9213)
+2026-11-16T08:43:18.4911440Z Updating files:  99% (9121/9213)
+2026-11-16T08:43:18.4911930Z Updating files: 100% (9213/9213)
+2026-11-16T08:43:18.4912280Z Updating files: 100% (9213/9213), done.
+2026-11-16T08:43:18.5057540Z HEAD is now at c2c07d3 Merge be7db0d8cbdf95c84f94456389bb22433a86d59d into df8473713a3d37aeca05d4e1110f979f197b9ceb
+2026-11-16T08:43:18.5129920Z ##[endgroup]
+2026-11-16T08:43:18.5406380Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2026-11-16T08:43:18.5576690Z c2c07d3e53790520c1b778dd67a218fdc41a4b5c
+2026-11-16T08:43:18.6237840Z ##[group]Run grep -q "b1ed874e1e8eb0e61b2174b9093201e9a61e1a4b" SPEC_BASELINE.md
+2026-11-16T08:43:18.6238540Z [36;1mgrep -q "b1ed874e1e8eb0e61b2174b9093201e9a61e1a4b" SPEC_BASELINE.md[0m
+2026-11-16T08:43:18.6599690Z shell: /bin/bash -e {0}
+2026-11-16T08:43:18.6600080Z ##[endgroup]
+2026-11-16T08:43:18.7570720Z ##[group]Run python3 -B scripts/test_runtime_audit_guards.py
+2026-11-16T08:43:18.7571260Z [36;1mpython3 -B scripts/test_runtime_audit_guards.py[0m
+2026-11-16T08:43:18.7608630Z shell: /bin/bash -e {0}
+2026-11-16T08:43:18.7608990Z ##[endgroup]
+2026-11-16T08:43:19.1947230Z .....
+2026-11-16T08:43:19.1947760Z ----------------------------------------------------------------------
+2026-11-16T08:43:19.1948150Z Ran 5 tests in 0.003s
+2026-11-16T08:43:19.1948320Z 
+2026-11-16T08:43:19.1948430Z OK
+2026-11-16T08:43:19.2158660Z ##[group]Run actions/setup-python@v5
+2026-11-16T08:43:19.2158980Z with:
+2026-11-16T08:43:19.2159140Z   python-version: 3.12
+2026-11-16T08:43:19.2159330Z   check-latest: false
+2026-11-16T08:43:19.2161300Z   token: ***
+2026-11-16T08:43:19.2161460Z   update-environment: true
+2026-11-16T08:43:19.2161660Z   allow-prereleases: false
+2026-11-16T08:43:19.2161850Z   freethreaded: false
+2026-11-16T08:43:19.2162010Z ##[endgroup]
+2026-11-16T08:43:19.4229080Z ##[group]Installed versions
+2026-11-16T08:43:19.4329830Z (node:1919) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-16T08:43:19.4338650Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-16T08:43:19.4339540Z Successfully set up CPython (3.12.10)
+2026-11-16T08:43:19.4368410Z ##[endgroup]
+2026-11-16T08:43:19.4442010Z ##[group]Run python3 -m pip install numpy==2.4.6 Pillow==12.3.0 scipy==1.17.1
+2026-11-16T08:43:19.4442490Z [36;1mpython3 -m pip install numpy==2.4.6 Pillow==12.3.0 scipy==1.17.1[0m
+2026-11-16T08:43:19.4556110Z shell: /bin/bash -e {0}
+2026-11-16T08:43:19.4556690Z env:
+2026-11-16T08:43:19.4557350Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:19.4558550Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:43:19.4559850Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:19.4560900Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:19.4568060Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:19.4568380Z ##[endgroup]
+2026-11-16T08:43:21.2502020Z Collecting numpy==2.4.6
+2026-11-16T08:43:21.3209770Z   Downloading numpy-2.4.6-cp312-cp312-macosx_14_0_arm64.whl.metadata (6.6 kB)
+2026-11-16T08:43:21.4465350Z Collecting Pillow==12.3.0
+2026-11-16T08:43:21.4529270Z   Downloading pillow-12.3.0-cp312-cp312-macosx_11_0_arm64.whl.metadata (9.1 kB)
+2026-11-16T08:43:21.5603870Z Collecting scipy==1.17.1
+2026-11-16T08:43:21.5663880Z   Downloading scipy-1.17.1-cp312-cp312-macosx_14_0_arm64.whl.metadata (62 kB)
+2026-11-16T08:43:21.6026810Z Downloading numpy-2.4.6-cp312-cp312-macosx_14_0_arm64.whl (5.2 MB)
+2026-11-16T08:43:21.6961170Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 61.1 MB/s  0:00:00
+2026-11-16T08:43:21.7062060Z Downloading pillow-12.3.0-cp312-cp312-macosx_11_0_arm64.whl (4.8 MB)
+2026-11-16T08:43:21.7655520Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 80.3 MB/s  0:00:00
+2026-11-16T08:43:21.7731690Z Downloading scipy-1.17.1-cp312-cp312-macosx_14_0_arm64.whl (20.3 MB)
+2026-11-16T08:43:21.9689820Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 20.3/20.3 MB 104.4 MB/s  0:00:00
+2026-11-16T08:43:22.0792070Z Installing collected packages: Pillow, numpy, scipy
+2026-11-16T08:43:27.0158100Z 
+2026-11-16T08:43:27.0184000Z Successfully installed Pillow-12.3.0 numpy-2.4.6 scipy-1.17.1
+2026-11-16T08:43:27.1239480Z ##[group]Run python3 -B docs/review/player-all-release-source-20261116/test_source.py --source-root docs/review/player-all-release-source-20261116/fixtures
+2026-11-16T08:43:27.1240500Z [36;1mpython3 -B docs/review/player-all-release-source-20261116/test_source.py --source-root docs/review/player-all-release-source-20261116/fixtures[0m
+2026-11-16T08:43:27.1414020Z shell: /bin/bash -e {0}
+2026-11-16T08:43:27.1415140Z env:
+2026-11-16T08:43:27.1415940Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:27.1416980Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:43:27.1418120Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:27.1442410Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:27.1445200Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:27.1446000Z ##[endgroup]
+2026-11-16T08:43:27.4308540Z test_actual_support_selection_not_half_cycle (__main__.SourceTests.test_actual_support_selection_not_half_cycle) ... ok
+2026-11-16T08:43:27.4623360Z test_all_fourteen_geometry_and_contact_paths (__main__.SourceTests.test_all_fourteen_geometry_and_contact_paths) ... ok
+2026-11-16T08:43:27.4625310Z test_ambiguous_airborne_rejected (__main__.SourceTests.test_ambiguous_airborne_rejected) ... ok
+2026-11-16T08:43:27.4627750Z test_assembly_recipe_drift_rejected (__main__.SourceTests.test_assembly_recipe_drift_rejected) ... ok
+2026-11-16T08:43:27.4633110Z test_bad_limb_rejected (__main__.SourceTests.test_bad_limb_rejected) ... ok
+2026-11-16T08:43:27.4675630Z test_checkpoint_sample_change_rejected_before_reuse (__main__.SourceTests.test_checkpoint_sample_change_rejected_before_reuse) ... ok
+2026-11-16T08:43:27.4683020Z test_contact_schedule_rejected (__main__.SourceTests.test_contact_schedule_rejected) ... ok
+2026-11-16T08:43:27.4855630Z test_endpoint_pixel_mutation_rejected (__main__.SourceTests.test_endpoint_pixel_mutation_rejected) ... ok
+2026-11-16T08:43:27.4952100Z test_entry_geometry_exact (__main__.SourceTests.test_entry_geometry_exact) ... ok
+2026-11-16T08:43:27.4975230Z test_exact_timing_neutral_boundary_not_total_duration (__main__.SourceTests.test_exact_timing_neutral_boundary_not_total_duration) ... ok
+2026-11-16T08:43:27.5157800Z test_export_timeline_exact_order_and_holds (__main__.SourceTests.test_export_timeline_exact_order_and_holds) ... ok
+2026-11-16T08:43:27.5248990Z test_generator_leaves_inputs_unchanged (__main__.SourceTests.test_generator_leaves_inputs_unchanged) ... ok
+2026-11-16T08:43:27.5255940Z test_ground_penetration_rejected (__main__.SourceTests.test_ground_penetration_rejected) ... ok
+2026-11-16T08:43:27.5264830Z test_incomplete_checkpoint_never_reused (__main__.SourceTests.test_incomplete_checkpoint_never_reused) ... ok
+2026-11-16T08:43:27.5353560Z test_independent_segment_and_knee_measurements (__main__.SourceTests.test_independent_segment_and_knee_measurements) ... ok
+2026-11-16T08:43:27.5362480Z test_knee_above_hip_rejected_even_with_exact_lengths (__main__.SourceTests.test_knee_above_hip_rejected_even_with_exact_lengths) ... ok
+2026-11-16T08:43:27.5372710Z test_neutral_geometry_mutation_rejected (__main__.SourceTests.test_neutral_geometry_mutation_rejected) ... ok
+2026-11-16T08:43:27.5379330Z test_nonfinite_geometry_rejected (__main__.SourceTests.test_nonfinite_geometry_rejected) ... ok
+2026-11-16T08:43:27.5381010Z test_planted_metadata_precedes_height_tie (__main__.SourceTests.test_planted_metadata_precedes_height_tie) ... ok
+2026-11-16T08:43:27.5408620Z test_preserved_extremes_validate_without_rewriting (__main__.SourceTests.test_preserved_extremes_validate_without_rewriting) ... ok
+2026-11-16T08:43:27.5410710Z test_reach_boundaries_fail_closed (__main__.SourceTests.test_reach_boundaries_fail_closed) ... ok
+2026-11-16T08:43:27.5423300Z test_sample_order_rejected (__main__.SourceTests.test_sample_order_rejected) ... ok
+2026-11-16T08:43:27.5436380Z test_side_identity_not_array_zip (__main__.SourceTests.test_side_identity_not_array_zip) ... ok
+2026-11-16T08:43:27.5438240Z test_source_output_overlap_rejected_before_write (__main__.SourceTests.test_source_output_overlap_rejected_before_write) ... ok
+2026-11-16T08:43:27.5453200Z test_toe_contact_drift_rejected_with_lengths_preserved (__main__.SourceTests.test_toe_contact_drift_rejected_with_lengths_preserved) ... ok
+2026-11-16T08:43:27.5468740Z test_world_contact_drift_rejected (__main__.SourceTests.test_world_contact_drift_rejected) ... ok
+2026-11-16T08:43:27.5469750Z 
+2026-11-16T08:43:27.5470090Z ----------------------------------------------------------------------
+2026-11-16T08:43:27.5471030Z Ran 26 tests in 0.120s
+2026-11-16T08:43:27.5471380Z 
+2026-11-16T08:43:27.5471600Z OK
+2026-11-16T08:43:27.5629800Z ##[group]Run python3 -B docs/review/player-all-release-source-20261116/test_artifact_verifier.py
+2026-11-16T08:43:27.5630540Z [36;1mpython3 -B docs/review/player-all-release-source-20261116/test_artifact_verifier.py[0m
+2026-11-16T08:43:27.5631130Z [36;1mnode docs/review/player-all-release-source-20261116/test_readiness.js[0m
+2026-11-16T08:43:27.5665480Z shell: /bin/bash -e {0}
+2026-11-16T08:43:27.5666060Z env:
+2026-11-16T08:43:27.5666420Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:27.5666940Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:43:27.5667440Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:27.5667910Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:27.5668400Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:27.5668740Z ##[endgroup]
+2026-11-16T08:43:27.9081500Z test_acceptance_lift_rejected (__main__.ArtifactVerifierTests.test_acceptance_lift_rejected) ... ok
+2026-11-16T08:43:28.5571040Z test_complete_portable_artifacts (__main__.ArtifactVerifierTests.test_complete_portable_artifacts) ... ok
+2026-11-16T08:43:28.7008170Z test_extra_frame_rejected (__main__.ArtifactVerifierTests.test_extra_frame_rejected) ... ok
+2026-11-16T08:43:28.8003020Z test_file_hash_mutation_rejected (__main__.ArtifactVerifierTests.test_file_hash_mutation_rejected) ... ok
+2026-11-16T08:43:28.8881890Z test_fixture_hash_mutation_rejected (__main__.ArtifactVerifierTests.test_fixture_hash_mutation_rejected) ... ok
+2026-11-16T08:43:28.9930600Z test_frame_reorder_rejected (__main__.ArtifactVerifierTests.test_frame_reorder_rejected) ... ok
+2026-11-16T08:43:29.0961860Z test_missing_frame_rejected (__main__.ArtifactVerifierTests.test_missing_frame_rejected) ... ok
+2026-11-16T08:43:29.8796830Z test_native_changed_bytes_fail (__main__.ArtifactVerifierTests.test_native_changed_bytes_fail) ... ok
+2026-11-16T08:43:30.6756570Z test_native_complete_exact (__main__.ArtifactVerifierTests.test_native_complete_exact) ... ok
+2026-11-16T08:43:31.4400140Z test_native_endpoint_metadata_allowed_when_pixels_exact (__main__.ArtifactVerifierTests.test_native_endpoint_metadata_allowed_when_pixels_exact) ... ok
+2026-11-16T08:43:32.2789170Z test_native_endpoint_pixels_fail (__main__.ArtifactVerifierTests.test_native_endpoint_pixels_fail) ... ok
+2026-11-16T08:43:33.0807620Z test_native_extra_intermediate_fails (__main__.ArtifactVerifierTests.test_native_extra_intermediate_fails) ... ok
+2026-11-16T08:43:33.8808590Z test_native_missing_directory_fails_not_skips (__main__.ArtifactVerifierTests.test_native_missing_directory_fails_not_skips) ... ok
+2026-11-16T08:43:35.0321620Z test_native_missing_intermediate_fails (__main__.ArtifactVerifierTests.test_native_missing_intermediate_fails) ... ok
+2026-11-16T08:43:35.1797780Z test_noncanonical_frame_path_rejected (__main__.ArtifactVerifierTests.test_noncanonical_frame_path_rejected) ... ok
+2026-11-16T08:43:35.4844560Z test_original_endpoint_provenance_rejected (__main__.ArtifactVerifierTests.test_original_endpoint_provenance_rejected) ... ok
+2026-11-16T08:43:36.4560960Z test_phase_reorder_rejected (__main__.ArtifactVerifierTests.test_phase_reorder_rejected) ... ok
+2026-11-16T08:43:37.8958150Z test_preserved_frame_provenance_rejected (__main__.ArtifactVerifierTests.test_preserved_frame_provenance_rejected) ... ok
+2026-11-16T08:43:38.4030350Z test_rgba_mutation_even_with_updated_file_hash_rejected (__main__.ArtifactVerifierTests.test_rgba_mutation_even_with_updated_file_hash_rejected) ... ok
+2026-11-16T08:43:38.5020530Z test_timing_mutation_rejected (__main__.ArtifactVerifierTests.test_timing_mutation_rejected) ... ok
+2026-11-16T08:43:38.5022690Z 
+2026-11-16T08:43:38.5023860Z ----------------------------------------------------------------------
+2026-11-16T08:43:38.5024510Z Ran 20 tests in 10.847s
+2026-11-16T08:43:38.5025100Z 
+2026-11-16T08:43:38.5025380Z OK
+2026-11-16T08:43:38.9879970Z PASS normal-speed.html cached
+2026-11-16T08:43:38.9891540Z PASS normal-speed.html delayed
+2026-11-16T08:43:38.9909000Z PASS normal-speed.html cached-broken
+2026-11-16T08:43:38.9925380Z PASS normal-speed.html load-error
+2026-11-16T08:43:38.9943660Z PASS quarter-speed.html cached
+2026-11-16T08:43:38.9959000Z PASS quarter-speed.html delayed
+2026-11-16T08:43:38.9985330Z PASS quarter-speed.html cached-broken
+2026-11-16T08:43:38.9996690Z PASS quarter-speed.html load-error
+2026-11-16T08:43:38.9997760Z 8 readiness regressions passed, no skips
+2026-11-16T08:43:39.0156820Z ##[group]Run python3 -B docs/review/player-all-release-source-20261116/verify_artifacts.py --native-assets AppTests/BenchmarkAssets
+2026-11-16T08:43:39.0157970Z [36;1mpython3 -B docs/review/player-all-release-source-20261116/verify_artifacts.py --native-assets AppTests/BenchmarkAssets[0m
+2026-11-16T08:43:39.0233310Z shell: /bin/bash -e {0}
+2026-11-16T08:43:39.0234190Z env:
+2026-11-16T08:43:39.0237560Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:39.0247200Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:43:39.0248860Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:39.0249320Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:39.0249820Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:39.0251090Z ##[endgroup]
+2026-11-16T08:43:40.4169150Z {
+2026-11-16T08:43:40.4170940Z   "status": "PASS_REMAINS_PROPOSED",
+2026-11-16T08:43:40.4172940Z   "orderedFrames": 272,
+2026-11-16T08:43:40.4174050Z   "sourceSamples": 272,
+2026-11-16T08:43:40.4174940Z   "endpointProvenanceChecks": 32,
+2026-11-16T08:43:40.4176580Z   "archivedInputHashRecords": 1012,
+2026-11-16T08:43:40.4199370Z   "fixtureHashes": 5,
+2026-11-16T08:43:40.4213150Z   "preservedFrameHashes": 34,
+2026-11-16T08:43:40.4214390Z   "neutralBoundarySeconds": 0.375,
+2026-11-16T08:43:40.4214900Z   "originalMastersReopened": false,
+2026-11-16T08:43:40.4215290Z   "nativeAssets": {
+2026-11-16T08:43:40.4215990Z     "exactIntermediateFiles": 210,
+2026-11-16T08:43:40.4216370Z     "exactEndpointRGBAComparisons": 28,
+2026-11-16T08:43:40.4216650Z     "phases": [
+2026-11-16T08:43:40.4217140Z       1,
+2026-11-16T08:43:40.4217410Z       2,
+2026-11-16T08:43:40.4217750Z       3,
+2026-11-16T08:43:40.4217940Z       4,
+2026-11-16T08:43:40.4218330Z       6,
+2026-11-16T08:43:40.4218680Z       7,
+2026-11-16T08:43:40.4218890Z       8,
+2026-11-16T08:43:40.4219180Z       9,
+2026-11-16T08:43:40.4219380Z       10,
+2026-11-16T08:43:40.4219600Z       11,
+2026-11-16T08:43:40.4219790Z       12,
+2026-11-16T08:43:40.4220010Z       14,
+2026-11-16T08:43:40.4220170Z       15,
+2026-11-16T08:43:40.4220410Z       16
+2026-11-16T08:43:40.4220660Z     ]
+2026-11-16T08:43:40.4220950Z   }
+2026-11-16T08:43:40.4221160Z }
+2026-11-16T08:43:40.4399910Z ##[group]Run python3 -B scripts/test_allrelease_native.py
+2026-11-16T08:43:40.4401020Z [36;1mpython3 -B scripts/test_allrelease_native.py[0m
+2026-11-16T08:43:40.4438210Z shell: /bin/bash -e {0}
+2026-11-16T08:43:40.4438490Z env:
+2026-11-16T08:43:40.4438800Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:40.4439250Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:43:40.4439740Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:40.4440150Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:40.4440660Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:40.4441030Z ##[endgroup]
+2026-11-16T08:43:40.7398260Z ...........
+2026-11-16T08:43:40.7399510Z {"status": "STATIC_NATIVE_SOURCE_CHECK_NOT_ADMISSION", "verifiedPoses": 238, "verifiedSources": 227}
+2026-11-16T08:43:40.7400670Z ----------------------------------------------------------------------
+2026-11-16T08:43:40.7401300Z Ran 11 tests in 0.033s
+2026-11-16T08:43:40.7403990Z 
+2026-11-16T08:43:40.7404250Z OK
+2026-11-16T08:43:40.7515900Z ##[group]Run python3 -B scripts/import_allrelease_native.py --verify docs/review/player-all-release-native-20261116
+2026-11-16T08:43:40.7516760Z [36;1mpython3 -B scripts/import_allrelease_native.py --verify docs/review/player-all-release-native-20261116[0m
+2026-11-16T08:43:40.7547970Z shell: /bin/bash -e {0}
+2026-11-16T08:43:40.7557880Z env:
+2026-11-16T08:43:40.7558160Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:40.7558600Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:43:40.7559100Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:40.7559480Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:40.7559850Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:40.7560160Z ##[endgroup]
+2026-11-16T08:43:40.9147510Z {"status": "STATIC_NATIVE_SOURCE_CHECK_NOT_ADMISSION", "verifiedPoses": 238, "verifiedSources": 227}
+2026-11-16T08:43:40.9211700Z ##[group]Run python3 -B docs/review/player-release-variation-20261116/test_variation.py
+2026-11-16T08:43:40.9212260Z [36;1mpython3 -B docs/review/player-release-variation-20261116/test_variation.py[0m
+2026-11-16T08:43:40.9212750Z [36;1mpython3 -B docs/review/player-release-variation-20261116/test_artifacts.py[0m
+2026-11-16T08:43:40.9213210Z [36;1mnode docs/review/player-release-variation-20261116/test_comparison.js[0m
+2026-11-16T08:43:40.9245890Z shell: /bin/bash -e {0}
+2026-11-16T08:43:40.9246070Z env:
+2026-11-16T08:43:40.9246360Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:40.9246770Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:43:40.9247430Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:40.9247800Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:40.9248270Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:40.9248550Z ##[endgroup]
+2026-11-16T08:43:41.1230060Z test_all_geometry_and_contacts (__main__.SourceVariationTests.test_all_geometry_and_contacts) ... ok
+2026-11-16T08:43:41.1230960Z test_batch_rejects_unbounded_or_preserved (__main__.SourceVariationTests.test_batch_rejects_unbounded_or_preserved) ... ok
+2026-11-16T08:43:41.1535930Z test_contact_intervals_identical_to_baseline (__main__.SourceVariationTests.test_contact_intervals_identical_to_baseline) ... ok
+2026-11-16T08:43:41.1637690Z test_continuous_easing_monotonic_and_bounded (__main__.SourceVariationTests.test_continuous_easing_monotonic_and_bounded) ... ok
+2026-11-16T08:43:41.1747680Z test_each_phase_has_changed_intermediate_geometry (__main__.SourceVariationTests.test_each_phase_has_changed_intermediate_geometry) ... ok
+2026-11-16T08:43:41.1848980Z test_exact_entry_and_neutral_geometry (__main__.SourceVariationTests.test_exact_entry_and_neutral_geometry) ... ok
+2026-11-16T08:43:41.1950180Z test_exact_timing_order (__main__.SourceVariationTests.test_exact_timing_order) ... ok
+2026-11-16T08:43:41.2051410Z test_incomplete_checkpoint_fails_closed (__main__.SourceVariationTests.test_incomplete_checkpoint_fails_closed) ... ok
+2026-11-16T08:43:41.2152700Z test_locked_baseline (__main__.SourceVariationTests.test_locked_baseline) ... ok
+2026-11-16T08:43:41.2253990Z test_phase_specific_not_same_trajectory (__main__.SourceVariationTests.test_phase_specific_not_same_trajectory) ... ok
+2026-11-16T08:43:41.2261330Z test_preserved_samples_exact (__main__.SourceVariationTests.test_preserved_samples_exact) ... ok
+2026-11-16T08:43:41.2283540Z test_profile_limits_are_proposal_domain (__main__.SourceVariationTests.test_profile_limits_are_proposal_domain) ... ok
+2026-11-16T08:43:41.2392120Z test_profile_uses_actual_source_stance (__main__.SourceVariationTests.test_profile_uses_actual_source_stance) ... ok
+2026-11-16T08:43:41.2498880Z test_reject_contact_schedule_tamper (__main__.SourceVariationTests.test_reject_contact_schedule_tamper) ... ok
+2026-11-16T08:43:41.2611090Z test_reject_contact_slide (__main__.SourceVariationTests.test_reject_contact_slide) ... ok
+2026-11-16T08:43:41.2653710Z test_reject_limb_tamper (__main__.SourceVariationTests.test_reject_limb_tamper) ... ok
+2026-11-16T08:43:41.2754560Z test_reject_order_tamper (__main__.SourceVariationTests.test_reject_order_tamper) ... ok
+2026-11-16T08:43:41.2855710Z test_repeatable_without_input_mutation (__main__.SourceVariationTests.test_repeatable_without_input_mutation) ... ok
+2026-11-16T08:43:41.2956830Z test_zero_variation_exact_baseline (__main__.SourceVariationTests.test_zero_variation_exact_baseline) ... ok
+2026-11-16T08:43:41.3063240Z 
+2026-11-16T08:43:41.3163760Z ----------------------------------------------------------------------
+2026-11-16T08:43:41.3264600Z Ran 19 tests in 0.123s
+2026-11-16T08:43:41.3377010Z 
+2026-11-16T08:43:41.3488920Z OK
+2026-11-16T08:43:43.0834820Z test_all272_frames32_endpoints_and34_preserved (__main__.VariationArtifactTests.test_all272_frames32_endpoints_and34_preserved) ... ok
+2026-11-16T08:43:43.2263890Z test_baseline_dependency_tamper_rejected (__main__.VariationArtifactTests.test_baseline_dependency_tamper_rejected) ... ok
+2026-11-16T08:43:44.8573680Z test_baseline_pixels_substituted_for_variation_rejected (__main__.VariationArtifactTests.test_baseline_pixels_substituted_for_variation_rejected) ... ok
+2026-11-16T08:43:45.7939170Z test_baseline_sample_hash_tamper_rejected (__main__.VariationArtifactTests.test_baseline_sample_hash_tamper_rejected) ... ok
+2026-11-16T08:43:47.2735490Z test_complete_inventory_drift_rejected (__main__.VariationArtifactTests.test_complete_inventory_drift_rejected) ... ok
+2026-11-16T08:43:47.4328910Z test_endpoint_origin_rejected (__main__.VariationArtifactTests.test_endpoint_origin_rejected) ... ok
+2026-11-16T08:43:47.5509050Z test_extra_frame_rejected (__main__.VariationArtifactTests.test_extra_frame_rejected) ... ok
+2026-11-16T08:43:47.6746360Z test_frame_bytes_rejected (__main__.VariationArtifactTests.test_frame_bytes_rejected) ... ok
+2026-11-16T08:43:48.4455020Z test_geometry_fact_tamper_rejected (__main__.VariationArtifactTests.test_geometry_fact_tamper_rejected) ... ok
+2026-11-16T08:43:48.5335560Z test_implementation_tamper_rejected (__main__.VariationArtifactTests.test_implementation_tamper_rejected) ... ok
+2026-11-16T08:43:48.6121140Z test_lifted_acceptance_rejected (__main__.VariationArtifactTests.test_lifted_acceptance_rejected) ... ok
+2026-11-16T08:43:48.7026290Z test_missing_frame_rejected (__main__.VariationArtifactTests.test_missing_frame_rejected) ... ok
+2026-11-16T08:43:50.0656680Z test_native_claim_lift_rejected (__main__.VariationArtifactTests.test_native_claim_lift_rejected) ... ok
+2026-11-16T08:43:51.4697400Z test_owner_provenance_rejected (__main__.VariationArtifactTests.test_owner_provenance_rejected) ... ok
+2026-11-16T08:43:51.5580150Z test_phase_order_rejected (__main__.VariationArtifactTests.test_phase_order_rejected) ... ok
+2026-11-16T08:43:51.6732920Z test_pose_order_rejected (__main__.VariationArtifactTests.test_pose_order_rejected) ... ok
+2026-11-16T08:43:51.9426770Z test_preserved_original_hash_rejected (__main__.VariationArtifactTests.test_preserved_original_hash_rejected) ... ok
+2026-11-16T08:43:52.7052560Z test_profile_tamper_rejected (__main__.VariationArtifactTests.test_profile_tamper_rejected) ... ok
+2026-11-16T08:43:52.7977880Z test_timing_rejected (__main__.VariationArtifactTests.test_timing_rejected) ... ok
+2026-11-16T08:43:53.5819620Z test_trajectory_tamper_even_updated_sample_hash (__main__.VariationArtifactTests.test_trajectory_tamper_even_updated_sample_hash) ... ok
+2026-11-16T08:43:53.7184160Z test_updated_file_hash_still_checks_rgba (__main__.VariationArtifactTests.test_updated_file_hash_still_checks_rgba) ... ok
+2026-11-16T08:43:55.4944840Z test_variation_identity_rejected (__main__.VariationArtifactTests.test_variation_identity_rejected) ... ok
+2026-11-16T08:43:55.5090730Z 
+2026-11-16T08:43:55.5192010Z ----------------------------------------------------------------------
+2026-11-16T08:43:55.5315120Z Ran 22 tests in 14.135s
+2026-11-16T08:43:55.5416230Z 
+2026-11-16T08:43:55.5518820Z OK
+2026-11-16T08:43:55.6848430Z TAP version 13
+2026-11-16T08:43:55.7080210Z # Subtest: normal: cached readiness without RAF/decode
+2026-11-16T08:43:55.7110980Z ok 1 - normal: cached readiness without RAF/decode
+2026-11-16T08:43:55.7111560Z   ---
+2026-11-16T08:43:55.7114210Z   duration_ms: 20.1295
+2026-11-16T08:43:55.7114490Z   type: 'test'
+2026-11-16T08:43:55.7114800Z   ...
+2026-11-16T08:43:55.7246010Z # Subtest: normal: delayed readiness without RAF/decode
+2026-11-16T08:43:55.7272870Z ok 2 - normal: delayed readiness without RAF/decode
+2026-11-16T08:43:55.7313330Z   ---
+2026-11-16T08:43:55.7314910Z   duration_ms: 13.034125
+2026-11-16T08:43:55.7315390Z   type: 'test'
+2026-11-16T08:43:55.7316600Z   ...
+2026-11-16T08:43:55.7317930Z # Subtest: normal: broken-cached readiness without RAF/decode
+2026-11-16T08:43:55.7320710Z ok 3 - normal: broken-cached readiness without RAF/decode
+2026-11-16T08:43:55.7323480Z   ---
+2026-11-16T08:43:55.7325000Z   duration_ms: 10.4495
+2026-11-16T08:43:55.7327800Z   type: 'test'
+2026-11-16T08:43:55.7328400Z   ...
+2026-11-16T08:43:55.7351820Z # Subtest: normal: error-event readiness without RAF/decode
+2026-11-16T08:43:55.7354780Z ok 4 - normal: error-event readiness without RAF/decode
+2026-11-16T08:43:55.7367980Z   ---
+2026-11-16T08:43:55.7368590Z   duration_ms: 6.14175
+2026-11-16T08:43:55.7369830Z   type: 'test'
+2026-11-16T08:43:55.7371310Z   ...
+2026-11-16T08:43:55.7469960Z # Subtest: quarter: cached readiness without RAF/decode
+2026-11-16T08:43:55.7472220Z ok 5 - quarter: cached readiness without RAF/decode
+2026-11-16T08:43:55.7473610Z   ---
+2026-11-16T08:43:55.7474790Z   duration_ms: 10.363875
+2026-11-16T08:43:55.7475420Z   type: 'test'
+2026-11-16T08:43:55.7477500Z   ...
+2026-11-16T08:43:55.7556760Z # Subtest: quarter: delayed readiness without RAF/decode
+2026-11-16T08:43:55.7557260Z ok 6 - quarter: delayed readiness without RAF/decode
+2026-11-16T08:43:55.7557570Z   ---
+2026-11-16T08:43:55.7557920Z   duration_ms: 6.792292
+2026-11-16T08:43:55.7558160Z   type: 'test'
+2026-11-16T08:43:55.7558450Z   ...
+2026-11-16T08:43:55.7596050Z # Subtest: quarter: broken-cached readiness without RAF/decode
+2026-11-16T08:43:55.7645530Z ok 7 - quarter: broken-cached readiness without RAF/decode
+2026-11-16T08:43:55.7646020Z   ---
+2026-11-16T08:43:55.7647310Z   duration_ms: 8.302625
+2026-11-16T08:43:55.7648270Z   type: 'test'
+2026-11-16T08:43:55.7649170Z   ...
+2026-11-16T08:43:55.7650240Z # Subtest: quarter: error-event readiness without RAF/decode
+2026-11-16T08:43:55.7652850Z ok 8 - quarter: error-event readiness without RAF/decode
+2026-11-16T08:43:55.7661870Z   ---
+2026-11-16T08:43:55.7663190Z   duration_ms: 2.236584
+2026-11-16T08:43:55.7663810Z   type: 'test'
+2026-11-16T08:43:55.7664510Z   ...
+2026-11-16T08:43:55.7664960Z 1..8
+2026-11-16T08:43:55.7665510Z # tests 8
+2026-11-16T08:43:55.7665970Z # suites 0
+2026-11-16T08:43:55.7666490Z # pass 8
+2026-11-16T08:43:55.7666990Z # fail 0
+2026-11-16T08:43:55.7667680Z # cancelled 0
+2026-11-16T08:43:55.7668570Z # skipped 0
+2026-11-16T08:43:55.7669280Z # todo 0
+2026-11-16T08:43:55.7669880Z # duration_ms 91.0485
+2026-11-16T08:43:55.7822150Z ##[group]Run python3 -B docs/review/player-release-variation-20261116/verify_packet.py
+2026-11-16T08:43:55.7822980Z [36;1mpython3 -B docs/review/player-release-variation-20261116/verify_packet.py[0m
+2026-11-16T08:43:55.7863840Z shell: /bin/bash -e {0}
+2026-11-16T08:43:55.7864210Z env:
+2026-11-16T08:43:55.7864460Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:55.7865420Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:43:55.7866330Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:55.7867110Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:55.7867590Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:55.7868060Z ##[endgroup]
+2026-11-16T08:43:57.2618910Z {
+2026-11-16T08:43:57.2619710Z   "status": "PASS_REMAINS_PROPOSED",
+2026-11-16T08:43:57.2620290Z   "orderedFrames": 272,
+2026-11-16T08:43:57.2620860Z   "sourceSamples": 272,
+2026-11-16T08:43:57.2621270Z   "endpointProvenanceChecks": 32,
+2026-11-16T08:43:57.2621610Z   "archivedInputHashRecords": 1012,
+2026-11-16T08:43:57.2621900Z   "fixtureHashes": 5,
+2026-11-16T08:43:57.2622220Z   "preservedFrameHashes": 34,
+2026-11-16T08:43:57.2622460Z   "neutralBoundarySeconds": 0.375,
+2026-11-16T08:43:57.2622950Z   "originalMastersReopened": false,
+2026-11-16T08:43:57.2623290Z   "nativeAssets": null,
+2026-11-16T08:43:57.2623660Z   "variationChangedGeometryPoses": {
+2026-11-16T08:43:57.2623890Z     "1": 14,
+2026-11-16T08:43:57.2624130Z     "2": 14,
+2026-11-16T08:43:57.2624520Z     "3": 14,
+2026-11-16T08:43:57.2624720Z     "4": 14,
+2026-11-16T08:43:57.2624930Z     "5": 0,
+2026-11-16T08:43:57.2625140Z     "6": 14,
+2026-11-16T08:43:57.2625490Z     "7": 14,
+2026-11-16T08:43:57.2625750Z     "8": 14,
+2026-11-16T08:43:57.2625980Z     "9": 14,
+2026-11-16T08:43:57.2626200Z     "10": 14,
+2026-11-16T08:43:57.2626490Z     "11": 14,
+2026-11-16T08:43:57.2626740Z     "12": 14,
+2026-11-16T08:43:57.2626940Z     "13": 0,
+2026-11-16T08:43:57.2627240Z     "14": 14,
+2026-11-16T08:43:57.2627450Z     "15": 14,
+2026-11-16T08:43:57.2628110Z     "16": 14
+2026-11-16T08:43:57.2628330Z   },
+2026-11-16T08:43:57.2628580Z   "geometryRows": 544,
+2026-11-16T08:43:57.2628820Z   "variationNativeVerified": false,
+2026-11-16T08:43:57.2629260Z   "changedRGBAPosesFromBaseline": {
+2026-11-16T08:43:57.2629570Z     "1": [
+2026-11-16T08:43:57.2629880Z       2,
+2026-11-16T08:43:57.2630090Z       3,
+2026-11-16T08:43:57.2630410Z       4,
+2026-11-16T08:43:57.2630550Z       5,
+2026-11-16T08:43:57.2630820Z       6,
+2026-11-16T08:43:57.2631890Z       7,
+2026-11-16T08:43:57.2632180Z       9,
+2026-11-16T08:43:57.2632460Z       10,
+2026-11-16T08:43:57.2632650Z       11,
+2026-11-16T08:43:57.2632930Z       12,
+2026-11-16T08:43:57.2633160Z       13,
+2026-11-16T08:43:57.2633380Z       14,
+2026-11-16T08:43:57.2633520Z       15
+2026-11-16T08:43:57.2633840Z     ],
+2026-11-16T08:43:57.2634720Z     "2": [
+2026-11-16T08:43:57.2635360Z       2,
+2026-11-16T08:43:57.2635910Z       3,
+2026-11-16T08:43:57.2636580Z       4,
+2026-11-16T08:43:57.2637080Z       5,
+2026-11-16T08:43:57.2637570Z       6,
+2026-11-16T08:43:57.2638210Z       7,
+2026-11-16T08:43:57.2638680Z       9,
+2026-11-16T08:43:57.2639220Z       10,
+2026-11-16T08:43:57.2639610Z       11,
+2026-11-16T08:43:57.2640220Z       12,
+2026-11-16T08:43:57.2640690Z       13,
+2026-11-16T08:43:57.2641230Z       14,
+2026-11-16T08:43:57.2641640Z       15
+2026-11-16T08:43:57.2642280Z     ],
+2026-11-16T08:43:57.2642820Z     "3": [
+2026-11-16T08:43:57.2643450Z       2,
+2026-11-16T08:43:57.2643960Z       3,
+2026-11-16T08:43:57.2644480Z       4,
+2026-11-16T08:43:57.2644940Z       5,
+2026-11-16T08:43:57.2645670Z       6,
+2026-11-16T08:43:57.2646130Z       7,
+2026-11-16T08:43:57.2646700Z       9,
+2026-11-16T08:43:57.2647090Z       10,
+2026-11-16T08:43:57.2647660Z       11,
+2026-11-16T08:43:57.2648050Z       12,
+2026-11-16T08:43:57.2648540Z       13,
+2026-11-16T08:43:57.2650690Z       14,
+2026-11-16T08:43:57.2651180Z       15
+2026-11-16T08:43:57.2651590Z     ],
+2026-11-16T08:43:57.2651980Z     "4": [
+2026-11-16T08:43:57.2652420Z       2,
+2026-11-16T08:43:57.2652810Z       3,
+2026-11-16T08:43:57.2653210Z       4,
+2026-11-16T08:43:57.2653590Z       5,
+2026-11-16T08:43:57.2654000Z       6,
+2026-11-16T08:43:57.2654400Z       7,
+2026-11-16T08:43:57.2654800Z       9,
+2026-11-16T08:43:57.2655170Z       10,
+2026-11-16T08:43:57.2655580Z       11,
+2026-11-16T08:43:57.2655970Z       12,
+2026-11-16T08:43:57.2656380Z       13,
+2026-11-16T08:43:57.2656790Z       14,
+2026-11-16T08:43:57.2657330Z       15
+2026-11-16T08:43:57.2657760Z     ],
+2026-11-16T08:43:57.2658140Z     "5": [],
+2026-11-16T08:43:57.2658590Z     "6": [
+2026-11-16T08:43:57.2658980Z       2,
+2026-11-16T08:43:57.2659390Z       3,
+2026-11-16T08:43:57.2659770Z       4,
+2026-11-16T08:43:57.2660170Z       5,
+2026-11-16T08:43:57.2660550Z       6,
+2026-11-16T08:43:57.2660950Z       7,
+2026-11-16T08:43:57.2661360Z       9,
+2026-11-16T08:43:57.2661760Z       10,
+2026-11-16T08:43:57.2662160Z       11,
+2026-11-16T08:43:57.2662540Z       12,
+2026-11-16T08:43:57.2662940Z       13,
+2026-11-16T08:43:57.2663320Z       14,
+2026-11-16T08:43:57.2663730Z       15
+2026-11-16T08:43:57.2664120Z     ],
+2026-11-16T08:43:57.2664520Z     "7": [
+2026-11-16T08:43:57.2664900Z       2,
+2026-11-16T08:43:57.2665300Z       3,
+2026-11-16T08:43:57.2665680Z       4,
+2026-11-16T08:43:57.2666090Z       5,
+2026-11-16T08:43:57.2666490Z       6,
+2026-11-16T08:43:57.2666880Z       7,
+2026-11-16T08:43:57.2667290Z       9,
+2026-11-16T08:43:57.2667660Z       10,
+2026-11-16T08:43:57.2668070Z       11,
+2026-11-16T08:43:57.2668480Z       12,
+2026-11-16T08:43:57.2668880Z       13,
+2026-11-16T08:43:57.2669260Z       14,
+2026-11-16T08:43:57.2669670Z       15
+2026-11-16T08:43:57.2670060Z     ],
+2026-11-16T08:43:57.2670450Z     "8": [
+2026-11-16T08:43:57.2670830Z       2,
+2026-11-16T08:43:57.2671260Z       3,
+2026-11-16T08:43:57.2689590Z       4,
+2026-11-16T08:43:57.2690020Z       5,
+2026-11-16T08:43:57.2690430Z       6,
+2026-11-16T08:43:57.2690930Z       7,
+2026-11-16T08:43:57.2691320Z       9,
+2026-11-16T08:43:57.2692190Z       10,
+2026-11-16T08:43:57.2692580Z       11,
+2026-11-16T08:43:57.2692990Z       12,
+2026-11-16T08:43:57.2693410Z       13,
+2026-11-16T08:43:57.2693850Z       14,
+2026-11-16T08:43:57.2694260Z       15
+2026-11-16T08:43:57.2694650Z     ],
+2026-11-16T08:43:57.2695070Z     "9": [
+2026-11-16T08:43:57.2695430Z       2,
+2026-11-16T08:43:57.2695800Z       3,
+2026-11-16T08:43:57.2696160Z       4,
+2026-11-16T08:43:57.2696550Z       5,
+2026-11-16T08:43:57.2696940Z       6,
+2026-11-16T08:43:57.2699340Z       7,
+2026-11-16T08:43:57.2699720Z       9,
+2026-11-16T08:43:57.2700100Z       10,
+2026-11-16T08:43:57.2700480Z       11,
+2026-11-16T08:43:57.2700870Z       12,
+2026-11-16T08:43:57.2701270Z       13,
+2026-11-16T08:43:57.2701640Z       14,
+2026-11-16T08:43:57.2702030Z       15
+2026-11-16T08:43:57.2702420Z     ],
+2026-11-16T08:43:57.2702830Z     "10": [
+2026-11-16T08:43:57.2703240Z       2,
+2026-11-16T08:43:57.2703650Z       3,
+2026-11-16T08:43:57.2704030Z       4,
+2026-11-16T08:43:57.2704420Z       5,
+2026-11-16T08:43:57.2704800Z       6,
+2026-11-16T08:43:57.2705220Z       7,
+2026-11-16T08:43:57.2705650Z       9,
+2026-11-16T08:43:57.2706060Z       10,
+2026-11-16T08:43:57.2706480Z       11,
+2026-11-16T08:43:57.2706870Z       12,
+2026-11-16T08:43:57.2707290Z       13,
+2026-11-16T08:43:57.2707690Z       14,
+2026-11-16T08:43:57.2708080Z       15
+2026-11-16T08:43:57.2708480Z     ],
+2026-11-16T08:43:57.2708860Z     "11": [
+2026-11-16T08:43:57.2709300Z       2,
+2026-11-16T08:43:57.2709690Z       3,
+2026-11-16T08:43:57.2710110Z       4,
+2026-11-16T08:43:57.2710470Z       5,
+2026-11-16T08:43:57.2710990Z       6,
+2026-11-16T08:43:57.2711410Z       7,
+2026-11-16T08:43:57.2711800Z       9,
+2026-11-16T08:43:57.2712180Z       10,
+2026-11-16T08:43:57.2712540Z       11,
+2026-11-16T08:43:57.2712930Z       12,
+2026-11-16T08:43:57.2713300Z       13,
+2026-11-16T08:43:57.2713670Z       14,
+2026-11-16T08:43:57.2714610Z       15
+2026-11-16T08:43:57.2715060Z     ],
+2026-11-16T08:43:57.2715430Z     "12": [
+2026-11-16T08:43:57.2715860Z       2,
+2026-11-16T08:43:57.2716260Z       3,
+2026-11-16T08:43:57.2716620Z       4,
+2026-11-16T08:43:57.2717160Z       5,
+2026-11-16T08:43:57.2717540Z       6,
+2026-11-16T08:43:57.2717950Z       7,
+2026-11-16T08:43:57.2718310Z       9,
+2026-11-16T08:43:57.2718720Z       10,
+2026-11-16T08:43:57.2719080Z       11,
+2026-11-16T08:43:57.2719440Z       12,
+2026-11-16T08:43:57.2719820Z       13,
+2026-11-16T08:43:57.2720230Z       14,
+2026-11-16T08:43:57.2720610Z       15
+2026-11-16T08:43:57.2721000Z     ],
+2026-11-16T08:43:57.2721430Z     "13": [],
+2026-11-16T08:43:57.2721850Z     "14": [
+2026-11-16T08:43:57.2722280Z       2,
+2026-11-16T08:43:57.2722670Z       3,
+2026-11-16T08:43:57.2723070Z       4,
+2026-11-16T08:43:57.2723460Z       5,
+2026-11-16T08:43:57.2723860Z       6,
+2026-11-16T08:43:57.2724220Z       7,
+2026-11-16T08:43:57.2724620Z       9,
+2026-11-16T08:43:57.2724980Z       10,
+2026-11-16T08:43:57.2725390Z       11,
+2026-11-16T08:43:57.2725760Z       12,
+2026-11-16T08:43:57.2726120Z       13,
+2026-11-16T08:43:57.2726540Z       14,
+2026-11-16T08:43:57.2726940Z       15
+2026-11-16T08:43:57.2727350Z     ],
+2026-11-16T08:43:57.2727740Z     "15": [
+2026-11-16T08:43:57.2728170Z       2,
+2026-11-16T08:43:57.2728570Z       3,
+2026-11-16T08:43:57.2728950Z       4,
+2026-11-16T08:43:57.2729320Z       5,
+2026-11-16T08:43:57.2729710Z       6,
+2026-11-16T08:43:57.2730080Z       7,
+2026-11-16T08:43:57.2730450Z       9,
+2026-11-16T08:43:57.2730820Z       10,
+2026-11-16T08:43:57.2731210Z       11,
+2026-11-16T08:43:57.2731600Z       12,
+2026-11-16T08:43:57.2731980Z       13,
+2026-11-16T08:43:57.2732350Z       14,
+2026-11-16T08:43:57.2732730Z       15
+2026-11-16T08:43:57.2733110Z     ],
+2026-11-16T08:43:57.2733490Z     "16": [
+2026-11-16T08:43:57.2733880Z       2,
+2026-11-16T08:43:57.2734320Z       3,
+2026-11-16T08:43:57.2734700Z       4,
+2026-11-16T08:43:57.2735060Z       5,
+2026-11-16T08:43:57.2735450Z       6,
+2026-11-16T08:43:57.2735830Z       7,
+2026-11-16T08:43:57.2736210Z       9,
+2026-11-16T08:43:57.2736580Z       10,
+2026-11-16T08:43:57.2736960Z       11,
+2026-11-16T08:43:57.2737480Z       12,
+2026-11-16T08:43:57.2737860Z       13,
+2026-11-16T08:43:57.2738240Z       14,
+2026-11-16T08:43:57.2738610Z       15
+2026-11-16T08:43:57.2738990Z     ]
+2026-11-16T08:43:57.2739360Z   },
+2026-11-16T08:43:57.2739870Z   "fullArchivedInventoryMatchesBaseline": true
+2026-11-16T08:43:57.2740550Z }
+2026-11-16T08:43:57.2869690Z ##[group]Run python3 -B scripts/prepare_release_variation_native.py --verify
+2026-11-16T08:43:57.2870280Z [36;1mpython3 -B scripts/prepare_release_variation_native.py --verify[0m
+2026-11-16T08:43:57.2871430Z [36;1mpython3 -B scripts/import_release_variation_native.py --verify docs/review/player-release-variation-native-20261116/capture[0m
+2026-11-16T08:43:57.2872150Z [36;1mpython3 -B scripts/test_release_variation_native.py[0m
+2026-11-16T08:43:57.2935510Z shell: /bin/bash -e {0}
+2026-11-16T08:43:57.2935760Z env:
+2026-11-16T08:43:57.2936500Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:57.2937000Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:43:57.2937490Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:57.2937910Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:57.2938430Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:43:57.2938800Z ##[endgroup]
+2026-11-16T08:43:59.1244760Z {"status": "TEST_RESOURCES_VERIFIED", "isolatedVariationPNGs": 210, "uniqueBaselineAndVariationResources": 435}
+2026-11-16T08:44:03.4786750Z {
+2026-11-16T08:44:03.4787930Z   "status": "STATIC_NATIVE_VARIATION_COMPARISON_NOT_ADMISSION",
+2026-11-16T08:44:03.4788410Z   "verifiedPoses": 476,
+2026-11-16T08:44:03.4788730Z   "verifiedSourceFiles": 442,
+2026-11-16T08:44:03.4789170Z   "nativeEndpointEqualities": 28,
+2026-11-16T08:44:03.4789550Z   "passedActualTests": 3,
+2026-11-16T08:44:03.4789840Z   "changedNativePoses": 182,
+2026-11-16T08:44:03.4790660Z   "liveCadenceVerified": false
+2026-11-16T08:44:03.4790940Z }
+2026-11-16T08:44:07.7282580Z test_actual476_captures_and28_endpoints (__main__.ActualCaptureGuards.test_actual476_captures_and28_endpoints) ... ok
+2026-11-16T08:44:09.4173920Z test_actual_bundle_digest_rejected_even_with_updated_record_hash (__main__.ActualCaptureGuards.test_actual_bundle_digest_rejected_even_with_updated_record_hash) ... ok
+2026-11-16T08:44:09.6658080Z test_capture_hash_tamper_rejected (__main__.ActualCaptureGuards.test_capture_hash_tamper_rejected) ... ok
+2026-11-16T08:44:13.7540370Z test_changed_native_facts_rejected (__main__.ActualCaptureGuards.test_changed_native_facts_rejected) ... ok
+2026-11-16T08:44:13.9515740Z test_extra_capture_rejected (__main__.ActualCaptureGuards.test_extra_capture_rejected) ... ok
+2026-11-16T08:44:14.1749400Z test_lifted_art_claim_rejected (__main__.ActualCaptureGuards.test_lifted_art_claim_rejected) ... ok
+2026-11-16T08:44:14.3437370Z test_lifted_live_claim_rejected (__main__.ActualCaptureGuards.test_lifted_live_claim_rejected) ... ok
+2026-11-16T08:44:14.5224220Z test_missing_attachment_hash_rejected (__main__.ActualCaptureGuards.test_missing_attachment_hash_rejected) ... ok
+2026-11-16T08:44:17.6518800Z test_native_dimensions_rejected_even_with_updated_file_hash (__main__.ActualCaptureGuards.test_native_dimensions_rejected_even_with_updated_file_hash) ... ok
+2026-11-16T08:44:22.4155670Z test_native_endpoint_pixels_rejected_even_with_updated_file_hash (__main__.ActualCaptureGuards.test_native_endpoint_pixels_rejected_even_with_updated_file_hash) ... ok
+2026-11-16T08:44:24.9384750Z test_source_configuration_drift_rejected (__main__.ActualCaptureGuards.test_source_configuration_drift_rejected) ... ok
+2026-11-16T08:44:25.2721590Z test_timing_declaration_tamper_rejected (__main__.ActualCaptureGuards.test_timing_declaration_tamper_rejected) ... ok
+2026-11-16T08:44:25.3934860Z test_complete_parser_census (__main__.ImportGuards.test_complete_parser_census) ... ok
+2026-11-16T08:44:25.4648850Z test_duplicate_image_rejected (__main__.ImportGuards.test_duplicate_image_rejected) ... ok
+2026-11-16T08:44:25.4658570Z test_exact_result_identities (__main__.ImportGuards.test_exact_result_identities) ... ok
+2026-11-16T08:44:25.4668520Z test_failed_case_despite_green_summary_rejected (__main__.ImportGuards.test_failed_case_despite_green_summary_rejected) ... ok
+2026-11-16T08:44:25.4679800Z test_failure_skip_expected_failure_rejected (__main__.ImportGuards.test_failure_skip_expected_failure_rejected) ... ok
+2026-11-16T08:44:25.4687840Z test_invalid_actual_sha_rejected (__main__.ImportGuards.test_invalid_actual_sha_rejected) ... ok
+2026-11-16T08:44:25.5359970Z test_missing_image_rejected (__main__.ImportGuards.test_missing_image_rejected) ... ok
+2026-11-16T08:44:25.5935540Z test_missing_record_rejected (__main__.ImportGuards.test_missing_record_rejected) ... ok
+2026-11-16T08:44:25.5955840Z test_other_test_names_rejected (__main__.ImportGuards.test_other_test_names_rejected) ... ok
+2026-11-16T08:44:25.6023170Z test_path_escape_rejected (__main__.ImportGuards.test_path_escape_rejected) ... ok
+2026-11-16T08:44:25.6032880Z test_png_preservation_test_only (__main__.ImportGuards.test_png_preservation_test_only) ... ok
+2026-11-16T08:44:25.6045890Z test_records_must_preserve_phase_family_pose_order (__main__.ImportGuards.test_records_must_preserve_phase_family_pose_order) ... ok
+2026-11-16T08:44:25.6059770Z test_wrong_capture_name_rejected (__main__.ImportGuards.test_wrong_capture_name_rejected) ... ok
+2026-11-16T08:44:25.6071350Z test_wrong_family_rejected (__main__.ImportGuards.test_wrong_family_rejected) ... ok
+2026-11-16T08:44:25.6080000Z test_wrong_texture_rejected (__main__.ImportGuards.test_wrong_texture_rejected) ... ok
+2026-11-16T08:44:25.6089020Z test_wrong_tick_rejected (__main__.ImportGuards.test_wrong_tick_rejected) ... ok
+2026-11-16T08:44:25.6098210Z test_zero_test_exit_zero_rejected (__main__.ImportGuards.test_zero_test_exit_zero_rejected) ... ok
+2026-11-16T08:44:25.6100300Z 
+2026-11-16T08:44:25.6101450Z ----------------------------------------------------------------------
+2026-11-16T08:44:25.6102610Z Ran 29 tests in 21.889s
+2026-11-16T08:44:25.6103400Z 
+2026-11-16T08:44:25.6103800Z OK
+2026-11-16T08:44:25.6566700Z ##[group]Run python3 -B docs/review/player-north-source-20261116/test_source.py
+2026-11-16T08:44:25.6567870Z [36;1mpython3 -B docs/review/player-north-source-20261116/test_source.py[0m
+2026-11-16T08:44:25.6568400Z [36;1mpython3 -B docs/review/player-baggy-south-source-20261116/test_source.py[0m
+2026-11-16T08:44:25.6569100Z [36;1mpython3 -B -W error::ResourceWarning docs/review/camera-midpoint-source-20261116/test_source.py[0m
+2026-11-16T08:44:25.6570040Z [36;1mcmp docs/review/camera-midpoint-source-20261116/source/clip-metadata-001.json Sources/SurveillanceCore/Resources/contracts/clip-metadata-001.json[0m
+2026-11-16T08:44:25.6624710Z shell: /bin/bash -e {0}
+2026-11-16T08:44:25.6625040Z env:
+2026-11-16T08:44:25.6625400Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:44:25.6625860Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:44:25.6626620Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:44:25.6627060Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:44:25.6627540Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:44:25.6627890Z ##[endgroup]
+2026-11-16T08:44:25.8320610Z test_asymmetric_binding (__main__.NorthSourceGuards.test_asymmetric_binding) ... ok
+2026-11-16T08:44:25.8994590Z test_complete_unique_layer_composite (__main__.NorthSourceGuards.test_complete_unique_layer_composite) ... ok
+2026-11-16T08:44:26.0283890Z test_exact_rgba_component_identity (__main__.NorthSourceGuards.test_exact_rgba_component_identity) ... ok
+2026-11-16T08:44:26.0295540Z test_layer_hashes (__main__.NorthSourceGuards.test_layer_hashes) ... ok
+2026-11-16T08:44:26.0367790Z test_proposal_not_original_paint_or_admission (__main__.NorthSourceGuards.test_proposal_not_original_paint_or_admission) ... ok
+2026-11-16T08:44:26.0507550Z test_registration_and_unchanged_south_comparison (__main__.NorthSourceGuards.test_registration_and_unchanged_south_comparison) ... ok
+2026-11-16T08:44:26.0528910Z test_source_hashes_and_readonly_originals (__main__.NorthSourceGuards.test_source_hashes_and_readonly_originals) ... ok
+2026-11-16T08:44:26.0887960Z test_transparent_gap_samples_not_rgb (__main__.NorthSourceGuards.test_transparent_gap_samples_not_rgb) ... ok
+2026-11-16T08:44:26.1233610Z test_uniform_scale_translation_only (__main__.NorthSourceGuards.test_uniform_scale_translation_only) ... ok
+2026-11-16T08:44:26.1234640Z 
+2026-11-16T08:44:26.1235240Z ----------------------------------------------------------------------
+2026-11-16T08:44:26.1236010Z Ran 9 tests in 0.293s
+2026-11-16T08:44:26.1236300Z 
+2026-11-16T08:44:26.1236570Z OK
+2026-11-16T08:44:26.3564140Z test_anatomical_sides_and_patch (__main__.Guards.test_anatomical_sides_and_patch) ... ok
+2026-11-16T08:44:26.3578130Z test_canvas_and_output (__main__.Guards.test_canvas_and_output) ... ok
+2026-11-16T08:44:26.3713670Z test_exact_layer_composition (__main__.Guards.test_exact_layer_composition) ... ok
+2026-11-16T08:44:26.3770530Z test_ground_root_and_bottom (__main__.Guards.test_ground_root_and_bottom) ... ok
+2026-11-16T08:44:26.3904460Z test_no_old_leg_pixels (__main__.Guards.test_no_old_leg_pixels) ... ok
+2026-11-16T08:44:26.4189550Z test_original_layer_reconstruction (__main__.Guards.test_original_layer_reconstruction) ... ok
+2026-11-16T08:44:26.4834380Z test_parts_are_exact_crops_with_uniform_scale (__main__.Guards.test_parts_are_exact_crops_with_uniform_scale) ... ok
+2026-11-16T08:44:26.4873590Z test_provenance_hashes (__main__.Guards.test_provenance_hashes) ... ok
+2026-11-16T08:44:26.4990020Z test_retained_upper_and_boot_pixels_exact (__main__.Guards.test_retained_upper_and_boot_pixels_exact) ... ok
+2026-11-16T08:44:26.4992100Z 
+2026-11-16T08:44:26.4993570Z ----------------------------------------------------------------------
+2026-11-16T08:44:26.4995570Z Ran 9 tests in 0.182s
+2026-11-16T08:44:26.4995950Z 
+2026-11-16T08:44:26.4997310Z OK
+2026-11-16T08:44:26.7179270Z test_complete_device_layers_nonempty (__main__.Attempt01.test_complete_device_layers_nonempty) ... ok
+2026-11-16T08:44:26.7381380Z test_copied_inputs_match_record (__main__.Attempt01.test_copied_inputs_match_record) ... ok
+2026-11-16T08:44:26.7528010Z test_honest_label (__main__.Attempt01.test_honest_label) ... ok
+2026-11-16T08:44:26.7529390Z test_integrity_contract_matches_copied_contract (__main__.Attempt01.test_integrity_contract_matches_copied_contract) ... ok
+2026-11-16T08:44:26.7832590Z test_layers_partition_and_reconstruct_exactly (__main__.Attempt01.test_layers_partition_and_reconstruct_exactly) ... ok
+2026-11-16T08:44:26.7833300Z test_registration (__main__.Attempt01.test_registration) ... ok
+2026-11-16T08:44:27.1953480Z test_cutout_is_exact_concept_rgb (__main__.Attempt02.test_cutout_is_exact_concept_rgb) ... ok
+2026-11-16T08:44:27.2076420Z test_layers_partition (__main__.Attempt02.test_layers_partition) ... ok
+2026-11-16T08:44:27.2103800Z test_source_and_control_hashes (__main__.Attempt02.test_source_and_control_hashes) ... ok
+2026-11-16T08:44:27.2173610Z test_uniform_scale_and_registration (__main__.Attempt02.test_uniform_scale_and_registration) ... ok
+2026-11-16T08:44:27.2206300Z test_authority_is_approved_concept_only (__main__.Attempt03.test_authority_is_approved_concept_only) ... ok
+2026-11-16T08:44:27.2208280Z test_contamination_is_reported (__main__.Attempt03.test_contamination_is_reported) ... ok
+2026-11-16T08:44:27.2714010Z test_cutout_is_exact_approved_rgb (__main__.Attempt03.test_cutout_is_exact_approved_rgb) ... ok
+2026-11-16T08:44:27.2801280Z test_output_is_uniform_transform_of_cutout (__main__.Attempt03.test_output_is_uniform_transform_of_cutout) ... ok
+2026-11-16T08:44:27.2823460Z test_pinned_approved_original (__main__.Attempt03.test_pinned_approved_original) ... ok
+2026-11-16T08:44:27.2892520Z test_recomputed_contamination_and_rows (__main__.Attempt03.test_recomputed_contamination_and_rows) ... ok
+2026-11-16T08:44:27.2894270Z test_rejections_recorded (__main__.Statuses.test_rejections_recorded) ... ok
+2026-11-16T08:44:27.2894650Z 
+2026-11-16T08:44:27.2894880Z ----------------------------------------------------------------------
+2026-11-16T08:44:27.2895290Z Ran 17 tests in 0.571s
+2026-11-16T08:44:27.2895400Z 
+2026-11-16T08:44:27.2895570Z OK
+2026-11-16T08:44:27.3374950Z ##[group]Run python3 -B -W error::ResourceWarning docs/review/player-side-source-20261116/test_source.py
+2026-11-16T08:44:27.3375960Z [36;1mpython3 -B -W error::ResourceWarning docs/review/player-side-source-20261116/test_source.py[0m
+2026-11-16T08:44:27.3435890Z shell: /bin/bash -e {0}
+2026-11-16T08:44:27.3436260Z env:
+2026-11-16T08:44:27.3437760Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:44:27.3438890Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:44:27.3440070Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:44:27.3440600Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:44:27.3441270Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:44:27.3444390Z ##[endgroup]
+2026-11-16T08:44:27.4685020Z test_anatomical_side_binding (__main__.SideSourceGuards.test_anatomical_side_binding) ... ok
+2026-11-16T08:44:27.5092060Z test_complete_composite_no_duplicate_parts (__main__.SideSourceGuards.test_complete_composite_no_duplicate_parts) ... ok
+2026-11-16T08:44:27.5155490Z test_distinct_facings_not_mirrors (__main__.SideSourceGuards.test_distinct_facings_not_mirrors) ... ok
+2026-11-16T08:44:27.6806190Z test_exact_component_identity_and_uniform_transform (__main__.SideSourceGuards.test_exact_component_identity_and_uniform_transform) ... ok
+2026-11-16T08:44:27.6807130Z test_external_originals_match_pins (__main__.SideSourceGuards.test_external_originals_match_pins) ... skipped 'optional external-original audit'
+2026-11-16T08:44:27.7099720Z test_gallery_strip_uses_unchanged_inputs (__main__.SideSourceGuards.test_gallery_strip_uses_unchanged_inputs) ... ok
+2026-11-16T08:44:27.7157320Z test_inputs_and_originals_unchanged (__main__.SideSourceGuards.test_inputs_and_originals_unchanged) ... ok
+2026-11-16T08:44:27.7158800Z test_proposal_labels (__main__.SideSourceGuards.test_proposal_labels) ... ok
+2026-11-16T08:44:27.7160040Z test_registration (__main__.SideSourceGuards.test_registration) ... ok
+2026-11-16T08:44:28.2369530Z test_reproducible_build (__main__.SideSourceGuards.test_reproducible_build) ... ok
+2026-11-16T08:44:28.2370600Z 
+2026-11-16T08:44:28.2370990Z ----------------------------------------------------------------------
+2026-11-16T08:44:28.2371900Z Ran 10 tests in 0.770s
+2026-11-16T08:44:28.2372320Z 
+2026-11-16T08:44:28.2372660Z OK (skipped=1)
+2026-11-16T08:44:28.2670990Z ##[group]Run python3 -B -W error::ResourceWarning docs/review/player-ground-contact-20261116/test_packet.py
+2026-11-16T08:44:28.2671920Z [36;1mpython3 -B -W error::ResourceWarning docs/review/player-ground-contact-20261116/test_packet.py[0m
+2026-11-16T08:44:28.2672670Z [36;1mpython3 -B -W error::ResourceWarning docs/review/player-ground-contact-20261116/test_native_evidence.py[0m
+2026-11-16T08:44:28.2673320Z [36;1mnode docs/review/player-ground-contact-20261116/test_native_gallery.js[0m
+2026-11-16T08:44:28.2719990Z shell: /bin/bash -e {0}
+2026-11-16T08:44:28.2720320Z env:
+2026-11-16T08:44:28.2720640Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:44:28.2721190Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:44:28.2721700Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:44:28.2722150Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:44:28.2722830Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:44:28.2723200Z ##[endgroup]
+2026-11-16T08:44:28.4614150Z testArchivedInventoryMatchesPublishedBaseline (__main__.GroundContactPacketTests.testArchivedInventoryMatchesPublishedBaseline) ... ok
+2026-11-16T08:44:28.4624330Z testCoreMatrixCoversActualStopSlideAndPause (__main__.GroundContactPacketTests.testCoreMatrixCoversActualStopSlideAndPause) ... ok
+2026-11-16T08:44:28.4802300Z testCostumeAndAssemblyRetained (__main__.GroundContactPacketTests.testCostumeAndAssemblyRetained) ... ok
+2026-11-16T08:44:28.5286620Z testExactBaselineAndReviewedKeys (__main__.GroundContactPacketTests.testExactBaselineAndReviewedKeys) ... ok
+2026-11-16T08:44:28.6168060Z testExactlySixChangedRecoveryKeys (__main__.GroundContactPacketTests.testExactlySixChangedRecoveryKeys) ... ok
+2026-11-16T08:44:28.6406300Z testExportedPagesContainAllMatrixRowsAndSeparateSpeed (__main__.GroundContactPacketTests.testExportedPagesContainAllMatrixRowsAndSeparateSpeed) ... ok
+2026-11-16T08:44:28.6409670Z testFixedLimbLengthsAndFiniteCoordinates (__main__.GroundContactPacketTests.testFixedLimbLengthsAndFiniteCoordinates) ... ok
+2026-11-16T08:44:28.6410960Z testFootTargetsContactTimingAndNoAddedBounce (__main__.GroundContactPacketTests.testFootTargetsContactTimingAndNoAddedBounce) ... ok
+2026-11-16T08:44:28.6412210Z testOriginalInputsUnchanged (__main__.GroundContactPacketTests.testOriginalInputsUnchanged) ... skipped 'External original masters unavailable. Portable copied-byte checks run separately.'
+2026-11-16T08:44:28.6414950Z testProjectionInverseAndRejectedFalseContact (__main__.GroundContactPacketTests.testProjectionInverseAndRejectedFalseContact) ... ok
+2026-11-16T08:44:28.6766280Z testSamplingNeverClaimsNativeAndBothVariantsSameContacts (__main__.GroundContactPacketTests.testSamplingNeverClaimsNativeAndBothVariantsSameContacts) ... ok
+2026-11-16T08:44:28.8117370Z testSourceManifestHasNoDrift (__main__.GroundContactPacketTests.testSourceManifestHasNoDrift) ... ok
+2026-11-16T08:44:28.8251050Z testStationaryAndDodgeDoNotFabricateWalkContacts (__main__.GroundContactPacketTests.testStationaryAndDodgeDoNotFabricateWalkContacts) ... ok
+2026-11-16T08:44:28.8253630Z 
+2026-11-16T08:44:28.8254130Z ----------------------------------------------------------------------
+2026-11-16T08:44:28.8255020Z Ran 13 tests in 0.378s
+2026-11-16T08:44:28.8255380Z 
+2026-11-16T08:44:28.8255650Z OK (skipped=1)
+2026-11-16T08:44:39.1202080Z testActualEvidenceVerifies (__main__.NativeEvidenceTests.testActualEvidenceVerifies) ... ok
+2026-11-16T08:44:47.5297330Z testOfflineQueryUsesRetainedResultNoXcrun (__main__.NativeEvidenceTests.testOfflineQueryUsesRetainedResultNoXcrun) ... ok
+2026-11-16T08:44:47.5447490Z testOldClampedRunRejectedBySelectionNotOnlyCount (__main__.NativeEvidenceTests.testOldClampedRunRejectedBySelectionNotOnlyCount) ... ok
+2026-11-16T08:44:47.7340270Z testRejectsAttachmentEvidenceMutation (__main__.NativeEvidenceTests.testRejectsAttachmentEvidenceMutation) ... ok
+2026-11-16T08:45:01.5776100Z testRejectsChangedUnchangedPairMutation (__main__.NativeEvidenceTests.testRejectsChangedUnchangedPairMutation) ... ok
+2026-11-16T08:45:01.7021700Z testRejectsCountAndCensusMutation (__main__.NativeEvidenceTests.testRejectsCountAndCensusMutation) ... ok
+2026-11-16T08:45:01.8247950Z testRejectsFrozenFixedTimeAndMissingLoop (__main__.NativeEvidenceTests.testRejectsFrozenFixedTimeAndMissingLoop) ... ok
+2026-11-16T08:45:01.9270440Z testRejectsMissingOrDuplicateCapture (__main__.NativeEvidenceTests.testRejectsMissingOrDuplicateCapture) ... ok
+2026-11-16T08:45:01.9690850Z testRejectsPathEscape (__main__.NativeEvidenceTests.testRejectsPathEscape) ... ok
+2026-11-16T08:45:02.1057550Z testRejectsRetainedSummaryTreeAndRuntimeByteMutation (__main__.NativeEvidenceTests.testRejectsRetainedSummaryTreeAndRuntimeByteMutation) ... ok
+2026-11-16T08:45:02.3786370Z testRejectsRootContactAndSegmentNumericMutation (__main__.NativeEvidenceTests.testRejectsRootContactAndSegmentNumericMutation) ... ok
+2026-11-16T08:45:02.6027140Z testRejectsSelectionAndIdentityMutation (__main__.NativeEvidenceTests.testRejectsSelectionAndIdentityMutation) ... ok
+2026-11-16T08:45:02.6049320Z testRejectsSourceHashMutation (__main__.NativeEvidenceTests.testRejectsSourceHashMutation) ... ok
+2026-11-16T08:45:02.6051340Z testRejectsZeroFailedSkippedAndWrongIdentity (__main__.NativeEvidenceTests.testRejectsZeroFailedSkippedAndWrongIdentity) ... ok
+2026-11-16T08:45:02.6100190Z 
+2026-11-16T08:45:02.6108480Z ----------------------------------------------------------------------
+2026-11-16T08:45:02.6109100Z Ran 14 tests in 33.635s
+2026-11-16T08:45:02.6109340Z 
+2026-11-16T08:45:02.6118680Z OK
+2026-11-16T08:45:02.9410790Z PASS: 38 paired selections; missing/empty images fail closed; stale success/error cannot replace newer pair; size/grayscale control state.
+2026-11-16T08:45:02.9544780Z ##[group]Run python3 -B -W error::ResourceWarning docs/review/stone-corner-source-20261116/test_source.py
+2026-11-16T08:45:02.9568920Z [36;1mpython3 -B -W error::ResourceWarning docs/review/stone-corner-source-20261116/test_source.py[0m
+2026-11-16T08:45:02.9638180Z shell: /bin/bash -e {0}
+2026-11-16T08:45:02.9638490Z env:
+2026-11-16T08:45:02.9638800Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:45:02.9639350Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:45:02.9639860Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:45:02.9640410Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:45:02.9640870Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:45:02.9641330Z ##[endgroup]
+2026-11-16T08:45:03.0982160Z test_generation_provenance (__main__.SourceGuards.test_generation_provenance) ... ok
+2026-11-16T08:45:03.0986080Z test_manifest_preserves_unknown_geometry (__main__.SourceGuards.test_manifest_preserves_unknown_geometry) ... ok
+2026-11-16T08:45:03.0987390Z test_rejects_dimension_and_identity_substitution (__main__.SourceGuards.test_rejects_dimension_and_identity_substitution) ... ok
+2026-11-16T08:45:03.0988390Z test_rejects_prompt_coordinates_as_measured_landmarks (__main__.SourceGuards.test_rejects_prompt_coordinates_as_measured_landmarks) ... ok
+2026-11-16T08:45:03.0989290Z test_rejects_unearned_admission (__main__.SourceGuards.test_rejects_unearned_admission) ... ok
+2026-11-16T08:45:03.1391000Z test_source_bytes_and_actual_dimensions (__main__.SourceGuards.test_source_bytes_and_actual_dimensions) ... ok
+2026-11-16T08:45:03.1391590Z 
+2026-11-16T08:45:03.1493770Z ----------------------------------------------------------------------
+2026-11-16T08:45:03.1507120Z Ran 6 tests in 0.042s
+2026-11-16T08:45:03.1581330Z 
+2026-11-16T08:45:03.1625970Z OK
+2026-11-16T08:45:03.1674800Z ##[group]Run python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/whole-scene-benchmark-20261116 -p 'test_*.py'
+2026-11-16T08:45:03.1675710Z [36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/whole-scene-benchmark-20261116 -p 'test_*.py'[0m
+2026-11-16T08:45:03.1676500Z [36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/whole-scene-paving-20261116 -p 'test_*.py'[0m
+2026-11-16T08:45:03.1677340Z [36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/whole-scene-benchmark-20261116/revision-02-bound-inputs -p 'test_*.py'[0m
+2026-11-16T08:45:03.1678210Z [36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/camera-first-sample-20261116 -p 'test_*.py'[0m
+2026-11-16T08:45:03.1712590Z shell: /bin/bash -e {0}
+2026-11-16T08:45:03.1712810Z env:
+2026-11-16T08:45:03.1713200Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:45:03.1713770Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:45:03.1714310Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:45:03.1714740Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:45:03.1715370Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:45:03.1715730Z ##[endgroup]
+2026-11-16T08:45:35.5927790Z ...............
+2026-11-16T08:45:35.5929750Z ----------------------------------------------------------------------
+2026-11-16T08:45:35.5930610Z Wrote index.html and coverage.md: 17 rows
+2026-11-16T08:45:35.5931320Z Ran 15 tests in 32.137s
+2026-11-16T08:45:35.5931780Z Wrote index.html and coverage.md: 17 rows
+2026-11-16T08:45:35.5932220Z 
+2026-11-16T08:45:35.5932500Z OK
+2026-11-16T08:46:25.2410190Z .......
+2026-11-16T08:46:25.2485640Z ----------------------------------------------------------------------
+2026-11-16T08:46:25.2518390Z Ran 7 tests in 49.418s
+2026-11-16T08:46:25.2531140Z 
+2026-11-16T08:46:25.2532360Z OK
+2026-11-16T08:46:33.8326680Z .............
+2026-11-16T08:46:33.8327240Z ----------------------------------------------------------------------
+2026-11-16T08:46:33.8327700Z Ran 13 tests in 8.352s
+2026-11-16T08:46:33.8327920Z 
+2026-11-16T08:46:33.8328100Z OK
+2026-11-16T08:46:33.8328640Z Gallery: 18 capture selections x 3 sheets, native 704x326, half 352x163
+2026-11-16T08:46:34.0279660Z .....
+2026-11-16T08:46:34.0280120Z ----------------------------------------------------------------------
+2026-11-16T08:46:34.0280490Z Ran 5 tests in 0.079s
+2026-11-16T08:46:34.0280690Z 
+2026-11-16T08:46:34.0280840Z OK
+2026-11-16T08:46:34.0554680Z ##[group]Run python3 -B -W error::ResourceWarning docs/review/stone-corner-registration-20261116/test_registration.py
+2026-11-16T08:46:34.0555610Z [36;1mpython3 -B -W error::ResourceWarning docs/review/stone-corner-registration-20261116/test_registration.py[0m
+2026-11-16T08:46:34.0556380Z [36;1mpython3 -B -W error::ResourceWarning docs/review/player-neutral-family-20261116/test_family.py[0m
+2026-11-16T08:46:34.0578320Z [36;1mpython3 -B -W error::ResourceWarning docs/review/paving-repeat-repair-20261116/verify-packet.py[0m
+2026-11-16T08:46:34.0578990Z [36;1mpython3 -B -W error::ResourceWarning docs/review/paving-repeat-repair-20261116/revision02/generate-and-check.py[0m
+2026-11-16T08:46:34.0926060Z shell: /bin/bash -e {0}
+2026-11-16T08:46:34.0926350Z env:
+2026-11-16T08:46:34.0926790Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:46:34.0927260Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:46:34.0927870Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:46:34.0928310Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:46:34.0928820Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:46:34.0929160Z ##[endgroup]
+2026-11-16T08:46:34.1784790Z test_contour_is_provisional (__main__.RegistrationRecordTests.test_contour_is_provisional) ... ok
+2026-11-16T08:46:34.1788070Z test_corrected_preview_and_withdrawal (__main__.RegistrationRecordTests.test_corrected_preview_and_withdrawal) ... ok
+2026-11-16T08:46:34.1790370Z test_gates_closed (__main__.RegistrationRecordTests.test_gates_closed) ... ok
+2026-11-16T08:46:34.1791940Z test_no_verified_registration (__main__.RegistrationRecordTests.test_no_verified_registration) ... ok
+2026-11-16T08:46:34.1809690Z test_original_unchanged (__main__.RegistrationRecordTests.test_original_unchanged) ... ok
+2026-11-16T08:46:34.1810590Z 
+2026-11-16T08:46:34.1811000Z ----------------------------------------------------------------------
+2026-11-16T08:46:34.1812100Z Ran 5 tests in 0.003s
+2026-11-16T08:46:34.1812550Z 
+2026-11-16T08:46:34.1812820Z OK
+2026-11-16T08:46:34.5351080Z T1  Input source images unchanged
+2026-11-16T08:46:34.5351880Z   PASS  T1a south_exists
+2026-11-16T08:46:34.5352370Z   PASS  T1b north_sha
+2026-11-16T08:46:34.5352730Z   PASS  T1c east_prefix
+2026-11-16T08:46:34.5353160Z   PASS  T1d west_prefix
+2026-11-16T08:46:34.5354280Z T2  Output images exist and correct dimensions
+2026-11-16T08:46:34.5354820Z   PASS  T2  four-facing-source.png exists
+2026-11-16T08:46:34.5355220Z   PASS  T2  four-facing-source.png dimensions
+2026-11-16T08:46:34.5355720Z   PASS  T2  four-facing-native.png exists
+2026-11-16T08:46:34.5356200Z   PASS  T2  four-facing-native.png dimensions
+2026-11-16T08:46:34.5356660Z   PASS  T2  four-facing-half.png exists
+2026-11-16T08:46:34.5357070Z   PASS  T2  four-facing-half.png dimensions
+2026-11-16T08:46:34.5357640Z   PASS  T2  four-facing-grayscale.png exists
+2026-11-16T08:46:34.5358180Z   PASS  T2  four-facing-grayscale.png dimensions
+2026-11-16T08:46:34.5358660Z T3  Strips reproducible (re-run assemble.py)
+2026-11-16T08:46:34.5359250Z   PASS  T3  assemble exit 0
+2026-11-16T08:46:34.5360090Z   PASS  T3  four-facing-source.png reproducible
+2026-11-16T08:46:34.5360540Z   PASS  T3  four-facing-native.png reproducible
+2026-11-16T08:46:34.5360970Z   PASS  T3  four-facing-half.png reproducible
+2026-11-16T08:46:34.5361410Z   PASS  T3  four-facing-grayscale.png reproducible
+2026-11-16T08:46:34.5361930Z   PASS  T3  family.json reproducible
+2026-11-16T08:46:34.5362270Z T4  Native strip dimensions
+2026-11-16T08:46:34.5362630Z   PASS  T4  native width
+2026-11-16T08:46:34.5362920Z   PASS  T4  native height
+2026-11-16T08:46:34.5363260Z T5  Half strip dimensions
+2026-11-16T08:46:34.5363610Z   PASS  T5  half width
+2026-11-16T08:46:34.5363970Z   PASS  T5  half height
+2026-11-16T08:46:34.5364430Z T6  Grayscale strip has no saturation
+2026-11-16T08:46:34.5365470Z   PASS  T6  all opaque pixels are gray
+2026-11-16T08:46:34.5366080Z T7  Role mask files exist and correct size
+2026-11-16T08:46:34.5366470Z   PASS  T7  south-lower_body exists
+2026-11-16T08:46:34.5366970Z   PASS  T7  south-lower_body size
+2026-11-16T08:46:34.5367300Z   PASS  T7  south-upper_body exists
+2026-11-16T08:46:34.5367890Z   PASS  T7  south-upper_body size
+2026-11-16T08:46:34.5368350Z   PASS  T7  south-equipment exists
+2026-11-16T08:46:34.5368720Z   PASS  T7  south-equipment size
+2026-11-16T08:46:34.5369090Z   PASS  T7  south-head exists
+2026-11-16T08:46:34.5369570Z   PASS  T7  south-head size
+2026-11-16T08:46:34.5369940Z   PASS  T7  east-lower_body exists
+2026-11-16T08:46:34.5370200Z   PASS  T7  east-lower_body size
+2026-11-16T08:46:34.5370670Z   PASS  T7  east-upper_body exists
+2026-11-16T08:46:34.5371340Z   PASS  T7  east-upper_body size
+2026-11-16T08:46:34.5371800Z   PASS  T7  east-equipment exists
+2026-11-16T08:46:34.5373090Z   PASS  T7  east-equipment size
+2026-11-16T08:46:34.5373410Z   PASS  T7  east-head exists
+2026-11-16T08:46:34.5373860Z   PASS  T7  east-head size
+2026-11-16T08:46:34.5374550Z   PASS  T7  north-lower_body exists
+2026-11-16T08:46:34.5375140Z   PASS  T7  north-lower_body size
+2026-11-16T08:46:34.5375740Z   PASS  T7  north-upper_body exists
+2026-11-16T08:46:34.5376750Z   PASS  T7  north-upper_body size
+2026-11-16T08:46:34.5377280Z   PASS  T7  north-equipment exists
+2026-11-16T08:46:34.5378140Z   PASS  T7  north-equipment size
+2026-11-16T08:46:34.5378460Z   PASS  T7  north-head exists
+2026-11-16T08:46:34.5378920Z   PASS  T7  north-head size
+2026-11-16T08:46:34.5379220Z   PASS  T7  west-lower_body exists
+2026-11-16T08:46:34.5379690Z   PASS  T7  west-lower_body size
+2026-11-16T08:46:34.5380000Z   PASS  T7  west-upper_body exists
+2026-11-16T08:46:34.5380470Z   PASS  T7  west-upper_body size
+2026-11-16T08:46:34.5382110Z   PASS  T7  west-equipment exists
+2026-11-16T08:46:34.5383150Z   PASS  T7  west-equipment size
+2026-11-16T08:46:34.5383980Z   PASS  T7  west-head exists
+2026-11-16T08:46:34.5384420Z   PASS  T7  west-head size
+2026-11-16T08:46:34.5384780Z T8  Role masks non-empty (have opaque pixels)
+2026-11-16T08:46:34.5385220Z   PASS  T8  south-lower_body opaque_pixels >= 1
+2026-11-16T08:46:34.5385870Z   PASS  T8  south-upper_body opaque_pixels >= 1
+2026-11-16T08:46:34.5386340Z   SKIP  T8  south-equipment: merged into original_upper (disclosed blocker)
+2026-11-16T08:46:34.5386770Z   SKIP  T8  south-head: merged into original_upper (disclosed blocker)
+2026-11-16T08:46:34.5387230Z   PASS  T8  east-lower_body opaque_pixels >= 1
+2026-11-16T08:46:34.5387510Z   PASS  T8  east-upper_body opaque_pixels >= 1
+2026-11-16T08:46:34.5387820Z   PASS  T8  east-equipment opaque_pixels >= 1
+2026-11-16T08:46:34.5388070Z   PASS  T8  east-head opaque_pixels >= 1
+2026-11-16T08:46:34.5388340Z   PASS  T8  north-lower_body opaque_pixels >= 1
+2026-11-16T08:46:34.5388720Z   PASS  T8  north-upper_body opaque_pixels >= 1
+2026-11-16T08:46:34.5389490Z   PASS  T8  north-equipment opaque_pixels >= 1
+2026-11-16T08:46:34.5389960Z   PASS  T8  north-head opaque_pixels >= 1
+2026-11-16T08:46:34.5390250Z   PASS  T8  west-lower_body opaque_pixels >= 1
+2026-11-16T08:46:34.5390660Z   PASS  T8  west-upper_body opaque_pixels >= 1
+2026-11-16T08:46:34.5391730Z   PASS  T8  west-equipment opaque_pixels >= 1
+2026-11-16T08:46:34.5391990Z   PASS  T8  west-head opaque_pixels >= 1
+2026-11-16T08:46:34.5392220Z T9  family.json structure
+2026-11-16T08:46:34.5392510Z   PASS  T9  status BLOCKED_UNRECONCILED_FAMILY
+2026-11-16T08:46:34.5392850Z   PASS  T9  four facings in anatomy
+2026-11-16T08:46:34.5393600Z   PASS  T9  sourcePackets present
+2026-11-16T08:46:34.5394020Z   PASS  T9  openBlockers non-empty
+2026-11-16T08:46:34.5394300Z   PASS  T9  partVocabulary present
+2026-11-16T08:46:34.5394730Z   PASS  T9  equipment mapping present
+2026-11-16T08:46:34.5395200Z   PASS  T9  limits field present
+2026-11-16T08:46:34.5395610Z T10  index.html content
+2026-11-16T08:46:34.5395950Z   PASS  T10  index.html non-empty
+2026-11-16T08:46:34.5396800Z   PASS  T10  index contains south
+2026-11-16T08:46:34.5397080Z   PASS  T10  index contains east
+2026-11-16T08:46:34.5397380Z   PASS  T10  index contains north
+2026-11-16T08:46:34.5397650Z   PASS  T10  index contains west
+2026-11-16T08:46:34.5398010Z   PASS  T10  blocked status in h1
+2026-11-16T08:46:34.5398340Z   PASS  T10  blocked status banner
+2026-11-16T08:46:34.5398630Z   PASS  T10  two inline absent role labels
+2026-11-16T08:46:34.5398880Z   PASS  T10  rounding disclosed
+2026-11-16T08:46:34.5399200Z   PASS  T10  no unexplained absent mask images
+2026-11-16T08:46:34.5399660Z T11  Layer files exist for each facing
+2026-11-16T08:46:34.5399950Z   PASS  T11  south has >=1 layer
+2026-11-16T08:46:34.5400430Z   PASS  T11  north has >=1 layer
+2026-11-16T08:46:34.5401090Z   PASS  T11  east has >=1 layer
+2026-11-16T08:46:34.5401370Z   PASS  T11  west has >=1 layer
+2026-11-16T08:46:34.5401850Z T12  North SHA matches attempt-01
+2026-11-16T08:46:34.5402140Z   PASS  T12  north sha exact
+2026-11-16T08:46:34.5402420Z T13  South/east/west SHA prefixes
+2026-11-16T08:46:34.5402620Z   PASS  T13  east prefix
+2026-11-16T08:46:34.5402910Z   PASS  T13  west prefix
+2026-11-16T08:46:34.5403200Z   PASS  T13  south sha matches family.json
+2026-11-16T08:46:34.5403600Z T14  output-hashes.json round-trips
+2026-11-16T08:46:34.5403920Z   PASS  T14  four-facing-source.png
+2026-11-16T08:46:34.5404300Z   PASS  T14  four-facing-native.png
+2026-11-16T08:46:34.5404620Z   PASS  T14  four-facing-half.png
+2026-11-16T08:46:34.5405050Z   PASS  T14  four-facing-grayscale.png
+2026-11-16T08:46:34.5405410Z   PASS  T14  family.json
+2026-11-16T08:46:34.5405700Z T15  Reject coherence/readiness/acceptance; document absent layers
+2026-11-16T08:46:34.5406160Z   PASS  T15  status is BLOCKED_UNRECONCILED_FAMILY
+2026-11-16T08:46:34.5406420Z   PASS  T15  coherent is explicitly False
+2026-11-16T08:46:34.5406750Z   PASS  T15  ready is explicitly False
+2026-11-16T08:46:34.5407110Z   PASS  T15  accepted is explicitly False
+2026-11-16T08:46:34.5407500Z   PASS  T15  south-equipment absent layer documented
+2026-11-16T08:46:34.5407840Z   PASS  T15  south-head absent layer documented
+2026-11-16T08:46:34.5408180Z   PASS  T15  south-equipment entry mentions original_upper
+2026-11-16T08:46:34.5408640Z   PASS  T15  south-head entry mentions original_upper
+2026-11-16T08:46:34.5408820Z 
+2026-11-16T08:46:34.5408960Z PASS: 107  FAIL: 0
+2026-11-16T08:46:34.5409250Z All tests passed.
+2026-11-16T08:46:35.3352810Z PASS: source, dimensions, exhaustive interior/orientation, exact boundaries, six attachment hashes/sizes, full 3x3 placement; five mutation rejection cases
+2026-11-16T08:46:37.6213340Z PASS: paired bounds both passes, pair-mean preservation within 1 RGB unit, unchanged interior, exact edges, dark-edge nonwidening sentinel, nonconvex mutation rejection, source hash
+2026-11-16T08:46:37.6215530Z Candidate SHA256: 7a1f29c7b0f1a0a96e12484de84da21e7ab4ebee10cab2e829ed19309ca17d35
+2026-11-16T08:46:37.6388250Z ##[group]Run python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/existing-art-traversal-20261116 -p 'test_*.py' -v
+2026-11-16T08:46:37.6389190Z [36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/existing-art-traversal-20261116 -p 'test_*.py' -v[0m
+2026-11-16T08:46:37.6390140Z [36;1mpython3 -B -W error::ResourceWarning docs/review/existing-art-viewports-20261116/test_verify.py[0m
+2026-11-16T08:46:37.6390800Z [36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/existing-art-encounters-20261116 -p 'test_*.py' -v[0m
+2026-11-16T08:46:37.6424510Z shell: /bin/bash -e {0}
+2026-11-16T08:46:37.6424690Z env:
+2026-11-16T08:46:37.6424960Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:46:37.6425440Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:46:37.6425920Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:46:37.6426380Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:46:37.6426770Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:46:37.6427080Z ##[endgroup]
+2026-11-16T08:46:37.7893490Z test_actual_png_hash_dimensions_and_blankness (test_evidence_guards.EvidenceGuardTests.test_actual_png_hash_dimensions_and_blankness) ... ok
+2026-11-16T08:46:37.7903810Z test_bound_resource_hash_bytes_and_escape (test_evidence_guards.EvidenceGuardTests.test_bound_resource_hash_bytes_and_escape) ... ok
+2026-11-16T08:46:37.7912220Z test_exact_coordinated_three_and_wrong_case_attachments (test_evidence_guards.EvidenceGuardTests.test_exact_coordinated_three_and_wrong_case_attachments) ... ok
+2026-11-16T08:46:37.7913940Z test_exact_nonzero_result_and_identity (test_evidence_guards.EvidenceGuardTests.test_exact_nonzero_result_and_identity) ... ok
+2026-11-16T08:46:37.7928580Z test_export_path_missing_duplicate_and_escape (test_evidence_guards.EvidenceGuardTests.test_export_path_missing_duplicate_and_escape) ... ok
+2026-11-16T08:46:37.7932070Z test_negative_fractional_and_one_unit_mapping_guards (test_evidence_guards.EvidenceGuardTests.test_negative_fractional_and_one_unit_mapping_guards) ... ok
+2026-11-16T08:46:37.7933910Z test_one_based_phase_boundaries (test_evidence_guards.EvidenceGuardTests.test_one_based_phase_boundaries) ... ok
+2026-11-16T08:46:37.7935940Z test_pause_count_digest_position_and_texture_mutations (test_evidence_guards.EvidenceGuardTests.test_pause_count_digest_position_and_texture_mutations) ... ok
+2026-11-16T08:46:37.7938190Z test_q8_root_and_delta_reconstruction (test_evidence_guards.EvidenceGuardTests.test_q8_root_and_delta_reconstruction) ... ok
+2026-11-16T08:46:37.7942590Z test_scope_and_zero_capture_packet_rejected (test_evidence_guards.EvidenceGuardTests.test_scope_and_zero_capture_packet_rejected) ... ok
+2026-11-16T08:46:37.7956100Z test_symlink_root_alias_and_real_symlink_escape (test_evidence_guards.EvidenceGuardTests.test_symlink_root_alias_and_real_symlink_escape) ... ok
+2026-11-16T08:46:37.9581030Z test_actual_capture_census_and_hashes (test_gallery.GalleryTests.test_actual_capture_census_and_hashes) ... ok
+2026-11-16T08:46:37.9741210Z test_links_and_all_keypoint_mapping_combinations (test_gallery.GalleryTests.test_links_and_all_keypoint_mapping_combinations) ... ok
+2026-11-16T08:46:37.9742080Z test_truthful_controls_and_logical_sizes (test_gallery.GalleryTests.test_truthful_controls_and_logical_sizes) ... ok
+2026-11-16T08:46:39.3256610Z test_actual_retained_evidence_without_xcrun (test_retained_evidence.RetainedEvidenceTests.test_actual_retained_evidence_without_xcrun) ... ok
+2026-11-16T08:46:39.7633230Z test_attachment_hash_and_missing_capture_mutations (test_retained_evidence.RetainedEvidenceTests.test_attachment_hash_and_missing_capture_mutations) ... ok
+2026-11-16T08:46:40.2502710Z test_bound_input_and_selection_mutations (test_retained_evidence.RetainedEvidenceTests.test_bound_input_and_selection_mutations) ... ok
+2026-11-16T08:46:40.5260480Z test_capture_phase_and_scope_mutations (test_retained_evidence.RetainedEvidenceTests.test_capture_phase_and_scope_mutations) ... ok
+2026-11-16T08:46:41.8673510Z test_independent_position_and_delta_mutations (test_retained_evidence.RetainedEvidenceTests.test_independent_position_and_delta_mutations) ... ok
+2026-11-16T08:46:42.3586800Z test_pause_and_frozen_selection_mutations (test_retained_evidence.RetainedEvidenceTests.test_pause_and_frozen_selection_mutations) ... ok
+2026-11-16T08:46:42.8126800Z test_projection_and_dimensions_mutations (test_retained_evidence.RetainedEvidenceTests.test_projection_and_dimensions_mutations) ... ok
+2026-11-16T08:46:43.2150160Z test_replay_and_per_tick_authority_mutations (test_retained_evidence.RetainedEvidenceTests.test_replay_and_per_tick_authority_mutations) ... ok
+2026-11-16T08:46:43.2153410Z test_zero_test_and_wrong_identity_mutations (test_retained_evidence.RetainedEvidenceTests.test_zero_test_and_wrong_identity_mutations) ... ok
+2026-11-16T08:46:43.2203720Z 
+2026-11-16T08:46:43.2205100Z ----------------------------------------------------------------------
+2026-11-16T08:46:43.2206090Z Built gallery from 52 actual captures;13 keypoints x2 mappings x3 display modes
+2026-11-16T08:46:43.2207550Z Ran 23 tests in 5.482s
+2026-11-16T08:46:43.2208050Z 
+2026-11-16T08:46:43.2208270Z OK
+2026-11-16T08:46:43.3773920Z test_host_bounds_required_and_normalization_reported (__main__.VerifierTests.test_host_bounds_required_and_normalization_reported) ... ok
+2026-11-16T08:46:43.4827290Z test_missing_duplicate_hash_dimension_settings (__main__.VerifierTests.test_missing_duplicate_hash_dimension_settings) ... ok
+2026-11-16T08:46:43.5231020Z test_real_export_suffix_and_wrong_manifest_identity (__main__.VerifierTests.test_real_export_suffix_and_wrong_manifest_identity) ... ok
+2026-11-16T08:46:43.5862260Z test_retained_actual0653_and_gallery (__main__.VerifierTests.test_retained_actual0653_and_gallery) ... ok
+2026-11-16T08:46:43.6002160Z test_truncated_png_rejected_even_with_updated_hash (__main__.VerifierTests.test_truncated_png_rejected_even_with_updated_hash) ... ok
+2026-11-16T08:46:43.6240920Z test_valid_metadata (__main__.VerifierTests.test_valid_metadata) ... ok
+2026-11-16T08:46:43.6246040Z test_zero_failed_skipped_wrong_identity (__main__.VerifierTests.test_zero_failed_skipped_wrong_identity) ... ok
+2026-11-16T08:46:43.6294650Z 
+2026-11-16T08:46:43.6295860Z ----------------------------------------------------------------------
+2026-11-16T08:46:43.6297210Z Ran 7 tests in 0.304s
+2026-11-16T08:46:43.6297780Z 
+2026-11-16T08:46:43.6298140Z OK
+2026-11-16T08:46:43.7393080Z test_actual_dense_cannot_regress_to_stale_or_hidden_framing (test_actual_0710.Actual0710Tests.test_actual_dense_cannot_regress_to_stale_or_hidden_framing) ... ok
+2026-11-16T08:46:43.7394990Z test_actual_dense_has_player_two_nearby_enemies_and_projectile (test_actual_0710.Actual0710Tests.test_actual_dense_has_player_two_nearby_enemies_and_projectile) ... ok
+2026-11-16T08:46:43.7406290Z test_actual_runner_session_loads_current_container (test_actual_0710.Actual0710Tests.test_actual_runner_session_loads_current_container) ... ok
+2026-11-16T08:46:43.9188150Z test_exact_native_result_and_actual_packet (test_actual_0710.Actual0710Tests.test_exact_native_result_and_actual_packet) ... ok
+2026-11-16T08:46:43.9972910Z test_retained_gallery_rebuild_exact_and_scope_disclosed (test_actual_0710.Actual0710Tests.test_retained_gallery_rebuild_exact_and_scope_disclosed) ... ok
+2026-11-16T08:46:44.0014850Z test_changed_image_and_invalid_dimensions_are_red (test_gallery.GalleryTests.test_changed_image_and_invalid_dimensions_are_red) ... ok
+2026-11-16T08:46:44.0043950Z test_labels_are_escaped (test_gallery.GalleryTests.test_labels_are_escaped) ... ok
+2026-11-16T08:46:44.0091580Z test_loader_checks_native_result_before_loading_files (test_gallery.GalleryTests.test_loader_checks_native_result_before_loading_files) ... ok
+2026-11-16T08:46:44.0166530Z test_loader_runs_full_packet_validation (test_gallery.GalleryTests.test_loader_runs_full_packet_validation) ... ok
+2026-11-16T08:46:44.0183770Z test_output_uses_only_ledger_images_and_actual_labels (test_gallery.GalleryTests.test_output_uses_only_ledger_images_and_actual_labels) ... ok
+2026-11-16T08:46:44.0434550Z test_actual_0701_is_rejected_old_schema_not_corrected_evidence (test_validator.EvidenceReaderTests.test_actual_0701_is_rejected_old_schema_not_corrected_evidence) ... ok
+2026-11-16T08:46:44.0755300Z test_actual_stale_attempt_rejected_and_preserved_bytes_match (test_validator.EvidenceReaderTests.test_actual_stale_attempt_rejected_and_preserved_bytes_match) ... ok
+2026-11-16T08:46:44.0782100Z test_native_result_identity_zero_and_skips_fail_closed (test_validator.EvidenceReaderTests.test_native_result_identity_zero_and_skips_fail_closed) ... ok
+2026-11-16T08:46:44.1766060Z test_real_resource_census_is_nonempty_and_paths_exist (test_validator.EvidenceReaderTests.test_real_resource_census_is_nonempty_and_paths_exist) ... ok
+2026-11-16T08:46:44.1808730Z test_reject_acceptance_or_scope_claim (test_validator.EvidenceReaderTests.test_reject_acceptance_or_scope_claim) ... ok
+2026-11-16T08:46:44.1869340Z test_reject_capture_bytes_and_dimension_mutation (test_validator.EvidenceReaderTests.test_reject_capture_bytes_and_dimension_mutation) ... ok
+2026-11-16T08:46:44.1909580Z test_reject_command_bytes_mutation (test_validator.EvidenceReaderTests.test_reject_command_bytes_mutation) ... ok
+2026-11-16T08:46:44.1940290Z test_reject_contract_hash_mutation (test_validator.EvidenceReaderTests.test_reject_contract_hash_mutation) ... ok
+2026-11-16T08:46:44.1997580Z test_reject_duplicate_or_missing_capture (test_validator.EvidenceReaderTests.test_reject_duplicate_or_missing_capture) ... ok
+2026-11-16T08:46:44.2058050Z test_reject_field_off_cone_and_undisclosed_missing_states (test_validator.EvidenceReaderTests.test_reject_field_off_cone_and_undisclosed_missing_states) ... ok
+2026-11-16T08:46:44.2157190Z test_reject_invented_dense_or_camera_state (test_validator.EvidenceReaderTests.test_reject_invented_dense_or_camera_state) ... ok
+2026-11-16T08:46:44.2315630Z test_reject_missing_hidden_or_false_dense_node_intersections (test_validator.EvidenceReaderTests.test_reject_missing_hidden_or_false_dense_node_intersections) ... ok
+2026-11-16T08:46:44.2374560Z test_reject_resource_mutation_and_missing_census (test_validator.EvidenceReaderTests.test_reject_resource_mutation_and_missing_census) ... ok
+2026-11-16T08:46:44.2421200Z test_reject_resource_path_escape (test_validator.EvidenceReaderTests.test_reject_resource_path_escape) ... ok
+2026-11-16T08:46:44.2444780Z test_reject_seeded_replay_or_digest_mismatch (test_validator.EvidenceReaderTests.test_reject_seeded_replay_or_digest_mismatch) ... ok
+2026-11-16T08:46:44.2524180Z test_reject_stale_camera_and_offscreen_crop (test_validator.EvidenceReaderTests.test_reject_stale_camera_and_offscreen_crop) ... ok
+2026-11-16T08:46:44.2568820Z test_source_has_no_state_manufacturing_or_candidate_art (test_validator.EvidenceReaderTests.test_source_has_no_state_manufacturing_or_candidate_art) ... ok
+2026-11-16T08:46:44.2613760Z test_synthetic_reader_control (test_validator.EvidenceReaderTests.test_synthetic_reader_control) ... ok
+2026-11-16T08:46:44.2614450Z 
+2026-11-16T08:46:44.2614810Z ----------------------------------------------------------------------
+2026-11-16T08:46:44.2615480Z Ran 28 tests in 0.526s
+2026-11-16T08:46:44.2616000Z 
+2026-11-16T08:46:44.2616210Z OK
+2026-11-16T08:46:44.2845840Z ##[group]Run python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/playback237-diagnosis-20261116 -p 'test_trace_probe.py' -v
+2026-11-16T08:46:44.2847350Z [36;1mpython3 -B -W error::ResourceWarning -m unittest discover -s docs/review/playback237-diagnosis-20261116 -p 'test_trace_probe.py' -v[0m
+2026-11-16T08:46:44.2901750Z shell: /bin/bash -e {0}
+2026-11-16T08:46:44.2902060Z env:
+2026-11-16T08:46:44.2902580Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:46:44.2903130Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:46:44.2903790Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:46:44.2905000Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:46:44.2905650Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:46:44.2906070Z ##[endgroup]
+2026-11-16T08:46:44.4305940Z test_actual_gaps_and_unattributed_time (test_trace_probe.RetainedPlaybackRegression.test_actual_gaps_and_unattributed_time) ... ok
+2026-11-16T08:46:44.4324900Z test_deleted_observation_is_not_reconstructed (test_trace_probe.RetainedPlaybackRegression.test_deleted_observation_is_not_reconstructed) ... ok
+2026-11-16T08:46:44.4451650Z test_exact_failed_case_and_five_controls (test_trace_probe.RetainedPlaybackRegression.test_exact_failed_case_and_five_controls) ... ok
+2026-11-16T08:46:44.4489970Z test_fail_closed_on_empty_invalid_or_reversed_trace (test_trace_probe.RetainedPlaybackRegression.test_fail_closed_on_empty_invalid_or_reversed_trace) ... ok
+2026-11-16T08:46:44.4966940Z test_regular_retained_control_is_green (test_trace_probe.RetainedPlaybackRegression.test_regular_retained_control_is_green) ... ok
+2026-11-16T08:46:44.4986040Z test_retained_provenance_hashes (test_trace_probe.RetainedPlaybackRegression.test_retained_provenance_hashes) ... ok
+2026-11-16T08:46:44.5354510Z test_strict_cli_remains_red_on_real_failure (test_trace_probe.RetainedPlaybackRegression.test_strict_cli_remains_red_on_real_failure) ... ok
+2026-11-16T08:46:44.5355380Z 
+2026-11-16T08:46:44.5355740Z ----------------------------------------------------------------------
+2026-11-16T08:46:44.5356770Z Ran 7 tests in 0.107s
+2026-11-16T08:46:44.5356990Z 
+2026-11-16T08:46:44.5357330Z OK
+2026-11-16T08:46:44.5460840Z ##[group]Run bash scripts/spec_parity.sh
+2026-11-16T08:46:44.5461160Z [36;1mbash scripts/spec_parity.sh[0m
+2026-11-16T08:46:44.5496100Z shell: /bin/bash -e {0}
+2026-11-16T08:46:44.5496430Z env:
+2026-11-16T08:46:44.5496750Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:46:44.5497300Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-16T08:46:44.5497770Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:46:44.5498190Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:46:44.5498690Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-16T08:46:44.5499020Z ##[endgroup]
+2026-11-16T08:46:44.5882010Z parity: pin is b1ed874e1e8eb0e61b2174b9093201e9a61e1a4b
+2026-11-16T08:46:46.3153710Z parity: OK — every bundled contract and fixture byte-matches SS-specs@b1ed874e1e8eb0e61b2174b9093201e9a61e1a4b
+2026-11-16T08:46:46.3256080Z Post job cleanup.
+2026-11-16T08:46:46.6715240Z (node:5306) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-16T08:46:46.6715880Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-16T08:46:46.6844840Z Post job cleanup.
+2026-11-16T08:46:46.7722240Z [command]/opt/homebrew/bin/git version
+2026-11-16T08:46:46.7815000Z git version 2.56.0
+2026-11-16T08:46:46.7858670Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/204965f4-78c3-4d57-9d2a-a879576f23d3/.gitconfig'
+2026-11-16T08:46:46.7867990Z Temporarily overriding HOME='/Users/runner/work/_temp/204965f4-78c3-4d57-9d2a-a879576f23d3' before making global git config changes
+2026-11-16T08:46:46.7869950Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-16T08:46:46.7873240Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/SS-runtime/SS-runtime
+2026-11-16T08:46:46.7973580Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-16T08:46:46.8051540Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-16T08:46:46.8904090Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-16T08:46:46.8953040Z http.https://github.com/.extraheader
+2026-11-16T08:46:46.8959370Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-16T08:46:46.9020530Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-16T08:46:46.9753190Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-16T08:46:46.9823870Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-16T08:46:47.0671030Z Cleaning up orphan processes
+2026-11-16T08:46:48.2342570Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -1,0 +1,314 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project SSUpgradeReview.xcodeproj -scheme SSUpgradeReview -destination "platform=iOS Simulator,id=84297C74-033E-408F-9622-D36BFF32F74E" -derivedDataPath /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116 -resultBundlePath /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-0836.xcresult -parallel-testing-enabled NO CODE_SIGNING_ALLOWED=NO test
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  SSRuntime: /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114
+
+Writing result bundle at path:
+	/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-0836.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (5 targets)
+    Target 'SSUpgradeReviewUITests' in project 'SSUpgradeReview'
+        ➜ Explicit dependency on target 'SSUpgradeReview' in project 'SSUpgradeReview'
+    Target 'SSUpgradeReview' in project 'SSUpgradeReview'
+        ➜ Explicit dependency on target 'SurveillanceCore' in project 'SSRuntime'
+    Target 'SurveillanceCore' in project 'SSRuntime'
+        ➜ Explicit dependency on target 'SurveillanceCore' in project 'SSRuntime'
+        ➜ Explicit dependency on target 'SSRuntime_SurveillanceCore' in project 'SSRuntime'
+    Target 'SurveillanceCore' in project 'SSRuntime'
+        ➜ Explicit dependency on target 'SSRuntime_SurveillanceCore' in project 'SSRuntime'
+    Target 'SSRuntime_SurveillanceCore' in project 'SSRuntime' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/SDKStatCaches.noindex/iphonesimulator26.5-23F73-6cfe768891a92b912361537c460fe42b.sdkstatcache
+    cd /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116/SSUpgradeReview.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -o /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/SDKStatCaches.noindex/iphonesimulator26.5-23F73-6cfe768891a92b912361537c460fe42b.sdkstatcache
+
+SwiftDriver SSUpgradeReviewUITests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SSUpgradeReviewUITests' from project 'SSUpgradeReview')
+    cd /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name SSUpgradeReviewUITests -Onone @/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target arm64-apple-ios18.0-simulator -g -module-cache-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk/Developer/Library/Frameworks -parse-as-library -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/SDKStatCaches.noindex/iphonesimulator26.5-23F73-6cfe768891a92b912361537c460fe42b.sdkstatcache -output-file-map /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/ModuleCache.noindex -sdk-module-cache-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/SSUpgradeReviewUITests-generated-files.hmap -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/SSUpgradeReviewUITests-own-target-headers.hmap -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/SSUpgradeReviewUITests-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReview-f4513ad356d89295d0e1b6cd6f21d487-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/SSUpgradeReviewUITests-project-headers.hmap -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/DerivedSources-normal/arm64 -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/DerivedSources/arm64 -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests-Swift.h -working-directory /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116 -experimental-emit-module-separately -disable-cmo
+
+Copy /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReview.app/SSRuntime_SurveillanceCore.bundle /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSRuntime_SurveillanceCore.bundle (in target 'SSUpgradeReview' from project 'SSUpgradeReview')
+    cd /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSRuntime_SurveillanceCore.bundle /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReview.app
+
+SwiftCompile normal arm64 Compiling\ UpgradeInteractionTests.swift /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116/UITests/UpgradeInteractionTests.swift (in target 'SSUpgradeReviewUITests' from project 'SSUpgradeReview')
+SwiftCompile normal arm64 /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116/UITests/UpgradeInteractionTests.swift (in target 'SSUpgradeReviewUITests' from project 'SSUpgradeReview')
+    cd /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ SSUpgradeReviewUITests (in target 'SSUpgradeReviewUITests' from project 'SSUpgradeReview')
+
+SwiftCompile normal arm64 /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116/UITests/UpgradeInteractionTests.swift (in target 'SSUpgradeReviewUITests' from project 'SSUpgradeReview')
+    cd /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116
+    
+
+ProcessInfoPlistFile /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReview.app/Info.plist /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReview.build/empty-SSUpgradeReview.plist (in target 'SSUpgradeReview' from project 'SSUpgradeReview')
+    cd /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116
+    builtin-infoPlistUtility /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReview.build/empty-SSUpgradeReview.plist -producttype com.apple.product-type.application -genpkginfo /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReview.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -scanforprivacyfile /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReview.app/SSRuntime_SurveillanceCore.bundle -o /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReview.app/Info.plist
+
+SwiftDriverJobDiscovery normal arm64 Compiling UpgradeInteractionTests.swift (in target 'SSUpgradeReviewUITests' from project 'SSUpgradeReview')
+
+SwiftDriver\ Compilation SSUpgradeReviewUITests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SSUpgradeReviewUITests' from project 'SSUpgradeReview')
+    cd /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name SSUpgradeReviewUITests -Onone @/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target arm64-apple-ios18.0-simulator -g -module-cache-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk/Developer/Library/Frameworks -parse-as-library -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/SDKStatCaches.noindex/iphonesimulator26.5-23F73-6cfe768891a92b912361537c460fe42b.sdkstatcache -output-file-map /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/ModuleCache.noindex -sdk-module-cache-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/SSUpgradeReviewUITests-generated-files.hmap -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/SSUpgradeReviewUITests-own-target-headers.hmap -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/SSUpgradeReviewUITests-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReview-f4513ad356d89295d0e1b6cd6f21d487-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/SSUpgradeReviewUITests-project-headers.hmap -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/DerivedSources-normal/arm64 -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/DerivedSources/arm64 -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests-Swift.h -working-directory /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116 -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for SSUpgradeReviewUITests (in target 'SSUpgradeReviewUITests' from project 'SSUpgradeReview')
+
+SwiftDriver\ Compilation\ Requirements SSUpgradeReviewUITests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SSUpgradeReviewUITests' from project 'SSUpgradeReview')
+    cd /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name SSUpgradeReviewUITests -Onone @/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target arm64-apple-ios18.0-simulator -g -module-cache-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 6 -I /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk/Developer/Library/Frameworks -parse-as-library -c -j10 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/SDKStatCaches.noindex/iphonesimulator26.5-23F73-6cfe768891a92b912361537c460fe42b.sdkstatcache -output-file-map /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/ModuleCache.noindex -sdk-module-cache-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/SSUpgradeReviewUITests-generated-files.hmap -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/SSUpgradeReviewUITests-own-target-headers.hmap -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/SSUpgradeReviewUITests-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReview-f4513ad356d89295d0e1b6cd6f21d487-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/SSUpgradeReviewUITests-project-headers.hmap -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/DerivedSources-normal/arm64 -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/DerivedSources/arm64 -Xcc -I/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests-Swift.h -working-directory /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116 -experimental-emit-module-separately -disable-cmo
+
+Copy /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReviewUITests.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests.abi.json (in target 'SSUpgradeReviewUITests' from project 'SSUpgradeReview')
+    cd /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests.abi.json /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReviewUITests.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReviewUITests.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests.swiftsourceinfo (in target 'SSUpgradeReviewUITests' from project 'SSUpgradeReview')
+    cd /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests.swiftsourceinfo /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReviewUITests.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+Ld /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReviewUITests-Runner.app/PlugIns/SSUpgradeReviewUITests.xctest/SSUpgradeReviewUITests normal (in target 'SSUpgradeReviewUITests' from project 'SSUpgradeReview')
+    cd /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios18.0-simulator -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -O0 -L/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk/Developer/Library/Frameworks -filelist /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests.swiftmodule @/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests-linker-args.resp -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport -o /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReviewUITests-Runner.app/PlugIns/SSUpgradeReviewUITests.xctest/SSUpgradeReviewUITests
+
+ExtractAppIntentsMetadata (in target 'SSUpgradeReviewUITests' from project 'SSUpgradeReview')
+    cd /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name SSUpgradeReviewUITests --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk --xcode-version 17F42 --platform-family iOS --deployment-target 18.0 --bundle-identifier com.zer0state.review.upgrade20261116.tests --output /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReviewUITests-Runner.app/PlugIns/SSUpgradeReviewUITests.xctest --target-triple arm64-apple-ios18.0-simulator --binary-file /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReviewUITests-Runner.app/PlugIns/SSUpgradeReviewUITests.xctest/SSUpgradeReviewUITests --dependency-file /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests_dependency_info.dat --stringsdata-file /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests.SwiftFileList --metadata-file-list /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/SSUpgradeReviewUITests.DependencyMetadataFileList --static-metadata-file-list /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/SSUpgradeReviewUITests.DependencyStaticMetadataFileList --swift-const-vals-list /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/Objects-normal/arm64/SSUpgradeReviewUITests.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-11-16 00:36:27.760 appintentsmetadataprocessor[64038:12355190] Starting appintentsmetadataprocessor export
+2026-11-16 00:36:27.765 appintentsmetadataprocessor[64038:12355190] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+CopySwiftLibs /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReviewUITests-Runner.app/PlugIns/SSUpgradeReviewUITests.xctest (in target 'SSUpgradeReviewUITests' from project 'SSUpgradeReview')
+    cd /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/upgrade-interaction-20261116
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReviewUITests-Runner.app/PlugIns/SSUpgradeReviewUITests.xctest/SSUpgradeReviewUITests --scan-folder /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReviewUITests-Runner.app/PlugIns/SSUpgradeReviewUITests.xctest/Frameworks --scan-folder /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReviewUITests-Runner.app/PlugIns/SSUpgradeReviewUITests.xctest/PlugIns --scan-folder /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReviewUITests-Runner.app/PlugIns/SSUpgradeReviewUITests.xctest/SystemExtensions --scan-folder /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReviewUITests-Runner.app/PlugIns/SSUpgradeReviewUITests.xctest/Extensions --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Products/Debug-iphonesimulator/SSUpgradeReviewUITests-Runner.app/PlugIns/SSUpgradeReviewUITests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-derived-20261116/Build/Intermediates.noindex/SSUpgradeReview.build/Debug-iphonesimulator/SSUpgradeReviewUITests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+Ignoring --strip-bitcode because --sign was not passed
+
+2026-11-16 00:36:33.074790-0800 SSUpgradeReviewUITests-Runner[64382:12356218] [Default] Running tests...
+2026-11-16 00:36:33.198871-0800 SSUpgradeReviewUITests-Runner[64382:12356487] [General] Failed to send CA Event for app launch measurements for ca_event_type: 0 event_name: com.apple.app_launch_measurement.FirstFramePresentationMetric
+    t =      nans Interface orientation changed to Landscape Right
+Test Suite 'All tests' started at 2026-11-16 00:36:36.561.
+Test Suite 'SSUpgradeReviewUITests.xctest' started at 2026-11-16 00:36:36.563.
+Test Suite 'UpgradeInteractionTests' started at 2026-11-16 00:36:36.563.
+Test Case '-[SSUpgradeReviewUITests.UpgradeInteractionTests testAccessibility3ScrollsToLastAndSelects]' started.
+    t =     0.01s Start Test at 2026-11-16 00:36:36.571
+    t =     0.06s Set Up
+    t =     0.08s Setting device orientation to Landscape Left
+    t =     0.13s     Wait for com.zer0state.review.upgrade20261116 to idle
+    t =     0.61s Open com.zer0state.review.upgrade20261116
+    t =     0.61s     Launch com.zer0state.review.upgrade20261116
+    t =     0.61s         Terminate com.zer0state.review.upgrade20261116:60078
+    t =     0.74s             Interface orientation changed to Portrait
+2026-11-16 00:36:38.454 xcodebuild[63345:12353562] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-11-16 00:36:38.454 xcodebuild[63345:12353562] [MT] IDELaunchParametersSnapshot: no debugger version
+objc[64382]: Class UIAccessibilityLoaderWebShared is implemented in both /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x10aa1c310) and /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x10ab18398). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+2026-11-16 00:36:39.217948-0800 SSUpgradeReviewUITests-Runner[64382:12356502] [General] Failed to send CA Event for app launch measurements for ca_event_type: 1 event_name: com.apple.app_launch_measurement.ExtendedLaunchMetrics
+    t =     7.13s         Interface orientation changed to Landscape Right
+    t =     7.19s         Setting up automation session
+Resolve Package Graph
+
+    t =    10.90s         Wait for com.zer0state.review.upgrade20261116 to idle
+    t =    12.98s Waiting 15.0s for "review-selection-result" StaticText to exist
+    t =    14.00s     Checking `Expect predicate `existsNoRetry == 1` for object "review-selection-result" StaticText`
+    t =    14.00s         Checking existence of `"review-selection-result" StaticText`
+    t =    14.31s Find the "review-selection-result" StaticText
+    t =    14.36s Waiting 5.0s for ScrollView (First Match) to exist
+    t =    15.38s     Checking `Expect predicate `existsNoRetry == 1` for object ScrollView (First Match)`
+    t =    15.39s         Checking existence of `ScrollView (First Match)`
+    t =    15.41s Checking existence of `"upgrade-ghostStep" Button`
+    t =    15.54s Added attachment named 'ghostStep---accessibility3-before'
+    t =    15.55s Checking existence of `"upgrade-ghostStep" Button`
+    t =    15.58s Swipe up ScrollView (First Match)
+    t =    15.58s     Wait for com.zer0state.review.upgrade20261116 to idle
+    t =    15.59s     Find the ScrollView (First Match)
+    t =    15.62s     Check for interrupting elements affecting ScrollView
+    t =    15.66s     Synthesize event
+    t =    16.13s     Wait for com.zer0state.review.upgrade20261116 to idle
+Resolve Package Graph
+    t =    18.24s Checking existence of `"upgrade-ghostStep" Button`
+    t =    18.32s Find the "upgrade-ghostStep" Button
+
+    t =    18.41s Swipe up ScrollView at {{0.0, 0.0}, {667.0, 375.0}}
+    t =    18.41s     Wait for com.zer0state.review.upgrade20261116 to idle
+    t =    18.41s     Find the ScrollView at {{0.0, 0.0}, {667.0, 375.0}}
+    t =    18.49s     Check for interrupting elements affecting ScrollView
+    t =    18.54s     Synthesize event
+    t =    19.01s     Wait for com.zer0state.review.upgrade20261116 to idle
+Resolve Package Graph
+
+    t =    21.16s Checking existence of `"upgrade-ghostStep" Button`
+    t =    21.22s Find the "upgrade-ghostStep" Button
+    t =    21.32s Checking existence of `"upgrade-ghostStep" Button`
+    t =    21.36s Find the "upgrade-ghostStep" Button
+    t =    21.44s Find the "upgrade-ghostStep" Button
+    t =    21.48s Find the "review-selection-result" StaticText
+    t =    21.51s Find the "upgrade-ghostStep" Button
+    t =    21.63s Added attachment named 'ghostStep---accessibility3-reachable'
+    t =    21.65s Tap "upgrade-ghostStep" Button
+    t =    21.65s     Wait for com.zer0state.review.upgrade20261116 to idle
+    t =    21.65s     Find the "upgrade-ghostStep" Button
+    t =    21.70s     Check for interrupting elements affecting "upgrade-ghostStep" Button
+    t =    21.74s     Synthesize event
+    t =    22.11s     Wait for com.zer0state.review.upgrade20261116 to idle
+    t =    23.30s Checking `Expect predicate `label == "selected=2;count=1"` for object "review-selection-result" StaticText`
+    t =    23.30s     Find the "review-selection-result" StaticText
+    t =    23.35s Find the "upgrade-ghostStep" Button
+    t =    23.47s Added attachment named 'ghostStep---accessibility3-selected'
+    t =    23.48s Find the "review-selection-result" StaticText
+    t =    23.52s Find the Window (First Match)
+    t =    23.54s Find the Window (First Match)
+    t =    23.56s Added attachment named 'upgrade-interaction---accessibility3'
+    t =    23.56s Terminate com.zer0state.review.upgrade20261116:64867
+    t =    23.73s     Interface orientation changed to Portrait
+    t =    24.61s Tear Down
+Test Case '-[SSUpgradeReviewUITests.UpgradeInteractionTests testAccessibility3ScrollsToLastAndSelects]' passed (24.686 seconds).
+Test Case '-[SSUpgradeReviewUITests.UpgradeInteractionTests testAccessibility5ScrollsToLastAndSelects]' started.
+    t =     0.00s Start Test at 2026-11-16 00:37:01.257
+    t =     0.04s Set Up
+    t =     0.05s Setting device orientation to Landscape Left
+    t =     0.07s     Wait for com.apple.springboard to idle
+    t =     0.08s Open com.zer0state.review.upgrade20261116
+    t =     0.08s     Launch com.zer0state.review.upgrade20261116
+2026-11-16 00:37:01.401 xcodebuild[63345:12353562] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-11-16 00:37:01.401 xcodebuild[63345:12353562] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     0.54s         Interface orientation changed to Landscape Right
+    t =     0.58s         Setting up automation session
+    t =     4.27s         Wait for com.zer0state.review.upgrade20261116 to idle
+    t =     6.29s Waiting 15.0s for "review-selection-result" StaticText to exist
+    t =     7.39s     Checking `Expect predicate `existsNoRetry == 1` for object "review-selection-result" StaticText`
+    t =     7.39s         Checking existence of `"review-selection-result" StaticText`
+    t =     7.56s Find the "review-selection-result" StaticText
+    t =     7.60s Waiting 5.0s for ScrollView (First Match) to exist
+    t =     8.68s     Checking `Expect predicate `existsNoRetry == 1` for object ScrollView (First Match)`
+    t =     8.68s         Checking existence of `ScrollView (First Match)`
+    t =     8.70s Checking existence of `"upgrade-ghostStep" Button`
+    t =     8.83s Added attachment named 'ghostStep---accessibility5-before'
+    t =     8.83s Checking existence of `"upgrade-ghostStep" Button`
+    t =     8.87s Swipe up ScrollView (First Match)
+    t =     8.87s     Wait for com.zer0state.review.upgrade20261116 to idle
+    t =     8.88s     Find the ScrollView (First Match)
+    t =     8.93s     Check for interrupting elements affecting ScrollView
+    t =     8.99s     Synthesize event
+    t =     9.47s     Wait for com.zer0state.review.upgrade20261116 to idle
+    t =    11.58s Checking existence of `"upgrade-ghostStep" Button`
+    t =    11.62s Swipe up ScrollView at {{0.0, 0.0}, {667.0, 375.0}}
+    t =    11.62s     Wait for com.zer0state.review.upgrade20261116 to idle
+    t =    11.62s     Find the ScrollView at {{0.0, 0.0}, {667.0, 375.0}}
+    t =    11.65s     Check for interrupting elements affecting ScrollView
+    t =    11.69s     Synthesize event
+    t =    12.16s     Wait for com.zer0state.review.upgrade20261116 to idle
+Resolve Package Graph
+
+    t =    14.26s Checking existence of `"upgrade-ghostStep" Button`
+    t =    14.30s Find the "upgrade-ghostStep" Button
+    t =    14.38s Checking existence of `"upgrade-ghostStep" Button`
+    t =    14.43s Find the "upgrade-ghostStep" Button
+    t =    14.50s Find the "upgrade-ghostStep" Button
+    t =    14.54s Find the "review-selection-result" StaticText
+    t =    14.59s Find the "upgrade-ghostStep" Button
+    t =    14.71s Added attachment named 'ghostStep---accessibility5-reachable'
+    t =    14.72s Tap "upgrade-ghostStep" Button
+    t =    14.72s     Wait for com.zer0state.review.upgrade20261116 to idle
+    t =    14.72s     Find the "upgrade-ghostStep" Button
+    t =    14.77s     Check for interrupting elements affecting "upgrade-ghostStep" Button
+    t =    14.82s     Synthesize event
+    t =    15.14s     Wait for com.zer0state.review.upgrade20261116 to idle
+    t =    16.22s Checking `Expect predicate `label == "selected=2;count=1"` for object "review-selection-result" StaticText`
+    t =    16.22s     Find the "review-selection-result" StaticText
+    t =    16.27s Find the "upgrade-ghostStep" Button
+    t =    16.40s Added attachment named 'ghostStep---accessibility5-selected'
+    t =    16.40s Find the "review-selection-result" StaticText
+    t =    16.45s Find the Window (First Match)
+    t =    16.47s Find the Window (First Match)
+    t =    16.50s Added attachment named 'upgrade-interaction---accessibility5'
+    t =    16.50s Terminate com.zer0state.review.upgrade20261116:65900
+    t =    16.67s     Interface orientation changed to Portrait
+    t =    17.55s Tear Down
+Test Case '-[SSUpgradeReviewUITests.UpgradeInteractionTests testAccessibility5ScrollsToLastAndSelects]' passed (17.574 seconds).
+Test Case '-[SSUpgradeReviewUITests.UpgradeInteractionTests testDefaultTouchSelectsFirst]' started.
+    t =     0.00s Start Test at 2026-11-16 00:37:18.834
+    t =     0.04s Set Up
+    t =     0.04s Setting device orientation to Landscape Left
+    t =     0.06s     Wait for com.apple.springboard to idle
+    t =     0.07s Open com.zer0state.review.upgrade20261116
+    t =     0.08s     Launch com.zer0state.review.upgrade20261116
+2026-11-16 00:37:18.911 xcodebuild[63345:12353562] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-11-16 00:37:18.911 xcodebuild[63345:12353562] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     0.51s         Interface orientation changed to Landscape Right
+    t =     0.53s         Setting up automation session
+Resolve Package Graph
+
+    t =     3.98s         Wait for com.zer0state.review.upgrade20261116 to idle
+    t =     6.04s Waiting 15.0s for "review-selection-result" StaticText to exist
+    t =     7.08s     Checking `Expect predicate `existsNoRetry == 1` for object "review-selection-result" StaticText`
+    t =     7.08s         Checking existence of `"review-selection-result" StaticText`
+    t =     7.30s Find the "review-selection-result" StaticText
+    t =     7.35s Waiting 5.0s for ScrollView (First Match) to exist
+    t =     8.43s     Checking `Expect predicate `existsNoRetry == 1` for object ScrollView (First Match)`
+    t =     8.43s         Checking existence of `ScrollView (First Match)`
+    t =     8.46s Checking existence of `"upgrade-signalJammer" Button`
+    t =     8.50s Find the "upgrade-signalJammer" Button
+    t =     8.66s Added attachment named 'signalJammer-default-before'
+    t =     8.67s Checking existence of `"upgrade-signalJammer" Button`
+    t =     8.71s Find the "upgrade-signalJammer" Button
+    t =     8.80s Checking existence of `"upgrade-signalJammer" Button`
+    t =     8.84s Find the "upgrade-signalJammer" Button
+    t =     8.92s Find the "upgrade-signalJammer" Button
+    t =     8.97s Find the "review-selection-result" StaticText
+    t =     9.04s Find the "upgrade-signalJammer" Button
+Resolve Package Graph
+
+    t =     9.16s Added attachment named 'signalJammer-default-reachable'
+    t =     9.17s Tap "upgrade-signalJammer" Button
+    t =     9.17s     Wait for com.zer0state.review.upgrade20261116 to idle
+    t =     9.18s     Find the "upgrade-signalJammer" Button
+    t =     9.25s     Check for interrupting elements affecting "upgrade-signalJammer" Button
+    t =     9.31s     Synthesize event
+    t =     9.64s     Wait for com.zer0state.review.upgrade20261116 to idle
+    t =    10.70s Checking `Expect predicate `label == "selected=0;count=1"` for object "review-selection-result" StaticText`
+    t =    10.71s     Find the "review-selection-result" StaticText
+    t =    10.76s Find the "upgrade-signalJammer" Button
+    t =    10.90s Added attachment named 'signalJammer-default-selected'
+    t =    10.92s Find the "review-selection-result" StaticText
+    t =    10.97s Find the Window (First Match)
+    t =    10.99s Find the Window (First Match)
+    t =    11.02s Added attachment named 'upgrade-interaction-default'
+    t =    11.02s Terminate com.zer0state.review.upgrade20261116:66641
+    t =    11.19s     Interface orientation changed to Portrait
+    t =    12.04s Tear Down
+Test Case '-[SSUpgradeReviewUITests.UpgradeInteractionTests testDefaultTouchSelectsFirst]' passed (12.059 seconds).
+Test Suite 'UpgradeInteractionTests' passed at 2026-11-16 00:37:30.893.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 54.318 (54.329) seconds
+Test Suite 'SSUpgradeReviewUITests.xctest' passed at 2026-11-16 00:37:30.894.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 54.318 (54.331) seconds
+Test Suite 'All tests' passed at 2026-11-16 00:37:30.897.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 54.318 (54.336) seconds
+2026-11-16 00:37:31.384 xcodebuild[63345:12353562] [MT] IDETestOperationsObserverDebug: 63.407 elapsed -- Testing started completed.
+2026-11-16 00:37:31.384 xcodebuild[63345:12353562] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-11-16 00:37:31.384 xcodebuild[63345:12353562] [MT] IDETestOperationsObserverDebug: 63.407 sec, +63.407 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/appliedalchemylabs/.jcode/scratch/ss-upgrade-ui-0836.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started

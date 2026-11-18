@@ -1,0 +1,27 @@
+diff --git a/FACTS.md b/FACTS.md
+index fa6a1c0..292b4c6 100644
+--- a/FACTS.md
++++ b/FACTS.md
+@@ -1,5 +1,9 @@
+ # Corrected project facts
+ 
++## November 17, 2026, 01:55UTC: Production execution authorized
++
++The later ASTRA execution directive authorizes reversible Level1 engineering, QA, asset correction and actual simulator evaluation. Historical no-new-render/native stop language below describes the earlier bounded work orders, not a blanket stop under this new directive. The one-building correction remains binding: preserve neighboring buildings as references. Art acceptance, changed gameplay contracts, merge/release/deployment and paid external generation remain separately gated.
++
+ ## November 17, 2026, 01:51UTC: Only the Camera-adjacent building stands out
+ 
+ Owner clarified that only the single building beside the Camera post stands out for odd geometry and spacing compared with the other buildings. This supersedes the earlier scene-wide interpretation below. Treat the surrounding buildings as unchanged visual references, not additional redesign targets. The published comparison's residential and civic changes are not requested corrections or accepted changes. Do not reduce the concern to scale alone or invent a resizing percentage: geometry and spacing are the reported symptoms, not an established cause. Preserve published evidence. This clarification does not authorize another render attempt, footprint/collision changes, relocation of the Camera/Player, or native execution.
+diff --git a/docs/handoff/NEXT.md b/docs/handoff/NEXT.md
+index e507876..c0ca660 100644
+--- a/docs/handoff/NEXT.md
++++ b/docs/handoff/NEXT.md
+@@ -4,7 +4,7 @@
+ 
+ Current owner directive authorizes continuous reversible engineering, QA and art-production work within accepted Level1 requirements. It supersedes the prior stop-only-for-proportion-review instruction as a general work stop, but does not grant art acceptance, merges, releases, deployment, paid asset generation or changed gameplay. Only the Camera-adjacent building is the identified geometry/spacing outlier; keep neighboring buildings unchanged as references.
+ 
+-Live backlog/evidence matrix: `docs/review/production-execution-20261117/README.md`. Scope: `intent/2026-11-17-production-qualification.md`. Runtime256 CI temporary-root alias repaired and pushed asf302727:5regressions,46scene tests, retained6capture/18image/9baseline checks and1766protected files pass. Runtime257 gate census now includes all120accepted gates;25release-evidence tests pass after4red tests/18assertions. Runtime258 uses isolated parity checkouts;2lifecycle regressions and actual pinned byte-parity pass. Host CI partitions and focused native Debug qualification are running. Runtime259 records a separate35s traversal timeout at314/290of380samples, not a compiler error; do not reduce sample requirements. Do not overwrite unrelated untracked art packets or separate receiptPR235/specsPR115 work. No physical-device result or RC qualification claimed. Continue unblocked implementation after each slice.
++Live backlog/evidence matrix: `docs/review/production-execution-20261117/README.md`. Scope: `intent/2026-11-17-production-qualification.md`. Runtime256 CI temporary-root alias repaired and pushed asf302727:5regressions,46scene tests, retained6capture/18image/9baseline checks and1766protected files pass. Runtime257 gate census now includes all120accepted gates;25release-evidence tests pass after4red tests/18assertions. Runtime258 uses isolated parity checkouts;2lifecycle regressions and actual pinned byte-parity pass. Host partitions have passed separately (850core,9placement,1fairness); the combined invocation hit its600second deadline during fairness and is not an exit0 run. Fresh Debug qualification passed27tests and validated52actual traversal captures/1073delivered resource bindings. Fresh Release passed25tests. See `QUALIFICATION.md` and retained summaries/logs. Encounter/presentation qualification is running; Rhino owns only the new kiosk-only geometry packet, not neighboring buildings. Runtime259 records a separate35s traversal timeout at314/290of380samples, not a compiler error; do not reduce sample requirements. Do not overwrite unrelated untracked art packets or separate receiptPR235/specsPR115 work. No physical-device result or RC qualification claimed. Continue unblocked implementation after each slice.
+ 
+ ## Owner narrows concern to one building, November17 01:51UTC
+ 

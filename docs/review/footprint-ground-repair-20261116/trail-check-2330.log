@@ -1,0 +1,124 @@
+[stderr] ⚠ the diff is over 400 KB; only the first 400 KB is checked
+checking 119 changed files against 5 learnings and 0 skills
+
+✗ .github/workflows/ci.yml:138
+  brings back test ground native, which Daniel's learning ruled out
+  Daniel · Nov 16: Unwrapped frameIndex in
+  AppTests/PlayerGroundContactNativeTests.swift froze900 of1200
+  fixed-time records in the first native run.
+● .github/workflows/ci.yml:138
+  brings back doc review scene, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16:
+  docs/review/building-perspective-detail-20261116/scene/native.py
+  validates registered corners, including a virtual omitted kiosk
+  chamfer corner.
+● AppTests/FootprintGroundSceneTests.swift:5
+  brings back frame index apptest, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16: Unwrapped frameIndex in
+  AppTests/PlayerGroundContactNativeTests.swift froze900 of1200
+  fixed-time records in the first native run.
+● AppTests/FootprintGroundSceneTests.swift:5
+  brings back test app screenshot, which Jcode's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Jcode · Nov 16: Upgrade interaction tests passed while
+  app.screenshot() produced cropped/misoriented landscape screenshots.
+● AppTests/FootprintGroundSceneTests.swift:9
+  brings back doc review build, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16:
+  docs/review/building-perspective-detail-20261116/scene/native.py
+  validates registered corners, including a virtual omitted kiosk
+  chamfer corner.
+● AppTests/FootprintGroundSceneTests.swift:9
+  brings back whole scene coverage, which Jcode's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Jcode · Nov 16: A whole-scene coverage row referenced an unpublished
+  enemy-source directory and failed clean CI (#242).
+● docs/handoff/NEXT.md:5
+  brings back scene source failed, which Jcode's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Jcode · Nov 16: A whole-scene coverage row referenced an unpublished
+  enemy-source directory and failed clean CI (#242).
+● docs/review/footprint-ground-repair-20261116/NATIVE-ORACLE-253.md:1
+  brings back app test ground, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16: Unwrapped frameIndex in
+  AppTests/PlayerGroundContactNativeTests.swift froze900 of1200
+  fixed-time records in the first native run.
+● docs/review/footprint-ground-repair-20261116/NATIVE-ORACLE-253.md:1
+  brings back three exact storage, which Daniel's learning ruled out
+  worth a look, can't fail the check: not on the base branch yet
+  Daniel · Nov 16: Three exact-storage/sourceguard regressions protect
+  the narrow correction.
+● docs/review/footprint-ground-repair-20261116/NATIVE-ORACLE-253.md:1
+  brings back review build scene, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16:
+  docs/review/building-perspective-detail-20261116/scene/native.py
+  validates registered corners, including a virtual omitted kiosk
+  chamfer corner.
+● docs/review/footprint-ground-repair-20261116/NATIVE-ORACLE-253.md:3
+  brings back scene source failed, which Jcode's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Jcode · Nov 16: A whole-scene coverage row referenced an unpublished
+  enemy-source directory and failed clean CI (#242).
+● docs/review/footprint-ground-repair-20261116/REVIEW-FINAL.md:1
+  brings back review build scene, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16:
+  docs/review/building-perspective-detail-20261116/scene/native.py
+  validates registered corners, including a virtual omitted kiosk
+  chamfer corner.
+● docs/review/footprint-ground-repair-20261116/REVIEW-FINAL.md:5
+  brings back test player ground, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16: Unwrapped frameIndex in
+  AppTests/PlayerGroundContactNativeTests.swift froze900 of1200
+  fixed-time records in the first native run.
+● docs/review/footprint-ground-repair-20261116/REVIEW-FINAL.md:9
+  brings back capture without production, which Jcode's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Jcode · Nov 16: XCUIScreen.main.screenshot() corrected capture without
+  changing production UI or interaction assertions.
+● docs/review/footprint-ground-repair-20261116/REVIEW-FINAL.md:22
+  brings back broad tolerance depth, which Daniel's learning ruled out
+  worth a look, can't fail the check: not on the base branch yet
+  Daniel · Nov 16: Adding a broad float tolerance or dropping the depth
+  assertion would conceal unrelated depth changes.
+● docs/review/footprint-ground-repair-20261116/browser-check-2328.json:2
+  brings back index ground native, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16: Unwrapped frameIndex in
+  AppTests/PlayerGroundContactNativeTests.swift froze900 of1200
+  fixed-time records in the first native run.
+● docs/review/footprint-ground-repair-20261116/browser-check-2328.json:2
+  brings back doc review native, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16:
+  docs/review/building-perspective-detail-20261116/scene/native.py
+  validates registered corners, including a virtual omitted kiosk
+  chamfer corner.
+● docs/review/footprint-ground-repair-20261116/browser-preflight.json:4
+  brings back index ground native, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16: Unwrapped frameIndex in
+  AppTests/PlayerGroundContactNativeTests.swift froze900 of1200
+  fixed-time records in the first native run.
+● docs/review/footprint-ground-repair-20261116/browser-preflight.json:4
+  brings back doc review build, which Daniel's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Daniel · Nov 16:
+  docs/review/building-perspective-detail-20261116/scene/native.py
+  validates registered corners, including a virtual omitted kiosk
+  chamfer corner.
+● docs/review/footprint-ground-repair-20261116/browser-preflight.json:5
+  brings back capture without chang, which Jcode's learning ruled out
+  worth a look, can't fail the check: not about this file
+  Jcode · Nov 16: XCUIScreen.main.screenshot() corrected capture without
+  changing production UI or interaction assertions.
+
+· 1 conflict · fix it, or say why in the commit message or PR description
+
+--- Command finished with exit code: 1 ---

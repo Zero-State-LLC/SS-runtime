@@ -1,0 +1,68 @@
+[stderr] test_basis_vectors_and_upright (__main__.KioskTests.test_basis_vectors_and_upright) ... ok
+[stderr] test_canvas_rederived_uniform_scale (__main__.KioskTests.test_canvas_rederived_uniform_scale) ... ok
+[stderr] test_exact_landmarks (__main__.KioskTests.test_exact_landmarks) ... ok
+[stderr] test_explicit_ground_boundary (__main__.KioskTests.test_explicit_ground_boundary) ... ok
+[stderr] test_export_roundtrip_and_actual_obj_mutation (__main__.KioskTests.test_export_roundtrip_and_actual_obj_mutation) ... ok
+[stderr] test_footprint_height_and_chamfer (__main__.KioskTests.test_footprint_height_and_chamfer) ... ok
+[stderr] test_geometry_mutation_active (__main__.KioskTests.test_geometry_mutation_active) ... ok
+[stderr] test_isolated_replay (__main__.KioskTests.test_isolated_replay) ... ok
+[stderr] test_manifest_hashes (__main__.KioskTests.test_manifest_hashes) ... ok
+[stderr] test_material_mutation_active (__main__.KioskTests.test_material_mutation_active) ... ok
+[stderr] test_real_parapet_and_treads (__main__.KioskTests.test_real_parapet_and_treads) ... ok
+[stderr] test_uv_bounds_materials_and_output (__main__.KioskTests.test_uv_bounds_materials_and_output) ... ok
+[stderr] test_uv_mutation_active (__main__.KioskTests.test_uv_mutation_active) ... ok
+[stderr] 
+[stderr] ----------------------------------------------------------------------
+[stderr] Ran 13 tests in 15.087s
+[stderr] 
+[stderr] OK
+[stderr] test_all_geometric_landmarks_fit_registered_canvas (__main__.ContextTests.test_all_geometric_landmarks_fit_registered_canvas) ... ok
+[stderr] test_alpha_and_native_half_sizes (__main__.ContextTests.test_alpha_and_native_half_sizes) ... ok
+[stderr] test_every_vertex_is_inside_original_footprint (__main__.ContextTests.test_every_vertex_is_inside_original_footprint) ... ok
+[stderr] test_exact_role_roots_authority_and_inverse_alignment (__main__.ContextTests.test_exact_role_roots_authority_and_inverse_alignment) ... ok
+[stderr] test_nonaffine_uv_or_geometry_fails_closed (__main__.ContextTests.test_nonaffine_uv_or_geometry_fails_closed) ... ok
+[stderr] test_provenance_and_manifest (__main__.ContextTests.test_provenance_and_manifest) ... ok
+[stderr] test_registration_mutations_rejected (__main__.ContextTests.test_registration_mutations_rejected) ... ok
+[stderr] test_roof_density_rejects_original_rectangular_stretch (__main__.ContextTests.test_roof_density_rejects_original_rectangular_stretch) ... ok
+[stderr] test_roof_uv_density_is_world_consistent (__main__.ContextTests.test_roof_uv_density_is_world_consistent) ... ok
+[stderr] test_standalone_replay_is_byte_identical (__main__.ContextTests.test_standalone_replay_is_byte_identical) ... ok
+[stderr] test_uv_geometry_and_material_editability (__main__.ContextTests.test_uv_geometry_and_material_editability) ... ok
+[stderr] 
+[stderr] ----------------------------------------------------------------------
+[stderr] Ran 11 tests in 26.449s
+[stderr] 
+[stderr] OK
+[stderr] .........................................
+[stderr] ----------------------------------------------------------------------
+[stderr] Ran 41 tests in 21.806s
+[stderr] 
+[stderr] OK
+[stderr] Traceback (most recent call last):
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/building-perspective-detail-20261116/scene/retained.py", line 38, in <module>
+[stderr]     print(json.dumps(verify(args.capture, args.prepared, args.test_executable), indent=2))
+[stderr]                      ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/building-perspective-detail-20261116/scene/retained.py", line 24, in verify
+[stderr]     result = _verify(capture, Path(prepared) if prepared else HERE / n.PREPARED_DIR)
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/scene-qa-repair-20261116/retained.py", line 37, in verify
+[stderr]     n.a.need(inputs == n.expected_input(), 'Retained preparation is not current exact binding')
+[stderr]                        ~~~~~~~~~~~~~~~~^^
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/building-perspective-detail-20261116/scene/native.py", line 170, in expected_input
+[stderr]     m = validate_manifest(load(manifest), root)
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/building-perspective-detail-20261116/scene/native.py", line 144, in validate_manifest
+[stderr]     v6.expected_input(root, V6 / 'assembly.json')
+[stderr]     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/scene-qa-framing-20261116/native.py", line 61, in expected_input
+[stderr]     prepared = v5.expected_input(root, manifest)
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/scene-qa-repair-20261116/native.py", line 124, in expected_input
+[stderr]     blockers, _ = a.validate(m, root)
+[stderr]                   ~~~~~~~~~~^^^^^^^^^
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/scene-source-assembly-20261116/assemble.py", line 95, in validate
+[stderr]     tracked = tracking(root)
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/scene-source-assembly-20261116/assemble.py", line 53, in tracking
+[stderr]     need(record.is_file(), 'No Git tracking or explicit exported tracking receipt')
+[stderr]     ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/building-review-clean-2242/docs/review/scene-source-assembly-20261116/assemble.py", line 26, in need
+[stderr]     raise Invalid(message)
+[stderr] _scene_qa_v5_assemble.Invalid: No Git tracking or explicit exported tracking receipt
+
+--- Command finished with exit code: 1 ---

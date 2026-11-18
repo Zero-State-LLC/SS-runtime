@@ -1,0 +1,171 @@
+{
+  "exports": {
+    "alpha-on-black.png": "77abf7d2fa56ee84679324b49d349419715538d39c8560e3542b916cc99c8a6a",
+    "alpha-on-white.png": "dacccf60b71bfe25da340551ada48562b699a26e273443d3c8e0f87fca233cf9",
+    "camera-half.png": "589116c6a975a10fc78c3a58c2d1112a3f2629e0a66b98df4219d64840967762",
+    "camera-master.png": "8da15902c4887aa2e4dba5749a6d532c467c43b4879bc55b5488aa46cf4e8f01",
+    "camera-native.png": "ed6bfbeb80480623c88901a3cfddf5670c99c93218f1bf7607a550a9f3c8e506",
+    "comparison-grayscale.png": "33bb6cac20ff01eb94f8a68343046e9a7ecf5cb184b42115866391f333c97e2f",
+    "comparison.png": "f3b66390ebf76130c2776696790ac46250561cd88a0a2f462cbaeb4bf965a124",
+    "layers/complete-head.png": "72dd4d690978bc1517fa340e5acb2f6a9d893cd20ecddd1b478cb983cdc74232",
+    "layers/complete-pole.png": "fdd63cc004ea8850708770b1bcc84af4405f1f6eda58b79f802cf9c7d3dc05d3",
+    "layers/junction-box.png": "2de95c05125832a885bb2fc06780b81c7e931b4a6d0be6c8789ac288a35c1670",
+    "ordinary-background-context.png": "b54bef55653e973e58ec1f09e66400918d6129705f4fd72232bc66ce4a96c7ea",
+    "source-layers/complete-head.png": "27b59e75218ca4bb6c4bd52864090a17fd9e38a7d0c2d87469ceadb478663472",
+    "source-layers/complete-pole.png": "12380dd34564e2621b157fa81dbec685c29c714850e04b60e475782e50a6868b",
+    "source-layers/junction-box.png": "81602304492573afd341181bf1f44d71ff6030d9140ff3df7c1d332143d78337"
+  },
+  "inputs": {
+    "components-generation.json": {
+      "bytes": 4469,
+      "sha256": "7ccb43be2339156cfcc636cd0e95ae001005173dbe6bbe7959ed9794b24e8a4e"
+    },
+    "components.png": {
+      "actualSize": [
+        1254,
+        1254
+      ],
+      "bytes": 613731,
+      "embeddedMetadata": {},
+      "mode": "RGBA",
+      "sha256": "37683eb549827eed1245609c0285cba7163ca88d98f119c737226da959ecbf02"
+    },
+    "junction-box-generation.json": {
+      "bytes": 2823,
+      "sha256": "fa17b6ed1beffcb70239d699763eb23eede8ee04e7ba36b39887bb6921452bde"
+    },
+    "junction-box.png": {
+      "actualSize": [
+        1254,
+        1254
+      ],
+      "bytes": 419084,
+      "embeddedMetadata": {},
+      "mode": "RGBA",
+      "sha256": "3cfb6445a273a6fe4d2a4279a5afeab5a0069ccdecb64e39db3989bc0c79b4bf"
+    },
+    "paving.png": {
+      "actualSize": [
+        1254,
+        1254
+      ],
+      "bytes": 2689986,
+      "embeddedMetadata": {},
+      "mode": "RGB",
+      "sha256": "c0decdab226512a790ddecf49cf703c9fc736f7943f11bc364b76b111b7c3125"
+    },
+    "reference.png": {
+      "actualSize": [
+        1672,
+        941
+      ],
+      "bytes": 2904132,
+      "embeddedMetadata": {},
+      "mode": "RGB",
+      "sha256": "49aa35447230187e3eabe948cdc8eba6d6d465b2605d624e2cf7443f6cb69ffb"
+    }
+  },
+  "modelSHA256": "77071e2c16d858796d85dc41b6a61cb948c617fa7d2df1ef45383e2870c7ad96",
+  "nativeCapture": false,
+  "ownerAccepted": false,
+  "pillow": "12.3.0",
+  "productionAdmitted": false,
+  "python": "3.14.5",
+  "rendererSHA256": "ed12aea091b96d6576a012c525875783392c89e362c469c9dea7f50f56ec828d",
+  "sizes": {
+    "canvas": [
+      180,
+      450
+    ],
+    "half": [
+      21,
+      52
+    ],
+    "native": [
+      42,
+      104
+    ]
+  },
+  "sourceInspection": {
+    "complete-head": {
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "crop": [
+        680,
+        380,
+        1090,
+        770
+      ],
+      "cropBorderMaxAlpha": 0,
+      "cropRetainedPaintPixels": 89675,
+      "discardedAlpha1to15Pixels": 592,
+      "discardedAlphaMass": 592,
+      "discardedVisiblePixels": 0,
+      "region": [
+        627,
+        0,
+        1254,
+        1254
+      ],
+      "regionNearlyOpaquePixels": 87566,
+      "regionTransparentPixels": 691673,
+      "thresholdIsDiagnosticOnly": true
+    },
+    "complete-pole": {
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "crop": [
+        250,
+        10,
+        540,
+        1220
+      ],
+      "cropBorderMaxAlpha": 1,
+      "cropRetainedPaintPixels": 164203,
+      "discardedAlpha1to15Pixels": 460,
+      "discardedAlphaMass": 460,
+      "discardedVisiblePixels": 0,
+      "region": [
+        0,
+        0,
+        627,
+        1254
+      ],
+      "regionNearlyOpaquePixels": 160380,
+      "regionTransparentPixels": 615853,
+      "thresholdIsDiagnosticOnly": true
+    },
+    "junction-box": {
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "crop": [
+        425,
+        295,
+        815,
+        930
+      ],
+      "cropBorderMaxAlpha": 0,
+      "cropRetainedPaintPixels": 193160,
+      "discardedAlpha1to15Pixels": 266,
+      "discardedAlphaMass": 266,
+      "discardedVisiblePixels": 0,
+      "region": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "regionNearlyOpaquePixels": 190279,
+      "regionTransparentPixels": 1374502,
+      "thresholdIsDiagnosticOnly": true
+    }
+  },
+  "status": "PAINTED_ASSEMBLY_FIRST_PREVIEW_NOT_ACCEPTED",
+  "visualAttempt": 1
+}

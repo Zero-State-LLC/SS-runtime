@@ -1,0 +1,8190 @@
+[
+  {
+    "id": "v9-blocked-kiosk-base",
+    "kind": "blocked-base",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-blocked-kiosk-base.png",
+      "sha256": "c3313e0475e6aac62f1ec66ff7db4e254ae95e4ef193c5079bf5921e1e90d63b"
+    },
+    "registration": {
+      "canvasPixels": [
+        230,
+        136
+      ],
+      "rootPixelsTopLeft": [
+        115,
+        95
+      ],
+      "worldPosition": [
+        525.0,
+        653.0
+      ],
+      "drawSizeWorld": [
+        57.5,
+        34.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        512.0,
+        640.0,
+        0
+      ],
+      [
+        551.0,
+        640.0,
+        0
+      ],
+      [
+        512.0,
+        679.0,
+        0
+      ]
+    ],
+    "heightWorld": 18,
+    "worldBoundsXYZ": {
+      "min": [
+        512.0,
+        640.0,
+        0
+      ],
+      "max": [
+        551.0,
+        679.0,
+        18
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          512.0,
+          640.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          115.0,
+          131.76955262170048
+        ]
+      },
+      {
+        "worldXYZ": [
+          512.0,
+          640.0,
+          18
+        ],
+        "sourcePixelsTopLeft": [
+          115.0,
+          59.76955262170047
+        ]
+      },
+      {
+        "worldXYZ": [
+          512.0,
+          679.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.691342134898591,
+          76.61522368914976
+        ]
+      },
+      {
+        "worldXYZ": [
+          512.0,
+          679.0,
+          18
+        ],
+        "sourcePixelsTopLeft": [
+          4.691342134898591,
+          4.615223689149758
+        ]
+      },
+      {
+        "worldXYZ": [
+          551.0,
+          640.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          225.3086578651014,
+          76.61522368914976
+        ]
+      },
+      {
+        "worldXYZ": [
+          551.0,
+          640.0,
+          18
+        ],
+        "sourcePixelsTopLeft": [
+          225.3086578651014,
+          4.615223689149758
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-blocked-kiosk-base",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-000",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-000.png",
+      "sha256": "02822d408de9a095094d7bcd21ae14f5593dfdebec845b82ff98620ca7baaceb"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        464.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        452.0,
+        596.0,
+        0
+      ],
+      [
+        476.0,
+        596.0,
+        0
+      ],
+      [
+        476.0,
+        600.0,
+        0
+      ],
+      [
+        452.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        452.0,
+        596.0,
+        0
+      ],
+      "max": [
+        476.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          452.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          476.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          476.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          476.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          476.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-000",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-001",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-001.png",
+      "sha256": "c8c354ca1afa1f26e7433f2dd9c1cad0b511707a112397ccf9a02cc87ebc15ee"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        488.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        476.0,
+        596.0,
+        0
+      ],
+      [
+        500.0,
+        596.0,
+        0
+      ],
+      [
+        500.0,
+        600.0,
+        0
+      ],
+      [
+        476.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        476.0,
+        596.0,
+        0
+      ],
+      "max": [
+        500.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          476.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          476.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          476.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          476.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          500.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          500.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          500.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          500.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-001",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-002",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-002.png",
+      "sha256": "0311b359585c86f1dfa06178926ab400e8e94c08e11f9a5140f787306d124edf"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        512.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        500.0,
+        596.0,
+        0
+      ],
+      [
+        524.0,
+        596.0,
+        0
+      ],
+      [
+        524.0,
+        600.0,
+        0
+      ],
+      [
+        500.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        500.0,
+        596.0,
+        0
+      ],
+      "max": [
+        524.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          500.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          500.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          500.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          500.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          524.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          524.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          524.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          524.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-002",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-003",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-003.png",
+      "sha256": "974701ee0319c4f713ff62c8119221f375fae2c202fec305f7efb61ac7d26989"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        536.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        524.0,
+        596.0,
+        0
+      ],
+      [
+        548.0,
+        596.0,
+        0
+      ],
+      [
+        548.0,
+        600.0,
+        0
+      ],
+      [
+        524.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        524.0,
+        596.0,
+        0
+      ],
+      "max": [
+        548.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          524.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          524.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          524.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          524.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          548.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          548.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          548.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          548.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-003",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-004",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-004.png",
+      "sha256": "3ffbca032b446aab53a2643205c361b66928f0a43b876edd1a8a09567410c2e4"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        560.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        548.0,
+        596.0,
+        0
+      ],
+      [
+        572.0,
+        596.0,
+        0
+      ],
+      [
+        572.0,
+        600.0,
+        0
+      ],
+      [
+        548.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        548.0,
+        596.0,
+        0
+      ],
+      "max": [
+        572.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          548.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          548.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          548.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          548.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          572.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          572.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          572.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          572.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-004",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-005",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-005.png",
+      "sha256": "5a1b2b0c6f51aa7bcd25b4bd70575e1e909c8dddf5f67526d68dd0e1d418e15b"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        584.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        572.0,
+        596.0,
+        0
+      ],
+      [
+        596.0,
+        596.0,
+        0
+      ],
+      [
+        596.0,
+        600.0,
+        0
+      ],
+      [
+        572.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        572.0,
+        596.0,
+        0
+      ],
+      "max": [
+        596.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          572.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          572.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          572.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          572.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          596.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          596.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          596.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          596.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-005",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-006",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-006.png",
+      "sha256": "bcca8563cd0d3a4b6c44400304a21b7ec564a32abe4fd7d9a17e9a01971777f8"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        608.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        596.0,
+        596.0,
+        0
+      ],
+      [
+        620.0,
+        596.0,
+        0
+      ],
+      [
+        620.0,
+        600.0,
+        0
+      ],
+      [
+        596.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        596.0,
+        596.0,
+        0
+      ],
+      "max": [
+        620.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          596.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          596.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          596.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          596.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          620.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          620.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          620.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          620.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-006",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-007",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-007.png",
+      "sha256": "d5439da3e277cf519871254638353deefa5269dd122579cb653eaedff7542025"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        632.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        620.0,
+        596.0,
+        0
+      ],
+      [
+        644.0,
+        596.0,
+        0
+      ],
+      [
+        644.0,
+        600.0,
+        0
+      ],
+      [
+        620.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        620.0,
+        596.0,
+        0
+      ],
+      "max": [
+        644.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          620.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          620.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          620.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          620.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          644.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          644.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          644.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          644.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-007",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-008",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-008.png",
+      "sha256": "b61bf23d3fc52a63d8a2057fea27aaabe92b129bef8b5ddbb311257d20feb0d6"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        656.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        644.0,
+        596.0,
+        0
+      ],
+      [
+        668.0,
+        596.0,
+        0
+      ],
+      [
+        668.0,
+        600.0,
+        0
+      ],
+      [
+        644.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        644.0,
+        596.0,
+        0
+      ],
+      "max": [
+        668.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          644.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          644.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          644.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          644.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          668.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          668.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          668.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          668.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-008",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-009",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-009.png",
+      "sha256": "e1d4f9243fad45b3b132a9e2b16152a87c2cad03472343deb6eb9f420667f19e"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        680.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        668.0,
+        596.0,
+        0
+      ],
+      [
+        692.0,
+        596.0,
+        0
+      ],
+      [
+        692.0,
+        600.0,
+        0
+      ],
+      [
+        668.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        668.0,
+        596.0,
+        0
+      ],
+      "max": [
+        692.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          668.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          668.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          668.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          668.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          692.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          692.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          692.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          692.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-009",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-010",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-010.png",
+      "sha256": "735e1b206b799c5ae2b47e9e58da3deb8762b39119b50a26a96c59e381bb426c"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        704.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        692.0,
+        596.0,
+        0
+      ],
+      [
+        716.0,
+        596.0,
+        0
+      ],
+      [
+        716.0,
+        600.0,
+        0
+      ],
+      [
+        692.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        692.0,
+        596.0,
+        0
+      ],
+      "max": [
+        716.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          692.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          692.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          692.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          692.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          716.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          716.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          716.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          716.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-010",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-011",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-011.png",
+      "sha256": "4d37a1e8771577f5fb7321975829c633143ae8c0ffcd0ac8eac4bcd75b00b887"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        728.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        716.0,
+        596.0,
+        0
+      ],
+      [
+        740.0,
+        596.0,
+        0
+      ],
+      [
+        740.0,
+        600.0,
+        0
+      ],
+      [
+        716.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        716.0,
+        596.0,
+        0
+      ],
+      "max": [
+        740.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          716.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          716.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          716.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          716.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          740.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          740.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          740.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          740.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-011",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-012",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-012.png",
+      "sha256": "12ae8ed8e33eff24b3ea9ed6d12f2256367a175880ab3ae4938c3aacac00455f"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        752.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        740.0,
+        596.0,
+        0
+      ],
+      [
+        764.0,
+        596.0,
+        0
+      ],
+      [
+        764.0,
+        600.0,
+        0
+      ],
+      [
+        740.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        740.0,
+        596.0,
+        0
+      ],
+      "max": [
+        764.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          740.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          740.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          740.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          740.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          764.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          764.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          764.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          764.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-012",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-013",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-013.png",
+      "sha256": "02822d408de9a095094d7bcd21ae14f5593dfdebec845b82ff98620ca7baaceb"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        776.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        764.0,
+        596.0,
+        0
+      ],
+      [
+        788.0,
+        596.0,
+        0
+      ],
+      [
+        788.0,
+        600.0,
+        0
+      ],
+      [
+        764.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        764.0,
+        596.0,
+        0
+      ],
+      "max": [
+        788.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          764.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          764.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          764.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          764.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          788.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          788.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          788.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          788.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-013",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-014",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-014.png",
+      "sha256": "c8c354ca1afa1f26e7433f2dd9c1cad0b511707a112397ccf9a02cc87ebc15ee"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        800.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        788.0,
+        596.0,
+        0
+      ],
+      [
+        812.0,
+        596.0,
+        0
+      ],
+      [
+        812.0,
+        600.0,
+        0
+      ],
+      [
+        788.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        788.0,
+        596.0,
+        0
+      ],
+      "max": [
+        812.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          788.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          788.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          788.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          788.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          812.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          812.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          812.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          812.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-014",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-015",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-015.png",
+      "sha256": "0311b359585c86f1dfa06178926ab400e8e94c08e11f9a5140f787306d124edf"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        824.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        812.0,
+        596.0,
+        0
+      ],
+      [
+        836.0,
+        596.0,
+        0
+      ],
+      [
+        836.0,
+        600.0,
+        0
+      ],
+      [
+        812.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        812.0,
+        596.0,
+        0
+      ],
+      "max": [
+        836.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          812.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          812.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          812.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          812.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          836.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          836.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          836.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          836.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-015",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-016",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-016.png",
+      "sha256": "974701ee0319c4f713ff62c8119221f375fae2c202fec305f7efb61ac7d26989"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        848.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        836.0,
+        596.0,
+        0
+      ],
+      [
+        860.0,
+        596.0,
+        0
+      ],
+      [
+        860.0,
+        600.0,
+        0
+      ],
+      [
+        836.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        836.0,
+        596.0,
+        0
+      ],
+      "max": [
+        860.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          836.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          836.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          836.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          836.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          860.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          860.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          860.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          860.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-016",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-017",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-017.png",
+      "sha256": "3ffbca032b446aab53a2643205c361b66928f0a43b876edd1a8a09567410c2e4"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        872.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        860.0,
+        596.0,
+        0
+      ],
+      [
+        884.0,
+        596.0,
+        0
+      ],
+      [
+        884.0,
+        600.0,
+        0
+      ],
+      [
+        860.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        860.0,
+        596.0,
+        0
+      ],
+      "max": [
+        884.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          860.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          860.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          860.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          860.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          884.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          884.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          884.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          884.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-017",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-018",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-018.png",
+      "sha256": "5a1b2b0c6f51aa7bcd25b4bd70575e1e909c8dddf5f67526d68dd0e1d418e15b"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        896.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        884.0,
+        596.0,
+        0
+      ],
+      [
+        908.0,
+        596.0,
+        0
+      ],
+      [
+        908.0,
+        600.0,
+        0
+      ],
+      [
+        884.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        884.0,
+        596.0,
+        0
+      ],
+      "max": [
+        908.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          884.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          884.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          884.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          884.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          908.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          908.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          908.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          908.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-018",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-019",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-019.png",
+      "sha256": "bcca8563cd0d3a4b6c44400304a21b7ec564a32abe4fd7d9a17e9a01971777f8"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        920.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        908.0,
+        596.0,
+        0
+      ],
+      [
+        932.0,
+        596.0,
+        0
+      ],
+      [
+        932.0,
+        600.0,
+        0
+      ],
+      [
+        908.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        908.0,
+        596.0,
+        0
+      ],
+      "max": [
+        932.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          908.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          908.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          908.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          908.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          932.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          932.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          932.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          932.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-019",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-020",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-020.png",
+      "sha256": "d5439da3e277cf519871254638353deefa5269dd122579cb653eaedff7542025"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        944.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        932.0,
+        596.0,
+        0
+      ],
+      [
+        956.0,
+        596.0,
+        0
+      ],
+      [
+        956.0,
+        600.0,
+        0
+      ],
+      [
+        932.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        932.0,
+        596.0,
+        0
+      ],
+      "max": [
+        956.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          932.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          932.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          932.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          932.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          956.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          956.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          956.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          956.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-020",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-021",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-021.png",
+      "sha256": "b61bf23d3fc52a63d8a2057fea27aaabe92b129bef8b5ddbb311257d20feb0d6"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        968.0,
+        598.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        956.0,
+        596.0,
+        0
+      ],
+      [
+        980.0,
+        596.0,
+        0
+      ],
+      [
+        980.0,
+        600.0,
+        0
+      ],
+      [
+        956.0,
+        600.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        956.0,
+        596.0,
+        0
+      ],
+      "max": [
+        980.0,
+        600.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          956.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          956.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          956.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          956.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-021",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-022",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-022.png",
+      "sha256": "60d8cd930ea16147a89c37e23cde12b677bfa599e34bbb4bee25e66064f26418"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        982.0,
+        608.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        980.0,
+        596.0,
+        0
+      ],
+      [
+        984.0,
+        596.0,
+        0
+      ],
+      [
+        984.0,
+        620.0,
+        0
+      ],
+      [
+        980.0,
+        620.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        980.0,
+        596.0,
+        0
+      ],
+      "max": [
+        984.0,
+        620.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          980.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          620.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          620.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          596.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          596.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          620.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          620.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-022",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-023",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-023.png",
+      "sha256": "d7adaf263f7f1f57d21609a38a2ee42bf68dbfc2792dcc239cf844d9ada52066"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        454.0,
+        612.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        452.0,
+        600.0,
+        0
+      ],
+      [
+        456.0,
+        600.0,
+        0
+      ],
+      [
+        456.0,
+        624.0,
+        0
+      ],
+      [
+        452.0,
+        624.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        452.0,
+        600.0,
+        0
+      ],
+      "max": [
+        456.0,
+        624.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          452.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          624.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          624.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          600.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          600.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          624.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          624.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-023",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-024",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-024.png",
+      "sha256": "97114add7bb318d406b32189e42ae47bdeca4117502a9c950df6cf54df05e26f"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        982.0,
+        632.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        980.0,
+        620.0,
+        0
+      ],
+      [
+        984.0,
+        620.0,
+        0
+      ],
+      [
+        984.0,
+        644.0,
+        0
+      ],
+      [
+        980.0,
+        644.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        980.0,
+        620.0,
+        0
+      ],
+      "max": [
+        984.0,
+        644.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          980.0,
+          620.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          620.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          644.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          644.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          620.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          620.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          644.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          644.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-024",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-025",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-025.png",
+      "sha256": "29ef083168ccbdacd27aa6db6b55b3ea238b0e6034166ca4e1a26bdd41a817fe"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        454.0,
+        636.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        452.0,
+        624.0,
+        0
+      ],
+      [
+        456.0,
+        624.0,
+        0
+      ],
+      [
+        456.0,
+        648.0,
+        0
+      ],
+      [
+        452.0,
+        648.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        452.0,
+        624.0,
+        0
+      ],
+      "max": [
+        456.0,
+        648.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          452.0,
+          624.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          624.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          648.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          648.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          624.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          624.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          648.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          648.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-025",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-026",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-026.png",
+      "sha256": "18ca68a1916cae9df548c9005dbbb92f5fa3bfa04f560a8b4f63896887ae1e18"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        982.0,
+        656.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        980.0,
+        644.0,
+        0
+      ],
+      [
+        984.0,
+        644.0,
+        0
+      ],
+      [
+        984.0,
+        668.0,
+        0
+      ],
+      [
+        980.0,
+        668.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        980.0,
+        644.0,
+        0
+      ],
+      "max": [
+        984.0,
+        668.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          980.0,
+          644.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          644.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          668.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          668.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          644.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          644.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          668.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          668.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-026",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-027",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-027.png",
+      "sha256": "90bf3765e43da6afee73955239ec35f631bbc4aa08df91d566820933c73ef8fd"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        454.0,
+        660.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        452.0,
+        648.0,
+        0
+      ],
+      [
+        456.0,
+        648.0,
+        0
+      ],
+      [
+        456.0,
+        672.0,
+        0
+      ],
+      [
+        452.0,
+        672.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        452.0,
+        648.0,
+        0
+      ],
+      "max": [
+        456.0,
+        672.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          452.0,
+          648.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          648.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          672.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          672.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          648.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          648.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          672.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          672.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-027",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-028",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-028.png",
+      "sha256": "15e370d807abe53c62497e2d4e5fbc5acbae4e84aefca37f187a93e03d8f8606"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        982.0,
+        680.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        980.0,
+        668.0,
+        0
+      ],
+      [
+        984.0,
+        668.0,
+        0
+      ],
+      [
+        984.0,
+        692.0,
+        0
+      ],
+      [
+        980.0,
+        692.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        980.0,
+        668.0,
+        0
+      ],
+      "max": [
+        984.0,
+        692.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          980.0,
+          668.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          668.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          692.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          692.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          668.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          668.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          692.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          692.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-028",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-029",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-029.png",
+      "sha256": "2ddd2fa715d273f4d1681a0d3ba039c0e81c7c4f9f50d4f1e8d80f47ec3ecf3a"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        454.0,
+        684.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        452.0,
+        672.0,
+        0
+      ],
+      [
+        456.0,
+        672.0,
+        0
+      ],
+      [
+        456.0,
+        696.0,
+        0
+      ],
+      [
+        452.0,
+        696.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        452.0,
+        672.0,
+        0
+      ],
+      "max": [
+        456.0,
+        696.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          452.0,
+          672.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          672.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          696.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          696.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          672.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          672.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          696.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          696.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-029",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-030",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-030.png",
+      "sha256": "0cd2e59cbf885ae6d41409c8f15c3c1978b11616958a5b20f0d21b34a03ea569"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        982.0,
+        704.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        980.0,
+        692.0,
+        0
+      ],
+      [
+        984.0,
+        692.0,
+        0
+      ],
+      [
+        984.0,
+        716.0,
+        0
+      ],
+      [
+        980.0,
+        716.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        980.0,
+        692.0,
+        0
+      ],
+      "max": [
+        984.0,
+        716.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          980.0,
+          692.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          692.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          716.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          716.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          692.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          692.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          716.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          716.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-030",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-031",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-031.png",
+      "sha256": "661d880c37f9ed7fc9398f2f18a2f3e58f563ca19df40ab5af32f48176e486af"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        454.0,
+        708.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        452.0,
+        696.0,
+        0
+      ],
+      [
+        456.0,
+        696.0,
+        0
+      ],
+      [
+        456.0,
+        720.0,
+        0
+      ],
+      [
+        452.0,
+        720.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        452.0,
+        696.0,
+        0
+      ],
+      "max": [
+        456.0,
+        720.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          452.0,
+          696.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          696.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          720.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          720.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          696.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          696.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          720.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          720.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-031",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-032",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-032.png",
+      "sha256": "b342d45e25d46bdce766a05224a836eaf02eea0cbfccfec269867b133fd89d72"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        982.0,
+        728.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        980.0,
+        716.0,
+        0
+      ],
+      [
+        984.0,
+        716.0,
+        0
+      ],
+      [
+        984.0,
+        740.0,
+        0
+      ],
+      [
+        980.0,
+        740.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        980.0,
+        716.0,
+        0
+      ],
+      "max": [
+        984.0,
+        740.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          980.0,
+          716.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          716.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          740.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          740.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          716.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          716.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          740.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          740.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-032",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-033",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-033.png",
+      "sha256": "3c8ab8c067141b531f580154cb16c5bc5f3fc0012fd34d9db193d12bb9c23892"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        454.0,
+        732.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        452.0,
+        720.0,
+        0
+      ],
+      [
+        456.0,
+        720.0,
+        0
+      ],
+      [
+        456.0,
+        744.0,
+        0
+      ],
+      [
+        452.0,
+        744.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        452.0,
+        720.0,
+        0
+      ],
+      "max": [
+        456.0,
+        744.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          452.0,
+          720.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          720.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          744.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          452.0,
+          744.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          720.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          720.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          744.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          456.0,
+          744.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-033",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-034",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-034.png",
+      "sha256": "17342eedf247d60e6e105345f0d0e7dc8a68b0b786eb3cd828a7d5c358a0a01d"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        982.0,
+        752.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        980.0,
+        740.0,
+        0
+      ],
+      [
+        984.0,
+        740.0,
+        0
+      ],
+      [
+        984.0,
+        764.0,
+        0
+      ],
+      [
+        980.0,
+        764.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        980.0,
+        740.0,
+        0
+      ],
+      "max": [
+        984.0,
+        764.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          980.0,
+          740.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          740.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          764.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          764.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          740.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          740.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          764.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          764.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-034",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-035",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-035.png",
+      "sha256": "bdd6d92f4247b052db4c598f9ca9dd59466771767b76d5372d28260dc336c6a1"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        676.0,
+        754.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        664.0,
+        752.0,
+        0
+      ],
+      [
+        688.0,
+        752.0,
+        0
+      ],
+      [
+        688.0,
+        756.0,
+        0
+      ],
+      [
+        664.0,
+        756.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        664.0,
+        752.0,
+        0
+      ],
+      "max": [
+        688.0,
+        756.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          664.0,
+          752.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          664.0,
+          752.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          664.0,
+          756.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          664.0,
+          756.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          688.0,
+          752.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          688.0,
+          752.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          688.0,
+          756.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          688.0,
+          756.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-035",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-036",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-036.png",
+      "sha256": "0cdfb2282728832885f89079f3c1abd57a95cb923481c4bb5976fb6eff4a6639"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        700.0,
+        754.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        688.0,
+        752.0,
+        0
+      ],
+      [
+        712.0,
+        752.0,
+        0
+      ],
+      [
+        712.0,
+        756.0,
+        0
+      ],
+      [
+        688.0,
+        756.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        688.0,
+        752.0,
+        0
+      ],
+      "max": [
+        712.0,
+        756.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          688.0,
+          752.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          688.0,
+          752.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          688.0,
+          756.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          688.0,
+          756.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          712.0,
+          752.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          712.0,
+          752.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          712.0,
+          756.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          712.0,
+          756.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-036",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-037",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-037.png",
+      "sha256": "cd879cbe118bf91528b482b3271d35d8082da166f4dbe8c74d0997c4d83e09f0"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        964.0,
+        754.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        952.0,
+        752.0,
+        0
+      ],
+      [
+        976.0,
+        752.0,
+        0
+      ],
+      [
+        976.0,
+        756.0,
+        0
+      ],
+      [
+        952.0,
+        756.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        952.0,
+        752.0,
+        0
+      ],
+      "max": [
+        976.0,
+        756.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          952.0,
+          752.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          952.0,
+          752.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          952.0,
+          756.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          952.0,
+          756.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          976.0,
+          752.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          976.0,
+          752.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          976.0,
+          756.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          976.0,
+          756.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-037",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-038",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-038.png",
+      "sha256": "0b1d8db9c69d12249f225cba31b26f58a4e3428b0d3bb28b4bff25aa920f1a9c"
+    },
+    "registration": {
+      "canvasPixels": [
+        32,
+        32
+      ],
+      "rootPixelsTopLeft": [
+        16,
+        22
+      ],
+      "worldPosition": [
+        978.0,
+        754.0
+      ],
+      "drawSizeWorld": [
+        8.0,
+        8.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        976.0,
+        752.0,
+        0
+      ],
+      [
+        980.0,
+        752.0,
+        0
+      ],
+      [
+        980.0,
+        756.0,
+        0
+      ],
+      [
+        976.0,
+        756.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        976.0,
+        752.0,
+        0
+      ],
+      "max": [
+        980.0,
+        756.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          976.0,
+          752.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          16.0,
+          27.65685424949238
+        ]
+      },
+      {
+        "worldXYZ": [
+          976.0,
+          752.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          16.0,
+          15.65685424949238
+        ]
+      },
+      {
+        "worldXYZ": [
+          976.0,
+          756.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.686291501015241,
+          22.0
+        ]
+      },
+      {
+        "worldXYZ": [
+          976.0,
+          756.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.686291501015241,
+          10.0
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          752.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          27.31370849898476,
+          22.0
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          752.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          27.31370849898476,
+          10.0
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          756.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          16.0,
+          16.34314575050762
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          756.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          16.0,
+          4.34314575050762
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-038",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-039",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-039.png",
+      "sha256": "9fe3f8784d88d8509dc6e12f4ac8f9372d28d23bc693bd2f4e1a534a809b5f04"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        666.0,
+        768.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        664.0,
+        756.0,
+        0
+      ],
+      [
+        668.0,
+        756.0,
+        0
+      ],
+      [
+        668.0,
+        780.0,
+        0
+      ],
+      [
+        664.0,
+        780.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        664.0,
+        756.0,
+        0
+      ],
+      "max": [
+        668.0,
+        780.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          664.0,
+          756.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          664.0,
+          756.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          664.0,
+          780.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          664.0,
+          780.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          668.0,
+          756.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          668.0,
+          756.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          668.0,
+          780.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          668.0,
+          780.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-039",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-040",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-040.png",
+      "sha256": "610856664660308c6550717f277698d5c3b39d23c7cf8a9fb734a9b666deece0"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        710.0,
+        768.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        708.0,
+        756.0,
+        0
+      ],
+      [
+        712.0,
+        756.0,
+        0
+      ],
+      [
+        712.0,
+        780.0,
+        0
+      ],
+      [
+        708.0,
+        780.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        708.0,
+        756.0,
+        0
+      ],
+      "max": [
+        712.0,
+        780.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          708.0,
+          756.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          708.0,
+          756.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          708.0,
+          780.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          708.0,
+          780.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          712.0,
+          756.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          712.0,
+          756.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          712.0,
+          780.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          712.0,
+          780.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-040",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-041",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-041.png",
+      "sha256": "24c5a3a88302c82380400cb3f9b0acdf081267cf18c330e6b0299c93022f0856"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        954.0,
+        768.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        952.0,
+        756.0,
+        0
+      ],
+      [
+        956.0,
+        756.0,
+        0
+      ],
+      [
+        956.0,
+        780.0,
+        0
+      ],
+      [
+        952.0,
+        780.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        952.0,
+        756.0,
+        0
+      ],
+      "max": [
+        956.0,
+        780.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          952.0,
+          756.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          952.0,
+          756.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          952.0,
+          780.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          952.0,
+          780.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          956.0,
+          756.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          956.0,
+          756.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          956.0,
+          780.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          956.0,
+          780.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-041",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-042",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-042.png",
+      "sha256": "630f41311fc6cab9ab6b039d6958d7464112f14bb01b76046fb79f7d1c511ef4"
+    },
+    "registration": {
+      "canvasPixels": [
+        66,
+        50
+      ],
+      "rootPixelsTopLeft": [
+        33,
+        31
+      ],
+      "worldPosition": [
+        982.0,
+        772.0
+      ],
+      "drawSizeWorld": [
+        16.5,
+        12.5
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        980.0,
+        764.0,
+        0
+      ],
+      [
+        984.0,
+        764.0,
+        0
+      ],
+      [
+        984.0,
+        780.0,
+        0
+      ],
+      [
+        980.0,
+        780.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        980.0,
+        764.0,
+        0
+      ],
+      "max": [
+        984.0,
+        780.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          980.0,
+          764.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          49.970562748477136,
+          45.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          764.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          49.970562748477136,
+          33.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          780.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.7157287525381015,
+          22.514718625761432
+        ]
+      },
+      {
+        "worldXYZ": [
+          980.0,
+          780.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.7157287525381015,
+          10.514718625761432
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          764.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          61.2842712474619,
+          39.48528137423857
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          764.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          61.2842712474619,
+          27.485281374238568
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          780.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          16.02943725152286,
+          16.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          984.0,
+          780.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          16.02943725152286,
+          4.857864376269049
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-042",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-043",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-043.png",
+      "sha256": "8de651889bb8f4ed42f835cd814eeb07e147c5862ede8ad821b81d26a99dd80b"
+    },
+    "registration": {
+      "canvasPixels": [
+        66,
+        50
+      ],
+      "rootPixelsTopLeft": [
+        33,
+        31
+      ],
+      "worldPosition": [
+        666.0,
+        788.0
+      ],
+      "drawSizeWorld": [
+        16.5,
+        12.5
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        664.0,
+        780.0,
+        0
+      ],
+      [
+        668.0,
+        780.0,
+        0
+      ],
+      [
+        668.0,
+        796.0,
+        0
+      ],
+      [
+        664.0,
+        796.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        664.0,
+        780.0,
+        0
+      ],
+      "max": [
+        668.0,
+        796.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          664.0,
+          780.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          49.970562748477136,
+          45.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          664.0,
+          780.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          49.970562748477136,
+          33.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          664.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.7157287525381015,
+          22.514718625761432
+        ]
+      },
+      {
+        "worldXYZ": [
+          664.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.7157287525381015,
+          10.514718625761432
+        ]
+      },
+      {
+        "worldXYZ": [
+          668.0,
+          780.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          61.2842712474619,
+          39.48528137423857
+        ]
+      },
+      {
+        "worldXYZ": [
+          668.0,
+          780.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          61.2842712474619,
+          27.485281374238568
+        ]
+      },
+      {
+        "worldXYZ": [
+          668.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          16.02943725152286,
+          16.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          668.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          16.02943725152286,
+          4.857864376269049
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-043",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-044",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-044.png",
+      "sha256": "c88b6fefe1392399f4facead25f23f63834fef3b6bceb152644b58e83f57a244"
+    },
+    "registration": {
+      "canvasPixels": [
+        66,
+        50
+      ],
+      "rootPixelsTopLeft": [
+        33,
+        31
+      ],
+      "worldPosition": [
+        710.0,
+        788.0
+      ],
+      "drawSizeWorld": [
+        16.5,
+        12.5
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        708.0,
+        780.0,
+        0
+      ],
+      [
+        712.0,
+        780.0,
+        0
+      ],
+      [
+        712.0,
+        796.0,
+        0
+      ],
+      [
+        708.0,
+        796.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        708.0,
+        780.0,
+        0
+      ],
+      "max": [
+        712.0,
+        796.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          708.0,
+          780.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          49.970562748477136,
+          45.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          708.0,
+          780.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          49.970562748477136,
+          33.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          708.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.7157287525381015,
+          22.514718625761432
+        ]
+      },
+      {
+        "worldXYZ": [
+          708.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.7157287525381015,
+          10.514718625761432
+        ]
+      },
+      {
+        "worldXYZ": [
+          712.0,
+          780.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          61.2842712474619,
+          39.48528137423857
+        ]
+      },
+      {
+        "worldXYZ": [
+          712.0,
+          780.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          61.2842712474619,
+          27.485281374238568
+        ]
+      },
+      {
+        "worldXYZ": [
+          712.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          16.02943725152286,
+          16.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          712.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          16.02943725152286,
+          4.857864376269049
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-044",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-045",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-045.png",
+      "sha256": "9f04613f4b0ed900b8893ac7a9d75880e38eb3cc1157d52eb4aa04f25aba9232"
+    },
+    "registration": {
+      "canvasPixels": [
+        66,
+        50
+      ],
+      "rootPixelsTopLeft": [
+        33,
+        31
+      ],
+      "worldPosition": [
+        954.0,
+        788.0
+      ],
+      "drawSizeWorld": [
+        16.5,
+        12.5
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        952.0,
+        780.0,
+        0
+      ],
+      [
+        956.0,
+        780.0,
+        0
+      ],
+      [
+        956.0,
+        796.0,
+        0
+      ],
+      [
+        952.0,
+        796.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        952.0,
+        780.0,
+        0
+      ],
+      "max": [
+        956.0,
+        796.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          952.0,
+          780.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          49.970562748477136,
+          45.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          952.0,
+          780.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          49.970562748477136,
+          33.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          952.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.7157287525381015,
+          22.514718625761432
+        ]
+      },
+      {
+        "worldXYZ": [
+          952.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.7157287525381015,
+          10.514718625761432
+        ]
+      },
+      {
+        "worldXYZ": [
+          956.0,
+          780.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          61.2842712474619,
+          39.48528137423857
+        ]
+      },
+      {
+        "worldXYZ": [
+          956.0,
+          780.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          61.2842712474619,
+          27.485281374238568
+        ]
+      },
+      {
+        "worldXYZ": [
+          956.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          16.02943725152286,
+          16.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          956.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          16.02943725152286,
+          4.857864376269049
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-045",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-046",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-046.png",
+      "sha256": "f2f9cb705c7a89cfbadbc753980015a3eafb9a87d360fed282eac85419d7fd85"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        548.0,
+        794.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        536.0,
+        792.0,
+        0
+      ],
+      [
+        560.0,
+        792.0,
+        0
+      ],
+      [
+        560.0,
+        796.0,
+        0
+      ],
+      [
+        536.0,
+        796.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        536.0,
+        792.0,
+        0
+      ],
+      "max": [
+        560.0,
+        796.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          536.0,
+          792.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          536.0,
+          792.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          536.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          536.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          560.0,
+          792.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          560.0,
+          792.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          560.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          560.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-046",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-047",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-047.png",
+      "sha256": "72bde32bd399a7e9c29efb300a55a7a45fb62e67d33269a131ba9aae9affc404"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        572.0,
+        794.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        560.0,
+        792.0,
+        0
+      ],
+      [
+        584.0,
+        792.0,
+        0
+      ],
+      [
+        584.0,
+        796.0,
+        0
+      ],
+      [
+        560.0,
+        796.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        560.0,
+        792.0,
+        0
+      ],
+      "max": [
+        584.0,
+        796.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          560.0,
+          792.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          560.0,
+          792.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          560.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          560.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          584.0,
+          792.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          584.0,
+          792.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          584.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          584.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-047",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-048",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-048.png",
+      "sha256": "926a4eddf15742c3056eb7b5bc9177120154f047037ae8328debae9eb26e6a62"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        596.0,
+        794.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        584.0,
+        792.0,
+        0
+      ],
+      [
+        608.0,
+        792.0,
+        0
+      ],
+      [
+        608.0,
+        796.0,
+        0
+      ],
+      [
+        584.0,
+        796.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        584.0,
+        792.0,
+        0
+      ],
+      "max": [
+        608.0,
+        796.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          584.0,
+          792.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          584.0,
+          792.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          584.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          584.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          608.0,
+          792.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          608.0,
+          792.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          608.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          608.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-048",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-049",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-049.png",
+      "sha256": "c9715105dd741ac6358e60010af992b1b5a12f5a44272b9cee8c098874b3d0b3"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        620.0,
+        794.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        608.0,
+        792.0,
+        0
+      ],
+      [
+        632.0,
+        792.0,
+        0
+      ],
+      [
+        632.0,
+        796.0,
+        0
+      ],
+      [
+        608.0,
+        796.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        608.0,
+        792.0,
+        0
+      ],
+      "max": [
+        632.0,
+        796.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          608.0,
+          792.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          608.0,
+          792.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          608.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          608.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          632.0,
+          792.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          632.0,
+          792.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          632.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          632.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-049",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-050",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-050.png",
+      "sha256": "946cbb90b734b6d213becb373910167bb8e03fad2238faea6a9f6625ce270aa3"
+    },
+    "registration": {
+      "canvasPixels": [
+        88,
+        60
+      ],
+      "rootPixelsTopLeft": [
+        44,
+        36
+      ],
+      "worldPosition": [
+        644.0,
+        794.0
+      ],
+      "drawSizeWorld": [
+        22.0,
+        15.0
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        632.0,
+        792.0,
+        0
+      ],
+      [
+        656.0,
+        792.0,
+        0
+      ],
+      [
+        656.0,
+        796.0,
+        0
+      ],
+      [
+        632.0,
+        796.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        632.0,
+        792.0,
+        0
+      ],
+      "max": [
+        656.0,
+        796.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          632.0,
+          792.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          55.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          632.0,
+          792.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.715728752538102,
+          43.798989873223334
+        ]
+      },
+      {
+        "worldXYZ": [
+          632.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          50.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          632.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.402020253553339,
+          38.14213562373095
+        ]
+      },
+      {
+        "worldXYZ": [
+          656.0,
+          792.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          21.85786437626905
+        ]
+      },
+      {
+        "worldXYZ": [
+          656.0,
+          792.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          83.59797974644667,
+          9.857864376269049
+        ]
+      },
+      {
+        "worldXYZ": [
+          656.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          16.20101012677667
+        ]
+      },
+      {
+        "worldXYZ": [
+          656.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          72.2842712474619,
+          4.201010126776669
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-050",
+    "visibleFaceCount": 3
+  },
+  {
+    "id": "v9-curb-051",
+    "kind": "curb-relief",
+    "image": {
+      "path": "docs/review/blocked-base-curb-relief-20261116/source/attempt-02/output/sprites/v9-curb-051.png",
+      "sha256": "b852d25bbeb97be52047bec2d19fda327d6e46f14540bc660dc3918bfa6462f3"
+    },
+    "registration": {
+      "canvasPixels": [
+        42,
+        38
+      ],
+      "rootPixelsTopLeft": [
+        21,
+        25
+      ],
+      "worldPosition": [
+        660.0,
+        794.0
+      ],
+      "drawSizeWorld": [
+        10.5,
+        9.5
+      ]
+    },
+    "pixelsPerWorldUnit": 4,
+    "contactWorldXYZ": [
+      [
+        656.0,
+        792.0,
+        0
+      ],
+      [
+        664.0,
+        792.0,
+        0
+      ],
+      [
+        664.0,
+        796.0,
+        0
+      ],
+      [
+        656.0,
+        796.0,
+        0
+      ]
+    ],
+    "heightWorld": 3,
+    "worldBoundsXYZ": {
+      "min": [
+        656.0,
+        792.0,
+        0
+      ],
+      "max": [
+        664.0,
+        796.0,
+        3
+      ]
+    },
+    "geometryLandmarks": [
+      {
+        "worldXYZ": [
+          656.0,
+          792.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          15.34314575050762,
+          33.48528137423857
+        ]
+      },
+      {
+        "worldXYZ": [
+          656.0,
+          792.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          15.34314575050762,
+          21.485281374238568
+        ]
+      },
+      {
+        "worldXYZ": [
+          656.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          4.029437251522861,
+          27.82842712474619
+        ]
+      },
+      {
+        "worldXYZ": [
+          656.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          4.029437251522861,
+          15.82842712474619
+        ]
+      },
+      {
+        "worldXYZ": [
+          664.0,
+          792.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          37.970562748477136,
+          22.17157287525381
+        ]
+      },
+      {
+        "worldXYZ": [
+          664.0,
+          792.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          37.970562748477136,
+          10.17157287525381
+        ]
+      },
+      {
+        "worldXYZ": [
+          664.0,
+          796.0,
+          0
+        ],
+        "sourcePixelsTopLeft": [
+          26.65685424949238,
+          16.514718625761432
+        ]
+      },
+      {
+        "worldXYZ": [
+          664.0,
+          796.0,
+          3
+        ],
+        "sourcePixelsTopLeft": [
+          26.65685424949238,
+          4.514718625761432
+        ]
+      }
+    ],
+    "geometryFile": "geometry.json",
+    "geometryID": "v9-curb-051",
+    "visibleFaceCount": 3
+  }
+]

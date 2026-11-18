@@ -1,0 +1,345 @@
+Xcode version: 26.5 (17F42)
+13:20:53.288 xcodebuild[14078:14052313] Beginning test session SSRuntimeTests-837B6F76-BBC8-4022-9012-4EA9737D03B2 at 2026-11-16 13:20:53.287 on target <DVTiPhoneSimulator: 0x7d9a84000> {
+		SimDevice: iPhone 17 Pro (CACB3927-A76E-43A5-9ACA-C389EB38C0C3, iOS 26.5, Booted)
+} (26.5 (23F77))
+13:20:53.288 xcodebuild[14078:14052313] 	/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
+-project
+SSRuntime.xcodeproj
+-scheme
+SSRuntime
+-sdk
+iphonesimulator
+-configuration
+Debug
+-destination
+platform=iOS Simulator,id=CACB3927-A76E-43A5-9ACA-C389EB38C0C3
+CODE_SIGNING_ALLOWED=NO
+ENABLE_TESTABILITY=YES
+SS_RENDERER_TEST_CONDITIONS=SS_RENDERER_TEST_SUPPORT SS_SOURCE_SCENE_REVIEW
+-derivedDataPath
+/Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116
+-resultBundlePath
+/Users/appliedalchemylabs/.jcode/scratch/ss-scene-qa-framing-20261116-2120.xcresult
+-only-testing:SSRuntimeTests/SceneQAFramingTests/testQuietSouthNeutralOrdinaryScene
+test
+13:20:53.289 xcodebuild[14078:14052313] Test standard output and standard error is at /Users/appliedalchemylabs/.jcode/scratch/ss-scene-qa-framing-20261116-2120.xcresult/Staging/1_Test/Diagnostics/SSRuntimeTests-43C3B2A2-E541-4026-8CB8-88DC90A5CDDA-Configuration-Test Scheme Action-Iteration-1/SSRuntimeTests-77B3FA4E-9F87-44B9-96B6-612A9331902A/StandardOutputAndStandardError.txt
+13:20:53.292 xcodebuild[14078:14052344] 📱<DVTiPhoneSimulator (0x7d9a84000), iPhone 17 Pro, unknown class, 26.5 (23F77), CACB3927-A76E-43A5-9ACA-C389EB38C0C3> claim LaunchSessionClaim_0x7dbc5c900 on simulator was issued, 2 claims exist.
+13:20:53.292 xcodebuild[14078:14052313] Setting up test runner session
+13:20:53.293 xcodebuild[14078:14052344] Sim iPhone 17 Pro: Unregistering for sim device notification with token 5
+13:20:53.293 xcodebuild[14078:14052344] Calling -[SimDevice getenv:error:] for TESTMANAGERD_SIM_SOCK
+13:20:53.293 xcodebuild[14078:14052313] Registering/updating daemon-based crash report observer for process names (
+    xctest,
+    debugserver,
+    FrontBoard,
+    assertiond,
+    runningboardd,
+    SpringBoard,
+    testmanagerd,
+    backboardd,
+    DTServiceHub,
+    SSRuntime,
+    SSRuntimeTests
+)
+13:20:53.294 xcodebuild[14078:14052344] Sim iPhone 17 Pro has testmanagerd socket at /private/var/tmp/com.apple.launchd.7H1gE3uOgD/com.apple.testmanagerd.unix-domain.socket
+13:20:53.294 xcodebuild[14078:14052344] Validating test connection socket path (/private/var/tmp/com.apple.launchd.7H1gE3uOgD/com.apple.testmanagerd.unix-domain.socket)
+13:20:53.294 xcodebuild[14078:14052344] Constructing transport for test connection socket
+13:20:53.294 xcodebuild[14078:14052344] Connected socket 38 to testmanagerd for Sim iPhone 17 Pro
+13:20:53.294 xcodebuild[14078:14053044] Received connection for test runner session
+13:20:53.294 xcodebuild[14078:14053044] Listening for proxy connection request from the test bundle
+13:20:53.295 xcodebuild[14078:14052313] Test runner session acquired connection.
+13:20:53.295 xcodebuild[14078:14053044] Initiating session with identifier: 837B6F76-BBC8-4022-9012-4EA9737D03B2
+13:20:53.561 xcodebuild[14078:14052313] Finished requesting crash reports. Continuing with testing.
+13:20:53.561 xcodebuild[14078:14052344] Got reply to session initiation request with identifier 837B6F76-BBC8-4022-9012-4EA9737D03B2 (error: (null))
+13:20:53.612 xcodebuild[14078:14052313] Launch session started.
+13:20:53.630 xcodebuild[14078:14053094] 📱<DVTiPhoneSimulator (0x7d9a84000), iPhone 17 Pro, unknown class, 26.5 (23F77), CACB3927-A76E-43A5-9ACA-C389EB38C0C3> claim LaunchSessionClaim_0x7dbc5c900 on simulator was issued, 2 claims exist.
+13:20:53.640 xcodebuild[14078:14053044] 📱<DVTiPhoneSimulator (0x7d9a84000), iPhone 17 Pro, unknown class, 26.5 (23F77), CACB3927-A76E-43A5-9ACA-C389EB38C0C3> claim LaunchSessionClaim_0x7dbc5c900 on simulator was issued, 2 claims exist.
+13:20:53.640 xcodebuild[14078:14053044] CACB3927-A76E-43A5-9ACA-C389EB38C0C3: Registered for sim device notification, got token 8
+13:20:53.640 xcodebuild[14078:14052345] CACB3927-A76E-43A5-9ACA-C389EB38C0C3: Unregistering for sim device notification with token 8
+13:20:53.644 xcodebuild[14078:14053044] CACB3927-A76E-43A5-9ACA-C389EB38C0C3: Installing app at path: /Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator/SSRuntime.app and options: {
+    SkipWatchAppInstall = 1;
+}
+13:20:59.991 xcodebuild[14078:14053044] CACB3927-A76E-43A5-9ACA-C389EB38C0C3: Installed app at path: /Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator/SSRuntime.app and options: {
+    SkipWatchAppInstall = 1;
+}
+13:20:59.999 xcodebuild[14078:14053044] CACB3927-A76E-43A5-9ACA-C389EB38C0C3: Launching app with identifier: com.zer0state.surveillancesurvivor and options: {
+    "activate_suspended" = 0;
+    arguments =     (
+    );
+    environment =     {
+        "APP_DISTRIBUTOR_ID_OVERRIDE" = "com.apple.AppStore";
+        "CA_ASSERT_MAIN_THREAD_TRANSACTIONS" = 0;
+        "CA_DEBUG_TRANSACTIONS" = 0;
+        "DYLD_FRAMEWORK_PATH" = "/Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator:/Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator/PackageFrameworks:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks:/Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator:/Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator/PackageFrameworks:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks";
+        "DYLD_INSERT_LIBRARIES" = "/usr/lib/libRPAC.dylib:/Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator/SSRuntime.app/Frameworks/libXCTestBundleInject.dylib:/Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/usr/lib/libMainThreadChecker.dylib:/usr/lib/libRPAC.dylib:/Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator/SSRuntime.app/Frameworks/libXCTestBundleInject.dylib:/Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/usr/lib/libMainThreadChecker.dylib:/usr/lib/libRPAC.dylib";
+        "DYLD_LIBRARY_PATH" = "/Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib:/Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib";
+        "LLVM_PROFILE_FILE" = "/dev/null";
+        NSUnbufferedIO = YES;
+        "OS_ACTIVITY_DT_MODE" = YES;
+        "PERFC_ENABLE_EXTENDED_DIAGNOSTIC_FORMAT" = 1;
+        "PERFC_ENABLE_PROFILE_MODE" = 1;
+        "PERFC_RESET_INSERT_LIBRARIES" = 1;
+        "PERFC_SUPPRESS_SYSTEM_REPORTS" = 1;
+        "RUN_DESTINATION_DEVICE_NAME" = "iPhone 17 Pro";
+        "RUN_DESTINATION_DEVICE_PLATFORM_IDENTIFIER" = "com.apple.platform.iphonesimulator";
+        "RUN_DESTINATION_DEVICE_UDID" = "CACB3927-A76E-43A5-9ACA-C389EB38C0C3";
+        "SQLITE_ENABLE_THREAD_ASSERTIONS" = 1;
+        "SWIFT_BACKTRACE" = "enable=no";
+        TERM = dumb;
+        XCInjectBundleInto = unused;
+        "XCODE_SCHEME_NAME" = SSRuntime;
+        XCTestBundleInjectPath = "/usr/lib/libRPAC.dylib:/Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator/SSRuntime.app/Frameworks/libXCTestBundleInject.dylib:/Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/usr/lib/libMainThreadChecker.dylib:/usr/lib/libRPAC.dylib:/Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator/SSRuntime.app/Frameworks/libXCTestBundleInject.dylib:/Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/usr/lib/libMainThreadChecker.dylib:/usr/lib/libRPAC.dylib";
+        XCTestBundlePath = "PlugIns/SSRuntimeTests.xctest";
+        XCTestConfigurationFilePath = "";
+        XCTestSessionIdentifier = "837B6F76-BBC8-4022-9012-4EA9737D03B2";
+        "__XCODE_BUILT_PRODUCTS_DIR_PATHS" = "/Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator";
+        "__XPC_DYLD_FRAMEWORK_PATH" = "/Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator:/Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator";
+        "__XPC_DYLD_LIBRARY_PATH" = "/Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator:/Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator";
+        "__XPC_LLVM_PROFILE_FILE" = "/dev/null";
+    };
+    stderr = "/dev/ttys004";
+    stdout = "/dev/ttys004";
+    "terminate_running_process" = 1;
+    "wait_for_debugger" = 1;
+}
+13:21:00.456 xcodebuild[14078:14053094] CACB3927-A76E-43A5-9ACA-C389EB38C0C3: Launched app with identifier: com.zer0state.surveillancesurvivor (pid = 16105)
+13:21:00.460 xcodebuild[14078:14053094] 📱<DVTiPhoneSimulator (0x7d9a84000), iPhone 17 Pro, unknown class, 26.5 (23F77), CACB3927-A76E-43A5-9ACA-C389EB38C0C3> tracking pid 16105
+13:21:00.460 xcodebuild[14078:14053094] 📱<DVTiPhoneSimulator (0x7d9a84000), iPhone 17 Pro, unknown class, 26.5 (23F77), CACB3927-A76E-43A5-9ACA-C389EB38C0C3> checking to see if pid 16105 is valid: kill(pid, 0) = 0 (YES, it's still running)
+13:21:00.464 xcodebuild[14078:14053096] CACB3927-A76E-43A5-9ACA-C389EB38C0C3: Registered for sim device notification, got token 10
+13:21:00.465 xcodebuild[14078:14053045] CACB3927-A76E-43A5-9ACA-C389EB38C0C3: Unregistering for sim device notification with token 10
+13:21:01.294 xcodebuild[14078:14052313] Test process runnable PID is 16105.
+13:21:01.294 xcodebuild[14078:14053096] XCTHTestOperationStateMachine: Transitioning from state Initial to AcquiredPID
+2026-11-16 13:21:04.877682-0800 SSRuntime[16105:14057121] [plugin] AddInstanceForFactory: No factory registered for id <CFUUID 0x10c31b5c0> F8BB1C28-BAE8-11D6-9C31-00039315CD46
+2026-11-16 13:21:05.042975-0800 SSRuntime[16105:14057365] [AudioConverter]     AudioConverterOOP.cpp:1084  Failed to prepare AudioConverterService: -302
+2026-11-16 13:21:05.113083-0800 SSRuntime[16105:14057121] [UIFocus] _TtC18_SpriteKit_SwiftUIP33_4A29C38A751B2448A1E2FA85CDDEAA5324SpriteKitViewCoordinator implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+13:21:06.203 xcodebuild[14078:14052344] Handling proxy channel request from test runner
+13:21:06.204 xcodebuild[14078:14052344] Test runner is ready with capabilities: <XCTCapabilities: 0x7d902c8c0>: {
+    "delayed attachment transfer" = 1;
+    "fetch all test identifiers" = 2;
+    "ubiquitous test identifiers" = 1;
+}
+13:21:06.202 SSRuntime[16105:14057121] Creating future for 'requesting test configuration' with timeout 600.00
+13:21:06.203 SSRuntime[16105:14057121] Notifying test runner ready
+13:21:06.203 SSRuntime[16105:14057121] <XCTWaiter: 0x10d382670> entering wait loop for 600.00s with expectations: `requesting test configuration`
+13:21:06.206 xcodebuild[14078:14052313] Test runner session successfully initiated.
+13:21:06.206 xcodebuild[14078:14052313] Authorizing test process ID 16105
+13:21:06.206 xcodebuild[14078:14053044] XCTHTestOperationStateMachine: Transitioning from state AcquiredPID to ReportedReady
+13:21:06.208 xcodebuild[14078:14052313] Got authorization response from test daemon: Success
+13:21:06.209 xcodebuild[14078:14052313] Registering/updating daemon-based crash report observer for process names (
+    xctest,
+    debugserver,
+    FrontBoard,
+    assertiond,
+    runningboardd,
+    SpringBoard,
+    testmanagerd,
+    backboardd,
+    DTServiceHub,
+    SSRuntime,
+    SSRuntimeTests
+)
+13:21:06.209 xcodebuild[14078:14052313] Telling test runner to start executing tests.
+13:21:06.216 SSRuntime[16105:14057366] Received test runner ready reply. Waiting for request to start running tests.
+13:21:06.217 SSRuntime[16105:14057366] _IDE_startExecutingTestPlanWithProtocolVersion:36
+13:21:06.310 SSRuntime[16105:14057121] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x10d382670>
+13:21:06.311 SSRuntime[16105:14057121] Wait <XCTWaiterWait: 0x118dc1800> completed after 0.108s
+13:21:06.311 SSRuntime[16105:14057121] cleaning up requesting test configuration
+13:21:06.311 SSRuntime[16105:14057121] Loading test bundle at: file:///Users/appliedalchemylabs/Library/Developer/CoreSimulator/Devices/CACB3927-A76E-43A5-9ACA-C389EB38C0C3/data/Library/Caches/com.apple.containermanagerd/Dead/temp.HQD4Dv/C87EB2CB-EA4F-42CA-B4AE-F3B2241D6E5D/SSRuntime.app/PlugIns/SSRuntimeTests.xctest/
+13:21:06.311 SSRuntime[16105:14057121] Finished loading test bundle
+13:21:06.312 SSRuntime[16105:14057121] Interop: not enabled, so skipping install
+13:21:06.312 SSRuntime[16105:14057121] Registering in-process symbolication service with image names: SSRuntime, SSRuntimeTests
+13:21:06.315 SSRuntime[16105:14057121] Running tests with active test configuration: <XCTestConfiguration: 0x107aec480>
+	                  testBundleURL:file:///Users/appliedalchemylabs/Library/Developer/CoreSimulator/Devices/CACB3927-A76E-43A5-9ACA-C389EB38C0C3/data/Library/Caches/com.apple.containermanagerd/Dead/temp.HQD4Dv/C87EB2CB-EA4F-42CA-B4AE-F3B2241D6E5D/SSRuntime.app/PlugIns/SSRuntimeTests.xctest/
+	         testBundleRelativePath:PlugIns/SSRuntimeTests.xctest
+	              productModuleName:SSRuntimeTests
+	                  testSelection:<XCTTestSelection: 0x10d3831b0>
+	            identifiersToRun:<XCTTestIdentifier leaf, method ["SceneQAFramingTests", "testQuietSouthNeutralOrdinaryScene"]>, <XCTTestIdentifier container ["SceneQAFramingTests", "testQuietSouthNeutralOrdinaryScene"]>
+	            identifiersToSkip:
+	            tagsToRun:(null)
+	            tagsToSkip:<XCTTagSelection: 0x118ef12c0>
+	            mode:and
+	            tags:{(
+)}
+	  includeXCTests:NO
+
+
+	             reportResultsToIDE:YES
+	               testsDrivenByIDE:NO
+	inProcessParallelizationEnabled:NO
+	              sessionIdentifier:837B6F76-BBC8-4022-9012-4EA9737D03B2
+	      disablePerformanceMetrics:NO
+	treatMissingBaselinesAsFailures:NO
+	                baselineFileURL:(null)
+	       baselineFileRelativePath:(null)
+	          targetApplicationPath:(null)
+	      targetApplicationBundleID:(null)
+	 testApplicationDependencies:
+{
+    "com.zer0state.surveillancesurvivor" = "/Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116/Build/Products/Debug-iphonesimulator/SSRuntime.app";
+}
+	 bundleIDsForCrashReportEmphasis:
+{(
+    "com.zer0state.SSRuntimeTests",
+    "com.zer0state.surveillancesurvivor"
+)}
+	 testApplicationUserOverrides:(null)
+	     targetApplicationArguments:
+	   targetApplicationEnvironment:(null)
+	                  reportActivities:YES
+	          testsMustRunOnMainThread:NO
+	            initializeForUITesting:NO
+	            traceCollectionEnabled:(null)
+	 enablePerformanceTestsDiagnostics:(null)
+	 aggregateStatisticsBeforeCrash:
+{
+    XCSuiteRecordsKey =     {
+    };
+}
+	        automationFrameworkPath:/Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework
+	                     emitOSLogs:NO
+	       systemAttachmentLifetime:deleteOnSuccess
+	         userAttachmentLifetime:deleteOnSuccess
+	   preferredScreenCaptureFormat:screenRecording
+	   gatherLocalizableStringsData:NO
+	          testExecutionOrdering:alphabetical
+	    randomExecutionOrderingSeed:(null)
+	               repetitionPolicy:<XCTRepetitionPolicy: 0x118ef0e80>
+	            mode:None
+	            maximumIterations:1
+	            repeatInNewRunnerProcess:NO
+
+	       runtimeDiagnosticsPolicy:<XCTRuntimeDiagnosticsPolicy: 0x10d383360>
+	            otherRuntimeIssuesDetectionPolicy:<XCTRuntimeIssueDetectionPolicy: 0x118ef0ea0>
+	            detectionEnabled:YES
+	            severity:warning
+
+	            threadPerformanceCheckerRuntimeIssueDetectionPolicy:<XCTRuntimeIssueDetectionPolicy: 0x118ef0ea0>
+	            detectionEnabled:YES
+	            severity:warning
+
+	            mainThreadCheckerDetectionPolicy:<XCTRuntimeIssueDetectionPolicy: 0x118ef0ea0>
+	            detectionEnabled:YES
+	            severity:warning
+
+	            checkedAllocations:disabled
+
+	            testTimeoutsEnabled:NO
+	              leaksCheckingMode:off
+	 defaultTestExecutionTimeAllowance:600
+	 maximumTestExecutionTimeAllowance:0
+	                IDECapabilities:<XCTCapabilities: 0x107ae9ae0>: {
+    "XCTIssue capability" = 1;
+    "daemon container sandbox extension" = 1;
+    "delayed attachment transfer" = 1;
+    "expected failure test capability" = 1;
+    "in-process test parallelization capability" = 1;
+    "request diagnostics for specific devices" = 1;
+    "runner plan" = 1;
+    "skipped suite capability" = 1;
+    "skipped test capability" = 1;
+    "test case run configurations" = 1;
+    "test iterations" = 2;
+    "test timeout capability" = 1;
+    traits = 1;
+    "ubiquitous test identifiers" = 1;
+    "unified issue recorded" = 1;
+}
+	        symbolicationImageNames:SSRuntime, SSRuntimeTests
+	         applicationBundleInfos:(null)
+
+13:21:06.318 SSRuntime[16105:14057121] <XCTWaiter: 0x10d3833c0> entering wait loop for 600.00s with expectations: `requesting ready for testing`
+13:21:06.318 SSRuntime[16105:14057121] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x10d3833c0>
+13:21:06.318 SSRuntime[16105:14057121] Wait <XCTWaiterWait: 0x118dc1340> completed after 0.000s
+13:21:06.318 SSRuntime[16105:14057121] cleaning up requesting ready for testing
+13:21:06.318 SSRuntime[16105:14057121] <XCTWaiter: 0x10d383600> entering wait loop for 600.00s with expectations: `IDE proxy`
+13:21:06.318 SSRuntime[16105:14057121] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x10d383600>
+13:21:06.318 SSRuntime[16105:14057121] Wait <XCTWaiterWait: 0x118dc1180> completed after 0.000s
+13:21:06.318 SSRuntime[16105:14057121] cleaning up IDE proxy
+13:21:06.318 SSRuntime[16105:14057121] Bypassing UI testing initialization because the test configuration does not request it.
+13:21:06.319 SSRuntime[16105:14057121] Loading test suite...
+13:21:07.016 SSRuntime[16105:14057121] Finished loading test suite, took 0.697s
+13:21:07.017 SSRuntime[16105:14057121] <XCTWaiter: 0x10d380720> entering wait loop for 598.88s with expectations: `preparing execution worker`
+2026-11-16 13:21:07.062808-0800 SSRuntime[16105:14057121] SKView: no drawables available for rendering. Skipping this frame.
+13:21:07.175 SSRuntime[16105:14057121] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x10d380720>
+13:21:07.175 SSRuntime[16105:14057121] Wait <XCTWaiterWait: 0x118dc0c80> completed after 0.158s
+13:21:07.175 SSRuntime[16105:14057121] cleaning up preparing execution worker
+13:21:07.175 xcodebuild[14078:14052313] Test runner started executing tests.
+13:21:07.175 xcodebuild[14078:14053045] XCTHTestOperationStateMachine: Transitioning from state ReportedReady to ExecutingTests
+13:21:07.175 SSRuntime[16105:14057121] Entering test execution event loop
+13:21:07.209 SSRuntime[16105:14057121] Setting a new interop record handler: Optional(XCTestCore.XCTestInteropRecordHandler())
+13:21:07.209 SSRuntime[16105:14057121] -[XCTRunnerIDESession(_XCTestObservationInternal) testBundleWillStart:]
+13:21:07.209 SSRuntime[16105:14057121] Running suite...
+13:21:07.210 SSRuntime[16105:14057121] -[XCTRunnerIDESession(_XCTestObservationInternal) testSuiteWillStart:]
+Test Suite 'Selected tests' started at 2026-11-16 13:21:07.210.
+13:21:07.212 xcodebuild[14078:14052313] _XCT_testSuiteWithIdentifier:<XCTTestIdentifier container ["Selected tests"]> didStartAt:2026-11-16 21:21:07 +0000 traits:(null)
+13:21:07.215 xcodebuild[14078:14052313] Nothing to delete
+13:21:07.211 SSRuntime[16105:14057121] -[XCTRunnerIDESession(_XCTestObservationInternal) testSuiteWillStart:]
+Test Suite 'SSRuntimeTests.xctest' started at 2026-11-16 13:21:07.211.
+13:21:07.215 xcodebuild[14078:14052313] _XCT_testSuiteWithIdentifier:<XCTTestIdentifier container []> didStartAt:2026-11-16 21:21:07 +0000 traits:(null)
+13:21:07.215 xcodebuild[14078:14052313] Nothing to delete
+13:21:07.212 SSRuntime[16105:14057121] -[XCTRunnerIDESession(_XCTestObservationInternal) testSuiteDidFinish:]
+13:21:07.215 xcodebuild[14078:14052313] _XCT_testSuiteWithIdentifier:<XCTTestIdentifier container []> didFinishAt:2026-11-16 21:21:07 +0000 runCount:0 skipCount:0 failureCount:0 expectedFailureCount:0 uncaughtExceptionCount:0 testDuration:0 totalDuration:0.000513911247253418
+13:21:07.216 xcodebuild[14078:14052313] Nothing to delete
+13:21:07.221 xcodebuild[14078:14052313] Nothing to delete
+13:21:07.212 SSRuntime[16105:14057121] -[XCTRunnerIDESession(_XCTestObservationInternal) testSuiteDidFinish:]
+13:21:07.221 xcodebuild[14078:14052313] _XCT_testSuiteWithIdentifier:<XCTTestIdentifier container ["Selected tests"]> didFinishAt:2026-11-16 21:21:07 +0000 runCount:0 skipCount:0 failureCount:0 expectedFailureCount:0 uncaughtExceptionCount:0 testDuration:0 totalDuration:0.002833008766174316
+13:21:07.221 xcodebuild[14078:14052313] Nothing to delete
+13:21:07.221 xcodebuild[14078:14052313] Nothing to delete
+13:21:07.213 SSRuntime[16105:14057121] Finished running suite.
+13:21:07.213 SSRuntime[16105:14057121] Setting a new interop record handler: nil
+13:21:07.213 SSRuntime[16105:14057121] <XCTWaiter: 0x107ad4ea0> entering indefinite wait loop for expectations: `XCTAsyncEnumerateWithWaiter(<XCTest.SwiftTestingExecutionExtension: 0x10c217200>)`
+13:21:07.213 SSRuntime[16105:14057371] -[XCTRuntimeIssueDetectionManager runtimeIssueDetectionEnabled] runtimeIssueDetectionEnabled based on XCTDisableRuntimeIssues and runtime diagnostics policies: YES
+13:21:07.214 SSRuntime[16105:14057371] -[XCTRuntimeIssueDetectionManager runtimeIssueDetectionEnabled] runtimeIssueDetectionEnabled based on XCTDisableRuntimeIssues and runtime diagnostics policies: YES
+13:21:07.225 xcodebuild[14078:14052313] Nothing to delete
+Test Suite 'SSRuntimeTests.xctest' passed at 2026-11-16 13:21:07.212.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'Selected tests' passed at 2026-11-16 13:21:07.212.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.003) seconds
+13:21:07.226 xcodebuild[14078:14052313] Nothing to delete
+13:21:07.227 xcodebuild[14078:14052313] Nothing to delete
+13:21:07.228 xcodebuild[14078:14052313] Nothing to delete
+13:21:07.228 xcodebuild[14078:14052313] Nothing to delete
+13:21:07.228 xcodebuild[14078:14052313] Nothing to delete
+13:21:07.252 SSRuntime[16105:14057371] Setting a new interop record handler: Optional(XCTest.SwiftTestingInteropRecordHandler())
+13:21:07.277 SSRuntime[16105:14058032] Setting a new interop record handler: nil
+13:21:07.278 SSRuntime[16105:14057121] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x107ad4ea0>
+13:21:07.278 SSRuntime[16105:14057121] Wait <XCTWaiterWait: 0x118dc1ec0> completed after 0.065s
+13:21:07.278 SSRuntime[16105:14057121] cleaning up XCTAsyncEnumerateWithWaiter(<XCTest.SwiftTestingExecutionExtension: 0x10c217200>)
+13:21:07.278 SSRuntime[16105:14057121] <XCTWaiter: 0x107ad4ea0> entering indefinite wait loop for expectations: `XCTAsyncEnumerateWithWaiter(<XCTTestRunSession: 0x118ef0260>)`
+13:21:07.278 SSRuntime[16105:14057121] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x107ad4ea0>
+13:21:07.278 SSRuntime[16105:14057121] Wait <XCTWaiterWait: 0x118dc2240> completed after 0.000s
+13:21:07.278 SSRuntime[16105:14057121] cleaning up XCTAsyncEnumerateWithWaiter(<XCTTestRunSession: 0x118ef0260>)
+13:21:07.278 SSRuntime[16105:14057121] -[XCTRunnerIDESession(_XCTestObservationInternal) testBundleDidFinish:], Flushing connection to IDE...
+13:21:07.279 SSRuntime[16105:14057121] Exited test execution event loop
+13:21:07.279 SSRuntime[16105:14057121] Creating future for 'flushing telemetry' with timeout 10.00
+13:21:07.279 SSRuntime[16105:14057121] <XCTWaiter: 0x10bd9fe70> entering wait loop for 10.00s with expectations: `flushing telemetry`
+13:21:07.279 SSRuntime[16105:14057121] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x10bd9fe70>
+13:21:07.280 SSRuntime[16105:14057121] Wait <XCTWaiterWait: 0x118dc2100> completed after 0.000s
+13:21:07.280 SSRuntime[16105:14057121] cleaning up flushing telemetry
+13:21:07.280 SSRuntime[16105:14057121] Creating future for 'confirming end of session with the harness' with timeout 1800.00
+13:21:07.280 SSRuntime[16105:14057121] <XCTWaiter: 0x10bd9fea0> entering wait loop for 1800.00s with expectations: `confirming end of session with the harness`
+13:21:07.280 xcodebuild[14078:14052313] -[XCTTestRunnerSession _XCT_didFinishExecutingTestPlan]_block_invoke
+13:21:07.281 xcodebuild[14078:14052313] Nothing to delete
+13:21:07.281 SSRuntime[16105:14057371] Creating future for 'flushing telemetry' with timeout 10.00
+13:21:07.281 SSRuntime[16105:14057371] <XCTWaiter: 0x10bd9f120> entering wait loop for 10.00s with expectations: `flushing telemetry`
+13:21:07.281 SSRuntime[16105:14057371] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x10bd9f120>
+13:21:07.281 SSRuntime[16105:14057371] Wait <XCTWaiterWait: 0x118dc2380> completed after 0.000s
+13:21:07.281 SSRuntime[16105:14057371] cleaning up flushing telemetry
+13:21:07.282 SSRuntime[16105:14057121] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x10bd9fea0>
+13:21:07.282 SSRuntime[16105:14057121] Wait <XCTWaiterWait: 0x118dc2280> completed after 0.002s
+13:21:07.282 SSRuntime[16105:14057121] cleaning up confirming end of session with the harness
+13:21:07.311 xcodebuild[14078:14052344] Closing socket 38 to testmanagerd for Sim iPhone 17 Pro
+13:21:07.312 xcodebuild[14078:14052345] <XCTTestRunnerSession: 0x7d95160d0> lost its connection.
+13:21:07.312 xcodebuild[14078:14052313] 📱<DVTiPhoneSimulator (0x7d9a84000), iPhone 17 Pro, unknown class, 26.5 (23F77), CACB3927-A76E-43A5-9ACA-C389EB38C0C3> got death notice for pid 16105 (exit code: 0, signal: (null)), removing from SimulatorSessionMap
+13:21:07.312 xcodebuild[14078:14052313] Lost connection to test process
+13:21:07.314 xcodebuild[14078:14052313] 📱<DVTiPhoneSimulator (0x7d9a84000), iPhone 17 Pro, unknown class, 26.5 (23F77), CACB3927-A76E-43A5-9ACA-C389EB38C0C3> claim LaunchSessionClaim_0x7dbc5c900 on simulator was relinquished, 1 claims remain.
+13:21:07.314 xcodebuild[14078:14052313] 📱<DVTiPhoneSimulator (0x7d9a84000), iPhone 17 Pro, unknown class, 26.5 (23F77), CACB3927-A76E-43A5-9ACA-C389EB38C0C3> claim LaunchSessionClaim_0x7dbc5c900 on simulator was relinquished, 1 claims remain.
+13:21:07.314 xcodebuild[14078:14052313] 📱<DVTiPhoneSimulator (0x7d9a84000), iPhone 17 Pro, unknown class, 26.5 (23F77), CACB3927-A76E-43A5-9ACA-C389EB38C0C3> claim LaunchSessionClaim_0x7dbc5c900 on simulator was relinquished, 1 claims remain.
+13:21:07.314 xcodebuild[14078:14052313] Launch session expired.
+13:21:07.384 xcodebuild[14078:14052313] Nothing to delete
+13:21:07.571 xcodebuild[14078:14052313] <XCTHTestOperationCoordinator: 0x7dbc5cc00> finished receiving data from testing launch session
+13:21:07.571 xcodebuild[14078:14052313] <XCTHTestOperationCoordinator: 0x7dbc5cc00>: _considerFlushingDelegateBlockQueue - nothing to flush
+13:21:07.571 xcodebuild[14078:14052313] Nothing to delete
+13:21:07.571 xcodebuild[14078:14052313] Can finish test, forceToNotWaitForAsynchronousDiagnostics is NO. Finishing...
+13:21:07.571 xcodebuild[14078:14052313] _finishWithError:(null)
+13:21:07.571 xcodebuild[14078:14052313] Current state: testRunnerLaunchSessionHasFinishedReceivingData: YES, delegateBlockQueue.count: 0
+13:21:07.571 xcodebuild[14078:14052313] <XCTHTestOperationCoordinator: 0x7dbc5cc00>: _considerFlushingDelegateBlockQueue - nothing to flush

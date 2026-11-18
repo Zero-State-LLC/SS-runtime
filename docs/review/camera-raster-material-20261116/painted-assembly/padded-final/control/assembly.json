@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "status": "PAINTED_ASSEMBLY_FIRST_PREVIEW_NOT_ACCEPTED",
+  "canvas": [180, 450],
+  "root": [46, 427],
+  "logicalScale": 0.22966507177033493,
+  "layers": [
+    {
+      "name": "complete-pole",
+      "source": "components.png",
+      "sourceRegion": [0, 0, 627, 1254],
+      "crop": [250, 10, 540, 1220],
+      "uniformScale": 0.35214827295703455,
+      "position": [-4.885425442291493, 8.12636899747262],
+      "visible": true,
+      "role": "Uninterrupted complete painted pole, finial, collars, shaft and base. Full paint remains behind mounted head and junction box."
+    },
+    {
+      "name": "complete-head",
+      "source": "components.png",
+      "sourceRegion": [627, 0, 1254, 1254],
+      "crop": [680, 380, 1090, 770],
+      "uniformScale": 0.27,
+      "position": [47.95, 57.41],
+      "visible": true,
+      "role": "Complete painted bracket, mounting plate, neck, hood and smoked glass assembly. Internal pieces are NOT independently editable geometry."
+    },
+    {
+      "name": "junction-box",
+      "source": "junction-box.png",
+      "sourceRegion": [0, 0, 1254, 1254],
+      "crop": [425, 295, 815, 930],
+      "uniformScale": 0.062,
+      "position": [54.132, 157.07],
+      "visible": true,
+      "role": "Independent complete painted closed electronics box. Back surface and physical depth are not supplied."
+    }
+  ],
+  "method": "Three independently editable neutral 2.5D raster layers, exact pixel crops and uniform scale plus translation. No relighting, recoloring, inpainting, vector overlays or inferred pan frames.",
+  "alphaPolicy": "Provider RGBA retained verbatim. Crops preserve all subject-region alpha>=16 pixels, retain original alpha values inside crop, and discard only dispersed alpha1-15 pixels outside padding. Threshold16 is diagnostic only and never applied to render pixels.",
+  "limits": [
+    "Uniform pole fit matches reference height, but generated base is proportionally wider. No nonuniform squeeze conceals this difference.",
+    "Three raster layers, not a 16-part or full 3D editable source.",
+    "Painted light and internal contours are baked within each complete raster component.",
+    "No production registration, collision, field, owner acceptance or native capture claim."
+  ]
+}

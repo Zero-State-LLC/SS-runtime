@@ -1,0 +1,81 @@
+{
+  "trackedInputCommit": "e90b2361bcd80f4a15dd5c39335b2fc69f7be993",
+  "files": {
+    "iron-generation.json": {
+      "sha256": "2a149b3e0a1eb746821c7813ed185f8078a5b862e6d19bbee4cf50bbc724d52a",
+      "bytes": 3007,
+      "origin": "supplied image-generation ig_047e2f0bb16e8096016afacdaa899487d0a6456462a8499a29",
+      "role": "independent material"
+    },
+    "iron.png": {
+      "sha256": "e20e61ca4ac3016b34e316f4d40f9222033fa7435a5400bc5451b104ed5b08bd",
+      "bytes": 2233855,
+      "origin": "supplied image-generation ig_047e2f0bb16e8096016afacdaa899487d0a6456462a8499a29",
+      "role": "independent material",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "embeddedMetadata": {}
+    },
+    "paving.png": {
+      "sha256": "c0decdab226512a790ddecf49cf703c9fc736f7943f11bc364b76b111b7c3125",
+      "bytes": 2689986,
+      "origin": "AppTests/WholeSceneAssets/whole-scene-muted-paving.png",
+      "role": "background only",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "embeddedMetadata": {}
+    },
+    "prior-build.py": {
+      "sha256": "b1cfe68b91e9cdb968f38871ae83214e7c39eb11404300af5290afe1080ac247",
+      "bytes": 9108,
+      "origin": "docs/review/camera-surface-authored-20261116/build.py",
+      "role": "construction only"
+    },
+    "prior-geometry.json": {
+      "sha256": "2746d816dbd94d8a8ce435d019b253ef30629d112e489d14d3b2df90b8d00326",
+      "bytes": 24148,
+      "origin": "docs/review/camera-surface-authored-20261116/geometry.json",
+      "role": "construction only"
+    },
+    "reference.png": {
+      "sha256": "49aa35447230187e3eabe948cdc8eba6d6d465b2605d624e2cf7443f6cb69ffb",
+      "bytes": 2904132,
+      "origin": "docs/review/camera-surface-authored-20261116/inputs/reference.png",
+      "role": "comparison only",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "embeddedMetadata": {}
+    },
+    "rejected-master.png": {
+      "sha256": "98198bc76b8b9a26e36255ba972f694c498a369b9b2332c0a8e9d89d73ab0d65",
+      "bytes": 37092,
+      "origin": "docs/review/camera-surface-authored-20261116/attempt-02/camera-master.png",
+      "role": "comparison only",
+      "size": [
+        180,
+        450
+      ],
+      "mode": "RGBA",
+      "embeddedMetadata": {}
+    }
+  },
+  "requestedMaterialSize": [
+    1024,
+    1024
+  ],
+  "actualMaterialSize": [
+    1254,
+    1254
+  ],
+  "materialInspection": "Opaque RGB, no embedded PNG metadata. Separate provider JSON retained verbatim. Grey cast-iron field with sparse chips, not benchmark pixels.",
+  "adapt": "ADAPT prior-build.py lines 32-59 cubic path sampling algorithm only. Prior geometry contours and selected broad-face paths are construction inputs, not accepted source. Prior pigments and dab/scratch surfaces not rendered."
+}

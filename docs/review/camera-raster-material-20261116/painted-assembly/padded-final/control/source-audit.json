@@ -1,0 +1,149 @@
+{
+  "actualSources": "Both1254x1254 RGBA; real transparent pixels, mostly252-254 interior alpha; no matte removal.",
+  "assemblyBoundary": {
+    "complete-head": {
+      "antialiasPaddingSatisfied": true,
+      "canvasBorderMaxAlpha": 0,
+      "sourcePaintGeometricBoundsInsideCanvas": true,
+      "sourceVisibleBoundsTransformed": [
+        52.0,
+        62.0,
+        154.87,
+        157.85000000000002
+      ]
+    },
+    "complete-pole": {
+      "antialiasPaddingSatisfied": false,
+      "canvasBorderMaxAlpha": 215,
+      "sourcePaintGeometricBoundsInsideCanvas": true,
+      "sourceVisibleBoundsTransformed": [
+        0.04465037910699099,
+        12.0,
+        92.30749789385004,
+        430.0
+      ]
+    },
+    "junction-box": {
+      "antialiasPaddingSatisfied": true,
+      "canvasBorderMaxAlpha": 0,
+      "sourcePaintGeometricBoundsInsideCanvas": true,
+      "sourceVisibleBoundsTransformed": [
+        55.0,
+        158.0,
+        77.506,
+        195.572
+      ]
+    }
+  },
+  "geometryCompletenessScope": "All pixels with alpha>=16 in each independent subject region are retained in padded source crops. This is not 3D/backface completeness. Rendered pole touches left canvas edge; antialias fringe margin is not certified.",
+  "ownerAccepted": false,
+  "priorPilot": "Parent pilot-01, inputs, model and renderer remain unchanged.",
+  "productionAdmitted": false,
+  "provenance": {
+    "components-generation.json": {
+      "origin": "/Users/appliedalchemylabs/.jcode/generated-images/1794822023576-ig_047e2f0bb16e8096016afacf5567b887d090eea898c287cd7e.json",
+      "sha256": "7ccb43be2339156cfcc636cd0e95ae001005173dbe6bbe7959ed9794b24e8a4e"
+    },
+    "components.png": {
+      "origin": "/Users/appliedalchemylabs/.jcode/generated-images/1794822023576-ig_047e2f0bb16e8096016afacf5567b887d090eea898c287cd7e.png",
+      "sha256": "37683eb549827eed1245609c0285cba7163ca88d98f119c737226da959ecbf02"
+    },
+    "junction-box-generation.json": {
+      "origin": "/Users/appliedalchemylabs/.jcode/generated-images/1794822224739-ig_047e2f0bb16e8096016afad01fdcb487d08ef0f78bc5f1e9bb.json",
+      "sha256": "fa17b6ed1beffcb70239d699763eb23eede8ee04e7ba36b39887bb6921452bde"
+    },
+    "junction-box.png": {
+      "origin": "/Users/appliedalchemylabs/.jcode/generated-images/1794822224739-ig_047e2f0bb16e8096016afad01fdcb487d08ef0f78bc5f1e9bb.png",
+      "sha256": "3cfb6445a273a6fe4d2a4279a5afeab5a0069ccdecb64e39db3989bc0c79b4bf"
+    },
+    "paving.png": {
+      "origin": "AppTests/WholeSceneAssets/whole-scene-muted-paving.png at e90b2361bcd80f4a15dd5c39335b2fc69f7be993",
+      "sha256": "c0decdab226512a790ddecf49cf703c9fc736f7943f11bc364b76b111b7c3125"
+    },
+    "reference.png": {
+      "origin": "docs/review/camera-surface-authored-20261116/inputs/reference.png at e90b2361bcd80f4a15dd5c39335b2fc69f7be993",
+      "sha256": "49aa35447230187e3eabe948cdc8eba6d6d465b2605d624e2cf7443f6cb69ffb"
+    }
+  },
+  "sourceInspection": {
+    "complete-head": {
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "crop": [
+        680,
+        380,
+        1090,
+        770
+      ],
+      "cropBorderMaxAlpha": 0,
+      "cropRetainedPaintPixels": 89675,
+      "discardedAlpha1to15Pixels": 592,
+      "discardedAlphaMass": 592,
+      "discardedVisiblePixels": 0,
+      "region": [
+        627,
+        0,
+        1254,
+        1254
+      ],
+      "regionNearlyOpaquePixels": 87566,
+      "regionTransparentPixels": 691673,
+      "thresholdIsDiagnosticOnly": true
+    },
+    "complete-pole": {
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "crop": [
+        250,
+        10,
+        540,
+        1220
+      ],
+      "cropBorderMaxAlpha": 1,
+      "cropRetainedPaintPixels": 164203,
+      "discardedAlpha1to15Pixels": 460,
+      "discardedAlphaMass": 460,
+      "discardedVisiblePixels": 0,
+      "region": [
+        0,
+        0,
+        627,
+        1254
+      ],
+      "regionNearlyOpaquePixels": 160380,
+      "regionTransparentPixels": 615853,
+      "thresholdIsDiagnosticOnly": true
+    },
+    "junction-box": {
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "crop": [
+        425,
+        295,
+        815,
+        930
+      ],
+      "cropBorderMaxAlpha": 0,
+      "cropRetainedPaintPixels": 193160,
+      "discardedAlpha1to15Pixels": 266,
+      "discardedAlphaMass": 266,
+      "discardedVisiblePixels": 0,
+      "region": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "regionNearlyOpaquePixels": 190279,
+      "regionTransparentPixels": 1374502,
+      "thresholdIsDiagnosticOnly": true
+    }
+  },
+  "status": "PAINTED_ASSEMBLY_FIRST_PREVIEW_NOT_ACCEPTED"
+}

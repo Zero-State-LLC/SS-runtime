@@ -1,0 +1,57 @@
+{
+  "status": "RETAINED_BYTES_AND_CONTRACT_VERIFIED_NOT_NEW_NATIVE_RUN",
+  "fixtureVersion": "source-scene-qa-006-control-framing",
+  "captures": 6,
+  "images": 18,
+  "ownerAcceptance": false,
+  "physicalDeviceEvidence": false,
+  "binaryCheck": "agreement of preserved original import records, not a fresh local binary comparison"
+}
+{"result":"PASS","actualCaptureVersions":3,"images":54,"selections":72,"rejectedMutations":22,"syntheticV6RejectedMutations":15,"v6NativeEvidence":true,"browserEvidence":false}
+{"result":"PASS","missingV6":true,"mismatchedCaptureRejected":true,"corruptedPNGRejected":true,"corruptedRecordRejected":true,"syntheticV6Only":true,"noFallback":true,"retainedV5Selections":36,"browserEvidence":false,"nativeRun":false}
+
+----------------------------------------------------------------------
+Ran 39 tests in 2.488s
+
+OK
+{
+  "kind": "REGISTERED_SILHOUETTE_AND_CAPTURED_PIXEL_QA_NOT_ACCEPTANCE",
+  "passed": true,
+  "results": [
+    {
+      "zoom": 1,
+      "cameraCoveredByStoneFraction": 0.0,
+      "playerExteriorPalePixels": 0,
+      "playerExteriorSamples": 2142,
+      "playerExteriorPaleRatio": 0.0,
+      "cameraCapturedPixelMatchRatio": 0.9373500645875623,
+      "cameraCoreSamples": 10838,
+      "cameraReadable": true,
+      "playerNoPaleHalo": true
+    },
+    {
+      "zoom": 1.25,
+      "cameraCoveredByStoneFraction": 0.0,
+      "playerExteriorPalePixels": 0,
+      "playerExteriorSamples": 3425,
+      "playerExteriorPaleRatio": 0.0,
+      "cameraCapturedPixelMatchRatio": 0.9775430088904283,
+      "cameraCoreSamples": 17322,
+      "cameraReadable": true,
+      "playerNoPaleHalo": true
+    },
+    {
+      "zoom": 1.4,
+      "cameraCoveredByStoneFraction": 0.0,
+      "playerExteriorPalePixels": 0,
+      "playerExteriorSamples": 3889,
+      "playerExteriorPaleRatio": 0.0,
+      "cameraCapturedPixelMatchRatio": 0.955447124811893,
+      "cameraCoreSamples": 21929,
+      "cameraReadable": true,
+      "playerNoPaleHalo": true
+    }
+  ]
+}
+
+--- Command finished with exit code: 0 ---

@@ -1,0 +1,421 @@
+{
+  "status": "PROPOSED",
+  "kind": "SAME_MASTER_EXTENSION_PROPOSAL_NOT_ADMISSION",
+  "facing": "west",
+  "screenForward": "left",
+  "nearAnatomicalSide": "left",
+  "canvas": [
+    384,
+    416
+  ],
+  "groundRoot": [
+    192,
+    336
+  ],
+  "rootPolicy": "registration anchor; visible boots may extend below it",
+  "contractIDs": [
+    "BP-002",
+    "BP-007",
+    "BP-012",
+    "T1045"
+  ],
+  "provenance": {
+    "sheet": "/Users/appliedalchemylabs/.jcode/generated-images/1794799386977-ig_07cd661172aa2162016afa76e6fc2087d0a633b2f0fce6aa30.png",
+    "localCopy": "source/west-sheet.png",
+    "sheetSHA256": "78ea555dfb9d6ea207c141ae3642269f22653f88cc1e90ae5a7847cfee2c9a40",
+    "metadataSHA256": "6b3835ef846bac43d2f7c5e7529da35b5c21c49473b96072a36dd2946524a99f",
+    "generator": "native image_generation, coordinator-authored",
+    "generatedHiddenSurfaces": true,
+    "paintStatus": "generated proposed paint, not original master paint",
+    "cutSplits": [
+      "hood/torso_coat_equipment at y260 (37 opaque px)",
+      "near_left_upper_arm/near_left_forearm_hand at y324 (10 opaque px)",
+      "far_right_forearm_hand/far_right_coat_tail at y528 (8 opaque px)"
+    ]
+  },
+  "master": {
+    "path": "/Users/appliedalchemylabs/Documents/Codex/2026-10-13/can/outputs/SS-player-bounded-proportions/source/body-rig.json",
+    "localCopy": "source/original-body-rig.json",
+    "sha256": "c1d53f25495c4e17bd3f1f4df1b0e0e87bd047872420625642a88b8cdc26530b",
+    "bindingType": "semantic extension only, not validated anatomy"
+  },
+  "tool": {
+    "name": "Pillow",
+    "version": "12.3.0"
+  },
+  "layerOrderBottomToTop": [
+    "right_satchel",
+    "far_right_forearm_hand",
+    "far_right_upper_arm",
+    "far_right_coat_tail",
+    "far_right_shin_boot",
+    "far_right_thigh",
+    "near_left_shin_boot",
+    "near_left_thigh",
+    "torso_coat_equipment",
+    "near_left_coat_tail",
+    "near_left_upper_arm",
+    "near_left_forearm_hand",
+    "hood"
+  ],
+  "parts": [
+    {
+      "name": "right_satchel",
+      "bone": "right_hip",
+      "region": [
+        1300,
+        535,
+        1485,
+        730
+      ],
+      "alphaBounds": [
+        1310,
+        543,
+        1477,
+        724
+      ],
+      "translation": [
+        196,
+        176
+      ],
+      "uniformScale": 0.4,
+      "resampledSize": [
+        67,
+        72
+      ],
+      "componentSHA256": "f5d61a1e85655707a6eda0ed2239516f354621140521b92d2b60e77c1871dacb",
+      "layerSHA256": "9ad3392e47b6a1cbb34feb214aad811dcbc18bcee25d924c59bd41880b0ea97e"
+    },
+    {
+      "name": "far_right_forearm_hand",
+      "bone": "right_elbow",
+      "region": [
+        1170,
+        324,
+        1300,
+        528
+      ],
+      "alphaBounds": [
+        1185,
+        327,
+        1289,
+        528
+      ],
+      "translation": [
+        152,
+        168
+      ],
+      "uniformScale": 0.4,
+      "resampledSize": [
+        42,
+        80
+      ],
+      "componentSHA256": "b9eb465ff02787e5dfd929c9b5b8602ca6503ef5e9e49eb20582c617a6c8f84f",
+      "layerSHA256": "c4cd2258fb25e970aef35e9c1340ed57aa4bc47131551a4be14b9febebdda787"
+    },
+    {
+      "name": "far_right_upper_arm",
+      "bone": "right_shoulder",
+      "region": [
+        1170,
+        80,
+        1310,
+        324
+      ],
+      "alphaBounds": [
+        1181,
+        89,
+        1302,
+        323
+      ],
+      "translation": [
+        150,
+        104
+      ],
+      "uniformScale": 0.4,
+      "resampledSize": [
+        48,
+        94
+      ],
+      "componentSHA256": "1838e501b08bb3536be8893afffda8e6c87657d1587f0962e7b88925061ba1b0",
+      "layerSHA256": "3e1af010f7e00e049e85ca8840456003c08f6f45a2dd596a321621dc9ef35848"
+    },
+    {
+      "name": "far_right_coat_tail",
+      "bone": "right_hip",
+      "region": [
+        1105,
+        528,
+        1300,
+        740
+      ],
+      "alphaBounds": [
+        1116,
+        528,
+        1284,
+        728
+      ],
+      "translation": [
+        166,
+        196
+      ],
+      "uniformScale": 0.4,
+      "resampledSize": [
+        67,
+        80
+      ],
+      "componentSHA256": "56ceb270c37b34f674e4a02b3c985301195c5e85c2f2ea9306446ffdc0194984",
+      "layerSHA256": "56934823d5eb195a56037bc58a6d63353e1153f9e1234d90147baa58d3be2d17"
+    },
+    {
+      "name": "far_right_shin_boot",
+      "bone": "right_knee",
+      "region": [
+        1105,
+        740,
+        1275,
+        1000
+      ],
+      "alphaBounds": [
+        1113,
+        744,
+        1264,
+        992
+      ],
+      "translation": [
+        150,
+        262
+      ],
+      "uniformScale": 0.4,
+      "resampledSize": [
+        60,
+        99
+      ],
+      "componentSHA256": "96d4852a471cd8d869e638f3389fb5c8a1169baa9f04898405d41554a23a3cd2",
+      "layerSHA256": "a2daac8575f25ad03dace5d7c404376f673483d186b9fe420a69aae28a4849ef"
+    },
+    {
+      "name": "far_right_thigh",
+      "bone": "right_hip",
+      "region": [
+        560,
+        700,
+        700,
+        955
+      ],
+      "alphaBounds": [
+        572,
+        706,
+        698,
+        954
+      ],
+      "translation": [
+        156,
+        220
+      ],
+      "uniformScale": 0.4,
+      "resampledSize": [
+        50,
+        99
+      ],
+      "componentSHA256": "5c46ce81620733d6e8c8fbe4704102d203f75f4831a73ce0665f33ee43c65002",
+      "layerSHA256": "9d42f9fb671542e9f3facaa11ca4d524b7144c3ea189011d9e369968d20fd620"
+    },
+    {
+      "name": "near_left_shin_boot",
+      "bone": "left_knee",
+      "region": [
+        880,
+        740,
+        1055,
+        1000
+      ],
+      "alphaBounds": [
+        885,
+        746,
+        1042,
+        994
+      ],
+      "translation": [
+        168,
+        258
+      ],
+      "uniformScale": 0.4,
+      "resampledSize": [
+        63,
+        99
+      ],
+      "componentSHA256": "71b15f201327ceaa7641b4e5a2f5dd6378abc923f2c3dd5fa73e48cd0836da0c",
+      "layerSHA256": "fe0c6a7df88a2f4130b5e6eef48c75417ded8d5041efd3c90a5caad9f182a22a"
+    },
+    {
+      "name": "near_left_thigh",
+      "bone": "left_hip",
+      "region": [
+        705,
+        700,
+        845,
+        955
+      ],
+      "alphaBounds": [
+        715,
+        707,
+        836,
+        945
+      ],
+      "translation": [
+        170,
+        220
+      ],
+      "uniformScale": 0.4,
+      "resampledSize": [
+        48,
+        95
+      ],
+      "componentSHA256": "72203180b9b7fbf22b42673c142217a663691d49f4b58b27ac81d4f89d338990",
+      "layerSHA256": "3cb0c3337f5a22bfeda05c77dea9a472c1ab499d229e970da6ab6bf7db9f4dbd"
+    },
+    {
+      "name": "torso_coat_equipment",
+      "bone": "torso",
+      "region": [
+        585,
+        260,
+        830,
+        600
+      ],
+      "alphaBounds": [
+        593,
+        260,
+        826,
+        596
+      ],
+      "translation": [
+        146,
+        101
+      ],
+      "uniformScale": 0.4,
+      "resampledSize": [
+        93,
+        134
+      ],
+      "componentSHA256": "c1fe06b0911fc01a6d6c65b49652865642e23627d657d5e3ab293c09f083d0c1",
+      "layerSHA256": "be0e54b8fea82c53b10f7767a7919adf1e725a0d6976a25a2f32dc859a09eb04"
+    },
+    {
+      "name": "near_left_coat_tail",
+      "bone": "left_hip",
+      "region": [
+        840,
+        520,
+        1015,
+        745
+      ],
+      "alphaBounds": [
+        849,
+        520,
+        1008,
+        739
+      ],
+      "translation": [
+        180,
+        196
+      ],
+      "uniformScale": 0.4,
+      "resampledSize": [
+        64,
+        88
+      ],
+      "componentSHA256": "c9782423d9198ed8e583059383761527df66eb64a3d0dba7f064faed7585c44f",
+      "layerSHA256": "29fcaddb01c12128b1095f255ac5dded25fb2083ac9f3caf7ee5d09a51d174ba"
+    },
+    {
+      "name": "near_left_upper_arm",
+      "bone": "left_shoulder",
+      "region": [
+        910,
+        80,
+        1070,
+        324
+      ],
+      "alphaBounds": [
+        913,
+        88,
+        1070,
+        324
+      ],
+      "translation": [
+        172,
+        104
+      ],
+      "uniformScale": 0.4,
+      "resampledSize": [
+        63,
+        94
+      ],
+      "componentSHA256": "655f16a6217f1035f0c916ad67b273bf041617a8c9c8f4fa22ff2286e8974def",
+      "layerSHA256": "39589c974ee450b7593fb6911ee4757c9fc61ac1d992b0d8487a0422bfc92122"
+    },
+    {
+      "name": "near_left_forearm_hand",
+      "bone": "left_elbow",
+      "region": [
+        910,
+        324,
+        1070,
+        531
+      ],
+      "alphaBounds": [
+        910,
+        324,
+        1054,
+        531
+      ],
+      "translation": [
+        168,
+        170
+      ],
+      "uniformScale": 0.4,
+      "resampledSize": [
+        58,
+        83
+      ],
+      "componentSHA256": "96264209c1b33a1c926673847dbf9c55fada565b6d911c789666394b96c28ac3",
+      "layerSHA256": "bd6af6665e43e3532a9c080bee64c35babadcc83e190a45fb4afdfd1f179de13"
+    },
+    {
+      "name": "hood",
+      "bone": "head",
+      "region": [
+        585,
+        10,
+        830,
+        260
+      ],
+      "alphaBounds": [
+        593,
+        21,
+        828,
+        260
+      ],
+      "translation": [
+        146,
+        39
+      ],
+      "uniformScale": 0.4,
+      "resampledSize": [
+        94,
+        96
+      ],
+      "componentSHA256": "f566bcead89c04e2feff1a08eef52c643dcb52182d93b5ee367b478a825defee",
+      "layerSHA256": "c0b11c71d95d794edc351fd5817adf748821eff9c6244462c5a812841c37876f"
+    }
+  ],
+  "outputSHA256": "9d06aa548271ed8249dd59087a8ea0d293d7b3dc9dad23cc0ee7d5526211b744",
+  "alphaBounds": [
+    146,
+    39,
+    263,
+    361
+  ]
+}

@@ -1,0 +1,34 @@
+test_actual476_captures_and28_endpoints (__main__.ActualCaptureGuards.test_actual476_captures_and28_endpoints) ... ok
+test_actual_bundle_digest_rejected_even_with_updated_record_hash (__main__.ActualCaptureGuards.test_actual_bundle_digest_rejected_even_with_updated_record_hash) ... ok
+test_capture_hash_tamper_rejected (__main__.ActualCaptureGuards.test_capture_hash_tamper_rejected) ... ok
+test_changed_native_facts_rejected (__main__.ActualCaptureGuards.test_changed_native_facts_rejected) ... ok
+test_extra_capture_rejected (__main__.ActualCaptureGuards.test_extra_capture_rejected) ... ok
+test_lifted_art_claim_rejected (__main__.ActualCaptureGuards.test_lifted_art_claim_rejected) ... ok
+test_lifted_live_claim_rejected (__main__.ActualCaptureGuards.test_lifted_live_claim_rejected) ... ok
+test_missing_attachment_hash_rejected (__main__.ActualCaptureGuards.test_missing_attachment_hash_rejected) ... ok
+test_native_dimensions_rejected_even_with_updated_file_hash (__main__.ActualCaptureGuards.test_native_dimensions_rejected_even_with_updated_file_hash) ... ok
+test_native_endpoint_pixels_rejected_even_with_updated_file_hash (__main__.ActualCaptureGuards.test_native_endpoint_pixels_rejected_even_with_updated_file_hash) ... ok
+test_source_configuration_drift_rejected (__main__.ActualCaptureGuards.test_source_configuration_drift_rejected) ... ok
+test_timing_declaration_tamper_rejected (__main__.ActualCaptureGuards.test_timing_declaration_tamper_rejected) ... ok
+test_complete_parser_census (__main__.ImportGuards.test_complete_parser_census) ... ok
+test_duplicate_image_rejected (__main__.ImportGuards.test_duplicate_image_rejected) ... ok
+test_exact_result_identities (__main__.ImportGuards.test_exact_result_identities) ... ok
+test_failed_case_despite_green_summary_rejected (__main__.ImportGuards.test_failed_case_despite_green_summary_rejected) ... ok
+test_failure_skip_expected_failure_rejected (__main__.ImportGuards.test_failure_skip_expected_failure_rejected) ... ok
+test_invalid_actual_sha_rejected (__main__.ImportGuards.test_invalid_actual_sha_rejected) ... ok
+test_missing_image_rejected (__main__.ImportGuards.test_missing_image_rejected) ... ok
+test_missing_record_rejected (__main__.ImportGuards.test_missing_record_rejected) ... ok
+test_other_test_names_rejected (__main__.ImportGuards.test_other_test_names_rejected) ... ok
+test_path_escape_rejected (__main__.ImportGuards.test_path_escape_rejected) ... ok
+test_png_preservation_test_only (__main__.ImportGuards.test_png_preservation_test_only) ... ok
+test_records_must_preserve_phase_family_pose_order (__main__.ImportGuards.test_records_must_preserve_phase_family_pose_order) ... ok
+test_wrong_capture_name_rejected (__main__.ImportGuards.test_wrong_capture_name_rejected) ... ok
+test_wrong_family_rejected (__main__.ImportGuards.test_wrong_family_rejected) ... ok
+test_wrong_texture_rejected (__main__.ImportGuards.test_wrong_texture_rejected) ... ok
+test_wrong_tick_rejected (__main__.ImportGuards.test_wrong_tick_rejected) ... ok
+test_zero_test_exit_zero_rejected (__main__.ImportGuards.test_zero_test_exit_zero_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 55.361s
+
+OK

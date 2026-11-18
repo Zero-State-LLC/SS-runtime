@@ -1,0 +1,71 @@
+{
+  "devices": [
+    {
+      "architecture": "arm64",
+      "deviceId": "CACB3927-A76E-43A5-9ACA-C389EB38C0C3",
+      "deviceName": "iPhone 17 Pro",
+      "modelName": "iPhone 17 Pro",
+      "osBuildNumber": "23F77",
+      "osVersion": "26.5",
+      "platform": "iOS Simulator"
+    }
+  ],
+  "testNodes": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "duration": "42s",
+                  "durationInSeconds": 42.905559062957764,
+                  "name": "testBothFamiliesBypassAndCancelReducedMotion()",
+                  "nodeIdentifier": "ReleaseVariationSourceTests/testBothFamiliesBypassAndCancelReducedMotion()",
+                  "nodeIdentifierURL": "test://com.apple.xcode/SSRuntime/SSRuntimeTests/ReleaseVariationSourceTests/testBothFamiliesBypassAndCancelReducedMotion",
+                  "nodeType": "Test Case",
+                  "result": "Passed"
+                },
+                {
+                  "duration": "29s",
+                  "durationInSeconds": 29.911378026008606,
+                  "name": "testBothFamiliesInterruptAndRestartWithoutStalePose()",
+                  "nodeIdentifier": "ReleaseVariationSourceTests/testBothFamiliesInterruptAndRestartWithoutStalePose()",
+                  "nodeIdentifierURL": "test://com.apple.xcode/SSRuntime/SSRuntimeTests/ReleaseVariationSourceTests/testBothFamiliesInterruptAndRestartWithoutStalePose",
+                  "nodeType": "Test Case",
+                  "result": "Passed"
+                },
+                {
+                  "duration": "2m",
+                  "durationInSeconds": 120.23273301124573,
+                  "name": "testPairedAllPosesUseExactSourceTexturesAndTiming()",
+                  "nodeIdentifier": "ReleaseVariationSourceTests/testPairedAllPosesUseExactSourceTexturesAndTiming()",
+                  "nodeIdentifierURL": "test://com.apple.xcode/SSRuntime/SSRuntimeTests/ReleaseVariationSourceTests/testPairedAllPosesUseExactSourceTexturesAndTiming",
+                  "nodeType": "Test Case",
+                  "result": "Passed"
+                }
+              ],
+              "name": "ReleaseVariationSourceTests",
+              "nodeIdentifierURL": "test://com.apple.xcode/SSRuntime/SSRuntimeTests/ReleaseVariationSourceTests",
+              "nodeType": "Test Suite",
+              "result": "Passed"
+            }
+          ],
+          "name": "SSRuntimeTests",
+          "nodeIdentifierURL": "test://com.apple.xcode/SSRuntime/SSRuntimeTests",
+          "nodeType": "Unit test bundle",
+          "result": "Passed"
+        }
+      ],
+      "name": "SSRuntime",
+      "nodeType": "Test Plan",
+      "result": "Passed"
+    }
+  ],
+  "testPlanConfigurations": [
+    {
+      "configurationId": "1",
+      "configurationName": "Test Scheme Action"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema": "debug-playable-kiosk-review-001",
+  "solidID": "solid-03-transit-kiosk",
+  "authoritativeBounds": [
+    512,
+    640,
+    640,
+    768
+  ],
+  "ownerAcceptance": false,
+  "productionAdmitted": false,
+  "texturedManifestSHA256": "647ec749a5a87bb1e24135ebc758655a1ccd84ca003020e95b0c3a0f3e199953",
+  "v9InputSHA256": "2c4c3f6a3ef48003291f1ca6421bc6731b4c385a5a17738403c5dcd7972aca88",
+  "sources": [
+    {
+      "role": "current",
+      "file": "current.png",
+      "sha256": "c411e33b79e0ffc5b0eb86143cd8785a564e573b5819bc1d4c399ef5d3b60264",
+      "canvasPixels": [
+        1000,
+        1200
+      ],
+      "rootPixelsTopLeft": [
+        500,
+        1160
+      ],
+      "worldPosition": [
+        512,
+        640
+      ],
+      "drawSizeWorld": [
+        200.0,
+        240.0
+      ]
+    },
+    {
+      "role": "candidate",
+      "file": "candidate.png",
+      "sha256": "5a1c7fa1cf23d7bd85bc5676b4a0e297662071404cbb3ec454c9153a7d97c931",
+      "canvasPixels": [
+        1000,
+        1060
+      ],
+      "rootPixelsTopLeft": [
+        500,
+        1020
+      ],
+      "worldPosition": [
+        512,
+        640
+      ],
+      "drawSizeWorld": [
+        200.0,
+        212.0
+      ]
+    },
+    {
+      "role": "base",
+      "file": "base.png",
+      "sha256": "c3313e0475e6aac62f1ec66ff7db4e254ae95e4ef193c5079bf5921e1e90d63b",
+      "canvasPixels": [
+        230,
+        136
+      ],
+      "rootPixelsTopLeft": [
+        115,
+        95
+      ],
+      "worldPosition": [
+        525.0,
+        653.0
+      ],
+      "drawSizeWorld": [
+        57.5,
+        34.0
+      ]
+    }
+  ]
+}

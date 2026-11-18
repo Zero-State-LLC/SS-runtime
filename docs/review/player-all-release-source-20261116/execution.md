@@ -1,0 +1,18 @@
+# Execution notes
+
+- 2026-11-16 01:47:34 UTC: coordinator explicitly confirmed source-detail GO. Canonical midpoint selection is SS-specs `167171d89f9dfdad550e1b3b95510fc84514d0b1`, with pushed follow-up `6df5bd6`.
+- 01:49 UTC: initial 21 source regressions passed before rendering. All 16 phase geometry/contact records passed, including unchanged 5/13.
+- 01:49:58 UTC: first local generation began with two rendering subprocesses and a 10-minute tool execution cap.
+- 01:52:15 UTC: this attempt was intentionally cancelled after observed rendering throughput showed the cap was too short for all 14 phases. There was no geometry, contact, endpoint, or source-generalization failure. The partial work and original inventory are retained under `attempt-interrupted/`, with private renderer scratch excluded by `.gitignore`. No review was published from that attempt.
+- 01:52:21 UTC: unchanged generator/source geometry restarted against a fresh `artifacts/` output with four rendering subprocesses and a requested 30-minute cap. Old descendants were confirmed stopped. This is local execution orchestration, not a weakened guard or source-recipe retry.
+- 01:53 UTC: `swift test --skip-build --filter ClipTimingTests` passed five actual Swift Testing tests. The XCTest wrapper's zero tests is not the suite result. The twice-capped unfiltered suite was not restarted, and no full core-suite or native result is claimed.
+- 01:54 UTC: expanded 24-test source suite passed, adding independent segment/knee measurements, exact review timeline ordering and source/output-overlap rejection. The geometry validator keeps the prototype's 1e-8 arithmetic tolerance, strict 2 < reach < 27, nonnegative toe/heel clearance and knee-below-hip checks. These are not new aesthetic acceptance thresholds.
+
+- 02:02:21 UTC: the tool enforced a 600-second cap despite the explicit 1800-second request, returning exit 124. Twelve new phase assemblies were complete and their 24 entry/neutral RGBA comparisons passed. Phases 15/16 each had nine boot samples and no complete assembly. This was an execution-cap failure, not a failed source-generalization or geometry guard.
+- 02:04:08 UTC: one diagnosed execution-cap retry uses `--resume`. Before reuse, all 12 completed checkpoints validate source samples, every copied source master and recipe, exact assembly adaptation, 17 ordered distinct frame records and every decoded RGBA hash. Partial 15/16 work is preserved under `.work/interrupted-phase-*`; only those two phases render again. Original inventories and all final geometry/contact/endpoint guards run again without relaxation.
+
+- 02:06:15 UTC: bounded continuation completed successfully in 126.9 seconds, exit 0. Published manifest contains 272 frames and all 32 exact entry/neutral comparisons, with all 1,012 original-file hashes unchanged. All 14 new phases remain PROPOSED.
+- 02:06 UTC: full source/artifact suite passed 31/31. Normal and separate quarter-speed HTML/MP4 reviews and 16 contact plates exported successfully. `audit.py` verified all 147 integer PTS values in each encoded video against exact rational clocks, plus all original inventories, 5/13 byte preservation and sampled geometry/contact guards.
+- 02:07 UTC: both HTML exports passed structural reference/order checks and inline JavaScript syntax checks. No browser/native acceptance is claimed. Final portable source suite passed 26/26 against the exact hashed fixture subset.
+
+Inputs have not been edited. Neither this worker nor its scripts modify App, AppTests, the specification pin, handoff, production assets or historical evidence. Native and browser review are coordinator-owned. No service, install, paid model, remote build or new agent is used.

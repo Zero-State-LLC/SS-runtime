@@ -1,0 +1,240 @@
+{
+ "status": "ATTEMPT_02_REJECTED_OWNER_2026-11-16T04:22:37Z_MIDPOINT_CONCEPT_NOT_AUTHORITY",
+ "honestLabel": "EXTRACTED_FROM_APPROVED_MIDPOINT_CONCEPT_NOT_GENERATED_NOT_ORIGINAL_MASTER",
+ "source": {
+  "path": "/Users/appliedalchemylabs/.jcode/scratch/ss-specs-audit-pr-20261114/docs/review/phase4/street-corner-midpoint-concept.png",
+  "sha256": "61a8ab9b805930284986c0a6ae3596a581fb1e452e292ad3c5f30690c34db561",
+  "crop": [
+   880,
+   60,
+   1080,
+   420
+  ],
+  "mask": {
+   "dark": "mean RGB < 45",
+   "ivory": "mean RGB > 150 and max-min < 60",
+   "closingIterations": 3,
+   "fill": "binary_fill_holes",
+   "opening": 1,
+   "keep": "largest component",
+   "clipBelowY": 401
+  },
+  "baseCentre": [
+   947,
+   401
+  ],
+  "topY": 67
+ },
+ "transform": {
+  "uniformScale": 0.9343283582089552,
+  "resampledSize": [
+   187,
+   336
+  ],
+  "translation": [
+   65,
+   32
+  ],
+  "resample": "Lanczos"
+ },
+ "registration": {
+  "canvasPixels": [
+   256,
+   384
+  ],
+  "logicalCanvas": [
+   64,
+   96
+  ],
+  "logicalGroundAnchor": [
+   32,
+   88
+  ],
+  "groundAnchorPixels": [
+   128,
+   352
+  ],
+  "opaqueRows": [
+   39,
+   350
+  ]
+ },
+ "control": {
+  "path": "camera-midpoint-intact.png (attempt 01)",
+  "sha256": "a0ffbe4c964765948b27ba1d9eca04e4d9ef0515f4453879b77a1048ae506920"
+ },
+ "tool": {
+  "pillow": "12.3.0",
+  "scipy": "1.17.1"
+ },
+ "layerOrder": [
+  "pole",
+  "base",
+  "junction_box",
+  "arm",
+  "head"
+ ],
+ "layers": [
+  {
+   "name": "head",
+   "polygon": [
+    [
+     177,
+     107
+    ],
+    [
+     238,
+     107
+    ],
+    [
+     238,
+     177
+    ],
+    [
+     177,
+     177
+    ]
+   ],
+   "sha256": "3d7b8c39690b50b1333e77a871b080be45a784201cad0b939dd5ccfd3de355d8",
+   "opaquePixels": 3245
+  },
+  {
+   "name": "arm",
+   "polygon": [
+    [
+     147,
+     77
+    ],
+    [
+     177,
+     77
+    ],
+    [
+     177,
+     107
+    ],
+    [
+     238,
+     107
+    ],
+    [
+     238,
+     69
+    ],
+    [
+     177,
+     69
+    ],
+    [
+     163,
+     139
+    ],
+    [
+     147,
+     139
+    ]
+   ],
+   "sha256": "acce23a5336ba363ef3a99a97aa083182512cc9d5e8c9d4f1934a375b175c174",
+   "opaquePixels": 2121
+  },
+  {
+   "name": "junction_box",
+   "polygon": [
+    [
+     145,
+     140
+    ],
+    [
+     177,
+     140
+    ],
+    [
+     177,
+     191
+    ],
+    [
+     145,
+     191
+    ]
+   ],
+   "sha256": "6885652934b1098af5745e7ac516c3432bfe4c8ec43819da11bfc6cafd862074",
+   "opaquePixels": 888
+  },
+  {
+   "name": "base",
+   "polygon": [
+    [
+     84,
+     284
+    ],
+    [
+     172,
+     284
+    ],
+    [
+     172,
+     359
+    ],
+    [
+     84,
+     359
+    ]
+   ],
+   "sha256": "cc829efe28a38f90ae8a2cb029cbb049b55e9a43f91d103f814e7a4e5529fd96",
+   "opaquePixels": 4458
+  },
+  {
+   "name": "pole",
+   "polygon": [
+    [
+     0,
+     0
+    ],
+    [
+     256,
+     0
+    ],
+    [
+     256,
+     384
+    ],
+    [
+     0,
+     384
+    ]
+   ],
+   "sha256": "20b1afe341d3af1755ed0886c4eb8a8c6d51e17496c9e0a84f9f5ad5fef2c7f8",
+   "opaquePixels": 9153
+  }
+ ],
+ "outputSHA256": "6314801b90b9bf1df71e710cd6dd305303a94d733f6d146421632604647dbd34",
+ "measurements": {
+  "opaqueHeight": 312,
+  "opaqueColumnsRightOfX160": 73
+ },
+ "integrityRequirements": {
+  "source": "SS-specs benchmark-production.md BP-004",
+  "clips": {
+   "operationalIdle": 4,
+   "hit": 2,
+   "criticalEnter": 3,
+   "destroy": 4,
+   "fieldOff": 1,
+   "destroyedIdle": 2
+  },
+  "settled": {
+   "3": "intact complete device, no positional or heading motion",
+   "2": "visible damage, single-notch runtime marker",
+   "1": "exposed damage, double-notch runtime marker",
+   "0": "dark broken head, unchanged mount/base, field off on authoritative event"
+  },
+  "status": "REQUIREMENT_PRESERVED_NOT_EXPANDED_IN_FIRST_SAMPLE"
+ },
+ "limits": [
+  "Concept pixels include baked scene lighting and some ground/leaf contamination at mask edges",
+  "Mask is a deterministic contour-fill, not hand-authored alpha; edge pixels may carry pavement colour",
+  "Downscale 0.937 keeps world draw size equal to attempt 01; concept-to-Player relative scale not yet checked in a shared scene",
+  "No hidden underpaint behind arm/head; layers are a visual partition only",
+  "Intact only; no damaged/critical/destroyed or clip frames"
+ ]
+}

@@ -1,0 +1,74 @@
+[stderr] test_actor_depth_ground_mutations_rejected (__main__.KioskOnly.test_actor_depth_ground_mutations_rejected) ... ok
+[stderr] test_all_contact_and_authority_envelopes_exact (__main__.KioskOnly.test_all_contact_and_authority_envelopes_exact) ... ok
+[stderr] test_all_retained_layers_and_full_scene_reconstruction (__main__.KioskOnly.test_all_retained_layers_and_full_scene_reconstruction) ... ok
+[stderr] test_changed_pixels_confined_to_kiosk_silhouettes (__main__.KioskOnly.test_changed_pixels_confined_to_kiosk_silhouettes) ... ok
+[stderr] test_complete_hash_closure (__main__.KioskOnly.test_complete_hash_closure) ... ok
+[stderr] test_current_is_exact_source_extraction (__main__.KioskOnly.test_current_is_exact_source_extraction) ... ok
+[stderr] test_dimensions_from_semantic_faces (__main__.KioskOnly.test_dimensions_from_semantic_faces) ... ok
+[stderr] test_editable_indexed_mesh_and_hashes (__main__.KioskOnly.test_editable_indexed_mesh_and_hashes) ... ok
+[stderr] test_editable_uv_and_height_mutations_rejected (__main__.KioskOnly.test_editable_uv_and_height_mutations_rejected) ... ok
+[stderr] test_fixed_plan_spacing (__main__.KioskOnly.test_fixed_plan_spacing) ... ok
+[stderr] test_full_v9_actor_field_depth_ground_framing_authority (__main__.KioskOnly.test_full_v9_actor_field_depth_ground_framing_authority) ... ok
+[stderr] test_kiosk_topology_material_footprint_mutations_rejected (__main__.KioskOnly.test_kiosk_topology_material_footprint_mutations_rejected) ... ok
+[stderr] test_kiosk_xy_mutation_rejected (__main__.KioskOnly.test_kiosk_xy_mutation_rejected) ... ok
+[stderr] test_native_and_benchmark_reference_pixels_exact (__main__.KioskOnly.test_native_and_benchmark_reference_pixels_exact) ... ok
+[stderr] test_neighbor_mutation_rejected (__main__.KioskOnly.test_neighbor_mutation_rejected) ... ok
+[stderr] test_only_declared_z_changes (__main__.KioskOnly.test_only_declared_z_changes) ... ok
+[stderr] test_output_overwrite_fails_closed (__main__.KioskOnly.test_output_overwrite_fails_closed) ... ok
+[stderr] test_reproduction_every_file_byte_exact (__main__.KioskOnly.test_reproduction_every_file_byte_exact) ... ok
+[stderr] test_undeclared_z_mutation_rejected (__main__.KioskOnly.test_undeclared_z_mutation_rejected) ... ok
+[stderr] 
+[stderr] ----------------------------------------------------------------------
+[stderr] Ran 19 tests in 31.512s
+[stderr] 
+[stderr] OK
+[stderr] test_all_neighbor_bindings_and_plan_unchanged (__main__.NativeAdapterTests.test_all_neighbor_bindings_and_plan_unchanged) ... ok
+[stderr] test_attachment_identity_and_census (__main__.NativeAdapterTests.test_attachment_identity_and_census) ... ok
+[stderr] test_contact_pixel_and_neighbor_source_mutations_rejected (__main__.NativeAdapterTests.test_contact_pixel_and_neighbor_source_mutations_rejected) ... ok
+[stderr] test_current_preparation_exact (__main__.NativeAdapterTests.test_current_preparation_exact) ... ok
+[stderr] test_depth_ground_field_controls_and_supplements_rejected (__main__.NativeAdapterTests.test_depth_ground_field_controls_and_supplements_rejected) ... ok
+[stderr] test_exact_test_identity_and_count (__main__.NativeAdapterTests.test_exact_test_identity_and_count) ... ok
+[stderr] test_kiosk_authority_and_wrong_source_rejected (__main__.NativeAdapterTests.test_kiosk_authority_and_wrong_source_rejected) ... ok
+[stderr] test_missing_capture_extra_fields_and_stale_executable_rejected (__main__.NativeAdapterTests.test_missing_capture_extra_fields_and_stale_executable_rejected) ... ok
+[stderr] test_missing_or_symlinked_prepared_fails (__main__.NativeAdapterTests.test_missing_or_symlinked_prepared_fails) ... ok
+[stderr] test_native_pixel_isolation_with_explicit_source_proxy_fixture (__main__.NativeAdapterTests.test_native_pixel_isolation_with_explicit_source_proxy_fixture) ... ok
+[stderr] test_no_preparation_overwrite (__main__.NativeAdapterTests.test_no_preparation_overwrite) ... ok
+[stderr] test_non_kiosk_actor_mutations_rejected (__main__.NativeAdapterTests.test_non_kiosk_actor_mutations_rejected) ... ok
+[stderr] test_prepared_neighbor_mutation_rejected (__main__.NativeAdapterTests.test_prepared_neighbor_mutation_rejected) ... ok
+[stderr] test_swift_has_only_one_capture_entry_and_all_supplements (__main__.NativeAdapterTests.test_swift_has_only_one_capture_entry_and_all_supplements) ... ok
+[stderr] test_synthetic_contract_positive_not_native_proof (__main__.NativeAdapterTests.test_synthetic_contract_positive_not_native_proof) ... ok
+[stderr] 
+[stderr] ----------------------------------------------------------------------
+[stderr] Ran 15 tests in 55.684s
+[stderr] 
+[stderr] OK
+[stderr] test_acceptance_claim_rejected (__main__.RetainedEvidenceTests.test_acceptance_claim_rejected) ... ok
+[stderr] test_actual_retained_evidence_passes (__main__.RetainedEvidenceTests.test_actual_retained_evidence_passes) ... ERROR
+[stderr] test_missing_image_rejected (__main__.RetainedEvidenceTests.test_missing_image_rejected) ... ok
+[stderr] test_modified_image_rejected (__main__.RetainedEvidenceTests.test_modified_image_rejected) ... ok
+[stderr] test_recataloged_authority_mutation_rejected (__main__.RetainedEvidenceTests.test_recataloged_authority_mutation_rejected) ... ok
+[stderr] test_symlinked_receipt_rejected (__main__.RetainedEvidenceTests.test_symlinked_receipt_rejected) ... ok
+[stderr] test_unlisted_output_rejected (__main__.RetainedEvidenceTests.test_unlisted_output_rejected) ... ok
+[stderr] 
+[stderr] ======================================================================
+[stderr] ERROR: test_actual_retained_evidence_passes (__main__.RetainedEvidenceTests.test_actual_retained_evidence_passes)
+[stderr] ----------------------------------------------------------------------
+[stderr] Traceback (most recent call last):
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/ss-kiosk-staged-export-20261117-0303/docs/review/kiosk-only-geometry-20261117/native/test_retained.py", line 26, in test_actual_retained_evidence_passes
+[stderr]     self.assertEqual(r.check(self.path, EXECUTABLE)['images'], 18)
+[stderr]                      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/ss-kiosk-staged-export-20261117-0303/docs/review/kiosk-only-geometry-20261117/native/retained.py", line 30, in check
+[stderr]     actual_executable = n.v9.validate_executable(record, executable)
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/ss-kiosk-staged-export-20261117-0303/docs/review/scene-qa-repair-20261116/native.py", line 344, in validate_executable
+[stderr]     a.need(expected_executable.is_file(), 'Expected built test executable is missing')
+[stderr]     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[stderr]   File "/Users/appliedalchemylabs/.jcode/scratch/ss-kiosk-staged-export-20261117-0303/docs/review/scene-source-assembly-20261116/assemble.py", line 26, in need
+[stderr]     raise Invalid(message)
+[stderr] _scene_qa_v5_assemble.Invalid: Expected built test executable is missing
+[stderr] 
+[stderr] ----------------------------------------------------------------------
+[stderr] Ran 7 tests in 15.257s
+[stderr] 
+[stderr] FAILED (errors=1)
+
+--- Command finished with exit code: 1 ---

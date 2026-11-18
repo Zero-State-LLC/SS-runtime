@@ -1,0 +1,15 @@
+{
+  "status": "EXACT_SOURCE_TEST_SUBSET_NOT_RENDER_MASTER",
+  "files": {
+    "SS-player-bounded-proportions/source/samples.json": "376fa7adad571cb96ae275e0d5635c735ada34bef230c1678087ce8f03e03a90",
+    "SS-player-bounded-proportions/assemble.py": "b917ce08a0a576a16e085eb573237301fb6dbd07467be5728725f0c3da68f281",
+    "SS-player-bounded-neutral/source/samples.json": "7f56717bca3ced7d170a46b0b85e36d5613b14fb1cbc795bc99e1758184fe701",
+    "SS-player-settle-prototype/phase-05/source/samples.json": "3afa0e2935db34ba2f1da83f89252c496a08e5e15db31e70614e2cf2ab591068",
+    "SS-player-settle-prototype/phase-13/source/samples.json": "d1fb42d19eba5449fca2a25c7a783c3e44a7a0148cf4facdf52c7808ed3388ff"
+  },
+  "authority": "Recovered current bounded authoring workspace. Runtime recipe docs/review/player-settle-prototype/build_source.py:6-52.",
+  "limits": [
+    "Only geometry/contact/order/timing/source-preservation tests are portable from this subset",
+    "Full render and original-input inventory audit still require the complete read-only source root"
+  ]
+}

@@ -1,0 +1,22 @@
+[0/1] Planning build
+Building for debugging...
+[0/4] Write sources
+[1/4] Write swift-version--58304C5D6DBC2206.txt
+[3/6] Compiling SurveillanceCoreTests PresentationSocketOrderingTests.swift
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/PresentationSocketOrderingTests.swift:61:24: error: cannot find 'GameSession' in scope
+59 | 
+60 |     @Test func independentSessionsProduceEqualFullSnapshots() throws {
+61 |         let baseline = GameSession(seed: 1)
+   |                        `- error: cannot find 'GameSession' in scope
+62 |         let digest = baseline.simulation.state.digest()
+63 |         for _ in 0..<8 {
+
+/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/Tests/SurveillanceCoreTests/PresentationSocketOrderingTests.swift:64:31: error: cannot find 'GameSession' in scope
+62 |         let digest = baseline.simulation.state.digest()
+63 |         for _ in 0..<8 {
+64 |             let independent = GameSession(seed: 1)
+   |                               `- error: cannot find 'GameSession' in scope
+65 |             #expect(independent.simulation.state.digest() == digest)
+66 |             #expect(independent.snapshot == baseline.snapshot)
+[4/6] Emitting module SurveillanceCoreTests
+error: fatalError

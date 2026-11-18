@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Player neutral facing record - BLOCKED_UNRECONCILED_FAMILY - 2026-11-16</title>
+<style>
+body { font-family: monospace; background: #1a1a2e; color: #eee; padding: 16px; }
+h1 { color: #e94560; }
+.blocked { background: #7a0000; color: #ffc; padding: 10px 14px; border-radius: 4px; margin-bottom: 16px; font-size: 13px; line-height: 1.6; }
+.section { margin-bottom: 32px; }
+h2 { color: #aaa; background: #16213e; padding: 6px 10px; }
+.strip-container { overflow-x: auto; }
+img.strip { image-rendering: pixelated; display: block; margin: 8px 0; }
+.facing-block { display: inline-block; vertical-align: top; margin-right: 24px; }
+.facing-block h3 { margin: 4px 0; color: #e94560; }
+.layer-controls { margin: 4px 0; }
+.layer-controls label { display: block; cursor: pointer; font-size: 12px; }
+.layer-controls input { margin-right: 4px; }
+canvas.facing { image-rendering: pixelated; display: block; }
+.blocker { background: #2d1b00; border-left: 3px solid #f90; padding: 6px 10px; margin: 4px 0; font-size: 12px; }
+.absent-mask { background: #111; border: 1px solid #555; color: #888; font-size: 10px; padding: 4px 6px; display: inline-block; vertical-align: bottom; width: 96px; height: 104px; box-sizing: border-box; }
+.note { font-size: 11px; color: #aaa; margin: 2px 0 6px 0; }
+</style>
+</head>
+<body>
+<h1>Player neutral facing record - BLOCKED_UNRECONCILED_FAMILY - 2026-11-16</h1>
+<div class="blocked">
+  <strong>STATUS: BLOCKED_UNRECONCILED_FAMILY</strong> &nbsp;|&nbsp; coherent=false &nbsp; ready=false &nbsp; accepted=false<br>
+  Four independently generated views from separate sheets. No shared anatomical model, rig, or single editable source.
+  Hash and dimension checks do not establish anatomical continuity, costume coherence, or consistent viewpoint.
+  The intended slice-5 goal (a genuinely coherent editable family) is <strong>NOT completed</strong> by this record.
+  No production admission, animation, native-render, or shipping authorized.
+</div>
+
+<div class="section">
+<h2>Four-facing strip (source 384×416)</h2>
+<div class="strip-container">
+<img class="strip" src="four-facing-source.png" alt="four-facing source">
+</div>
+<p>Panels left to right: south (baggy proposal), east, north (attempt 01 baggy), west. Original south (slim legs, unchanged) not shown; see individual packets.</p>
+</div>
+
+<div class="section">
+<h2>Native (64×69 px) - logical canvas 64×69.333 rounded down; not exact 50%</h2>
+<p class="note">Logical canvas is 64×69.333 CSS px. PNG scaled to 64×69 (floor). Strip is 268 px wide (4×64 + 3×4 gap). Not exact 50% of source.</p>
+<img class="strip" src="four-facing-native.png" alt="four-facing native" style="width:268px;height:69px;">
+</div>
+
+<div class="section">
+<h2>Half (32×35 px) - 32×34.5 rounded up; not exact 50% of native</h2>
+<p class="note">Half of 64×69 is 32×34.5. PNG is 32×35 (ceil). Not exact 50% of native.</p>
+<img class="strip" src="four-facing-half.png" alt="four-facing half" style="width:140px;height:35px;">
+</div>
+
+<div class="section">
+<h2>Grayscale (64×69 px, same rounding as native)</h2>
+<img class="strip" src="four-facing-grayscale.png" alt="four-facing grayscale" style="width:268px;height:69px;">
+</div>
+
+<div class="section">
+<h2>Role masks (source 384×416) - per facing</h2>
+<p>South <em>equipment</em> and <em>head</em> masks are <strong>absent</strong>: those layers are merged into original_upper in the south packet and cannot be isolated without source repair. All other masks have opaque pixels.</p>
+<div class="facing-block"><h3>south</h3>
+<div>lower_body: <img src="role-masks/south-lower_body.png" alt="south lower_body" style="height:104px;image-rendering:pixelated;vertical-align:bottom;border:1px solid #333;"></div>
+<div>upper_body: <img src="role-masks/south-upper_body.png" alt="south upper_body" style="height:104px;image-rendering:pixelated;vertical-align:bottom;border:1px solid #333;"></div>
+<div>equipment: <span class="absent-mask">ABSENT<br>equipment<br>merged into<br>original_upper;<br>source repair<br>required</span></div>
+<div>head: <span class="absent-mask">ABSENT<br>head<br>merged into<br>original_upper;<br>source repair<br>required</span></div>
+</div>
+<div class="facing-block"><h3>east</h3>
+<div>lower_body: <img src="role-masks/east-lower_body.png" alt="east lower_body" style="height:104px;image-rendering:pixelated;vertical-align:bottom;border:1px solid #333;"></div>
+<div>upper_body: <img src="role-masks/east-upper_body.png" alt="east upper_body" style="height:104px;image-rendering:pixelated;vertical-align:bottom;border:1px solid #333;"></div>
+<div>equipment: <img src="role-masks/east-equipment.png" alt="east equipment" style="height:104px;image-rendering:pixelated;vertical-align:bottom;border:1px solid #333;"></div>
+<div>head: <img src="role-masks/east-head.png" alt="east head" style="height:104px;image-rendering:pixelated;vertical-align:bottom;border:1px solid #333;"></div>
+</div>
+<div class="facing-block"><h3>north</h3>
+<div>lower_body: <img src="role-masks/north-lower_body.png" alt="north lower_body" style="height:104px;image-rendering:pixelated;vertical-align:bottom;border:1px solid #333;"></div>
+<div>upper_body: <img src="role-masks/north-upper_body.png" alt="north upper_body" style="height:104px;image-rendering:pixelated;vertical-align:bottom;border:1px solid #333;"></div>
+<div>equipment: <img src="role-masks/north-equipment.png" alt="north equipment" style="height:104px;image-rendering:pixelated;vertical-align:bottom;border:1px solid #333;"></div>
+<div>head: <img src="role-masks/north-head.png" alt="north head" style="height:104px;image-rendering:pixelated;vertical-align:bottom;border:1px solid #333;"></div>
+</div>
+<div class="facing-block"><h3>west</h3>
+<div>lower_body: <img src="role-masks/west-lower_body.png" alt="west lower_body" style="height:104px;image-rendering:pixelated;vertical-align:bottom;border:1px solid #333;"></div>
+<div>upper_body: <img src="role-masks/west-upper_body.png" alt="west upper_body" style="height:104px;image-rendering:pixelated;vertical-align:bottom;border:1px solid #333;"></div>
+<div>equipment: <img src="role-masks/west-equipment.png" alt="west equipment" style="height:104px;image-rendering:pixelated;vertical-align:bottom;border:1px solid #333;"></div>
+<div>head: <img src="role-masks/west-head.png" alt="west head" style="height:104px;image-rendering:pixelated;vertical-align:bottom;border:1px solid #333;"></div>
+</div>
+
+</div>
+
+<div class="section">
+<h2>Per-facing layer toggles (source size)</h2>
+<div class="facing-block"><h3>south</h3>
+<canvas class="facing" id="canvas_south" width="384" height="416" style="width:192px;height:208px;border:1px solid #333;"></canvas>
+<div class="layer-controls">
+<label><input type="checkbox" id="chk_south_left_shin_kneepad" checked onchange="redraw_south()"> left shin kneepad</label>
+<label><input type="checkbox" id="chk_south_left_thigh" checked onchange="redraw_south()"> left thigh</label>
+<label><input type="checkbox" id="chk_south_original_boots" checked onchange="redraw_south()"> original boots</label>
+<label><input type="checkbox" id="chk_south_original_upper" checked onchange="redraw_south()"> original upper</label>
+<label><input type="checkbox" id="chk_south_right_shin_kneepad" checked onchange="redraw_south()"> right shin kneepad</label>
+<label><input type="checkbox" id="chk_south_right_thigh" checked onchange="redraw_south()"> right thigh</label>
+</div></div>
+<div class="facing-block"><h3>north</h3>
+<canvas class="facing" id="canvas_north" width="384" height="416" style="width:192px;height:208px;border:1px solid #333;"></canvas>
+<div class="layer-controls">
+<label><input type="checkbox" id="chk_north_hood" checked onchange="redraw_north()"> hood</label>
+<label><input type="checkbox" id="chk_north_left_coat_tail" checked onchange="redraw_north()"> left coat tail</label>
+<label><input type="checkbox" id="chk_north_left_forearm_hand" checked onchange="redraw_north()"> left forearm hand</label>
+<label><input type="checkbox" id="chk_north_left_shin_boot" checked onchange="redraw_north()"> left shin boot</label>
+<label><input type="checkbox" id="chk_north_left_thigh" checked onchange="redraw_north()"> left thigh</label>
+<label><input type="checkbox" id="chk_north_left_upper_arm" checked onchange="redraw_north()"> left upper arm</label>
+<label><input type="checkbox" id="chk_north_right_coat_tail" checked onchange="redraw_north()"> right coat tail</label>
+<label><input type="checkbox" id="chk_north_right_forearm_hand" checked onchange="redraw_north()"> right forearm hand</label>
+<label><input type="checkbox" id="chk_north_right_satchel" checked onchange="redraw_north()"> right satchel</label>
+<label><input type="checkbox" id="chk_north_right_shin_boot" checked onchange="redraw_north()"> right shin boot</label>
+<label><input type="checkbox" id="chk_north_right_thigh" checked onchange="redraw_north()"> right thigh</label>
+<label><input type="checkbox" id="chk_north_right_upper_arm" checked onchange="redraw_north()"> right upper arm</label>
+<label><input type="checkbox" id="chk_north_torso_coat_equipment" checked onchange="redraw_north()"> torso coat equipment</label>
+</div></div>
+<div class="facing-block"><h3>east</h3>
+<canvas class="facing" id="canvas_east" width="384" height="416" style="width:192px;height:208px;border:1px solid #333;"></canvas>
+<div class="layer-controls">
+<label><input type="checkbox" id="chk_east_far_left_coat_tail" checked onchange="redraw_east()"> far left coat tail</label>
+<label><input type="checkbox" id="chk_east_far_left_forearm_hand" checked onchange="redraw_east()"> far left forearm hand</label>
+<label><input type="checkbox" id="chk_east_far_left_shin_boot" checked onchange="redraw_east()"> far left shin boot</label>
+<label><input type="checkbox" id="chk_east_far_left_thigh" checked onchange="redraw_east()"> far left thigh</label>
+<label><input type="checkbox" id="chk_east_far_left_upper_arm" checked onchange="redraw_east()"> far left upper arm</label>
+<label><input type="checkbox" id="chk_east_hood" checked onchange="redraw_east()"> hood</label>
+<label><input type="checkbox" id="chk_east_near_right_coat_tail" checked onchange="redraw_east()"> near right coat tail</label>
+<label><input type="checkbox" id="chk_east_near_right_forearm_hand" checked onchange="redraw_east()"> near right forearm hand</label>
+<label><input type="checkbox" id="chk_east_near_right_shin_boot" checked onchange="redraw_east()"> near right shin boot</label>
+<label><input type="checkbox" id="chk_east_near_right_thigh" checked onchange="redraw_east()"> near right thigh</label>
+<label><input type="checkbox" id="chk_east_near_right_upper_arm" checked onchange="redraw_east()"> near right upper arm</label>
+<label><input type="checkbox" id="chk_east_right_satchel" checked onchange="redraw_east()"> right satchel</label>
+<label><input type="checkbox" id="chk_east_torso_coat_equipment" checked onchange="redraw_east()"> torso coat equipment</label>
+</div></div>
+<div class="facing-block"><h3>west</h3>
+<canvas class="facing" id="canvas_west" width="384" height="416" style="width:192px;height:208px;border:1px solid #333;"></canvas>
+<div class="layer-controls">
+<label><input type="checkbox" id="chk_west_far_right_coat_tail" checked onchange="redraw_west()"> far right coat tail</label>
+<label><input type="checkbox" id="chk_west_far_right_forearm_hand" checked onchange="redraw_west()"> far right forearm hand</label>
+<label><input type="checkbox" id="chk_west_far_right_shin_boot" checked onchange="redraw_west()"> far right shin boot</label>
+<label><input type="checkbox" id="chk_west_far_right_thigh" checked onchange="redraw_west()"> far right thigh</label>
+<label><input type="checkbox" id="chk_west_far_right_upper_arm" checked onchange="redraw_west()"> far right upper arm</label>
+<label><input type="checkbox" id="chk_west_hood" checked onchange="redraw_west()"> hood</label>
+<label><input type="checkbox" id="chk_west_near_left_coat_tail" checked onchange="redraw_west()"> near left coat tail</label>
+<label><input type="checkbox" id="chk_west_near_left_forearm_hand" checked onchange="redraw_west()"> near left forearm hand</label>
+<label><input type="checkbox" id="chk_west_near_left_shin_boot" checked onchange="redraw_west()"> near left shin boot</label>
+<label><input type="checkbox" id="chk_west_near_left_thigh" checked onchange="redraw_west()"> near left thigh</label>
+<label><input type="checkbox" id="chk_west_near_left_upper_arm" checked onchange="redraw_west()"> near left upper arm</label>
+<label><input type="checkbox" id="chk_west_right_satchel" checked onchange="redraw_west()"> right satchel</label>
+<label><input type="checkbox" id="chk_west_torso_coat_equipment" checked onchange="redraw_west()"> torso coat equipment</label>
+</div></div>
+
+</div>
+
+<div class="section">
+<h2>Open blockers</h2>
+<div class="blocker">Satchel depth placement differs between south (front-hip) and north/east/west (rear-hip). Not resolved; tests do not assert it.</div>
+<div class="blocker">Coat tails generated broader and flatter on north/east/west than south. Not reconciled.</div>
+<div class="blocker">Camera elevation: side views appear closer to eye level than south. Not proven.</div>
+<div class="blocker">Baggy-south trouser shins 5-7 px narrower than north reference at row 295. Trade-off deferred.</div>
+<div class="blocker">Shin and boot are one part on all non-south facings; no independent boot control.</div>
+<div class="blocker">No joint-range, contact, heel/toe, native renderer, simulator, live-cadence or device verification.</div>
+<div class="blocker">These generated facings are not original master paint. Hidden surfaces are generated proposals.</div>
+</div>
+
+<script>
+
+var imgs_south = {};
+var loaded_south = 0;
+var total_south = 6;
+var order_south = ["left_shin_kneepad", "left_thigh", "original_boots", "original_upper", "right_shin_kneepad", "right_thigh"];
+(function() {
+  var paths = ["../../review/player-baggy-south-source-20261116/layers/left_shin_kneepad.png", "../../review/player-baggy-south-source-20261116/layers/left_thigh.png", "../../review/player-baggy-south-source-20261116/layers/original_boots.png", "../../review/player-baggy-south-source-20261116/layers/original_upper.png", "../../review/player-baggy-south-source-20261116/layers/right_shin_kneepad.png", "../../review/player-baggy-south-source-20261116/layers/right_thigh.png"];
+  var names = ["left_shin_kneepad", "left_thigh", "original_boots", "original_upper", "right_shin_kneepad", "right_thigh"];
+  for (var i = 0; i < names.length; i++) {
+    (function(n, p) {
+      var img = new Image();
+      img.onload = function() { imgs_south[n] = img; loaded_south++; if (loaded_south === total_south) redraw_south(); };
+      img.src = p;
+    })(names[i], paths[i]);
+  }
+})();
+function redraw_south() {
+  var canvas = document.getElementById('canvas_south');
+  var ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, 384, 416);
+  for (var i = 0; i < order_south.length; i++) {
+    var n = order_south[i];
+    var chk = document.getElementById('chk_south_' + n);
+    if (chk && chk.checked && imgs_south[n]) {
+      ctx.drawImage(imgs_south[n], 0, 0);
+    }
+  }
+}
+
+
+var imgs_north = {};
+var loaded_north = 0;
+var total_north = 13;
+var order_north = ["hood", "left_coat_tail", "left_forearm_hand", "left_shin_boot", "left_thigh", "left_upper_arm", "right_coat_tail", "right_forearm_hand", "right_satchel", "right_shin_boot", "right_thigh", "right_upper_arm", "torso_coat_equipment"];
+(function() {
+  var paths = ["../../review/player-north-source-20261116/layers/hood.png", "../../review/player-north-source-20261116/layers/left_coat_tail.png", "../../review/player-north-source-20261116/layers/left_forearm_hand.png", "../../review/player-north-source-20261116/layers/left_shin_boot.png", "../../review/player-north-source-20261116/layers/left_thigh.png", "../../review/player-north-source-20261116/layers/left_upper_arm.png", "../../review/player-north-source-20261116/layers/right_coat_tail.png", "../../review/player-north-source-20261116/layers/right_forearm_hand.png", "../../review/player-north-source-20261116/layers/right_satchel.png", "../../review/player-north-source-20261116/layers/right_shin_boot.png", "../../review/player-north-source-20261116/layers/right_thigh.png", "../../review/player-north-source-20261116/layers/right_upper_arm.png", "../../review/player-north-source-20261116/layers/torso_coat_equipment.png"];
+  var names = ["hood", "left_coat_tail", "left_forearm_hand", "left_shin_boot", "left_thigh", "left_upper_arm", "right_coat_tail", "right_forearm_hand", "right_satchel", "right_shin_boot", "right_thigh", "right_upper_arm", "torso_coat_equipment"];
+  for (var i = 0; i < names.length; i++) {
+    (function(n, p) {
+      var img = new Image();
+      img.onload = function() { imgs_north[n] = img; loaded_north++; if (loaded_north === total_north) redraw_north(); };
+      img.src = p;
+    })(names[i], paths[i]);
+  }
+})();
+function redraw_north() {
+  var canvas = document.getElementById('canvas_north');
+  var ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, 384, 416);
+  for (var i = 0; i < order_north.length; i++) {
+    var n = order_north[i];
+    var chk = document.getElementById('chk_north_' + n);
+    if (chk && chk.checked && imgs_north[n]) {
+      ctx.drawImage(imgs_north[n], 0, 0);
+    }
+  }
+}
+
+
+var imgs_east = {};
+var loaded_east = 0;
+var total_east = 13;
+var order_east = ["far_left_coat_tail", "far_left_forearm_hand", "far_left_shin_boot", "far_left_thigh", "far_left_upper_arm", "hood", "near_right_coat_tail", "near_right_forearm_hand", "near_right_shin_boot", "near_right_thigh", "near_right_upper_arm", "right_satchel", "torso_coat_equipment"];
+(function() {
+  var paths = ["../../review/player-side-source-20261116/east/layers/far_left_coat_tail.png", "../../review/player-side-source-20261116/east/layers/far_left_forearm_hand.png", "../../review/player-side-source-20261116/east/layers/far_left_shin_boot.png", "../../review/player-side-source-20261116/east/layers/far_left_thigh.png", "../../review/player-side-source-20261116/east/layers/far_left_upper_arm.png", "../../review/player-side-source-20261116/east/layers/hood.png", "../../review/player-side-source-20261116/east/layers/near_right_coat_tail.png", "../../review/player-side-source-20261116/east/layers/near_right_forearm_hand.png", "../../review/player-side-source-20261116/east/layers/near_right_shin_boot.png", "../../review/player-side-source-20261116/east/layers/near_right_thigh.png", "../../review/player-side-source-20261116/east/layers/near_right_upper_arm.png", "../../review/player-side-source-20261116/east/layers/right_satchel.png", "../../review/player-side-source-20261116/east/layers/torso_coat_equipment.png"];
+  var names = ["far_left_coat_tail", "far_left_forearm_hand", "far_left_shin_boot", "far_left_thigh", "far_left_upper_arm", "hood", "near_right_coat_tail", "near_right_forearm_hand", "near_right_shin_boot", "near_right_thigh", "near_right_upper_arm", "right_satchel", "torso_coat_equipment"];
+  for (var i = 0; i < names.length; i++) {
+    (function(n, p) {
+      var img = new Image();
+      img.onload = function() { imgs_east[n] = img; loaded_east++; if (loaded_east === total_east) redraw_east(); };
+      img.src = p;
+    })(names[i], paths[i]);
+  }
+})();
+function redraw_east() {
+  var canvas = document.getElementById('canvas_east');
+  var ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, 384, 416);
+  for (var i = 0; i < order_east.length; i++) {
+    var n = order_east[i];
+    var chk = document.getElementById('chk_east_' + n);
+    if (chk && chk.checked && imgs_east[n]) {
+      ctx.drawImage(imgs_east[n], 0, 0);
+    }
+  }
+}
+
+
+var imgs_west = {};
+var loaded_west = 0;
+var total_west = 13;
+var order_west = ["far_right_coat_tail", "far_right_forearm_hand", "far_right_shin_boot", "far_right_thigh", "far_right_upper_arm", "hood", "near_left_coat_tail", "near_left_forearm_hand", "near_left_shin_boot", "near_left_thigh", "near_left_upper_arm", "right_satchel", "torso_coat_equipment"];
+(function() {
+  var paths = ["../../review/player-side-source-20261116/west/layers/far_right_coat_tail.png", "../../review/player-side-source-20261116/west/layers/far_right_forearm_hand.png", "../../review/player-side-source-20261116/west/layers/far_right_shin_boot.png", "../../review/player-side-source-20261116/west/layers/far_right_thigh.png", "../../review/player-side-source-20261116/west/layers/far_right_upper_arm.png", "../../review/player-side-source-20261116/west/layers/hood.png", "../../review/player-side-source-20261116/west/layers/near_left_coat_tail.png", "../../review/player-side-source-20261116/west/layers/near_left_forearm_hand.png", "../../review/player-side-source-20261116/west/layers/near_left_shin_boot.png", "../../review/player-side-source-20261116/west/layers/near_left_thigh.png", "../../review/player-side-source-20261116/west/layers/near_left_upper_arm.png", "../../review/player-side-source-20261116/west/layers/right_satchel.png", "../../review/player-side-source-20261116/west/layers/torso_coat_equipment.png"];
+  var names = ["far_right_coat_tail", "far_right_forearm_hand", "far_right_shin_boot", "far_right_thigh", "far_right_upper_arm", "hood", "near_left_coat_tail", "near_left_forearm_hand", "near_left_shin_boot", "near_left_thigh", "near_left_upper_arm", "right_satchel", "torso_coat_equipment"];
+  for (var i = 0; i < names.length; i++) {
+    (function(n, p) {
+      var img = new Image();
+      img.onload = function() { imgs_west[n] = img; loaded_west++; if (loaded_west === total_west) redraw_west(); };
+      img.src = p;
+    })(names[i], paths[i]);
+  }
+})();
+function redraw_west() {
+  var canvas = document.getElementById('canvas_west');
+  var ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, 384, 416);
+  for (var i = 0; i < order_west.length; i++) {
+    var n = order_west[i];
+    var chk = document.getElementById('chk_west_' + n);
+    if (chk && chk.checked && imgs_west[n]) {
+      ctx.drawImage(imgs_west[n], 0, 0);
+    }
+  }
+}
+
+</script>
+</body>
+</html>

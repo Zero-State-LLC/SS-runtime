@@ -1,0 +1,18 @@
+{
+  "schema": "footprint-ground-browser-review-008",
+  "observedAt": "2026-11-16T23:28:10.861Z",
+  "browser": "Brave via live browser bridge",
+  "url": "http://127.0.0.1:8769/docs/review/footprint-ground-repair-20261116/gallery/index.html",
+  "v7": {"selections":36,"images":48,"errors":[]},
+  "v8": {"selections":36,"images":48,"errors":[]},
+  "controls": {"zooms":[1,1.25,1.4],"arms":["baseline","candidate","paired"],"sizes":["native","half"],"grayscale":[false,true]},
+  "nativeCSS": [704,326],
+  "halfCSS": [352,163],
+  "referenceGrayscaleRestored": true,
+  "pageOverflow": false,
+  "finalSelection": {"version":"v8","zoom":1,"arm":"candidate","size":"native","grayscale":false},
+  "limitations": ["DOM actions exercised actual browser controls but not physical touch or full-game traversal", "Automated Jev handoff returned HTTP401. Direct browser actions used without changing credentials", "First script lacked async wrapper and did not execute. Timer-based wrapped matrix timed out in a hidden tab and is not counted. Navigation cancelled it. Successful matrices used image-load events instead of throttled timers"],
+  "defaultReload": {"observedAt":"2026-11-16T23:33:02.828Z","version":"v8","controlsDisabled":false,"evidenceLoaded":true,"displayedFile":"source-scene-candidate-ordinary-z100-native.png","complete":true,"naturalWidth":2112,"cssWidth":704,"cssHeight":326},
+  "ownerAcceptance": false,
+  "physicalDeviceEvidence": false
+}

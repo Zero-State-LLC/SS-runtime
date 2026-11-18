@@ -1,0 +1,162 @@
+diff --git a/AppTests/BlockedBaseCurbSceneTests.swift b/AppTests/KioskOnlyGeometrySceneTests.swift
+index fb087f8..d96cf94 100644
+--- a/AppTests/BlockedBaseCurbSceneTests.swift
++++ b/AppTests/KioskOnlyGeometrySceneTests.swift
+@@ -6,15 +6,14 @@ import XCTest
+ @testable import SSRuntime
+ @testable import SurveillanceCore
+ 
+-#if DEBUG && SS_SOURCE_SCENE_REVIEW && SS_BLOCKED_BASE_CURB_REVIEW
+-/// BP-001/007/012/T1045, intent/2026-11-16-blocked-base-curb-relief.md.
+-/// ADAPT current AppTests/FootprintGroundSceneTests.swift:1-748, not failed2317.
+-/// Both arms retain the V8 candidate. Only candidate adds explicitly counted supplements.
+-/// ADAPT: WholeSceneBoundInputsTests.swift:19-44,64-78,185-241.
+-/// Two quiet ordinary composition arms only. One south-neutral and one Camera-neutral
+-/// source, NOT a 16-frame family. Missing source preparation is a failure, never a skip.
+-final class BlockedBaseCurbSceneTests: XCTestCase {
+-    private let fixtureVersion = "source-scene-base-curb-009-relief"
++#if DEBUG && SS_SOURCE_SCENE_REVIEW && SS_KIOSK_ONLY_GEOMETRY_REVIEW
++/// BP-001/007/012 T1045. Native rendering of frozen flat kiosk geometry, NOT art acceptance.
++/// ADAPT AppTests/BlockedBaseCurbSceneTests.swift:1-833, SHA256
++/// a0dbdc1d30a1ea5a950001b2348434038a45c367ad1f42934151442755621638.
++/// Both arms retain all V9 neighbors, actors, ground and supplements. Only kiosk source changes.
++/// Preparation is required and fail-closed. Coordinator alone executes this native comparison.
++final class KioskOnlyGeometrySceneTests: XCTestCase {
++    private let fixtureVersion = "source-scene-kiosk-only-010-flat-geometry"
+     private let viewport = CGSize(width: 704, height: 326)
+     private let buildingID = "solid-03-transit-kiosk"
+     private let repository = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
+@@ -80,6 +79,22 @@ final class BlockedBaseCurbSceneTests: XCTestCase {
+         let supplements: [Supplement]
+         let supplementalManifestSHA256: String
+     }
++    private struct KioskArm: Decodable {
++        let arm: String
++        let source: Source
++        let buildings: [Building]
++        let scenePlan: ScenePlan
++        let geometrySHA256: String
++    }
++    private struct KioskInput: Decodable {
++        let schema: String
++        let fixtureVersion: String
++        let harnessSourceSHA256: String
++        let v9InputSHA256: String
++        let baselineRecordSHA256: String
++        let sourceManifestSHA256: String
++        let arms: [KioskArm]
++    }
+     private struct Supplement: Decodable {
+         let role: String
+         let nodeName: String
+@@ -155,6 +170,17 @@ final class BlockedBaseCurbSceneTests: XCTestCase {
+     }
+ 
+     @MainActor func testQuietSouthNeutralOrdinaryScene() throws {
++        let kioskPacket = repository.appendingPathComponent("docs/review/kiosk-only-geometry-20261117/native")
++        let kioskPrepared = kioskPacket.appendingPathComponent("prepared")
++        let kioskInputURL = kioskPrepared.appendingPathComponent("native-inputs.json")
++        try require(kioskInputURL.resolvingSymlinksInPath().path == kioskInputURL.path, "Kiosk input path alias forbidden")
++        let kioskInputBytes = try Data(contentsOf: kioskInputURL)
++        let kioskInput = try JSONDecoder().decode(KioskInput.self, from: kioskInputBytes)
++        try require(kioskInput.schema == "kiosk-only-native-input-010" && kioskInput.fixtureVersion == fixtureVersion, "Unknown kiosk-only input")
++        try require(kioskInput.arms.map(\.arm) == ["control", "candidate"], "Exactly current/proposed kiosk arms required")
++        let kioskObject = try XCTUnwrap(JSONSerialization.jsonObject(with: kioskInputBytes) as? [String: Any])
++        for dependency in try XCTUnwrap(kioskObject["dependencies"] as? [[String: Any]]) { try verifyDependency(dependency) }
++        try require(sha(try Data(contentsOf: URL(fileURLWithPath: #filePath))) == kioskInput.harnessSourceSHA256, "Kiosk harness preparation stale")
+         let packet = repository.appendingPathComponent("docs/review/blocked-base-curb-relief-20261116/scene")
+         let prepared = packet.appendingPathComponent("native-inputs-v9")
+         let inputURL = prepared.appendingPathComponent("native-inputs.json")
+@@ -163,13 +189,15 @@ final class BlockedBaseCurbSceneTests: XCTestCase {
+                     "SOURCE PENDING: run packet/native.py prepare after coordinator recommendations. No fallback or skip.")
+         let inputBytes = try Data(contentsOf: inputURL)
+         let input = try JSONDecoder().decode(Input.self, from: inputBytes)
+-        try require(input.schema == "source-scene-native-009" && input.fixtureVersion == fixtureVersion, "Unknown native preparation schema/fixtureVersion")
++        try require(input.schema == "source-scene-native-009" && input.fixtureVersion == "source-scene-base-curb-009-relief", "Unknown retained V9 preparation schema/fixtureVersion")
++        try require(sha(inputBytes) == kioskInput.v9InputSHA256, "Retained V9 input drift")
+         let sourceReadSHA256 = sha(try Data(contentsOf: URL(fileURLWithPath: #filePath)))
+         let loadedExecutable = try XCTUnwrap(Bundle(for: Self.self).executableURL, "Actual loaded test bundle executable is required")
+         let loadedExecutableSHA256 = sha(try Data(contentsOf: loadedExecutable))
+         let assembly = try Data(contentsOf: packet.appendingPathComponent("assembly.json"))
+         try require(sha(assembly) == input.assemblySHA256, "Stale assembly preparation")
+-        try require(sourceReadSHA256 == input.harnessSourceSHA256, "Stale harness source preparation, not binary attestation")
++        let v9HarnessURL = repository.appendingPathComponent("AppTests/BlockedBaseCurbSceneTests.swift")
++        try require(sha(try Data(contentsOf: v9HarnessURL)) == input.harnessSourceSHA256, "Retained V9 harness source drift")
+         try require(input.sources.count == 10 && Set(input.sources.map(\.role)) == Set(["paving", "camera", "player", "stone", "kiosk", "context-01", "context-02", "context-04", "context-05", "ground-plan"]), "Ten exact source roles required")
+         try require(input.buildings.count == 5 && Set(input.buildings.map(\.role)) == Set(["kiosk", "context-01", "context-02", "context-04", "context-05"]), "Five explicit building bindings required")
+         let baselineURL = repository.appendingPathComponent("docs/review/footprint-ground-repair-20261116/scene/native-capture-v8/source-scene-records.json")
+@@ -265,6 +293,22 @@ final class BlockedBaseCurbSceneTests: XCTestCase {
+         }
+         var captures: [[String: Any]] = []
+         for arm in ["control", "candidate"] {
++            let kioskArm = try XCTUnwrap(kioskInput.arms.first { $0.arm == arm })
++            let kioskSource = kioskArm.source
++            try require(kioskSource.role == "kiosk" && kioskSource.file == arm + "-kiosk.png" && kioskSource.recommendation == "review-only-not-accepted", "Wrong kiosk identity/status")
++            let kioskURL = kioskPrepared.appendingPathComponent(kioskSource.file)
++            try require(kioskURL.resolvingSymlinksInPath().path == kioskURL.path, "Kiosk source alias forbidden")
++            let kioskBytes = try Data(contentsOf: kioskURL)
++            try require(sha(kioskBytes) == kioskSource.sha256, "Frozen kiosk image drift")
++            let kioskImage = try XCTUnwrap(UIImage(data: kioskBytes)?.cgImage)
++            try require(kioskSource.registration.canvasPixels == [Double(kioskImage.width), Double(kioskImage.height)] && kioskSource.registration.worldPosition == [512, 640], "Kiosk canvas/root drift")
++            try require(kioskArm.buildings.filter { $0.role != "kiosk" } == input.buildings.filter { $0.role != "kiosk" }, "Neighbor geometry binding changed")
++            try require(kioskArm.scenePlan.props == input.scenePlan.props && kioskArm.scenePlan.buildings.filter { $0.id != buildingID } == input.scenePlan.buildings.filter { $0.id != buildingID }, "Neighbor/prop contact plan changed")
++            let originalContact = try XCTUnwrap(input.scenePlan.buildings.first { $0.id == buildingID })
++            let newContact = try XCTUnwrap(kioskArm.scenePlan.buildings.first { $0.id == buildingID })
++            try require(originalContact.minWorld == newContact.minWorld && originalContact.maxWorld == newContact.maxWorld && originalContact.foundationWorld == newContact.foundationWorld && originalContact.actualContactWorld == newContact.actualContactWorld, "Kiosk XY footprint/contact changed")
++            sources["kiosk"] = kioskSource
++            textures["kiosk"] = try texture(kioskBytes)
+             let scene = GameScene(size: viewport, session: GameSession(seed: 1))
+             let view = SKView(frame: CGRect(origin: .zero, size: viewport))
+             view.isPaused = true
+@@ -436,7 +480,7 @@ final class BlockedBaseCurbSceneTests: XCTestCase {
+             }
+             try require(footprints.count == environmentNodes.count + 1, "Every solid-backed upright needs authoritative footprint")
+             var supplementalNodes: [SKSpriteNode] = []
+-            if arm == "candidate" {
++            do { // Both arms retain every V9 supplement unchanged.
+                 let supplementContainer = SKNode()
+                 supplementContainer.name = "review-only-supplement-container"
+                 scene.addChild(supplementContainer)
+@@ -454,7 +498,7 @@ final class BlockedBaseCurbSceneTests: XCTestCase {
+                     footprints[item.nodeName] = .init(minX: b[0], minY: b[1], maxX: b[2], maxY: b[3])
+                 }
+             }
+-            try require(inventory.count == 18 && supplementalNodes.count == (arm == "candidate" ? input.supplements.count : 0), "Explicit old/new census")
++            try require(inventory.count == 18 && supplementalNodes.count == input.supplements.count, "Exact V9 upright/supplement census in both arms")
+             var discoveredSupplements: [SKSpriteNode] = []
+             scene.enumerateChildNodes(withName: "//supplement-*") { node, _ in
+                 if let sprite = node as? SKSpriteNode { discoveredSupplements.append(sprite) }
+@@ -465,13 +509,15 @@ final class BlockedBaseCurbSceneTests: XCTestCase {
+             for zoom: CGFloat in [1, 1.25, 1.4] {
+                 var record = try capture(scene: scene, view: view, uprights: uprights, footprints: footprints, zoom: zoom,
+                                          name: "source-scene-\(arm)-ordinary-z\(Int((zoom * 100).rounded()))",
+-                                         bindings: input.buildings, sources: sources, plan: input.scenePlan, arm: arm, supplements: arm == "candidate" ? input.supplements : [])
++                                         bindings: kioskArm.buildings, sources: sources, plan: kioskArm.scenePlan, arm: arm, supplements: input.supplements)
+                 for (node, originalZ) in zip(uprights, originalLocalDepths) { XCTAssertEqual(node.zPosition, originalZ) }
+                 XCTAssertEqual(hud.children.map(\.isHidden), hudHidden)
+                 XCTAssertEqual(field.path, fieldPath)
+                 XCTAssertEqual(scene.session.simulation.state.digest(), before)
+                 record["buildingSourceSHA256"] = buildingHashes
+-                record["comparisonRole"] = arm == "control" ? "BASELINE_V8_CANDIDATE" : "CANDIDATE_V9_BASE_CURB_RELIEF"
++                record["comparisonRole"] = arm == "control" ? "CURRENT_FLAT_KIOSK_NATIVE_V9_CONTEXT" : "PROPOSED_FLAT_KIOSK_NATIVE_V9_CONTEXT"
++                record["kioskSourceSHA256"] = kioskSource.sha256
++                record["kioskGeometrySHA256"] = kioskArm.geometrySHA256
+                 record["preprojectionInventory"] = inventory
+                 record["expectedEnvironmentNames"] = expectedEnvironmentNames
+                 record["uprightCount"] = inventory.count
+@@ -504,11 +550,12 @@ final class BlockedBaseCurbSceneTests: XCTestCase {
+             }
+         }
+         XCTAssertEqual(captures.count, 6)
+-        let record: [String: Any] = ["schema": "source-scene-records-009", "status": "NATIVE_QUIET_SOURCE_COMPARISON_NOT_ACCEPTANCE",
+-            "fixtureVersion": fixtureVersion, "baselineRecordSHA256": input.baselineRecordSHA256,
++        let record: [String: Any] = ["schema": "source-scene-kiosk-only-records-010", "status": "NATIVE_FLAT_KIOSK_COMPARISON_NOT_ACCEPTANCE",
++            "fixtureVersion": fixtureVersion, "baselineRecordSHA256": kioskInput.baselineRecordSHA256,
++            "v9InputSHA256": sha(inputBytes), "sourceManifestSHA256": kioskInput.sourceManifestSHA256,
+             "loadedTestExecutable": ["path": loadedExecutable.path, "sha256": loadedExecutableSHA256],
+             "fixture": "south-neutral-camera-neutral", "cameraSourceFrames": 1, "playerSourceFrames": 1,
+-            "inputSHA256": sha(inputBytes), "assemblySHA256": input.assemblySHA256,
++            "inputSHA256": sha(kioskInputBytes), "assemblySHA256": input.assemblySHA256,
+             "harnessSourceReadSHA256": sourceReadSHA256, "planSHA256": input.planSHA256,
+             "supplementalManifestSHA256": input.supplementalManifestSHA256,
+             "sourceSHA256": Dictionary(uniqueKeysWithValues: input.sources.map { ($0.role, $0.sha256) }),

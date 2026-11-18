@@ -1,0 +1,50 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project SSRuntime.xcodeproj -scheme SSRuntime -sdk iphonesimulator -configuration Debug -destination "platform=iOS Simulator,id=CACB3927-A76E-43A5-9ACA-C389EB38C0C3" CODE_SIGNING_ALLOWED=NO ENABLE_TESTABILITY=YES "SS_RENDERER_TEST_CONDITIONS=SS_RENDERER_TEST_SUPPORT SS_SOURCE_SCENE_REVIEW SS_BUILDING_PERSPECTIVE_REVIEW" -derivedDataPath /Users/appliedalchemylabs/.jcode/scratch/ss-releasevariation-native-derived-20261116 "-only-testing:SSRuntimeTests/BuildingPerspectiveSceneTests/testQuietSouthNeutralOrdinaryScene" -resultBundlePath /Users/appliedalchemylabs/.jcode/scratch/building-perspective-native-2237.xcresult test-without-building
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+    ENABLE_TESTABILITY = YES
+    SDKROOT = iphonesimulator26.5
+    SS_RENDERER_TEST_CONDITIONS = SS_RENDERER_TEST_SUPPORT SS_SOURCE_SCENE_REVIEW SS_BUILDING_PERSPECTIVE_REVIEW
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  SSRuntime: /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114
+
+Writing result bundle at path:
+	/Users/appliedalchemylabs/.jcode/scratch/building-perspective-native-2237.xcresult
+
+2026-11-16 14:38:00.943744-0800 SSRuntime[12129:15185758] [plugin] AddInstanceForFactory: No factory registered for id <CFUUID 0x10a2a35c0> F8BB1C28-BAE8-11D6-9C31-00039315CD46
+2026-11-16 14:38:01.112501-0800 SSRuntime[12129:15186355] [AudioConverter]     AudioConverterOOP.cpp:1084  Failed to prepare AudioConverterService: -302
+2026-11-16 14:38:01.179141-0800 SSRuntime[12129:15185758] [UIFocus] _TtC18_SpriteKit_SwiftUIP33_4A29C38A751B2448A1E2FA85CDDEAA5324SpriteKitViewCoordinator implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+2026-11-16 14:38:02.009800-0800 SSRuntime[12129:15186355] [General] Failed to send CA Event for app launch measurements for ca_event_type: 0 event_name: com.apple.app_launch_measurement.FirstFramePresentationMetric
+2026-11-16 14:38:02.350800-0800 SSRuntime[12129:15187232] [General] Failed to send CA Event for app launch measurements for ca_event_type: 1 event_name: com.apple.app_launch_measurement.ExtendedLaunchMetrics
+Test Suite 'Selected tests' started at 2026-11-16 14:38:02.395.
+Test Suite 'SSRuntimeTests.xctest' started at 2026-11-16 14:38:02.395.
+Test Suite 'BuildingPerspectiveSceneTests' started at 2026-11-16 14:38:02.396.
+Test Case '-[SSRuntimeTests.BuildingPerspectiveSceneTests testQuietSouthNeutralOrdinaryScene]' started.
+objc[12129]: Class UIAccessibilityLoaderWebShared is implemented in both /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x11822c398) and /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x128f00310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+2026-11-16 14:38:04.691486-0800 SSRuntime[12129:15185758] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+Resolve Package Graph
+
+2026-11-16 14:38:11.458510-0800 SSRuntime[12129:15185758] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+Test Case '-[SSRuntimeTests.BuildingPerspectiveSceneTests testQuietSouthNeutralOrdinaryScene]' passed (14.099 seconds).
+Test Suite 'BuildingPerspectiveSceneTests' passed at 2026-11-16 14:38:16.508.
+	 Executed 1 test, with 0 failures (0 unexpected) in 14.099 (14.113) seconds
+Test Suite 'SSRuntimeTests.xctest' passed at 2026-11-16 14:38:16.509.
+	 Executed 1 test, with 0 failures (0 unexpected) in 14.099 (14.114) seconds
+Test Suite 'Selected tests' passed at 2026-11-16 14:38:16.509.
+	 Executed 1 test, with 0 failures (0 unexpected) in 14.099 (14.115) seconds
+2026-11-16 14:38:16.785789-0800 SSRuntime[12129:15185758] SKView: no drawables available for rendering. Skipping this frame.
+2026-11-16 14:38:17.144 xcodebuild[11106:15183115] [MT] IDETestOperationsObserverDebug: 27.602 elapsed -- Testing started completed.
+2026-11-16 14:38:17.144 xcodebuild[11106:15183115] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-11-16 14:38:17.144 xcodebuild[11106:15183115] [MT] IDETestOperationsObserverDebug: 27.602 sec, +27.602 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/appliedalchemylabs/.jcode/scratch/building-perspective-native-2237.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

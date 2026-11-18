@@ -1,0 +1,17 @@
+{
+  "observedAtUTC": "2026-11-16T23:07:18Z",
+  "actualBrowser": "Brave via installed bridge",
+  "url": "http://127.0.0.1:8769/docs/review/footprint-ground-repair-20261116/gallery/index.html",
+  "v7Option": "v7 building perspective/detail: hash-verified capture, not acceptance",
+  "selected": "v8",
+  "status": "Capture v8: pending or invalid evidence. No native capture is displayed. No fallback to another capture.",
+  "error": "Missing evidence: ../scene/native-capture-v8/source-scene-records.json (HTTP 404)",
+  "disabled": true,
+  "captureImageCount": 0,
+  "limits": "Preflight only. No V8 capture exists yet. Does not establish visual acceptance.",
+  "toolFailuresPreserved": [
+    "Jev handoff returned HTTP401. Continued direct actions in same tab827533035, no login/provider change.",
+    "First page on port8768 failed because it served docs/review not full repository. New dedicated8769 root server permits source dependency verification without changing verifier.",
+    "First asynchronous eval omitted return and returned undefined, although DOM actions executed. Snapshot and explicit-return read independently confirmed final state."
+  ]
+}

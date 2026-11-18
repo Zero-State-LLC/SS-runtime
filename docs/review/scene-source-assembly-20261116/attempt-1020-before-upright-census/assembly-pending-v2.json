@@ -1,0 +1,51 @@
+{
+  "schema": "scene-source-assembly-001",
+  "evidenceKind": "OFFLINE_REVIEW_ONLY",
+  "gameplayAuthority": "NONE_COLLISION_AND_FIELDS_UNCHANGED",
+  "projection": "D108_X_MINUS_Y_Y_PLUS_X_HALF",
+  "canvasPixels": [704, 352],
+  "viewCenterWorld": [736, 672],
+  "pixelsPerWorldUnit": 0.8,
+  "contextDependencies": [
+    {"path": "docs/review/paving-corner-review-20261116/source.json", "sha256": "3fabc473f8469241fb928c7dc7b8281c6e6e8e304d6789f7e9387eaf66ea6f1b"},
+    {"path": "docs/review/paving-corner-review-20261116/manifest.json", "sha256": "d1aa4d017362038ece657d36719871fac6203810c6790bc96f4ffcb3ed786ba9"},
+    {"path": "docs/review/paving-corner-review-20261116/build.py", "sha256": "a5dedc85a67ba91d85efccea6be7bb2d0e9d46e31da7be33659f92bd15f0c061"},
+    {"path": "docs/review/paving-repeat-repair-20261116/revision02/paving-muted-candidate.png", "sha256": "7a1f29c7b0f1a0a96e12484de84da21e7ab4ebee10cab2e829ed19309ca17d35"}
+  ],
+  "sources": [
+    {
+      "role": "paving",
+      "status": "recommended",
+      "image": {"path": "docs/review/paving-corner-review-20261116/corner-topdown.png", "sha256": "a0d937657b5f975246951213168cdeb715871412f7c4c402040228cc570a4e6c"},
+      "registration": {
+        "canvasPixels": [1152, 1152],
+        "rootPixelsTopLeft": [0, 1152],
+        "worldPosition": [448, 384],
+        "drawSizeWorld": [576, 576],
+        "kind": "ground",
+        "coordinates": "WORLD_X_RIGHT_Y_UP_SOURCE_TOP_LEFT"
+      },
+      "recommendation": {
+        "reviewerRole": "coordinator",
+        "decision": "recommended",
+        "scope": "bounded-material-layout",
+        "sourceSHA256": "a0d937657b5f975246951213168cdeb715871412f7c4c402040228cc570a4e6c",
+        "registrationSHA256": "41b99e4257b3b279edd2df63f424196978dce374a2fbc9af04ff60a23fc62ee6",
+        "evidence": {"path": "docs/review/paving-corner-review-20261116/README.md", "sha256": "2e07cad807624f1c5fd2229a625d211c5f3a6f0ed3183fd1c5b8d625fd8dfe3e"},
+        "transcription": "Existing Coordinator review at 08:25/08:32 UTC recommends bounded material/layout only. Registration is a mechanical transcription of source.json worldBounds and pixelsPerWorldUnit, not a new visual verdict or owner acceptance."
+      }
+    },
+    {
+      "role": "camera", "status": "pending", "image": null, "registration": null, "recommendation": null,
+      "reason": "Painted Camera assembly is pending final 204x450 canvas padding, root [58,427] and uniform 96/418 scale. Need final tracked PNG/hash, explicit world placement and coordinator recommendation. No old rejected Camera fallback."
+    },
+    {
+      "role": "player", "status": "pending", "image": null, "registration": null, "recommendation": null,
+      "reason": "New canonical-identity-02/south-neutral.png is coordinator-recommended for quiet south-neutral scene in commit4499c4b. Canvas384x416, root[192,336], uniform1/6 scale are documented. Explicit world placement and scene registration/hash binding remain pending. Older rejected Player/pilot/family sources stay excluded."
+    },
+    {
+      "role": "stone", "status": "pending", "image": null, "registration": null, "recommendation": null,
+      "reason": "Changed-method stone output is pending final three-texel material normalization and coordinator recommendation. Need final tracked PNG/hash plus ground root/world size/placement. Older rejected stone sources stay excluded."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "devices" : [
+    {
+      "architecture" : "arm64",
+      "deviceId" : "84297C74-033E-408F-9622-D36BFF32F74E",
+      "deviceName" : "SS QA SE 20261115",
+      "modelName" : "iPhone SE (3rd generation)",
+      "osBuildNumber" : "23F77",
+      "osVersion" : "26.5",
+      "platform" : "iOS Simulator"
+    }
+  ],
+  "testNodes" : [
+    {
+      "children" : [
+        {
+          "children" : [
+            {
+              "children" : [
+                {
+                  "duration" : "24s",
+                  "durationInSeconds" : 24.68589198589325,
+                  "name" : "testAccessibility3ScrollsToLastAndSelects()",
+                  "nodeIdentifier" : "UpgradeInteractionTests/testAccessibility3ScrollsToLastAndSelects()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSUpgradeReview/SSUpgradeReviewUITests/UpgradeInteractionTests/testAccessibility3ScrollsToLastAndSelects",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.573613047599792,
+                  "name" : "testAccessibility5ScrollsToLastAndSelects()",
+                  "nodeIdentifier" : "UpgradeInteractionTests/testAccessibility5ScrollsToLastAndSelects()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSUpgradeReview/SSUpgradeReviewUITests/UpgradeInteractionTests/testAccessibility5ScrollsToLastAndSelects",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "12s",
+                  "durationInSeconds" : 12.058563947677612,
+                  "name" : "testDefaultTouchSelectsFirst()",
+                  "nodeIdentifier" : "UpgradeInteractionTests/testDefaultTouchSelectsFirst()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/SSUpgradeReview/SSUpgradeReviewUITests/UpgradeInteractionTests/testDefaultTouchSelectsFirst",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "UpgradeInteractionTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/SSUpgradeReview/SSUpgradeReviewUITests/UpgradeInteractionTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            }
+          ],
+          "name" : "SSUpgradeReviewUITests",
+          "nodeIdentifierURL" : "test://com.apple.xcode/SSUpgradeReview/SSUpgradeReviewUITests",
+          "nodeType" : "UI test bundle",
+          "result" : "Passed"
+        }
+      ],
+      "name" : "SSUpgradeReview",
+      "nodeType" : "Test Plan",
+      "result" : "Passed"
+    }
+  ],
+  "testPlanConfigurations" : [
+    {
+      "configurationId" : "1",
+      "configurationName" : "Test Scheme Action"
+    }
+  ]
+}

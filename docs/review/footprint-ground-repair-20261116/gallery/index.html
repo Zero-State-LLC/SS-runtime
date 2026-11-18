@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Footprint ground repair: V8 native evidence / immutable V7, review only</title>
+<link rel="stylesheet" href="gallery.css">
+<script src="gallery.js" defer></script>
+</head>
+<body>
+<header>
+<h1>Shared footprint, ground, base &amp; prop repair</h1>
+<p>Real V8 native evidence is available for review. Captures display only after all evidence checks pass on this load.</p>
+<p class="scope"><strong>Review only, not accepted. V7 remains rejected and immutable.</strong> The V8 comparison is baselineV7 versus candidateV8 shared ground/base/prop repair. Player, Camera, view center, fields, solids and controls remain fixed. Registration checks are not visual acceptance. No production admission, motion, physical-device or owner acceptance is claimed.</p>
+</header>
+<section aria-labelledby="evidence-heading">
+<h2 id="evidence-heading">Evidence status</h2>
+<label for="capture">Capture <select id="capture"><option value="v7">Immutable v7: pending evidence verification</option><option value="v8" selected>v8 shared ground/base/prop repair: pending evidence verification</option></select></label>
+<h2 id="capture-label" role="status"></h2>
+<p id="status" role="status" aria-live="polite">Waiting to verify source-scene records and all evidence bytes. Missing or invalid evidence will not display and cannot fall back.</p>
+<p id="error" role="alert" hidden></p>
+<button id="reload" type="button">Reload evidence</button>
+<p id="evidence-links" hidden><a id="records-link">Capture records</a> · <a id="verification-link">Importer verification</a></p>
+</section>
+<section aria-labelledby="controls-heading">
+<h2 id="controls-heading">Comparison controls</h2>
+<fieldset id="controls" disabled>
+<legend>Verified captures</legend>
+<label for="zoom">Zoom <select id="zoom"><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.4">1.4×</option></select></label>
+<label for="arm">Arm <select id="arm"><option value="paired">Paired: baseline and candidate</option><option value="baseline">Baseline (baselineV7 in V8)</option><option value="candidate" selected>Candidate (candidateV8 in V8)</option></select></label>
+<label for="size">Logical display size <select id="size"><option value="native">Native: 704 × 326</option><option value="half">Half: 352 × 163</option></select></label>
+<label for="grayscale"><input id="grayscale" type="checkbox"> Grayscale</label>
+</fieldset>
+<p>Logical CSS dimensions remain exact regardless of capture PNG pixel density. Narrow screens scroll inside each image frame, never shrink the native view.</p>
+<div id="captures" aria-live="polite"></div>
+</section>
+<section aria-labelledby="reference-heading">
+<h2 id="reference-heading">Unchanged original benchmark</h2>
+<p>Full original, uniformly fitted without cropping. Grayscale is a reversible display filter only.</p>
+<img id="benchmark" src="../../stone-painted-facade-20261116/inputs/benchmark.png" alt="Full original street-corner benchmark" width="1672" height="941">
+<p id="reference-error" role="alert" hidden>Original benchmark image is missing. No substitute is displayed.</p>
+</section>
+<footer><p>Structure tests are not browser, simulator or visual-acceptance evidence. Coordinator browser inspection remains separate.</p></footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "status": "SEMANTIC_CHECKS_PASS_NOT_VISUAL_ACCEPTANCE",
+  "tests": 19,
+  "adversarialMutations": 15,
+  "actualRGBSamples": 15612,
+  "replayByteIdentical": true,
+  "replaySHA256": {
+    "ground.png": "21ed93b2733a70fab9c485e8c9df06ed12627e79b37cc9d47dbcc9abe11840e5",
+    "material-ids.png": "e67458c319fce9ff63e2c54409023813b07f7265a35c45a87f99c6b04e41af1b",
+    "ground.svg": "3539e7e919d3514e593f9a372498462e4b8dd80b595253f25892030afe06e8be",
+    "first-plan-preview.png": "5252e0ff855d0e7a0d5f8d095f0e84e21bbd57f9de149f0c1697cd226e3d094a",
+    "first-source-detail.png": "56526f258bc2dfc6083463fc51c3b617b5eb97afa4ddd9e6c1a0833eaf77c9d7",
+    "plan.json": "3b145fc228ac73367b1d6c5d60ee48e1578ebdbc972493afa9ba5a91018d880b"
+  },
+  "immutableV7Files": 209,
+  "sourceAttempts": 1,
+  "artCorrections": 0,
+  "nativeExecution": false,
+  "limits": [
+    "Nine legacy raster buildings have unknown actual mesh contact.",
+    "No loaded executable or scene binding claim in this source lane."
+  ]
+}

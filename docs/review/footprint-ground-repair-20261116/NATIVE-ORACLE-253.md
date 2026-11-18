@@ -1,0 +1,13 @@
+# First native failure and exact oracle correction (#253)
+
+The actual selected V8 run at23:17 executed exactly one test and failed before producing a complete comparison. Preserve `native-run-2317.log` and `/Users/appliedalchemylabs/.jcode/scratch/ss-footprint-ground-v8-2317.xcresult`. This is a failed execution, not a scene capture. The prior build executable350e5db4e74bf86d992747953c15a03eb76b38493e9398c0333fc5adb97a550f is preserved separately at `/Users/appliedalchemylabs/.jcode/scratch/ss-footprint-ground-v8-failed-2317/SSRuntimeTests`.
+
+Failure: the new witness required `patch.zPosition == 0.1`. Production `App/WorldRenderer.swift:453-470` sets0.1, but an independent actual SpriteKit property probe reads0.10000000149011612. Exact comparison against the Double literal is false, exact comparison against `CGFloat(Float(0.1))` is true. Expected size2304x1536, anchor[.5,.5], alpha1 and hiddenfalse all match in the probe. The probe is local macOS SpriteKit, not retroactive inspection of the failing iOS node. Raw output is `ground-property-probe-2318.log`.
+
+Issue253 was opened before correcting the oracle. The sole executable code change replaces the impossible Double-exact assertion with the exact float-backed value. No tolerance was added, no other assertion or renderer/art/geometry was changed. The error now includes observed properties so a later failure is diagnosable without guessing. Three exact-storage/sourceguard regressions were added. This is an oracle repair, not permission to weaken checks around a visual defect.
+
+`scene/attempt-01-native2317/` preserves the old preparation, assembly, logs and exact old Swift source. The old Swift was reconstructed by reversing the sole line change, then its retained47264781c7059f5dd7f650c30aac6ac1c50ebe913ab2270b9757f75ce0aed3c1 SHA was checked. Do not represent it as an untouched pre-edit file copy. The first result bundle remains the original execution evidence.
+
+New frozen source3ab178cdbc141f51e3ee0ccfd5e30b6a2e29e6e562bf8d98ef0fe8cb797dcef5 rebuilt successfully at23:20. Fresh executable7b4efe2e482d3707e8d08aff5bd4406d3ccdedb26467919ce7b5b2fc3545500d and prepared input598ec899b0171b9cf6ca32366a15053ad4666d15e8ebad7e0d792fea3c95bdbf are separately pinned. A non-erasing restart of only the dedicated review simulator preceded retry to avoid the previously recorded stale-bundle risk. This is not a claim that stale loading caused the2317 failure.
+
+One actual retry starts at23:21, with result bundle `ss-footprint-ground-v8-2321.xcresult`. Its success and import/loaded-binary evidence must be reported separately. No art retry occurred, and issue253 remains open.

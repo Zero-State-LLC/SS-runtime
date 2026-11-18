@@ -1,0 +1,56 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project SSRuntime.xcodeproj -scheme SSRuntime -sdk iphonesimulator -configuration Debug -destination "platform=iOS Simulator,id=CACB3927-A76E-43A5-9ACA-C389EB38C0C3" CODE_SIGNING_ALLOWED=NO ENABLE_TESTABILITY=YES "SS_RENDERER_TEST_CONDITIONS=SS_RENDERER_TEST_SUPPORT SS_SOURCE_SCENE_REVIEW SS_KIOSK_ONLY_GEOMETRY_REVIEW" -derivedDataPath docs/review/kiosk-only-geometry-20261117/native/derived -resultBundlePath docs/review/kiosk-only-geometry-20261117/native/capture-01.xcresult "-only-testing:SSRuntimeTests/KioskOnlyGeometrySceneTests/testQuietSouthNeutralOrdinaryScene" test-without-building
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+    ENABLE_TESTABILITY = YES
+    SDKROOT = iphonesimulator26.5
+    SS_RENDERER_TEST_CONDITIONS = SS_RENDERER_TEST_SUPPORT SS_SOURCE_SCENE_REVIEW SS_KIOSK_ONLY_GEOMETRY_REVIEW
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  SSRuntime: /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114
+
+Writing result bundle at path:
+	/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/kiosk-only-geometry-20261117/native/capture-01.xcresult
+
+Resolve Package Graph
+
+Resolve Package Graph
+
+2026-11-16 18:41:31.445618-0800 SSRuntime[84680:18361929] [plugin] AddInstanceForFactory: No factory registered for id <CFUUID 0x1079bc780> F8BB1C28-BAE8-11D6-9C31-00039315CD46
+2026-11-16 18:41:31.627773-0800 SSRuntime[84680:18362423] [AudioConverter]     AudioConverterOOP.cpp:1084  Failed to prepare AudioConverterService: -302
+2026-11-16 18:41:31.724594-0800 SSRuntime[84680:18361929] [UIFocus] _TtC18_SpriteKit_SwiftUIP33_4A29C38A751B2448A1E2FA85CDDEAA5324SpriteKitViewCoordinator implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+2026-11-16 18:41:33.049432-0800 SSRuntime[84680:18361929] SKView: no drawables available for rendering. Skipping this frame.
+Test Suite 'Selected tests' started at 2026-11-16 18:41:33.137.
+Test Suite 'SSRuntimeTests.xctest' started at 2026-11-16 18:41:33.138.
+Test Suite 'KioskOnlyGeometrySceneTests' started at 2026-11-16 18:41:33.139.
+Test Case '-[SSRuntimeTests.KioskOnlyGeometrySceneTests testQuietSouthNeutralOrdinaryScene]' started.
+Resolve Package Graph
+
+Resolve Package Graph
+
+objc[84680]: Class UIAccessibilityLoaderWebShared is implemented in both /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x11714c398) and /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x1222b0310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+2026-11-16 18:41:36.443716-0800 SSRuntime[84680:18361929] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+2026-11-16 18:41:42.519686-0800 SSRuntime[84680:18361929] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+Test Case '-[SSRuntimeTests.KioskOnlyGeometrySceneTests testQuietSouthNeutralOrdinaryScene]' passed (14.431 seconds).
+Test Suite 'KioskOnlyGeometrySceneTests' passed at 2026-11-16 18:41:47.585.
+	 Executed 1 test, with 0 failures (0 unexpected) in 14.431 (14.446) seconds
+Test Suite 'SSRuntimeTests.xctest' passed at 2026-11-16 18:41:47.586.
+	 Executed 1 test, with 0 failures (0 unexpected) in 14.431 (14.447) seconds
+Test Suite 'Selected tests' passed at 2026-11-16 18:41:47.586.
+	 Executed 1 test, with 0 failures (0 unexpected) in 14.431 (14.449) seconds
+2026-11-16 18:41:47.650454-0800 SSRuntime[84680:18361929] SKView: no drawables available for rendering. Skipping this frame.
+Resolve Package Graph
+2026-11-16 18:41:48.235 xcodebuild[82749:18356516] [MT] IDETestOperationsObserverDebug: 37.478 elapsed -- Testing started completed.
+2026-11-16 18:41:48.235 xcodebuild[82749:18356516] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-11-16 18:41:48.235 xcodebuild[82749:18356516] [MT] IDETestOperationsObserverDebug: 37.478 sec, +37.478 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/kiosk-only-geometry-20261117/native/capture-01.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

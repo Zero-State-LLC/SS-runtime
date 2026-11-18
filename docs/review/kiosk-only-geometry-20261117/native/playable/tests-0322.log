@@ -1,0 +1,68 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project SSRuntime.xcodeproj -scheme SSRuntime -sdk iphonesimulator -configuration Debug -destination "platform=iOS Simulator,id=CACB3927-A76E-43A5-9ACA-C389EB38C0C3" CODE_SIGNING_ALLOWED=NO ENABLE_TESTABILITY=YES -derivedDataPath docs/review/kiosk-only-geometry-20261117/native/playable/derived -resultBundlePath docs/review/kiosk-only-geometry-20261117/native/playable/tests-0322.xcresult "-only-testing:SSRuntimeTests/KioskPlayableReviewTests" test-without-building
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+    ENABLE_TESTABILITY = YES
+    SDKROOT = iphonesimulator26.5
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  SSRuntime: /Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114
+
+Writing result bundle at path:
+	/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/kiosk-only-geometry-20261117/native/playable/tests-0322.xcresult
+
+Resolve Package Graph
+
+2026-11-16 19:22:58.360050-0800 SSRuntime[85049:18839928] [plugin] AddInstanceForFactory: No factory registered for id <CFUUID 0x1099ac740> F8BB1C28-BAE8-11D6-9C31-00039315CD46
+2026-11-16 19:22:58.528532-0800 SSRuntime[85049:18840333] [AudioConverter]     AudioConverterOOP.cpp:1084  Failed to prepare AudioConverterService: -302
+2026-11-16 19:22:58.589776-0800 SSRuntime[85049:18839928] [UIFocus] _TtC18_SpriteKit_SwiftUIP33_4A29C38A751B2448A1E2FA85CDDEAA5324SpriteKitViewCoordinator implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+2026-11-16 19:22:59.625043-0800 SSRuntime[85049:18839928] SKView: no drawables available for rendering. Skipping this frame.
+Test Suite 'Selected tests' started at 2026-11-16 19:22:59.692.
+Test Suite 'SSRuntimeTests.xctest' started at 2026-11-16 19:22:59.693.
+Test Suite 'KioskPlayableReviewTests' started at 2026-11-16 19:22:59.693.
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testAliasedSourceAndMissingFileRejected]' started.
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testAliasedSourceAndMissingFileRejected]' passed (0.117 seconds).
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testAuthorityMismatchCannotInstall]' started.
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testAuthorityMismatchCannotInstall]' passed (0.832 seconds).
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testBothExactSourceArmsAndV9BaseLoad]' started.
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testBothExactSourceArmsAndV9BaseLoad]' passed (0.150 seconds).
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testExplicitOptInAndMalformedArgumentsFailClosed]' started.
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testExplicitOptInAndMalformedArgumentsFailClosed]' passed (0.002 seconds).
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testLiveSceneToggleAndLegalMovementKeepSimulationParity]' started.
+Resolve Package Graph
+2026-11-16 19:23:00.877503-0800 SSRuntime[85049:18839928] [UIFocus] SKView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+
+objc[85049]: Class UIAccessibilityLoaderWebShared is implemented in both /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x118ac8398) and /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x1193b8310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testLiveSceneToggleAndLegalMovementKeepSimulationParity]' passed (2.102 seconds).
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testModifiedManifestAndRegistrationRejected]' started.
+Resolve Package Graph
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testModifiedManifestAndRegistrationRejected]' passed (0.009 seconds).
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testModifiedSourceBytesRejected]' started.
+
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testModifiedSourceBytesRejected]' passed (0.049 seconds).
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testRendererOverrideIsReversibleAndPreservesNeighborsAndActorNodes]' started.
+Resolve Package Graph
+
+Test Case '-[SSRuntimeTests.KioskPlayableReviewTests testRendererOverrideIsReversibleAndPreservesNeighborsAndActorNodes]' passed (3.843 seconds).
+Test Suite 'KioskPlayableReviewTests' passed at 2026-11-16 19:23:06.808.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 7.104 (7.115) seconds
+Test Suite 'SSRuntimeTests.xctest' passed at 2026-11-16 19:23:06.808.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 7.104 (7.115) seconds
+Test Suite 'Selected tests' passed at 2026-11-16 19:23:06.809.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 7.104 (7.117) seconds
+Resolve Package Graph
+
+2026-11-16 19:23:07.267 xcodebuild[83737:18836627] [MT] IDETestOperationsObserverDebug: 19.795 elapsed -- Testing started completed.
+2026-11-16 19:23:07.267 xcodebuild[83737:18836627] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-11-16 19:23:07.267 xcodebuild[83737:18836627] [MT] IDETestOperationsObserverDebug: 19.795 sec, +19.795 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/appliedalchemylabs/.jcode/scratch/ss-runtime-audit-pr-20261114/docs/review/kiosk-only-geometry-20261117/native/playable/tests-0322.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

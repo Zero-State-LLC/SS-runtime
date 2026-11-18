@@ -1,0 +1,58 @@
+UTC 2026-11-16T10:07:06Z
+test_existing_output_is_preserved (test_assembly.AssemblyTests.test_existing_output_is_preserved) ... ok
+test_export_receipt_cannot_admit_unlisted_file (test_assembly.AssemblyTests.test_export_receipt_cannot_admit_unlisted_file) ... ok
+test_invalid_geometry (test_assembly.AssemblyTests.test_invalid_geometry) ... ok
+test_missing_dependency (test_assembly.AssemblyTests.test_missing_dependency) ... ok
+test_missing_recommendation (test_assembly.AssemblyTests.test_missing_recommendation) ... ok
+test_missing_registration_and_fields (test_assembly.AssemblyTests.test_missing_registration_and_fields) ... ok
+test_missing_required_role_and_duplicate_role (test_assembly.AssemblyTests.test_missing_required_role_and_duplicate_role) ... ok
+test_missing_untracked_recommendation_evidence (test_assembly.AssemblyTests.test_missing_untracked_recommendation_evidence) ... ok
+test_mutated_recommendation_evidence (test_assembly.AssemblyTests.test_mutated_recommendation_evidence) ... ok
+test_mutated_source_bytes (test_assembly.AssemblyTests.test_mutated_source_bytes) ... ok
+test_outward_and_internal_symlinks (test_assembly.AssemblyTests.test_outward_and_internal_symlinks) ... ok
+test_owner_acceptance_is_not_recommendation (test_assembly.AssemblyTests.test_owner_acceptance_is_not_recommendation) ... ok
+test_path_escape_aliases_and_absolute (test_assembly.AssemblyTests.test_path_escape_aliases_and_absolute) ... ok
+test_projection_and_upright_anchor (test_assembly.AssemblyTests.test_projection_and_upright_anchor) ... ok
+test_real_manifest_blocked_and_portable_export (test_assembly.AssemblyTests.test_real_manifest_blocked_and_portable_export) ... ok
+test_rejected_and_pending_never_render (test_assembly.AssemblyTests.test_rejected_and_pending_never_render) ... ok
+test_rejected_cannot_smuggle_image (test_assembly.AssemblyTests.test_rejected_cannot_smuggle_image) ... ok
+test_root_alias_is_allowed (test_assembly.AssemblyTests.test_root_alias_is_allowed) ... ok
+test_stale_registration_recommendation (test_assembly.AssemblyTests.test_stale_registration_recommendation) ... ok
+test_stale_source_recommendation (test_assembly.AssemblyTests.test_stale_source_recommendation) ... ok
+test_synthetic_recommendation_not_owner_acceptance (test_assembly.AssemblyTests.test_synthetic_recommendation_not_owner_acceptance) ... ok
+test_synthetic_standalone_render_and_receipt_mutation (test_assembly.AssemblyTests.test_synthetic_standalone_render_and_receipt_mutation) ... ok
+test_unknown_version_and_gameplay_claim (test_assembly.AssemblyTests.test_unknown_version_and_gameplay_claim) ... ok
+test_untracked_existing_dependency (test_assembly.AssemblyTests.test_untracked_existing_dependency) ... ok
+test_wrong_recommendation_scope_and_decision (test_assembly.AssemblyTests.test_wrong_recommendation_scope_and_decision) ... ok
+test_actual_registration_mutation (test_native.NativeGuardTests.test_actual_registration_mutation) ... ok
+test_all_three_zooms_mandatory_and_ordered (test_native.NativeGuardTests.test_all_three_zooms_mandatory_and_ordered) ... ok
+test_attachment_census_and_duplicates (test_native.NativeGuardTests.test_attachment_census_and_duplicates) ... ok
+test_attachment_path_escape (test_native.NativeGuardTests.test_attachment_path_escape) ... ok
+test_common_control_candidate_roots_retained (test_native.NativeGuardTests.test_common_control_candidate_roots_retained) ... ok
+test_documented_commands_opt_in_and_select_only_one_test (test_native.NativeGuardTests.test_documented_commands_opt_in_and_select_only_one_test) ... ok
+test_fixture_version_matches_swift_literal (test_native.NativeGuardTests.test_fixture_version_matches_swift_literal) ... ok
+test_loaded_executable_independent_of_source_read (test_native.NativeGuardTests.test_loaded_executable_independent_of_source_read) ... ok
+test_loaded_executable_metadata_required (test_native.NativeGuardTests.test_loaded_executable_metadata_required) ... ok
+test_missing_ordinary_arm (test_native.NativeGuardTests.test_missing_ordinary_arm) ... ok
+test_missing_zoom_image_rejected (test_native.NativeGuardTests.test_missing_zoom_image_rejected) ... ok
+test_native_hash_or_fixture_mutation (test_native.NativeGuardTests.test_native_hash_or_fixture_mutation) ... ok
+test_old_fixture_version_rejected (test_native.NativeGuardTests.test_old_fixture_version_rejected) ... ok
+test_placement_probe_does_not_require_source_inputs (test_native.NativeGuardTests.test_placement_probe_does_not_require_source_inputs) ... ok
+test_projected_root_changes_with_zoom (test_native.NativeGuardTests.test_projected_root_changes_with_zoom) ... ok
+test_real_pending_does_not_create_native_inputs (test_native.NativeGuardTests.test_real_pending_does_not_create_native_inputs) ... ok
+test_rejected_source_preparation (test_native.NativeGuardTests.test_rejected_source_preparation) ... ok
+test_review_tests_require_explicit_compile_opt_in (test_native.NativeGuardTests.test_review_tests_require_explicit_compile_opt_in) ... ok
+test_stale_executable_rejected_even_with_current_source (test_native.NativeGuardTests.test_stale_executable_rejected_even_with_current_source) ... ok
+test_static_scope_not_sixteen_frames (test_native.NativeGuardTests.test_static_scope_not_sixteen_frames) ... ok
+test_suppressed_field_hud_controls_or_authority_mutation (test_native.NativeGuardTests.test_suppressed_field_hud_controls_or_authority_mutation) ... ok
+test_synthetic_preparation_exact_bytes (test_native.NativeGuardTests.test_synthetic_preparation_exact_bytes) ... ok
+test_synthetic_records_pass (test_native.NativeGuardTests.test_synthetic_records_pass) ... ok
+test_synthetic_result_identity (test_native.NativeGuardTests.test_synthetic_result_identity) ... ok
+test_unrequested_scene_image_rejected (test_native.NativeGuardTests.test_unrequested_scene_image_rejected) ... ok
+test_zero_failed_skipped_expected_tests_rejected (test_native.NativeGuardTests.test_zero_failed_skipped_expected_tests_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 51 tests in 5.224s
+
+OK
+Both opt-in and ordinary Debug syntax parsing passed. No native/typecheck/build execution.

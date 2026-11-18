@@ -1,0 +1,726 @@
+{
+  "schema": 1,
+  "status": "FIRST_PILOT_REVIEW_ONLY",
+  "canvas": [
+    180,
+    450
+  ],
+  "root": [
+    46,
+    427
+  ],
+  "scale": 0.22966507177033493,
+  "parts": [
+    {
+      "name": "foot",
+      "contour": "M 12 390 C 17 381 69 379 80 390 L 84 414 C 80 426 64 432 46 432 C 28 432 13 425 10 416 Z",
+      "transform": [
+        0.92,
+        0.9,
+        3.679999999999998,
+        43.19999999999999
+      ],
+      "uv": [
+        0,
+        0,
+        360,
+        640
+      ],
+      "tint": [
+        54,
+        55,
+        53
+      ],
+      "material": "iron.png",
+      "texture_strength": 0.65,
+      "shading": {
+        "ambient": 0.62,
+        "roundness": 0.55,
+        "light_u": 0.28,
+        "vertical": 0.1
+      },
+      "edge": {
+        "color": [
+          20,
+          23,
+          23
+        ],
+        "width": 0.65
+      },
+      "visible": true,
+      "faces": [
+        {
+          "name": "left_cast_face",
+          "contour": "M 12 394 L 23 402 L 25 424 L 17 420 L 12 413 Z",
+          "gain": 1.08
+        },
+        {
+          "name": "front_cast_face",
+          "contour": "M 24 401 C 37 407 57 407 67 402 L 68 425 C 54 432 38 431 26 426 Z",
+          "gain": 1.02
+        },
+        {
+          "name": "right_cast_face",
+          "contour": "M 67 401 L 80 393 L 82 412 L 77 420 L 68 425 Z",
+          "gain": 0.82
+        }
+      ]
+    },
+    {
+      "name": "plinth",
+      "contour": "M 16 379 C 25 369 64 369 76 380 L 80 395 C 76 405 61 411 44 411 C 29 410 17 405 13 397 Z",
+      "transform": [
+        0.92,
+        0.9,
+        3.679999999999998,
+        43.19999999999999
+      ],
+      "uv": [
+        73,
+        109,
+        360,
+        640
+      ],
+      "tint": [
+        54,
+        55,
+        53
+      ],
+      "material": "iron.png",
+      "texture_strength": 0.65,
+      "shading": {
+        "ambient": 0.62,
+        "roundness": 0.55,
+        "light_u": 0.28,
+        "vertical": 0.1
+      },
+      "edge": {
+        "color": [
+          20,
+          23,
+          23
+        ],
+        "width": 0.65
+      },
+      "visible": true,
+      "faces": [
+        {
+          "name": "sloping_crown",
+          "contour": "M 17 380 C 27 369 64 370 75 381 L 72 389 C 61 401 31 400 19 390 Z",
+          "gain": 1.08
+        },
+        {
+          "name": "crown_left_light",
+          "contour": "M 20 380 L 25 375 L 29 376 L 25 383 L 26 389 L 32 393 L 29 394 L 22 390 Z",
+          "gain": 1.02
+        },
+        {
+          "name": "crown_right_turn",
+          "contour": "M 61 374 L 71 378 L 75 383 L 72 390 L 60 397 L 51 398 L 63 391 L 67 384 Z",
+          "gain": 0.82
+        }
+      ]
+    },
+    {
+      "name": "socket",
+      "contour": "M 26 354 C 35 349 56 349 64 355 L 69 378 C 66 389 32 394 23 380 Z",
+      "transform": [
+        0.92,
+        0.9,
+        3.679999999999998,
+        43.19999999999999
+      ],
+      "uv": [
+        146,
+        218,
+        360,
+        640
+      ],
+      "tint": [
+        54,
+        55,
+        53
+      ],
+      "material": "iron.png",
+      "texture_strength": 0.65,
+      "shading": {
+        "ambient": 0.62,
+        "roundness": 0.55,
+        "light_u": 0.28,
+        "vertical": 0.1
+      },
+      "edge": {
+        "color": [
+          20,
+          23,
+          23
+        ],
+        "width": 0.65
+      },
+      "visible": true,
+      "faces": []
+    },
+    {
+      "name": "pole",
+      "contour": "M 29 43 C 37 41 53 41 61 45 L 62 97 L 61 160 L 62 224 L 61 289 L 62 355 C 60 366 35 369 27 359 L 28 285 L 27 219 L 28 146 Z",
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "uv": [
+        219,
+        327,
+        360,
+        640
+      ],
+      "tint": [
+        54,
+        55,
+        53
+      ],
+      "material": "iron.png",
+      "texture_strength": 0.65,
+      "shading": {
+        "ambient": 0.62,
+        "roundness": 0.55,
+        "light_u": 0.28,
+        "vertical": 0.1
+      },
+      "edge": {
+        "color": [
+          20,
+          23,
+          23
+        ],
+        "width": 0.65
+      },
+      "visible": true,
+      "faces": []
+    },
+    {
+      "name": "ankle_ring",
+      "contour": "M 25 351 C 32 360 54 363 64 351 L 65 361 C 62 372 31 374 24 362 Z",
+      "transform": [
+        0.92,
+        0.9,
+        3.679999999999998,
+        43.19999999999999
+      ],
+      "uv": [
+        292,
+        36,
+        360,
+        640
+      ],
+      "tint": [
+        54,
+        55,
+        53
+      ],
+      "material": "iron.png",
+      "texture_strength": 0.65,
+      "shading": {
+        "ambient": 0.62,
+        "roundness": 0.55,
+        "light_u": 0.28,
+        "vertical": 0.1
+      },
+      "edge": {
+        "color": [
+          20,
+          23,
+          23
+        ],
+        "width": 0.65
+      },
+      "visible": true,
+      "faces": []
+    },
+    {
+      "name": "middle_ring",
+      "contour": "M 25 285 C 32 294 56 297 65 284 L 66 294 C 61 307 31 309 24 296 Z",
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "uv": [
+        365,
+        145,
+        360,
+        640
+      ],
+      "tint": [
+        54,
+        55,
+        53
+      ],
+      "material": "iron.png",
+      "texture_strength": 0.65,
+      "shading": {
+        "ambient": 0.62,
+        "roundness": 0.55,
+        "light_u": 0.28,
+        "vertical": 0.1
+      },
+      "edge": {
+        "color": [
+          20,
+          23,
+          23
+        ],
+        "width": 0.65
+      },
+      "visible": true,
+      "faces": []
+    },
+    {
+      "name": "upper_ring",
+      "contour": "M 25 140 C 32 149 55 150 65 138 L 66 149 C 61 163 31 163 24 152 Z",
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "uv": [
+        438,
+        254,
+        360,
+        640
+      ],
+      "tint": [
+        54,
+        55,
+        53
+      ],
+      "material": "iron.png",
+      "texture_strength": 0.65,
+      "shading": {
+        "ambient": 0.62,
+        "roundness": 0.55,
+        "light_u": 0.28,
+        "vertical": 0.1
+      },
+      "edge": {
+        "color": [
+          20,
+          23,
+          23
+        ],
+        "width": 0.65
+      },
+      "visible": true,
+      "faces": []
+    },
+    {
+      "name": "top_collar",
+      "contour": "M 27 59 C 34 67 54 67 63 59 L 64 72 C 57 82 32 81 26 72 Z",
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "uv": [
+        61,
+        363,
+        360,
+        640
+      ],
+      "tint": [
+        54,
+        55,
+        53
+      ],
+      "material": "iron.png",
+      "texture_strength": 0.65,
+      "shading": {
+        "ambient": 0.62,
+        "roundness": 0.55,
+        "light_u": 0.28,
+        "vertical": 0.1
+      },
+      "edge": {
+        "color": [
+          20,
+          23,
+          23
+        ],
+        "width": 0.65
+      },
+      "visible": true,
+      "faces": []
+    },
+    {
+      "name": "finial_seat",
+      "contour": "M 23 35 C 31 29 60 29 67 36 L 67 46 C 61 59 29 59 23 47 Z",
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "uv": [
+        134,
+        72,
+        360,
+        640
+      ],
+      "tint": [
+        54,
+        55,
+        53
+      ],
+      "material": "iron.png",
+      "texture_strength": 0.65,
+      "shading": {
+        "ambient": 0.62,
+        "roundness": 0.55,
+        "light_u": 0.28,
+        "vertical": 0.1
+      },
+      "edge": {
+        "color": [
+          20,
+          23,
+          23
+        ],
+        "width": 0.65
+      },
+      "visible": true,
+      "faces": []
+    },
+    {
+      "name": "finial",
+      "contour": "M 29 26 C 28 19 34 12 43 12 C 52 11 59 16 62 24 C 66 35 58 42 46 43 C 34 42 27 37 29 26 Z",
+      "transform": [
+        0.94,
+        0.94,
+        2.6999999999999997,
+        1.74
+      ],
+      "uv": [
+        207,
+        181,
+        360,
+        640
+      ],
+      "tint": [
+        54,
+        55,
+        53
+      ],
+      "material": "iron.png",
+      "texture_strength": 0.65,
+      "shading": {
+        "ambient": 0.62,
+        "roundness": 0.55,
+        "light_u": 0.28,
+        "vertical": 0.1
+      },
+      "edge": {
+        "color": [
+          20,
+          23,
+          23
+        ],
+        "width": 0.65
+      },
+      "visible": true,
+      "faces": []
+    },
+    {
+      "name": "service_box",
+      "contour": "M 55 165 L 68 158 L 76 163 L 76 193 L 65 202 L 55 197 Z",
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "uv": [
+        280,
+        290,
+        360,
+        640
+      ],
+      "tint": [
+        196,
+        187,
+        166
+      ],
+      "material": "iron.png",
+      "texture_strength": 0.32,
+      "shading": {
+        "ambient": 0.62,
+        "roundness": 0.55,
+        "light_u": 0.28,
+        "vertical": 0.1
+      },
+      "edge": {
+        "color": [
+          20,
+          23,
+          23
+        ],
+        "width": 0.65
+      },
+      "visible": true,
+      "faces": [
+        {
+          "name": "top",
+          "contour": "M 56 165 L 68 160 L 74 163 L 63 168 Z",
+          "gain": 1.08
+        },
+        {
+          "name": "left",
+          "contour": "M 56 166 L 62 169 L 62 198 L 57 195 Z",
+          "gain": 1.02
+        },
+        {
+          "name": "front",
+          "contour": "M 64 170 L 74 165 L 74 191 L 65 199 Z",
+          "gain": 0.82
+        }
+      ]
+    },
+    {
+      "name": "bracket",
+      "contour": "M 53 65 L 64 59 L 70 63 L 70 80 L 103 69 C 109 64 123 61 129 66 L 130 81 C 127 89 116 91 105 87 L 83 94 C 74 99 71 107 71 124 L 63 129 L 53 125 Z",
+      "transform": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "uv": [
+        353,
+        399,
+        360,
+        640
+      ],
+      "tint": [
+        196,
+        187,
+        166
+      ],
+      "material": "iron.png",
+      "texture_strength": 0.32,
+      "shading": {
+        "ambient": 0.62,
+        "roundness": 0.24,
+        "light_u": 0.28,
+        "vertical": 0.1
+      },
+      "edge": {
+        "color": [
+          20,
+          23,
+          23
+        ],
+        "width": 0.65
+      },
+      "visible": true,
+      "faces": [
+        {
+          "name": "left_thickness",
+          "contour": "M 53 65 L 61 69 L 61 130 L 54 127 Z",
+          "gain": 1.08
+        },
+        {
+          "name": "mount_top",
+          "contour": "M 53 64 L 64 59 L 71 62 L 61 68 Z",
+          "gain": 1.02
+        },
+        {
+          "name": "mount_front",
+          "contour": "M 63 69 L 71 64 L 71 81 L 104 71 L 108 88 L 84 95 C 75 101 71 109 71 126 L 64 131 Z",
+          "gain": 0.82
+        }
+      ]
+    },
+    {
+      "name": "dome",
+      "contour": "M 85 118 C 94 108 137 108 148 120 C 148 142 134 159 117 160 C 101 160 88 147 85 130 Z",
+      "transform": [
+        0.95,
+        0.85,
+        5.800000000000005,
+        17.700000000000003
+      ],
+      "uv": [
+        426,
+        108,
+        360,
+        640
+      ],
+      "tint": [
+        18,
+        29,
+        32
+      ],
+      "material": "iron.png",
+      "texture_strength": 0.65,
+      "shading": {
+        "ambient": 0.62,
+        "roundness": 0.55,
+        "light_u": 0.28,
+        "vertical": 0.1
+      },
+      "edge": {
+        "color": [
+          20,
+          23,
+          23
+        ],
+        "width": 0.65
+      },
+      "visible": true,
+      "faces": []
+    },
+    {
+      "name": "hood",
+      "contour": "M 109 89 C 117 86 129 89 136 96 C 143 102 148 114 148 121 C 147 129 136 135 121 136 C 103 137 87 131 82 124 C 80 119 84 107 90 100 C 95 94 101 91 109 89 Z",
+      "transform": [
+        0.95,
+        0.85,
+        5.800000000000005,
+        17.700000000000003
+      ],
+      "uv": [
+        49,
+        217,
+        360,
+        640
+      ],
+      "tint": [
+        196,
+        187,
+        166
+      ],
+      "material": "iron.png",
+      "texture_strength": 0.32,
+      "shading": {
+        "ambient": 0.62,
+        "roundness": 0.55,
+        "light_u": 0.28,
+        "vertical": 0.1
+      },
+      "edge": {
+        "color": [
+          20,
+          23,
+          23
+        ],
+        "width": 0.65
+      },
+      "visible": true,
+      "faces": []
+    },
+    {
+      "name": "bracket_neck",
+      "contour": "M 104 67 C 111 61 124 60 130 65 L 132 69 L 131 84 C 127 93 113 95 104 88 Z",
+      "transform": [
+        0.88,
+        0.84,
+        14.04,
+        12.160000000000002
+      ],
+      "uv": [
+        122,
+        326,
+        360,
+        640
+      ],
+      "tint": [
+        196,
+        187,
+        166
+      ],
+      "material": "iron.png",
+      "texture_strength": 0.32,
+      "shading": {
+        "ambient": 0.62,
+        "roundness": 0.55,
+        "light_u": 0.28,
+        "vertical": 0.1
+      },
+      "edge": {
+        "color": [
+          20,
+          23,
+          23
+        ],
+        "width": 0.65
+      },
+      "visible": true,
+      "faces": [
+        {
+          "name": "curved_front",
+          "contour": "M 106 73 C 114 78 126 75 131 70 L 130 83 C 126 91 114 93 106 87 Z",
+          "gain": 1.08
+        },
+        {
+          "name": "right_cylinder_turn",
+          "contour": "M 125 75 L 130 71 L 130 83 L 126 88 L 123 90 Z",
+          "gain": 1.02
+        },
+        {
+          "name": "top_lid",
+          "contour": "M 105 68 C 111 61 124 61 130 66 C 132 70 125 75 117 76 C 111 76 105 73 105 68 Z",
+          "gain": 0.82
+        }
+      ]
+    },
+    {
+      "name": "cyan_lens",
+      "contour": "M 116 142 L 120 146 L 116 150 L 112 146 Z",
+      "transform": [
+        0.95,
+        0.85,
+        5.800000000000005,
+        17.700000000000003
+      ],
+      "uv": [
+        195,
+        35,
+        360,
+        640
+      ],
+      "tint": [
+        46,
+        222,
+        213
+      ],
+      "material": "iron.png",
+      "texture_strength": 0,
+      "shading": {
+        "ambient": 1,
+        "roundness": 0,
+        "light_u": 0.5,
+        "vertical": 0
+      },
+      "edge": {
+        "color": [
+          20,
+          23,
+          23
+        ],
+        "width": 0
+      },
+      "visible": true,
+      "faces": []
+    }
+  ],
+  "correctionNotes": {
+    "head": "Hood, glass and lens share 0.95x / 0.85y transform about (116,118), reducing bulb depth together.",
+    "bracket": "Re-authored narrow plate and inner return. Neck 0.88x / 0.84y about (117,76).",
+    "base": "Foot, plinth, socket and ankle 0.92x / 0.90y about base (46,432).",
+    "finial": "0.94 uniform about (45,29). Pole axis and source canvas unchanged.",
+    "authority": "Contour corrections are visual hypotheses against unchanged reference, not measured production geometry."
+  }
+}

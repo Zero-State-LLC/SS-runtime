@@ -24,6 +24,8 @@ jobs:
         run: swift test --filter CameraPlacementTests --parallel --num-workers 1
       - name: Test camera fairness
         run: swift test --filter CameraFairnessTests --parallel --num-workers 1
+      - name: Test review-only footprint depth constraints
+        run: python3 -B docs/review/scene-qa-repair-20261116/depth/test_depth.py
 
   spec-parity:
     # D-061: from the adoption commit the runtime bundle must byte-match
@@ -37,10 +39,133 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
+        with:
+          # #262: historical V9 and later authorized transitions are verified
+          # from exact local Git objects, never fetched by the verifier.
+          fetch-depth: 0
       - name: Verify pinned specification
         run: grep -q "b1ed874e1e8eb0e61b2174b9093201e9a61e1a4b" SPEC_BASELINE.md
       - name: Test runtime audit wiring guards
         run: python3 -B scripts/test_runtime_audit_guards.py
+      - name: Set up source-review Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install source-review dependencies
+        run: python3 -m pip install numpy==2.4.6 Pillow==12.3.0 scipy==1.17.1
+      - name: Test portable source geometry and provenance
+        run: python3 -B docs/review/player-all-release-source-20261116/test_source.py --source-root docs/review/player-all-release-source-20261116/fixtures
+      - name: Test source artifact and browser-readiness guards
+        run: |
+          python3 -B docs/review/player-all-release-source-20261116/test_artifact_verifier.py
+          node docs/review/player-all-release-source-20261116/test_readiness.js
+      - name: Verify source artifacts and native resource linkage
+        run: python3 -B docs/review/player-all-release-source-20261116/verify_artifacts.py --native-assets AppTests/BenchmarkAssets
+      - name: Test native source evidence import guards
+        run: python3 -B scripts/test_allrelease_native.py
+      - name: Verify published native source evidence
+        run: python3 -B scripts/import_allrelease_native.py --verify docs/review/player-all-release-native-20261116
+      - name: Test proposed phase variation and comparison controls
+        run: |
+          python3 -B docs/review/player-release-variation-20261116/test_variation.py
+          python3 -B docs/review/player-release-variation-20261116/test_artifacts.py
+          node docs/review/player-release-variation-20261116/test_comparison.js
+      - name: Verify proposed variation source provenance
+        run: python3 -B docs/review/player-release-variation-20261116/verify_packet.py
+      - name: Verify paired native variation evidence
+        run: |
+          python3 -B scripts/prepare_release_variation_native.py --verify
+          python3 -B scripts/import_release_variation_native.py --verify docs/review/player-release-variation-native-20261116/capture
+          python3 -B scripts/test_release_variation_native.py
+      - name: Verify proposed neutral source comparisons
+        run: |
+          python3 -B docs/review/player-north-source-20261116/test_source.py
+          python3 -B docs/review/player-baggy-south-source-20261116/test_source.py
+          python3 -B -W error::ResourceWarning docs/review/camera-midpoint-source-20261116/test_source.py
+          cmp docs/review/camera-midpoint-source-20261116/source/clip-metadata-001.json Sources/SurveillanceCore/Resources/contracts/clip-metadata-001.json
+      - name: Test portable side-source proposals
+        run: python3 -B -W error::ResourceWarning docs/review/player-side-source-20261116/test_source.py
+      - name: Test portable ground-contact evidence
+        run: |
+          python3 -B -W error::ResourceWarning docs/review/player-ground-contact-20261116/test_packet.py
+          python3 -B -W error::ResourceWarning docs/review/player-ground-contact-20261116/test_native_evidence.py
+          node docs/review/player-ground-contact-20261116/test_native_gallery.js
+      - name: Test unregistered stone-building source provenance
+        run: python3 -B -W error::ResourceWarning docs/review/stone-corner-source-20261116/test_source.py
+      - name: Test whole-scene diagnostic evidence without visual admission
+        run: |
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/whole-scene-benchmark-20261116 -p 'test_*.py'
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/whole-scene-paving-20261116 -p 'test_*.py'
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/whole-scene-benchmark-20261116/revision-02-bound-inputs -p 'test_*.py'
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/camera-first-sample-20261116 -p 'test_*.py'
+      - name: Test blocked-source records and bounded paving repair
+        run: |
+          python3 -B -W error::ResourceWarning docs/review/stone-corner-registration-20261116/test_registration.py
+          python3 -B -W error::ResourceWarning docs/review/player-neutral-family-20261116/test_family.py
+          python3 -B -W error::ResourceWarning docs/review/paving-repeat-repair-20261116/verify-packet.py
+          python3 -B -W error::ResourceWarning docs/review/paving-repeat-repair-20261116/revision02/generate-and-check.py
+      - name: Test existing-art diagnostic evidence without granting acceptance
+        run: |
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/existing-art-traversal-20261116 -p 'test_*.py' -v
+          python3 -B -W error::ResourceWarning docs/review/existing-art-viewports-20261116/test_verify.py
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/existing-art-encounters-20261116 -p 'test_*.py' -v
+      - name: Test bounded source proposals and actual upgrade evidence without admission
+        run: |
+          python3 -B -W error::ResourceWarning docs/review/player-south-repair-20261116/test_south.py
+          python3 -B -W error::ResourceWarning docs/review/paving-corner-review-20261116/test_source.py
+          python3 -B -W error::ResourceWarning docs/review/stone-surface-authored-20261116/test_source.py
+          python3 -B -W error::ResourceWarning docs/review/camera-surface-authored-20261116/test_final.py
+          python3 -B -W error::ResourceWarning docs/review/camera-raster-material-20261116/painted-assembly/padded-final/test_padding.py
+          python3 -B -W error::ResourceWarning docs/review/stone-painted-facade-20261116/test_source.py
+          python3 -B -W error::ResourceWarning docs/review/stone-painted-facade-20261116/test_roof_layer.py
+          python3 -B -W error::ResourceWarning docs/review/stone-painted-facade-20261116/verify_exports.py
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/scene-source-assembly-20261116 -p 'test_*.py'
+          python3 -B -W error::ResourceWarning docs/review/upgrade-interaction-20261116/test_evidence.py
+      - name: Verify bounded scene QA evidence
+        run: |
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/scene-qa-repair-20261116 -p 'test_*.py'
+          python3 -B -W error::ResourceWarning docs/review/scene-qa-repair-20261116/ground/test_ground.py
+          python3 -B docs/review/scene-qa-repair-20261116/retained.py docs/review/scene-qa-repair-20261116/native-capture-v5
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/scene-qa-framing-20261116 -p 'test_*.py'
+          python3 -B docs/review/scene-qa-framing-20261116/retained.py docs/review/scene-qa-framing-20261116/native-capture-v6
+          node docs/review/scene-qa-repair-20261116/gallery/test_evidence.js --require-v6
+          node docs/review/scene-qa-repair-20261116/gallery/test_loader.js
+      - name: Verify bounded building perspective review without admission
+        run: |
+          python3 -B -W error::ResourceWarning docs/review/building-perspective-detail-20261116/kiosk/test_kiosk.py
+          python3 -B -W error::ResourceWarning docs/review/building-perspective-detail-20261116/context/test_context.py
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/building-perspective-detail-20261116/scene -p 'test_*.py'
+          python3 -B docs/review/building-perspective-detail-20261116/scene/retained.py docs/review/building-perspective-detail-20261116/scene/native-capture-v7
+          python3 -B docs/review/building-perspective-detail-20261116/verify_baseline.py
+          node docs/review/building-perspective-detail-20261116/gallery/test_evidence.js --require-v7
+          node docs/review/building-perspective-detail-20261116/gallery/test_loader.js --require-v7
+      - name: Verify coordinated footprint ground review without admission
+        run: |
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/footprint-ground-repair-20261116 -p 'test_*.py'
+          python3 -B -W error::ResourceWarning docs/review/footprint-ground-repair-20261116/plan/test_plan.py
+          python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/footprint-ground-repair-20261116/scene -p 'test_*.py'
+          python3 -B docs/review/footprint-ground-repair-20261116/scene/retained.py docs/review/footprint-ground-repair-20261116/scene/native-capture-v8
+          python3 -B docs/review/footprint-ground-repair-20261116/verify_prop_bases.py
+          node docs/review/footprint-ground-repair-20261116/gallery/test_evidence.js --require-v8
+          node docs/review/footprint-ground-repair-20261116/gallery/test_loader.js --require-v8
+      - name: Verify bounded base and curb comparison without admission
+        run: |
+          # Original V9 tests/audit run unchanged in their exact historical export.
+          # A separate current-tree check permits only provenance-bound changes.
+          python3 -B scripts/test_v9_preservation.py
+          python3 -B scripts/verify_v9_preservation.py all --scratch-dir "$RUNNER_TEMP"
+          python3 -B -W error::ResourceWarning docs/review/blocked-base-curb-relief-20261116/source/test_source.py
+          python3 -B -W error::ResourceWarning docs/review/blocked-base-curb-relief-20261116/source/attempt-02/test_source.py
+          python3 -B scripts/test_review_test_runner.py
+          python3 scripts/run_review_tests.py -B -W error::ResourceWarning -m unittest discover -s docs/review/blocked-base-curb-relief-20261116/scene -p 'test_*.py'
+          python3 -B docs/review/blocked-base-curb-relief-20261116/scene/retained.py docs/review/blocked-base-curb-relief-20261116/scene/native-capture-v9
+          python3 -B docs/review/blocked-base-curb-relief-20261116/audit.py pixels
+          node docs/review/blocked-base-curb-relief-20261116/gallery/test_evidence.js --require-v9
+          node docs/review/blocked-base-curb-relief-20261116/gallery/test_loader.js --require-v9
+      - name: Test retained playback failure diagnosis without hiding the failure
+        run: python3 -B -W error::ResourceWarning -m unittest discover -s docs/review/playback237-diagnosis-20261116 -p 'test_trace_probe.py' -v
+      - name: Test spec-parity checkout isolation
+        run: python3 -B scripts/test_spec_parity_isolation.py
       - name: Byte-compare bundled contracts and fixtures against the pinned SS-specs
         run: bash scripts/spec_parity.sh
 
